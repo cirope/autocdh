@@ -1,0 +1,18 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+tap:i18n
+aldeed:collection2
+aldeed:autoform
+iron:router
+ground:db
+meteorhacks:subs-manager
+reactive-var
+sacha:spin
+mizzao:bootstrap-3
+accounts-password
+francocatena:status
+

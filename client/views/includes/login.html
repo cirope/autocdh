@@ -1,0 +1,35 @@
+<template name="login">
+  {{#if error}}
+    <div class="alert alert-danger">
+      {{_ 'login_error'}}
+    </div>
+  {{/if}}
+
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4">
+      <div class="well">
+        <form>
+          <div class="form-inputs">
+            <div class="form-group">
+              <label class="control-label" for="email">{{_ 'login_email'}}</label>
+              <div class="controls">
+                <input type="text" name="email" id="email" class="form-control" autofocus autocomplete="off" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="control-label" for="password">{{_ 'login_password'}}</label>
+              <div class="controls">
+                <input type="password" name="password" id="password" class="form-control" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-default">{{_ 'login_submit'}}</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

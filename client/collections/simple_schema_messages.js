@@ -1,0 +1,35 @@
+loadSimpleSchemaMessages = function () {
+  SimpleSchema.messages({
+    required: TAPi18n.__('validation_required'),
+    minString: TAPi18n.__('validation_min_string'),
+    maxString: TAPi18n.__('validation_max_string'),
+    minNumber: TAPi18n.__('validation_min_number'),
+    maxNumber: TAPi18n.__('validation_max_number'),
+    minDate: TAPi18n.__('validation_min_date'),
+    maxDate: TAPi18n.__('validation_max_date'),
+    minCount: TAPi18n.__('validation_min_count'),
+    maxCount: TAPi18n.__('validation_max_count'),
+    noDecimal: TAPi18n.__('validation_no_decimal'),
+    notAllowed: TAPi18n.__('validation_not_allowed'),
+    notUnique: TAPi18n.__('validation_not_unique'),
+    expectedString: TAPi18n.__('validation_expected_string'),
+    expectedNumber: TAPi18n.__('validation_expected_number'),
+    expectedBoolean: TAPi18n.__('validation_expected_boolean'),
+    expectedArray: TAPi18n.__('validation_expected_array'),
+    expectedObject: TAPi18n.__('validation_expected_object'),
+    expectedConstructor: TAPi18n.__('validation_expected_constructor'),
+    regEx: [
+      { msg: TAPi18n.__('validation_regex_msg') },
+      { exp: SimpleSchema.RegEx.Email, msg: TAPi18n.__('validation_regex_email') },
+      { exp: SimpleSchema.RegEx.WeakEmail, msg: TAPi18n.__('validation_regex_email') },
+      { exp: SimpleSchema.RegEx.Domain, msg: TAPi18n.__('validation_regex_domain') },
+      { exp: SimpleSchema.RegEx.WeakDomain, msg: TAPi18n.__('validation_regex_domain') },
+      { exp: SimpleSchema.RegEx.IP, msg: TAPi18n.__('validation_regex_ip') },
+      { exp: SimpleSchema.RegEx.IPv4, msg: TAPi18n.__('validation_regex_ipv4') },
+      { exp: SimpleSchema.RegEx.IPv6, msg: TAPi18n.__('validation_regex_ipv6') },
+      { exp: SimpleSchema.RegEx.Url, msg: TAPi18n.__('validation_regex_url') },
+      { exp: SimpleSchema.RegEx.Id, msg: TAPi18n.__('validation_regex_id') },
+    ],
+    keyNotInSchema: TAPi18n.__('validation_key_not_in_schema')
+  })
+}

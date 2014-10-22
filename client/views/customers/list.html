@@ -1,0 +1,39 @@
+<template name="customers">
+  {{#if customers.count}}
+    {{> customersList}}
+  {{else}}
+    {{> customersEmpty}}
+  {{/if}}
+</template>
+
+<template name="customersList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'customers'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{_ 'customer_name'}}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each customers}}
+            <tr>
+              <td>{{name}}</td>
+              <td><a href="{{pathFor 'customerEdit'}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'customerNew'}}">{{_ 'customer_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>

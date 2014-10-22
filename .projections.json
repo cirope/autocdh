@@ -1,0 +1,73 @@
+{
+  "client/main.html": {
+    "type": "view",
+    "alternate": "client/main.js"
+  },
+  "client/main.js": {
+    "type": "javascript",
+    "alternate": "client/main.html"
+  },
+  "client/lib/*.js": {
+    "type": "javascript"
+  },
+  "client/stylesheets/main.css": {
+    "type": "stylesheet",
+    "alternate": "client/main.html"
+  },
+  "client/stylesheets/*": {
+    "type": "stylesheet"
+  },
+  "client/views/*.html": {
+    "type": "view",
+    "alternate": "client/views/{}.js",
+    "template": "<template name=\"{underscore|camelcase}\">\n\n</template>"
+  },
+  "client/views/*.js": {
+    "type": "helper",
+    "alternate": "client/views/{}.html",
+    "template": [
+      "Template.{underscore|camelcase}.helpers({open}\n{close})\n",
+      "Template.{underscore|camelcase}.events({open}\n{close})"
+    ]
+  },
+  "collections/*.js": {
+    "type": "collection",
+    "alternate": "collections/schemas/{}.js",
+    "template": [
+      "{camelcase} = new Mongo.Collection('{}')\n",
+      "{camelcase}.attachSchema(Schemas.{singular|camelcase})"
+    ]
+  },
+  "collections/lib/schemas.js": {
+    "type": "schema",
+    "template": [
+      "Schemas = {open}{close}\n",
+      "Schemas.Base = new SimpleSchema({open}\n{close})"
+    ]
+  },
+  "collections/schemas/*.js": {
+    "type": "schema",
+    "alternate": "collections/{}.js",
+    "template": [
+      "Schemas.{singular|camelcase} = new SimpleSchema([Schemas.Base, {open}\n{close}])",
+    ]
+  },
+  "i18n/*.i18n.json": {
+    "type": "locale",
+    "template": "{open}\n{close}"
+  },
+  "lib/router/controllers/*.js": {
+    "type": "controller",
+    "template": [
+      "{camelcase}Controller = RouteController.extend({open}",
+      "  data: function () {open} return {open} {}: {camelcase}.find() {close} {close}",
+      "{close})"
+    ]
+  },
+  "lib/router/maps.js": {
+    "type": "route"
+  },
+  "lib/router/*.js": {
+    "type": "route"
+  }
+}
