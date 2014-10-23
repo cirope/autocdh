@@ -30,7 +30,7 @@
       "Template.{underscore|camelcase}.events({open}\n{close})"
     ]
   },
-  "collections/*.js": {
+  "lib/collections/*.js": {
     "type": "collection",
     "alternate": "collections/schemas/{}.js",
     "template": [
@@ -38,14 +38,14 @@
       "{camelcase}.attachSchema(Schemas.{singular|camelcase})"
     ]
   },
-  "collections/lib/schemas.js": {
+  "lib/collections/lib/schemas.js": {
     "type": "schema",
     "template": [
       "Schemas = {open}{close}\n",
       "Schemas.Base = new SimpleSchema({open}\n{close})"
     ]
   },
-  "collections/schemas/*.js": {
+  "lib/collections/schemas/*.js": {
     "type": "schema",
     "alternate": "collections/{}.js",
     "template": [
