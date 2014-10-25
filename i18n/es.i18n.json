@@ -50,5 +50,8 @@
   "validation_regex_ipv6": "[label] debe ser una dirección IPv6 válida",
   "validation_regex_url": "[label] debe ser una URL válida",
   "validation_regex_id": "[label] debe ser un ID alfanumérico válido",
-  "validation_key_not_in_schema": "[label] no está permitido en el esquema de datos"
+  "validation_key_not_in_schema": "[label] no está permitido en el esquema de datos",
+  "work_name": "Obra",
+  "work_name_placeholder": "Ingrese un nombre...",
+  "work_create": "Crear obra"
 }

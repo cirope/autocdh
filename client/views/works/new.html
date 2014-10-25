@@ -1,0 +1,10 @@
+<template name="workNew">
+  {{#autoForm collection='Works' id='newWorkForm' type='method' meteormethod='createWork'}}
+    <fieldset>
+      {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+      {{> afFieldInput name='customerId' value=customerId type='hidden'}}
+    </fieldset>
+
+    <button type="submit" class="btn btn-primary">{{_ 'work_create'}}</button>
+  {{/autoForm}}
+</template>

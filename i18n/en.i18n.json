@@ -50,5 +50,8 @@
   "validation_regex_ipv6": "[label] must be a valid IPv6 address",
   "validation_regex_url": "[label] must be a valid URL",
   "validation_regex_id": "[label] must be a valid alphanumeric ID",
-  "validation_key_not_in_schema": "[label] is not allowed by the schema"
+  "validation_key_not_in_schema": "[label] is not allowed by the schema",
+  "work_name": "Name",
+  "work_name_placeholder": "Enter a name...",
+  "work_create": "Create work"
 }

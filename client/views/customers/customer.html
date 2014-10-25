@@ -3,7 +3,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'customer'}}: {{name}}
+          {{_ 'customer'}}: {{customer.name}}
           <a href="{{pathFor 'customerEdit'}}" title="{{_ 'customer_update_title'}}">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
@@ -11,5 +11,11 @@
         </h3>
       </div>
     </div>
+
+    {{#each works}}
+      {{> work}}
+    {{/each}}
+
+    {{> workNew}}
   </div>
 </template>
