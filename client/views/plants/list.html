@@ -20,15 +20,12 @@
           <thead>
             <tr>
               <th>{{_ 'plant_name'}}</th>
-              <th colspan="2"></th>
             </tr>
           </thead>
           <tbody>
           {{#each plants}}
             <tr>
-              <td>{{name}}</td>
-              <td><a href="{{pathFor 'plant'}}"><span class="glyphicon glyphicon-search"></span></a></td>
-              <td><a href="{{pathFor 'plantEdit'}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+              <td><a href="{{pathFor 'plant'}}">{{name}}</a></td>
             </tr>
           {{/each}}
           </tbody>

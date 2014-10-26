@@ -20,15 +20,12 @@
           <thead>
             <tr>
               <th>{{_ 'customer_name'}}</th>
-              <th colspan="2"></th>
             </tr>
           </thead>
           <tbody>
           {{#each customers}}
             <tr>
-              <td>{{name}}</td>
-              <td><a href="{{pathFor 'customer'}}"><span class="glyphicon glyphicon-search"></span></a></td>
-              <td><a href="{{pathFor 'customerEdit'}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+              <td><a href="{{pathFor 'customer'}}">{{name}}</a></td>
             </tr>
           {{/each}}
           </tbody>
