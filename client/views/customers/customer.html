@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           {{_ 'customer'}}: {{customer.name}}
-          <a href="{{pathFor 'customerEdit'}}" title="{{_ 'customer_update_title'}}">
+          <a href="{{pathFor 'customerEdit' _id=customer._id}}" title="{{_ 'customer_update_title'}}">
             <span class="glyphicon glyphicon-pencil"></span>
           </a>
           <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
