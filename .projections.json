@@ -69,5 +69,14 @@
   },
   "lib/router/*.js": {
     "type": "route"
+  },
+  "server/publications/*.js": {
+    "type": "publication",
+    "alternate": "lib/collections/{}.js",
+    "template": [
+      "Meteor.publish('{}', function () {open}",
+      "  return {camelcase}.find({open} userId: this.userId {close})",
+      "{close})"
+    ]
   }
 }
