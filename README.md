@@ -1,6 +1,6 @@
 # AutoCDH
 
-Simple concrete control app made with Meteor
+Simple concrete quality control app made with Meteor
 
 ## How to contribute
 
