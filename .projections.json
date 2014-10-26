@@ -36,7 +36,7 @@
   },
   "lib/collections/*.js": {
     "type": "collection",
-    "alternate": "lib/collections/schemas/{}.js",
+    "alternate": "lib/collections/schemas/{singular}.js",
     "template": [
       "{camelcase} = new Mongo.Collection('{}')\n",
       "{camelcase}.attachSchema(Schemas.{singular|camelcase})"
@@ -51,7 +51,7 @@
   },
   "lib/collections/schemas/*.js": {
     "type": "schema",
-    "alternate": "lib/collections/{}.js",
+    "alternate": "lib/collections/{plural}.js",
     "template": [
       "Schemas.{singular|camelcase} = new SimpleSchema([Schemas.Base, {open}\n{close}])",
     ]
@@ -72,7 +72,6 @@
   },
   "server/publications/*.js": {
     "type": "publication",
-    "alternate": "lib/collections/{}.js",
     "template": [
       "Meteor.publish('{}', function () {open}",
       "  return {camelcase}.find({open} userId: this.userId {close})",
