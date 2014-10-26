@@ -1,0 +1,20 @@
+<template name="plantEdit">
+  <div class="section-content col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'plant_update_title'}}
+          <a class="pull-right" href="{{pathFor 'plant'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Plants' id='editPlantForm' type='method' meteormethod='updatePlant' validation='none' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'plant_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

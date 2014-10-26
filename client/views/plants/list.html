@@ -1,0 +1,40 @@
+<template name="plants">
+  {{#if plants.count}}
+    {{> plantsList}}
+  {{else}}
+    {{> plantsEmpty}}
+  {{/if}}
+</template>
+
+<template name="plantsList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'plants'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{_ 'plant_name'}}</th>
+              <th colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each plants}}
+            <tr>
+              <td>{{name}}</td>
+              <td><a href="{{pathFor 'plant'}}"><span class="glyphicon glyphicon-search"></span></a></td>
+              <td><a href="{{pathFor 'plantEdit'}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'plantNew'}}">{{_ 'plant_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>

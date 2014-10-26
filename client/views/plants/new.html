@@ -1,0 +1,20 @@
+<template name="plantNew">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'plant_create_title'}}
+          <a class="pull-right" href="{{pathFor 'plants'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Plants' id='newPlantForm' type='method' meteormethod='createPlant'}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'plant_create'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

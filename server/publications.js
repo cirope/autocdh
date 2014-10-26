@@ -1,3 +1,7 @@
+Meteor.publish('plants', function () {
+  return Plants.find({ userId: this.userId })
+})
+
 Meteor.publish('customers', function () {
   var sub = this
   var worksHandles = []
