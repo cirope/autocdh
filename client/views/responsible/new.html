@@ -1,0 +1,20 @@
+<template name="responsibleNew">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'responsible_create_title'}}
+          <a class="pull-right" href="{{pathFor 'responsibleIndex'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Responsible' id='newResponsibleForm' type='method' meteormethod='createResponsible'}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'responsible_create'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
