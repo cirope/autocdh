@@ -13,8 +13,11 @@
       <div class="navbar-collapse collapse">
         {{#if currentUser}}
           <ul class="nav navbar-nav">
-            <li class="{{activeRouteClass 'requests' 'request' 'requestNew' 'requestEdit'}}">
-              <a href="{{pathFor 'requests'}}">{{_ 'requests'}}</a>
+            <li class="{{activeRouteClass 'samples' 'sample' 'sampleNew' 'sampleEdit'}}">
+              <a href="{{pathFor 'samples'}}">{{_ 'samples'}}</a>
+            </li>
+            <li class="{{activeRouteClass 'responsibleIndex' 'responsible' 'responsibleNew' 'responsibleEdit'}}">
+              <a href="{{pathFor 'responsibleIndex'}}">{{_ 'responsible_plural'}}</a>
             </li>
             <li class="{{activeRouteClass 'customers' 'customer' 'customerNew' 'customerEdit'}}">
               <a href="{{pathFor 'customers'}}">{{_ 'customers'}}</a>
