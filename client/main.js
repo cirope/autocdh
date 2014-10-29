@@ -6,3 +6,14 @@ Meteor.startup(function () {
     loadSimpleSchemaMessages()
   })
 })
+
+Template.registerHelper('firstOptionForSelect', function () {
+  return TAPi18n.__('first_option_for_select')
+})
+
+Template.registerHelper('l', function (date, format) {
+  if (typeof format !== 'string')
+    format = TAPi18n.__('datetime_default')
+
+  return moment(date).format(format)
+})

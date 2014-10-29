@@ -13,6 +13,9 @@
       <div class="navbar-collapse collapse">
         {{#if currentUser}}
           <ul class="nav navbar-nav">
+            <li class="{{activeRouteClass 'requests' 'request' 'requestNew' 'requestEdit'}}">
+              <a href="{{pathFor 'requests'}}">{{_ 'requests'}}</a>
+            </li>
             <li class="{{activeRouteClass 'customers' 'customer' 'customerNew' 'customerEdit'}}">
               <a href="{{pathFor 'customers'}}">{{_ 'customers'}}</a>
             </li>

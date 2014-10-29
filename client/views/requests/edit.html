@@ -1,0 +1,35 @@
+<template name="requestEdit">
+  <div class="section-content col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'request_update_title'}}
+          <a class="pull-right" href="{{pathFor 'request'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Requests' id='editRequestForm' type='method' meteormethod='updateRequest' doc=..}}
+          <fieldset>
+            {{> afQuickField name='day' autofocus=true}}
+            {{> afQuickField name='molding' options=moldingOptions firstOption=firstOptionForSelect}}
+            {{> afQuickField name='date'}}
+            {{> afQuickField name='paston'}}
+            {{> afQuickField name='receipt'}}
+            {{> afQuickField name='concreteType'}}
+            <div class="form-group">
+              <label class="control-label" for="customer-id">{{_ 'customer'}}</label>
+              <select class="form-control" name="customerId" id="customer-id" disabled>
+                <option value="">{{customer}}</option>
+              </select>
+            </div>
+            {{> afQuickField name='workId' options=workOptions firstOption=firstOptionForSelect}}
+            {{> afQuickField name='plantId' options=plantOptions firstOption=firstOptionForSelect}}
+            {{> afQuickField name='vehicle'}}
+            {{> afQuickField name='volume'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'request_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

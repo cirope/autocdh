@@ -1,0 +1,39 @@
+<template name="requests">
+  {{#if requests.count}}
+    {{> requestsList}}
+  {{else}}
+    {{> requestsEmpty}}
+  {{/if}}
+</template>
+
+<template name="requestsList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'requests'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{_ 'request_date'}}</th>
+              <th>{{_ 'request_receipt'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each requests}}
+            <tr>
+              <td><a href="{{pathFor 'request'}}">{{l date}}</a></td>
+              <td><a href="{{pathFor 'request'}}">{{receipt}}</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'requestNew'}}">{{_ 'request_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>
