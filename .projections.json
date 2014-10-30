@@ -73,7 +73,7 @@
       "Router.route('/{}', {open} name: '{}' {close})",
       "Router.route('/{}/new', {open} name: '{singular}New' {close})",
       "Router.route('/{}/:_id', {open} name: '{singular}' {close})",
-      "Router.route('/{}/:_id/edit', {open} name: '{singular}Edit', controller: '{camelcase}Controller' {close})",
+      "Router.route('/{}/:_id/edit', {open} name: '{singular}Edit', controller: '{singular|camelcase}Controller' {close})",
     ]
   },
   "server/publications/*.js": {
