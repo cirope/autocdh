@@ -1,0 +1,39 @@
+<template name="trucks">
+  {{#if trucks.count}}
+    {{> trucksList}}
+  {{else}}
+    {{> trucksEmpty}}
+  {{/if}}
+</template>
+
+<template name="trucksList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'trucks'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>{{_ 'truck_number'}}</th>
+              <th>{{_ 'truck_driver'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each trucks}}
+            <tr>
+              <td><a href="{{pathFor 'truck'}}">{{number}}</a></td>
+              <td><a href="{{pathFor 'truck'}}">{{driver}}</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'truckNew'}}">{{_ 'truck_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>
