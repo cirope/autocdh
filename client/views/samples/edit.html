@@ -10,7 +10,7 @@
       <div class="panel-body">
         {{#autoForm collection='Samples' id='editSampleForm' type='method' meteormethod='updateSample' doc=..}}
           <fieldset>
-            {{> afQuickField name='plantId' options=plantOptions autofocus='autofocus'}}
+            {{> afQuickField name='plantId' options=plantOptions autofocus=true}}
             {{> afQuickField name='responsibleId' options=responsibleOptions}}
             {{> afQuickField name='molding' options=moldingOptions}}
             {{> afQuickField name='date' type='datetime-local'}}
