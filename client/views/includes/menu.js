@@ -1,19 +1,5 @@
-Template.menu.helpers({
-  activeRouteClass: function () {
-    var args = Array.prototype.slice.call(arguments)
-
-    args.pop() // Hash added by Spacebars
-
-    var active = _.any(args, function (name) {
-      return Router.current() && Router.current().route.getName() === name
-    })
-
-    return active && 'active'
-  }
-})
-
 Template.menu.events({
-  'click a': function () {
+  'click a:not(.dropdown-toggle)': function () {
     $('.navbar-fixed-top .navbar-collapse.in').collapse('hide')
   },
 

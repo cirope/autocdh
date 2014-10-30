@@ -16,21 +16,8 @@
             <li class="{{activeRouteClass 'samples' 'sample' 'sampleNew' 'sampleEdit'}}">
               <a href="{{pathFor 'samples'}}">{{_ 'samples'}}</a>
             </li>
-            <li class="{{activeRouteClass 'responsibleIndex' 'responsible' 'responsibleNew' 'responsibleEdit'}}">
-              <a href="{{pathFor 'responsibleIndex'}}">{{_ 'responsible_plural'}}</a>
-            </li>
-            <li class="{{activeRouteClass 'customers' 'customer' 'customerNew' 'customerEdit'}}">
-              <a href="{{pathFor 'customers'}}">{{_ 'customers'}}</a>
-            </li>
-            <li class="{{activeRouteClass 'works' 'work' 'workNew' 'workEdit'}}">
-              <a href="{{pathFor 'works'}}">{{_ 'works'}}</a>
-            </li>
-            <li class="{{activeRouteClass 'plants' 'plant' 'plantNew' 'plantEdit'}}">
-              <a href="{{pathFor 'plants'}}">{{_ 'plants'}}</a>
-            </li>
-            <li class="{{activeRouteClass 'trucks' 'truck' 'truckNew' 'truckEdit'}}">
-              <a href="{{pathFor 'trucks'}}">{{_ 'trucks'}}</a>
-            </li>
+
+            {{> menuConfig}}
           </ul>
 
           <ul class="nav navbar-nav navbar-right">

@@ -7,6 +7,8 @@ Meteor.startup(function () {
   })
 })
 
+// Global helpers
+
 Template.registerHelper('firstOptionForSelect', function () {
   return TAPi18n.__('first_option_for_select')
 })
@@ -17,3 +19,20 @@ Template.registerHelper('l', function (date, format) {
 
   return moment(date).format(format)
 })
+
+Template.registerHelper('activeRouteClass', function () {
+  var args = Array.prototype.slice.call(arguments)
+
+  console.log(args)
+
+  args.pop() // Hash added by Spacebars
+
+  console.log(args)
+
+  var active = _.any(args, function (name) {
+    return Router.current() && Router.current().route.getName() === name
+  })
+
+  return active && 'active'
+})
+
