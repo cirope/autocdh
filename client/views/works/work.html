@@ -1,5 +1,15 @@
 <template name="work">
-  <div class="well well-sm">
-    {{name}}
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'work'}}: {{name}}
+          <a href="{{pathFor 'workEdit'}}" title="{{_ 'work_update_title'}}">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a class="pull-right" href="{{pathFor 'works'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+    </div>
   </div>
 </template>

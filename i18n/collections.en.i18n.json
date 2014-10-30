@@ -48,8 +48,15 @@
   "sample_empty_title": "Mmm",
   "sample_empty_banner": "There is no sample here, lets create some...",
   "sample_new": "New sample",
+  "works": "Works",
   "work": "Work",
   "work_name": "Name",
   "work_name_placeholder": "Enter a name...",
-  "work_create": "Create work"
+  "work_create_title": "Add a new work",
+  "work_create": "Create work",
+  "work_update_title": "Edit a work",
+  "work_update": "Update work",
+  "work_empty_title": "Mmm",
+  "work_empty_banner": "There is no work here, lets create some...",
+  "work_new": "New work"
 }
