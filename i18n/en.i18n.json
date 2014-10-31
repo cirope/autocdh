@@ -1,5 +1,7 @@
 {
   "app_name": "AutoCDH",
+  "yes": "Yes",
+  "no": "No",
   "cancel": "Cancel",
   "go_back": "Go back",
   "or": "or",

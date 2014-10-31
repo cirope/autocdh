@@ -1,0 +1,18 @@
+<template name="workSearch">
+  <div class="form-group">
+    <label class="control-label" for="work-search">{{_ 'work'}}</label>
+    <div class="input-group">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+      {{> inputAutocomplete settings=settings id="work-search" class="form-control" autocomplete="off" placeholder=placeholder}}
+      {{> afFieldInput name='workId' type='hidden'}}
+    </div>
+  </div>
+</template>
+
+<template name="workPill">
+  <div>{{name}}</div>
+</template>
+
+<template name="emptyWorkPill">
+  <div>{{_ 'work_search_empty'}} <kbd>{{getFilter}}</kbd></div>
+</template>

@@ -1,0 +1,8 @@
+{
+  "customer_search_placeholder": "Buscar cliente...",
+  "customer_search_empty": "No se encontraron clientes con el criterio",
+  "truck_search_placeholder": "Buscar camión...",
+  "truck_search_empty": "No se encontraron camiones con el criterio",
+  "work_search_placeholder": "Buscar obra...",
+  "work_search_empty": "No se encontraron obras con el criterio"
+}

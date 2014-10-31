@@ -1,0 +1,39 @@
+<template name="receiptEdit">
+  <div class="section-content col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'receipt_update_title'}}
+          <a class="pull-right" href="{{pathFor 'sampleEdit' _id=sampleId}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Receipts' id='editReceiptForm' type='method' meteormethod='updateReceipt' doc=..}}
+          <fieldset>
+            <p>
+              {{_ 'customer'}} /
+              <strong>{{customer}}</strong>
+            </p>
+            <p>
+              {{_ 'work'}} /
+              <strong>{{work}}</strong>
+            </p>
+            <p>
+              {{_ 'truck'}} /
+              <strong>{{truck}}</strong>
+            </p>
+            {{> afFieldInput name='sampleId' type='hidden'}}
+            {{> afFieldInput name='customerId' type='hidden'}}
+            {{> afFieldInput name='workId' type='hidden'}}
+            {{> afFieldInput name='truckId' type='hidden'}}
+            {{> afQuickField name='number'}}
+            {{> afQuickField name='volume'}}
+            {{> afQuickField name='surplus'}}
+            {{> afQuickField name='surplusComment' rows='4' label=false class=surplusCommentClass}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'receipt_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

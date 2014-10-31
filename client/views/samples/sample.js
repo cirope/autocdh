@@ -15,5 +15,9 @@ Template.sample.helpers({
 
   responsible: function () {
     return Responsible.findOne(this.responsibleId).name
+  },
+
+  sampleReceipt: function () {
+    return Receipts.findOne({ sampleId: this._id })
   }
 })
