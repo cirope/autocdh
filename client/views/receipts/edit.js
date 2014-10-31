@@ -10,7 +10,7 @@ Template.receiptEdit.helpers({
   truck: function () {
     var truck = Trucks.findOne(this.truckId)
 
-    return [truck.number, truck.driver].join(' | ')
+    return [truck.number, this.truckDriver].join(' | ')
   },
 
   surplusCommentClass: function () {
