@@ -1,0 +1,27 @@
+<template name="concreteNew">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'concrete_create_title'}}
+          <a class="pull-right" href="{{pathFor 'receiptNew' sample_id=sample._id}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Concretes' id='newConcreteForm' type='method' meteormethod='createConcrete'}}
+          <fieldset>
+            {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
+            {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
+            {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
+            {{> afQuickField name='aggregateId' options=aggregateOptions}}
+            {{> afQuickField name='settlementId' options=settlementOptions}}
+            {{> afQuickField name='typeId' options=typeOptions}}
+            {{> afQuickField name='additiveId' options=additiveOptions}}
+            {{> afQuickField name='dosage'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'concrete_create'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,51 @@
+<template name="concrete">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'concrete'}}
+          <a href="{{pathFor 'concreteEdit'}}" title="{{_ 'concrete_update_title'}}">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'strength'}} /
+          <strong>{{strength}}</strong>
+        </p>
+
+        <p>
+          {{_ 'download'}} /
+          <strong>{{download}}</strong>
+        </p>
+
+        <p>
+          {{_ 'aggregate'}} /
+          <strong>{{aggregate}}</strong>
+        </p>
+
+        <p>
+          {{_ 'settlement'}} /
+          <strong>{{settlement}}</strong>
+        </p>
+
+        <p>
+          {{_ 'type'}} /
+          <strong>{{type}}</strong>
+        </p>
+
+        <p>
+          {{_ 'additive'}} /
+          <strong>{{additive}}</strong>
+        </p>
+
+        <p>
+          {{_ 'concrete_dosage'}} /
+          <strong>{{dosage}}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
