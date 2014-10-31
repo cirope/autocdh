@@ -16,7 +16,17 @@ Template.login.events({
     Meteor.loginWithPassword(email, password, function (error) {
       loginErrors.set(!!error)
 
-      if (! error) { Router.go('root') }
+        if (! error) {
+          // Default value
+          loadAdditives()
+          loadAggregates()
+          loadDownloads()
+          loadSettlements()
+          loadStrengths()
+          loadTypes()
+
+          Router.go('root')
+        }
     })
 
     return false
