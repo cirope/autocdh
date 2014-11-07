@@ -13,10 +13,10 @@
             {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
             {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
             {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
-            {{> afQuickField name='aggregateId' options=aggregateOptions}}
-            {{> afQuickField name='settlementId' options=settlementOptions}}
-            {{> afQuickField name='typeId' options=typeOptions}}
-            {{> afQuickField name='additiveId' options=additiveOptions}}
+            {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=false}}
+            {{> afQuickField name='settlementId' options=settlementOptions firstOption=false}}
+            {{> afQuickField name='typeId' options=typeOptions firstOption=false}}
+            {{> afQuickField name='additiveId' options=additiveOptions firstOption=false}}
             {{> afQuickField name='dosage'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'concrete_create'}}</button>
