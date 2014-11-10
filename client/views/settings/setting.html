@@ -1,0 +1,18 @@
+<template name="setting">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'settings'}}
+          <a href="{{pathFor 'settingEdit'}}" title="{{_ 'settings_update_title'}}">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p><span class="label-id">{{_ 'settings_flowmeter_correction'}}:</span> {{flowmeterCorrection}}</p>
+      </div>
+    </div>
+  </div>
+</template>

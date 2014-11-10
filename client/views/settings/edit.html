@@ -1,0 +1,20 @@
+<template name="settingEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'settings'}}
+          <a class="pull-right" href="{{pathFor 'setting'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Settings' id='editSettingForm' type='method' meteormethod='updateSetting' doc=..}}
+          <fieldset>
+            {{> afQuickField name='flowmeterCorrection' autofocus=true}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'save'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
