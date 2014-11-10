@@ -1,0 +1,36 @@
+<template name="formulaNew">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'formula_create_title'}}
+        <a class="pull-right" href="{{pathFor 'receiptNew' sample_id=sample._id}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Formulas' id='newFormulaForm' type='method' meteormethod='createFormula'}}
+        <fieldset>
+          <div class="col-md-6">
+            {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
+            {{> afQuickField name='settlementId' options=settlementOptions firstOption=firstOptionForSelect}}
+            {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=firstOptionForSelect}}
+            {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
+          </div>
+          <div class="col-md-6">
+            {{> afQuickField name='coding'}}
+            {{> afQuickField name='concrete'}}
+            {{> afQuickField name='water'}}
+            {{> afQuickField name='reducer'}}
+          </div>
+
+          <div class="col-md-6">
+            {{> afQuickField name='sands'}}
+          </div>
+          <div class="col-md-6">
+            {{> afQuickField name='gravels'}}
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'formula_create'}}</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
