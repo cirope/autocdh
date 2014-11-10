@@ -23,15 +23,19 @@ Tracker.autorun(function () {
     var formula    = Formulas.findOne(formulaId.get())
     var aggregates = _.union(formula.sands, formula.gravels)
 
-    _dosages.push({ name: TAPi18n.__('formula_concrete'), amount: formula.concrete })
-    _dosages.push({ name: TAPi18n.__('formula_water'), amount: formula.water })
+    _dosages.push({ name: TAPi18n.__('formula_concrete'), amount: formula.concrete, absorption: 0 })
+    _dosages.push({ name: TAPi18n.__('formula_water'), amount: formula.water, absorption: 0 })
 
     aggregates.forEach(function (aggregate) {
-      _dosages.push({ name: aggregate.name, amount: aggregate.amount })
+      _dosages.push({
+        name:       aggregate.name,
+        amount:     aggregate.amount,
+        absorption: aggregate.absorption
+      })
     })
   } else {
-    _dosages.push({ name: TAPi18n.__('formula_concrete') })
-    _dosages.push({ name: TAPi18n.__('formula_water') })
+    _dosages.push({ name: TAPi18n.__('formula_concrete'), absorption: 0 })
+    _dosages.push({ name: TAPi18n.__('formula_water'), absorption: 0 })
     _dosages.push({ name: TAPi18n.__('formula_sand') })
     _dosages.push({ name: TAPi18n.__('formula_gravel') })
   }

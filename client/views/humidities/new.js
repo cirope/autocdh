@@ -1,17 +1,5 @@
-var _formula = function () {
-  var concrete = Concretes.findOne({ sampleId: this.sample._id })
-
-  return Formulas.findOne(
-    _.pick(concrete, 'strengthId', 'settlementId', 'aggregateId', 'downloadId')
-  )
-}
-
-var aggregates = function (formula) {
-  var _aggregates = _.union(formula.sands, formula.gravels)
-
-  return _aggregates.map(function (aggregate) {
-    return { name: aggregate.name, amount: aggregate.amount, absorption: aggregate.absorption }
-  })
+var _concrete = function () {
+  return Concretes.findOne({ sampleId: this.sample._id })
 }
 
 var flowmeterCorrection = function () {
@@ -37,28 +25,21 @@ Tracker.autorun(function () {
   // }, 0)
   var _ratio              = incorporated * flowmeterCorrection
 
-  ratio.set(inTruck ? null : _ratio.toFixed(2))
+  ratio.set(inTruck ? '' : _ratio.toFixed(2))
 })
 
 Template.humidityNew.helpers({
   doc: function () {
-    var formula = _formula.apply(this)
+    var concrete = _concrete.apply(this)
 
-    if (formula)
-      return {
-        incorporated: formula.water,
-        flowmeterCorrection: flowmeterCorrection(),
-        aggregates: aggregates(formula)
-      }
-    else
-      return {
-        flowmeterCorrection: flowmeterCorrection(),
-        aggregates: defaultAggregates()
-      }
+    return {
+      incorporated:        _.first(concrete.dosages).amount,
+      flowmeterCorrection: flowmeterCorrection(),
+      aggregates:          _.rest(concrete.dosages)
+    }
   },
 
-  ratio: function () {
-
+  reactiveRatio: function () {
     return ratio.get()
   }
 })

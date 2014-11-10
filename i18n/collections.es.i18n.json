@@ -6,6 +6,7 @@
   "concrete_dosages": "Dosificación teórica",
   "concrete_dosages_name": "Nombre",
   "concrete_dosages_amount": "Cantidad",
+  "concrete_dosages_absorption": "Absorción",
   "concrete_create_title": "Tipo de hormigón",
   "concrete_create": "Guardar",
   "concrete_update_title": "Editar tipo de hormigón",

@@ -10,7 +10,7 @@ Tracker.autorun(function () {
   // }, 0)
   var _ratio              = incorporated * flowmeterCorrection
 
-  ratio.set(inTruck ? null : _ratio.toFixed(2))
+  ratio.set(inTruck ? '' : _ratio.toFixed(2))
 })
 
 Template.humidityEdit.helpers({

@@ -6,6 +6,7 @@
   "concrete_dosages": "Dosages",
   "concrete_dosages_name": "Name",
   "concrete_dosages_amount": "Amount",
+  "concrete_dosages_absorption": "Absorption",
   "concrete_create_title": "Add a new concrete",
   "concrete_create": "Create concrete",
   "concrete_update_title": "Edit a concrete",
