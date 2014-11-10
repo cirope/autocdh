@@ -60,7 +60,14 @@
     "type": "controller",
     "template": [
       "{camelcase}Controller = RouteController.extend({open}",
-      "  data: function () {open} return {open} {}: {camelcase}.find() {close} {close}",
+      "  data: function () {open}",
+      "    return {open} {}: {camelcase}.find() {close}",
+      "  {close}",
+      "{close})\n",
+      "{singular|camelcase}Controller = RouteController.extend({open}",
+      "  data: function () {open}",
+      "    return {camelcase}.findOne(this.params._id)",
+      "  {close}",
       "{close})"
     ]
   },
