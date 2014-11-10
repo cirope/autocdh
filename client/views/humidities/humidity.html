@@ -1,0 +1,50 @@
+<template name="humidity">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'humidity'}}
+          <a href="{{pathFor 'humidityEdit'}}" title="{{_ 'humidity_update_title'}}">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'humidity_incorporated'}} /
+          <strong>{{incorporated}}</strong>
+        </p>
+
+        <p>
+          {{_ 'humidity_ice'}} /
+          <strong>{{ice}}</strong>
+        </p>
+
+        <p>
+          {{_ 'humidity_in_truck'}} /
+          <strong>{{inTruck}}</strong>
+        </p>
+
+        <h5>{{_ 'humidity_aggregates'}}</h5>
+
+        <dl class="dl-horizontal">
+          {{#each aggregates}}
+            <dt>{{name}}</dt>
+            <dd>{{amount}} ({{absorption}}%)</dd>
+          {{/each}}
+        </dl>
+
+        <p>
+          {{_ 'humidity_flowmeter_correction'}} /
+          <strong>{{flowmeterCorrection}}</strong>
+        </p>
+
+        <p>
+          {{_ 'humidity_ratio'}} /
+          <strong>{{ratio}}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</template>
