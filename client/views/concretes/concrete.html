@@ -41,10 +41,14 @@
           <strong>{{additive}}</strong>
         </p>
 
-        <p>
-          {{_ 'concrete_dosage'}} /
-          <strong>{{dosage}}</strong>
-        </p>
+        <h5>{{_ 'concrete_dosages'}}</h5>
+
+        <dl class="dl-horizontal">
+          {{#each dosages}}
+            <dt>{{name}}</dt>
+            <dd>{{amount}}</dd>
+          {{/each}}
+        </dl>
       </div>
     </div>
   </div>

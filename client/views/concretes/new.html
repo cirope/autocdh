@@ -8,7 +8,7 @@
         </h3>
       </div>
       <div class="panel-body">
-        {{#autoForm collection='Concretes' id='newConcreteForm' type='method' meteormethod='createConcrete'}}
+        {{#autoForm collection='Concretes' id='newConcreteForm' type='method' meteormethod='createConcrete' doc=doc}}
           <fieldset>
             {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
             {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
@@ -17,7 +17,7 @@
             {{> afQuickField name='settlementId' options=settlementOptions firstOption=false}}
             {{> afQuickField name='typeId' options=typeOptions firstOption=false}}
             {{> afQuickField name='additiveId' options=additiveOptions firstOption=false}}
-            {{> afQuickField name='dosage'}}
+            {{> afQuickField name='dosages'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'concrete_create'}}</button>
         {{/autoForm}}
