@@ -3,7 +3,9 @@ var _concrete = function () {
 }
 
 var flowmeterCorrection = function () {
-  return Settings.findOne().flowmeterCorrection || 1
+  var settings = Settings.findOne()
+
+  return (settings && settings.flowmeterCorrection) || 1
 }
 
 var defaultAggregates = function () {
