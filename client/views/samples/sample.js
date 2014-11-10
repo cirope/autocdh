@@ -23,5 +23,9 @@ Template.sample.helpers({
 
   sampleConcrete: function () {
     return Concretes.findOne({ sampleId: this._id })
+  },
+
+  sampleHumidity: function () {
+    return Humidities.findOne({ sampleId: this._id })
   }
 })
