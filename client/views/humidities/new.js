@@ -15,21 +15,6 @@ var defaultAggregates = function () {
   ]
 }
 
-var ratio = new ReactiveVar
-
-Tracker.autorun(function () {
-  var inTruck             = AutoForm.getFieldValue('newHumidityForm', 'inTruck')
-  var incorporated        = AutoForm.getFieldValue('newHumidityForm', 'incorporated')
-  var flowmeterCorrection = AutoForm.getFieldValue('newHumidityForm', 'flowmeterCorrection')
-
-  // var aggregatesHumidity  = aggregates.reduce(function (accumulator, aggregate) {
-  //   return accumulator + (aggregate.amount * (aggregate.humidity - aggregate.absorption) / 100)
-  // }, 0)
-  var _ratio              = incorporated * flowmeterCorrection
-
-  ratio.set(inTruck ? '' : _ratio.toFixed(2))
-})
-
 Template.humidityNew.helpers({
   doc: function () {
     var concrete = _concrete.apply(this)
@@ -39,10 +24,6 @@ Template.humidityNew.helpers({
       flowmeterCorrection: flowmeterCorrection(),
       aggregates:          _.rest(concrete.dosages)
     }
-  },
-
-  reactiveRatio: function () {
-    return ratio.get()
   }
 })
 
