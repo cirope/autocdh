@@ -1,0 +1,44 @@
+<template name="assayNew">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'assay_create_title'}}
+        <a class="pull-right" href="{{pathFor 'humidityNew' sample_id=sample._id}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Assays' id='newAssayForm' type='method' meteormethod='createAssay'}}
+        <fieldset>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
+              {{> afQuickField name='settlement'}}
+              {{> afQuickField name='extended'}}
+              {{> afQuickField name='settlementComparison'}}
+              {{> afQuickField name='temperature'}}
+              {{> afQuickField name='temperatureComparison'}}
+              {{> afQuickField name='air'}}
+              {{> afQuickField name='weight'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='hardenTime' type='datetime-local'}}
+              {{> afQuickField name='molding'}}
+              {{> afQuickField name='designation'}}
+              {{> afQuickField name='testTubes' options='allowed' firstOption=false}}
+              {{> afQuickField name='ages' options=agesOptions firstOption=false}}
+              {{> afQuickField name='cured' options=curedOptions firstOption=false}}
+              {{> afQuickField name='otherAssay' options=otherAssayOptions firstOption=false}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12">
+              {{> afQuickField name='observations' rows='4'}}
+            </div>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'assay_create'}}</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

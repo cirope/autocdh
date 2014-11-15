@@ -1,0 +1,44 @@
+<template name="_sample">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'sample'}}
+        <a href="{{pathFor 'sampleEdit'}}" title="{{_ 'sample_update_title'}}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        {{_ 'plant'}} /
+        <strong>{{plant}}</strong>
+      </p>
+
+      <p>
+        {{_ 'responsible'}} /
+        <strong>{{responsible}}</strong>
+      </p>
+
+      <p>
+        {{_ 'sample_molding'}} /
+        <strong>{{molding}}</strong>
+      </p>
+
+      <p>
+        {{_ 'sample_date'}} /
+        <strong>{{l date}}</strong>
+      </p>
+
+      <p>
+        {{_ 'sample_temperature'}} /
+        <strong>{{temperature}}</strong>
+      </p>
+
+      <p>
+        {{_ 'sample_humidity'}} /
+        <strong>{{humidity}}</strong>
+      </p>
+    </div>
+  </div>
+</template>

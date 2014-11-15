@@ -27,5 +27,9 @@ Template.sample.helpers({
 
   sampleHumidity: function () {
     return Humidities.findOne({ sampleId: this._id })
+  },
+
+  sampleAssay: function () {
+    return Assays.findOne({ sampleId: this._id })
   }
 })

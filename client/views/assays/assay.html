@@ -1,0 +1,86 @@
+<template name="assay">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'assay'}}
+        <a href="{{pathFor 'assayEdit'}}" title="{{_ 'assay_update_title'}}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a class="pull-right" href="{{pathFor 'humidityNew' sample_id=sampleId}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'assay_settlement'}} /
+            <strong>{{settlement}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_extended'}} /
+            <strong>{{extended}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_settlementComparison'}} /
+            <strong>{{settlementComparison}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_temperature'}} /
+            <strong>{{temperature}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_temperature_comparison'}} /
+            <strong>{{temperatureComparison}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_air'}} /
+            <strong>{{air}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_weight'}} /
+            <strong>{{weight}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'assay_harden_time'}} /
+            <strong>{{l hardenTime}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_molding'}} /
+            <strong>{{molding}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_designation'}} /
+            <strong>{{designation}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_test_tubes'}} /
+            <strong>{{testTubes}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_ages'}} /
+            <strong>{{ages}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_cured'}} /
+            <strong>{{cured}}</strong>
+          </p>
+          <p>
+            {{_ 'assay_other_assay'}} /
+            <strong>{{otherAssay}}</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            {{_ 'assay_observations'}} /
+            <strong>{{observations}}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
