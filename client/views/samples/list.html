@@ -7,35 +7,33 @@
 </template>
 
 <template name="samplesList">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'samples'}}
-          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
-        </h3>
-      </div>
-      <div class="panel-body">
-        <table class="table">
-          <thead>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'samples'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{{_ 'sample_date'}}</th>
+            <th>{{_ 'plant'}}</th>
+            <th>{{_ 'sample_molding'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each samples}}
             <tr>
-              <th>{{_ 'sample_date'}}</th>
-              <th>{{_ 'plant'}}</th>
-              <th>{{_ 'sample_molding'}}</th>
+              <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
+              <td><a href="{{pathFor 'sample'}}">{{plant plantId}}</a></td>
+              <td><a href="{{pathFor 'sample'}}">{{moldingText molding}}</a></td>
             </tr>
-          </thead>
-          <tbody>
-            {{#each samples}}
-              <tr>
-                <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
-                <td><a href="{{pathFor 'sample'}}">{{plant plantId}}</a></td>
-                <td><a href="{{pathFor 'sample'}}">{{moldingText molding}}</a></td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-        <a class="btn btn-primary" href="{{pathFor 'sampleNew'}}">{{_ 'sample_new'}}</a>
-      </div>
+          {{/each}}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="{{pathFor 'sampleNew'}}">{{_ 'sample_new'}}</a>
     </div>
   </div>
 </template>
