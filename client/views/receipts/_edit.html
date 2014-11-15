@@ -3,12 +3,14 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'receipt_update_title'}}
-        <a class="pull-right" href="{{pathFor 'sampleEdit' _id=sampleId}}">{{_ 'go_back'}}</a>
+        {{#unless disabled}}
+          <a class="pull-right" href="{{pathFor 'sampleEdit' _id=receipt.sampleId}}">{{_ 'go_back'}}</a>
+        {{/unless}}
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Receipts' id='editReceiptForm' type='method' meteormethod='updateReceipt' doc=..}}
-        <fieldset>
+      {{#autoForm collection='Receipts' id='editReceiptForm' type='method' meteormethod='updateReceipt' doc=receipt}}
+        <fieldset disabled={{disabled}}>
           <p>
             {{_ 'customer'}} /
             <strong>{{customer}}</strong>
@@ -30,7 +32,9 @@
           {{> afQuickField name='surplus'}}
           {{> afQuickField name='surplusComment' rows='4' label=false class=surplusCommentClass}}
         </fieldset>
-        <button type="submit" class="btn btn-primary">{{_ 'receipt_update'}}</button>
+        {{#unless disabled}}
+          <button type="submit" class="btn btn-primary">{{_ 'receipt_update'}}</button>
+        {{/unless}}
       {{/autoForm}}
     </div>
   </div>

@@ -1,16 +1,16 @@
 Template._receiptEdit.helpers({
   customer: function () {
-    return Customers.findOne(this.customerId).name
+    return Customers.findOne(this.receipt.customerId).name
   },
 
   work: function () {
-    return Works.findOne(this.workId).name
+    return Works.findOne(this.receipt.workId).name
   },
 
   truck: function () {
-    var truck = Trucks.findOne(this.truckId)
+    var truck = Trucks.findOne(this.receipt.truckId)
 
-    return [truck.number, this.truckDriver].join(' | ')
+    return [truck.number, this.receipt.truckDriver].join(' | ')
   },
 
   surplusCommentClass: function () {

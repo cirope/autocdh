@@ -1,13 +1,13 @@
 <template name="receiptEdit">
   {{#if disabled}}
-    {{> _receiptEdit}}
+    {{> _receiptEdit receipt=..}}
   {{else}}
     <div class="row">
       <div class="col-md-6">
         {{> _sampleEdit sample=sample disabled=true}}
       </div>
       <div class="col-md-6">
-        {{> _receiptEdit}}
+        {{> _receiptEdit receipt=..}}
       </div>
     </div>
   {{/if}}
