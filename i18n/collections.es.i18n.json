@@ -89,7 +89,7 @@
   "humidity_aggregates": "Agregados",
   "humidity_aggregates_name": "Nombre",
   "humidity_aggregates_amount": "Cantidad",
-  "humidity_aggregates_humidity": "Contenido de humedad (%)",
+  "humidity_aggregates_humidity": "Humedad (%)",
   "humidity_aggregates_absorption": "Absorción (%)",
   "humidity_flowmeter_correction": "Factor de corrección del caudalímetro",
   "humidity_ratio": "Relación agua / cemento",

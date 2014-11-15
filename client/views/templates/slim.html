@@ -1,0 +1,51 @@
+<template name="afArrayField_slim">
+  <div class="panel panel-default">
+    <div class="panel-heading">{{afFieldLabelText name=this.atts.name}}</div>
+
+    {{#if afFieldIsInvalid name=this.atts.name}}
+      <div class="panel-body has-error">
+        <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+      </div>
+    {{/if}}
+
+    <div class="panel-body">
+      {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        <div class="item-container">
+          {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
+            <button type="button" class="btn btn-default btn-xs autoform-remove-item">
+              <span class="glyphicon glyphicon-minus"></span>
+            </button>
+          {{/if}}
+
+          <div class="row slim">
+            {{> afQuickField name=this.name label=false template='slim'}}
+          </div>
+        </div>
+      {{/afEachArrayItem}}
+
+      {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+        <button type="button" class="btn btn-default autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="afFormGroup_slim">
+  <div class="col-md-3">
+    <div class="form-group small {{#if afFieldIsInvalid name=this.atts.name}}has-error{{/if}}">
+      {{#unless skipLabel}}
+        <label {{bsFieldLabelAtts}}>
+          {{#if this.labelText}}
+            {{this.labelText}}
+          {{else}}
+            {{afFieldLabelText name=this.atts.name}}
+          {{/if}}
+        </label>
+      {{/unless}}
+      {{> afFieldInput this.afFieldInputAtts}}
+      <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+    </div>
+  </div>
+</template>

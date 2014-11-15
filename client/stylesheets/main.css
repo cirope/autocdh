@@ -1,3 +1,30 @@
 body {
   padding-top: 70px;
 }
+
+.row.slim {
+  margin: 0;
+  padding: 0;
+}
+
+.row.slim .panel {
+  margin-bottom: 10px;
+}
+
+.row.slim .panel-body {
+  padding: 5px 0;
+}
+
+.item-container {
+  position: relative;
+}
+
+.item-container .autoform-remove-item {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.row.slim .panel-default {
+  border: none;
+}
