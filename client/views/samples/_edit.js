@@ -1,4 +1,4 @@
-Template.sampleEdit.helpers({
+Template._sampleEdit.helpers({
   namePlaceholder: function () {
     return TAPi18n.__('sample_name_placeholder')
   },

@@ -1,0 +1,29 @@
+<template name="_receiptNew">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'receipt_create_title'}}
+        {{#unless disabled}}
+          <a class="pull-right" href="{{pathFor 'sampleEdit' _id=sample._id}}">{{_ 'go_back'}}</a>
+        {{/unless}}
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Receipts' id='newReceiptForm' type='method' meteormethod='createReceipt'}}
+        <fieldset disabled={{disabled}}>
+          {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
+          {{> customerSearch}}
+          {{> workSearch}}
+          {{> truckSearch}}
+          {{> afQuickField name='number'}}
+          {{> afQuickField name='volume'}}
+          {{> afQuickField name='surplus'}}
+          {{> afQuickField name='surplusComment' rows='4' label=false class='hidden'}}
+        </fieldset>
+        {{#unless disabled}}
+          <button type="submit" class="btn btn-primary">{{_ 'receipt_create'}}</button>
+        {{/unless}}
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

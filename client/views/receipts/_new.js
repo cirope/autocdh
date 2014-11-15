@@ -1,4 +1,4 @@
-Template.receiptNew.events({
+Template._receiptNew.events({
   'change [name="surplus"]': function (event) {
     var selected = $(event.currentTarget).is(':checked')
 

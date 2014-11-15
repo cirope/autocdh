@@ -1,0 +1,27 @@
+<template name="_sampleNew">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'sample_create_title'}}
+        {{#unless disabled}}
+          <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
+        {{/unless}}
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Samples' id='newSampleForm' type='method' meteormethod='createSample'}}
+        <fieldset disabled={{disabled}}>
+          {{> afQuickField name='plantId' options=plantOptions firstOption=false autofocus=true}}
+          {{> afQuickField name='responsibleId' options=responsibleOptions firstOption=false}}
+          {{> afQuickField name='molding' options=moldingOptions firstOption=false}}
+          {{> afQuickField name='date' type='datetime-local'}}
+          {{> afQuickField name='temperature'}}
+          {{> afQuickField name='humidity'}}
+        </fieldset>
+        {{#unless disabled}}
+          <button type="submit" class="btn btn-primary">{{_ 'sample_create'}}</button>
+        {{/unless}}
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

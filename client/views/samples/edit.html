@@ -1,25 +1,14 @@
 <template name="sampleEdit">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'sample_update_title'}}
-          <a class="pull-right" href="{{pathFor 'sample'}}">{{_ 'go_back'}}</a>
-        </h3>
+  {{#if disabled}}
+    {{>_sampleEdit}}
+  {{else}}
+    <div class="row">
+      <div class="col-md-6">
+        {{> _sampleEdit sample=..}}
       </div>
-      <div class="panel-body">
-        {{#autoForm collection='Samples' id='editSampleForm' type='method' meteormethod='updateSample' doc=..}}
-          <fieldset>
-            {{> afQuickField name='plantId' options=plantOptions autofocus=true firstOption=false}}
-            {{> afQuickField name='responsibleId' options=responsibleOptions firstOption=false}}
-            {{> afQuickField name='molding' options=moldingOptions firstOption=false}}
-            {{> afQuickField name='date' type='datetime-local'}}
-            {{> afQuickField name='temperature'}}
-            {{> afQuickField name='humidity'}}
-          </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'sample_update'}}</button>
-        {{/autoForm}}
+      <div class="col-md-6">
+        {{> _receiptNew disabled=true}}
       </div>
     </div>
-  </div>
+  {{/if}}
 </template>

@@ -1,4 +1,4 @@
-Template.sampleNew.helpers({
+Template._sampleNew.helpers({
   namePlaceholder: function () {
     return TAPi18n.__('sample_name_placeholder')
   },
