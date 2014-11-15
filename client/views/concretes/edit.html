@@ -1,27 +1,14 @@
 <template name="concreteEdit">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'concrete_update_title'}}
-          <a class="pull-right" href="{{pathFor 'receiptNew' sample_id=sampleId}}">{{_ 'go_back'}}</a>
-        </h3>
+  {{#if disabled}}
+    {{>_concreteEdit}}
+  {{else}}
+    <div class="row">
+      <div class="col-md-6">
+        {{> _concreteEdit concrete=..}}
       </div>
-      <div class="panel-body">
-        {{#autoForm collection='Concretes' id='editConcreteForm' type='method' meteormethod='updateConcrete' doc=..}}
-          <fieldset>
-            {{> afFieldInput name='sampleId' value=sampleId type='hidden'}}
-            {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
-            {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
-            {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=false}}
-            {{> afQuickField name='settlementId' options=settlementOptions firstOption=false}}
-            {{> afQuickField name='typeId' options=typeOptions firstOption=false}}
-            {{> afQuickField name='additiveId' options=additiveOptions firstOption=false}}
-            {{> afQuickField name='dosages'}}
-          </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'concrete_update'}}</button>
-        {{/autoForm}}
+      <div class="col-md-6">
+        {{> _humidityNew disabled=true}}
       </div>
     </div>
-  </div>
+  {{/if}}
 </template>

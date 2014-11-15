@@ -1,21 +1,5 @@
 Template.humidityEdit.helpers({
-  iceCheckAttrs: function () {
-    if (this.ice) return { checked: true }
-  },
-
-  iceInputClass: function () {
-    if (! this.ice) return 'hidden'
+  concrete: function () {
+    return Concretes.findOne({ sampleId: this.sampleId })
   }
 })
-
-Template.humidityEdit.events({
-  'change [name="toggleIce"]': function (event) {
-    var selected = $(event.currentTarget).is(':checked')
-
-    if (selected)
-      $('[name="ice"]').removeClass('hidden').focus()
-    else
-      $('[name="ice"]').addClass('hidden').val('')
-  }
-})
-

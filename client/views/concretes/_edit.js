@@ -1,4 +1,4 @@
-Template.concreteEdit.helpers({
+Template._concreteEdit.helpers({
   strengthOptions: function () {
     return Strengths.find().map(function (strength) {
       return { value: strength._id, label: strength.name }

@@ -43,7 +43,7 @@ Tracker.autorun(function () {
   dosages.set(_dosages)
 })
 
-Template.concreteNew.helpers({
+Template._concreteNew.helpers({
   doc: function () {
     return {
       dosages: dosages.get()

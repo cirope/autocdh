@@ -1,0 +1,29 @@
+<template name="_humidityEdit">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'humidity_update_title'}}
+        <a class="pull-right" href="{{pathFor 'concreteNew' sample_id=sampleId}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Humidities' id='editHumidityForm' type='method' meteormethod='updateHumidity' doc=..}}
+        <fieldset>
+          {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
+          {{> afQuickField name='incorporated' autofocus=true}}
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="toggleIce" {{iceCheckAttrs}}> {{_ 'humidity_ice'}}
+            </label>
+          </div>
+          {{> afQuickField name='ice' label=false class=iceInputClass}}
+          {{> afQuickField name='inTruck'}}
+          {{> afQuickField name='aggregates'}}
+          {{> afQuickField name='flowmeterCorrection' readonly=true}}
+          {{> afQuickField name='ratio' readonly=true}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'humidity_update'}}</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
