@@ -1,13 +1,13 @@
 <template name="humidityEdit">
   {{#if disabled}}
-    {{> _humidityEdit}}
+    {{> _humidityEdit humidity=..}}
   {{else}}
     <div class="row">
       <div class="col-md-6">
         {{> _concreteEdit concrete=concrete disabled=true}}
       </div>
       <div class="col-md-6">
-        {{> _humidityEdit}}
+        {{> _humidityEdit humidity=..}}
       </div>
     </div>
   {{/if}}

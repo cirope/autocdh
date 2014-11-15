@@ -7,7 +7,11 @@
         {{> _concreteEdit concrete=..}}
       </div>
       <div class="col-md-6">
-        {{> _humidityNew disabled=true}}
+        {{#if humidity}}
+          {{> _humidityEdit humidity=humidity disabled=true}}
+        {{else}}
+          {{> _humidityNew disabled=true}}
+        {{/if}}
       </div>
     </div>
   {{/if}}

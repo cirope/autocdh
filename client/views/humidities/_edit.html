@@ -3,12 +3,14 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'humidity_update_title'}}
-        <a class="pull-right" href="{{pathFor 'concreteNew' sample_id=sampleId}}">{{_ 'go_back'}}</a>
+        {{#unless disabled}}
+          <a class="pull-right" href="{{pathFor 'concreteNew' sample_id=humidity.sampleId}}">{{_ 'go_back'}}</a>
+        {{/unless}}
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Humidities' id='editHumidityForm' type='method' meteormethod='updateHumidity' doc=..}}
-        <fieldset>
+      {{#autoForm collection='Humidities' id='editHumidityForm' type='method' meteormethod='updateHumidity' doc=humidity}}
+        <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
           {{> afQuickField name='incorporated' autofocus=true}}
           <div class="checkbox">
@@ -22,7 +24,9 @@
           {{> afQuickField name='flowmeterCorrection' readonly=true}}
           {{> afQuickField name='ratio' readonly=true}}
         </fieldset>
-        <button type="submit" class="btn btn-primary">{{_ 'humidity_update'}}</button>
+        {{#unless disabled}}
+          <button type="submit" class="btn btn-primary">{{_ 'humidity_update'}}</button>
+        {{/unless}}
       {{/autoForm}}
     </div>
   </div>
