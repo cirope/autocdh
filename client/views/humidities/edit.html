@@ -1,4 +1,6 @@
 <template name="humidityEdit">
+  {{> humidityBreadcrumb sample=sample}}
+
   {{#if disabled}}
     {{> _humidityEdit humidity=..}}
   {{else}}

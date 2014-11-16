@@ -1,10 +1,12 @@
 <template name="humidityNew">
+  {{> humidityBreadcrumb sample=sample}}
+
   {{#if disabled}}
     {{> _humidityNew}}
   {{else}}
     <div class="row">
       <div class="col-md-6">
-        {{> concreteEdit concrete=concrete disabled=true}}
+        {{> _concreteEdit concrete=concrete disabled=true}}
       </div>
       <div class="col-md-6">
         {{> _humidityNew}}

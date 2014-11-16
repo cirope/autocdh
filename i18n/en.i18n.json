@@ -15,5 +15,6 @@
   "login_error": "User or password invalid",
   "logout": "Logout",
   "save": "Save",
-  "user": "User"
+  "user": "User",
+  "breadcrumb_step": "Step __count__"
 }

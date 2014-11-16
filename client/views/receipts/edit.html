@@ -1,4 +1,6 @@
 <template name="receiptEdit">
+  {{> receiptBreadcrumb sample=sample}}
+
   {{#if disabled}}
     {{> _receiptEdit receipt=..}}
   {{else}}

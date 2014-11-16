@@ -19,11 +19,12 @@ Template._humidityNew.helpers({
   doc: function () {
     var concrete = _concrete.apply(this)
 
-    return {
-      incorporated:        _.first(concrete.dosages).amount,
-      flowmeterCorrection: flowmeterCorrection(),
-      aggregates:          _.rest(concrete.dosages)
-    }
+    if (concrete)
+      return {
+        incorporated:        _.first(concrete.dosages).amount,
+        flowmeterCorrection: flowmeterCorrection(),
+        aggregates:          _.rest(concrete.dosages)
+      }
   }
 })
 

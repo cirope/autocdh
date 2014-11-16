@@ -1,6 +1,8 @@
 <template name="concreteEdit">
+  {{> concreteBreadcrumb sample=sample}}
+
   {{#if disabled}}
-    {{>_concreteEdit}}
+    {{> _concreteEdit}}
   {{else}}
     <div class="row">
       <div class="col-md-6">

@@ -15,5 +15,6 @@
   "login_error": "Usuario o contraseña inválidos",
   "logout": "Salir",
   "save": "Guardar",
-  "user": "Usuario"
+  "user": "Usuario",
+  "breadcrumb_step": "Paso __count__"
 }

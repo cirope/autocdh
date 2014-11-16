@@ -1,4 +1,6 @@
 <template name="assayEdit">
+  {{> assayBreadcrumb sample=sample}}
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
@@ -14,9 +16,7 @@
             {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
             {{> afQuickField name='settlement'}}
             {{> afQuickField name='extended'}}
-            {{> afQuickField name='settlementComparison'}}
             {{> afQuickField name='temperature'}}
-            {{> afQuickField name='temperatureComparison'}}
             {{> afQuickField name='air'}}
             {{> afQuickField name='weight'}}
           </div>
