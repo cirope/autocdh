@@ -1,7 +1,6 @@
 Template.assayNew.helpers({
   agesOptions: function () {
     return [
-      { value: '7',      label: TAPi18n.__('assay_ages_7') },
       { value: '7-28',   label: TAPi18n.__('assay_ages_7-28') },
       { value: '28',     label: TAPi18n.__('assay_ages_28') },
       { value: 'full',   label: TAPi18n.__('assay_ages_full') },

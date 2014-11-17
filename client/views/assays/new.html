@@ -14,26 +14,43 @@
           <div class="row">
             <div class="col-md-6">
               {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
-              {{> afQuickField name='settlement'}}
+              {{> afQuickField name='settlement' autofocus=true}}
               {{> afQuickField name='extended'}}
               {{> afQuickField name='temperature'}}
-              {{> afQuickField name='air'}}
-              {{> afQuickField name='weight'}}
-              {{> afQuickField name='hardenTime' type='datetime-local'}}
-            </div>
-            <div class="col-md-6">
-              {{> afQuickField name='molding'}}
-              {{> afQuickField name='designation'}}
-              {{> afQuickField name='testTubes' options='allowed' firstOption=false}}
-              {{> afQuickField name='ages' options=agesOptions firstOption=false}}
-              {{> afQuickField name='cured' options=curedOptions firstOption=false}}
               {{> afQuickField name='otherAssay' options=otherAssayOptions firstOption=false}}
             </div>
-          </div>
+            <div class="col-md-6">
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headring-molding">
+                  <a data-toggle="collapse" href="#molding" aria-expanded="true" aria-controls="molding">
+                    {{_ 'assay_molding'}}
+                  </a>
+                </div>
+                <div id="molding" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-molding">
+                  <div class="panel-body">
+                    {{> afQuickField name='designation'}}
+                    {{> afQuickField name='testTubes' options='allowed' firstOption=false}}
+                    {{> afQuickField name='ages' options=agesOptions firstOption=false}}
+                    {{> afQuickField name='cured' options=curedOptions firstOption=false}}
+                  </div>
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headring-others">
+                  <a data-toggle="collapse" href="#others" aria-expanded="true" aria-controls="others">
+                    {{_ 'assay_others'}}
+                  </a>
+                </div>
+                <div id="others" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-others">
+                  <div class="panel-body">
+                    {{> afQuickField name='air'}}
+                    {{> afQuickField name='weight'}}
+                    {{> afQuickField name='hardenTime' type='datetime-local'}}
+                  </div>
+                </div>
+              </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              {{> afQuickField name='observations' rows='4'}}
+              {{> afQuickField name='observations' rows='5'}}
             </div>
           </div>
         </fieldset>

@@ -1,7 +1,6 @@
 Template.assay.helpers({
   ages: function () {
     var ages = {
-      '7':      TAPi18n.__('assay_ages_7'),
       '7-28':   TAPi18n.__('assay_ages_7-28'),
       '28':     TAPi18n.__('assay_ages_28'),
       'full':   TAPi18n.__('assay_ages_full'),
