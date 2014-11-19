@@ -1,0 +1,56 @@
+<template name="crack">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'crack'}}: {{number}}
+          <a href="{{pathFor 'crackEdit'}}" title="{{_ 'crack_update_title'}}">
+            <span class="glyphicon glyphicon-pencil"></span>
+          </a>
+          <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'sample'}} /
+          <strong>{{sample}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_molding_in'}} /
+          <strong>{{l moldingIn}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_cracked_in'}} /
+          <strong>{{l crackedIn}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_test_tube_type'}} /
+          <strong>{{testTubeType}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_diameter'}} /
+          <strong>{{diameter}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_load'}} /
+          <strong>{{load}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_stress'}} /
+          <strong>{{stress}}</strong>
+        </p>
+
+        <p>
+          {{_ 'crack_other_assays'}} /
+          <strong>{{otherAssays}}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+</template>

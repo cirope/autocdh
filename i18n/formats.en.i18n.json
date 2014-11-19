@@ -1,3 +1,4 @@
 {
+  "date_default": "MM/DD/YYYY",
   "datetime_default": "MM/DD/YYYY HH:mm"
 }
