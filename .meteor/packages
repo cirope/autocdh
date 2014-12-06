@@ -12,7 +12,7 @@ ground:db
 meteorhacks:subs-manager
 reactive-var
 sacha:spin
-mizzao:bootstrap-3
 accounts-password
 francocatena:status
 mizzao:autocomplete
+mizzao:bootstrap-3

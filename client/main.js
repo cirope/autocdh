@@ -1,7 +1,9 @@
 Meteor.startup(function () {
+  var lang = 'es'
+
   languageLoaded.set(false)
 
-  TAPi18n.setLanguage('es').done(function () {
+  TAPi18n.setLanguage(lang).done(function () {
     languageLoaded.set(true)
     loadSimpleSchemaMessages()
   })
