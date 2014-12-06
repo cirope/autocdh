@@ -23,14 +23,10 @@ Template.registerHelper('l', function (date, format) {
 })
 
 Template.registerHelper('activeRouteClass', function () {
-  var args = Array.prototype.slice.call(arguments)
-
-  args.pop() // Hash added by Spacebars
-
-  var active = _.any(args, function (name) {
-    return Router.current() && Router.current().route.getName() === name
+  var router = Router.current()
+  var active = router && _.any(_.initial(arguments), function (name) {
+    return router.route.getName() === name
   })
 
   return active && 'active'
 })
-
