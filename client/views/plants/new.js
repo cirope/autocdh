@@ -7,9 +7,7 @@ Template.plantNew.helpers({
 AutoForm.addHooks('newPlantForm', {
   before: {
     createPlant: function (doc, template) {
-      doc._id = Random.id()
-
-      return doc
+      return _.extend(doc, { _id: Random.id() })
     }
   }
 })

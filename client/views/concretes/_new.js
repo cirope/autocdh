@@ -90,9 +90,7 @@ Template._concreteNew.helpers({
 AutoForm.addHooks('newConcreteForm', {
   before: {
     createConcrete: function (doc, template) {
-      doc._id = Random.id()
-
-      return doc
+      return _.extend(doc, { _id: Random.id() })
     }
   }
 })

@@ -1,9 +1,7 @@
 AutoForm.addHooks('newSettingForm', {
   before: {
     createSetting: function (doc, template) {
-      doc._id = Random.id()
-
-      return doc
+      return _.extend(doc, { _id: Random.id() })
     }
   }
 })
