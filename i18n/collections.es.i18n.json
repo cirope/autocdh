@@ -135,6 +135,8 @@
   "responsible_new": "Nuevo responsable",
   "samples": "Muestras",
   "sample": "Muestra",
+  "sample_name": "Nombre",
+  "sample_name_placeholder": "Ingrese un nombre...",
   "sample_molding": "Moldeo",
   "sample_molding_plant": "Planta",
   "sample_molding_work": "Obra",

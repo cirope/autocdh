@@ -135,6 +135,8 @@
   "responsible_new": "New responsible",
   "samples": "Samples",
   "sample": "Sample",
+  "sample_name": "Name",
+  "sample_name_placeholder": "Enter a name...",
   "sample_molding": "Molding",
   "sample_molding_plant": "Plant",
   "sample_molding_work": "Work",

@@ -9,14 +9,17 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Samples' id='editSampleForm' type='method' meteormethod='updateSample' doc=sample}}
+      {{#autoForm collection='Samples' id='editSampleForm' type='method' validation='blur' meteormethod='updateSample' doc=sample}}
         <fieldset disabled={{disabled}}>
-          {{> afQuickField name='plantId' options=plantOptions autofocus=true firstOption=false}}
-          {{> afQuickField name='responsibleId' options=responsibleOptions firstOption=false}}
-          {{> afQuickField name='molding' options=moldingOptions firstOption=false}}
-          {{> afQuickField name='date' type='datetime-local'}}
-          {{> afQuickField name='temperature'}}
-          {{> afQuickField name='humidity'}}
+          {{> afQuickField name='name'}}
+          {{> afQuickField name='plantId'}}
+          {{> afQuickField name='responsibleId'}}
+          {{> afQuickField name='molding'}}
+          {{> afQuickField name='date'}}
+          <div class="row">
+            <div class="col-md-6">{{> afQuickField name='temperature'}}</div>
+            <div class="col-md-6">{{> afQuickField name='humidity'}}</div>
+          </div>
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'sample_update'}}</button>

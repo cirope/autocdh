@@ -18,17 +18,19 @@
       <table class="table">
         <thead>
           <tr>
+            <th>{{_ 'sample_name'}}</th>
             <th>{{_ 'sample_date'}}</th>
-            <th>{{_ 'plant'}}</th>
-            <th>{{_ 'sample_molding'}}</th>
+            <th class="hidden-xs">{{_ 'plant'}}</th>
+            <th class="hidden-xs">{{_ 'sample_molding'}}</th>
           </tr>
         </thead>
         <tbody>
           {{#each samples}}
             <tr>
+              <td><a href="{{pathFor 'sample'}}">{{name}}</a></td>
               <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
-              <td><a href="{{pathFor 'sample'}}">{{plant plantId}}</a></td>
-              <td><a href="{{pathFor 'sample'}}">{{moldingText molding}}</a></td>
+              <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{plant plantId}}</a></td>
+              <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{moldingText molding}}</a></td>
             </tr>
           {{/each}}
         </tbody>
