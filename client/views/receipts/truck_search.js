@@ -33,3 +33,7 @@ Template.truckSearch.helpers({
     }
   }
 })
+
+Tracker.autorun(function () {
+  if (selectedTruck.get()) $('[name="truckId"]').blur()
+})

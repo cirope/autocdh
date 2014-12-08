@@ -11,7 +11,7 @@ Template.workSearch.helpers({
       template: Template.workPill,
       noMatchTemplate: Template.emptyWorkPill,
       callback: function (work) {
-        $('[name="workId"]').val(work._id)
+        $('[name="workId"]').val(work._id).blur()
       }
     }
 

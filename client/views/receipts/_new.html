@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Receipts' id='newReceiptForm' type='method' meteormethod='createReceipt'}}
+      {{#autoForm collection='Receipts' id='newReceiptForm' validation='blur' type='method' meteormethod='createReceipt'}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
           {{> customerSearch}}
@@ -18,7 +18,7 @@
           {{> afQuickField name='number'}}
           {{> afQuickField name='volume'}}
           {{> afQuickField name='surplus'}}
-          {{> afQuickField name='surplusComment' rows='4' label=false class='hidden'}}
+          {{> afQuickField name='surplusComment' class='hidden'}}
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'receipt_create'}}</button>

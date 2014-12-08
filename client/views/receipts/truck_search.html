@@ -1,11 +1,12 @@
 <template name="truckSearch">
-  <div class="form-group">
+  <div class="form-group {{#if afFieldIsInvalid name='truckId'}}has-error{{/if}}">
     <label class="control-label" for="truck-search">{{_ 'truck'}}</label>
     <div class="input-group">
       <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
       {{> inputAutocomplete settings=settings id="truck-search" class="form-control" autocomplete="off" placeholder=placeholder}}
       {{> afFieldInput name='truckId' value=selectedTruckId type='hidden'}}
     </div>
+    <span class="help-block">{{{afFieldMessage name='truckId'}}}</span>
   </div>
   {{#if selectedTruck}}
     <div class="form-group">

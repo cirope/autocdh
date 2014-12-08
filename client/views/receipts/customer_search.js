@@ -11,7 +11,7 @@ Template.customerSearch.helpers({
       template: Template.customerPill,
       noMatchTemplate: Template.emptyCustomerPill,
       callback: function (customer) {
-        $('[name="customerId"]').val(customer._id)
+        $('[name="customerId"]').val(customer._id).blur()
       }
     }
 

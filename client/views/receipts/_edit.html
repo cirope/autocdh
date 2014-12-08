@@ -9,7 +9,8 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Receipts' id='editReceiptForm' type='method' meteormethod='updateReceipt' doc=receipt}}
+      {{#autoForm collection='Receipts' id='editReceiptForm' validation='blur' type='method' meteormethod='updateReceipt' doc=receipt}}
+
         <fieldset disabled={{disabled}}>
           <p>
             {{_ 'customer'}} /
@@ -30,7 +31,7 @@
           {{> afQuickField name='number'}}
           {{> afQuickField name='volume'}}
           {{> afQuickField name='surplus'}}
-          {{> afQuickField name='surplusComment' rows='4' label=false class=surplusCommentClass}}
+          {{> afQuickField name='surplusComment' class=surplusCommentClass}}
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'receipt_update'}}</button>
