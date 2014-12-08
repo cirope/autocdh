@@ -8,9 +8,10 @@ Tracker.autorun(function () {
 
   if (templateForms[currentRoute]) {
     var form                = templateForms[currentRoute]
+    var sampleId            = AutoForm.getFieldValue(form, 'sampleId')
     var inTruck             = AutoForm.getFieldValue(form, 'inTruck')
-    var concrete            = AutoForm.getFieldValue(form, 'incorporated')
-    var water               = AutoForm.getFieldValue(form, 'aggregates.0.amount')
+    var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).dosages[0].amount
+    var water               = AutoForm.getFieldValue(form, 'incorporated')
     var flowmeterCorrection = AutoForm.getFieldValue(form, 'flowmeterCorrection')
     var aggregatesTracker   = AutoForm.arrayTracker.getForm(form).aggregates
     var aggregatesCount     = (aggregatesTracker && aggregatesTracker.visibleCount) || 0
@@ -31,8 +32,8 @@ Tracker.autorun(function () {
       }
     }
 
-    var ratio = (water * flowmeterCorrection + aggregatesHumidity) / concrete
+    var ratio = concrete && (water * flowmeterCorrection + aggregatesHumidity) / concrete
 
-    $('[name="ratio"]').val(inTruck ? '' : ratio.toFixed(2))
+    $('[name="ratio"]').val(inTruck || ! ratio ? '' : ratio.toFixed(2))
   }
 })

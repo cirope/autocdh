@@ -1,7 +1,3 @@
-var _concrete = function () {
-  return Concretes.findOne({ sampleId: this.sample._id })
-}
-
 var flowmeterCorrection = function () {
   var settings = Settings.findOne()
 
@@ -17,13 +13,13 @@ var defaultAggregates = function () {
 
 Template._humidityNew.helpers({
   doc: function () {
-    var concrete = _concrete.apply(this)
+    var concrete = this.sample && Concretes.findOne({ sampleId: this.sample._id })
 
     if (concrete)
       return {
-        incorporated:        _.first(concrete.dosages).amount,
+        incorporated:        concrete.dosages[1].amount,
         flowmeterCorrection: flowmeterCorrection(),
-        aggregates:          _.rest(concrete.dosages)
+        aggregates:          _.rest(concrete.dosages, 2)
       }
   }
 })
