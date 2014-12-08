@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Assays' id='editAssayForm' type='method' meteormethod='updateAssay' doc=..}}
+      {{#autoForm collection='Assays' id='editAssayForm' validation='blur' type='method' meteormethod='updateAssay' doc=..}}
         <fieldset>
           <div class="row">
             <div class="col-md-6">
@@ -17,7 +17,7 @@
               {{> afQuickField name='settlement' autofocus=true}}
               {{> afQuickField name='extended'}}
               {{> afQuickField name='temperature'}}
-              {{> afQuickField name='otherAssay' options=otherAssayOptions firstOption=false}}
+              {{> afQuickField name='otherAssay'}}
             </div>
             <div class="col-md-6">
               <div class="panel panel-default">
@@ -29,9 +29,9 @@
                 <div id="molding" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-molding">
                   <div class="panel-body">
                     {{> afQuickField name='designation'}}
-                    {{> afQuickField name='testTubes' options='allowed' firstOption=false}}
-                    {{> afQuickField name='ages' options=agesOptions firstOption=false}}
-                    {{> afQuickField name='cured' options=curedOptions firstOption=false}}
+                    {{> afQuickField name='testTubes'}}
+                    {{> afQuickField name='ages'}}
+                    {{> afQuickField name='cured'}}
                   </div>
                 </div>
               </div>
