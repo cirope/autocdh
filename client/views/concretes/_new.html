@@ -7,15 +7,15 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Concretes' id='newConcreteForm' type='method' meteormethod='createConcrete' doc=doc}}
+      {{#autoForm collection='Concretes' id='newConcreteForm' validation='blur' type='method' meteormethod='createConcrete' doc=doc}}
         <fieldset>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
-          {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
-          {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
-          {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=false}}
-          {{> afQuickField name='settlementId' options=settlementOptions firstOption=false}}
-          {{> afQuickField name='typeId' options=typeOptions firstOption=false}}
-          {{> afQuickField name='additiveId' options=additiveOptions firstOption=false}}
+          {{> afQuickField name='strengthId' firstOption=firstOptionForSelect data-formula-component=true}}
+          {{> afQuickField name='downloadId' firstOption=firstOptionForSelect data-formula-component=true}}
+          {{> afQuickField name='aggregateId' firstOption=false data-formula-component=true}}
+          {{> afQuickField name='settlementId' firstOption=false data-formula-component=true}}
+          {{> afQuickField name='typeId' firstOption=false}}
+          {{> afQuickField name='additiveId' firstOption=false}}
           {{> afQuickField name='dosages' template='slim'}}
         </fieldset>
         <button type="submit" class="btn btn-primary">{{_ 'concrete_create'}}</button>

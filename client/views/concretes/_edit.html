@@ -9,15 +9,15 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Concretes' id='editConcreteForm' type='method' meteormethod='updateConcrete' doc=concrete}}
+      {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method' meteormethod='updateConcrete' doc=concrete}}
         <fieldset disabled={{disabled}}>
-          {{> afFieldInput name='sampleId' value=sampleId type='hidden'}}
-          {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
-          {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
-          {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=false}}
-          {{> afQuickField name='settlementId' options=settlementOptions firstOption=false}}
-          {{> afQuickField name='typeId' options=typeOptions firstOption=false}}
-          {{> afQuickField name='additiveId' options=additiveOptions firstOption=false}}
+          {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
+          {{> afQuickField name='strengthId' firstOption=firstOptionForSelect}}
+          {{> afQuickField name='downloadId' firstOption=firstOptionForSelect}}
+          {{> afQuickField name='aggregateId' firstOption=false}}
+          {{> afQuickField name='settlementId' firstOption=false}}
+          {{> afQuickField name='typeId' firstOption=false}}
+          {{> afQuickField name='additiveId' firstOption=false}}
           {{> afQuickField name='dosages' template='slim'}}
         </fieldset>
         {{#unless disabled}}
