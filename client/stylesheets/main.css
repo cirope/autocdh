@@ -8,7 +8,7 @@ body {
 }
 
 .row.slim .panel {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .row.slim .panel-body {
@@ -21,15 +21,18 @@ body {
 
 .item-container .autoform-remove-item {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 5px;
+  right: -15px;
+  padding: 0em .25em;
 }
 
 .row.slim .panel-default {
   border: none;
 }
 
-[data-name="dosages.0.absorption"],
-[data-name="dosages.1.absorption"] {
+[data-group-name="dosages.0.absorption"],
+[data-group-name="dosages.1.absorption"],
+[data-item-name="dosages.0"] .autoform-remove-item,
+[data-item-name="dosages.1"] .autoform-remove-item {
   visibility: hidden;
 }

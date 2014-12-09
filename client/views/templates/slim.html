@@ -10,10 +10,10 @@
 
     <div class="panel-body">
       {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
-        <div class="item-container">
+        <div class="item-container" data-item-name="{{this.name}}">
           {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
             <button type="button" class="btn btn-default btn-xs autoform-remove-item">
-              <span class="glyphicon glyphicon-minus"></span>
+              <span class="glyphicon glyphicon-remove"></span>
             </button>
           {{/if}}
 
@@ -24,7 +24,7 @@
       {{/afEachArrayItem}}
 
       {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
-        <button type="button" class="btn btn-default autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
+        <button type="button" class="btn btn-sm btn-default pull-right autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       {{/if}}
@@ -33,7 +33,7 @@
 </template>
 
 <template name="afFormGroup_slim">
-  <div class="col-md-3" data-name="{{this.atts.name}}">
+  <div class="col-md-3" data-group-name="{{this.atts.name}}">
     <div class="form-group small {{#if afFieldIsInvalid name=this.atts.name}}has-error{{/if}}">
       {{#unless skipLabel}}
         <label {{bsFieldLabelAtts}}>
