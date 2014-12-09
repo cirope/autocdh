@@ -2,6 +2,17 @@ body {
   padding-top: 70px;
 }
 
+.item-container {
+  position: relative;
+}
+
+.item-container .autoform-remove-item {
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  padding: 0em .25em;
+}
+
 .row.slim {
   margin: 0;
   padding: 0;
@@ -13,17 +24,6 @@ body {
 
 .row.slim .panel-body {
   padding: 5px 0;
-}
-
-.item-container {
-  position: relative;
-}
-
-.item-container .autoform-remove-item {
-  position: absolute;
-  top: 5px;
-  right: -15px;
-  padding: 0em .25em;
 }
 
 .row.slim .panel-default {
