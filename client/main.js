@@ -6,6 +6,8 @@ Meteor.startup(function () {
   TAPi18n.setLanguage(lang).done(function () {
     languageLoaded.set(true)
     loadSimpleSchemaMessages()
+
+    $.fn.datetimepicker.defaults.language = 'es'
   })
 })
 

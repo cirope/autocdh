@@ -16,3 +16,5 @@ accounts-password
 francocatena:status
 mizzao:autocomplete
 mizzao:bootstrap-3
+tsega:bootstrap3-datetimepicker
+francocatena:autoform-bs-datetimepicker
