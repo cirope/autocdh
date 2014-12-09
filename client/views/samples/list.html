@@ -45,6 +45,8 @@
         </div>
 
         <br>
+      {{else}}
+        {{#unless ready}}{{> spinner}}{{/unless}}
       {{/if}}
 
       <a class="btn btn-primary" href="{{pathFor 'sampleNew'}}">{{_ 'sample_new'}}</a>
