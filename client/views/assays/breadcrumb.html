@@ -1,17 +1,17 @@
 <template name="assayBreadcrumb">
   <ol class="breadcrumb">
     <li>
-      <a href="{{pathFor 'sampleEdit' _id=sample._id}}">{{_ 'breadcrumb_step' count=1}}</a>
+      <a href="{{pathFor 'sampleEdit' _id=sample._id}}">{{{_ 'breadcrumb_step' count=1}}}</a>
     </li>
     <li>
-      <a href="{{pathFor 'receiptNew' sample_id=sample._id}}">{{_ 'breadcrumb_step' count=2}}</a>
+      <a href="{{pathFor 'receiptNew' sample_id=sample._id}}">{{{_ 'breadcrumb_step' count=2}}}</a>
     </li>
     <li>
-      <a href="{{pathFor 'concreteNew' sample_id=sample._id}}">{{_ 'breadcrumb_step' count=3}}</a>
+      <a href="{{pathFor 'concreteNew' sample_id=sample._id}}">{{{_ 'breadcrumb_step' count=3}}}</a>
     </li>
     <li>
-      <a href="{{pathFor 'humidityNew' sample_id=sample._id}}">{{_ 'breadcrumb_step' count=4}}</a>
+      <a href="{{pathFor 'humidityNew' sample_id=sample._id}}">{{{_ 'breadcrumb_step' count=4}}}</a>
     </li>
-    <li class="active">{{_ 'breadcrumb_step' count=5}}</li>
+    <li class="active">{{{_ 'breadcrumb_step' count=5}}}</li>
   </ol>
 </template>

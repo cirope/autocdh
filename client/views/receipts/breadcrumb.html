@@ -1,8 +1,8 @@
 <template name="receiptBreadcrumb">
   <ol class="breadcrumb">
     <li>
-      <a href="{{pathFor 'sampleEdit' _id=sample._id}}">{{_ 'breadcrumb_step' count=1}}</a>
+      <a href="{{pathFor 'sampleEdit' _id=sample._id}}">{{{_ 'breadcrumb_step' count=1}}}</a>
     </li>
-    <li class="active">{{_ 'breadcrumb_step' count=2}}</li>
+    <li class="active">{{{_ 'breadcrumb_step' count=2}}}</li>
   </ol>
 </template>
