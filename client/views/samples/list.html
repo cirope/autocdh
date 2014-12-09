@@ -36,6 +36,17 @@
           {{/each}}
         </tbody>
       </table>
+
+      {{#if nextPath}}
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <a class="btn btn-default btn-xs btn-block" href="{{nextPath}}">{{_ 'more'}}</a>
+          </div>
+        </div>
+
+        <br>
+      {{/if}}
+
       <a class="btn btn-primary" href="{{pathFor 'sampleNew'}}">{{_ 'sample_new'}}</a>
     </div>
   </div>

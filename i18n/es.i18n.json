@@ -16,5 +16,6 @@
   "logout": "Salir",
   "save": "Guardar",
   "user": "Usuario",
+  "more": "Más...",
   "breadcrumb_step": "Paso <span class=\"badge\">__count__</span>"
 }

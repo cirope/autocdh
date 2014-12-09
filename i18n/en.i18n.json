@@ -16,5 +16,6 @@
   "logout": "Logout",
   "save": "Save",
   "user": "User",
+  "more": "Load more...",
   "breadcrumb_step": "Step <span class=\"badge\">__count__</span>"
 }
