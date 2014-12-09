@@ -28,3 +28,8 @@ body {
 .row.slim .panel-default {
   border: none;
 }
+
+[data-name="dosages.0.absorption"],
+[data-name="dosages.1.absorption"] {
+  visibility: hidden;
+}

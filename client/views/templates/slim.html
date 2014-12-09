@@ -33,7 +33,7 @@
 </template>
 
 <template name="afFormGroup_slim">
-  <div class="col-md-3">
+  <div class="col-md-3" data-name="{{this.atts.name}}">
     <div class="form-group small {{#if afFieldIsInvalid name=this.atts.name}}has-error{{/if}}">
       {{#unless skipLabel}}
         <label {{bsFieldLabelAtts}}>
