@@ -2,6 +2,15 @@ body {
   padding-top: 70px;
 }
 
+.form-control {
+  height: auto;
+  padding: 6px 8px;
+}
+
+.input-group-addon {
+  padding: 6px 8px;
+}
+
 .item-container {
   position: relative;
 }
@@ -11,6 +20,10 @@ body {
   top: 5px;
   right: -15px;
   padding: 0em .25em;
+}
+
+.navbar-brand {
+  padding: 15px;
 }
 
 .row.slim {
