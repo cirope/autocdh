@@ -184,11 +184,11 @@
   "work": "Obra",
   "work_name": "Nombre",
   "work_name_placeholder": "Ingrese un nombre...",
-  "work_create_title": "Agregar un nuevo obra",
+  "work_create_title": "Agregar un nueva obra",
   "work_create": "Crear obra",
   "work_update_title": "Editar un obra",
   "work_update": "Actualizar obra",
   "work_empty_title": "Mmm",
-  "work_empty_banner": "No has cargado ningún obra, podés comenzar ahora...",
-  "work_new": "Nuevo obra"
+  "work_empty_banner": "No has cargado ninguna obra, podés comenzar ahora...",
+  "work_new": "Nueva obra"
 }
