@@ -2,6 +2,10 @@ body {
   padding-top: 70px;
 }
 
+.btn {
+  line-height: 1.2;
+}
+
 .form-control {
   height: auto;
   padding: 6px 8px;
