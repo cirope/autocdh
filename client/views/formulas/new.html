@@ -9,24 +9,28 @@
     <div class="panel-body">
       {{#autoForm collection='Formulas' id='newFormulaForm' type='method' meteormethod='createFormula'}}
         <fieldset>
-          <div class="col-md-6">
-            {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
-            {{> afQuickField name='settlementId' options=settlementOptions firstOption=firstOptionForSelect}}
-            {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=firstOptionForSelect}}
-            {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
-          </div>
-          <div class="col-md-6">
-            {{> afQuickField name='coding'}}
-            {{> afQuickField name='concrete'}}
-            {{> afQuickField name='water'}}
-            {{> afQuickField name='reducer'}}
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect autofocus=true}}
+              {{> afQuickField name='settlementId' options=settlementOptions firstOption=firstOptionForSelect}}
+              {{> afQuickField name='aggregateId' options=aggregateOptions firstOption=firstOptionForSelect}}
+              {{> afQuickField name='downloadId' options=downloadOptions firstOption=firstOptionForSelect}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='coding'}}
+              {{> afQuickField name='concrete'}}
+              {{> afQuickField name='water'}}
+              {{> afQuickField name='reducer'}}
+            </div>
           </div>
 
-          <div class="col-md-6">
-            {{> afQuickField name='sands' template='slim'}}
-          </div>
-          <div class="col-md-6">
-            {{> afQuickField name='gravels' template='slim'}}
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='sands' template='slim'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='gravels' template='slim'}}
+            </div>
           </div>
         </fieldset>
         <button type="submit" class="btn btn-primary">{{_ 'formula_create'}}</button>

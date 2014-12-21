@@ -23,13 +23,13 @@ follower-livedata@1.0.3
 francocatena:autoform-bs-datetimepicker@0.2.6
 francocatena:status@1.0.3
 geojson-utils@1.0.2
-ground:db@0.2.4
+ground:db@0.2.5
 ground:dictionary@0.1.2
 ground:localstorage@0.1.7
-ground:minimax@1.0.2
+ground:minimax@1.0.3
 ground:servertime@0.0.3
 ground:store@0.1.1
-ground:util@0.1.7
+ground:util@0.1.8
 html-tools@1.0.3
 htmljs@1.0.3
 http@1.0.9
