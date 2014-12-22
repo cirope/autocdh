@@ -1,0 +1,39 @@
+<template name="materials">
+  {{#if materials.count}}
+    {{> materialsList}}
+  {{else}}
+    {{> materialsEmpty}}
+  {{/if}}
+</template>
+
+<template name="materialsList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'materials'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>{{_ 'material_name'}}</th>
+            <th>{{_ 'material_absorption'}}</th>
+            <th>{{_ 'material_default'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each materials}}
+          <tr>
+            <td><a href="{{pathFor 'material'}}">{{name}}</a></td>
+            <td><a href="{{pathFor 'material'}}">{{_absorption noAbsorption absorption}}</a></td>
+            <td><a href="{{pathFor 'material'}}">{{_defaultMaterial defaultMaterial}}</a></td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="{{pathFor 'materialNew'}}">{{_ 'material_new'}}</a>
+    </div>
+  </div>
+</template>

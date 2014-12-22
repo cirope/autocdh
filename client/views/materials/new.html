@@ -1,0 +1,25 @@
+<template name="materialNew">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'material_create_title'}}
+          <a class="pull-right" href="{{pathFor 'materials'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Materials' id='newMaterialForm' type='method' meteormethod='createMaterial'}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+            {{> afQuickField name='noAbsorption'}}
+            <div class="{{absorptionClass}}">
+              {{> afQuickField name='absorption'}}
+            </div>
+            {{> afQuickField name='defaultMaterial'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'material_create'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
