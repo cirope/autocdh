@@ -10,15 +10,6 @@
       </h3>
     </div>
     <div class="panel-body">
-      <h5>{{_ 'material_aggregates'}}</h5>
-
-      <dl class="dl-horizontal">
-        {{#each aggregates}}
-          <dt>{{name}}</dt>
-          <dd>({{absorption}}%) {{isDefault}}</dd>
-        {{/each}}
-      </dl>
-
       <h5>{{_ 'material_concretes'}}</h5>
 
       <dl class="dl-horizontal">
@@ -27,6 +18,25 @@
           <dd>{{isDefault}}</dd>
         {{/each}}
       </dl>
+
+      <h5>{{_ 'material_sands'}}</h5>
+
+      <dl class="dl-horizontal">
+        {{#each sands}}
+          <dt>{{name}}</dt>
+          <dd>({{absorption}}%) {{isDefault}}</dd>
+        {{/each}}
+      </dl>
+
+      <h5>{{_ 'material_gravels'}}</h5>
+
+      <dl class="dl-horizontal">
+        {{#each gravels}}
+          <dt>{{name}}</dt>
+          <dd>({{absorption}}%) {{isDefault}}</dd>
+        {{/each}}
+      </dl>
+
     </div>
   </div>
 </template>
