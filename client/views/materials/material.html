@@ -1,24 +1,32 @@
 <template name="material">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'material'}}: {{name}}
-          <a href="{{pathFor 'materialEdit'}}" title="{{_ 'material_update_title'}}">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </a>
-          <a class="pull-right" href="{{pathFor 'materials'}}">{{_ 'go_back'}}</a>
-        </h3>
-      </div>
-      <div class="panel-body">
-        <p>
-          {{_ 'material_absorption'}} / <strong>{{absorption}}</strong>
-        </p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'materials'}}
+        <a href="{{pathFor 'materialEdit'}}" title="{{_ 'material_update_title'}}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <h5>{{_ 'material_aggregates'}}</h5>
 
-        <p>
-          {{_ 'material_default'}} / <strong>{{defaultMaterial}}</strong>
-        </p>
-      </div>
+      <dl class="dl-horizontal">
+        {{#each aggregates}}
+          <dt>{{name}}</dt>
+          <dd>({{absorption}}%) {{isDefault}}</dd>
+        {{/each}}
+      </dl>
+
+      <h5>{{_ 'material_concretes'}}</h5>
+
+      <dl class="dl-horizontal">
+        {{#each concretes}}
+          <dt>{{name}}</dt>
+          <dd>{{isDefault}}</dd>
+        {{/each}}
+      </dl>
     </div>
   </div>
 </template>

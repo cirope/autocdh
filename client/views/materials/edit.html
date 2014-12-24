@@ -1,25 +1,19 @@
 <template name="materialEdit">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'material_update_title'}}
-          <a class="pull-right" href="{{pathFor 'material'}}">{{_ 'go_back'}}</a>
-        </h3>
-      </div>
-      <div class="panel-body">
-        {{#autoForm collection='Materials' id='editMaterialForm' type='method' meteormethod='updateMaterial' doc=..}}
-          <fieldset>
-            {{> afQuickField name='name' autofocus=true}}
-            {{> afQuickField name='noAbsorption'}}
-            <div class="{{absorptionClass}}">
-              {{> afQuickField name='absorption'}}
-            </div>
-            {{> afQuickField name='defaultMaterial'}}
-          </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'material_update'}}</button>
-        {{/autoForm}}
-      </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'material_update_title'}}
+        <a class="pull-right" href="{{pathFor 'material'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Materials' id='editMaterialForm' type='method' validation='blur' meteormethod='updateMaterial' doc=..}}
+        <fieldset>
+          {{> afQuickField name='aggregates' template='slim'}}
+          {{> afQuickField name='concretes' template='slim'}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'material_update'}}</button>
+      {{/autoForm}}
     </div>
   </div>
 </template>
