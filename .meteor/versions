@@ -20,7 +20,7 @@ ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
-francocatena:autoform-bs-datetimepicker@0.2.8
+francocatena:autoform-bs-datetimepicker@0.3.2
 francocatena:status@1.0.3
 geojson-utils@1.0.2
 ground:db@0.3.1
