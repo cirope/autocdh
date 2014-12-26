@@ -15,6 +15,7 @@ sacha:spin
 accounts-password
 francocatena:status
 mizzao:autocomplete
-mizzao:bootstrap-3
 tsega:bootstrap3-datetimepicker
+twbs:bootstrap
 francocatena:autoform-bs-datetimepicker
+momentjs:moment

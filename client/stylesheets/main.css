@@ -47,9 +47,11 @@ body {
   border: none;
 }
 
-[data-group-name="dosages.0.absorption"],
-[data-group-name="dosages.1.absorption"],
 [data-item-name="dosages.0"] .autoform-remove-item,
 [data-item-name="dosages.1"] .autoform-remove-item {
   visibility: hidden;
+}
+
+[data-group-name$="_id"] {
+  display: none;
 }
