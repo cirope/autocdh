@@ -1,73 +1,80 @@
 <template name="formula">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'formula'}}
-          <a href="{{pathFor 'formulaEdit'}}" title="{{_ 'formula_update_title'}}">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </a>
-          <a class="pull-right" href="{{pathFor 'formulas'}}">{{_ 'go_back'}}</a>
-        </h3>
-      </div>
-      <div class="panel-body">
-        <p>
-          {{_ 'strength'}} /
-          <strong>{{strength}}</strong>
-        </p>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'formula'}}
+        <a href="{{pathFor 'formulaEdit'}}" title="{{_ 'formula_update_title'}}">
+          <span class="glyphicon glyphicon-pencil"></span>
+        </a>
+        <a class="pull-right" href="{{pathFor 'formulas'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'strength'}} /
+            <strong>{{strength}}</strong>
+          </p>
 
-        <p>
-          {{_ 'settlement'}} /
-          <strong>{{settlement}}</strong>
-        </p>
+          <p>
+            {{_ 'settlement'}} /
+            <strong>{{settlement}}</strong>
+          </p>
 
-        <p>
-          {{_ 'aggregate'}} /
-          <strong>{{aggregate}}</strong>
-        </p>
+          <p>
+            {{_ 'aggregate'}} /
+            <strong>{{aggregate}}</strong>
+          </p>
 
-        <p>
-          {{_ 'download'}} /
-          <strong>{{download}}</strong>
-        </p>
+          <p>
+            {{_ 'download'}} /
+            <strong>{{download}}</strong>
+          </p>
 
-        <p>
-          {{_ 'formula_coding'}} /
-          <strong>{{coding}}</strong>
-        </p>
+          <p>
+            {{_ 'formula_coding'}} /
+            <strong>{{coding}}</strong>
+          </p>
 
-        <p>
-          {{_ 'formula_concrete'}} /
-          <strong>{{concrete}}</strong>
-        </p>
+          <p>
+            {{_ 'formula_water'}} /
+            <strong>{{water}}</strong>
+          </p>
 
-        <p>
-          {{_ 'formula_water'}} /
-          <strong>{{water}}</strong>
-        </p>
+          <p>
+            {{_ 'formula_reducer'}} /
+            <strong>{{reducer}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <h5>{{_ 'formula_concretes'}}</h5>
 
-        <p>
-          {{_ 'formula_reducer'}} /
-          <strong>{{reducer}}</strong>
-        </p>
+          <dl class="dl-horizontal">
+            {{#each concretes}}
+              <dt>{{concreteName}}</dt>
+              <dd>{{amount}}</dd>
+            {{/each}}
+          </dl>
 
-        <h5>{{_ 'formula_sands'}}</h5>
+          <h5>{{_ 'formula_sands'}}</h5>
 
-        <dl class="dl-horizontal">
-          {{#each sands}}
-            <dt>{{name}}</dt>
-            <dd>{{amount}} ({{absorption}}%)</dd>
-          {{/each}}
-        </dl>
+          <dl class="dl-horizontal">
+            {{#each sands}}
+              <dt>{{sandName}}</dt>
+              <dd>{{amount}}</dd>
+            {{/each}}
+          </dl>
 
-        <h5>{{_ 'formula_gravels'}}</h5>
+          <h5>{{_ 'formula_gravels'}}</h5>
 
-        <dl class="dl-horizontal">
-          {{#each gravels}}
-            <dt>{{name}}</dt>
-            <dd>{{amount}} ({{absorption}}%)</dd>
-          {{/each}}
-        </dl>
+          <dl class="dl-horizontal">
+            {{#each gravels}}
+              <dt>{{gravelName}}</dt>
+              <dd>{{amount}}</dd>
+            {{/each}}
+          </dl>
+        </div>
       </div>
     </div>
   </div>

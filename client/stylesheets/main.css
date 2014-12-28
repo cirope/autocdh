@@ -1,5 +1,10 @@
 body {
-  padding-top: 70px;
+  padding-top: 80px;
+}
+
+label {
+  font-weight: normal;
+  margin-bottom: 2px;
 }
 
 .btn {
@@ -27,29 +32,23 @@ body {
 }
 
 .navbar-brand {
-  padding: 15px;
+  padding: 10px;
 }
 
 .row.slim {
-  margin: 0;
   padding: 0;
 }
 
 .row.slim .panel {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .row.slim .panel-body {
-  padding: 5px 0;
+  padding: 0;
 }
 
 .row.slim .panel-default {
   border: none;
-}
-
-[data-item-name="dosages.0"] .autoform-remove-item,
-[data-item-name="dosages.1"] .autoform-remove-item {
-  visibility: hidden;
 }
 
 [data-group-name$="_id"] {
