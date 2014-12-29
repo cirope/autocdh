@@ -23,7 +23,6 @@ Template.login.events({
         loadDownloads()
         loadSettlements()
         loadStrengths()
-        loadTypes()
 
         Router.go('root')
       }
