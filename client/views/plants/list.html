@@ -20,12 +20,14 @@
           <thead>
             <tr>
               <th>{{_ 'plant_name'}}</th>
+              <th>{{_ 'plant_flowmeter_correction'}}</th>
             </tr>
           </thead>
           <tbody>
           {{#each plants}}
             <tr>
               <td><a href="{{pathFor 'plant'}}">{{name}}</a></td>
+              <td><a href="{{pathFor 'plant'}}">{{flowmeterCorrection}}</a></td>
             </tr>
           {{/each}}
           </tbody>

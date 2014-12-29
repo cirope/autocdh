@@ -11,6 +11,7 @@
         {{#autoForm collection='Plants' id='editPlantForm' type='method' meteormethod='updatePlant' doc=..}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true}}
+            {{> afQuickField name='flowmeterCorrection'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'plant_update'}}</button>
         {{/autoForm}}

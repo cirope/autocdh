@@ -11,6 +11,7 @@
         {{#autoForm collection='Plants' id='newPlantForm' type='method' meteormethod='createPlant'}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+            {{> afQuickField name='flowmeterCorrection'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'plant_create'}}</button>
         {{/autoForm}}
