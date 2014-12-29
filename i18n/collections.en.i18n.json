@@ -177,7 +177,7 @@
   "receipt": "Receipt",
   "receipt_number": "Number",
   "receipt_number_placeholder": "Enter a number...",
-  "receipt_volume": "Volume (m²)",
+  "receipt_volume": "Volume (m³)",
   "receipt_surplus": "Surplus",
   "receipt_surplus_comment": "Surplus comment",
   "receipt_create_title": "Add a new receipt",

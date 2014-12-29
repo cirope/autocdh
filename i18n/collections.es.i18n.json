@@ -177,7 +177,7 @@
   "receipt": "Remito",
   "receipt_number": "Número",
   "receipt_number_placeholder": "Ingrese un número...",
-  "receipt_volume": "Volumen (m²)",
+  "receipt_volume": "Volumen (m³)",
   "receipt_surplus": "Sobrante",
   "receipt_surplus_comment": "Comentario",
   "receipt_create_title": "Datos del cliente y viaje",
