@@ -11,14 +11,22 @@
     <div class="panel-body">
       {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method' meteormethod='updateConcrete' doc=concrete}}
         <fieldset disabled={{disabled}}>
-          {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
+          {{> afFieldInput name='sampleId' value=sample._id}}
           {{> afQuickField name='strengthId' firstOption=firstOptionForSelect}}
           {{> afQuickField name='downloadId' firstOption=firstOptionForSelect}}
-          {{> afQuickField name='aggregateId' firstOption=false}}
-          {{> afQuickField name='settlementId' firstOption=false}}
-          {{> afQuickField name='typeId' firstOption=false}}
-          {{> afQuickField name='additiveId' firstOption=false}}
-          {{> afQuickField name='dosages' template='slim'}}
+          {{> afQuickField name='aggregateId'}}
+          {{> afQuickField name='settlementId'}}
+          {{> afQuickField name='additiveId'}}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              {{_ 'concrete_dosages'}}
+            </div>
+            <div class="panel-body">
+              {{> afQuickField name='concretes'}}
+              {{> afQuickField name='sands'}}
+              {{> afQuickField name='gravels'}}
+            </div>
+          </div>
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'concrete_update'}}</button>

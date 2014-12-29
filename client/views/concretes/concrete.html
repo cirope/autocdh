@@ -31,11 +31,6 @@
       </p>
 
       <p>
-        {{_ 'type'}} /
-        <strong>{{type}}</strong>
-      </p>
-
-      <p>
         {{_ 'additive'}} /
         <strong>{{additive}}</strong>
       </p>
@@ -43,8 +38,18 @@
       <h5>{{_ 'concrete_dosages'}}</h5>
 
       <dl class="dl-horizontal">
-        {{#each dosages}}
-          <dt>{{name}}</dt>
+        {{#each concretes}}
+          <dt>{{concreteName}}</dt>
+          <dd>{{amount}}</dd>
+        {{/each}}
+
+        {{#each sands}}
+          <dt>{{sandName}}</dt>
+          <dd>{{amount}}</dd>
+        {{/each}}
+
+        {{#each gravels}}
+          <dt>{{gravelName}}</dt>
           <dd>{{amount}}</dd>
         {{/each}}
       </dl>

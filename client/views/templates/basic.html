@@ -1,0 +1,49 @@
+<template name="afArrayField_basic">
+  <div data-cols="{{cols}}">
+    {{#if afFieldIsInvalid name=this.atts.name}}
+      <div class="has-error">
+        <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+      </div>
+    {{/if}}
+
+    {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+      <div class="item-container" data-item-name="{{this.name}}">
+        <div class="row basic">
+          {{> afQuickField name=this.name template='basic'}}
+        </div>
+
+        {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
+          <button type="button" class="btn btn-default btn-xs autoform-remove-item">
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        {{/if}}
+      </div>
+    {{/afEachArrayItem}}
+
+    {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+      <div class="clearfix">
+        <button type="button" class="btn btn-sm btn-default pull-right autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </div>
+    {{/if}}
+  </div>
+</template>
+
+<template name="afFormGroup_basic">
+  <div class="col-md-{{cols}}" data-group-name="{{this.atts.name}}">
+    <div class="form-group small {{#if afFieldIsInvalid name=this.atts.name}}has-error{{/if}}">
+      {{#unless skipLabel}}
+        <label {{bsFieldLabelAtts}}>
+          {{#if this.labelText}}
+            {{this.labelText}}
+          {{else}}
+            {{afFieldLabelText name=this.atts.name}}
+          {{/if}}
+        </label>
+      {{/unless}}
+      {{> afFieldInput this.afFieldInputAtts}}
+      <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+    </div>
+  </div>
+</template>
