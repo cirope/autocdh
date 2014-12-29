@@ -3,7 +3,6 @@ body {
 }
 
 label {
-  font-weight: normal;
   margin-bottom: 2px;
 }
 
@@ -13,7 +12,11 @@ label {
 
 .form-control {
   height: auto;
-  padding: 6px 8px;
+  padding: 3px 4px;
+}
+
+.form-group {
+  margin-bottom: 8px;
 }
 
 .input-group-addon {
@@ -33,6 +36,10 @@ label {
 
 .navbar-brand {
   padding: 10px;
+}
+
+.panel .panel-heading {
+  line-height: 1.2em;
 }
 
 .row.slim {
