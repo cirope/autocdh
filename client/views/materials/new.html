@@ -9,9 +9,9 @@
     <div class="panel-body">
       {{#autoForm collection='Materials' id='newMaterialForm' type='method' validation='blur' meteormethod='createMaterial'}}
         <fieldset>
-          {{> afQuickField name='concretes' template='slim'}}
-          {{> afQuickField name='sands' template='slim'}}
-          {{> afQuickField name='gravels' template='slim'}}
+          {{> afQuickField name='concretes'}}
+          {{> afQuickField name='sands'}}
+          {{> afQuickField name='gravels'}}
         </fieldset>
         <button type="submit" class="btn btn-primary">{{_ 'material_create'}}</button>
       {{/autoForm}}

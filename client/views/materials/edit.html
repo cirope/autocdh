@@ -9,9 +9,9 @@
     <div class="panel-body">
       {{#autoForm collection='Materials' id='editMaterialForm' type='method' validation='blur' meteormethod='updateMaterial' doc=..}}
         <fieldset>
-          {{> afQuickField name='concretes' cols=2 template='slim'}}
-          {{> afQuickField name='sands' cols=3 template='slim'}}
-          {{> afQuickField name='gravels' cols=3 template='slim'}}
+          {{> afQuickField name='concretes'}}
+          {{> afQuickField name='sands'}}
+          {{> afQuickField name='gravels'}}
         </fieldset>
         <button type="submit" class="btn btn-primary">{{_ 'material_update'}}</button>
       {{/autoForm}}
