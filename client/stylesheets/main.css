@@ -43,19 +43,23 @@ label {
   line-height: 1.2em;
 }
 
-.row.slim {
+.row.slim,
+.row.basic {
   padding: 0;
 }
 
-.row.slim .panel {
+.row.slim .panel,
+.row.basic .panel {
   margin-bottom: 0;
 }
 
-.row.slim .panel-body {
+.row.slim .panel-body,
+.row.basic .panel-body {
   padding: 0;
 }
 
-.row.slim .panel-default {
+.row.slim .panel-default,
+.row.basic .panel-default {
   border: none;
 }
 
