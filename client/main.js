@@ -21,7 +21,7 @@ Template.registerHelper('l', function (date, format) {
   if (typeof format !== 'string')
     format = TAPi18n.__('datetime_default')
 
-  return moment(date).format(format)
+  return date && moment(date).format(format)
 })
 
 Template.registerHelper('activeRouteClass', function () {
