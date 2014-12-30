@@ -8,7 +8,7 @@ Template.afArrayField_basic.helpers({
     var attsCols = this.atts.cols || 3
     var key      = route() + '.' + this.atts.name
 
-    return (cols[key] = cols[key] || 12 / +attsCols)
+    return (cols[key] = 12 / +attsCols)
   }
 })
 
