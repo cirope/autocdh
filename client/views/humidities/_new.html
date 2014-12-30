@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Humidities' id='newHumidityForm' validation='blur' type='method' meteormethod='createHumidity' doc=doc}}
+      {{#autoForm collection='Humidities' id='newHumidityForm' validation='blur' type='method' meteormethod='createHumidity' doc=..}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
           {{> afQuickField name='incorporated' autofocus=true}}
@@ -20,7 +20,15 @@
           </div>
           {{> afQuickField name='ice' label=false class='hidden'}}
           {{> afQuickField name='inTruck'}}
-          {{> afQuickField name='aggregates' template='slim'}}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              {{_ 'humidity_aggregates'}}
+            </div>
+            <div class="panel-body">
+              {{> afQuickField name='hSands'}}
+              {{> afQuickField name='hGravels'}}
+            </div>
+          </div>
           {{> afQuickField name='flowmeterCorrection' readonly=true}}
           {{> afQuickField name='ratio' readonly=true}}
         </fieldset>

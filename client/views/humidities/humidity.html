@@ -28,9 +28,13 @@
       <h5>{{_ 'humidity_aggregates'}}</h5>
 
       <dl class="dl-horizontal">
-        {{#each aggregates}}
-          <dt>{{name}}</dt>
-          <dd>{{amount}} ({{absorption}}%)</dd>
+        {{#each hSands}}
+          <dt>{{sandName}}</dt>
+          <dd>{{amount}}</dd>
+        {{/each}}
+        {{#each hGravels}}
+          <dt>{{gravelName}}</dt>
+          <dd>{{amount}}</dd>
         {{/each}}
       </dl>
 

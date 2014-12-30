@@ -1,10 +1,10 @@
 Template._humidityEdit.helpers({
   iceCheckAttrs: function () {
-    if (this.ice) return { checked: true }
+    if (this.humidity.ice) return { checked: true }
   },
 
   iceInputClass: function () {
-    if (! this.ice) return 'hidden'
+    if (! this.humidity.ice) return 'hidden'
   }
 })
 
