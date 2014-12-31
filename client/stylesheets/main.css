@@ -38,6 +38,10 @@ label {
   padding: 10px;
 }
 
+.panel {
+  margin-bottom: 10px;
+}
+
 .panel .panel-heading,
 .panel .panel-heading h3 {
   line-height: 1.2em;
