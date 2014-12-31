@@ -15,8 +15,14 @@
           {{> customerSearch}}
           {{> workSearch}}
           {{> truckSearch}}
-          {{> afQuickField name='number'}}
-          {{> afQuickField name='volume'}}
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='number'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='volume'}}
+            </div>
+          </div>
           {{> afQuickField name='surplus'}}
           {{> afQuickField name='surplusComment' class='hidden'}}
         </fieldset>
