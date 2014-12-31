@@ -6,6 +6,10 @@ label {
   margin-bottom: 2px;
 }
 
+.bottom {
+  padding-top: 20px;
+}
+
 .btn {
   line-height: 1.2;
 }

@@ -12,13 +12,25 @@
       {{#autoForm collection='Humidities' id='editHumidityForm' validation='blur' type='method' meteormethod='updateHumidity' doc=humidity}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
-          {{> afQuickField name='incorporated' autofocus=true}}
-          <div class="checkbox">
-            <label>
-              <input type="checkbox" name="toggleIce" {{iceCheckAttrs}}> {{_ 'humidity_ice'}}
-            </label>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='incorporated' autofocus=true}}
+            </div>
+            <div class="col-md-6 bottom">
+              <div class="row">
+                <div class="col-xs-4">
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox" name="toggleIce"> {{_ 'humidity_ice'}}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-xs-8">
+                  {{> afQuickField name='ice' label=false class='hidden'}}
+                </div>
+              </div>
+            </div>
           </div>
-          {{> afQuickField name='ice' label=false class=iceInputClass}}
           {{> afQuickField name='inTruck'}}
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -29,8 +41,15 @@
               {{> afQuickField name='hGravels'}}
             </div>
           </div>
-          {{> afQuickField name='flowmeterCorrection' readonly=true}}
-          {{> afQuickField name='ratio' readonly=true}}
+
+          <div class="row">
+            <div class="col-lg-6">
+              {{> afQuickField name='flowmeterCorrection'}}
+            </div>
+            <div class="col-lg-6">
+              {{> afQuickField name='ratio'}}
+            </div>
+          </div>
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'humidity_update'}}</button>
