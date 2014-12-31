@@ -9,7 +9,7 @@
   "assay_temperature": "Temperatura del hormigón fresco (°C)",
   "assay_others": "Otros ensayos de hormigón fresco",
   "assay_air": "Contenido de aire (%)",
-  "assay_weight": "Peso unitario (kg/m3)",
+  "assay_weight": "Peso unitario (kg/m³)",
   "assay_harden_time": "Tiempo inicial fragüe",
   "assay_molding": "Moldeo de probetas",
   "assay_designation": "Designación",

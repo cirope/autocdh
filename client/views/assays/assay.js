@@ -34,9 +34,5 @@ Template.assay.helpers({
 
   extended: function () {
     return TAPi18n.__(this.extended ? 'yes' : 'no')
-  },
-
-  molding: function () {
-    return TAPi18n.__(this.designation ? 'yes' : 'no')
   }
 })
