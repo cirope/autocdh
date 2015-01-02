@@ -24,8 +24,6 @@ Template._concreteNew.events({
 AutoForm.addHooks('newConcreteForm', {
   before: {
     createConcrete: function (doc, template) {
-      setTimeout(function () { formulaId.set(undefined) })
-
       return _.extend(doc, { _id: Random.id() })
     }
   }

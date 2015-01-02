@@ -1,6 +1,6 @@
 Template.concrete.helpers({
   concreteName: function () {
-    var materials  = Materials.findOne() || { concretes: [] }
+    var materials  = Materials.findOne() || {}
     var concreteId = this.id
     var concrete   = _.find(materials.concretes, function (concrete) {
       return concrete._id === concreteId
@@ -10,23 +10,23 @@ Template.concrete.helpers({
   },
 
   sandName: function () {
-    var materials = Materials.findOne() || { sands: [] }
+    var materials = Materials.findOne() || {}
     var sandId    = this.id
     var sand      = _.find(materials.sands, function (sand) {
       return sand._id === sandId
     })
 
-    return sand && [sand.name, '(' + sand.absorption + '%)'].join(' ')
+    return sand && sand.name
   },
 
   gravelName: function () {
-    var materials = Materials.findOne() || { gravels: [] }
+    var materials = Materials.findOne() || {}
     var gravelId  = this.id
     var gravel    = _.find(materials.gravels, function (gravel) {
       return gravel._id === gravelId
     })
 
-    return gravel && [gravel.name, '(' + gravel.absorption + '%)'].join(' ')
+    return gravel && gravel.name
   },
 
   strength: function () {

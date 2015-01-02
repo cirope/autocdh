@@ -14,7 +14,7 @@ Template.humidity.helpers({
       return sand._id === sandId
     })
 
-    return sand && [sand.name, '(' + sand.absorption + '%)'].join(' ')
+    return sand && sand.name
   },
 
   gravelName: function () {
@@ -24,6 +24,6 @@ Template.humidity.helpers({
       return gravel._id === gravelId
     })
 
-    return gravel && [gravel.name, '(' + gravel.absorption + '%)'].join(' ')
+    return gravel && gravel.name
   },
 })
