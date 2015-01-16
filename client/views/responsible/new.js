@@ -4,6 +4,16 @@ Template.responsibleNew.helpers({
   }
 })
 
+Template.responsibleNew.events({
+  'click [data-cancel]': function (event) {
+    event.stopPropagation()
+
+    setTimeout(function () {
+      Router.go('sampleNew')
+    })
+  }
+})
+
 AutoForm.addHooks('newResponsibleForm', {
   before: {
     createResponsible: function (doc, template) {

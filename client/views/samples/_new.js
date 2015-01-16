@@ -19,6 +19,17 @@ Template._sampleNew.events({
       AutoForm.resetForm('newSampleForm')
       Router.go('plantNew')
     }
+  },
+
+  'change [name="responsibleId"]': function (event) {
+    var responsible = $(event.currentTarget)
+
+    if (responsible.val() === 'new') {
+      responsible.val('')
+      save()
+      AutoForm.resetForm('newSampleForm')
+      Router.go('responsibleNew')
+    }
   }
 })
 

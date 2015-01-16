@@ -4,7 +4,7 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           {{_ 'plant_create_title'}}
-          <a class="pull-right" href="{{pathFor 'plants'}}">{{_ 'go_back'}}</a>
+          <a class="pull-right" href="#" data-cancel>{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
@@ -14,8 +14,6 @@
             {{> afQuickField name='flowmeterCorrection'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'plant_create'}}</button>
-          {{_ 'or'}}
-          <a href="#" class="lowercase" data-cancel>{{_ 'cancel'}}</a>
         {{/autoForm}}
       </div>
     </div>
