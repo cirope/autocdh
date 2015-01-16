@@ -4,6 +4,14 @@ Template.plantNew.helpers({
   }
 })
 
+Template.plantNew.events({
+  'click [data-cancel]': function () {
+    setTimeout(function () {
+      Router.go('sampleNew')
+    })
+  }
+})
+
 AutoForm.addHooks('newPlantForm', {
   before: {
     createPlant: function (doc, template) {

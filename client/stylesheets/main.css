@@ -38,6 +38,10 @@ label {
   padding: 0em .25em;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .navbar-brand {
   padding: 10px;
 }

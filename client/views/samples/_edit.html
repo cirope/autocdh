@@ -12,7 +12,7 @@
       {{#autoForm collection='Samples' id='editSampleForm' type='method' validation='blur' meteormethod='updateSample' doc=sample}}
         <fieldset disabled={{disabled}}>
           {{> afQuickField name='name'}}
-          {{> afQuickField name='plantId'}}
+          {{> afQuickField name='plantId' options=plantOptions}}
           {{> afQuickField name='responsibleId'}}
           {{> afQuickField name='molding'}}
           {{> afQuickField name='date'}}
