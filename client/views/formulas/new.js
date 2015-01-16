@@ -19,6 +19,17 @@ Template.formulaNew.events({
       AutoForm.resetForm('newFormulaForm')
       Router.go('formulaStrengthNew')
     }
+  },
+
+  'change [name="settlementId"]': function (event) {
+    var settlement = $(event.currentTarget)
+
+    if (settlement.val() === 'new') {
+      settlement.val('')
+      save()
+      AutoForm.resetForm('newFormulaForm')
+      Router.go('formulaSettlementNew')
+    }
   }
 })
 
