@@ -21,5 +21,11 @@ Template._concreteEdit.helpers({
     return Settlements.find({}, { sort: { createdAt: 1 } }).map(function (settlement) {
       return { value: settlement._id, label: settlement.name }
     })
+  },
+
+  additiveOptions: function () {
+    return Additives.find({}, { sort: { createdAt: 1 } }).map(function (additive) {
+      return { value: additive._id, label: additive.name }
+    })
   }
 })

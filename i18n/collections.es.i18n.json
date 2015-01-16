@@ -1,5 +1,11 @@
 {
-  "additive": "Aditivos",
+  "additives": "Aditivos",
+  "additive": "Aditivo",
+  "additive_name": "Nombre",
+  "additive_name_placeholder": "Ingrese un nombre...",
+  "additive_create_title": "Agregar un nuevo aditivo",
+  "additive_create": "Crear aditivo",
+  "additive_new": "Nuevo aditivo",
   "aggregates": "Tamaños máximo de agregado",
   "aggregate": "Tamaño máximo del agregado",
   "aggregate_name": "Nombre",

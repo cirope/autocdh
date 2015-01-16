@@ -77,6 +77,18 @@ Template._concreteNew.events({
       AutoForm.resetForm('newConcreteForm')
       Router.go('settlementNew', { sample_id: params && params.sample_id })
     }
+  },
+
+  'change [name="additiveId"]': function (event) {
+    var additive = $(event.currentTarget)
+    var params   = Router.current() && Router.current().params
+
+    if (additive.val() === 'new') {
+      additive.val('')
+      save()
+      AutoForm.resetForm('newConcreteForm')
+      Router.go('additiveNew', { sample_id: params && params.sample_id })
+    }
   }
 })
 
