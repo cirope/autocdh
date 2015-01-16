@@ -53,6 +53,18 @@ Template._concreteNew.events({
       AutoForm.resetForm('newConcreteForm')
       Router.go('downloadNew', { sample_id: params && params.sample_id })
     }
+  },
+
+  'change [name="aggregateId"]': function (event) {
+    var aggregate = $(event.currentTarget)
+    var params   = Router.current() && Router.current().params
+
+    if (aggregate.val() === 'new') {
+      aggregate.val('')
+      save()
+      AutoForm.resetForm('newConcreteForm')
+      Router.go('aggregateNew', { sample_id: params && params.sample_id })
+    }
   }
 })
 

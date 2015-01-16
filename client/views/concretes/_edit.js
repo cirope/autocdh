@@ -9,5 +9,11 @@ Template._concreteEdit.helpers({
     return Downloads.find({}, { sort: { name: 1 } }).map(function (download) {
       return { value: download._id, label: download.name }
     })
+  },
+
+  aggregateOptions: function () {
+    return Aggregates.find({}, { sort: { name: 1 } }).map(function (aggregate) {
+      return { value: aggregate._id, label: aggregate.name }
+    })
   }
 })

@@ -1,6 +1,12 @@
 {
   "additive": "Additive",
+  "aggregates": "Aggregates",
   "aggregate": "Aggregate",
+  "aggregate_name": "Name",
+  "aggregate_name_placeholder": "Enter a name...",
+  "aggregate_create_title": "Add a new aggregate",
+  "aggregate_create": "Create aggregate",
+  "aggregate_new": "New aggregate",
   "assays": "Assays",
   "assay": "Assay",
   "assay_settlement": "Settlement",

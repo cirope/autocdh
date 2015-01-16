@@ -1,6 +1,12 @@
 {
   "additive": "Aditivos",
+  "aggregates": "Tamaños máximo de agregado",
   "aggregate": "Tamaño máximo del agregado",
+  "aggregate_name": "Nombre",
+  "aggregate_name_placeholder": "Ingrese un nombre...",
+  "aggregate_create_title": "Agregar un nuevo tamaño de agregado",
+  "aggregate_create": "Crear agregado",
+  "aggregate_new": "Nuevo agregado",
   "assays": "Ensayos",
   "assay": "Ensayo",
   "assay_settlement": "Asentamiento medio (cm)",
