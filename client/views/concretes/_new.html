@@ -7,7 +7,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Concretes' id='newConcreteForm' validation='blur' type='method' meteormethod='createConcrete' doc=..}}
+      {{#autoForm collection='Concretes' id='newConcreteForm' validation='blur' type='method' meteormethod='createConcrete' doc=concrete}}
         <fieldset>
           {{> afFieldInput name='sampleId' value=sample._id}}
           {{> afQuickField name='strengthId' firstOption=firstOptionForSelect data-formula-component=true}}

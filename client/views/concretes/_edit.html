@@ -12,7 +12,7 @@
       {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method' meteormethod='updateConcrete' doc=concrete}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id}}
-          {{> afQuickField name='strengthId' firstOption=firstOptionForSelect}}
+          {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect}}
           {{> afQuickField name='downloadId' firstOption=firstOptionForSelect}}
           {{> afQuickField name='aggregateId'}}
           {{> afQuickField name='settlementId'}}
