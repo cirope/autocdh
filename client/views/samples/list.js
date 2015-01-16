@@ -4,12 +4,6 @@ Template.samplesList.helpers({
   },
 
   moldingText: function (molding) {
-    var moldings = {
-      plant:  TAPi18n.__('sample_molding_plant'),
-      work:   TAPi18n.__('sample_molding_work'),
-      remote: TAPi18n.__('sample_molding_remote')
-    }
-
-    return moldings[molding]
+    return TAPi18n.__('sample_molding_' + molding)
   }
 })
