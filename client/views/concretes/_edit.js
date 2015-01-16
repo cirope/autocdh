@@ -15,5 +15,11 @@ Template._concreteEdit.helpers({
     return Aggregates.find({}, { sort: { name: 1 } }).map(function (aggregate) {
       return { value: aggregate._id, label: aggregate.name }
     })
+  },
+
+  settlementOptions: function () {
+    return Settlements.find({}, { sort: { name: 1 } }).map(function (settlement) {
+      return { value: settlement._id, label: settlement.name }
+    })
   }
 })
