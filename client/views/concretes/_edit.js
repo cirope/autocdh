@@ -3,5 +3,11 @@ Template._concreteEdit.helpers({
     return Strengths.find({}, { sort: { name: 1 } }).map(function (strength) {
       return { value: strength._id, label: strength.name }
     })
+  },
+
+  downloadOptions: function () {
+    return Downloads.find({}, { sort: { name: 1 } }).map(function (download) {
+      return { value: download._id, label: download.name }
+    })
   }
 })

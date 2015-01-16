@@ -41,6 +41,18 @@ Template._concreteNew.events({
       AutoForm.resetForm('newConcreteForm')
       Router.go('strengthNew', { sample_id: params && params.sample_id })
     }
+  },
+
+  'change [name="downloadId"]': function (event) {
+    var download = $(event.currentTarget)
+    var params   = Router.current() && Router.current().params
+
+    if (download.val() === 'new') {
+      download.val('')
+      save()
+      AutoForm.resetForm('newConcreteForm')
+      Router.go('downloadNew', { sample_id: params && params.sample_id })
+    }
   }
 })
 
