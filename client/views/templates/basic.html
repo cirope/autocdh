@@ -42,7 +42,14 @@
           {{/if}}
         </label>
       {{/unless}}
-      {{> afFieldInput this.afFieldInputAtts}}
+      {{#if this.afFieldInputAtts.unit}}
+        <div class="input-group">
+          {{> afFieldInput this.afFieldInputAtts}}
+          <div class="input-group-addon">{{this.afFieldInputAtts.unit}}</div>
+        </div>
+      {{else}}
+        {{> afFieldInput this.afFieldInputAtts}}
+      {{/if}}
       <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
     </div>
   </div>
