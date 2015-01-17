@@ -3,9 +3,6 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'formula'}}
-        <a href="{{pathFor 'formulaEdit'}}" title="{{_ 'formula_update_title'}}">
-          <span class="glyphicon glyphicon-pencil"></span>
-        </a>
         <a class="pull-right" href="{{pathFor 'formulas'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -39,12 +36,12 @@
 
           <p>
             {{_ 'formula_water'}} /
-            <strong>{{water}}</strong>
+            <strong>{{water}} l/m³</strong>
           </p>
 
           <p>
             {{_ 'formula_reducer'}} /
-            <strong>{{reducer}}</strong>
+            <strong>{{reducer}} kg/m³</strong>
           </p>
         </div>
 
@@ -54,7 +51,7 @@
           <dl class="dl-horizontal">
             {{#each concretes}}
               <dt>{{concreteName}}</dt>
-              <dd>{{amount}}</dd>
+              <dd>{{amount}} kg/m³</dd>
             {{/each}}
           </dl>
 
@@ -63,7 +60,7 @@
           <dl class="dl-horizontal">
             {{#each sands}}
               <dt>{{sandName}}</dt>
-              <dd>{{amount}}</dd>
+              <dd>{{amount}} kg/m³</dd>
             {{/each}}
           </dl>
 
@@ -72,11 +69,15 @@
           <dl class="dl-horizontal">
             {{#each gravels}}
               <dt>{{gravelName}}</dt>
-              <dd>{{amount}}</dd>
+              <dd>{{amount}} kg/m³</dd>
             {{/each}}
           </dl>
         </div>
       </div>
+
+      <a href="{{pathFor 'formulaEdit'}}" class="btn btn-default" title="{{_ 'formula_update_title'}}">
+        {{_ 'formula_update_title'}}
+      </a>
     </div>
   </div>
 </template>
