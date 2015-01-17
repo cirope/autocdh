@@ -9,5 +9,11 @@ Template.formulaEdit.helpers({
     return Settlements.find({}, { sort: { createdAt: 1 } }).map(function (settlement) {
       return { value: settlement._id, label: settlement.name }
     })
+  },
+
+  aggregateOptions: function () {
+    return Aggregates.find({}, { sort: { createdAt: 1 } }).map(function (aggregate) {
+      return { value: aggregate._id, label: aggregate.name }
+    })
   }
 })

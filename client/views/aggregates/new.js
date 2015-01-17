@@ -3,6 +3,14 @@ Template.aggregateNew.helpers({
     return TAPi18n.__('aggregate_name_placeholder')
   },
 
+  backPath: function () {
+    var params = Router.current() && Router.current().params
+
+    return params && params.sample_id ?
+      Router.path('concreteNew', { sample_id: params.sample_id }) :
+      Router.path('formulaNew')
+  },
+
   sampleId: function () {
     return Router.current() && Router.current().params.sample_id
   }

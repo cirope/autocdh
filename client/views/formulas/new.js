@@ -30,6 +30,17 @@ Template.formulaNew.events({
       AutoForm.resetForm('newFormulaForm')
       Router.go('formulaSettlementNew')
     }
+  },
+
+  'change [name="aggregateId"]': function (event) {
+    var aggregate = $(event.currentTarget)
+
+    if (aggregate.val() === 'new') {
+      aggregate.val('')
+      save()
+      AutoForm.resetForm('newFormulaForm')
+      Router.go('formulaAggregateNew')
+    }
   }
 })
 
