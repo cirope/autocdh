@@ -160,7 +160,7 @@
   "plant": "Planta",
   "plant_name": "Nombre",
   "plant_name_placeholder": "Ingrese un nombre...",
-  "plant_flowmeter_correction": "Corrección del caudalímetro",
+  "plant_flowmeter_correction": "Factor de corrección del caudalímetro",
   "plant_create_title": "Agregar un nueva planta",
   "plant_create": "Crear planta",
   "plant_new": "Nueva planta",
