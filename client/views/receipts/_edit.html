@@ -12,22 +12,10 @@
       {{#autoForm collection='Receipts' id='editReceiptForm' validation='blur' type='method' meteormethod='updateReceipt' doc=receipt}}
 
         <fieldset disabled={{disabled}}>
-          <p>
-            {{_ 'customer'}} /
-            <strong>{{customer}}</strong>
-          </p>
-          <p>
-            {{_ 'work'}} /
-            <strong>{{work}}</strong>
-          </p>
-          <p>
-            {{_ 'truck'}} /
-            <strong>{{truck}}</strong>
-          </p>
           {{> afFieldInput name='sampleId' type='hidden'}}
-          {{> afFieldInput name='customerId' type='hidden'}}
-          {{> afFieldInput name='workId' type='hidden'}}
-          {{> afFieldInput name='truckId' type='hidden'}}
+          {{> customerSearch customer=customer}}
+          {{> workSearch work=work}}
+          {{> truckSearch truck=truck}}
           <div class="row">
             <div class="col-md-6">
               {{> afQuickField name='number'}}
@@ -37,7 +25,10 @@
             </div>
           </div>
           {{> afQuickField name='surplus'}}
-          {{> afQuickField name='surplusComment' class=surplusCommentClass}}
+
+          {{#if afFieldValueIs name='surplus' value=true}}
+            {{> afQuickField name='surplusComment'}}
+          {{/if}}
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'receipt_update'}}</button>

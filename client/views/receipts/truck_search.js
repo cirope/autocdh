@@ -1,18 +1,27 @@
-var selectedTruck = new ReactiveVar
+var currentTruck = function () {
+  var formId  = AutoForm.find('fields').formId
+  var truckId = AutoForm.getFieldValue(formId, 'truckId')
+
+  return truckId && Trucks.findOne(truckId)
+}
 
 Template.truckSearch.helpers({
   placeholder: function () {
     return TAPi18n.__('truck_search_placeholder')
   },
 
-  selectedTruck: function () {
-    return selectedTruck.get()
-  },
-
   selectedTruckId: function () {
-    var truck = selectedTruck.get()
+    var truck = currentTruck()
 
     return truck && truck._id
+  },
+
+  selectedTruckDriver: function () {
+    var truck = currentTruck()
+
+    console.log(truck)
+
+    return truck && truck.driver
   },
 
   settings: function () {
@@ -23,7 +32,7 @@ Template.truckSearch.helpers({
       template: Template.truckPill,
       noMatchTemplate: Template.emptyTruckPill,
       callback: function (truck) {
-        selectedTruck.set(truck)
+        $('[name="truckId"]').val(truck && truck._id).trigger('change')
       }
     }
 
@@ -32,8 +41,4 @@ Template.truckSearch.helpers({
       rules: [trucksRule]
     }
   }
-})
-
-Tracker.autorun(function () {
-  if (selectedTruck.get()) $('[name="truckId"]').blur()
 })

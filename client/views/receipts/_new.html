@@ -24,7 +24,10 @@
             </div>
           </div>
           {{> afQuickField name='surplus'}}
-          {{> afQuickField name='surplusComment' class='hidden'}}
+
+          {{#if afFieldValueIs name='surplus' value=true}}
+            {{> afQuickField name='surplusComment'}}
+          {{/if}}
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'receipt_create'}}</button>

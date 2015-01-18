@@ -3,15 +3,15 @@
     <label class="control-label" for="truck-search">{{_ 'truck'}}</label>
     <div class="input-group">
       <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
-      {{> inputAutocomplete settings=settings id="truck-search" class="form-control" autocomplete="off" placeholder=placeholder}}
-      {{> afFieldInput name='truckId' value=selectedTruckId type='hidden'}}
+      {{> inputAutocomplete settings=settings value=truck id="truck-search" class="form-control" autocomplete="off" placeholder=placeholder}}
+      {{> afFieldInput name='truckId' type='hidden'}}
     </div>
     <span class="help-block">{{{afFieldMessage name='truckId'}}}</span>
   </div>
-  {{#if selectedTruck}}
+  {{#if selectedTruckDriver}}
     <div class="form-group">
       <label class="control-label" for="truck-search">{{_ 'truck_driver'}}</label>
-      {{> afFieldInput name='truckDriver' value=selectedTruck.driver}}
+      {{> afFieldInput name='truckDriver' value=selectedTruckDriver}}
     </div>
   {{/if}}
 </template>

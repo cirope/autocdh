@@ -8,13 +8,7 @@ Template._receiptEdit.helpers({
   },
 
   truck: function () {
-    var truck = Trucks.findOne(this.receipt.truckId)
-
-    return [truck.number, this.receipt.truckDriver].join(' | ')
-  },
-
-  surplusCommentClass: function () {
-    return ! this.surplus && 'hidden'
+    return Trucks.findOne(this.receipt.truckId).number
   }
 })
 
