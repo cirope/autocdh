@@ -35,22 +35,27 @@
         <strong>{{additive}}</strong>
       </p>
 
+      <p>
+        {{_ 'concrete_water'}} /
+        <strong>{{water}} l/m³</strong>
+      </p>
+
       <h5>{{_ 'concrete_dosages'}}</h5>
 
       <dl class="dl-horizontal">
         {{#each concretes}}
           <dt>{{concreteName}}</dt>
-          <dd>{{amount}}</dd>
+          <dd>{{amount}} kg/m³</dd>
         {{/each}}
 
         {{#each sands}}
           <dt>{{sandName}}</dt>
-          <dd>{{amount}} ({{absorption}}%)</dd>
+          <dd>{{amount}} kg/m³ ({{absorption}}%)</dd>
         {{/each}}
 
         {{#each gravels}}
           <dt>{{gravelName}}</dt>
-          <dd>{{amount}} ({{absorption}}%)</dd>
+          <dd>{{amount}} kg/m³ ({{absorption}}%)</dd>
         {{/each}}
       </dl>
     </div>

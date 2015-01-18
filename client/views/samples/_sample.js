@@ -9,5 +9,13 @@ Template._sample.helpers({
 
   responsible: function () {
     return Responsible.findOne(this.responsibleId).name
+  },
+
+  temperature: function () {
+    return this.temperature ? this.temperature + ' °C' : '-'
+  },
+
+  humidity: function () {
+    return this.humidity ? this.humidity + '%' : '-'
   }
 })

@@ -12,7 +12,7 @@
     <div class="panel-body">
       <p>
         {{_ 'humidity_incorporated'}} /
-        <strong>{{incorporated}}</strong>
+        <strong>{{incorporated}} l/m³</strong>
       </p>
 
       <p>
@@ -30,17 +30,17 @@
       <dl class="dl-horizontal">
         {{#each hSands}}
           <dt>{{sandName}}</dt>
-          <dd>{{amount}} ({{absorption}}%)</dd>
+          <dd>{{amount}} kg/m³ ({{absorption}}%)</dd>
         {{/each}}
 
         {{#each hGravels}}
           <dt>{{gravelName}}</dt>
-          <dd>{{amount}} ({{absorption}}%)</dd>
+          <dd>{{amount}} kg/m³ ({{absorption}}%)</dd>
         {{/each}}
       </dl>
 
       <p>
-        {{_ 'humidity_ratio'}} /
+        {{_ 'humidity_ratio'}}
         <strong>{{ratio}}</strong>
       </p>
     </div>

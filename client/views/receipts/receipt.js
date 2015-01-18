@@ -14,6 +14,8 @@ Template.receipt.helpers({
   },
 
   surplus: function () {
-    return [TAPi18n.__(this.surplus ? 'yes' : 'no'), this.surplusComment].join(': ')
+    var hasSurplus = TAPi18n.__(this.surplus ? 'yes' : 'no')
+
+    return _.compact([hasSurplus, this.surplusComment]).join(': ')
   }
 })
