@@ -2,7 +2,7 @@ accounts-base@1.1.3
 accounts-password@1.0.5
 aldeed:autoform@4.2.2
 aldeed:collection2@2.3.1
-aldeed:simple-schema@1.1.0
+aldeed:simple-schema@1.3.0
 application-configuration@1.0.4
 autoupdate@1.1.4
 base64@1.0.2
@@ -11,6 +11,7 @@ blaze@2.0.4
 blaze-tools@1.0.2
 boilerplate-generator@1.0.2
 callback-hook@1.0.2
+cfs:http-methods@0.0.27
 check@1.0.3
 coffeescript@1.0.5
 dandv:caret-position@2.1.0-3
@@ -76,8 +77,7 @@ sha@1.0.2
 spacebars@1.0.4
 spacebars-compiler@1.0.4
 srp@1.0.2
-tap:http-methods@0.0.23
-tap:i18n@1.2.1
+tap:i18n@1.3.2
 templating@1.0.10
 tracker@1.0.4
 tsega:bootstrap3-datetimepicker@3.1.3_3
