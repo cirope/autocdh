@@ -3,9 +3,6 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'assay'}}
-        <a href="{{pathFor 'assayEdit'}}" title="{{_ 'assay_update_title'}}">
-          <span class="glyphicon glyphicon-pencil"></span>
-        </a>
         <a class="pull-right" href="{{pathFor 'humidityNew' sample_id=sampleId}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -69,6 +66,10 @@
           </p>
         </div>
       </div>
+
+      <a href="{{pathFor 'assayEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'assay_update_title'}}">
+        {{_ 'edit'}}
+      </a>
     </div>
   </div>
 </template>

@@ -16,6 +16,7 @@
   "login_error": "Usuario o contraseña inválidos",
   "logout": "Salir",
   "save": "Guardar",
+  "edit": "Editar",
   "user": "Usuario",
   "more": "Más...",
   "breadcrumb_step": "Paso <span class=\"badge\">__count__</span>"

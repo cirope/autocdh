@@ -16,6 +16,7 @@
   "login_error": "User or password invalid",
   "logout": "Logout",
   "save": "Save",
+  "edit": "Edit",
   "user": "User",
   "more": "Load more...",
   "breadcrumb_step": "Step <span class=\"badge\">__count__</span>"

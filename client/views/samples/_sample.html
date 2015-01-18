@@ -3,9 +3,6 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'sample'}}
-        <a href="{{pathFor 'sampleEdit'}}" title="{{_ 'sample_update_title'}}">
-          <span class="glyphicon glyphicon-pencil"></span>
-        </a>
         <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -37,6 +34,10 @@
       <p>
         {{_ 'sample_humidity'}} / <strong>{{humidity}}</strong>
       </p>
+
+      <a href="{{pathFor 'sampleEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'sample_update_title'}}">
+        {{_ 'edit'}}
+      </a>
     </div>
   </div>
 </template>

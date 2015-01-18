@@ -3,9 +3,6 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'concrete'}}
-        <a href="{{pathFor 'concreteEdit'}}" title="{{_ 'concrete_update_title'}}">
-          <span class="glyphicon glyphicon-pencil"></span>
-        </a>
         <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -58,6 +55,10 @@
           <dd>{{amount}} kg/m³ ({{absorption}}%)</dd>
         {{/each}}
       </dl>
+
+      <a href="{{pathFor 'concreteEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'concrete_update_title'}}">
+        {{_ 'edit'}}
+      </a>
     </div>
   </div>
 </template>

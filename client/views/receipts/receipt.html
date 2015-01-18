@@ -3,9 +3,6 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'receipt'}}
-        <a href="{{pathFor 'receiptEdit'}}" title="{{_ 'receipt_update_title'}}">
-          <span class="glyphicon glyphicon-pencil"></span>
-        </a>
         <a class="pull-right" href="{{pathFor 'samples'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -39,6 +36,10 @@
         {{_ 'receipt_surplus'}} /
         <strong>{{surplus}}</strong>
       </p>
+
+      <a href="{{pathFor 'receiptEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'receipt_update_title'}}">
+        {{_ 'edit'}}
+      </a>
     </div>
   </div>
 </template>
