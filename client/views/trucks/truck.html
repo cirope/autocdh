@@ -3,18 +3,24 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'truck'}}: {{number}}
-          <a href="{{pathFor 'truckEdit'}}" title="{{_ 'truck_update_title'}}">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </a>
+          {{_ 'truck'}}
           <a class="pull-right" href="{{pathFor 'trucks'}}">{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
         <p>
+          {{_ 'truck_number'}} /
+          <strong>{{number}}</strong>
+        </p>
+
+        <p>
           {{_ 'truck_driver'}} /
           <strong>{{driver}}</strong>
         </p>
+
+        <a href="{{pathFor 'truckEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'truck_update_title'}}">
+          {{_ 'edit'}}
+        </a>
       </div>
     </div>
   </div>

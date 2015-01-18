@@ -3,12 +3,19 @@
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'work'}}: {{name}}
-          <a href="{{pathFor 'workEdit'}}" title="{{_ 'work_update_title'}}">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </a>
+          {{_ 'work'}}
           <a class="pull-right" href="{{pathFor 'works'}}">{{_ 'go_back'}}</a>
         </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'work_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+
+        <a href="{{pathFor 'workEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'work_update_title'}}">
+          {{_ 'edit'}}
+        </a>
       </div>
     </div>
   </div>
