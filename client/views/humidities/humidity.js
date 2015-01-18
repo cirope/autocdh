@@ -1,6 +1,6 @@
 Template.humidity.helpers({
   ice: function () {
-    return this.ice || TAPi18n.__('no')
+    return (this.hasIce && this.ice) || TAPi18n.__('no')
   },
 
   inTruck: function () {
