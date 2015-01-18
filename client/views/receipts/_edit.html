@@ -28,6 +28,8 @@
 
           {{#if afFieldValueIs name='surplus' value=true}}
             {{> afQuickField name='surplusComment'}}
+          {{else}}
+            {{> afFieldInput name='surplusComment' type='hidden' value=''}}
           {{/if}}
         </fieldset>
         {{#unless disabled}}

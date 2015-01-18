@@ -25,6 +25,8 @@
                   <div class="col-xs-8">
                     {{> afQuickField name='ice' label=false}}
                   </div>
+                {{else}}
+                  {{> afFieldInput name='ice' type='hidden' value=''}}
                 {{/if}}
               </div>
             </div>
