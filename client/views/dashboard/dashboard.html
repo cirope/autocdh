@@ -1,0 +1,104 @@
+<template name="dashboard">
+  <div class="jumbotron text-center">
+    <h1>{{_ 'dashboard_title'}}</h1>
+    <p>{{_ 'dashboard_banner'}}</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="page-header">
+        <h3>{{_ 'samples'}}</h3>
+      </div>
+
+      <div class="list-group">
+        <a href="{{pathFor 'sampleNew'}}" class="list-group-item">
+          {{_ 'sample_new'}}
+        </a>
+        <a href="{{pathFor 'samples'}}" class="list-group-item">
+          {{_ 'samples'}}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="page-header">
+        <h3>{{_ 'cracks'}}</h3>
+      </div>
+
+      <div class="list-group">
+        <a href="{{pathFor 'crackNew'}}" class="list-group-item">
+          {{_ 'crack_new'}}
+        </a>
+        <a href="{{pathFor 'cracks'}}" class="list-group-item">
+          {{_ 'cracks'}}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="page-header">
+        <h3>{{_ 'formulas'}}</h3>
+      </div>
+
+      <div class="list-group">
+        <a href="{{pathFor 'formulaNew'}}" class="list-group-item">
+          {{_ 'formula_new'}}
+        </a>
+        <a href="{{pathFor 'formulas'}}" class="list-group-item">
+          {{_ 'formulas'}}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="page-header">
+        <h3>{{_ 'materials'}}</h3>
+      </div>
+
+      <div class="list-group">
+        <a href="{{pathFor 'materials'}}" class="list-group-item">
+          {{_ 'materials'}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <h3>{{_ 'dashboard_data_entry'}}</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+        <a href="{{pathFor 'customerNew'}}" class="list-group-item">
+          {{_ 'customer_new'}}
+        </a>
+        <a href="{{pathFor 'customers'}}" class="list-group-item">
+          {{_ 'customers'}}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="list-group">
+        <a href="{{pathFor 'workNew'}}" class="list-group-item">
+          {{_ 'work_new'}}
+        </a>
+        <a href="{{pathFor 'works'}}" class="list-group-item">
+          {{_ 'works'}}
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="list-group">
+        <a href="{{pathFor 'truckNew'}}" class="list-group-item">
+          {{_ 'truck_new'}}
+        </a>
+        <a href="{{pathFor 'trucks'}}" class="list-group-item">
+          {{_ 'trucks'}}
+        </a>
+      </div>
+    </div>
+  </div>
+</template>

@@ -38,12 +38,21 @@ label {
   padding: 0em .25em;
 }
 
+.jumbotron {
+  padding: 12px 0px;
+  margin-bottom: 10px;
+}
+
 .lowercase {
   text-transform: lowercase;
 }
 
 .navbar-brand {
   padding: 10px;
+}
+
+.page-header {
+  margin-top: 20px;
 }
 
 .panel {
