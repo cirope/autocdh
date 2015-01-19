@@ -19,8 +19,6 @@ Template.truckSearch.helpers({
   selectedTruckDriver: function () {
     var truck = currentTruck()
 
-    console.log(truck)
-
     return truck && truck.driver
   },
 
