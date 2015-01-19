@@ -8,9 +8,7 @@ Template.receipt.helpers({
   },
 
   truck: function () {
-    var truck = Trucks.findOne(this.truckId)
-
-    return [truck.number, truck.driver].join(' | ')
+    return Trucks.findOne(this.truckId).number
   },
 
   surplus: function () {
