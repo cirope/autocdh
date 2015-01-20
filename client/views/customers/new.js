@@ -9,7 +9,7 @@ Template.customerNew.helpers({
     return params && params.sample_id ?
       Router.path('receiptNew', { sample_id: params.sample_id }) :
       Router.path('customers')
-  },
+  }
 })
 
 AutoForm.addHooks('newCustomerForm', {
