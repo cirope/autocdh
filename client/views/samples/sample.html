@@ -1,4 +1,8 @@
 <template name="sample">
+  <p class="clearfix">
+    <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary pull-right">{{_ 'sample_new'}}</a>
+  </p>
+
   <div class="row">
     <div class="col-md-6">
       {{> _sample ..}}
@@ -31,4 +35,8 @@
       </div>
     {{/if}}
   </div>
+
+  <p class="clearfix">
+    <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary pull-right">{{_ 'sample_new'}}</a>
+  </p>
 </template>
