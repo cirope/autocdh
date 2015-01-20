@@ -1,3 +1,11 @@
+Template.emptyWorkPill.helpers({
+  showNewOnEmpty: function () {
+    var routeName = Router.current() && Router.current().route.getName()
+
+    return routeName === 'receiptNew'
+  }
+})
+
 Template.workSearch.helpers({
   placeholder: function () {
     return TAPi18n.__('work_search_placeholder')
