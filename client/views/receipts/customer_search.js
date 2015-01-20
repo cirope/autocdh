@@ -1,3 +1,11 @@
+Template.emptyCustomerPill.helpers({
+  showNewOnEmpty: function () {
+    var routeName = Router.current() && Router.current().route.getName()
+
+    return routeName === 'receiptNew'
+  }
+})
+
 Template.customerSearch.helpers({
   placeholder: function () {
     return TAPi18n.__('customer_search_placeholder')

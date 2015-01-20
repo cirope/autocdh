@@ -9,12 +9,12 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Receipts' id='newReceiptForm' validation='blur' type='method' meteormethod='createReceipt'}}
+      {{#autoForm collection='Receipts' id='newReceiptForm' validation='blur' type='method' meteormethod='createReceipt' doc=receipt}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
-          {{> customerSearch}}
-          {{> workSearch}}
-          {{> truckSearch}}
+          {{> customerSearch customer=customer}}
+          {{> workSearch work=work}}
+          {{> truckSearch truck=truck}}
           <div class="row">
             <div class="col-md-6">
               {{> afQuickField name='number'}}
