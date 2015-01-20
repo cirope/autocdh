@@ -17,12 +17,9 @@ Template.login.events({
       loginErrors.set(!!error)
 
       if (! error) {
-        // Default value
+        // Default values
         loadAdditives()
-        loadAggregates()
-        loadDownloads()
         loadSettlements()
-        loadStrengths()
 
         Router.go('root')
       }
