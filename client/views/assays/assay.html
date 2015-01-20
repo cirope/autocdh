@@ -41,11 +41,15 @@
           </p>
           <p>
             {{_ 'assay_air'}} /
-            <strong>{{air}}%</strong>
+            {{#if air}}
+              <strong>{{air}}%</strong>
+            {{/if}}
           </p>
           <p>
             {{_ 'assay_weight'}} /
-            <strong>{{weight}} kg/m³</strong>
+            {{#if weight}}
+              <strong>{{weight}} kg/m³</strong>
+            {{/if}}
           </p>
           <p>
             {{_ 'assay_harden_time'}} /
