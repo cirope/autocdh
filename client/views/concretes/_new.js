@@ -95,7 +95,7 @@ Template._concreteNew.events({
 AutoForm.addHooks('newConcreteForm', {
   before: {
     createConcrete: function (doc, template) {
-      concrete.set({})
+      if (AutoForm.validateForm('newConcreteForm')) concrete.set({})
 
       return _.extend(doc, { _id: Random.id() })
     }

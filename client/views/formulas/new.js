@@ -58,7 +58,7 @@ Template.formulaNew.events({
 AutoForm.addHooks('newFormulaForm', {
   before: {
     createFormula: function (doc, template) {
-      formula.set({})
+      if (AutoForm.validateForm('newFormulaForm')) formula.set({})
 
       return _.extend(doc, { _id: Random.id() })
     }
