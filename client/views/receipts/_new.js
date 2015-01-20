@@ -46,6 +46,16 @@ Template._receiptNew.events({
     save()
     AutoForm.resetForm('newReceiptForm')
     Router.go('receiptWorkNew', { sample_id: params.sample_id })
+  },
+
+  'click [data-new-truck]': function (event) {
+    event.preventDefault()
+
+    var params = Router.current() && Router.current().params
+
+    save()
+    AutoForm.resetForm('newReceiptForm')
+    Router.go('receiptTruckNew', { sample_id: params.sample_id })
   }
 })
 

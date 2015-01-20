@@ -22,4 +22,7 @@
 
 <template name="emptyTruckPill">
   <div>{{_ 'truck_search_empty'}} <kbd>{{getFilter}}</kbd></div>
+  {{#if showNewOnEmpty}}
+    <div><a href="#" class="btn btn-xs btn-default pull-right" data-new-truck>{{_ 'truck_new'}}</a></div>
+  {{/if}}
 </template>

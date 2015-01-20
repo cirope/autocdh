@@ -40,3 +40,11 @@ Template.truckSearch.helpers({
     }
   }
 })
+
+Template.emptyTruckPill.helpers({
+  showNewOnEmpty: function () {
+    var routeName = Router.current() && Router.current().route.getName()
+
+    return routeName === 'receiptNew'
+  }
+})
