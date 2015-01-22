@@ -1,10 +1,12 @@
-var formula = new ReactiveVar({})
+var formula = new ReactiveVar
 var save    = function () {
   formula.set(AutoForm.getFormValues('newFormulaForm').insertDoc)
 }
 
 Template.formulaNew.helpers({
   formula: function () {
+    if (! formula.get()) formula.set(this)
+
     return formula.get()
   }
 })
@@ -58,7 +60,8 @@ Template.formulaNew.events({
 AutoForm.addHooks('newFormulaForm', {
   before: {
     createFormula: function (doc, template) {
-      if (AutoForm.validateForm('newFormulaForm')) formula.set({})
+      if (AutoForm.validateForm('newFormulaForm'))
+        setTimeout(function () { formula.set() }, 300)
 
       return _.extend(doc, { _id: Random.id() })
     }

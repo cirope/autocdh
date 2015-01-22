@@ -36,7 +36,8 @@ Template._sampleNew.events({
 AutoForm.addHooks('newSampleForm', {
   before: {
     createSample: function (doc, template) {
-      if (AutoForm.validateForm('newSampleForm')) sample.set({})
+      if (AutoForm.validateForm('newSampleForm'))
+        setTimeout(function () { sample.set({}) }, 300)
 
       return _.extend(doc, { _id: Random.id() })
     }

@@ -13,7 +13,7 @@ Tracker.autorun(function () {
     var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).concretes[0].amount
     var water               = AutoForm.getFieldValue(form, 'incorporated')
     var flowmeterCorrection = AutoForm.getFieldValue(form, 'flowmeterCorrection')
-    var materials           = Materials.findOne() || { sands: [], gravels: [] }
+    var materials           = Materials.first() || { sands: [], gravels: [] }
     var aggregatesHumidity  = 0
     var hSandsTracker       = AutoForm.arrayTracker.getForm(form).hSands
     var hGravelsTracker     = AutoForm.arrayTracker.getForm(form).hGravels

@@ -1,16 +1,18 @@
-var concrete = new ReactiveVar({})
+var concrete = new ReactiveVar
 var save     = function () {
   concrete.set(AutoForm.getFormValues('newConcreteForm').insertDoc)
 }
 
 Template._concreteNew.helpers({
   concrete: function () {
+    if (! concrete.get()) concrete.set(this)
+
     return concrete.get()
   }
 })
 
 Template._concreteNew.events({
-  'change [data-formula-component]': function () {
+  'change [data-formula-component]': function (event, template) {
     var params       = Router.current() && Router.current().params
     var strengthId   = $('[name="strengthId"]').val()
     var downloadId   = $('[name="downloadId"]').val()
@@ -23,12 +25,15 @@ Template._concreteNew.events({
       settlementId: settlementId
     })
 
-    if (params)
+    if (params) {
+      setTimeout(function () { concrete.set() })
+
       Router.go(
         'concreteNew',
         { sample_id: params.sample_id },
         formula && { query: { formula_id: formula._id } }
       )
+    }
   },
 
   'change [name="strengthId"]': function (event) {
@@ -95,7 +100,8 @@ Template._concreteNew.events({
 AutoForm.addHooks('newConcreteForm', {
   before: {
     createConcrete: function (doc, template) {
-      if (AutoForm.validateForm('newConcreteForm')) concrete.set({})
+      if (AutoForm.validateForm('newConcreteForm'))
+        setTimeout(function () { concrete.set() }, 300)
 
       return _.extend(doc, { _id: Random.id() })
     }

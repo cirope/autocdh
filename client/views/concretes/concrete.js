@@ -1,6 +1,6 @@
 Template.concrete.helpers({
   concreteName: function () {
-    var materials  = Materials.findOne() || {}
+    var materials  = Materials.first() || {}
     var concreteId = this.id
     var concrete   = _.find(materials.concretes, function (concrete) {
       return concrete._id === concreteId
@@ -10,7 +10,7 @@ Template.concrete.helpers({
   },
 
   sandName: function () {
-    var materials = Materials.findOne() || {}
+    var materials = Materials.first() || {}
     var sandId    = this.id
     var sand      = _.find(materials.sands, function (sand) {
       return sand._id === sandId
@@ -20,7 +20,7 @@ Template.concrete.helpers({
   },
 
   gravelName: function () {
-    var materials = Materials.findOne() || {}
+    var materials = Materials.first() || {}
     var gravelId  = this.id
     var gravel    = _.find(materials.gravels, function (gravel) {
       return gravel._id === gravelId

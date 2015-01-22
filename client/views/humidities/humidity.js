@@ -10,7 +10,7 @@ Template.humidity.helpers({
   },
 
   sandName: function () {
-    var materials = Materials.findOne() || { sands: [] }
+    var materials = Materials.first() || { sands: [] }
     var sandId    = this.id
     var sand      = _.find(materials.sands, function (sand) {
       return sand._id === sandId
@@ -20,7 +20,7 @@ Template.humidity.helpers({
   },
 
   gravelName: function () {
-    var materials = Materials.findOne() || { gravels: [] }
+    var materials = Materials.first() || { gravels: [] }
     var gravelId  = this.id
     var gravel    = _.find(materials.gravels, function (gravel) {
       return gravel._id === gravelId
