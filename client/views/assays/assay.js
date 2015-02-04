@@ -1,6 +1,6 @@
 Template.assay.helpers({
-  ages: function () {
-    return TAPi18n.__('assay_ages_' + this.ages)
+  tubes: function () {
+    return TAPi18n.__('assay_tubes_' + this.tubes)
   },
 
   cured: function () {

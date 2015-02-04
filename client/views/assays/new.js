@@ -1,6 +1,6 @@
-Template.assayNew.helpers({
-  datetimePickerOptions: function () {
-    return { pickDate: false }
+Template.assayNew.events({
+  'change [name="tubes"]': function (event) {
+    var tubes = $(event.currentTarget).val()
   }
 })
 

@@ -1,56 +1,61 @@
 <template name="crack">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'crack'}}: {{number}}
-          <a href="{{pathFor 'crackEdit'}}" title="{{_ 'crack_update_title'}}">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </a>
-          <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
-        </h3>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'crack'}}: {{number}}
+        <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'crack_designation'}} /
+            <strong>{{designation}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_molding_in'}} /
+            <strong>{{l moldingIn 'L'}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_cracked_in'}} /
+            <strong>{{l crackedIn 'L'}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_tube_type'}} /
+            <strong>{{tubeType}}</strong>
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <p>
+            {{_ 'crack_diameter'}} /
+            <strong>{{diameter}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_load'}} /
+            <strong>{{load}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_stress'}} /
+            <strong>{{stress}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_other_assays'}} /
+            <strong>{{otherAssays}}</strong>
+          </p>
+        </div>
       </div>
-      <div class="panel-body">
-        <p>
-          {{_ 'sample'}} /
-          <strong>{{sample}}</strong>
-        </p>
 
-        <p>
-          {{_ 'crack_molding_in'}} /
-          <strong>{{l moldingIn}}</strong>
-        </p>
-
-        <p>
-          {{_ 'crack_cracked_in'}} /
-          <strong>{{l crackedIn}}</strong>
-        </p>
-
-        <p>
-          {{_ 'crack_test_tube_type'}} /
-          <strong>{{testTubeType}}</strong>
-        </p>
-
-        <p>
-          {{_ 'crack_diameter'}} /
-          <strong>{{diameter}}</strong>
-        </p>
-
-        <p>
-          {{_ 'crack_load'}} /
-          <strong>{{load}}</strong>
-        </p>
-
-        <p>
-          {{_ 'crack_stress'}} /
-          <strong>{{stress}}</strong>
-        </p>
-
-        <p>
-          {{_ 'crack_other_assays'}} /
-          <strong>{{otherAssays}}</strong>
-        </p>
-      </div>
+      <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
+        {{_ 'edit'}}
+      </a>
     </div>
   </div>
 </template>

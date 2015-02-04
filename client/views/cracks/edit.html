@@ -2,24 +2,31 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        {{_ 'crack_update_title'}}
+        {{_ 'crack_update_title'}}: {{designation}}
         <a class="pull-right" href="{{pathFor 'crack'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Cracks' id='editCrackForm' type='method' meteormethod='updateCrack' doc=..}}
+      {{#autoForm collection='Cracks' id='editCrackForm' validation='blur' type='method' meteormethod='updateCrack' doc=..}}
         <fieldset>
+          {{> afFieldInput name='sampleId'}}
+          {{> afFieldInput name='designation'}}
           <div class="row">
             <div class="col-md-6">
-              {{> afQuickField name='sampleId' options=sampleOptions autofocus=true firstOption=false}}
               {{> afQuickField name='moldingIn'}}
               {{> afQuickField name='crackedIn'}}
-              {{> afQuickField name='testTubeType' options='allowed' firstOption=false}}
+              {{> afQuickField name='tubeType'}}
             </div>
             <div class="col-md-6">
-              {{> afQuickField name='diameter' options='allowed' firstOption=false}}
-              {{> afQuickField name='load'}}
-              {{> afQuickField name='stress'}}
+              {{> afQuickField name='diameter'}}
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='load'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='stress'}}
+                </div>
+              </div>
               {{> afQuickField name='otherAssays'}}
             </div>
           </div>
