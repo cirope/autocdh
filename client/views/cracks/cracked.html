@@ -1,44 +1,36 @@
-<template name="cracks">
-  {{#if cracks.count}}
-    {{> cracksList}}
-  {{else}}
-    {{> cracksEmpty}}
-  {{/if}}
-</template>
-
-<template name="cracksList">
+<template name="cracksCracked">
   <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active">
-        <a href="#pending" aria-controls="pending" role="tab" data-toggle="tab">
+      <li role="presentation">
+        <a href="{{pathFor 'cracks'}}">
           {{_ 'crack_pending'}}
         </a>
       </li>
-      <li role="presentation">
-        <a href="{{pathFor 'cracksCracked'}}">
+      <li role="presentation" class="active">
+        <a href="#cracked" aria-controls="cracked" role="tab" data-toggle="tab">
           {{_ 'crack_cracked'}}
         </a>
       </li>
     </ul>
 
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="pending">
+      <div role="tabpanel" class="tab-pane active" id="cracked">
         <table class="table">
           <thead>
             <tr>
               <th>{{_ 'crack_designation'}}</th>
-              <th class="hidden-xs hidden-sm hidden-md">{{_ 'crack_time_after_molding'}}</th>
               <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
               <th>{{_ 'crack_cracked_in'}}</th>
+              <th class="hidden-xs hidden-sm hidden-md">{{_ 'crack_tube_type'}}</th>
             </tr>
           </thead>
           <tbody>
           {{#each cracks}}
-            <tr class="{{crackClass}}">
+            <tr>
               <td><a href="{{pathFor 'crack'}}">{{designation}}</a></td>
-              <td class="hidden-xs hidden-sm hidden-md">{{timeAfterMolding}}</td>
               <td class="hidden-xs">{{l moldingIn 'L'}}</td>
               <td>{{l crackedIn 'L'}}</td>
+              <td>{{tubeType}}</td>
             </tr>
           {{/each}}
           </tbody>

@@ -2,7 +2,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        {{_ 'crack'}}: {{number}}
+        {{_ 'crack'}}
         <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -53,9 +53,11 @@
         </div>
       </div>
 
-      <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
-        {{_ 'edit'}}
-      </a>
+      {{#unless updatedAt}}
+        <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      {{/unless}}
     </div>
   </div>
 </template>
