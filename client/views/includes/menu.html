@@ -19,7 +19,12 @@
               <a href="{{pathFor 'samples'}}">{{_ 'samples'}}</a>
             </li>
             <li class="{{activeRouteClass 'cracks' 'crack' 'crackNew' 'crackEdit'}}">
-              <a href="{{pathFor 'cracks'}}">{{_ 'cracks'}}</a>
+              <a href="{{pathFor 'cracks'}}">
+                {{_ 'cracks'}}
+                {{#if overdueCracks}}
+                  <span class="badge" title="{{_ 'crack_overdue' count=overdueCracks}}">{{overdueCracks}}</span>
+                {{/if}}
+              </a>
             </li>
 
             {{> menuConfig}}

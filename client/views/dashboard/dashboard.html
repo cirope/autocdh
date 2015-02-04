@@ -32,6 +32,9 @@
 
       <a href="{{pathFor 'cracks'}}" class="btn btn-default btn-block">
         {{_ 'cracks'}}
+        {{#if overdueCracks}}
+          <span class="badge" title="{{_ 'crack_overdue' count=overdueCracks}}">{{overdueCracks}}</span>
+        {{/if}}
       </a>
     </div>
 

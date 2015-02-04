@@ -19,5 +19,7 @@
   "edit": "Editar",
   "user": "Usuario",
   "more": "Más...",
+  "crack_overdue": "Una rotura de probeta retrasada",
+  "crack_overdue_plural": "__count__ roturas de probeta retrasadas",
   "breadcrumb_step": "Paso <span class=\"badge\">__count__</span>"
 }
