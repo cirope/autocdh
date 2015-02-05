@@ -9,11 +9,11 @@ Template.crackEdit.events({
 
   'keyup [data-stress-modifier]': function (event) {
     var load           = +$('[name="load"]').val()
-    var diameter       = +$('[name="diameter"]').val() / 1000
+    var diameter       = +$('[name="diameter"]').val()
     var settings       = Settings.findOne() || {}
     var stressConstant = settings.stressConstant || 1
     var stress         = diameter && ((load * stressConstant) / (Math.PI * Math.pow(diameter, 2) / 4))
 
-    $('[name="stress"]').val(stress.toFixed(2))
+    $('[name="stress"]').val(stress.toFixed(3))
   }
 })
