@@ -70,6 +70,7 @@
   "crack_cracked_in": "Fecha de rotura",
   "crack_tube_type": "Tipo de probeta",
   "crack_diameter": "Diámetro",
+  "crack_height": "Altura",
   "crack_load": "Lectura de prensa",
   "crack_stress": "Tensión de rotura",
   "crack_time_after_molding": "Tiempo desde el moldeo",

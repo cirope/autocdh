@@ -33,7 +33,12 @@
         <div class="col-md-6">
           <p>
             {{_ 'crack_diameter'}} /
-            <strong>{{diameter}}</strong>
+            <strong>{{diameter}} mm</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_height'}} /
+            <strong>{{height}} mm</strong>
           </p>
 
           <p>
@@ -43,15 +48,16 @@
 
           <p>
             {{_ 'crack_stress'}} /
-            <strong>{{stress}}</strong>
+            {{#if stress}}<strong>{{stress}} MPa</strong>{{/if}}
           </p>
 
-          <p>
-            {{_ 'crack_other_assays'}} /
-            <strong>{{otherAssays}}</strong>
-          </p>
         </div>
       </div>
+
+      <p>
+        {{_ 'crack_other_assays'}} /
+        <strong>{{otherAssays}}</strong>
+      </p>
 
       {{#unless updatedAt}}
         <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
