@@ -6,6 +6,14 @@ label {
   margin-bottom: 2px;
 }
 
+.visible-on-hover {
+  visibility: hidden;
+}
+
+.visible-on-hover-parent:hover .visible-on-hover {
+  visibility: visible;
+}
+
 .bottom {
   padding-top: 20px;
 }

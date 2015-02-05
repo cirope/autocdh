@@ -30,15 +30,21 @@
               <th class="hidden-xs hidden-sm hidden-md">{{_ 'crack_time_after_molding'}}</th>
               <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
               <th>{{_ 'crack_cracked_in'}}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
           {{#each cracks}}
-            <tr class="{{crackClass}}">
+            <tr class="{{crackClass}} visible-on-hover-parent">
               <td><a href="{{pathFor 'crack'}}">{{designation}}</a></td>
               <td class="hidden-xs hidden-sm hidden-md">{{timeAfterMolding}}</td>
               <td class="hidden-xs">{{l moldingIn 'L'}}</td>
               <td>{{l crackedIn 'L'}}</td>
+              <td>
+                <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'crackEdit'}}" title="{{_ 'edit'}}">
+                  {{_ 'edit'}}
+                </a>
+              </td>
             </tr>
           {{/each}}
           </tbody>

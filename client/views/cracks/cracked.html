@@ -20,8 +20,9 @@
             <tr>
               <th>{{_ 'crack_designation'}}</th>
               <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
-              <th>{{_ 'crack_cracked_in'}}</th>
-              <th class="hidden-xs hidden-sm hidden-md">{{_ 'crack_tube_type'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'crack_cracked_in'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'crack_load'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'crack_stress'}}</th>
             </tr>
           </thead>
           <tbody>
@@ -29,8 +30,9 @@
             <tr>
               <td><a href="{{pathFor 'crack'}}">{{designation}}</a></td>
               <td class="hidden-xs">{{l moldingIn 'L'}}</td>
-              <td>{{l crackedIn 'L'}}</td>
-              <td>{{tubeType}}</td>
+              <td class="hidden-xs hidden-sm">{{l crackedIn 'L'}}</td>
+              <td class="hidden-xs hidden-sm">{{load}}</td>
+              <td class="hidden-xs hidden-sm">{{stress}} MPa</td>
             </tr>
           {{/each}}
           </tbody>
