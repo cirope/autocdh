@@ -28,7 +28,7 @@ Template._sampleNew.events({
       responsible.val('')
       save()
       AutoForm.resetForm('newSampleForm')
-      Router.go('responsibleNew')
+      Router.go('sampleResponsibleNew')
     }
   }
 })

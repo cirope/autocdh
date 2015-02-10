@@ -1,6 +1,13 @@
 Template.responsibleNew.helpers({
   namePlaceholder: function () {
     return TAPi18n.__('responsible_name_placeholder')
+  },
+
+  backPath: function () {
+    var routeName = Router.current() && Router.current().route.getName()
+
+    return routeName === 'sampleResponsibleNew' ?
+      Router.path('sampleNew') : Router.path('responsibleIndex')
   }
 })
 
