@@ -17,7 +17,7 @@ Template._sampleNew.events({
       plant.val('')
       save()
       AutoForm.resetForm('newSampleForm')
-      Router.go('plantNew')
+      Router.go('samplePlantNew', { sample_id: 'new' })
     }
   },
 

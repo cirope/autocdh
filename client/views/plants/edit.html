@@ -1,19 +1,19 @@
-<template name="plantNew">
+<template name="plantEdit">
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'plant_create_title'}}
-          <a class="pull-right" href="{{backPath}}">{{_ 'go_back'}}</a>
+          {{_ 'plant_update_title'}}
+          <a class="pull-right" href="{{pathFor 'plant'}}">{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
-        {{#autoForm collection='Plants' id='newPlantForm' type='method' meteormethod='createPlant'}}
+        {{#autoForm collection='Plants' id='editPlantForm' type='method' meteormethod='updatePlant' doc=..}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
             {{> afQuickField name='flowmeterCorrection'}}
           </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'plant_create'}}</button>
+          <button type="submit" class="btn btn-primary">{{_ 'plant_update'}}</button>
         {{/autoForm}}
       </div>
     </div>
