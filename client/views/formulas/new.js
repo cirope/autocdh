@@ -8,6 +8,14 @@ Template.formulaNew.helpers({
     if (! formula.get()) formula.set(this)
 
     return formula.get()
+  },
+
+  backPath: function () {
+    var params = Router.current() && Router.current().params
+
+    return params && params.sample_id ?
+      Router.path('concreteNew', { sample_id: params.sample_id }) :
+      Router.path('formulas')
   }
 })
 

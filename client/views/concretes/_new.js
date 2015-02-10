@@ -42,7 +42,7 @@ Template._concreteNew.events({
 
     if (strength.val() === 'new') {
       strength.val('')
-      save()
+      setTimeout(function () { concrete.set() })
       AutoForm.resetForm('newConcreteForm')
       Router.go('strengthNew', { sample_id: params && params.sample_id })
     }
