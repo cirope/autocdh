@@ -4,9 +4,9 @@ Template.plantNew.helpers({
   },
 
   backPath: function () {
-    var params = Router.current() && Router.current().params
+    var routeName = Router.current() && Router.current().route.getName()
 
-    return params && params.sample_id ?
+    return routeName === 'samplePlantNew' ?
       Router.path('sampleNew') : Router.path('plants')
   }
 })
