@@ -1,0 +1,41 @@
+<template name="aggregates">
+  {{#if aggregates.count}}
+    {{> aggregatesList}}
+  {{else}}
+    {{> aggregatesEmpty}}
+  {{/if}}
+</template>
+
+<template name="aggregatesList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'aggregates'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{_ 'aggregate_name'}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each aggregates}}
+          <tr class="visible-on-hover-parent">
+            <td><a href="{{pathFor 'aggregate'}}">{{name}}</a></td>
+            <td class="text-right">
+              <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'aggregateEdit'}}" title="{{_ 'edit'}}">
+                {{_ 'edit'}}
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="{{pathFor 'formulaAggregateNew'}}">{{_ 'aggregate_new'}}</a>
+    </div>
+  </div>
+</template>

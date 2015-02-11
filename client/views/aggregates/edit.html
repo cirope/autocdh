@@ -1,0 +1,20 @@
+<template name="aggregateEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'aggregate_update_title'}}
+          <a class="pull-right" href="{{pathFor 'aggregate'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Aggregates' id='editAggregateForm' type='method' meteormethod='updateAggregate' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'aggregate_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

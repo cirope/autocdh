@@ -7,7 +7,7 @@ Template.aggregateNew.helpers({
     var params = Router.current() && Router.current().params
 
     return params && params.sample_id ?
-      Router.path('concreteNew', { sample_id: params.sample_id }) :
+      Router.path('concreteFormulaNew', { sample_id: params.sample_id }) :
       Router.path('formulaNew')
   },
 
