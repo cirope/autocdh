@@ -1,0 +1,20 @@
+<template name="settlementEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'settlement_update_title'}}
+          <a class="pull-right" href="{{pathFor 'settlement'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Settlements' id='editSettlementForm' type='method' meteormethod='updateSettlement' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'settlement_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
