@@ -1,0 +1,20 @@
+<template name="strengthEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'strength_update_title'}}
+          <a class="pull-right" href="{{pathFor 'strength'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Strengths' id='editStrengthForm' type='method' meteormethod='updateStrength' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'strength_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

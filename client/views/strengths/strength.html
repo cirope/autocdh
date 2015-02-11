@@ -1,0 +1,22 @@
+<template name="strength">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'strength'}}
+          <a class="pull-right" href="{{pathFor 'parameters'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'strength_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+
+        <a href="{{pathFor 'strengthEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'strength_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
