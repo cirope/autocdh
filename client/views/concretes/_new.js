@@ -15,12 +15,12 @@ Template._concreteNew.events({
   'change [data-formula-component]': function (event, template) {
     var params       = Router.current() && Router.current().params
     var strengthId   = $('[name="strengthId"]').val()
-    var downloadId   = $('[name="downloadId"]').val()
+    var download     = $('[name="download"]').val()
     var aggregateId  = $('[name="aggregateId"]').val()
     var settlementId = $('[name="settlementId"]').val()
     var formula      = Formulas.findOne({
       strengthId:   strengthId,
-      downloadId:   downloadId,
+      download:     download,
       aggregateId:  aggregateId,
       settlementId: settlementId
     })
@@ -45,18 +45,6 @@ Template._concreteNew.events({
       setTimeout(function () { concrete.set() })
       AutoForm.resetForm('newConcreteForm')
       Router.go('strengthNew', { sample_id: params && params.sample_id })
-    }
-  },
-
-  'change [name="downloadId"]': function (event) {
-    var download = $(event.currentTarget)
-    var params   = Router.current() && Router.current().params
-
-    if (download.val() === 'new') {
-      download.val('')
-      setTimeout(function () { concrete.set() })
-      AutoForm.resetForm('newConcreteForm')
-      Router.go('downloadNew', { sample_id: params && params.sample_id })
     }
   },
 

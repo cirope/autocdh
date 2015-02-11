@@ -11,7 +11,7 @@ Template.formulasList.helpers({
     return Aggregates.findOne(aggregateId).name
   },
 
-  download: function (downloadId) {
-    return Downloads.findOne(downloadId).name
+  downloadName: function (download) {
+    return TAPi18n.__('download_' + download)
   }
 })

@@ -15,11 +15,5 @@ Template.formulaEdit.helpers({
     return Aggregates.find({}, { sort: { createdAt: 1 } }).map(function (aggregate) {
       return { value: aggregate._id, label: aggregate.name }
     })
-  },
-
-  downloadOptions: function () {
-    return Downloads.find({}, { sort: { createdAt: 1 } }).map(function (download) {
-      return { value: download._id, label: download.name }
-    })
   }
 })

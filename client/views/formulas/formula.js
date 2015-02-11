@@ -42,6 +42,6 @@ Template.formula.helpers({
   },
 
   download: function () {
-    return Downloads.findOne(this.downloadId).name
+    return TAPi18n.__('download_' + this.download)
   }
 })

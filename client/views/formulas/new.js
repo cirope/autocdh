@@ -51,17 +51,6 @@ Template.formulaNew.events({
       AutoForm.resetForm('newFormulaForm')
       Router.go('formulaAggregateNew')
     }
-  },
-
-  'change [name="downloadId"]': function (event) {
-    var download = $(event.currentTarget)
-
-    if (download.val() === 'new') {
-      download.val('')
-      save()
-      AutoForm.resetForm('newFormulaForm')
-      Router.go('formulaDownloadNew')
-    }
   }
 })
 
