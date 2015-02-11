@@ -1,0 +1,22 @@
+<template name="additive">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'additive'}}
+          <a class="pull-right" href="{{pathFor 'parameters'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'additive_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+
+        <a href="{{pathFor 'additiveEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'additive_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
+    </div>
+  </div>
+</template>

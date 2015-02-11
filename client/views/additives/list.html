@@ -1,0 +1,40 @@
+<template name="additives">
+  {{#if additives.count}}
+    {{> additivesList}}
+  {{else}}
+    {{> additivesEmpty}}
+  {{/if}}
+</template>
+
+<template name="additivesList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'additives'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{_ 'additive_name'}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each additives}}
+          <tr class="visible-on-hover-parent">
+            <td><a href="{{pathFor 'additive'}}">{{name}}</a></td>
+            <td class="text-right">
+              <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'additiveEdit'}}" title="{{_ 'edit'}}">
+                {{_ 'edit'}}
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>
