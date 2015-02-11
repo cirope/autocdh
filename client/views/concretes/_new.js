@@ -54,7 +54,7 @@ Template._concreteNew.events({
 
     if (download.val() === 'new') {
       download.val('')
-      save()
+      setTimeout(function () { concrete.set() })
       AutoForm.resetForm('newConcreteForm')
       Router.go('downloadNew', { sample_id: params && params.sample_id })
     }
@@ -66,7 +66,7 @@ Template._concreteNew.events({
 
     if (aggregate.val() === 'new') {
       aggregate.val('')
-      save()
+      setTimeout(function () { concrete.set() })
       AutoForm.resetForm('newConcreteForm')
       Router.go('aggregateNew', { sample_id: params && params.sample_id })
     }
@@ -78,7 +78,7 @@ Template._concreteNew.events({
 
     if (settlement.val() === 'new') {
       settlement.val('')
-      save()
+      setTimeout(function () { concrete.set() })
       AutoForm.resetForm('newConcreteForm')
       Router.go('settlementNew', { sample_id: params && params.sample_id })
     }
