@@ -1,0 +1,50 @@
+<template name="presses">
+  {{#if presses.count}}
+    {{> pressesList}}
+  {{else}}
+    {{> pressesEmpty}}
+  {{/if}}
+</template>
+
+<template name="pressesList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'presses'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>{{_ 'press_name'}}</th>
+              <th class="hidden-xs">{{_ 'press_constant'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each presses}}
+            <tr class="visible-on-hover-parent">
+              <td><a href="{{pathFor 'press'}}">{{name}}</a></td>
+              <td class="hidden-xs">
+                <a href="{{pathFor 'press'}}">
+                  <strong>{{constant.a}}</strong> x div² +
+                  <strong>{{constant.b}}</strong> x div +
+                  <strong>{{constant.c}}</strong>
+                </a>
+              </td>
+              <td class="text-right">
+                <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'pressEdit'}}" title="{{_ 'edit'}}">
+                  {{_ 'edit'}}
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'pressNew'}}">{{_ 'press_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>

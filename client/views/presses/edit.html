@@ -1,0 +1,35 @@
+<template name="pressEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'press_update_title'}}
+          <a class="pull-right" href="{{pathFor 'press'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Presses' id='editPressForm' type='method' validation='blur' meteormethod='updatePress' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name'}}
+
+            <div class="row">
+              <div class="col-sm-4">
+                {{> afQuickField name='constant.a'}}
+              </div>
+              <div class="col-sm-4">
+                {{> afQuickField name='constant.b'}}
+              </div>
+              <div class="col-sm-4">
+                {{> afQuickField name='constant.c'}}
+              </div>
+            </div>
+          </fieldset>
+
+          <p class="text-muted">{{_ 'press_equation_hint'}}</p>
+
+          <button type="submit" class="btn btn-primary">{{_ 'press_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

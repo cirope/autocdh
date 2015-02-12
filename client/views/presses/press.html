@@ -1,0 +1,23 @@
+<template name="press">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'press'}}: {{name}}
+          <a class="pull-right" href="{{pathFor 'presses'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>{{_ 'press_constant'}}</p>
+
+        <p>
+          <strong>{{constant.a}}</strong> x div² + <strong>{{constant.b}}</strong> x div + <strong>{{constant.c}}</strong>
+        </p>
+
+        <a href="{{pathFor 'pressEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'press_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
+    </div>
+  </div>
+</template>
