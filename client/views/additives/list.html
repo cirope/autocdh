@@ -19,6 +19,7 @@
         <thead>
           <tr>
             <th>{{_ 'additive_name'}}</th>
+            <th class="hidden-xs">{{_ 'additive_unit'}}</th>
             <th></th>
           </tr>
         </thead>
@@ -26,6 +27,7 @@
         {{#each additives}}
           <tr class="visible-on-hover-parent">
             <td><a href="{{pathFor 'additive'}}">{{name}}</a></td>
+            <td class="hidden-xs"><a href="{{pathFor 'additive'}}">{{unit}}</a></td>
             <td class="text-right">
               <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'additiveEdit'}}" title="{{_ 'edit'}}">
                 {{_ 'edit'}}

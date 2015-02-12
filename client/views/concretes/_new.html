@@ -14,8 +14,13 @@
           {{> afQuickField name='download' firstOption=firstOptionForSelect data-formula-component=true}}
           {{> afQuickField name='aggregateId' data-formula-component=true}}
           {{> afQuickField name='settlementId' data-formula-component=true}}
-          {{> afQuickField name='additiveId'}}
+          {{> afQuickField name='additiveId' firstOption=firstOptionForSelect}}
           <div class="row">
+            {{#if additive}}
+              <div class="col-md-6">
+                {{> afQuickField name='additiveAmount' unit=additive.unit}}
+              </div>
+            {{/if}}
             <div class="col-md-6">
               {{> afQuickField name='water'}}
             </div>

@@ -3,6 +3,8 @@
   "additive": "Aditivo",
   "additive_name": "Nombre",
   "additive_name_placeholder": "Ingrese un nombre...",
+  "additive_unit": "Unidad",
+  "additive_amount": "Cantidad de aditivo",
   "additive_create_title": "Agregar un nuevo aditivo",
   "additive_create": "Crear aditivo",
   "additive_update_title": "Editar aditivo",

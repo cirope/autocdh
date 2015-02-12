@@ -12,12 +12,17 @@
       {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method' meteormethod='updateConcrete' doc=concrete}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id}}
-          {{> afQuickField name='strengthId' options=strengthOptions firstOption=firstOptionForSelect}}
+          {{> afQuickField name='strengthId' options=strengthOptions}}
           {{> afQuickField name='download' firstOption=false}}
           {{> afQuickField name='aggregateId' options=aggregateOptions}}
           {{> afQuickField name='settlementId' options=settlementOptions}}
-          {{> afQuickField name='additiveId' options=additiveOptions}}
+          {{> afQuickField name='additiveId' options=additiveOptions firstOption=firstOptionForSelect}}
           <div class="row">
+            {{#if additive}}
+              <div class="col-md-6">
+                {{> afQuickField name='additiveAmount' unit=additive.unit}}
+              </div>
+            {{/if}}
             <div class="col-md-6">
               {{> afQuickField name='water'}}
             </div>

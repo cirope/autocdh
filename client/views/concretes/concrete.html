@@ -27,10 +27,13 @@
         <strong>{{settlement}}</strong>
       </p>
 
-      <p>
-        {{_ 'additive'}} /
-        <strong>{{additive}}</strong>
-      </p>
+      {{#if additive}}
+        <p>
+          {{_ 'additive'}} /
+          <strong>{{additive.name}}</strong>
+          (<strong>{{additiveAmount}} {{additive.unit}}</strong>)
+        </p>
+      {{/if}}
 
       <p>
         {{_ 'concrete_water'}} /

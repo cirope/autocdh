@@ -38,7 +38,7 @@ Template.concrete.helpers({
   },
 
   aggregate: function () {
-    return Aggregates.findOne(this.aggregateId).name
+    return this.aggregateId && Aggregates.findOne(this.aggregateId).name
   },
 
   settlement: function () {
@@ -46,6 +46,6 @@ Template.concrete.helpers({
   },
 
   additive: function () {
-    return Additives.findOne(this.additiveId).name
+    return Additives.findOne(this.additiveId)
   }
 })

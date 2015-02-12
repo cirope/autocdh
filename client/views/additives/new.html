@@ -11,6 +11,7 @@
         {{#autoForm collection='Additives' id='newAdditiveForm' type='method' meteormethod='createAdditive'}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+            {{> afQuickField name='unit'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'additive_create'}}</button>
         {{/autoForm}}
