@@ -1,5 +1,5 @@
 Template._humidityNew.events({
-  'change [name="toggleIce"]': function (event) {
+  'change [name="hasIce"]': function (event) {
     var selected = $(event.currentTarget).is(':checked')
 
     if (selected)

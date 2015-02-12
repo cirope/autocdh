@@ -10,8 +10,9 @@ Tracker.autorun(function () {
     var form                = templateForms[currentRoute]
     var sampleId            = AutoForm.getFieldValue(form, 'sampleId')
     var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).concretes[0].amount
-    var water               = AutoForm.getFieldValue(form, 'incorporated')
-    var flowmeterCorrection = AutoForm.getFieldValue(form, 'flowmeterCorrection')
+    var ice                 = +AutoForm.getFieldValue(form, 'ice')
+    var water               = +AutoForm.getFieldValue(form, 'incorporated')
+    var flowmeterCorrection = +AutoForm.getFieldValue(form, 'flowmeterCorrection')
     var materials           = Materials.first() || { sands: [], gravels: [] }
     var aggregatesHumidity  = 0
     var hSandsTracker       = AutoForm.arrayTracker.getForm(form).hSands
@@ -48,7 +49,7 @@ Tracker.autorun(function () {
       }
     })
 
-    var ratio = concrete && (water * flowmeterCorrection + aggregatesHumidity) / concrete
+    var ratio = concrete && ((water + ice) * flowmeterCorrection + aggregatesHumidity) / concrete
 
     $('[name="ratio"]').val(ratio ? ratio.toFixed(2) : '')
   }
