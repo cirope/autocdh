@@ -195,7 +195,7 @@
   "sample_molding_work": "Obra",
   "sample_molding_remote": "Muestreo remoto",
   "sample_date": "Fecha y hora",
-  "sample_temperature": "Temperatura",
+  "sample_temperature": "Temperatura ambiente",
   "sample_humidity": "Humedad relativa",
   "sample_create_title": "Datos generales del muestreo",
   "sample_create": "Crear muestra",
