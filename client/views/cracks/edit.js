@@ -1,4 +1,15 @@
 Template.crackEdit.events({
+  'change [name="pressId"]': function (event) {
+    var press = $(event.currentTarget)
+    var params   = Router.current() && Router.current().params
+
+    if (press.val() === 'new') {
+      press.val('')
+      AutoForm.resetForm('editCrackForm')
+      Router.go('crackPressNew', { crack_id: params && params._id })
+    }
+  },
+
   'change [name="tubeType"]': function (event) {
     var tubeType   = $(event.currentTarget).val()
     var dimensions = _.map(tubeType.split('x'), function (d) { return +d * 10 })
