@@ -7,13 +7,13 @@ Template.crackEdit.events({
     $('[name="height"]').val(dimensions[1]).trigger('keyup')
   },
 
-  'keyup [data-stress-modifier]': function (event) {
-    var load           = +$('[name="load"]').val()
-    var diameter       = +$('[name="diameter"]').val()
-    var settings       = Settings.findOne() || {}
-    var stressConstant = settings.stressConstant || 1
-    var stress         = diameter && ((load * stressConstant) / (Math.PI * Math.pow(diameter, 2) / 4))
+  'keyup [data-stress-modifier], change [name="pressId"]': function (event) {
+    var measuredLoad = +$('[name="load"]').val()
+    var diameter     = +$('[name="diameter"]').val()
+    var press        = Presses.findOne($('[name="pressId"]').val())
+    var load         = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
+    var stress       = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10
 
-    $('[name="stress"]').val(stress.toFixed(3))
+    $('[name="stress"]').val(stress.toFixed(1))
   }
 })

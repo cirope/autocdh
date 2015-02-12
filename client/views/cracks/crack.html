@@ -19,6 +19,11 @@
           </p>
 
           <p>
+            {{_ 'press'}} /
+            <strong>{{press}}</strong>
+          </p>
+
+          <p>
             {{_ 'crack_molding_in'}} /
             <strong>{{l moldingIn 'L'}}</strong>
           </p>
@@ -55,13 +60,12 @@
             {{#if stress}}<strong>{{stress}} MPa</strong>{{/if}}
           </p>
 
+          <p>
+            {{_ 'crack_other_assay'}} /
+            <strong>{{otherAssay}}</strong>
+          </p>
         </div>
       </div>
-
-      <p>
-        {{_ 'crack_other_assay'}} /
-        <strong>{{otherAssay}}</strong>
-      </p>
 
       {{#unless updatedAt}}
         <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">

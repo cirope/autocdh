@@ -13,8 +13,15 @@
           {{> afFieldInput name='designation'}}
           <div class="row">
             <div class="col-md-6">
-              {{> afQuickField name='moldingIn'}}
-              {{> afQuickField name='crackedIn'}}
+              {{> afQuickField name='pressId'}}
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='moldingIn'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='crackedIn'}}
+                </div>
+              </div>
               {{> afQuickField name='tubeType'}}
             </div>
             <div class="col-md-6">
