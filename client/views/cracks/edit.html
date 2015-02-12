@@ -22,9 +22,10 @@
                   {{> afQuickField name='crackedIn'}}
                 </div>
               </div>
-              {{> afQuickField name='tubeType'}}
+              {{> afQuickField name='otherAssay'}}
             </div>
             <div class="col-md-6">
+              {{> afQuickField name='tubeType'}}
               <div class="row">
                 <div class="col-md-6">
                   {{> afQuickField name='diameter'}}
@@ -41,9 +42,12 @@
                   {{> afQuickField name='stress'}}
                 </div>
               </div>
-              {{> afQuickField name='otherAssay'}}
             </div>
           </div>
+
+          {{#unless afFieldValueIs name='otherAssay' value=''}}
+            {{> afQuickField name='observations'}}
+          {{/unless}}
         </fieldset>
         <button type="submit" class="btn btn-primary">{{_ 'crack_update'}}</button>
       {{/autoForm}}

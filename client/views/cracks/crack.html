@@ -34,12 +34,17 @@
           </p>
 
           <p>
-            {{_ 'crack_tube_type'}} /
-            <strong>{{tubeType}}</strong>
+            {{_ 'crack_other_assay'}} /
+            <strong>{{otherAssay}}</strong>
           </p>
         </div>
 
         <div class="col-md-6">
+          <p>
+            {{_ 'crack_tube_type'}} /
+            <strong>{{tubeType}}</strong>
+          </p>
+
           <p>
             {{_ 'crack_diameter'}} /
             <strong>{{diameter}} mm</strong>
@@ -59,13 +64,15 @@
             {{_ 'crack_stress'}} /
             {{#if stress}}<strong>{{stress}} MPa</strong>{{/if}}
           </p>
-
-          <p>
-            {{_ 'crack_other_assay'}} /
-            <strong>{{otherAssay}}</strong>
-          </p>
         </div>
       </div>
+
+      {{#if observations}}
+        <p>
+          {{_ 'crack_observations'}} /
+          <strong>{{observations}}</strong>
+        </p>
+      {{/if}}
 
       {{#unless updatedAt}}
         <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
