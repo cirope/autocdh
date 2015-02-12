@@ -9,7 +9,6 @@ Tracker.autorun(function () {
   if (templateForms[currentRoute]) {
     var form                = templateForms[currentRoute]
     var sampleId            = AutoForm.getFieldValue(form, 'sampleId')
-    var inTruck             = AutoForm.getFieldValue(form, 'inTruck')
     var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).concretes[0].amount
     var water               = AutoForm.getFieldValue(form, 'incorporated')
     var flowmeterCorrection = AutoForm.getFieldValue(form, 'flowmeterCorrection')
@@ -51,6 +50,6 @@ Tracker.autorun(function () {
 
     var ratio = concrete && (water * flowmeterCorrection + aggregatesHumidity) / concrete
 
-    $('[name="ratio"]').val(inTruck || ! ratio ? '' : ratio.toFixed(2))
+    $('[name="ratio"]').val(ratio ? ratio.toFixed(2) : '')
   }
 })
