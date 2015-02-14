@@ -1,4 +1,8 @@
 Template.crack.helpers({
+  crackedInLabel: function () {
+    return TAPi18n.__(this.updatedAt ? 'crack_cracked_in' : 'crack_cracked_in_estimated')
+  },
+
   press: function () {
     return this.pressId && Presses.findOne(this.pressId).name
   },
