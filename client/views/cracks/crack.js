@@ -7,6 +7,10 @@ Template.crack.helpers({
     return this.pressId && Presses.findOne(this.pressId).name
   },
 
+  responsible: function () {
+    return Responsible.findOne(this.responsibleId).name
+  },
+
   otherAssay: function () {
     return this.otherAssay ?
       TAPi18n.__('assay_other_assay_' + this.otherAssay) :

@@ -14,6 +14,7 @@
           <div class="row">
             <div class="col-md-6">
               {{> afQuickField name='pressId'}}
+              {{> afQuickField name='responsibleId'}}
               <div class="row">
                 <div class="col-md-6">
                   {{> afQuickField name='moldingIn'}}
@@ -22,10 +23,16 @@
                   {{> afQuickField name='crackedIn'}}
                 </div>
               </div>
-              {{> afQuickField name='otherAssay'}}
             </div>
             <div class="col-md-6">
-              {{> afQuickField name='tubeType' value=tubeType}}
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='tubeType' value=tubeType}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='otherAssay'}}
+                </div>
+              </div>
               <div class="row">
                 <div class="col-md-6">
                   {{> afQuickField name='diameter'}}
