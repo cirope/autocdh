@@ -1,3 +1,30 @@
+var setTubeType = function (tubeType, revalidate) {
+  var dimensions = _.map(tubeType.split('x'), function (d) { return +d * 10 })
+  var diameter   = dimensions[0]
+  var height     = dimensions[1]
+
+  Schemas.Crack.schema().diameter.min = diameter - 10
+  Schemas.Crack.schema().diameter.max = diameter + 10
+  Schemas.Crack.schema().height.min   = height - 10
+  Schemas.Crack.schema().height.max   = height + 10
+
+  $('[name="diameter"]').val(diameter).trigger('keyup')
+  $('[name="height"]').val(height).trigger('keyup')
+
+  if (revalidate) {
+    AutoForm.validateField('editCrackForm', 'diameter')
+    AutoForm.validateField('editCrackForm', 'height')
+  }
+}
+
+Template.crackEdit.helpers({
+  tubeType: function () {
+    setTubeType(this.tubeType)
+
+    return this.tubeType
+  }
+})
+
 Template.crackEdit.events({
   'change [name="pressId"]': function (event) {
     var press = $(event.currentTarget)
@@ -11,11 +38,7 @@ Template.crackEdit.events({
   },
 
   'change [name="tubeType"]': function (event) {
-    var tubeType   = $(event.currentTarget).val()
-    var dimensions = _.map(tubeType.split('x'), function (d) { return +d * 10 })
-
-    $('[name="diameter"]').val(dimensions[0]).trigger('keyup')
-    $('[name="height"]').val(dimensions[1]).trigger('keyup')
+    setTubeType($(event.currentTarget).val(), true)
   },
 
   'keyup [data-stress-modifier], change [name="pressId"]': function (event) {
