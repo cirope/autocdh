@@ -1,11 +1,11 @@
 Template.cracksList.helpers({
   crackClass: function () {
-    var crackedIn = moment(this.crackedIn)
+    var crackIn = moment(this.crackIn)
 
-    if (crackedIn.isSame())
+    if (crackIn.isSame())
       return 'success'
     else
-      return crackedIn.isAfter() ? 'text-muted' : 'danger'
+      return crackIn.isAfter() ? 'text-muted' : 'danger'
   },
 
   timeAfterMolding: function () {

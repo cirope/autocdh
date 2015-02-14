@@ -1,0 +1,65 @@
+<template name="_crackEdit">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'crack_update_title'}}: {{designation}}
+        <span class="badge">{{count}}</span>
+        <a class="pull-right" href="{{pathFor 'crack'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Cracks' id='editCrackForm' validation='blur' type='method' meteormethod='updateCrack' doc=this}}
+        <fieldset>
+          {{> afFieldInput name='sampleId'}}
+          {{> afFieldInput name='designation'}}
+          {{> afFieldInput name='crackIn'}}
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='pressId'}}
+              {{> afQuickField name='responsibleId'}}
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='moldingIn'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='crackedIn'}}
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='tubeType' value=tubeType}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='otherAssay'}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='diameter'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='height'}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='load'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='stress'}}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {{#unless afFieldValueIs name='otherAssay' value=''}}
+            {{> afQuickField name='observations'}}
+          {{/unless}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'crack_update'}}</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

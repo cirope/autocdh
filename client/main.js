@@ -34,5 +34,5 @@ Template.registerHelper('activeRouteClass', function () {
 })
 
 Template.registerHelper('overdueCracks', function () {
-  return Cracks.find({ updatedAt: null, crackedIn: { $lt: new Date } }).count()
+  return Cracks.find({ updatedAt: null, crackIn: { $lt: new Date } }).count()
 })

@@ -1,89 +1,32 @@
 <template name="crack">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        {{_ 'crack'}}
-        {{#if updatedAt}}
-          <a class="pull-right" href="{{pathFor 'cracksCracked'}}">{{_ 'go_back'}}</a>
-        {{else}}
-          <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
-        {{/if}}
-      </h3>
+  {{#if stressErrorExceeded}}
+    <div class="alert alert-danger text-center">
+      <strong>{{_ 'crack_stress_error_exceeded'}}</strong>
     </div>
-    <div class="panel-body">
-      <div class="row">
-        <div class="col-md-6">
-          <p>
-            {{_ 'crack_designation'}} /
-            <strong>{{designation}}</strong>
-          </p>
+  {{/if}}
 
-          <p>
-            {{_ 'press'}} /
-            <strong>{{press}}</strong>
-          </p>
+  {{#with crack}} {{> _crack}} {{/with}}
 
-          <p>
-            {{_ 'responsible'}} /
-            <strong>{{responsible}}</strong>
-          </p>
+  {{#if sibling}}
+    {{#with sibling}} {{> _crack}} {{/with}}
+  {{/if}}
 
-          <p>
-            {{_ 'crack_molding_in'}} /
-            <strong>{{l moldingIn 'L'}}</strong>
-          </p>
+  {{#if showStressAverageInfo}}
+    <hr>
 
-          <p>
-            {{crackedInLabel}} /
-            <strong>{{l crackedIn 'L'}}</strong>
-          </p>
-
-          <p>
-            {{_ 'crack_other_assay'}} /
-            <strong>{{otherAssay}}</strong>
-          </p>
-        </div>
-
-        <div class="col-md-6">
-          <p>
-            {{_ 'crack_tube_type'}} /
-            <strong>{{tubeType}}</strong>
-          </p>
-
-          <p>
-            {{_ 'crack_diameter'}} /
-            <strong>{{diameter}} mm</strong>
-          </p>
-
-          <p>
-            {{_ 'crack_height'}} /
-            <strong>{{height}} mm</strong>
-          </p>
-
-          <p>
-            {{_ 'crack_load'}} /
-            <strong>{{load}}</strong>
-          </p>
-
-          <p>
-            {{_ 'crack_stress'}} /
-            {{#if stress}}<strong>{{stress}} MPa</strong>{{/if}}
-          </p>
-        </div>
-      </div>
-
-      {{#if observations}}
+    <div class="row">
+      <div class="col-md-6">
         <p>
-          {{_ 'crack_observations'}} /
-          <strong>{{observations}}</strong>
+          {{_ 'crack_stress_average'}} /
+          <strong>{{stressAverage}} MPa</strong>
         </p>
-      {{/if}}
-
-      {{#unless updatedAt}}
-        <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
-          {{_ 'edit'}}
-        </a>
-      {{/unless}}
+      </div>
+      <div class="col-md-6">
+        <p class="{{stressErrorClass}}">
+          {{_ 'crack_stress_error'}} /
+          <strong>{{stressError}}%</strong>
+        </p>
+      </div>
     </div>
-  </div>
+  {{/if}}
 </template>

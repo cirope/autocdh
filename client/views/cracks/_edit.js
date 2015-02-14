@@ -17,7 +17,7 @@ var setTubeType = function (tubeType, revalidate) {
   }
 }
 
-Template.crackEdit.helpers({
+Template._crackEdit.helpers({
   tubeType: function () {
     setTubeType(this.tubeType)
 
@@ -25,7 +25,7 @@ Template.crackEdit.helpers({
   }
 })
 
-Template.crackEdit.events({
+Template._crackEdit.events({
   'change [name="pressId"]': function (event) {
     var press = $(event.currentTarget)
     var params   = Router.current() && Router.current().params

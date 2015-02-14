@@ -1,0 +1,91 @@
+<template name="_crack">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'crack'}}: {{designation}}
+        <span class="badge">{{count}}</span>
+
+        {{#if updatedAt}}
+          <a class="pull-right" href="{{pathFor 'cracksCracked'}}">{{_ 'go_back'}}</a>
+        {{else}}
+          <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
+        {{/if}}
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'press'}} /
+            <strong>{{press}}</strong>
+          </p>
+
+          <p>
+            {{_ 'responsible'}} /
+            <strong>{{responsible}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_molding_in'}} /
+            <strong>{{l moldingIn}}</strong>
+          </p>
+
+          <p>
+            {{#if updatedAt}}
+              {{_ 'crack_cracked_in'}}
+              <strong>{{l crackedIn}}</strong>
+            {{else}}
+              {{_ 'crack_crack_in'}}
+              <strong>{{l crackIn}}</strong>
+            {{/if}}
+          </p>
+
+          <p>
+            {{_ 'crack_other_assay'}} /
+            <strong>{{otherAssay}}</strong>
+          </p>
+        </div>
+
+        <div class="col-md-6">
+          <p>
+            {{_ 'crack_tube_type'}} /
+            <strong>{{tubeType}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_diameter'}} /
+            <strong>{{diameter}} mm</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_height'}} /
+            <strong>{{height}} mm</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_load'}} /
+            <strong>{{load}}</strong>
+          </p>
+
+          <p>
+            {{_ 'crack_stress'}} /
+            {{#if stress}}<strong>{{stress}} MPa</strong>{{/if}}
+          </p>
+        </div>
+      </div>
+
+      {{#if observations}}
+        <p>
+          {{_ 'crack_observations'}} /
+          <strong>{{observations}}</strong>
+        </p>
+      {{/if}}
+
+      {{#unless updatedAt}}
+        <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      {{/unless}}
+    </div>
+  </div>
+</template>
