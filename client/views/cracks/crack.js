@@ -1,12 +1,14 @@
-var stressError = new ReactiveVar
+var stressErrorExceeded = function () {
+  return this.crack.error > 15
+}
 
 Template.crack.helpers({
   showStressAverageInfo: function () {
-    return this.crack && this.crack.stress && this.sibling && this.sibling.stress
+    return this.crack && this.crack.error
   },
 
   stressPanelClass: function () {
-    return stressError.get() > 15 ? 'panel-danger' : 'panel-default'
+    return stressErrorExceeded.apply(this) ? 'panel-danger' : 'panel-default'
   },
 
   stressAverage: function () {
@@ -16,20 +18,12 @@ Template.crack.helpers({
   },
 
   stressError: function () {
-    var diff  = Math.abs(this.crack.stress - this.sibling.stress)
-    var sum   = this.crack.stress + this.sibling.stress
-    var error = sum > 0 ? (diff / sum) * 100 : 0
-
-    stressError.set(error)
-
-    return stressError.get().toFixed(0)
+    return this.crack.error.toFixed(0)
   },
 
   stressErrorClass: function () {
-    return stressError.get() > 15 ? 'text-danger' : 'text-muted'
+    return stressErrorExceeded.apply(this) ? 'text-danger' : 'text-muted'
   },
 
-  stressErrorExceeded: function () {
-    return this.sibling && stressError.get() > 15
-  }
+  stressErrorExceeded: stressErrorExceeded
 })

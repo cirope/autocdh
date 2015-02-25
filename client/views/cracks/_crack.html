@@ -5,7 +5,7 @@
         {{_ 'crack'}}: {{designation}}
         <span class="badge">{{count}}</span>
 
-        {{#if updatedAt}}
+        {{#if stress}}
           <a class="pull-right" href="{{pathFor 'cracksCracked'}}">{{_ 'go_back'}}</a>
         {{else}}
           <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
@@ -31,7 +31,7 @@
           </p>
 
           <p>
-            {{#if updatedAt}}
+            {{#if stress}}
               {{_ 'crack_cracked_in'}}
               <strong>{{l crackedIn}}</strong>
             {{else}}
@@ -81,7 +81,7 @@
         </p>
       {{/if}}
 
-      {{#unless updatedAt}}
+      {{#unless stress}}
         <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
           {{_ 'edit'}}
         </a>

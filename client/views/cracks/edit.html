@@ -1,15 +1,15 @@
 <template name="crackEdit">
   {{#with crack}}
-    {{#if updatedAt}} {{> _crack}}
-    {{else}}          {{> _crackEdit}}
+    {{#if stress}} {{> _crack}}
+    {{else}}       {{> _crackEdit}}
     {{/if}}
   {{/with}}
 
   {{#if sibling}}
-    {{#if crack.updatedAt}}
+    {{#if crack.stress}}
       {{#with sibling}}
-        {{#if updatedAt}} {{> _crack}}
-        {{else}}          {{> _crackEdit}}
+        {{#if stress}} {{> _crack}}
+        {{else}}       {{> _crackEdit}}
         {{/if}}
       {{/with}}
     {{else}}
