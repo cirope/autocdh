@@ -5,6 +5,10 @@ Template.crack.helpers({
     return this.crack && this.crack.stress && this.sibling && this.sibling.stress
   },
 
+  stressPanelClass: function () {
+    return stressError.get() > 15 ? 'panel-danger' : 'panel-default'
+  },
+
   stressAverage: function () {
     var avegare = (this.crack.stress + this.sibling.stress) / 2
 

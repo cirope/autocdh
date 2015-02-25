@@ -12,20 +12,25 @@
   {{/if}}
 
   {{#if showStressAverageInfo}}
-    <hr>
-
-    <div class="row">
-      <div class="col-md-6">
-        <p>
-          {{_ 'crack_stress_average'}} /
-          <strong>{{stressAverage}} MPa</strong>
-        </p>
+    <div class="panel {{stressPanelClass}}">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{_ 'crack_stress_average'}}</h3>
       </div>
-      <div class="col-md-6">
-        <p class="{{stressErrorClass}}">
-          {{_ 'crack_stress_error'}} /
-          <strong>{{stressError}}%</strong>
-        </p>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-6">
+            <p>
+              {{_ 'crack_stress_average'}} /
+              <strong>{{stressAverage}} MPa</strong>
+            </p>
+          </div>
+          <div class="col-md-6">
+            <p class="{{stressErrorClass}}">
+              {{_ 'crack_stress_error'}} /
+              <strong>{{stressError}}%</strong>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   {{/if}}
