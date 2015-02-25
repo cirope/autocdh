@@ -9,6 +9,7 @@ Tracker.autorun(function () {
   if (templateForms[currentRoute]) {
     var form                = templateForms[currentRoute]
     var sampleId            = AutoForm.getFieldValue(form, 'sampleId')
+    var inTruck             = AutoForm.getFieldValue(form, 'inTruck')
     var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).concretes[0].amount
     var ice                 = +AutoForm.getFieldValue(form, 'ice')
     var water               = +AutoForm.getFieldValue(form, 'incorporated')
@@ -51,6 +52,9 @@ Tracker.autorun(function () {
 
     var ratio = concrete && ((water + ice) * flowmeterCorrection + aggregatesHumidity) / concrete
 
-    $('[name="ratio"]').val(ratio ? ratio.toFixed(2) : '')
+    if (inTruck)
+      $('[name="ratio"]').val(TAPi18n.__('humidity_cannot_calculate_ratio')).prop('disabled', true)
+    else
+      $('[name="ratio"]').val(ratio ? ratio.toFixed(2) : '').prop('disabled', false)
   }
 })

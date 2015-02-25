@@ -146,6 +146,7 @@
   "humidity_gravels_humidity": "Humedad",
   "humidity_flowmeter_correction": "Factor de corrección del caudalímetro",
   "humidity_ratio": "Relación agua / cemento",
+  "humidity_cannot_calculate_ratio": "No se puede calcular",
   "humidity_create_title": "Demanda de agua y correciones por humedad",
   "humidity_create": "Guardar demanda de agua",
   "humidity_update_title": "Editar demanda de agua y correcciones por humedad",

@@ -38,7 +38,12 @@
 
       <p>
         {{_ 'humidity_ratio'}}
-        <strong>{{ratio}}</strong>
+
+        {{#if this.inTruck}}
+          <strong>{{_ 'humidity_cannot_calculate_ratio'}}</strong>
+        {{else}}
+          <strong>{{ratio}}</strong>
+        {{/if}}
       </p>
 
       <a href="{{pathFor 'humidityEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'humidity_update_title'}}">

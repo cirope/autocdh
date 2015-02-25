@@ -31,7 +31,6 @@
               </div>
             </div>
           </div>
-          {{> afQuickField name='inTruck'}}
           <div class="panel panel-default">
             <div class="panel-heading">
               {{_ 'humidity_aggregates'}}
@@ -46,7 +45,8 @@
             <div class="col-lg-6">
               {{> afQuickField name='ratio'}}
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-6 bottom">
+              {{> afQuickField name='inTruck'}}
               {{> afQuickField name='flowmeterCorrection'}}
             </div>
           </div>
