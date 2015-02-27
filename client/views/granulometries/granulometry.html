@@ -148,6 +148,13 @@
         </div>
       </div>
 
+      {{#if idealCurves}}
+        <p>
+          {{_ 'granulometry_ideal_curves'}} /
+          <strong>{{idealCurves}} mm</strong>
+        </p>
+      {{/if}}
+
       <a href="{{pathFor 'granulometryEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'granulometry_update_title'}}">
         {{_ 'edit'}}
       </a>

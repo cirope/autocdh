@@ -158,6 +158,7 @@
   "granulometry_test_sieve": "Sieve",
   "granulometry_test_net_weight": "Net weight",
   "granulometry_test_gross_weight": "Gross weight",
+  "granulometry_ideal_curves": "Ideal curves",
   "granulometry_create_title": "Add a new granulometry",
   "granulometry_create": "Create granulometry",
   "granulometry_update_title": "Edit a granulometry",
