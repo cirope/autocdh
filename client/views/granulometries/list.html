@@ -1,0 +1,53 @@
+<template name="granulometries">
+  {{#if granulometries.count}}
+    {{> granulometriesList}}
+  {{else}}
+    {{> granulometriesEmpty}}
+  {{/if}}
+</template>
+
+<template name="granulometriesList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'granulometries'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'granulometryNew'}}">{{_ 'granulometry_new'}}</a>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{_ 'granulometry_name'}}</th>
+            <th>{{_ 'granulometry_date'}}</th>
+            <th class="hidden-xs">{{_ 'plant'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each granulometries}}
+            <tr>
+              <td><a href="{{pathFor 'granulometry'}}">{{name}}</a></td>
+              <td><a href="{{pathFor 'granulometry'}}">{{l date}}</a></td>
+              <td class="hidden-xs"><a href="{{pathFor 'granulometry'}}">{{plant plantId}}</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+      {{#if nextPath}}
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            <a class="btn btn-default btn-xs btn-block" href="{{nextPath}}">{{_ 'more'}}</a>
+          </div>
+        </div>
+
+        <br>
+      {{else}}
+        {{#unless ready}}{{> spinner}}{{/unless}}
+      {{/if}}
+
+      <a class="btn btn-primary" href="{{pathFor 'granulometryNew'}}">{{_ 'granulometry_new'}}</a>
+    </div>
+  </div>
+</template>

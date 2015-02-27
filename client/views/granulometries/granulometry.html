@@ -1,0 +1,156 @@
+<template name="granulometry">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'granulometry'}}: {{name}} / {{type}}
+        <a class="pull-right" href="{{pathFor 'granulometries'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'responsible'}} /
+            <strong>{{responsible}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_date'}} /
+            <strong>{{l date 'L'}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'plant'}} /
+            <strong>{{plant}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_sample_weight'}} /
+            <strong>{{sampleWeight}} kg</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{_ 'granulometry_humidity'}}</h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                {{_ 'granulometry_humidity_container'}} /
+                <strong>{{humidity.container}}</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_humidity_mass_of_container'}} /
+                <strong>{{humidity.massOfContainer}} g</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_humidity_mass_of_wet_aggregate'}} /
+                <strong>{{humidity.massOfWetAggregate}} g</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_humidity_mass_of_dry_aggregate'}} /
+                <strong>{{humidity.massOfDryAggregate}} g</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_humidity_percentage'}} /
+                <strong>{{humidityPercentage}}%</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">{{_ 'granulometry_thin'}}</h3>
+            </div>
+
+            <div class="panel-body">
+              <p>
+                {{_ 'granulometry_thin_container'}} /
+                <strong>{{thin.container}}</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_thin_mass_of_container'}} /
+                <strong>{{thin.massOfContainer}} g</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_thin_mass_before_wash'}} /
+                <strong>{{thin.massBeforeWash}} g</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_thin_mass_after_wash'}} /
+                <strong>{{thin.massAfterWash}} g</strong>
+              </p>
+              <p>
+                {{_ 'granulometry_thin_percentage'}} /
+                <strong>{{thinPercentage}}%</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_granulometry_weight'}} /
+            <strong>{{granulometryWeight}} g</strong>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p>
+            {{_ 'granulometry_dried'}} /
+            <strong>{{dried}}</strong>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p>
+            {{_ 'granulometry_washed'}} /
+            <strong>{{washed}}</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{_ 'granulometry_test'}}</h3>
+        </div>
+
+        <div class="panel-body">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>{{_ 'granulometry_test_sieve'}}</th>
+                <th>{{_ 'granulometry_test_net_weight'}}</th>
+                <th>{{_ 'granulometry_test_gross_weight'}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each test}}
+                <tr>
+                  <td>{{sieve}} mm</td>
+                  <td>{{netWeight}} g</td>
+                  <td>{{grossWeight}} g</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <a href="{{pathFor 'granulometryEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'granulometry_update_title'}}">
+        {{_ 'edit'}}
+      </a>
+    </div>
+  </div>
+</template>

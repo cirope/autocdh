@@ -1,0 +1,61 @@
+<template name="granulometryNew">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'granulometry_create_title'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='Granulometries' id='newGranulometryForm' type='method' validation='blur' meteormethod='createGranulometry' doc=granulometry}}
+        <fieldset>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='responsibleId'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='date'}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='name'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='plantId'}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='type'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='sampleWeight'}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='humidity'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='thin'}}
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              {{> afQuickField name='granulometryWeight'}}
+            </div>
+            <div class="col-md-3 bottom">
+              {{> afQuickField name='dried'}}
+            </div>
+            <div class="col-md-3 bottom">
+              {{> afQuickField name='washed'}}
+            </div>
+          </div>
+          {{> afQuickField name='test' value=test}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'granulometry_create'}}</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
