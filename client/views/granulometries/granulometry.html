@@ -133,6 +133,11 @@
                 <th>{{_ 'granulometry_test_sieve'}}</th>
                 <th>{{_ 'granulometry_test_net_weight'}}</th>
                 <th>{{_ 'granulometry_test_gross_weight'}}</th>
+                <th class="hidden-xs">{{_ 'granulometry_test_retained'}}</th>
+                <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_retained_total'}}</th>
+                <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_passed'}}</th>
+                <th class="hidden-sm hidden-xs">% {{_ 'granulometry_test_passed'}}</th>
+                <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_retained_accumulated'}}</th>
               </tr>
             </thead>
             <tbody>
@@ -141,10 +146,39 @@
                   <td>{{sieve}} mm</td>
                   <td>{{netWeight}} g</td>
                   <td>{{grossWeight}} g</td>
+                  <td class="hidden-xs">{{retained}} g</td>
+                  <td class="hidden-sm hidden-xs">{{retainedAccumulated}} g</td>
+                  <td class="hidden-sm hidden-xs">{{passed}} g</td>
+                  <td class="hidden-sm hidden-xs">{{passedPercentage}}%</td>
+                  <td class="hidden-sm hidden-xs">{{retainedAccumulatedPercentage}}%</td>
                 </tr>
               {{/each}}
+
+              <tr>
+                <td colspan="3">{{_ 'granulometry_test_correction'}}</td>
+                <td class="hidden-xs">{{correction}} g</td>
+                <td class="hidden-sm hidden-xs">{{retainedTotal}} g</td>
+                <td class="hidden-sm hidden-xs">0 g</td>
+                <td class="hidden-sm hidden-xs">0%</td>
+                <td class="hidden-sm hidden-xs">100%</td>
+              </tr>
             </tbody>
           </table>
+
+          <p>
+            {{_ 'granulometry_test_sample_weight'}} /
+            <strong>{{sampleWeight}} g</strong>
+          </p>
+
+          <p>
+            {{_ 'granulometry_test_total_weight'}} /
+            <strong>{{retainedTotal}} g</strong>
+          </p>
+
+          <p>
+            {{_ 'granulometry_test_fineness'}} /
+            <strong>{{fineness}}</strong>
+          </p>
         </div>
       </div>
 
