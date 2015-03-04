@@ -29,8 +29,6 @@ var granulometry = new ReactiveVar
 
 Template.granulometryNew.helpers({
   granulometry: function () {
-    console.log('lala')
-
     if (! granulometry.get())
       granulometry.set({ type: 'sand', test: testByType['sand'] })
 
