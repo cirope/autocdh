@@ -131,8 +131,10 @@
             <thead>
               <tr>
                 <th>{{_ 'granulometry_test_sieve'}}</th>
-                <th>{{_ 'granulometry_test_net_weight'}}</th>
-                <th>{{_ 'granulometry_test_gross_weight'}}</th>
+                {{#if sand}}
+                  <th>{{_ 'granulometry_test_net_weight'}}</th>
+                  <th>{{_ 'granulometry_test_gross_weight'}}</th>
+                {{/if}}
                 <th class="hidden-xs">{{_ 'granulometry_test_retained'}}</th>
                 <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_retained_total'}}</th>
                 <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_passed'}}</th>
@@ -144,8 +146,10 @@
               {{#each test}}
                 <tr>
                   <td>{{sieve}} mm</td>
-                  <td>{{netWeight}} g</td>
-                  <td>{{grossWeight}} g</td>
+                  {{#if sand}}
+                    <td>{{netWeight}} g</td>
+                    <td>{{grossWeight}} g</td>
+                  {{/if}}
                   <td class="hidden-xs">{{retained}} g</td>
                   <td class="hidden-sm hidden-xs">{{retainedAccumulated}} g</td>
                   <td class="hidden-sm hidden-xs">{{passed}} g</td>
@@ -155,7 +159,11 @@
               {{/each}}
 
               <tr>
-                <td colspan="3">{{_ 'granulometry_test_correction'}}</td>
+                {{#if sand}}
+                  <td colspan="3">{{_ 'granulometry_test_correction'}}</td>
+                {{else}}
+                  <td>{{_ 'granulometry_test_correction'}}</td>
+                {{/if}}
                 <td class="hidden-xs">{{correction}} g</td>
                 <td class="hidden-sm hidden-xs">{{retainedTotal}} g</td>
                 <td class="hidden-sm hidden-xs">0 g</td>
@@ -192,6 +200,12 @@
       <a href="{{pathFor 'granulometryEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'granulometry_update_title'}}">
         {{_ 'edit'}}
       </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <canvas class="graph" id="chart"></canvas>
     </div>
   </div>
 </template>

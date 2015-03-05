@@ -6,14 +6,6 @@ label {
   margin-bottom: 2px;
 }
 
-.visible-on-hover {
-  visibility: hidden;
-}
-
-.visible-on-hover-parent:hover .visible-on-hover {
-  visibility: visible;
-}
-
 .bottom {
   padding-top: 20px;
 }
@@ -29,6 +21,10 @@ label {
 
 .form-group {
   margin-bottom: 8px;
+}
+
+.graph {
+  margin: 1em 0em;
 }
 
 .input-group-addon {
@@ -86,6 +82,14 @@ label {
 .row.slim .panel-default,
 .row.basic .panel-default {
   border: none;
+}
+
+.visible-on-hover {
+  visibility: hidden;
+}
+
+.visible-on-hover-parent:hover .visible-on-hover {
+  visibility: visible;
 }
 
 [data-group-name$="_id"] {

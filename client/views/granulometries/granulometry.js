@@ -1,3 +1,4 @@
+var type                = null
 var retainedAccumulated = 0
 var retainedTotal       = 0
 var thinPercentage      = 0
@@ -5,21 +6,51 @@ var correction          = 0
 var sampleWeight        = 0
 var passedPercentage    = 0
 var passedAccumulated   = 0
+var chartData           = []
 
 var initVars            = function () {
+  var self            = this
+
+  type                = self.type
   retainedAccumulated = 0
   passedPercentage    = 0
   passedAccumulated   = 0
-  sampleWeight        = _.reduce(this.test, function (memo, t) {
-    return memo + t.grossWeight - t.netWeight
+  sampleWeight        = _.reduce(self.test, function (memo, t) {
+    return memo + (self.type === 'sand' ? t.grossWeight - t.netWeight : t.netWeight)
   }, 0)
   correction          = Math.round(sampleWeight * thinPercentage / 100)
   retainedTotal       = sampleWeight + correction
 }
 
+Template.granulometry.rendered = function () {
+  var data                = {
+    labels: _.map(this.data.test, function (t) { return t.sieve }).reverse(),
+    datasets: [
+      {
+        fillColor:            'rgba(147,197,75,0)',
+        strokeColor:          'rgba(147,197,75,1)',
+        pointColor:           'rgba(147,197,75,1)',
+        pointStrokeColor:     '#fff',
+        pointHighlightFill:   '#fff',
+        pointHighlightStroke: 'rgba(147,197,75,1)',
+        data:                 chartData.reverse()
+      }
+    ]
+  }
+  var ctx         = document.getElementById('chart').getContext('2d')
+  var myLineChart = new Chart(ctx).Line(data, {
+    responsive: true,
+    bezierCurve: false
+  })
+}
+
 Template.granulometry.helpers({
   type: function () {
     return TAPi18n.__('granulometry_type_' + this.type)
+  },
+
+  sand: function () {
+    return (this.type || type) === 'sand'
   },
 
   responsible: function () {
@@ -61,11 +92,13 @@ Template.granulometry.helpers({
   },
 
   retained: function () {
-    return this.grossWeight - this.netWeight
+    return type === 'sand' ? this.grossWeight - this.netWeight : this.netWeight
   },
 
   retainedAccumulated: function () {
-    retainedAccumulated += this.grossWeight - this.netWeight
+    var retained = type === 'sand' ? this.grossWeight - this.netWeight : this.netWeight
+
+    retainedAccumulated += retained
 
     return retainedAccumulated
   },
@@ -89,6 +122,8 @@ Template.granulometry.helpers({
   passedPercentage: function () {
     passedPercentage   = Math.round((retainedTotal - retainedAccumulated) / retainedTotal * 100)
     passedAccumulated += passedPercentage
+
+    chartData.push(passedPercentage)
 
     return passedPercentage
   },
