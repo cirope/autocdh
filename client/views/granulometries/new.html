@@ -55,11 +55,13 @@
 
           {{> afQuickField name='test'}}
 
-          <div class="row">
-            <div class="col-md-6">
-              {{> afQuickField name='idealCurves'}}
+          {{#if afFieldValueIs name='type' value='gravel'}}
+            <div class="row">
+              <div class="col-md-6">
+                {{> afQuickField name='idealCurves'}}
+              </div>
             </div>
-          </div>
+          {{/if}}
         </fieldset>
         <button type="submit" class="btn btn-primary">{{_ 'granulometry_create'}}</button>
       {{/autoForm}}
