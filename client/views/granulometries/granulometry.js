@@ -12,6 +12,7 @@ var initVars            = function () {
   var self            = this
 
   type                = self.type
+  chartData           = []
   retainedAccumulated = 0
   passedPercentage    = 0
   passedAccumulated   = 0
