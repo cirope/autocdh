@@ -1,5 +1,5 @@
 var currentTruck = function () {
-  var formId  = AutoForm.find('fields').formId
+  var formId  = AutoForm.getFormId()
   var truckId = AutoForm.getFieldValue('truckId', formId)
 
   return truckId && Trucks.findOne(truckId)
