@@ -50,15 +50,15 @@
               </p>
               <p>
                 {{_ 'granulometry_humidity_mass_of_container'}} /
-                <strong>{{humidity.massOfContainer}} g</strong>
+                <strong>{{r humidity.massOfContainer}} g</strong>
               </p>
               <p>
                 {{_ 'granulometry_humidity_mass_of_wet_aggregate'}} /
-                <strong>{{humidity.massOfWetAggregate}} g</strong>
+                <strong>{{r humidity.massOfWetAggregate}} g</strong>
               </p>
               <p>
                 {{_ 'granulometry_humidity_mass_of_dry_aggregate'}} /
-                <strong>{{humidity.massOfDryAggregate}} g</strong>
+                <strong>{{r humidity.massOfDryAggregate}} g</strong>
               </p>
               <p>
                 {{_ 'granulometry_humidity_percentage'}} /
@@ -81,15 +81,15 @@
               </p>
               <p>
                 {{_ 'granulometry_thin_mass_of_container'}} /
-                <strong>{{thin.massOfContainer}} g</strong>
+                <strong>{{r thin.massOfContainer}} g</strong>
               </p>
               <p>
                 {{_ 'granulometry_thin_mass_before_wash'}} /
-                <strong>{{thin.massBeforeWash}} g</strong>
+                <strong>{{r thin.massBeforeWash}} g</strong>
               </p>
               <p>
                 {{_ 'granulometry_thin_mass_after_wash'}} /
-                <strong>{{thin.massAfterWash}} g</strong>
+                <strong>{{r thin.massAfterWash}} g</strong>
               </p>
               <p>
                 {{_ 'granulometry_thin_percentage'}} /
@@ -104,7 +104,7 @@
         <div class="col-md-6">
           <p>
             {{_ 'granulometry_granulometry_weight'}} /
-            <strong>{{granulometryWeight}} g</strong>
+            <strong>{{r granulometryWeight}} g</strong>
           </p>
         </div>
         <div class="col-md-3">
@@ -147,12 +147,12 @@
                 <tr>
                   <td>{{sieve}} mm</td>
                   {{#if sand}}
-                    <td>{{netWeight}} g</td>
-                    <td>{{grossWeight}} g</td>
+                    <td>{{r netWeight 2}} g</td>
+                    <td>{{r grossWeight 2}} g</td>
                   {{/if}}
-                  <td class="hidden-xs">{{retained}} g</td>
-                  <td class="hidden-sm hidden-xs">{{retainedAccumulated}} g</td>
-                  <td class="hidden-sm hidden-xs">{{passed}} g</td>
+                  <td class="hidden-xs">{{r retained 2}} g</td>
+                  <td class="hidden-sm hidden-xs">{{r retainedAccumulated 2}} g</td>
+                  <td class="hidden-sm hidden-xs">{{r passed 2}} g</td>
                   <td class="hidden-sm hidden-xs">{{passedPercentage}}%</td>
                   <td class="hidden-sm hidden-xs">{{retainedAccumulatedPercentage}}%</td>
                 </tr>
@@ -164,9 +164,9 @@
                 {{else}}
                   <td>{{_ 'granulometry_test_correction'}}</td>
                 {{/if}}
-                <td class="hidden-xs">{{correction}} g</td>
-                <td class="hidden-sm hidden-xs">{{retainedTotal}} g</td>
-                <td class="hidden-sm hidden-xs">0 g</td>
+                <td class="hidden-xs">{{r correction 2}} g</td>
+                <td class="hidden-sm hidden-xs">{{r retainedTotal 2}} g</td>
+                <td class="hidden-sm hidden-xs">0.00 g</td>
                 <td class="hidden-sm hidden-xs">0%</td>
                 <td class="hidden-sm hidden-xs">100%</td>
               </tr>
@@ -175,12 +175,12 @@
 
           <p>
             {{_ 'granulometry_test_sample_weight'}} /
-            <strong>{{sampleWeight}} g</strong>
+            <strong>{{r sampleWeight}} g</strong>
           </p>
 
           <p>
             {{_ 'granulometry_test_total_weight'}} /
-            <strong>{{retainedTotal}} g</strong>
+            <strong>{{r retainedTotal}} g</strong>
           </p>
 
           <p>
@@ -193,7 +193,7 @@
       {{#if idealCurves}}
         <p>
           {{_ 'granulometry_ideal_curves'}} /
-          <strong>{{idealCurves}} mm</strong>
+          <strong>{{r idealCurves}} mm</strong>
         </p>
       {{/if}}
 

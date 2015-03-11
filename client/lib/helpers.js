@@ -21,3 +21,7 @@ Template.registerHelper('activeRouteClass', function () {
 Template.registerHelper('overdueCracks', function () {
   return Cracks.find({ stress: null, crackIn: { $lt: new Date } }).count()
 })
+
+Template.registerHelper('r', function (number, decimals) {
+  return (+number).toFixed(decimals || 0)
+})
