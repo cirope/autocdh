@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Samples' id='editSampleForm' type='method' validation='blur' meteormethod='updateSample' doc=sample}}
+      {{#autoForm collection='Samples' id='editSampleForm' type='method-update' validation='blur' meteormethod='updateSample' doc=sample}}
         <fieldset disabled={{disabled}}>
           {{> afQuickField name='name'}}
           {{> afQuickField name='plantId' options=plantOptions}}

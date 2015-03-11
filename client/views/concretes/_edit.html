@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method' meteormethod='updateConcrete' doc=concrete}}
+      {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method-update' meteormethod='updateConcrete' doc=concrete}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id}}
           {{> afQuickField name='strengthId' options=strengthOptions}}

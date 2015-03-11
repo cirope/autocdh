@@ -8,12 +8,12 @@ Tracker.autorun(function () {
 
   if (templateForms[currentRoute]) {
     var form                = templateForms[currentRoute]
-    var sampleId            = AutoForm.getFieldValue(form, 'sampleId')
-    var inTruck             = AutoForm.getFieldValue(form, 'inTruck')
+    var sampleId            = AutoForm.getFieldValue('sampleId', form)
+    var inTruck             = AutoForm.getFieldValue('inTruck', form)
     var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).concretes[0].amount
-    var ice                 = +AutoForm.getFieldValue(form, 'ice')
-    var water               = +AutoForm.getFieldValue(form, 'incorporated')
-    var flowmeterCorrection = +AutoForm.getFieldValue(form, 'flowmeterCorrection')
+    var ice                 = +AutoForm.getFieldValue('ice', form)
+    var water               = +AutoForm.getFieldValue('incorporated', form)
+    var flowmeterCorrection = +AutoForm.getFieldValue('flowmeterCorrection', form)
     var materials           = Materials.first() || { sands: [], gravels: [] }
     var aggregatesHumidity  = 0
     var hSandsTracker       = AutoForm.arrayTracker.getForm(form).hSands
@@ -37,9 +37,9 @@ Tracker.autorun(function () {
         var aggregateName  = aggregateType.name + '.' + i +  '.'
 
         if ($('[name^="' + aggregateName + '"]').length) {
-          var amount    = AutoForm.getFieldValue(form, aggregateName + 'amount')
-          var humidity  = AutoForm.getFieldValue(form, aggregateName + 'humidity')
-          var id        = AutoForm.getFieldValue(form, aggregateName + 'id')
+          var amount    = AutoForm.getFieldValue(aggregateName + 'amount', form)
+          var humidity  = AutoForm.getFieldValue(aggregateName + 'humidity', form)
+          var id        = AutoForm.getFieldValue(aggregateName + 'id', form)
           var aggregate = _.find(aggregateType.materials, function (aggregate) {
             return aggregate._id === id
           })

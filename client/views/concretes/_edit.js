@@ -24,7 +24,7 @@ Template._concreteEdit.helpers({
   },
 
   additive: function () {
-    var additiveId = AutoForm.getFieldValue('editConcreteForm', 'additiveId')
+    var additiveId = AutoForm.getFieldValue('additiveId', 'editConcreteForm')
     var additive   = additiveId && Additives.findOne(additiveId)
 
     return additive

@@ -9,7 +9,7 @@
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Receipts' id='editReceiptForm' validation='blur' type='method' meteormethod='updateReceipt' doc=receipt}}
+      {{#autoForm collection='Receipts' id='editReceiptForm' validation='blur' type='method-update' meteormethod='updateReceipt' doc=receipt}}
 
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' type='hidden'}}

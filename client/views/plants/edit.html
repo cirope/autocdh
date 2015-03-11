@@ -8,7 +8,7 @@
         </h3>
       </div>
       <div class="panel-body">
-        {{#autoForm collection='Plants' id='editPlantForm' type='method' meteormethod='updatePlant' doc=..}}
+        {{#autoForm collection='Plants' id='editPlantForm' type='method-update' meteormethod='updatePlant' doc=..}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
             {{> afQuickField name='flowmeterCorrection'}}
