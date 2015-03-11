@@ -18,7 +18,7 @@ Template.settlementNew.helpers({
 
 AutoForm.addHooks('newSettlementForm', {
   before: {
-    createSettlement: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

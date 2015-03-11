@@ -59,7 +59,7 @@ Template.granulometryNew.events({
 
 AutoForm.addHooks('newGranulometryForm', {
   before: {
-    createGranulometry: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

@@ -94,7 +94,7 @@ Template._concreteNew.events({
 
 AutoForm.addHooks('newConcreteForm', {
   before: {
-    createConcrete: function (doc, template) {
+    method: function (doc) {
       if (AutoForm.validateForm('newConcreteForm'))
         setTimeout(function () { concrete.set() }, 300)
 

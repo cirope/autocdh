@@ -14,7 +14,7 @@ Template.workNew.helpers({
 
 AutoForm.addHooks('newWorkForm', {
   before: {
-    createWork: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

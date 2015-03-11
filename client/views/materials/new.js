@@ -1,6 +1,6 @@
 AutoForm.addHooks('newMaterialForm', {
   before: {
-    createMaterial: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

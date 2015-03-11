@@ -10,7 +10,7 @@ Template.pressNew.helpers({
 
 AutoForm.addHooks('newPressForm', {
   before: {
-    createPress: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

@@ -11,7 +11,7 @@ Template._humidityNew.events({
 
 AutoForm.addHooks('newHumidityForm', {
   before: {
-    createHumidity: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

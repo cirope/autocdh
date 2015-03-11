@@ -18,7 +18,7 @@ Template.strengthNew.helpers({
 
 AutoForm.addHooks('newStrengthForm', {
   before: {
-    createStrength: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

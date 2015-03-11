@@ -14,7 +14,7 @@ Template.additiveNew.helpers({
 
 AutoForm.addHooks('newAdditiveForm', {
   before: {
-    createAdditive: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

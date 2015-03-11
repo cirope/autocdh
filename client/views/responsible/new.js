@@ -13,7 +13,7 @@ Template.responsibleNew.helpers({
 
 AutoForm.addHooks('newResponsibleForm', {
   before: {
-    createResponsible: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

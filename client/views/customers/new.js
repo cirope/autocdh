@@ -14,7 +14,7 @@ Template.customerNew.helpers({
 
 AutoForm.addHooks('newCustomerForm', {
   before: {
-    createCustomer: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

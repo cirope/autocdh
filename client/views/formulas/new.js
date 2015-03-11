@@ -56,7 +56,7 @@ Template.formulaNew.events({
 
 AutoForm.addHooks('newFormulaForm', {
   before: {
-    createFormula: function (doc, template) {
+    method: function (doc) {
       if (AutoForm.validateForm('newFormulaForm'))
         setTimeout(function () { formula.set() }, 300)
 

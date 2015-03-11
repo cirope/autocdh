@@ -61,7 +61,7 @@ Template._receiptNew.events({
 
 AutoForm.addHooks('newReceiptForm', {
   before: {
-    createReceipt: function (doc, template) {
+    method: function (doc) {
       if (AutoForm.validateForm('newReceiptForm'))
         setTimeout(function () { receipt.set({}) }, 300)
 

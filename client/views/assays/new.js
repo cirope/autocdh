@@ -6,7 +6,7 @@ Template.assayNew.events({
 
 AutoForm.addHooks('newAssayForm', {
   before: {
-    createAssay: function (doc, template) {
+    method: function (doc) {
       return _.extend(doc, { _id: Random.id() })
     }
   }

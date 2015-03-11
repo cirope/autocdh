@@ -35,7 +35,7 @@ Template._sampleNew.events({
 
 AutoForm.addHooks('newSampleForm', {
   before: {
-    createSample: function (doc, template) {
+    method: function (doc) {
       if (AutoForm.validateForm('newSampleForm'))
         setTimeout(function () { sample.set({}) }, 300)
 
