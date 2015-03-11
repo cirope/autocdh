@@ -13,19 +13,22 @@ Template.workSearch.helpers({
 
   settings: function () {
     var worksRule = {
-      collection: Works,
-      field: 'name',
-      matchAll: true,
-      template: Template.workPill,
-      noMatchTemplate: Template.emptyWorkPill,
-      callback: function (work) {
-        $('[name="workId"]').val(work && work._id).trigger('change')
-      }
+      collection:      Works,
+      field:           'name',
+      matchAll:        true,
+      template:        Template.workPill,
+      noMatchTemplate: Template.emptyWorkPill
     }
 
     return {
       limit: 10,
       rules: [worksRule]
     }
+  }
+})
+
+Template.workSearch.events({
+  'autocompleteselect #work-search': function (event, template, doc) {
+    $('[name="workId"]').val(doc && doc._id).trigger('change')
   }
 })

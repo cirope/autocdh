@@ -13,19 +13,22 @@ Template.customerSearch.helpers({
 
   settings: function () {
     var customersRule = {
-      collection: Customers,
-      field: 'name',
-      matchAll: true,
-      template: Template.customerPill,
-      noMatchTemplate: Template.emptyCustomerPill,
-      callback: function (customer) {
-        $('[name="customerId"]').val(customer && customer._id).trigger('change')
-      }
+      collection:      Customers,
+      field:           'name',
+      matchAll:        true,
+      template:        Template.customerPill,
+      noMatchTemplate: Template.emptyCustomerPill
     }
 
     return {
       limit: 10,
       rules: [customersRule]
     }
+  }
+})
+
+Template.customerSearch.events({
+  'autocompleteselect #customer-search': function (event, template, doc) {
+    $('[name="customerId"]').val(doc && doc._id).trigger('change')
   }
 })

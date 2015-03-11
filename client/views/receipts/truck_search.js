@@ -24,20 +24,23 @@ Template.truckSearch.helpers({
 
   settings: function () {
     var trucksRule = {
-      collection: Trucks,
-      field: 'number',
-      matchAll: true,
-      template: Template.truckPill,
-      noMatchTemplate: Template.emptyTruckPill,
-      callback: function (truck) {
-        $('[name="truckId"]').val(truck && truck._id).trigger('change')
-      }
+      collection:      Trucks,
+      field:           'number',
+      matchAll:        true,
+      template:        Template.truckPill,
+      noMatchTemplate: Template.emptyTruckPill
     }
 
     return {
       limit: 10,
       rules: [trucksRule]
     }
+  }
+})
+
+Template.truckSearch.events({
+  'autocompleteselect #truck-search': function (event, template, doc) {
+    $('[name="truckId"]').val(doc && doc._id).trigger('change')
   }
 })
 
