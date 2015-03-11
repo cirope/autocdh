@@ -1,18 +1,18 @@
 <template name="afArrayField_basic">
   <div data-cols="{{cols}}">
-    {{#if afFieldIsInvalid name=this.name}}
+    {{#if afFieldIsInvalid name=this.atts.name}}
       <div class="has-error">
-        <span class="help-block">{{{afFieldMessage name=this.name}}}</span>
+        <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
       </div>
     {{/if}}
 
-    {{#afEachArrayItem name=this.name minCount=this.minCount maxCount=this.maxCount}}
+    {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
       <div class="item-container" data-item-name="{{this.name}}">
         <div class="row basic">
           {{> afQuickField name=this.name template='basic'}}
         </div>
 
-        {{#if afArrayFieldHasMoreThanMinimum name=../name minCount=../minCount maxCount=../maxCount}}
+        {{#if afArrayFieldHasMoreThanMinimum name=../atts.name minCount=../atts.minCount maxCount=../atts.maxCount}}
           <button type="button" class="btn btn-default btn-xs autoform-remove-item">
             <span class="glyphicon glyphicon-remove"></span>
           </button>
@@ -20,9 +20,9 @@
       </div>
     {{/afEachArrayItem}}
 
-    {{#if afArrayFieldHasLessThanMaximum name=this.name minCount=this.minCount maxCount=this.maxCount}}
+    {{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
       <div class="clearfix">
-        <button type="button" class="btn btn-sm btn-default pull-right autoform-add-item" data-autoform-field="{{this.name}}" data-autoform-minCount="{{this.minCount}}" data-autoform-maxCount="{{this.maxCount}}">
+        <button type="button" class="btn btn-sm btn-default pull-right autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">
           <span class="glyphicon glyphicon-plus"></span>
         </button>
       </div>
@@ -44,11 +44,11 @@
       {{/unless}}
       {{#if this.afFieldInputAtts.unit}}
         <div class="input-group">
-          {{> afFieldInput this.afFieldInputAtts}}
+          {{> afFieldInput bsFieldInputAtts}}
           <div class="input-group-addon">{{this.afFieldInputAtts.unit}}</div>
         </div>
       {{else}}
-        {{> afFieldInput this.afFieldInputAtts}}
+        {{> afFieldInput bsFieldInputAtts}}
       {{/if}}
       <span class="help-block">{{{afFieldMessage name=this.name}}}</span>
     </div>

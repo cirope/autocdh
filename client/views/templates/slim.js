@@ -5,8 +5,8 @@ var route = function () {
 
 Template.afArrayField_slim.helpers({
   cols: function () {
-    var attsCols = this.cols || 3
-    var key      = route() + '.' + this.name
+    var attsCols = this.atts.cols || 3
+    var key      = route() + '.' + this.atts.name
 
     return (cols[key] = cols[key] || 12 / +attsCols)
   }
@@ -17,5 +17,17 @@ Template.afFormGroup_slim.helpers({
     var name = this.name.substring(0, this.name.indexOf('.'))
 
     return cols[route() + '.' + name]
+  },
+
+  bsFieldLabelAtts: function () {
+    var atts = _.clone(this.afFieldLabelAtts)
+
+    return AutoForm.Utility.addClass(atts, 'control-label')
+  },
+
+  bsFieldInputAtts: function () {
+    var atts = _.clone(this.afFieldInputAtts)
+
+    return _.extend(atts, { template: 'bootstrap3' })
   }
 })

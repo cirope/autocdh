@@ -50,7 +50,7 @@ Template.granulometryNew.events({
     Granulometries.setType(type)
 
     if (granulometry.get() && granulometry.get().type !== type) {
-      var _granulometry = AutoForm.getFormValues('newGranulometryForm')
+      var _granulometry = AutoForm.getFormValues('newGranulometryForm').insertDoc
 
       granulometry.set(_.extend(_granulometry, { test: testByType[type] }))
     }
