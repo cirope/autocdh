@@ -5,8 +5,8 @@ var route = function () {
 
 Template.afArrayField_slim.helpers({
   cols: function () {
-    var attsCols = this.atts.cols || 3
-    var key      = route() + '.' + this.atts.name
+    var attsCols = this.cols || 3
+    var key      = route() + '.' + this.name
 
     return (cols[key] = cols[key] || 12 / +attsCols)
   }
@@ -14,7 +14,7 @@ Template.afArrayField_slim.helpers({
 
 Template.afFormGroup_slim.helpers({
   cols: function () {
-    var name = this.atts.name.substring(0, this.atts.name.indexOf('.'))
+    var name = this.name.substring(0, this.name.indexOf('.'))
 
     return cols[route() + '.' + name]
   }
