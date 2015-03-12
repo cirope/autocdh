@@ -21,5 +21,7 @@
   "more": "Más...",
   "crack_overdue": "Una rotura de probeta retrasada",
   "crack_overdue_plural": "__count__ roturas de probeta retrasadas",
+  "x_axis": "Eje X:",
+  "y_axis": "Eje Y",
   "breadcrumb_step": "Paso <span class=\"badge\">__count__</span>"
 }

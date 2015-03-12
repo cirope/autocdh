@@ -167,6 +167,8 @@
   "granulometry_test_retained_accumulated": "Retained accumulated",
   "granulometry_test_fineness": "Fineness",
   "granulometry_ideal_curves": "Ideal curves",
+  "granulometry_graph_x_label": "Sieve aperture",
+  "granulometry_graph_y_label": "Weight in %",
   "granulometry_create_title": "Add a new granulometry",
   "granulometry_create": "Create granulometry",
   "granulometry_update_title": "Edit a granulometry",

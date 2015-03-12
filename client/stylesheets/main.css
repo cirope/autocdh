@@ -1,5 +1,6 @@
 body {
   padding-top: 80px;
+  margin-bottom: 1em;
 }
 
 label {
@@ -62,6 +63,13 @@ label {
 .panel .panel-heading,
 .panel .panel-heading h3 {
   line-height: 1.2em;
+}
+
+@media (min-width: 992px) {
+  .rotate-sm-90 {
+    transform-origin: right;
+    transform: translate(0%, 50%) rotate(-90deg) ;
+  }
 }
 
 .row.slim,
