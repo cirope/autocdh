@@ -146,7 +146,7 @@
   "granulometry_humidity_percentage": "Humedad",
   "granulometry_thin": "Finos pasante # 200",
   "granulometry_thin_container": "Código del recipiente",
-  "granulometry_thin_mass_of_container": "Masa del recipiente vació",
+  "granulometry_thin_mass_of_container": "Masa del recipiente vacío",
   "granulometry_thin_mass_before_wash": "Masa del recipiente + agregado antes del lavado",
   "granulometry_thin_mass_after_wash": "Masa del recipiente + agregado después del lavado",
   "granulometry_thin_percentage": "Finos pasante tamiz # 200",
