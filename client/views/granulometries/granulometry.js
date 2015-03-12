@@ -1,18 +1,20 @@
 var type                = null
-var retainedAccumulated = 0
 var retainedTotal       = 0
 var thinPercentage      = 0
 var correction          = 0
 var sampleWeight        = 0
 var passedPercentage    = 0
 var passedAccumulated   = 0
+var retainedAccumulated = 0
+var retained            = []
 var chartData           = []
 
-var initVars            = function () {
+var initVars = function () {
   var self            = this
 
   type                = self.type
   chartData           = []
+  retained            = []
   retainedAccumulated = 0
   passedPercentage    = 0
   passedAccumulated   = 0
@@ -130,10 +132,24 @@ Template.granulometry.helpers({
   },
 
   retainedAccumulatedPercentage: function () {
+    retained.push(100 - passedPercentage)
+
     return 100 - passedPercentage
   },
 
   fineness: function () {
-    return (passedAccumulated / 100).toFixed(2)
+    var fineness = 0
+
+    if (type === 'sand') {
+      fineness = _.reduce(retained.slice(0, -1), function (memo, n) { return memo + n }, 0) / 100
+    } else {
+      var indexes = [0, 3, 5, 7, 8, 9]
+
+      fineness = _.reduce(indexes, function (memo, i) {
+        return memo + retained[i]
+      }, 400 - 3 * thinPercentage) / 100
+    }
+
+    return fineness.toFixed(2)
   }
 })
