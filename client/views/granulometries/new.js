@@ -1,27 +1,27 @@
 var testByType = {
   sand: [
-    { sieve: '9.5' },
-    { sieve: '4.8' },
-    { sieve: '2.4' },
-    { sieve: '1.2' },
-    { sieve: '0.59' },
-    { sieve: '0.297' },
-    { sieve: '0.149' },
-    { sieve: '< 0.149' }
+    { sieve: '9.5 mm | 3/8″' },
+    { sieve: '4.8 mm | # 4' },
+    { sieve: '2.4 mm | # 8' },
+    { sieve: '1.2 mm | # 16' },
+    { sieve: '0.59 mm | # 30' },
+    { sieve: '0.297 mm | # 50' },
+    { sieve: '0.149 mm | # 100' },
+    { sieve: 'Fondo | Pasa # 100' }
   ],
 
   gravel: [
-    { sieve: '76' },
-    { sieve: '63' },
-    { sieve: '51' },
-    { sieve: '38' },
-    { sieve: '25' },
-    { sieve: '19' },
-    { sieve: '13' },
-    { sieve: '9.5' },
-    { sieve: '4.8' },
-    { sieve: '2.4' },
-    { sieve: '< 2.4' }
+    { sieve: '76 mm | 3″' },
+    { sieve: '63 mm | 2 ½″' },
+    { sieve: '51 mm | 2″' },
+    { sieve: '38 mm | 1 ½″' },
+    { sieve: '25 mm | 1' },
+    { sieve: '19 mm | 3/4″' },
+    { sieve: '13 mm | 1/2″' },
+    { sieve: '9.5 mm | 3/8″' },
+    { sieve: '4.8 mm | # 4' },
+    { sieve: '2.4 mm | # 8' },
+    { sieve: 'Fondo | Pasa # 8' }
   ]
 }
 
