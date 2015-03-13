@@ -19,15 +19,16 @@ var initVars = function () {
   passedPercentage    = 0
   passedAccumulated   = 0
   sampleWeight        = _.reduce(self.test, function (memo, t) {
-    return memo + (self.type === 'sand' ? t.grossWeight - t.netWeight : t.netWeight)
+    return memo + (type === 'sand' ? t.grossWeight - t.netWeight : t.netWeight)
   }, 0)
   correction          = Math.round(sampleWeight * thinPercentage / 100)
   retainedTotal       = sampleWeight + correction
 }
 
 Template.granulometry.rendered = function () {
-  var data                = {
-    labels: _.map(this.data.test, function (t) { return t.sieve }).reverse(),
+  var ctx  = document.getElementById('chart').getContext('2d')
+  var data = {
+    labels: _.pluck(this.data.test, 'sieve').slice(0, -1).reverse(),
     datasets: [
       {
         fillColor:            'rgba(147,197,75,0)',
@@ -36,12 +37,12 @@ Template.granulometry.rendered = function () {
         pointStrokeColor:     '#fff',
         pointHighlightFill:   '#fff',
         pointHighlightStroke: 'rgba(147,197,75,1)',
-        data:                 chartData.reverse()
+        data:                 chartData.slice(0, -1).reverse()
       }
     ]
   }
-  var ctx         = document.getElementById('chart').getContext('2d')
-  var myLineChart = new Chart(ctx).Line(data, {
+
+  new Chart(ctx).Line(data, {
     responsive: true,
     bezierCurve: false
   })
