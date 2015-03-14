@@ -84,7 +84,7 @@ Template.granulometry.helpers({
     var netBefore = this.thin.massBeforeWash - this.thin.massOfContainer
     var netAfter  = this.thin.massAfterWash  - this.thin.massOfContainer
 
-    thinPercentage = netAfter > 0 ? (netBefore - netAfter) / netAfter * 100 : 0
+    thinPercentage = netAfter > 0 ? (netBefore - netAfter) / netBefore * 100 : 0
 
     return thinPercentage.toFixed(1)
   },
