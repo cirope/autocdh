@@ -25,24 +25,49 @@ var initVars = function () {
   retainedTotal       = sampleWeight + correction
 }
 
+var graphLabels = function () {
+  var seedLabels = _.pluck(this.data.test, 'sieve').slice(0, -1).reverse()
+
+  if (type === 'gravel') {
+    seedLabels.splice(1, 0, '')
+    seedLabels.splice(3, 0, '')
+    seedLabels.splice(10, 1)
+  }
+
+  return seedLabels
+}
+
+var graphData = function () {
+  var seedData = chartData.slice(0, -1).reverse()
+
+  if (type === 'gravel') {
+    seedData.splice(1, 0, (seedData[0] + seedData[1]) / 2)
+    seedData.splice(3, 0, (seedData[2] + seedData[3]) / 2)
+    seedData.splice(10, 1)
+  }
+
+  return seedData
+}
+
 Template.granulometry.rendered = function () {
   var ctx  = document.getElementById('chart').getContext('2d')
   var data = {
-    labels: _.pluck(this.data.test, 'sieve').slice(0, -1).reverse(),
+    labels: graphLabels.apply(this),
     datasets: [
       {
         fillColor:   'rgba(147,197,75,0)',
         strokeColor: 'rgba(147,197,75,1)',
-        data:        chartData.slice(0, -1).reverse()
+        data:        graphData.apply(this)
       }
     ]
   }
 
   new Chart(ctx).Line(data, {
-    responsive:   true,
-    pointDot:     false,
-    showTooltips: false,
-    bezierCurve:  false
+    responsive:             true,
+    pointDot:               false,
+    showTooltips:           false,
+    bezierCurve:            false,
+    scaleShowVerticalLines: type === 'sand'
   })
 }
 
