@@ -31,20 +31,18 @@ Template.granulometry.rendered = function () {
     labels: _.pluck(this.data.test, 'sieve').slice(0, -1).reverse(),
     datasets: [
       {
-        fillColor:            'rgba(147,197,75,0)',
-        strokeColor:          'rgba(147,197,75,1)',
-        pointColor:           'rgba(147,197,75,1)',
-        pointStrokeColor:     '#fff',
-        pointHighlightFill:   '#fff',
-        pointHighlightStroke: 'rgba(147,197,75,1)',
-        data:                 chartData.slice(0, -1).reverse()
+        fillColor:   'rgba(147,197,75,0)',
+        strokeColor: 'rgba(147,197,75,1)',
+        data:        chartData.slice(0, -1).reverse()
       }
     ]
   }
 
   new Chart(ctx).Line(data, {
-    responsive: true,
-    bezierCurve: false
+    responsive:   true,
+    pointDot:     false,
+    showTooltips: false,
+    bezierCurve:  false
   })
 }
 
