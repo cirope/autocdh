@@ -1,6 +1,6 @@
 {
   "client/main.html": {
-    "type": "view",
+    "type": "template",
     "alternate": "client/main.js"
   },
   "client/main.js": {
@@ -18,7 +18,7 @@
     "type": "stylesheet"
   },
   "client/views/*.html": {
-    "type": "view",
+    "type": "template",
     "alternate": "client/views/{}.js",
     "template": "<template name=\"{underscore|camelcase}\">\n\n</template>"
   },
