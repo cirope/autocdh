@@ -21,7 +21,7 @@ ejson@1.0.5
 email@1.0.5
 fastclick@1.0.2
 follower-livedata@1.0.3
-fourseven:scss@2.0.1_2
+fourseven:scss@2.0.1_4
 francocatena:autoform-bs-datetimepicker@1.0.2
 francocatena:status@1.1.2
 geojson-utils@1.0.2
@@ -83,7 +83,7 @@ tap:i18n@1.4.1
 templating@1.0.11
 tracker@1.0.5
 tsega:bootstrap3-datetimepicker@3.1.3_3
-twbs:bootstrap@3.3.2
+twbs:bootstrap@3.3.4
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3

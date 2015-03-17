@@ -63,8 +63,8 @@ label {
 
 @media (min-width: 992px) {
   .rotate-sm-90 {
-    transform-origin: right;
-    transform: translate(0%, 50%) rotate(-90deg) ;
+    transform-origin: left;
+    transform: translate(-4em, -6em) rotate(-90deg) ;
   }
 }
 
