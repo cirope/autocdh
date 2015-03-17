@@ -50,24 +50,21 @@ var graphData = function () {
 }
 
 Template.granulometry.rendered = function () {
-  var ctx  = document.getElementById('chart').getContext('2d')
   var data = {
     labels: graphLabels.apply(this),
-    datasets: [
-      {
-        fillColor:   'rgba(147,197,75,0)',
-        strokeColor: 'rgba(147,197,75,1)',
-        data:        graphData.apply(this)
-      }
-    ]
+    series: [graphData.apply(this)]
   }
 
-  new Chart(ctx).Line(data, {
-    responsive:             true,
-    pointDot:               false,
-    showTooltips:           false,
-    bezierCurve:            false,
-    scaleShowVerticalLines: type === 'sand'
+  new Chartist.Line('.ct-chart', data, {
+    lineSmooth:   false,
+    showPoint:    false,
+    fullWidth:    true,
+    chartPadding: 20,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value.split(' | ')[0]
+      }
+    }
   })
 }
 

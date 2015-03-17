@@ -20,3 +20,4 @@ twbs:bootstrap
 francocatena:autoform-bs-datetimepicker
 momentjs:moment
 rzymek:moment-locale-es
+fourseven:scss
