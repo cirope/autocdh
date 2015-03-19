@@ -9,5 +9,8 @@
   "graphic_fresh_concrete_consistency": "Consistencia",
   "graphic_fresh_concrete_consistency_title": "Variabilidad de consistencia del hormigón fresco",
   "graphic_fresh_concrete_temperature": "Temperatura",
-  "graphic_fresh_concrete_temperature_title": "Variabilidad de la temperatura del hormigón fresco"
+  "graphic_fresh_concrete_temperature_title": "Variabilidad de la temperatura del hormigón fresco",
+  "graphic_hardened_concrete": "Hormigón endurecido",
+  "graphic_hardened_concrete_resistance": "Carta de control",
+  "graphic_hardened_concrete_resistance_title": "Carta de control estadística"
 }

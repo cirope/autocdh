@@ -22,11 +22,11 @@ var updateChart = function (data) {
   })
 }
 
-Template.graphicFreshConcreteConsistency.rendered = function () {
+Template.graphicHardenedConcreteResistance.rendered = function () {
   updateChart(_.pick(this.data, 'labels', 'series'))
 }
 
-Template.graphicFreshConcreteConsistency.helpers({
+Template.graphicHardenedConcreteResistance.helpers({
   sampleCount: function () {
     updateChart(_.pick(this, 'labels', 'series'))
 

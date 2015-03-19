@@ -1,6 +1,6 @@
 <template name="graphics">
-  <div class="jumbotron text-center">
-    <h2>{{_ 'graphics'}}</h2>
+  <div class="page-header text-center">
+    <h1>{{_ 'graphics'}}</h1>
   </div>
 
   <div class="row">
@@ -12,6 +12,13 @@
       </a>
       <a href="{{pathFor 'graphicFreshConcreteTemperature'}}" class="btn btn-default btn-block">
         {{_ 'graphic_fresh_concrete_temperature'}}
+      </a>
+    </div>
+    <div class="col-lg-4">
+      <h3>{{_ 'graphic_hardened_concrete'}}</h3>
+
+      <a href="{{pathFor 'graphicHardenedConcreteResistance'}}" class="btn btn-default btn-block">
+        {{_ 'graphic_hardened_concrete_resistance'}}
       </a>
     </div>
   </div>

@@ -6,12 +6,18 @@ var updateChart = function (data) {
         showLine: false,
         axisX: {
           labelInterpolationFnc: function (value, index) {
-            return index % 30 === 0 ? value : null
+            var module = Math.round(data.labels.length / 12)
+
+            return index % module === 0 ? value : null
           }
         }
       }
 
-      new Chartist.Line('.ct-chart', data, options)
+      var chart = new Chartist.Line('.ct-chart', data, options)
+
+      chart.on('draw', function (data) {
+        if (data.type === 'point' && data.value <= 0) data.element.remove()
+      })
     }
   })
 }
