@@ -1,0 +1,13 @@
+{
+  "graphics": "Gráficos",
+  "graphic_no_data": "No hay datos que cumplan los criterios seleccionados",
+  "graphic_filter_apply": "Aplicar",
+  "graphic_filter_all": "Todos",
+  "graphic_filter_start": "Fecha inicio",
+  "graphic_filter_end": "Fecha fin",
+  "graphic_fresh_concrete": "Hormigón fresco",
+  "graphic_fresh_concrete_consistency": "Consistencia",
+  "graphic_fresh_concrete_consistency_title": "Variabilidad de consistencia del hormigón fresco",
+  "graphic_fresh_concrete_temperature": "Temperatura",
+  "graphic_fresh_concrete_temperature_title": "Variabilidad de la temperatura del hormigón fresco"
+}

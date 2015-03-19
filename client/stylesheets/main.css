@@ -15,6 +15,10 @@ label {
   line-height: 1.2;
 }
 
+.ct-chart.ct-single-color .ct-point {
+  stroke: #93c54b !important;
+}
+
 .form-control {
   height: 2em;
   padding: 3px 8px;
@@ -64,7 +68,7 @@ label {
 @media (min-width: 992px) {
   .rotate-sm-90 {
     transform-origin: left;
-    transform: translate(-4em, -6em) rotate(-90deg) ;
+    transform: translate(-4em, -6em) rotate(-90deg);
   }
 }
 

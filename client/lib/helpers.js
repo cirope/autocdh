@@ -2,6 +2,14 @@ Template.registerHelper('firstOptionForSelect', function () {
   return TAPi18n.__('first_option_for_select')
 })
 
+Template.registerHelper('filterSchema', function () {
+  return Schemas.Filter
+})
+
+Template.registerHelper('r', function (number, decimals) {
+  return (+number).toFixed(decimals || 0)
+})
+
 Template.registerHelper('l', function (date, format) {
   if (typeof format !== 'string')
     format = TAPi18n.__('datetime_default')
@@ -20,8 +28,4 @@ Template.registerHelper('activeRouteClass', function () {
 
 Template.registerHelper('overdueCracks', function () {
   return Cracks.find({ stress: null, crackIn: { $lt: new Date } }).count()
-})
-
-Template.registerHelper('r', function (number, decimals) {
-  return (+number).toFixed(decimals || 0)
 })
