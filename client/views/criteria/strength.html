@@ -1,0 +1,30 @@
+<template name="strengthCriteria">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'strength'}}
+          <a class="pull-right" href="{{pathFor 'strengthsCriteria'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'strength_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+        <p>
+          {{_ 'strength_low_resistence'}} /
+          <strong>{{lowResistence}}</strong>
+        </p>
+        <p>
+          {{_ 'strength_high_resistence'}} /
+          <strong>{{highResistence}}</strong>
+        </p>
+
+        <a href="{{pathFor 'strengthCriteriaEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'strength_criteria_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
+    </div>
+  </div>
+</template>

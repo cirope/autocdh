@@ -1,0 +1,17 @@
+<template name="strengthsCriteriaEmpty">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'strengths'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <h3>{{_ 'strength_empty_title'}}</h3>
+      <p>{{_ 'strength_empty_banner'}}</p>
+      <a class="btn btn-default pull-right" href="{{pathFor 'formulaStrengthNew'}}" title="{{_ 'strength_new'}}">
+        {{_ 'strength_new'}}
+      </a>
+    </div>
+  </div>
+</template>

@@ -23,5 +23,6 @@
   "crack_overdue_plural": "__count__ cracks overdue",
   "x_axis": "X axis",
   "y_axis": "Y axis",
+  "criteria": "Criteria",
   "breadcrumb_step": "Step <span class=\"badge\">__count__</span>"
 }
