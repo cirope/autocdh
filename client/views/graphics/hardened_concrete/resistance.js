@@ -3,6 +3,7 @@ var updateChart = function (data) {
     if ($('.ct-chart').length) {
       var options = {
         low:   0,
+        showLine: true,
         axisX: {
           labelInterpolationFnc: function (value, index) {
             var module = Math.round(data.labels.length / 12)
@@ -15,7 +16,7 @@ var updateChart = function (data) {
       var chart = new Chartist.Line('.ct-chart', data, options)
 
       chart.on('draw', function (data) {
-        if (data.type === 'point' && data.value <= 0) data.element.remove()
+        if (data.type === 'point' && data.value <= 0) data.element.attr({ class: 'hidden' })
       })
     }
   })

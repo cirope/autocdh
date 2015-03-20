@@ -19,11 +19,11 @@ label {
   margin-bottom: 2em;
 }
 
-.ct-chart .single-color-series .ct-point {
-  stroke: #93c54b;
+.ct-chart .ct-series.only-points .ct-line {
+  display: none;
 }
 
-.ct-chart .only-points .ct-line {
+.ct-chart .ct-series.only-line .ct-point {
   display: none;
 }
 
