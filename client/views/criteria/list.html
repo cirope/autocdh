@@ -19,8 +19,8 @@
         <thead>
           <tr>
             <th>{{_ 'strength_name'}}</th>
-            <th>{{_ 'strength_low_resistance'}}</th>
-            <th>{{_ 'strength_high_resistance'}}</th>
+            <th>{{_ 'strength_individual_criteria'}}</th>
+            <th>{{_ 'strength_average_criteria'}}</th>
             <th></th>
           </tr>
         </thead>
@@ -28,8 +28,8 @@
         {{#each strengths}}
           <tr class="visible-on-hover-parent">
             <td><a href="{{pathFor 'strengthCriteria'}}">{{name}}</a></td>
-            <td><a href="{{pathFor 'strengthCriteria'}}">{{lowResistance}}</a></td>
-            <td><a href="{{pathFor 'strengthCriteria'}}">{{highResistance}}</a></td>
+            <td><a href="{{pathFor 'strengthCriteria'}}">{{individualCriteria}}</a></td>
+            <td><a href="{{pathFor 'strengthCriteria'}}">{{averageCriteria}}</a></td>
             <td class="text-right">
               <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'strengthCriteriaEdit'}}" title="{{_ 'edit'}}">
                 {{_ 'edit'}}
