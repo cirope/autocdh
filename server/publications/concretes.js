@@ -1,3 +1,3 @@
 Meteor.publish('concretes', function () {
-  return Concretes.find({ userId: this.userId })
+  return publish.call(this, Concretes)
 })

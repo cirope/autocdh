@@ -1,3 +1,3 @@
 Meteor.publish('formulas', function () {
-  return Formulas.find({ userId: this.userId })
+  return publish.call(this, Formulas)
 })

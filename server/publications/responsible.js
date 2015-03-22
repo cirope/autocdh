@@ -1,3 +1,3 @@
 Meteor.publish('responsible', function () {
-  return Responsible.find({ userId: this.userId })
+  return publish.call(this, Responsible)
 })

@@ -1,9 +1,9 @@
 Meteor.publish('granulometries', function () {
-  return Granulometries.find({ userId: this.userId })
+  return publish.call(this, Granulometries)
 })
 
 Meteor.publish('granulometriesLimited', function (options) {
   check(options, { sort: Object, limit: Number })
 
-  return Granulometries.find({ userId: this.userId }, options)
+  return publish.call(this, Granulometries, options)
 })
