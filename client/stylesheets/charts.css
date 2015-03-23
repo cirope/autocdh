@@ -15,6 +15,10 @@
   transform: rotate(-45deg);
 }
 
+.ct-label.ct-vertical.text-left {
+  text-align: left;
+}
+
 .ct-chart .ct-series.dotted-a .ct-line {
   stroke-width: 2px;
   stroke-dasharray: 5px 5px;

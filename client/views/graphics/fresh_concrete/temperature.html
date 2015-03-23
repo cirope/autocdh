@@ -26,6 +26,8 @@
           {{/autoForm}}
         </div>
       </div>
+
+      {{> graphicFreshConcreteTemperatureReference}}
     </div>
     <div class="col-md-8">
       <div class="panel panel-default">
@@ -35,7 +37,7 @@
 
         <div class="panel-body">
           {{#if series.length}}
-            <div class="ct-chart ct-golden-section"></div>
+            <div class="ct-chart ct-golden-section" data-chart></div>
           {{else}}
             <h4 class="text-warning text-center">
               {{_ 'graphic_no_data'}}

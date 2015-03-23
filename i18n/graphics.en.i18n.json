@@ -1,6 +1,9 @@
 {
   "graphics": "Graphics",
   "graphic_no_data": "No data",
+  "graphic_references": "References",
+  "graphic_upper_limit": "Upper limit",
+  "graphic_lower_limit": "Lower limit",
   "graphic_filter_apply": "Apply",
   "graphic_filter_all": "All",
   "graphic_filter_start": "Start",
@@ -8,8 +11,10 @@
   "graphic_fresh_concrete": "Fresh concrete",
   "graphic_fresh_concrete_consistency": "Consistency",
   "graphic_fresh_concrete_consistency_title": "Fresh concretes consistency",
+  "graphic_fresh_concrete_consistency_settlement": "Settlement (cm)",
   "graphic_fresh_concrete_temperature": "Temperature",
   "graphic_fresh_concrete_temperature_title": "Fresh concretes temperature",
+  "graphic_fresh_concrete_temperature_reference": "Temperature (°C)",
   "graphic_hardened_concrete": "Fresh concrete",
   "graphic_hardened_concrete_resistance": "Resistance",
   "graphic_hardened_concrete_resistance_title": "Hardened concretes resistance"

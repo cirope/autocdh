@@ -1,6 +1,6 @@
 var updateChart = function (data) {
   setTimeout(function () {
-    if ($('.ct-chart').length) {
+    if ($('[data-chart]').length) {
       var options = {
         low:      0,
         axisX: {
@@ -12,7 +12,7 @@ var updateChart = function (data) {
         }
       }
 
-      var chart = new Chartist.Line('.ct-chart', data, options)
+      var chart = new Chartist.Line('[data-chart]', data, options)
 
       chart.on('draw', function (data) {
         if (data.type === 'point' && data.value <= 0) data.element.remove()
