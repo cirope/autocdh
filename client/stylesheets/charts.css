@@ -2,6 +2,10 @@
   margin-bottom: 2em;
 }
 
+.ct-chart.ct-slim {
+  margin-bottom: 0px;
+}
+
 .ct-chart .ct-series.only-points .ct-line {
   display: none;
 }

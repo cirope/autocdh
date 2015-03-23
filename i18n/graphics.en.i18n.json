@@ -17,5 +17,7 @@
   "graphic_fresh_concrete_temperature_reference": "Temperature (°C)",
   "graphic_hardened_concrete": "Fresh concrete",
   "graphic_hardened_concrete_resistance": "Resistance",
-  "graphic_hardened_concrete_resistance_title": "Hardened concretes resistance"
+  "graphic_hardened_concrete_resistance_title": "Hardened concretes resistance",
+  "graphic_hardened_concrete_resistance_reference": "Resistance (28 days)",
+  "graphic_hardened_concrete_resistance_mean": "Mobile mean"
 }

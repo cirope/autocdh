@@ -17,5 +17,7 @@
   "graphic_fresh_concrete_temperature_reference": "Temperatura (°C)",
   "graphic_hardened_concrete": "Hormigón endurecido",
   "graphic_hardened_concrete_resistance": "Carta de control",
-  "graphic_hardened_concrete_resistance_title": "Carta de control estadística"
+  "graphic_hardened_concrete_resistance_title": "Carta de control estadística",
+  "graphic_hardened_concrete_resistance_reference": "Resistencia (28 días)",
+  "graphic_hardened_concrete_resistance_mean": "Media móvil"
 }
