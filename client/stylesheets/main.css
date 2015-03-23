@@ -15,23 +15,6 @@ label {
   line-height: 1.2;
 }
 
-.ct-chart {
-  margin-bottom: 2em;
-}
-
-.ct-chart .ct-series.only-points .ct-line {
-  display: none;
-}
-
-.ct-chart .ct-series.only-line .ct-point {
-  display: none;
-}
-
-.ct-label.ct-horizontal {
-  transform-origin: 3em 6em;
-  transform: rotate(-45deg);
-}
-
 .form-control {
   height: 2em;
   padding: 3px 8px;

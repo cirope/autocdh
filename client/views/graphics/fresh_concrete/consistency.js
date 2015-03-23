@@ -3,7 +3,6 @@ var updateChart = function (data) {
     if ($('.ct-chart').length) {
       var options = {
         low:      0,
-        showLine: false,
         axisX: {
           labelInterpolationFnc: function (value, index) {
             var module = Math.round(data.labels.length / 12)

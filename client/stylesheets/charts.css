@@ -1,0 +1,26 @@
+.ct-chart {
+  margin-bottom: 2em;
+}
+
+.ct-chart .ct-series.only-points .ct-line {
+  display: none;
+}
+
+.ct-chart .ct-series.only-line .ct-point {
+  display: none;
+}
+
+.ct-label.ct-horizontal {
+  transform-origin: 3em 6em;
+  transform: rotate(-45deg);
+}
+
+.ct-chart .ct-series.dotted-a .ct-line {
+  stroke-width: 2px;
+  stroke-dasharray: 5px 5px;
+}
+
+.ct-chart .ct-series.dotted-b .ct-line {
+  stroke-width: 2px;
+  stroke-dasharray: 15px 10px 5px 10px;
+}
