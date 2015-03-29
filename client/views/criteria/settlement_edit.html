@@ -1,0 +1,22 @@
+<template name="settlementCriteriaEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'settlement_criteria_update_title'}}
+          <a class="pull-right" href="{{pathFor 'settlementCriteria'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Settlements' id='editSettlementCriteriaForm' type='method-update' meteormethod='updateSettlementCriteria' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name' readonly=true autofocus=true}}
+            {{> afQuickField name='lowerLimit'}}
+            {{> afQuickField name='upperLimit'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'settlement_criteria_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

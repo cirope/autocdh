@@ -1,0 +1,44 @@
+<template name="strengthsCriteria">
+  {{#if strengths.count}}
+    {{> strengthsCriteriaList}}
+  {{else}}
+    {{> strengthsCriteriaEmpty}}
+  {{/if}}
+</template>
+
+<template name="strengthsCriteriaList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'strengths'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{_ 'strength_name'}}</th>
+            <th>{{_ 'strength_individual_criteria'}}</th>
+            <th>{{_ 'strength_average_criteria'}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each strengths}}
+          <tr class="visible-on-hover-parent">
+            <td><a href="{{pathFor 'strengthCriteria'}}">{{name}}</a></td>
+            <td><a href="{{pathFor 'strengthCriteria'}}">{{individualCriteria}}</a></td>
+            <td><a href="{{pathFor 'strengthCriteria'}}">{{averageCriteria}}</a></td>
+            <td class="text-right">
+              <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'strengthCriteriaEdit'}}" title="{{_ 'edit'}}">
+                {{_ 'edit'}}
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

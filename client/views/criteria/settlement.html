@@ -1,27 +1,27 @@
-<template name="strengthCriteria">
+<template name="settlementCriteria">
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'strength'}}
+          {{_ 'settlement'}}
           <a class="pull-right" href="{{pathFor 'criteria'}}">{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
         <p>
-          {{_ 'strength_name'}} /
+          {{_ 'settlement_name'}} /
           <strong>{{name}}</strong>
         </p>
         <p>
-          {{_ 'strength_individual_criteria'}} /
-          <strong>{{individualCriteria}}</strong>
+          {{_ 'settlement_lower_limit'}} /
+          <strong>{{lowerLimit}}</strong>
         </p>
         <p>
-          {{_ 'strength_average_criteria'}} /
-          <strong>{{averageCriteria}}</strong>
+          {{_ 'settlement_upper_limit'}} /
+          <strong>{{upperLimit}}</strong>
         </p>
 
-        <a href="{{pathFor 'strengthCriteriaEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'strength_criteria_update_title'}}">
+        <a href="{{pathFor 'settlementCriteriaEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'settlement_criteria_update_title'}}">
           {{_ 'edit'}}
         </a>
       </div>
