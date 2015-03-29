@@ -1,10 +1,12 @@
-var sample = new ReactiveVar({})
+var sample = new ReactiveVar
 var save   = function () {
   sample.set(AutoForm.getFormValues('newSampleForm').insertDoc)
 }
 
 Template._sampleNew.helpers({
   sample: function () {
+    if (! sample.get()) sample.set(this)
+
     return sample.get()
   }
 })
@@ -37,7 +39,7 @@ AutoForm.addHooks('newSampleForm', {
   before: {
     method: function (doc) {
       if (AutoForm.validateForm('newSampleForm'))
-        setTimeout(function () { sample.set({}) }, 300)
+        setTimeout(function () { sample.set() }, 300)
 
       return _.extend(doc, { _id: Random.id() })
     }
