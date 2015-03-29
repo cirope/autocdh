@@ -2,11 +2,11 @@
   {{> sampleBreadcrumb}}
 
   {{#if disabled}}
-    {{>_sampleEdit}}
+    {{> _sampleEdit sample=sample}}
   {{else}}
     <div class="row">
       <div class="col-md-6">
-        {{> _sampleEdit sample=..}}
+        {{> _sampleEdit sample=sample}}
       </div>
       <div class="col-md-6">
         {{#if receipt}}

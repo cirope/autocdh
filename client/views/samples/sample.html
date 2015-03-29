@@ -1,11 +1,17 @@
 <template name="sample">
   <p class="clearfix">
-    <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary pull-right">{{_ 'sample_new'}}</a>
+    <div class="pull-right">
+      <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+        {{_ 'sample_download_pdf'}}
+        <span class="glyphicon glyphicon-file"></span>
+      </button>
+      <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary">{{_ 'sample_new'}}</a>
+    </div>
   </p>
 
   <div class="row">
     <div class="col-md-6">
-      {{> _sample ..}}
+      {{> _sample sample}}
     </div>
 
     {{#if sampleReceipt}}
@@ -37,6 +43,12 @@
   </div>
 
   <p class="clearfix">
-    <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary pull-right">{{_ 'sample_new'}}</a>
+    <div class="pull-right">
+      <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+        {{_ 'sample_download_pdf'}}
+        <span class="glyphicon glyphicon-file"></span>
+      </button>
+      <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary">{{_ 'sample_new'}}</a>
+    </div>
   </p>
 </template>
