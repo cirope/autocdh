@@ -19,5 +19,6 @@
   "graphic_hardened_concrete_resistance": "Resistance",
   "graphic_hardened_concrete_resistance_title": "Hardened concretes resistance",
   "graphic_hardened_concrete_resistance_reference": "Resistance (28 days)",
-  "graphic_hardened_concrete_resistance_mean": "Mobile mean"
+  "graphic_hardened_concrete_resistance_mean": "Mobile mean",
+  "graphic_hardened_concrete_resistance_y_label": "Resistance (MPa)"
 }

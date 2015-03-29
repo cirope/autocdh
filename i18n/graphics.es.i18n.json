@@ -19,5 +19,6 @@
   "graphic_hardened_concrete_resistance": "Carta de control",
   "graphic_hardened_concrete_resistance_title": "Carta de control estadística",
   "graphic_hardened_concrete_resistance_reference": "Resistencia (28 días)",
-  "graphic_hardened_concrete_resistance_mean": "Media móvil"
+  "graphic_hardened_concrete_resistance_mean": "Media móvil",
+  "graphic_hardened_concrete_resistance_y_label": "Resistencia (MPa)"
 }

@@ -6,7 +6,7 @@ var updateChart = function (data) {
         showLine: true,
         axisX: {
           labelInterpolationFnc: function (value, index) {
-            var module = Math.round(data.labels.length / 12)
+            var module = Math.round(data.labels.length / 24)
 
             return index % module === 0 ? value : null
           }
