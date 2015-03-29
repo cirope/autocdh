@@ -43,26 +43,26 @@
               <h3 class="panel-title">{{_ 'granulometry_humidity'}}</h3>
             </div>
 
-            <div class="panel-body">
-              <p>
-                {{_ 'granulometry_humidity_container'}} /
-                <strong>{{humidity.container}}</strong>
+            <div class="panel-body" data-humidity>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_humidity_container'}}</span> /
+                <strong data-value>{{humidity.container}}</strong>
               </p>
-              <p>
-                {{_ 'granulometry_humidity_mass_of_container'}} /
-                <strong>{{r humidity.massOfContainer}} g</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_humidity_mass_of_container'}}</span> /
+                <strong data-value>{{r humidity.massOfContainer}} g</strong>
               </p>
-              <p>
-                {{_ 'granulometry_humidity_mass_of_wet_aggregate'}} /
-                <strong>{{r humidity.massOfWetAggregate}} g</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_humidity_mass_of_wet_aggregate'}}</span> /
+                <strong data-value>{{r humidity.massOfWetAggregate}} g</strong>
               </p>
-              <p>
-                {{_ 'granulometry_humidity_mass_of_dry_aggregate'}} /
-                <strong>{{r humidity.massOfDryAggregate}} g</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_humidity_mass_of_dry_aggregate'}}</span> /
+                <strong data-value>{{r humidity.massOfDryAggregate}} g</strong>
               </p>
-              <p>
-                {{_ 'granulometry_humidity_percentage'}} /
-                <strong>{{humidityPercentage}}%</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_humidity_percentage'}}</span> /
+                <strong data-value>{{humidityPercentage}}%</strong>
               </p>
             </div>
           </div>
@@ -74,26 +74,26 @@
               <h3 class="panel-title">{{_ 'granulometry_thin'}}</h3>
             </div>
 
-            <div class="panel-body">
-              <p>
-                {{_ 'granulometry_thin_container'}} /
-                <strong>{{thin.container}}</strong>
+            <div class="panel-body" data-thin>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_thin_container'}}</span> /
+                <strong data-value>{{thin.container}}</strong>
               </p>
-              <p>
-                {{_ 'granulometry_thin_mass_of_container'}} /
-                <strong>{{r thin.massOfContainer}} g</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_thin_mass_of_container'}}</span> /
+                <strong data-value>{{r thin.massOfContainer}} g</strong>
               </p>
-              <p>
-                {{_ 'granulometry_thin_mass_before_wash'}} /
-                <strong>{{r thin.massBeforeWash}} g</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_thin_mass_before_wash'}}</span> /
+                <strong data-value>{{r thin.massBeforeWash}} g</strong>
               </p>
-              <p>
-                {{_ 'granulometry_thin_mass_after_wash'}} /
-                <strong>{{r thin.massAfterWash}} g</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_thin_mass_after_wash'}}</span> /
+                <strong data-value>{{r thin.massAfterWash}} g</strong>
               </p>
-              <p>
-                {{_ 'granulometry_thin_percentage'}} /
-                <strong>{{thinPercentage}}%</strong>
+              <p data-attribute>
+                <span data-label>{{_ 'granulometry_thin_percentage'}}</span> /
+                <strong data-value>{{thinPercentage}}%</strong>
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@
         </div>
 
         <div class="panel-body">
-          <table class="table table-condensed table-hover">
+          <table class="table table-condensed table-hover" data-table="test">
             <thead>
               <tr>
                 <th>{{_ 'granulometry_test_sieve'}}</th>
@@ -160,7 +160,9 @@
 
               <tr>
                 {{#if sand}}
-                  <td colspan="3">{{_ 'granulometry_test_correction'}}</td>
+                  <td>{{_ 'granulometry_test_correction'}}</td>
+                  <td></td>
+                  <td></td>
                 {{else}}
                   <td>{{_ 'granulometry_test_correction'}}</td>
                 {{/if}}
@@ -173,20 +175,22 @@
             </tbody>
           </table>
 
-          <p>
-            {{_ 'granulometry_test_sample_weight'}} /
-            <strong>{{r sampleWeight}} g</strong>
-          </p>
+          <div data-brief>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_test_sample_weight'}}</span> /
+              <strong data-value>{{r sampleWeight}} g</strong>
+            </p>
 
-          <p>
-            {{_ 'granulometry_test_total_weight'}} /
-            <strong>{{r retainedTotal}} g</strong>
-          </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_test_total_weight'}}</span> /
+              <strong data-value>{{r retainedTotal}} g</strong>
+            </p>
 
-          <p>
-            {{_ 'granulometry_test_fineness'}} /
-            <strong>{{fineness}}</strong>
-          </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_test_fineness'}}</span> /
+              <strong data-value>{{fineness}}</strong>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -197,9 +201,15 @@
         </p>
       {{/if}}
 
-      <a href="{{pathFor 'granulometryEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'granulometry_update_title'}}">
-        {{_ 'edit'}}
-      </a>
+      <div class="pull-right">
+        <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+          {{_ 'download_pdf'}}
+          <span class="glyphicon glyphicon-file"></span>
+        </button>
+        <a href="{{pathFor 'granulometryEdit'}}" class="btn btn-sm btn-default" title="{{_ 'granulometry_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
     </div>
   </div>
 
