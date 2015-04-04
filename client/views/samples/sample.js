@@ -120,6 +120,11 @@ var assay = function (assay) {
 }
 
 Template.sample.events({
+  'click [data-delete]': function (event, template) {
+    if (confirm(TAPi18n.__('confirm_delete')))
+      Meteor.call('removeSample', template.data.sample._id)
+  },
+
   'click [data-download-pdf]': function (event, template) {
     var data          = template.data
     var doc           = new jsPDF
