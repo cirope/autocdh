@@ -21,12 +21,5 @@ Template._concreteEdit.helpers({
     return Additives.find({}, { sort: { createdAt: 1 } }).map(function (additive) {
       return { value: additive._id, label: additive.name }
     })
-  },
-
-  additive: function () {
-    var additiveId = AutoForm.getFieldValue('additiveId')
-    var additive   = additiveId && Additives.findOne(additiveId)
-
-    return additive
   }
 })

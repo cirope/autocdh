@@ -8,13 +8,6 @@ Template._concreteNew.helpers({
     if (! concrete.get()) concrete.set(this)
 
     return concrete.get()
-  },
-
-  additive: function () {
-    var additiveId = AutoForm.getFieldValue('additiveId')
-    var additive   = additiveId && Additives.findOne(additiveId)
-
-    return additive
   }
 })
 
