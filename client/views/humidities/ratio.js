@@ -44,8 +44,8 @@ var updateRatio = function () {
     $('[name="ratio"]').val(ratio ? ratio.toFixed(2) : '').prop('disabled', false)
 }
 
-Template._humidityNew.rendered  = updateRatio
-Template._humidityEdit.rendered = updateRatio
+Template._humidityNew.onRendered(updateRatio)
+Template._humidityEdit.onRendered(updateRatio)
 
 Template._humidityNew.events(events)
 Template._humidityEdit.events(events)

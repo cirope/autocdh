@@ -22,9 +22,9 @@ var updateChart = function (data) {
   })
 }
 
-Template.graphicHardenedConcreteResistance.rendered = function () {
+Template.graphicHardenedConcreteResistance.onRendered(function () {
   updateChart(_.pick(this.data, 'labels', 'series'))
-}
+})
 
 Template.graphicHardenedConcreteResistance.helpers({
   sampleCount: function () {

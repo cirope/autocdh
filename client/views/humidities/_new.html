@@ -21,7 +21,7 @@
                 <div class="col-xs-4">
                   {{> afQuickField name='hasIce'}}
                 </div>
-                {{#if afFieldValueIs name='hasIce' value=true}}
+                {{#if showIce}}
                   <div class="col-xs-8">
                     {{> afQuickField name='ice' label=false}}
                   </div>

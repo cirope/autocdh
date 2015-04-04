@@ -21,9 +21,9 @@ var updateChart = function (data) {
   })
 }
 
-Template.graphicFreshConcreteTemperature.rendered = function () {
+Template.graphicFreshConcreteTemperature.onRendered(function () {
   updateChart(_.pick(this.data, 'labels', 'series'))
-}
+})
 
 Template.graphicFreshConcreteTemperature.helpers({
   sampleCount: function () {

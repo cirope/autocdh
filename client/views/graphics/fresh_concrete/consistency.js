@@ -21,9 +21,9 @@ var updateChart = function (data) {
   })
 }
 
-Template.graphicFreshConcreteConsistency.rendered = function () {
+Template.graphicFreshConcreteConsistency.onRendered(function () {
   updateChart(_.pick(this.data, 'labels', 'series'))
-}
+})
 
 Template.graphicFreshConcreteConsistency.helpers({
   sampleCount: function () {

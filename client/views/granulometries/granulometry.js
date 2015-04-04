@@ -49,7 +49,7 @@ var graphData = function () {
   return seedData
 }
 
-Template.granulometry.rendered = function () {
+Template.granulometry.onRendered(function () {
   var data = {
     labels: graphLabels.apply(this),
     series: [graphData.apply(this)]
@@ -66,7 +66,7 @@ Template.granulometry.rendered = function () {
       }
     }
   })
-}
+})
 
 Template.granulometry.helpers({
   type: function () {
