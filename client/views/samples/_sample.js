@@ -1,14 +1,14 @@
 Template._sample.helpers({
   molding: function () {
-    return TAPi18n.__('sample_molding_' + this.molding)
+    return this.molding && TAPi18n.__('sample_molding_' + this.molding)
   },
 
   plant: function () {
-    return Plants.findOne(this.plantId).name
+    return this.plantId && Plants.findOne(this.plantId).name
   },
 
   responsible: function () {
-    return Responsible.findOne(this.responsibleId).name
+    return this.responsibleId && Responsible.findOne(this.responsibleId).name
   },
 
   temperature: function () {
