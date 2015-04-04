@@ -40,6 +40,13 @@
         <strong>{{water}} l/m³</strong>
       </p>
 
+      {{#if reducer}}
+        <p>
+          {{_ 'concrete_reducer'}} /
+          <strong>{{reducer}} kg/m³</strong>
+        </p>
+      {{/if}}
+
       <h5>{{_ 'concrete_dosages'}}</h5>
 
       <dl class="dl-horizontal">

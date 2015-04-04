@@ -68,6 +68,7 @@
   "concrete_gravels": "Agregados gruesos",
   "concrete_gravels_id": "Agregado grueso",
   "concrete_gravels_amount": "Cantidad",
+  "concrete_reducer": "Reductor de agua",
   "concrete_create_title": "Tipo de hormigón",
   "concrete_create": "Guardar",
   "concrete_update_title": "Editar tipo de hormigón",

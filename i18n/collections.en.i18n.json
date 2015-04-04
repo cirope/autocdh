@@ -68,6 +68,7 @@
   "concrete_gravels": "Gravels",
   "concrete_gravels_id": "Gravel",
   "concrete_gravels_amount": "Amount",
+  "concrete_reducer": "Reducer",
   "concrete_create_title": "Add a new concrete",
   "concrete_create": "Create concrete",
   "concrete_update_title": "Edit a concrete",

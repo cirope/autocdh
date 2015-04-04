@@ -40,6 +40,9 @@ var concrete = function (concrete) {
 
   result.push(TAPi18n.__('concrete_water') + ': ' + concrete.water + ' l/m³')
 
+  if (concrete.reducer)
+    result.push(TAPi18n.__('concrete_reducer') + ': ' + concrete.reducer + ' kg/m³')
+
   result.push(TAPi18n.__('concrete_dosages'))
 
   concrete.concretes.forEach(function (c) {
