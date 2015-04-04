@@ -46,7 +46,7 @@ Template._crackEdit.events({
     var diameter     = +$('[name="diameter"]').val()
     var press        = Presses.findOne($('[name="pressId"]').val())
     var load         = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
-    var stress       = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10
+    var stress       = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
 
     $('[name="stress"]').val(stress.toFixed(1))
   }
