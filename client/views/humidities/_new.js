@@ -2,10 +2,7 @@ Template._humidityNew.events({
   'change [name="hasIce"]': function (event) {
     var selected = $(event.currentTarget).is(':checked')
 
-    if (selected)
-      $('[name="ice"]').removeClass('hidden').focus()
-    else
-      $('[name="ice"]').addClass('hidden').val('')
+    if (! selected) $('[name="ice"]').val('')
   }
 })
 

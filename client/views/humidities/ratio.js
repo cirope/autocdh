@@ -5,10 +5,10 @@ var events      = {
 }
 
 var updateRatio = function () {
-  var form                = AutoForm.getFormId()
   var sampleId            = $('[name="sampleId"]').val()
   var inTruck             = $('[name="inTruck"]').prop('checked')
-  var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId }).concretes[0].amount
+  var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId })
+  var concreteAmount      = concrete && concrete.concretes && concrete.concretes[0].amount
   var ice                 = +$('[name="ice"]').val()
   var water               = +$('[name="incorporated"]').val()
   var flowmeterCorrection = +$('[name="flowmeterCorrection"]').val()
@@ -36,7 +36,7 @@ var updateRatio = function () {
     })
   })
 
-  var ratio = concrete && ((water + ice) * flowmeterCorrection + aggregatesHumidity) / concrete
+  var ratio = concreteAmount && ((water + ice) * flowmeterCorrection + aggregatesHumidity) / concreteAmount
 
   if (inTruck)
     $('[name="ratio"]').val(TAPi18n.__('humidity_cannot_calculate_ratio')).prop('disabled', true)
@@ -44,8 +44,8 @@ var updateRatio = function () {
     $('[name="ratio"]').val(ratio ? ratio.toFixed(2) : '').prop('disabled', false)
 }
 
-Template.humidityNew.rendered  = updateRatio
-Template.humidityEdit.rendered = updateRatio
+Template._humidityNew.rendered  = updateRatio
+Template._humidityEdit.rendered = updateRatio
 
-Template.humidityNew.events(events)
-Template.humidityEdit.events(events)
+Template._humidityNew.events(events)
+Template._humidityEdit.events(events)

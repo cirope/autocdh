@@ -1,11 +1,4 @@
-var truckDriver       = new ReactiveVar
-var updateTruckDriver = function () {
-  var truck = Trucks.findOne($('[name="truckId"]').val())
-
-  truckDriver.set(truck && truck.driver)
-}
-
-Template.truckSearch.rendered = updateTruckDriver
+var truckDriver = new ReactiveVar
 
 Template.truckSearch.helpers({
   placeholder: function () {
@@ -13,6 +6,8 @@ Template.truckSearch.helpers({
   },
 
   selectedTruckDriver: function () {
+    if (this.truckDriver) truckDriver.set(this.truckDriver)
+
     return truckDriver.get()
   },
 
@@ -37,7 +32,12 @@ Template.truckSearch.events({
     $('[name="truckId"]').val(doc && doc._id).trigger('change')
   },
 
-  'change [name="truckId"]': updateTruckDriver
+  'change [name="truckId"]': function (event, template) {
+    var truck = Trucks.findOne($('[name="truckId"]').val())
+    template.data.truckDriver = null
+
+    truckDriver.set(truck && truck.driver)
+  }
 })
 
 Template.emptyTruckPill.helpers({

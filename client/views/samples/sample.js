@@ -124,10 +124,10 @@ Template.sample.events({
     var data          = template.data
     var doc           = new jsPDF
     var sampleLines   = sample(data.sample)
-    var receiptLines  = receipt(data.sampleReceipt)
-    var concreteLines = concrete(data.sampleConcrete)
-    var humidityLines = humidity(data.sampleHumidity)
-    var assayLines    = assay(data.sampleAssay)
+    var receiptLines  = data.sampleReceipt  ? receipt(data.sampleReceipt)   : ['-']
+    var concreteLines = data.sampleConcrete ? concrete(data.sampleConcrete) : ['-']
+    var humidityLines = data.sampleHumidity ? humidity(data.sampleHumidity) : ['-']
+    var assayLines    = data.sampleAssay    ? assay(data.sampleAssay)       : ['-']
     var yPosition     = 20
 
     doc
