@@ -4,7 +4,7 @@ var stressErrorExceeded = function () {
 
 Template.crack.helpers({
   showStressAverageInfo: function () {
-    return this.crack && this.crack.error
+    return this.crack && this.crack.error && this.sibling
   },
 
   stressPanelClass: function () {

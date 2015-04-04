@@ -17,6 +17,8 @@
   "logout": "Salir",
   "save": "Guardar",
   "edit": "Editar",
+  "delete": "Eliminar",
+  "confirm_delete": "¿Está seguro?",
   "download_pdf": "Descargar PDF",
   "user": "Usuario",
   "organization": "Organización",

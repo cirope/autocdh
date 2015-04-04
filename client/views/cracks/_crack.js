@@ -13,3 +13,10 @@ Template._crack.helpers({
       TAPi18n.__('no')
   }
 })
+
+Template._crack.events({
+  'click [data-delete]': function (event, template) {
+    if (confirm(TAPi18n.__('confirm_delete')))
+      Meteor.call('removeCrack', template.data._id)
+  }
+})

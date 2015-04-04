@@ -17,6 +17,8 @@
   "logout": "Logout",
   "save": "Save",
   "edit": "Edit",
+  "delete": "Delete",
+  "confirm_delete": "Are you sure?",
   "download_pdf": "Download PDF",
   "user": "User",
   "organization": "Organization",
