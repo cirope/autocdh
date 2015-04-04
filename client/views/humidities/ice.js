@@ -1,7 +1,7 @@
 var showIce = new ReactiveVar
 
 var setShowIce = function () {
-  showIce.set(this.data.humidity.hasIce)
+  showIce.set(this.data.humidity && this.data.humidity.hasIce)
 }
 
 var events = {

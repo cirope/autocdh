@@ -20,27 +20,7 @@ Template._concreteNew.helpers({
 
 Template._concreteNew.events({
   'change [data-formula-component]': function (event, template) {
-    var params       = Router.current() && Router.current().params
-    var strengthId   = $('[name="strengthId"]').val()
-    var download     = $('[name="download"]').val()
-    var aggregateId  = $('[name="aggregateId"]').val()
-    var settlementId = $('[name="settlementId"]').val()
-    var formula      = Formulas.findOne({
-      strengthId:   strengthId,
-      download:     download,
-      aggregateId:  aggregateId,
-      settlementId: settlementId
-    })
-
-    if (params) {
-      setTimeout(function () { concrete.set() })
-
-      Router.go(
-        'concreteNew',
-        { sample_id: params.sample_id },
-        formula && { query: { formula_id: formula._id } }
-      )
-    }
+    setTimeout(function () { concrete.set() })
   },
 
   'change [name="strengthId"]': function (event) {

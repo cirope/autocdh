@@ -10,10 +10,10 @@
       {{#autoForm collection='Concretes' id='newConcreteForm' validation='blur' type='method' meteormethod='createConcrete' doc=concrete}}
         <fieldset>
           {{> afFieldInput name='sampleId' value=sample._id}}
-          {{> afQuickField name='strengthId' firstOption=firstOptionForSelect data-formula-component=true}}
-          {{> afQuickField name='download' firstOption=firstOptionForSelect data-formula-component=true}}
-          {{> afQuickField name='aggregateId' data-formula-component=true}}
-          {{> afQuickField name='settlementId' data-formula-component=true}}
+          {{> afQuickField name='strengthId' firstOption=firstOptionForSelect}}
+          {{> afQuickField name='download' firstOption=firstOptionForSelect}}
+          {{> afQuickField name='aggregateId'}}
+          {{> afQuickField name='settlementId'}}
           {{> afQuickField name='additiveId' firstOption=firstOptionForSelect}}
           {{#if additive}}
             <div class="row">

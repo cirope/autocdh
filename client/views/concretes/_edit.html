@@ -17,13 +17,13 @@
           {{> afQuickField name='aggregateId' options=aggregateOptions}}
           {{> afQuickField name='settlementId' options=settlementOptions}}
           {{> afQuickField name='additiveId' options=additiveOptions firstOption=firstOptionForSelect}}
-          {{#unless afFieldValueIs name='additiveId' value=''}}
+          {{#if additive}}
             <div class="row">
               <div class="col-md-6">
                 {{> afQuickField name='additiveAmount' unit=additive.unit}}
               </div>
             </div>
-          {{/unless}}
+          {{/if}}
           <div class="panel panel-default">
             <div class="panel-heading">
               {{_ 'concrete_dosages'}}
