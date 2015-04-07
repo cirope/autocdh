@@ -1,6 +1,12 @@
 <template name="assayEdit">
   {{> assayBreadcrumb sample=sample}}
 
+  {{#if tubeWarning}}
+    <div class="alert alert-warning">
+      {{_ 'assay_tube_change_warning'}}
+    </div>
+  {{/if}}
+
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
@@ -31,14 +37,14 @@
                 </div>
                 <div id="molding" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-molding">
                   <div class="panel-body">
-                    {{> afQuickField name='designation' readonly=true}}
-                    {{> afQuickField name='tubes' readonly=true}}
+                    {{> afQuickField name='designation'}}
+                    {{> afQuickField name='tubes'}}
                     <div class="row">
                       <div class="col-md-6">
-                        {{> afQuickField name='tubeType' readonly=true}}
+                        {{> afQuickField name='tubeType'}}
                       </div>
                       <div class="col-md-6">
-                        {{> afQuickField name='cured' readonly=true}}
+                        {{> afQuickField name='cured'}}
                       </div>
                     </div>
                   </div>

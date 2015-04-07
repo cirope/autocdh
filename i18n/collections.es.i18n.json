@@ -51,6 +51,7 @@
   "assay_other_assay_water_penetration": "Penetración de agua",
   "assay_other_assay_capillary_absorption": "Absorción capilar",
   "assay_observations": "Observaciones",
+  "assay_tube_change_warning": "La cantidad de probetas ha cambiado, se regenerarán las roturas programadas para esta muestra",
   "assay_create_title": "Ensayos y propiedades del hormigón fresco",
   "assay_create": "Guardar ensayo",
   "assay_update_title": "Editar ensayos y propiedades del hormigón fresco",
