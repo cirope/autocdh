@@ -5,11 +5,7 @@
         {{_ 'crack'}}: {{designation}}
         <span class="badge">{{count}}</span>
 
-        {{#if stress}}
-          <a class="pull-right" href="{{pathFor 'cracksCracked'}}">{{_ 'go_back'}}</a>
-        {{else}}
-          <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
-        {{/if}}
+        <a class="pull-right" href="{{pathFor 'cracks'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
     <div class="panel-body">
@@ -64,12 +60,12 @@
 
           <p>
             {{_ 'crack_load'}} /
-            <strong>{{r load}}</strong>
+            {{#if load}}<strong>{{r load}}</strong>{{/if}}
           </p>
 
           <p>
             {{_ 'crack_stress'}} /
-            {{#if stress}}<strong>{{r stress}} MPa</strong>{{/if}}
+            {{#if stress}}<strong>{{r stress 1}} MPa</strong>{{/if}}
           </p>
         </div>
       </div>
@@ -81,11 +77,9 @@
         </p>
       {{/if}}
 
-      {{#unless stress}}
-        <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
-          {{_ 'edit'}}
-        </a>
-      {{/unless}}
+      <a href="{{pathFor 'crackEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'crack_update_title'}}">
+        {{_ 'edit'}}
+      </a>
 
       <button class="btn btn-sm btn-danger" type="button" data-delete>
         {{_ 'delete'}}

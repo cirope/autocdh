@@ -1,19 +1,7 @@
 <template name="crackEdit">
-  {{#with crack}}
-    {{#if stress}} {{> _crack}}
-    {{else}}       {{> _crackEdit}}
-    {{/if}}
-  {{/with}}
+  {{#with crack}} {{> _crackEdit}} {{/with}}
 
   {{#if sibling}}
-    {{#if crack.stress}}
-      {{#with sibling}}
-        {{#if stress}} {{> _crack}}
-        {{else}}       {{> _crackEdit}}
-        {{/if}}
-      {{/with}}
-    {{else}}
-      {{#with sibling}} {{> _crack}} {{/with}}
-    {{/if}}
+    {{#with sibling}} {{> _crack}} {{/with}}
   {{/if}}
 </template>
