@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'crack_update_title'}}: {{designation}}
-        <span class="badge">{{count}}</span>
+        <span class="badge">{{number}}</span>
         <a class="pull-right" href="{{pathFor 'crack'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -11,6 +11,7 @@
       {{#autoForm collection='Cracks' id='editCrackForm' validation='blur' type='method-update' meteormethod='updateCrack' doc=this}}
         <fieldset>
           {{> afFieldInput name='sampleId'}}
+          {{> afFieldInput name='number'}}
           {{> afFieldInput name='designation'}}
           {{> afFieldInput name='crackIn'}}
           <div class="row">

@@ -5,11 +5,9 @@
     </div>
   {{/if}}
 
-  {{#with crack}} {{> _crack}} {{/with}}
-
-  {{#if sibling}}
-    {{#with sibling}} {{> _crack}} {{/with}}
-  {{/if}}
+  {{#each cracks}}
+    {{> _crack}}
+  {{/each}}
 
   {{#if showStressAverageInfo}}
     <div class="panel {{stressPanelClass}}">

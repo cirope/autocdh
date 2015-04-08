@@ -1,7 +1,9 @@
 <template name="crackEdit">
-  {{#with crack}} {{> _crackEdit}} {{/with}}
-
-  {{#if sibling}}
-    {{#with sibling}} {{> _crack}} {{/with}}
-  {{/if}}
+  {{#each cracks}}
+    {{#if edit}}
+      {{> _crackEdit}}
+    {{else}}
+      {{> _crack}}
+    {{/if}}
+  {{/each}}
 </template>

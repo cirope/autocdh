@@ -1,10 +1,10 @@
 var stressErrorExceeded = function () {
-  return this.crack.error > 15
+  return this.cracks[0] && this.cracks[0].error > 15
 }
 
 Template.crack.helpers({
   showStressAverageInfo: function () {
-    return this.crack && _.isNumber(this.crack.error) && this.sibling
+    return this.cracks[0] && _.isNumber(this.cracks[0].error) && this.cracks[1]
   },
 
   stressPanelClass: function () {
@@ -12,13 +12,14 @@ Template.crack.helpers({
   },
 
   stressAverage: function () {
-    var avegare = (this.crack.stress + this.sibling.stress) / 2
+    var sum     = _.reduce(this.cracks, function (memo, c) { return memo + c.stress }, 0)
+    var avegare = sum / this.cracks.length
 
     return avegare.toFixed(1)
   },
 
   stressError: function () {
-    return this.crack.error.toFixed(0)
+    return this.cracks[0].error.toFixed(0)
   },
 
   stressErrorClass: function () {

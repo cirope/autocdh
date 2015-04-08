@@ -23,9 +23,9 @@ fourseven:scss@2.1.1
 francocatena:autoform-bs-datetimepicker@1.0.2
 francocatena:status@1.1.2
 geojson-utils@1.0.3
-ground:db@0.3.6
+ground:db@0.3.7
 ground:dictionary@0.2.0
-ground:localstorage@0.1.7
+ground:localstorage@0.1.8
 ground:minimax@1.1.2
 ground:servertime@0.0.3
 ground:store@0.1.1
