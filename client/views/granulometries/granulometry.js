@@ -78,11 +78,11 @@ Template.granulometry.helpers({
   },
 
   responsible: function () {
-    return Responsible.findOne(this.responsibleId).name
+    return this.responsibleId && Responsible.findOne(this.responsibleId).name
   },
 
   plant: function () {
-    return Plants.findOne(this.plantId).name
+    return this.plantId && Plants.findOne(this.plantId).name
   },
 
   dried: function () {
@@ -94,15 +94,15 @@ Template.granulometry.helpers({
   },
 
   humidityPercentage: function () {
-    var netWet = this.humidity.massOfWetAggregate - this.humidity.massOfContainer
-    var netDry = this.humidity.massOfDryAggregate - this.humidity.massOfContainer
+    var netWet = this.humidity && this.humidity.massOfWetAggregate - this.humidity.massOfContainer
+    var netDry = this.humidity && this.humidity.massOfDryAggregate - this.humidity.massOfContainer
 
     return netDry > 0 ? ((netWet - netDry) / netDry * 100).toFixed(1) : 0
   },
 
   thinPercentage: function () {
-    var netBefore = this.thin.massBeforeWash - this.thin.massOfContainer
-    var netAfter  = this.thin.massAfterWash  - this.thin.massOfContainer
+    var netBefore = this.thin && this.thin.massBeforeWash - this.thin.massOfContainer
+    var netAfter  = this.thin && this.thin.massAfterWash  - this.thin.massOfContainer
 
     thinPercentage = netAfter > 0 ? (netBefore - netAfter) / netBefore * 100 : 0
 
@@ -172,5 +172,14 @@ Template.granulometry.helpers({
     }
 
     return fineness.toFixed(2)
+  }
+})
+
+Template.granulometry.events({
+  'click [data-delete]': function (event, template) {
+    if (confirm(TAPi18n.__('confirm_delete')))
+      Meteor.call('removeGranulometry', template.data._id, function (error) {
+        if (! error) Router.go('granulometries')
+      })
   }
 })
