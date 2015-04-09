@@ -17,17 +17,6 @@
     </div>
 
     <div class="col-lg-3">
-      <h3>{{_ 'formulas'}}</h3>
-
-      <a href="{{pathFor 'formulaNew'}}" class="btn btn-default btn-block">
-        {{_ 'formula_new'}}
-      </a>
-      <a href="{{pathFor 'formulas'}}" class="btn btn-default btn-block">
-        {{_ 'formulas'}}
-      </a>
-    </div>
-
-    <div class="col-lg-3">
       <h3>{{_ 'cracks'}}</h3>
 
       <a href="{{pathFor 'cracks'}}" class="btn btn-default btn-block">
@@ -39,10 +28,24 @@
     </div>
 
     <div class="col-lg-3">
-      <h3>{{_ 'materials'}}</h3>
+      <h3>{{_ 'granulometries'}}</h3>
 
-      <a href="{{pathFor 'materials'}}" class="btn btn-default btn-block">
-        {{_ 'materials'}}
+      <a href="{{pathFor 'granulometryNew'}}" class="btn btn-default btn-block">
+        {{_ 'granulometry_new'}}
+      </a>
+      <a href="{{pathFor 'granulometries'}}" class="btn btn-default btn-block">
+        {{_ 'granulometries'}}
+      </a>
+    </div>
+
+    <div class="col-lg-3">
+      <h3>{{_ 'formulas'}}</h3>
+
+      <a href="{{pathFor 'formulaNew'}}" class="btn btn-default btn-block">
+        {{_ 'formula_new'}}
+      </a>
+      <a href="{{pathFor 'formulas'}}" class="btn btn-default btn-block">
+        {{_ 'formulas'}}
       </a>
     </div>
   </div>
@@ -103,6 +106,12 @@
       </a>
 
       <hr class="hidden-lg">
+    </div>
+
+    <div class="col-lg-2">
+      <a href="{{pathFor 'materials'}}" class="btn btn-default btn-block">
+        {{_ 'materials'}}
+      </a>
     </div>
   </div>
 </template>
