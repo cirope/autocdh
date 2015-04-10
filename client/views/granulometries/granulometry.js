@@ -70,10 +70,6 @@ Template.granulometry.helpers({
 
   washed: function () {
     return TAPi18n.__(this.washed ? 'yes' : 'no')
-  },
-
-  fineness: function () {
-    return this.fineness.toFixed(2)
   }
 })
 

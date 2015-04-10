@@ -29,17 +29,16 @@ var granulometry = new ReactiveVar
 
 Template.granulometryNew.onCreated(function () {
   Granulometries.setType('sand')
+  granulometry.set({ type: 'sand', test: testByType.sand })
 })
 
 Template.granulometryNew.onDestroyed(function () {
   Granulometries.setType('sand')
+  granulometry.set()
 })
 
 Template.granulometryNew.helpers({
   granulometry: function () {
-    if (! granulometry.get())
-      granulometry.set({ type: 'sand', test: testByType['sand'] })
-
     return granulometry.get()
   }
 })

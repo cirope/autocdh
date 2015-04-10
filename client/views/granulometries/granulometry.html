@@ -31,7 +31,7 @@
         <div class="col-md-6">
           <p>
             {{_ 'granulometry_sample_weight'}} /
-            <strong>{{this.sampleWeight}} kg</strong>
+            <strong>{{this.sampleWeight}} g</strong>
           </p>
         </div>
       </div>
@@ -62,7 +62,7 @@
               </p>
               <p data-attribute>
                 <span data-label>{{_ 'granulometry_humidity_percentage'}}</span> /
-                <strong data-value>{{humidityPercentage}}%</strong>
+                <strong data-value>{{r humidity.percentage 1}}%</strong>
               </p>
             </div>
           </div>
@@ -93,7 +93,7 @@
               </p>
               <p data-attribute>
                 <span data-label>{{_ 'granulometry_thin_percentage'}}</span> /
-                <strong data-value>{{thinPercentage}}%</strong>
+                <strong data-value>{{r thin.percentage 1}}%</strong>
               </p>
             </div>
           </div>
@@ -188,7 +188,7 @@
 
             <p data-attribute>
               <span data-label>{{_ 'granulometry_test_fineness'}}</span> /
-              <strong data-value>{{fineness}}</strong>
+              <strong data-value>{{r fineness 2}}</strong>
             </p>
           </div>
         </div>
