@@ -15,10 +15,21 @@
   "graphic_fresh_concrete_temperature": "Temperatura",
   "graphic_fresh_concrete_temperature_title": "Variabilidad de la temperatura del hormigón fresco",
   "graphic_fresh_concrete_temperature_reference": "Temperatura (°C)",
+  "graphic_fresh_concrete_temperature_comparison": "Comparación de temperaturas",
+  "graphic_fresh_concrete_temperature_comparison_title": "Comparación de temperaturas de hormigón fresco",
+  "graphic_fresh_concrete_temperature_comparison_reference": "Media",
+  "graphic_fresh_concrete_temperature_comparison_y_label": "Temperatura H° fresco (°C)",
   "graphic_hardened_concrete": "Hormigón endurecido",
   "graphic_hardened_concrete_resistance": "Carta de control",
   "graphic_hardened_concrete_resistance_title": "Carta de control estadística",
   "graphic_hardened_concrete_resistance_reference": "Resistencia (28 días)",
   "graphic_hardened_concrete_resistance_mean": "Media móvil",
-  "graphic_hardened_concrete_resistance_y_label": "Resistencia (MPa)"
+  "graphic_hardened_concrete_resistance_y_label": "Resistencia (MPa)",
+  "graphic_aggregates": "Agregados",
+  "graphic_aggregate_fineness": "Módulo de finura",
+  "graphic_aggregate_fineness_title": "Módulo de finura por agregado",
+  "graphic_aggregate_fineness_average": "Promedio",
+  "graphic_aggregate_fineness_y_label": "Módulo de finura del agregado",
+  "graphic_aggregate_fineness_reference": "Finura",
+  "graphic_aggregate_fineness_mean": "Promedio"
 }

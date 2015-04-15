@@ -19,6 +19,11 @@
   transform: rotate(-45deg);
 }
 
+.ct-chart.ct-short-labels .ct-label.ct-horizontal {
+  transform-origin: 0em 3em;
+  transform: rotate(-45deg);
+}
+
 .ct-label.ct-vertical.text-left {
   text-align: left;
 }

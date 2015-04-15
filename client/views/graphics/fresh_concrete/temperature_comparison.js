@@ -2,12 +2,10 @@ var updateChart = function (data) {
   setTimeout(function () {
     if ($('[data-chart]').length) {
       var options = {
-        low:   0,
+        low:   data.low || 0,
         axisX: {
           labelInterpolationFnc: function (value, index) {
-            var module = Math.round(data.labels.length / 12)
-
-            return index % module === 0 ? value : null
+            return +value % 1 === 0 ? value : ' '
           }
         }
       }
@@ -15,19 +13,19 @@ var updateChart = function (data) {
       var chart = new Chartist.Line('[data-chart]', data, options)
 
       chart.on('draw', function (data) {
-        if (data.type === 'point' && data.value <= 0) data.element.remove()
+        if (data.type === 'point' && data.value === -100) data.element.remove()
       })
     }
   })
 }
 
-Template.graphicFreshConcreteTemperature.onRendered(function () {
-  updateChart(_.pick(this.data, 'labels', 'series'))
+Template.graphicFreshConcreteTemperatureComparison.onRendered(function () {
+  updateChart(_.pick(this.data, 'labels', 'series', 'low'))
 })
 
-Template.graphicFreshConcreteTemperature.helpers({
+Template.graphicFreshConcreteTemperatureComparison.helpers({
   sampleCount: function () {
-    updateChart(_.pick(this, 'labels', 'series'))
+    updateChart(_.pick(this, 'labels', 'series', 'low'))
 
     return this.samples.count()
   }

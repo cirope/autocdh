@@ -1,3 +1,12 @@
+var name = function (granulometry) {
+  var materialId   = granulometry.materialId
+  var materialList = Materials.first()
+  var materials    = materialList && materialList[granulometry.type + 's']
+  var material     = _.find(materials, function (m) { return m._id === materialId })
+
+  return granulometry.name + (material ? ' (' + material.name + ')' : '')
+}
+
 var putStaticData = function (granulometry, doc, yPosition) {
   var responsible = TAPi18n.__('responsible')       + ': ' + Responsible.findOne(granulometry.responsibleId).name
   var date        = TAPi18n.__('granulometry_date') + ': ' + moment(granulometry.date).format('L')
@@ -86,6 +95,9 @@ var putBriefData = function (granulometry, doc, yPosition) {
   return yPosition
 }
 
+var svgImage = function () {
+}
+
 Template.granulometry.events({
   'click [data-download-pdf]': function (event, template) {
     var granulometry = template.data
@@ -98,7 +110,7 @@ Template.granulometry.events({
     doc
       .setFont('helvetica')
       .setFontSize(14)
-      .text(TAPi18n.__('granulometry') + ': ' + granulometry.name, 20, yPosition)
+      .text(TAPi18n.__('granulometry') + ': ' + name(granulometry), 20, yPosition)
       .setFontSize(9)
 
     yPosition = putStaticData(granulometry, doc, yPosition)

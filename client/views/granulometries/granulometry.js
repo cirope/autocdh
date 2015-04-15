@@ -48,6 +48,15 @@ Template.granulometry.onRendered(function () {
 })
 
 Template.granulometry.helpers({
+  material: function () {
+    var materialId    = this.materialId
+    var materialList  = Materials.first()
+    var materials     = materialList && materialList[this.type + 's']
+    var material      = _.find(materials, function (m) { return m._id === materialId })
+
+    return material && material.name
+  },
+
   type: function () {
     return TAPi18n.__('granulometry_type_' + this.type)
   },

@@ -15,10 +15,21 @@
   "graphic_fresh_concrete_temperature": "Temperature",
   "graphic_fresh_concrete_temperature_title": "Fresh concretes temperature",
   "graphic_fresh_concrete_temperature_reference": "Temperature (°C)",
+  "graphic_fresh_concrete_temperature_comparison": "Temperature comparison",
+  "graphic_fresh_concrete_temperature_comparison_title": "Fresh concretes temperature comparison",
+  "graphic_fresh_concrete_temperature_comparison_reference": "Temperature mean",
+  "graphic_fresh_concrete_temperature_comparison_y_label": "Fresh concrete temperature (°C)",
   "graphic_hardened_concrete": "Fresh concrete",
   "graphic_hardened_concrete_resistance": "Resistance",
   "graphic_hardened_concrete_resistance_title": "Hardened concretes resistance",
   "graphic_hardened_concrete_resistance_reference": "Resistance (28 days)",
   "graphic_hardened_concrete_resistance_mean": "Mobile mean",
-  "graphic_hardened_concrete_resistance_y_label": "Resistance (MPa)"
+  "graphic_hardened_concrete_resistance_y_label": "Resistance (MPa)",
+  "graphic_aggregates": "Aggregates",
+  "graphic_aggregate_fineness": "Fineness",
+  "graphic_aggregate_fineness_title": "Aggregates fineness",
+  "graphic_aggregate_fineness_average": "Average",
+  "graphic_aggregate_fineness_y_label": "Aggregate fineness",
+  "graphic_aggregate_fineness_reference": "Fineness",
+  "graphic_aggregate_fineness_mean": "Fineness mean"
 }

@@ -1,0 +1,69 @@
+<template name="graphicFreshConcreteTemperatureComparison">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{#autoForm schema=filterSchema id='filterFreshConcreteTemperatureComparison' type='method' meteormethod='filterTemperatureComparison' resetOnSuccess=false doc=filter}}
+            <fieldset>
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='start'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='end'}}
+                </div>
+              </div>
+              {{> afQuickField name='strengthId'}}
+              {{> afQuickField name='aggregateId'}}
+              {{> afQuickField name='settlementId'}}
+
+              <hr>
+
+              <button type="submit" class="btn btn-default btn-block">
+                {{_ 'graphic_filter_apply'}}
+              </button>
+            </fieldset>
+          {{/autoForm}}
+        </div>
+      </div>
+
+      {{> graphicFreshConcreteTemperatureComparisonReference}}
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{_ 'graphic_fresh_concrete_temperature_comparison_title'}}</h3>
+        </div>
+
+        <div class="panel-body">
+          {{#if series.length}}
+            <div class="row">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="ct-chart ct-short-labels ct-golden-section" data-chart></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-11 col-md-offset-1">
+                <div class="rotate-sm-90 small">
+                  <span class="hidden-lg hidden-md"><strong>{{_ 'y_axis'}}</strong>:</span>
+
+                  {{_ 'graphic_fresh_concrete_temperature_comparison'}} (°C)
+                </div>
+              </div>
+            </div>
+          {{else}}
+            <h4 class="text-warning text-center">
+              {{_ 'graphic_no_data'}}
+            </h4>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row hidden">
+    <div class="col-md-8 col-md-offset-2">
+      <span class="badge">{{sampleCount}}</span>
+    </div>
+  </div>
+</template>
