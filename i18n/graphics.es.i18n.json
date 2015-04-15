@@ -32,5 +32,10 @@
   "graphic_aggregate_fineness_average": "Promedio",
   "graphic_aggregate_fineness_y_label": "Módulo de finura del agregado",
   "graphic_aggregate_fineness_reference": "Finura",
-  "graphic_aggregate_fineness_mean": "Promedio"
+  "graphic_aggregate_fineness_mean": "Promedio",
+  "graphic_aggregate_thin": "Contenido de finos",
+  "graphic_aggregate_thin_title": "Contenido de finos p#200",
+  "graphic_aggregate_thin_average": "Promedio",
+  "graphic_aggregate_thin_y_label": "Porcentaje de finos p#200 (%)",
+  "graphic_aggregate_thin_reference": "Finos"
 }
