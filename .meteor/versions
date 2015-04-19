@@ -20,7 +20,7 @@ ejson@1.0.6
 email@1.0.6
 fastclick@1.0.3
 fourseven:scss@2.1.1
-francocatena:autoform-bs-datetimepicker@1.0.2
+francocatena:autoform-bs-datetimepicker@1.1.0
 francocatena:status@1.1.2
 geojson-utils@1.0.3
 ground:db@0.3.7
@@ -57,7 +57,7 @@ minifiers@1.1.5
 minimongo@1.0.8
 mizzao:autocomplete@0.5.1
 mobile-status-bar@1.0.3
-momentjs:moment@2.10.2
+momentjs:moment@2.10.3
 mongo@1.1.0
 mongo-livedata@1.0.8
 npm-bcrypt@0.7.8_2
@@ -83,7 +83,7 @@ srp@1.0.3
 tap:i18n@1.4.1
 templating@1.1.1
 tracker@1.0.7
-tsega:bootstrap3-datetimepicker@3.1.3_3
+tsega:bootstrap3-datetimepicker@4.7.14_4
 twbs:bootstrap@3.3.4
 ui@1.0.6
 underscore@1.0.3

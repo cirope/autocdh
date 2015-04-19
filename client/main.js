@@ -4,7 +4,7 @@ Meteor.startup(function () {
   languageLoaded.set(false)
 
   TAPi18n.setLanguage(lang).done(function () {
-    $.fn.datetimepicker.defaults.language = lang
+    $.fn.datetimepicker.defaults.locale = lang
 
     loadSimpleSchemaMessages()
     languageLoaded.set(true)

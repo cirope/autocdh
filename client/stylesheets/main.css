@@ -15,6 +15,10 @@ label {
   line-height: 1.2;
 }
 
+.form-group {
+  position: relative; /* Needed for date picker fields */
+}
+
 .form-control {
   height: 2em;
   padding: 3px 8px;
