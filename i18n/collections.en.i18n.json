@@ -291,6 +291,8 @@
   "strength_name_placeholder": "Enter a name...",
   "strength_individual_criteria": "Individual criteria",
   "strength_average_criteria": "Average criteria",
+  "strength_efficiency_desirable": "Desirable efficiency",
+  "strength_efficiency_desirable_low": "Desirable efficiency low",
   "strength_create_title": "Add a new strength",
   "strength_create": "Create strength",
   "strength_update_title": "Edit a strength",

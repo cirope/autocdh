@@ -291,6 +291,8 @@
   "strength_name_placeholder": "Ingrese un nombre...",
   "strength_individual_criteria": "Criterio individual",
   "strength_average_criteria": "Criterio media móvil",
+  "strength_efficiency_desirable": "Valor de eficiencia deseable",
+  "strength_efficiency_desirable_low": "Valor de eficiencia mínimo deseable",
   "strength_create_title": "Agregar un nuevo tipo",
   "strength_create": "Crear tipo",
   "strength_update_title": "Editar tipo de hormigón",

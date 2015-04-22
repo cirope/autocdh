@@ -11,13 +11,6 @@ Template._crack.helpers({
     return this.otherAssay ?
       TAPi18n.__('assay_other_assay_' + this.otherAssay) :
       TAPi18n.__('no')
-  },
-
-  strength: function () {
-    var concrete = Concretes.findOne({ sampleId: this.sampleId })
-    var strength = concrete && Strengths.findOne(concrete.strengthId)
-
-    return strength && strength.name
   }
 })
 

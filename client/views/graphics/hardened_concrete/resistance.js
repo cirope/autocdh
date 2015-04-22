@@ -2,7 +2,7 @@ var updateChart = function (data) {
   setTimeout(function () {
     if ($('[data-chart]').length) {
       var options = {
-        low:   0,
+        low:      0,
         showLine: true,
         axisX: {
           labelInterpolationFnc: function (value, index) {
