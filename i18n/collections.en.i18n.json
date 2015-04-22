@@ -50,6 +50,7 @@
   "assay_other_assay_density": "Density",
   "assay_other_assay_water_penetration": "Water penetration",
   "assay_other_assay_capillary_absorption": "Capillary absorption",
+  "assay_other_assay_other": "Other (describe on observations)",
   "assay_observations": "Observations",
   "assay_tube_change_warning": "Test tube changed, this will recreate all the cracks for this sample",
   "assay_create_title": "Add a new assay",
