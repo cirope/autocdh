@@ -29,11 +29,13 @@
             <li class="{{activeRouteClass 'granulometries' 'granulometry' 'granulometryNew' 'granulometryEdit'}}">
               <a href="{{pathFor 'granulometries'}}">{{_ 'granulometries'}}</a>
             </li>
-            <li class="{{activeRouteClass 'graphics'}}">
-              <a href="{{pathFor 'graphics'}}">{{_ 'graphics'}}</a>
-            </li>
+            {{#if isInRole 'admin'}}
+              <li class="{{activeRouteClass 'graphics'}}">
+                <a href="{{pathFor 'graphics'}}">{{_ 'graphics'}}</a>
+              </li>
 
-            {{> menuConfig}}
+              {{> menuConfig}}
+            {{/if}}
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
