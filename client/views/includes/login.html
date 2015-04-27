@@ -1,8 +1,6 @@
 <template name="login">
   {{#if error}}
-    <div class="alert alert-danger">
-      {{_ 'login_error'}}
-    </div>
+    <div class="alert alert-danger">{{_ 'login_error'}}</div>
   {{/if}}
 
   <div class="row">
@@ -13,14 +11,14 @@
             <div class="form-group">
               <label class="control-label" for="email">{{_ 'login_email'}}</label>
               <div class="controls">
-                <input type="text" name="email" id="email" class="form-control" autofocus autocomplete="off" />
+                <input type="text" name="email" id="email" class="form-control" autofocus autocomplete="off">
               </div>
             </div>
 
             <div class="form-group">
               <label class="control-label" for="password">{{_ 'login_password'}}</label>
               <div class="controls">
-                <input type="password" name="password" id="password" class="form-control" />
+                <input type="password" name="password" id="password" class="form-control">
               </div>
             </div>
           </div>
