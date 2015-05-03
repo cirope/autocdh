@@ -1,6 +1,7 @@
 Template.menuUser.helpers({
   organizationImage: function () {
-    var organization = Organizations.findOne(Meteor.user().profile.organizationId)
+    var user         = Meteor.user()
+    var organization = user && Organizations.findOne(user.profile.organizationId)
 
     return organization && Images.findOne(organization.imageId)
   }
