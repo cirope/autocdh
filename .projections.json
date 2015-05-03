@@ -87,7 +87,7 @@
     "type": "publication",
     "template": [
       "Meteor.publish('{}', function () {open}",
-      "  return {camelcase}.find({open} userId: this.userId {close})",
+      "  return publish.call(this, {camelcase})",
       "{close})"
     ]
   }
