@@ -1,0 +1,22 @@
+<template name="organizationNew">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'organization_create_title'}}
+          <a class="pull-right" href="{{backPath}}" data-cancel>{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Organizations' id='newOrganizationForm' type='method' meteormethod='createOrganization'}}
+          <fieldset>
+            {{> afQuickField name='_id' autofocus=true}}
+            {{> afQuickField name='name'}}
+            {{> afQuickField name='imageId'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'organization_create'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>

@@ -23,3 +23,8 @@ rzymek:moment-locale-es
 fourseven:scss
 meteorhacks:kadira
 alanning:roles
+cfs:standard-packages
+cfs:gridfs
+cfs:autoform
+cfs:graphicsmagick
+cfs:ui

@@ -1,0 +1,21 @@
+<template name="organizationEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'organization_update_title'}}
+          <a class="pull-right" href="{{pathFor 'organization'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Organizations' id='editOrganizationForm' type='method-update' meteormethod='updateOrganization' doc=..}}
+          <fieldset>
+            {{> afQuickField name='_id' autofocus=true}}
+            {{> afQuickField name='name'}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'organization_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
