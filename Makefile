@@ -1,5 +1,11 @@
-PRODUCTION_ACCOUNT=deployer@app.autocdh.com
-PRODUCTION_ROOT_ACCOUNT=root@app.autocdh.com
+ifeq ($(SERVER),testing)
+	PRODUCTION_ACCOUNT=deployer@prueba.autocdh.com
+	PRODUCTION_ROOT_ACCOUNT=root@prueba.autocdh.com
+else
+	PRODUCTION_ACCOUNT=deployer@app.autocdh.com
+	PRODUCTION_ROOT_ACCOUNT=root@app.autocdh.com
+endif
+
 SANDBOX_ACCOUNT=deployer@localhost
 SANDBOX_ROOT_ACCOUNT=root@localhost
 APP_DIR=/var/www/autocdh.com
