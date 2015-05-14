@@ -5,17 +5,13 @@ var save     = function () {
 
 Template._concreteNew.helpers({
   concrete: function () {
-    if (! concrete.get()) concrete.set(this)
+    concrete.set(Template.currentData())
 
     return concrete.get()
   }
 })
 
 Template._concreteNew.events({
-  'change [data-formula-component]': function (event, template) {
-    setTimeout(function () { concrete.set() })
-  },
-
   'change [name="strengthId"]': function (event) {
     var strength = $(event.currentTarget)
     var params   = Router.current() && Router.current().params

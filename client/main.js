@@ -9,4 +9,5 @@ Meteor.startup(function () {
     loadSimpleSchemaMessages()
     languageLoaded.set(true)
   })
+
 })
