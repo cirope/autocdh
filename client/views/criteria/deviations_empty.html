@@ -1,0 +1,17 @@
+<template name="deviationsCriteriaEmpty">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'deviations'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <h3>{{_ 'deviation_empty_title'}}</h3>
+      <p>{{_ 'deviation_empty_banner'}}</p>
+      <a class="btn btn-default pull-right" href="{{pathFor 'deviationNew'}}" title="{{_ 'deviation_new'}}">
+        {{_ 'deviation_new'}}
+      </a>
+    </div>
+  </div>
+</template>
