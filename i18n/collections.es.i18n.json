@@ -119,6 +119,7 @@
   "deviation_empty_title": "Mmm",
   "deviation_empty_banner": "No hay ningún valor definido para el cálculo de la resistencia característica",
   "deviation_new": "Definir valor",
+  "deviation_equation_hint": "El valor se utilizará para la equación: f'c = f'cm - X.XX . s",
   "download": "Tipo de descarga",
   "download_canal": "Canaleta",
   "download_pump": "Bomba",
