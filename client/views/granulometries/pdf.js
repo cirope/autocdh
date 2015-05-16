@@ -22,12 +22,11 @@ var putStaticData = function (granulometry, doc, yPosition) {
     .text(plant, 20, yPosition += 5)
     .text(sampleWeight, 145, yPosition)
 
-  var humidity = TAPi18n.__('granulometry_humidity')
-  var thin     = TAPi18n.__('granulometry_thin')
+  if (granulometry.humidity)
+    doc.text(TAPi18n.__('granulometry_humidity'), 20, yPosition += 5)
 
-  doc
-    .text(humidity, 20, yPosition += 5)
-    .text(thin, 145, yPosition)
+  if (granulometry.thin)
+    doc.text(TAPi18n.__('granulometry_thin'), 145, granulometry.humidity ? yPosition : yPosition += 5)
 
   $('[data-humidity]').find('[data-attribute]').each(function (i, element) {
     var label = $(element).find('[data-label]').text()

@@ -37,67 +37,71 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{_ 'granulometry_humidity'}}</h3>
-            </div>
+        {{#if humidity}}
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{_ 'granulometry_humidity'}}</h3>
+              </div>
 
-            <div class="panel-body" data-humidity>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_humidity_container'}}</span> /
-                <strong data-value>{{humidity.container}}</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_humidity_mass_of_container'}}</span> /
-                <strong data-value>{{r humidity.massOfContainer}} g</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_humidity_mass_of_wet_aggregate'}}</span> /
-                <strong data-value>{{r humidity.massOfWetAggregate}} g</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_humidity_mass_of_dry_aggregate'}}</span> /
-                <strong data-value>{{r humidity.massOfDryAggregate}} g</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_humidity_percentage'}}</span> /
-                <strong data-value>{{r humidity.percentage 1}}%</strong>
-              </p>
+              <div class="panel-body" data-humidity>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_humidity_container'}}</span> /
+                  <strong data-value>{{humidity.container}}</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_humidity_mass_of_container'}}</span> /
+                  <strong data-value>{{r humidity.massOfContainer}} g</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_humidity_mass_of_wet_aggregate'}}</span> /
+                  <strong data-value>{{r humidity.massOfWetAggregate}} g</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_humidity_mass_of_dry_aggregate'}}</span> /
+                  <strong data-value>{{r humidity.massOfDryAggregate}} g</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_humidity_percentage'}}</span> /
+                  <strong data-value>{{r humidity.percentage 1}}%</strong>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        {{/if}}
 
-        <div class="col-md-6">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">{{_ 'granulometry_thin'}}</h3>
-            </div>
+        {{#if thin}}
+          <div class="col-md-6">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">{{_ 'granulometry_thin'}}</h3>
+              </div>
 
-            <div class="panel-body" data-thin>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_thin_container'}}</span> /
-                <strong data-value>{{thin.container}}</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_thin_mass_of_container'}}</span> /
-                <strong data-value>{{r thin.massOfContainer}} g</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_thin_mass_before_wash'}}</span> /
-                <strong data-value>{{r thin.massBeforeWash}} g</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_thin_mass_after_wash'}}</span> /
-                <strong data-value>{{r thin.massAfterWash}} g</strong>
-              </p>
-              <p data-attribute>
-                <span data-label>{{_ 'granulometry_thin_percentage'}}</span> /
-                <strong data-value>{{r thin.percentage 1}}%</strong>
-              </p>
+              <div class="panel-body" data-thin>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_thin_container'}}</span> /
+                  <strong data-value>{{thin.container}}</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_thin_mass_of_container'}}</span> /
+                  <strong data-value>{{r thin.massOfContainer}} g</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_thin_mass_before_wash'}}</span> /
+                  <strong data-value>{{r thin.massBeforeWash}} g</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_thin_mass_after_wash'}}</span> /
+                  <strong data-value>{{r thin.massAfterWash}} g</strong>
+                </p>
+                <p data-attribute>
+                  <span data-label>{{_ 'granulometry_thin_percentage'}}</span> /
+                  <strong data-value>{{r thin.percentage 1}}%</strong>
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        {{/if}}
       </div>
 
       <div class="row">
