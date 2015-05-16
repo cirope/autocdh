@@ -1,0 +1,17 @@
+<template name="stats">
+  <div class="page-header text-center">
+    <h1>{{_ 'stats'}}</h1>
+  </div>
+
+  {{> graphics}}
+
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>{{_ 'stats_deviation'}}</h3>
+
+      <a href="{{pathFor 'statsDeviation'}}" class="btn btn-default btn-block">
+        {{_ 'stats_deviation'}}
+      </a>
+    </div>
+  </div>
+</template>

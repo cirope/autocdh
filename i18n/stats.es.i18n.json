@@ -1,5 +1,5 @@
 {
-  "graphics": "Estadísticas",
+  "stats": "Estadísticas",
   "graphic_no_data": "No hay datos que cumplan los criterios seleccionados",
   "graphic_references": "Referencias",
   "graphic_upper_limit": "Límite superior",
@@ -44,5 +44,7 @@
   "graphic_aggregate_thin_title": "Contenido de finos p#200",
   "graphic_aggregate_thin_average": "Promedio",
   "graphic_aggregate_thin_y_label": "Porcentaje de finos p#200 (%)",
-  "graphic_aggregate_thin_reference": "Finos"
+  "graphic_aggregate_thin_reference": "Finos",
+  "stats_deviation": "Desviación estándar",
+  "stats_ten_percent_criteria": "Criterio del 10%"
 }

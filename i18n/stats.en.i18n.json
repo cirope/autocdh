@@ -1,5 +1,5 @@
 {
-  "graphics": "Graphics",
+  "stats": "Stats",
   "graphic_no_data": "No data",
   "graphic_references": "References",
   "graphic_upper_limit": "Upper limit",
@@ -44,5 +44,7 @@
   "graphic_aggregate_thin_title": "Aggregates thin",
   "graphic_aggregate_thin_average": "Average",
   "graphic_aggregate_thin_y_label": "Aggregate thin",
-  "graphic_aggregate_thin_reference": "Thin"
+  "graphic_aggregate_thin_reference": "Thin",
+  "stats_deviation": "Standard deviation",
+  "stats_ten_percent_criteria": "10% criteria"
 }
