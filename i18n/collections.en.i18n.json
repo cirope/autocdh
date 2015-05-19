@@ -124,6 +124,7 @@
   "deviation_mean_resistance": "Mean resistance",
   "deviation_standard_deviation": "Standard deviation",
   "deviation_resistance": "Resistance",
+  "deviation_coefficient": "Coefficient",
   "deviation_not_enough_stresses": "There are not enough stresses on this period to make the deviation statistically valid",
   "download": "Download",
   "download_canal": "Canal",

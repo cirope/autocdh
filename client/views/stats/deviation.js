@@ -1,6 +1,6 @@
 var mean = function (stresses) {
   var sum = _.reduce(stresses, function (memo, s) {
-    return memo + s
+    return memo + s.stress
   }, 0)
 
   return sum / stresses.length
@@ -12,7 +12,7 @@ var deviation = function (stresses) {
   var deviationsSum = 0
 
   _.each(stresses, function (s) {
-    deviations.push(Math.pow(s - _mean, 2))
+    deviations.push(Math.pow(s.stress - _mean, 2))
   })
 
   deviationsSum = _.reduce(deviations, function (memo, d) {
@@ -40,5 +40,12 @@ Template.statsDeviation.helpers({
     var _deviation = deviation(this.stresses)
 
     return _mean - this.deviation * _deviation
+  },
+
+  coefficient: function () {
+    var _mean      = mean(this.stresses)
+    var _deviation = deviation(this.stresses)
+
+    return _deviation / _mean * 100
   }
 })

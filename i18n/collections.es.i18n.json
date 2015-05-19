@@ -124,6 +124,7 @@
   "deviation_mean_resistance": "Resistencia media",
   "deviation_standard_deviation": "Desviación estándar",
   "deviation_resistance": "Resistencia característica",
+  "deviation_coefficient": "Coeficiente desviación estándar",
   "deviation_not_enough_stresses": "No puede determinarse la desviación estándar por ensayos insuficientes",
   "download": "Tipo de descarga",
   "download_canal": "Canaleta",
