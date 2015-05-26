@@ -16,7 +16,7 @@ var updateChart = function (data) {
         if (data.type === 'point' && data.value === -100) data.element.remove()
       })
     }
-  })
+  }, 200)
 }
 
 Template.graphicFreshConcreteTemperatureComparison.onRendered(function () {

@@ -18,7 +18,7 @@ var updateChart = function (data) {
         if (data.type === 'point' && data.value <= 0) data.element.remove()
       })
     }
-  })
+  }, 200)
 }
 
 Template.graphicFreshConcreteConsistency.onRendered(function () {

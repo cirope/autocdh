@@ -9,7 +9,7 @@ var updateChart = function (data) {
 
       new Chartist.Line('[data-chart]', data, options)
     }
-  })
+  }, 200)
 }
 
 Template.graphicConcreteEfficiency.onRendered(function () {

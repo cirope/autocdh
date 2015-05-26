@@ -16,10 +16,11 @@ var updateChart = function (data) {
       var chart = new Chartist.Line('[data-chart]', data, options)
 
       chart.on('draw', function (data) {
-        if (data.type === 'point' && data.value <= 0) data.element.attr({ class: 'hidden' })
+        if (data.type === 'point' && data.value <= 0)
+          data.element.attr({ class: 'hidden' })
       })
     }
-  })
+  }, 200)
 }
 
 Template.graphicHardenedConcreteResistance.onRendered(function () {

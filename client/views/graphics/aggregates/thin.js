@@ -19,7 +19,7 @@ var updateChart = function (data) {
         if (data.type === 'point' && data.value <= 0) data.element.attr({ class: 'hidden' })
       })
     }
-  })
+  }, 200)
 }
 
 Template.graphicAggregateThin.onRendered(function () {
