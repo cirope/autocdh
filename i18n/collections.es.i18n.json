@@ -323,6 +323,7 @@
   "strength_average_criteria": "Criterio media móvil",
   "strength_efficiency_desirable": "Valor de eficiencia deseable",
   "strength_efficiency_desirable_low": "Valor de eficiencia mínimo deseable",
+  "strength_resistance_7_days": "% de resistencia a 7 días",
   "strength_create_title": "Agregar un nuevo tipo",
   "strength_create": "Crear tipo",
   "strength_update_title": "Editar tipo de hormigón",
