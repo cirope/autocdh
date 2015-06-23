@@ -1,14 +1,22 @@
 ifeq ($(SERVER),testing)
-	PRODUCTION_ACCOUNT=deployer@prueba.autocdh.com
-	PRODUCTION_ROOT_ACCOUNT=root@prueba.autocdh.com
+PRODUCTION_ACCOUNT=deployer@prueba.autocdh.com
+PRODUCTION_ROOT_ACCOUNT=root@prueba.autocdh.com
+APP_DIR=/var/www/autocdh.com
+SERVICE_NAME=meteor
+else ifeq ($(SERVER),demo)
+PRODUCTION_ACCOUNT=deployer@demo.autocdh.com
+PRODUCTION_ROOT_ACCOUNT=root@demo.autocdh.com
+APP_DIR=/var/www/demo.autocdh.com
+SERVICE_NAME=meteor_demo
 else
-	PRODUCTION_ACCOUNT=deployer@app.autocdh.com
-	PRODUCTION_ROOT_ACCOUNT=root@app.autocdh.com
+PRODUCTION_ACCOUNT=deployer@app.autocdh.com
+PRODUCTION_ROOT_ACCOUNT=root@app.autocdh.com
+APP_DIR=/var/www/autocdh.com
+SERVICE_NAME=meteor
 endif
 
 SANDBOX_ACCOUNT=deployer@localhost
 SANDBOX_ROOT_ACCOUNT=root@localhost
-APP_DIR=/var/www/autocdh.com
 APP_BUNDLE=autocdh.tar.gz
 
 .PHONY : deploy sandbox-deploy
@@ -27,7 +35,7 @@ deploy:
 		rmdir bundle; \
 		cd $(APP_DIR)/programs/server; \
 		npm install"
-	ssh $(PRODUCTION_ROOT_ACCOUNT) "service meteor restart"
+	ssh $(PRODUCTION_ROOT_ACCOUNT) "service $(SERVICE_NAME) restart"
 
 sandbox-deploy:
 	meteor build .
@@ -43,4 +51,4 @@ sandbox-deploy:
 		rmdir bundle; \
 		cd $(APP_DIR)/programs/server; \
 		npm install"
-	ssh -p 2222 $(SANDBOX_ROOT_ACCOUNT) "service meteor restart"
+	ssh -p 2222 $(SANDBOX_ROOT_ACCOUNT) "service $(SERVICE_NAME) restart"
