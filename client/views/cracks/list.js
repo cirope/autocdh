@@ -11,6 +11,6 @@ Template.cracksList.helpers({
   timeAfterMolding: function () {
     var days = moment().diff(this.moldingIn, 'days')
 
-    return moment.localeData().relativeTime(days, false, days == 1 ? 'd' : 'dd')
+    return moment.localeData().relativeTime(days, false, days === 1 ? 'd' : 'dd')
   }
 })
