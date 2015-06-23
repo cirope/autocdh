@@ -17,6 +17,12 @@
         <a href="{{pathFor 'pressEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'press_update_title'}}">
           {{_ 'edit'}}
         </a>
+
+        {{#if canDelete}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/if}}
       </div>
     </div>
   </div>
