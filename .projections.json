@@ -17,14 +17,14 @@
   "client/stylesheets/*": {
     "type": "stylesheet"
   },
-  "client/views/*.html": {
+  "client/templates/*.html": {
     "type": "template",
-    "alternate": "client/views/{}.js",
+    "alternate": "client/templates/{}.js",
     "template": "<template name=\"{underscore|camelcase}\">\n\n</template>"
   },
-  "client/views/*.js": {
+  "client/templates/*.js": {
     "type": "helper",
-    "alternate": "client/views/{}.html",
+    "alternate": "client/templates/{}.html",
     "template": [
       "Template.{underscore|camelcase}.helpers({open}\n{close})\n",
       "Template.{underscore|camelcase}.events({open}\n{close})"
