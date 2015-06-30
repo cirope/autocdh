@@ -49,6 +49,18 @@
           {{/each}}
           </tbody>
         </table>
+
+        {{#if nextPath}}
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+              <a class="btn btn-default btn-xs btn-block" href="{{nextPath}}">{{_ 'more'}}</a>
+            </div>
+          </div>
+
+          <br>
+        {{else}}
+          {{#unless ready}}{{> spinner}}{{/unless}}
+        {{/if}}
       </div>
     </div>
   </div>

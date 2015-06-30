@@ -1,5 +1,6 @@
-publish = function (collection, options) {
-  var user = Meteor.users.findOne(this.userId) || { profile: {} }
+publish = function (collection, selector, options) {
+  var user      = Meteor.users.findOne(this.userId) || { profile: {} }
+  var _selector = _.extend(_.clone(selector || {}), { organizationId: user.profile.organizationId })
 
-  return collection.find({ organizationId: user.profile.organizationId }, options)
+  return collection.find(_selector, options)
 }

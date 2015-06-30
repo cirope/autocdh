@@ -5,5 +5,5 @@ Meteor.publish('samples', function () {
 Meteor.publish('samplesLimited', function (options) {
   check(options, { sort: Object, limit: Number })
 
-  return publish.call(this, Samples, options)
+  return publish.call(this, Samples, {}, options)
 })

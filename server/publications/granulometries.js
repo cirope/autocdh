@@ -5,5 +5,5 @@ Meteor.publish('granulometries', function () {
 Meteor.publish('granulometriesLimited', function (options) {
   check(options, { sort: Object, limit: Number })
 
-  return publish.call(this, Granulometries, options)
+  return publish.call(this, Granulometries, {}, options)
 })
