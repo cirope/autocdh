@@ -1,9 +1,9 @@
 Template.samplesList.helpers({
-  plant: function (plantId) {
-    return Plants.findOne(plantId).name
+  plant: function () {
+    return this.plantId && Plants.findOne(this.plantId).name
   },
 
-  moldingText: function (molding) {
-    return TAPi18n.__('sample_molding_' + molding)
+  moldingText: function () {
+    return TAPi18n.__('sample_molding_' + this.molding)
   }
 })
