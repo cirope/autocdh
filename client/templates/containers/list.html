@@ -1,0 +1,45 @@
+<template name="containers">
+  {{#if containers.count}}
+    {{> containersList}}
+  {{else}}
+    {{> containersEmpty}}
+  {{/if}}
+</template>
+
+<template name="containersList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'containers'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>{{_ 'container_name'}}</th>
+              <th>{{_ 'container_mass'}}</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each containers}}
+            <tr class="visible-on-hover-parent">
+              <td><a href="{{pathFor 'container'}}">{{name}}</a></td>
+              <td><a href="{{pathFor 'container'}}">{{mass}} g</a></td>
+              <td class="text-right">
+                <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'containerEdit'}}" title="{{_ 'edit'}}">
+                  {{_ 'edit'}}
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'containerNew'}}">{{_ 'container_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>
