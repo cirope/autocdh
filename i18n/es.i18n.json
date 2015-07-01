@@ -24,6 +24,8 @@
   "save": "Guardar",
   "edit": "Editar",
   "delete": "Eliminar",
+  "search": "Buscar",
+  "search_with_no_results": "La búsqueda no produjo resultados",
   "confirm_delete": "¿Está seguro?",
   "download_pdf": "Descargar PDF",
   "user": "Usuario",

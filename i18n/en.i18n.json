@@ -24,6 +24,8 @@
   "save": "Save",
   "edit": "Edit",
   "delete": "Delete",
+  "search": "Search",
+  "search_with_no_results": "This search has no results, try with another parameters",
   "confirm_delete": "Are you sure?",
   "download_pdf": "Download PDF",
   "user": "User",
