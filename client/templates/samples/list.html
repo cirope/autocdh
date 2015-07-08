@@ -1,5 +1,5 @@
 <template name="samples">
-  {{#if samples.count}}
+  {{#if showList}}
     {{> samplesList}}
   {{else}}
     {{> samplesEmpty}}
@@ -23,6 +23,39 @@
             <th>{{_ 'sample_date'}}</th>
             <th class="hidden-xs">{{_ 'plant'}}</th>
             <th class="hidden-xs">{{_ 'sample_molding'}}</th>
+            <th class="text-right">
+              <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="hidden" href="{{pathFor 'samples'}}" title="{{_ 'cancel'}}" data-search-clean>
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </th>
+          </tr>
+
+          <tr class="collapse" id="search-filter">
+            <td class="form-group form-group-sm">
+              <input class="form-control" type="text" name="name" id="name">
+            </td>
+            <td class="form-group form-group-sm">
+              <input class="form-control" type="text" name="date" id="date">
+            </td>
+            <td class="hidden-xs form-group form-group-sm">
+              <input class="form-control" type="text" name="plant" id="plant">
+            </td>
+            <td class="hidden-xs form-group form-group-sm">
+              <select class="form-control" name="molding" id="molding">
+                <option value="">{{_ 'graphic_filter_all'}}</option>
+                {{#each moldingOptions}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/each}}
+              </select>
+            </td>
+            <td>
+              <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                {{_ 'search'}}
+              </button>
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +65,15 @@
               <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{plant}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{moldingText}}</a></td>
+              <td></td>
+            </tr>
+          {{else}}
+            <tr>
+              <td colspan="5">
+                <div class="alert alert-info">
+                  {{_ 'search_with_no_results'}}
+                </div>
+              </td>
             </tr>
           {{/each}}
         </tbody>

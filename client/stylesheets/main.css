@@ -15,6 +15,10 @@ label {
   line-height: 1.2;
 }
 
+.btn.btn-sm {
+  line-height: 1.75;
+}
+
 .form-group {
   position: relative; /* Needed for date picker fields */
 }
