@@ -4,7 +4,10 @@ var updateChart = function (data) {
       var options = {
         low:        0,
         showLine:   true,
-        lineSmooth: false
+        lineSmooth: false,
+        plugins: [
+          Chartist.plugins.tooltip()
+        ]
       }
 
       new Chartist.Line('[data-chart]', data, options)

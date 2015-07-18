@@ -7,14 +7,13 @@ var updateChart = function (data) {
           labelInterpolationFnc: function (value, index) {
             return +value % 1 === 0 ? value : ' '
           }
-        }
+        },
+        plugins: [
+          Chartist.plugins.tooltip()
+        ]
       }
 
-      var chart = new Chartist.Line('[data-chart]', data, options)
-
-      chart.on('draw', function (data) {
-        if (data.type === 'point' && data.value === -100) data.element.remove()
-      })
+      new Chartist.Line('[data-chart]', data, options)
     }
   }, 200)
 }
