@@ -24,6 +24,11 @@
   transform: rotate(-45deg);
 }
 
+.ct-label.ct-vertical.ct-start {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
 .ct-label.ct-vertical.text-left {
   text-align: left;
 }
