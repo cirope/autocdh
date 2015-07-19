@@ -38,12 +38,34 @@ Template.granulometry.onRendered(function () {
     lineSmooth:   false,
     showPoint:    false,
     fullWidth:    true,
-    chartPadding: 20,
     axisX: {
       labelInterpolationFnc: function (value) {
-        return value.split(' | ')[0]
+        return _.first(value.split(' | '))
       }
-    }
+    },
+    plugins: [
+      Chartist.plugins.ctAxisTitle({
+        axisX: {
+          axisTitle: TAPi18n.__('granulometry_graph_x_label'),
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 35
+          },
+          textAnchor: 'middle'
+        },
+        axisY: {
+          axisTitle: TAPi18n.__('granulometry_graph_y_label'),
+          axisClass: 'ct-axis-title',
+          offset: {
+            x: 0,
+            y: 10
+          },
+          textAnchor: 'middle',
+          flipTitle: true
+        }
+      })
+    ]
   })
 })
 

@@ -40,20 +40,7 @@
 
         <div class="panel-body">
           {{#if series.length}}
-            <div class="row">
-              <div class="col-md-11 col-md-offset-1">
-                <div class="ct-chart ct-golden-section" data-chart></div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-11 col-md-offset-1">
-                <div class="rotate-sm-90 small">
-                  <span class="hidden-lg hidden-md"><strong>{{_ 'y_axis'}}</strong>:</span>
-
-                  {{_ 'graphic_hardened_concrete_resistance_y_label'}}
-                </div>
-              </div>
-            </div>
+            <div class="ct-chart ct-golden-section" data-chart></div>
           {{else}}
             <h4 class="text-warning text-center">
               {{_ 'graphic_no_data'}}

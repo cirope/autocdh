@@ -9,7 +9,28 @@ var updateChart = function (data) {
           }
         },
         plugins: [
-          Chartist.plugins.tooltip()
+          Chartist.plugins.tooltip(),
+          Chartist.plugins.ctAxisTitle({
+            axisX: {
+              axisTitle: TAPi18n.__('graphic_fresh_concrete_temperature_comparison_x_label'),
+              axisClass: 'ct-axis-title',
+              offset: {
+                x: 0,
+                y: 30
+              },
+              textAnchor: 'middle'
+            },
+            axisY: {
+              axisTitle: TAPi18n.__('graphic_fresh_concrete_temperature_comparison_y_label'),
+              axisClass: 'ct-axis-title',
+              offset: {
+                x: 0,
+                y: 10
+              },
+              textAnchor: 'middle',
+              flipTitle: true
+            }
+          })
         ]
       }
 

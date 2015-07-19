@@ -14,7 +14,13 @@
   display: none;
 }
 
+.ct-granulometry .ct-label.ct-horizontal {
+  transform-origin: 0em 12em;
+  transform: rotate(-15deg);
+}
+
 .ct-label.ct-horizontal {
+  white-space: nowrap;
   transform-origin: 2em 7em;
   transform: rotate(-45deg);
 }
@@ -42,6 +48,12 @@
 .ct-chart .ct-series.dotted-b .ct-line {
   stroke-width: 2px;
   stroke-dasharray: 15px 10px 5px 10px;
+}
+
+.ct-axis-title {
+  font-size: 1rem;
+  fill: rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .chartist-tooltip {

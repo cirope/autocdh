@@ -12,7 +12,27 @@ var updateChart = function (data) {
           }
         },
         plugins: [
-          Chartist.plugins.tooltip()
+          Chartist.plugins.tooltip(),
+          Chartist.plugins.ctAxisTitle({
+            axisX: {
+              axisTitle: '',
+              axisClass: 'ct-axis-title',
+              offset: {
+                x: 0,
+                y: 0
+              }
+            },
+            axisY: {
+              axisTitle: TAPi18n.__('graphic_hardened_concrete_resistance_y_label'),
+              axisClass: 'ct-axis-title',
+              offset: {
+                x: 0,
+                y: 10
+              },
+              textAnchor: 'middle',
+              flipTitle: true
+            }
+          })
         ]
       }
 
