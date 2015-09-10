@@ -23,16 +23,22 @@
             <th class="hidden-sm hidden-xs">{{_ 'download'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'aggregate'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'settlement'}}</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           {{#each formulas}}
-            <tr>
+            <tr class="visible-on-hover-parent">
               <td><a href="{{pathFor 'formula'}}">{{coding}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'formula'}}">{{strength strengthId}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'formula'}}">{{downloadName download}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'formula'}}">{{aggregate aggregateId}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'formula'}}">{{settlement settlementId}}</a></td>
+              <td class="text-right">
+                <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'formulaEdit'}}" title="{{_ 'edit'}}">
+                  {{_ 'edit'}}
+                </a>
+              </td>
             </tr>
           {{/each}}
         </tbody>
