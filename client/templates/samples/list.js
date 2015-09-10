@@ -9,6 +9,12 @@ Template.samplesList.helpers({
     return this.plantId && Plants.findOne(this.plantId).name
   },
 
+  customer: function () {
+    var receipt = Receipts.findOne({ sampleId: this._id })
+
+    return receipt && Customers.findOne(receipt.customerId).name
+  },
+
   moldingText: function () {
     return TAPi18n.__('sample_molding_' + this.molding)
   },
@@ -27,10 +33,11 @@ Template.samplesList.events({
     var date = template.$('#date').val()
 
     var search = {
-      name:    template.$('#name').val(),
-      date:    date && moment(date, 'L').format('YYYY-MM-DD'),
-      plant:   template.$('#plant').val(),
-      molding: template.$('#molding').val()
+      name:     template.$('#name').val(),
+      date:     date && moment(date, 'L').format('YYYY-MM-DD'),
+      plant:    template.$('#plant').val(),
+      customer: template.$('#customer').val(),
+      molding:  template.$('#molding').val()
     }
 
     Router.go('samples', {}, { query: search })

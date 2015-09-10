@@ -22,6 +22,7 @@
             <th>{{_ 'sample_name'}}</th>
             <th>{{_ 'sample_date'}}</th>
             <th class="hidden-xs">{{_ 'plant'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'customer'}}</th>
             <th class="hidden-xs">{{_ 'sample_molding'}}</th>
             <th class="text-right">
               <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
@@ -42,6 +43,9 @@
             </td>
             <td class="hidden-xs form-group form-group-sm">
               <input class="form-control" type="text" name="plant" id="plant">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="customer" id="customer">
             </td>
             <td class="hidden-xs form-group form-group-sm">
               <select class="form-control" name="molding" id="molding">
@@ -64,6 +68,7 @@
               <td><a href="{{pathFor 'sample'}}">{{name}}</a></td>
               <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{plant}}</a></td>
+              <td class="hidden-xs hidden-sm"><a href="{{pathFor 'sample'}}">{{customer}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{moldingText}}</a></td>
               <td></td>
             </tr>
