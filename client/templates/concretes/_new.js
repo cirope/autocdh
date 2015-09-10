@@ -26,7 +26,7 @@ Template._concreteNew.events({
 
   'change [name="aggregateId"]': function (event) {
     var aggregate = $(event.currentTarget)
-    var params   = Router.current() && Router.current().params
+    var params    = Router.current() && Router.current().params
 
     if (aggregate.val() === 'new') {
       aggregate.val('')
@@ -38,7 +38,7 @@ Template._concreteNew.events({
 
   'change [name="settlementId"]': function (event) {
     var settlement = $(event.currentTarget)
-    var params   = Router.current() && Router.current().params
+    var params     = Router.current() && Router.current().params
 
     if (settlement.val() === 'new') {
       settlement.val('')
