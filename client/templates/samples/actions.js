@@ -72,6 +72,16 @@ var concrete = function (concrete) {
   return result
 }
 
+var concreteBrief = function (concrete) {
+  var aggregate = concrete.aggregateId && Aggregates.findOne(concrete.aggregateId)
+  var result    = [
+    TAPi18n.__('strength')  + ': ' + Strengths.findOne(concrete.strengthId).name,
+    TAPi18n.__('aggregate') + ': ' + (aggregate && aggregate.name)
+  ]
+
+  return result
+}
+
 var humidity = function (humidity) {
   var ice       = (humidity.hasIce && humidity.ice) && humidity.ice + ' kg/m³'
   var ratio     = humidity.inTruck ? TAPi18n.__('humidity_cannot_calculate_ratio') : humidity.ratio
@@ -122,6 +132,38 @@ var assay = function (assay) {
   ]
 }
 
+var cracks = function (cracks) {
+  var lines  = []
+  var format = TAPi18n.__('datetime_default')
+
+  cracks.forEach(function (crack) {
+    lines.push(TAPi18n.__('press')            + ': ' + (crack.pressId && Presses.findOne(crack.pressId).name || ''))
+    lines.push(TAPi18n.__('responsible')      + ': ' + (crack.responsibleId && Responsible.findOne(crack.responsibleId).name || ''))
+    lines.push(TAPi18n.__('crack_molding_in') + ': ' + moment(crack.moldingIn).format(format))
+
+    if (crack.stress)
+      lines.push(TAPi18n.__('crack_cracked_in') + ': ' + moment(crack.crackedIn).format(format))
+    else
+      lines.push(TAPi18n.__('crack_crack_in')   + ': ' + moment(crack.crackIn).format(format))
+
+    lines.push(TAPi18n.__('crack_other_assay') + ': ' +
+      (crack.otherAssay ?  TAPi18n.__('assay_other_assay_' + crack.otherAssay) : TAPi18n.__('no'))
+    )
+
+    lines.push(TAPi18n.__('crack_tube_type')    + ': ' + (crack.tubeType || ''))
+    lines.push(TAPi18n.__('crack_diameter')     + ': ' + (crack.diameter || '') + ' mm')
+    lines.push(TAPi18n.__('crack_height')       + ': ' + (crack.height || '') + ' mm')
+    lines.push(TAPi18n.__('crack_load')         + ': ' + (crack.load && crack.load.toFixed(0) || ''))
+    lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && crack.stress.toFixed(1) || '') + ' MPa')
+    lines.push(TAPi18n.__('crack_stress_error') + ': ' + (crack.error && (crack.error.toFixed(0) + '%') || '-'))
+    lines.push(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
+
+    lines.push('')
+  })
+
+  return lines
+}
+
 Template.sample.events({
   'click [data-delete]': function (event, template) {
     if (confirm(TAPi18n.__('confirm_delete')))
@@ -164,5 +206,52 @@ Template.sample.events({
       .text(assayLines, 25, yPosition += 7)
 
     doc.save(data.sample.name + '.pdf')
+  },
+
+  'click [data-download-cracks-pdf]': function (event, template) {
+    var data          = template.data
+    var doc           = new jsPDF
+    var sampleLines   = sample(data.sample)
+    var receiptLines  = data.sampleReceipt        ? receipt(data.sampleReceipt)        : ['-']
+    var concreteLines = data.sampleConcrete       ? concreteBrief(data.sampleConcrete) : ['-']
+    var assayLines    = data.sampleAssay          ? assay(data.sampleAssay)            : ['-']
+    var crackLines    = data.sampleCracks.count() ? cracks(data.sampleCracks)          : ['-']
+    var yPosition     = 20
+
+    doc
+      .setFont('helvetica')
+      .setFontSize(14)
+      .text(TAPi18n.__('sample') + ': ' + data.sample.name, 20, yPosition)
+      .setFontSize(11)
+      .text(sampleLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 2)
+      .setFontSize(11)
+      .text(receiptLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 2)
+      .setFontSize(11)
+      .text(concreteLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('assay'), 20, yPosition += concreteLines.length * 4.5 + 2)
+      .setFontSize(11)
+      .text(assayLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 2)
+      .setFontSize(11)
+
+    yPosition += 2
+
+    _.each(crackLines, function (line) {
+      if (yPosition > 270) {
+        yPosition = 20
+
+        doc.addPage()
+      }
+
+      doc.text(line, 25, yPosition += 4.5)
+    })
+
+    doc.save(data.sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
   }
 })

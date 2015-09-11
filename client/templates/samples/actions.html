@@ -1,0 +1,25 @@
+<template name="sampleActions">
+  <button class="btn btn-sm btn-danger" type="button" data-delete>
+    {{_ 'delete'}}
+  </button>
+
+  <div class="pull-right">
+    <div class="btn-group">
+      <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="glyphicon glyphicon-file"></span>
+        {{_ 'downloads'}}
+        <span class="caret"></span>
+      </button>
+
+      <ul class="dropdown-menu">
+        <li>
+          <a href="#" data-download-pdf>{{_ 'download_pdf'}}</a>
+        </li>
+        <li>
+          <a href="#" data-download-cracks-pdf>{{_ 'sample_download_cracks_pdf'}}</a>
+        </li>
+      </ul>
+    </div>
+    <a href="{{pathFor 'sampleNew'}}" class="btn btn-sm btn-primary">{{_ 'sample_new'}}</a>
+  </div>
+</template>
