@@ -13,9 +13,9 @@ Template.crack.helpers({
 
   stressAverage: function () {
     var sum     = _.reduce(this.cracks, function (memo, c) { return memo + c.stress }, 0)
-    var avegare = sum / this.cracks.length
+    var average = sum / this.cracks.length
 
-    return avegare.toFixed(1)
+    return average.toFixed(1)
   },
 
   stressError: function () {
