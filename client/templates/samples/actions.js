@@ -137,6 +137,8 @@ var cracks = function (cracks) {
   var format = TAPi18n.__('datetime_default')
 
   cracks.forEach(function (crack) {
+    var sibling = Cracks.siblingOf(crack)
+
     lines.push(TAPi18n.__('press')            + ': ' + (crack.pressId && Presses.findOne(crack.pressId).name || ''))
     lines.push(TAPi18n.__('responsible')      + ': ' + (crack.responsibleId && Responsible.findOne(crack.responsibleId).name || ''))
     lines.push(TAPi18n.__('crack_molding_in') + ': ' + moment(crack.moldingIn).format(format))
@@ -155,6 +157,10 @@ var cracks = function (cracks) {
     lines.push(TAPi18n.__('crack_height')       + ': ' + (crack.height || '') + ' mm')
     lines.push(TAPi18n.__('crack_load')         + ': ' + (crack.load && crack.load.toFixed(0) || ''))
     lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && crack.stress.toFixed(1) || '') + ' MPa')
+
+    if (crack.stress && sibling && sibling.stress)
+      lines.push(TAPi18n.__('crack_stress_average') + ': ' + (((crack.stress + sibling.stress) / 2).toFixed(1) + ' MPa') || '-')
+
     lines.push(TAPi18n.__('crack_stress_error') + ': ' + (crack.error && (crack.error.toFixed(0) + '%') || '-'))
     lines.push(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
 
