@@ -1,5 +1,5 @@
 Template.granulometriesList.helpers({
   plant: function (plantId) {
-    return Plants.findOne(plantId).name
+    return plantId && Plants.findOne(plantId).name
   }
 })
