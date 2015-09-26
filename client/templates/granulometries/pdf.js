@@ -35,13 +35,13 @@ var putStaticData = function (granulometry, doc, yPosition) {
     doc.text("\t" + label + ': ' + value, 20, yPosition += 5)
   })
 
-  yPosition -= $('[data-humidity]').find('[data-attribute]').length * 5
+  var column2yPosition = yPosition - $('[data-humidity]').find('[data-attribute]').length * 5
 
   $('[data-thin]').find('[data-attribute]').each(function (i, element) {
     var label = $(element).find('[data-label]').text()
     var value = $(element).find('[data-value]').text()
 
-    doc.text("\t" + label + ': ' + value, 145, yPosition += 5)
+    doc.text("\t" + label + ': ' + value, 145, column2yPosition += 5)
   })
 
   var weight = TAPi18n.__('granulometry_granulometry_weight') + ': ' + granulometry.granulometryWeight + ' g'
