@@ -1,24 +1,27 @@
 <template name="strengthCriteriaEdit">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'strength_criteria_update_title'}}
-          <a class="pull-right" href="{{pathFor 'strengthCriteria'}}">{{_ 'go_back'}}</a>
-        </h3>
-      </div>
-      <div class="panel-body">
-        {{#autoForm collection='Strengths' id='editStrengthCriteriaForm' type='method-update' meteormethod='updateStrengthCriteria' doc=..}}
-          <fieldset>
-            {{> afQuickField name='name' readonly=true autofocus=true}}
-            {{> afQuickField name='individualCriteria'}}
-            {{> afQuickField name='averageCriteria'}}
-            {{> afQuickField name='efficiencyDesirable'}}
-            {{> afQuickField name='efficiencyDesirableLow'}}
-            {{> afQuickField name='resistance7Days'}}
-          </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'strength_criteria_update'}}</button>
-        {{/autoForm}}
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{_ 'strength_criteria_update_title'}}
+            <a class="pull-right" href="{{pathFor 'strengthCriteria'}}">{{_ 'go_back'}}</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {{#autoForm collection='Strengths' id='editStrengthCriteriaForm' type='method-update' meteormethod='updateStrengthCriteria' doc=..}}
+            <fieldset>
+              {{> afQuickField name='name' readonly=true}}
+              {{> afQuickField name='individualCriteria' autofocus=true}}
+              {{> afQuickField name='averageCriteria'}}
+              {{> afQuickField name='efficiencyDesirable'}}
+              {{> afQuickField name='efficiencyDesirableLow'}}
+              {{> afQuickField name='resistance7Days'}}
+              {{> afQuickField name='cusumTarget'}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">{{_ 'strength_criteria_update'}}</button>
+          {{/autoForm}}
+        </div>
       </div>
     </div>
   </div>

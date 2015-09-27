@@ -337,6 +337,7 @@
   "strength_efficiency_desirable": "Desirable efficiency",
   "strength_efficiency_desirable_low": "Desirable efficiency low",
   "strength_resistance_7_days": "7 days resistance (%)",
+  "strength_cusum_target": "CuSum target",
   "strength_create_title": "Add a new strength",
   "strength_create": "Create strength",
   "strength_update_title": "Edit a strength",
