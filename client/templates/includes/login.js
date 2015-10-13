@@ -1,4 +1,4 @@
-var loginErrors = new ReactiveVar(false)
+var loginErrors = new ReactiveVar
 
 Template.login.helpers({
   error: function() {
@@ -10,8 +10,8 @@ Template.login.events({
   'submit': function (event, template) {
     event.preventDefault()
 
-    var email    = $('#email').val().trim()
-    var password = $('#password').val().trim()
+    var email    = template.$('#email').val().trim()
+    var password = template.$('#password').val().trim()
 
     Meteor.loginWithPassword(email, password, function (error) {
       loginErrors.set(!!error)
