@@ -1,6 +1,12 @@
 <template name="sampleEdit">
   {{> sampleBreadcrumb}}
 
+  {{#if dateWarning}}
+    <div class="alert alert-warning">
+      {{_ 'sample_date_change_warning'}}
+    </div>
+  {{/if}}
+
   {{#if disabled}}
     {{> _sampleEdit sample=sample}}
   {{else}}

@@ -313,6 +313,7 @@
   "sample_empty_banner": "There is no sample here, lets create some...",
   "sample_new": "New sample",
   "sample_download_cracks_pdf": "Download cracks PDF",
+  "sample_date_change_warning": "Sample date changed, this will recreate all the cracks for this sample",
   "settlements": "Settlements",
   "settlement": "Settlement",
   "settlement_name": "Name",

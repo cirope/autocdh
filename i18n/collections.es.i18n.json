@@ -313,6 +313,7 @@
   "sample_empty_banner": "No has cargado ninguna muestra, podés comenzar ahora...",
   "sample_new": "Nueva muestra",
   "sample_download_cracks_pdf": "Descargar PDF con roturas de probeta",
+  "sample_date_change_warning": "La fecha de la muestra ha cambiado, se regenerarán las roturas programadas",
   "settlements": "Asentamientos de diseño",
   "settlement": "Asentamiento de diseño",
   "settlement_name": "Nombre",
