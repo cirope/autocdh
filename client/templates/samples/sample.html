@@ -8,30 +8,30 @@
       {{> _sample sample}}
     </div>
 
-    {{#if sampleReceipt}}
+    {{#if sample.getReceipt}}
       <div class="col-md-6">
-        {{> receipt sampleReceipt}}
+        {{> receipt sample.getReceipt}}
       </div>
     {{/if}}
   </div>
 
   <div class="row">
-    {{#if sampleConcrete}}
+    {{#if sample.getConcrete}}
       <div class="col-md-6">
-        {{> concrete sampleConcrete}}
+        {{> concrete sample.getConcrete}}
       </div>
     {{/if}}
-    {{#if sampleHumidity}}
+    {{#if sample.getHumidity}}
       <div class="col-md-6">
-        {{> humidity sampleHumidity}}
+        {{> humidity sample.getHumidity}}
       </div>
     {{/if}}
   </div>
 
   <div class="row">
-    {{#if sampleAssay}}
+    {{#if sample.getAssay}}
       <div class="col-md-12">
-        {{> assay sampleAssay}}
+        {{> assay sample.getAssay}}
       </div>
     {{/if}}
   </div>

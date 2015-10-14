@@ -170,28 +170,22 @@ var cracks = function (cracks) {
   return lines
 }
 
-Template.sample.events({
-  'click [data-delete]': function (event, template) {
-    if (confirm(TAPi18n.__('confirm_delete')))
-      Meteor.call('removeSample', template.data.sample._id, function (error) {
-        if (! error) Router.go('samples')
-      })
-  },
-
+var commonEvents = {
   'click [data-download-pdf]': function (event, template) {
     var data          = template.data
     var doc           = new jsPDF
-    var sampleLines   = sample(data.sample)
-    var receiptLines  = data.sampleReceipt  ? receipt(data.sampleReceipt)   : ['-']
-    var concreteLines = data.sampleConcrete ? concrete(data.sampleConcrete) : ['-']
-    var humidityLines = data.sampleHumidity ? humidity(data.sampleHumidity) : ['-']
-    var assayLines    = data.sampleAssay    ? assay(data.sampleAssay)       : ['-']
+    var _sample       = data.sample || this
+    var sampleLines   = sample(_sample)
+    var receiptLines  = _sample.getReceipt()  ? receipt(_sample.getReceipt())        : ['-']
+    var concreteLines = _sample.getConcrete() ? concreteBrief(_sample.getConcrete()) : ['-']
+    var humidityLines = _sample.getHumidity() ? humidity(_sample.getHumidity())      : ['-']
+    var assayLines    = _sample.getAssay()    ? assay(_sample.getAssay())            : ['-']
     var yPosition     = 20
 
     doc
       .setFont('helvetica')
       .setFontSize(14)
-      .text(TAPi18n.__('sample') + ': ' + data.sample.name, 20, yPosition)
+      .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
       .setFontSize(11)
       .text(sampleLines, 25, yPosition += 7)
       .setFontSize(14)
@@ -211,17 +205,31 @@ Template.sample.events({
       .setFontSize(11)
       .text(assayLines, 25, yPosition += 7)
 
-    doc.save(data.sample.name + '.pdf')
+    doc.save(_sample.name + '.pdf')
+  }
+}
+
+Template.sample.events(commonEvents)
+Template.samplesList.events(commonEvents)
+
+Template.sample.events({
+  'click [data-delete]': function (event, template) {
+    if (confirm(TAPi18n.__('confirm_delete')))
+      Meteor.call('removeSample', template.data.sample._id, function (error) {
+        if (! error) Router.go('samples')
+      })
   },
+
 
   'click [data-download-cracks-pdf]': function (event, template) {
     var data          = template.data
     var doc           = new jsPDF
+    var _sample       = data.sample
     var sampleLines   = sample(data.sample)
-    var receiptLines  = data.sampleReceipt        ? receipt(data.sampleReceipt)        : ['-']
-    var concreteLines = data.sampleConcrete       ? concreteBrief(data.sampleConcrete) : ['-']
-    var assayLines    = data.sampleAssay          ? assay(data.sampleAssay)            : ['-']
-    var crackLines    = data.sampleCracks.count() ? cracks(data.sampleCracks)          : ['-']
+    var receiptLines  = _sample.getReceipt()        ? receipt(_sample.getReceipt())        : ['-']
+    var concreteLines = _sample.getConcrete()       ? concreteBrief(_sample.getConcrete()) : ['-']
+    var assayLines    = _sample.getAssay()          ? assay(_sample.getAssay())            : ['-']
+    var crackLines    = _sample.getCracks().count() ? cracks(_sample.getCracks())          : ['-']
     var yPosition     = 20
 
     doc

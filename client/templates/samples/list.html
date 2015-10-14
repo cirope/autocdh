@@ -64,13 +64,17 @@
         </thead>
         <tbody>
           {{#each samples}}
-            <tr>
+            <tr class="visible-on-hover-parent">
               <td><a href="{{pathFor 'sample'}}">{{name}}</a></td>
               <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{plant}}</a></td>
               <td class="hidden-xs hidden-sm"><a href="{{pathFor 'sample'}}">{{customer}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{moldingText}}</a></td>
-              <td></td>
+              <td class="text-right">
+                <a class="btn btn-xs btn-default visible-on-hover" href="#" title="{{_ 'download_pdf'}}" data-download-pdf>
+                  <span class="glyphicon glyphicon-file"></span>
+                </a>
+              </td>
             </tr>
           {{else}}
             <tr>
