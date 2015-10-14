@@ -171,10 +171,70 @@ var cracks = function (cracks) {
 }
 
 var commonEvents = {
-  'click [data-download-pdf]': function (event, template) {
+  'click [data-download-cracks-pdf]': function (event, template) {
     var data          = template.data
     var doc           = new jsPDF
     var _sample       = data.sample || this
+    var sampleLines   = sample(_sample)
+    var receiptLines  = _sample.getReceipt()        ? receipt(_sample.getReceipt())        : ['-']
+    var concreteLines = _sample.getConcrete()       ? concreteBrief(_sample.getConcrete()) : ['-']
+    var assayLines    = _sample.getAssay()          ? assay(_sample.getAssay())            : ['-']
+    var crackLines    = _sample.getCracks().count() ? cracks(_sample.getCracks())          : ['-']
+    var yPosition     = 20
+
+    doc
+      .setFont('helvetica')
+      .setFontSize(14)
+      .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
+      .setFontSize(11)
+      .text(sampleLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 2)
+      .setFontSize(11)
+      .text(receiptLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 2)
+      .setFontSize(11)
+      .text(concreteLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('assay'), 20, yPosition += concreteLines.length * 4.5 + 2)
+      .setFontSize(11)
+      .text(assayLines, 25, yPosition += 7)
+      .setFontSize(14)
+      .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 2)
+      .setFontSize(11)
+
+    yPosition += 2
+
+    _.each(crackLines, function (line) {
+      if (yPosition > 270) {
+        yPosition = 20
+
+        doc.addPage()
+      }
+
+      doc.text(line, 25, yPosition += 4.5)
+    })
+
+    doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
+  }
+}
+
+Template.sample.events(commonEvents)
+Template.samplesList.events(commonEvents)
+
+Template.sample.events({
+  'click [data-delete]': function (event, template) {
+    if (confirm(TAPi18n.__('confirm_delete')))
+      Meteor.call('removeSample', template.data.sample._id, function (error) {
+        if (! error) Router.go('samples')
+      })
+  },
+
+  'click [data-download-pdf]': function (event, template) {
+    var data          = template.data
+    var doc           = new jsPDF
+    var _sample       = data.sample
     var sampleLines   = sample(_sample)
     var receiptLines  = _sample.getReceipt()  ? receipt(_sample.getReceipt())        : ['-']
     var concreteLines = _sample.getConcrete() ? concreteBrief(_sample.getConcrete()) : ['-']
@@ -206,66 +266,5 @@ var commonEvents = {
       .text(assayLines, 25, yPosition += 7)
 
     doc.save(_sample.name + '.pdf')
-  }
-}
-
-Template.sample.events(commonEvents)
-Template.samplesList.events(commonEvents)
-
-Template.sample.events({
-  'click [data-delete]': function (event, template) {
-    if (confirm(TAPi18n.__('confirm_delete')))
-      Meteor.call('removeSample', template.data.sample._id, function (error) {
-        if (! error) Router.go('samples')
-      })
-  },
-
-
-  'click [data-download-cracks-pdf]': function (event, template) {
-    var data          = template.data
-    var doc           = new jsPDF
-    var _sample       = data.sample
-    var sampleLines   = sample(data.sample)
-    var receiptLines  = _sample.getReceipt()        ? receipt(_sample.getReceipt())        : ['-']
-    var concreteLines = _sample.getConcrete()       ? concreteBrief(_sample.getConcrete()) : ['-']
-    var assayLines    = _sample.getAssay()          ? assay(_sample.getAssay())            : ['-']
-    var crackLines    = _sample.getCracks().count() ? cracks(_sample.getCracks())          : ['-']
-    var yPosition     = 20
-
-    doc
-      .setFont('helvetica')
-      .setFontSize(14)
-      .text(TAPi18n.__('sample') + ': ' + data.sample.name, 20, yPosition)
-      .setFontSize(11)
-      .text(sampleLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 2)
-      .setFontSize(11)
-      .text(receiptLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 2)
-      .setFontSize(11)
-      .text(concreteLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('assay'), 20, yPosition += concreteLines.length * 4.5 + 2)
-      .setFontSize(11)
-      .text(assayLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 2)
-      .setFontSize(11)
-
-    yPosition += 2
-
-    _.each(crackLines, function (line) {
-      if (yPosition > 270) {
-        yPosition = 20
-
-        doc.addPage()
-      }
-
-      doc.text(line, 25, yPosition += 4.5)
-    })
-
-    doc.save(data.sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
   }
 })
