@@ -1,0 +1,23 @@
+<template name="settingEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'setting_update_title'}}
+          <a class="pull-right" href="{{pathFor 'setting'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Settings' id='editSettingForm' type='method-update' meteormethod='updateSetting' doc=..}}
+          <fieldset>
+            {{> afQuickField name='efficiencyDesirable'}}
+            {{> afQuickField name='efficiencyDesirableLow'}}
+            {{> afQuickField name='resistance7Days'}}
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">{{_ 'setting_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
