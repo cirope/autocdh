@@ -126,42 +126,35 @@ var assay = function (assay) {
     TAPi18n.__('assay_temperature')  + ': ' + assay.temperature + ' °C',
     TAPi18n.__('assay_air')          + ': ' + (assay.air ? assay.air + '%' : ''),
     TAPi18n.__('assay_weight')       + ': ' + (assay.weight ? assay.weight + ' kg/m³' : ''),
-    TAPi18n.__('assay_harden_time')  + ': ' + (assay.hardenTime ? moment(assay.hardenTime).format('HH:mm') : ''),
-    TAPi18n.__('assay_other_assay')  + ': ' + otherAssay,
     TAPi18n.__('assay_observations') + ': ' + (assay.observations || '')
   ]
 }
 
 var cracks = function (cracks) {
   var lines  = []
-  var format = TAPi18n.__('datetime_default')
+  var datetimeFormat = TAPi18n.__('datetime_default')
+  var dateFormat = TAPi18n.__('date_default')
 
-  cracks.forEach(function (crack) {
+  cracks.forEach(function (crack, i) {
     var sibling = Cracks.siblingOf(crack)
 
-    lines.push(TAPi18n.__('press')            + ': ' + (crack.pressId && Presses.findOne(crack.pressId).name || ''))
-    lines.push(TAPi18n.__('responsible')      + ': ' + (crack.responsibleId && Responsible.findOne(crack.responsibleId).name || ''))
-    lines.push(TAPi18n.__('crack_molding_in') + ': ' + moment(crack.moldingIn).format(format))
+    if (i === 0)
+      lines.push(TAPi18n.__('responsible')    + ': ' + (crack.responsibleId && Responsible.findOne(crack.responsibleId).name || ''))
+
+    lines.push(TAPi18n.__('crack_molding_in') + ': ' + moment(crack.moldingIn).format(datetimeFormat))
 
     if (crack.stress)
-      lines.push(TAPi18n.__('crack_cracked_in') + ': ' + moment(crack.crackedIn).format(format))
+      lines.push(TAPi18n.__('crack_cracked_in') + ': ' + moment(crack.crackedIn).format(dateFormat))
     else
-      lines.push(TAPi18n.__('crack_crack_in')   + ': ' + moment(crack.crackIn).format(format))
-
-    lines.push(TAPi18n.__('crack_other_assay') + ': ' +
-      (crack.otherAssay ?  TAPi18n.__('assay_other_assay_' + crack.otherAssay) : TAPi18n.__('no'))
-    )
+      lines.push(TAPi18n.__('crack_crack_in')   + ': ' + moment(crack.crackIn).format(dateFormat))
 
     lines.push(TAPi18n.__('crack_tube_type')    + ': ' + (crack.tubeType || ''))
     lines.push(TAPi18n.__('crack_diameter')     + ': ' + (crack.diameter || '') + ' mm')
-    lines.push(TAPi18n.__('crack_height')       + ': ' + (crack.height || '') + ' mm')
-    lines.push(TAPi18n.__('crack_load')         + ': ' + (crack.load && crack.load.toFixed(0) || ''))
-    lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && crack.stress.toFixed(1) || '') + ' MPa')
+    lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && (crack.stress.toFixed(1) + ' MPa') || '-'))
 
     if (crack.stress && sibling && sibling.stress)
       lines.push(TAPi18n.__('crack_stress_average') + ': ' + (((crack.stress + sibling.stress) / 2).toFixed(1) + ' MPa') || '-')
 
-    lines.push(TAPi18n.__('crack_stress_error') + ': ' + (crack.error && (crack.error.toFixed(0) + '%') || '-'))
     lines.push(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
 
     lines.push('')
@@ -184,25 +177,25 @@ var commonEvents = {
 
     doc
       .setFont('helvetica')
-      .setFontSize(14)
+      .setFontSize(12)
       .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
-      .setFontSize(11)
+      .setFontSize(10)
       .text(sampleLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(receiptLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(concreteLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('assay'), 20, yPosition += concreteLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('assay'), 20, yPosition += concreteLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(assayLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 1)
+      .setFontSize(10)
 
     yPosition += 2
 
@@ -244,25 +237,25 @@ Template.sample.events({
 
     doc
       .setFont('helvetica')
-      .setFontSize(14)
+      .setFontSize(12)
       .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
-      .setFontSize(11)
+      .setFontSize(10)
       .text(sampleLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(receiptLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(concreteLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('humidity'), 20, yPosition += concreteLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('humidity'), 20, yPosition += concreteLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(humidityLines, 25, yPosition += 7)
-      .setFontSize(14)
-      .text(TAPi18n.__('assay'), 20, yPosition += humidityLines.length * 4.5 + 2)
-      .setFontSize(11)
+      .setFontSize(12)
+      .text(TAPi18n.__('assays'), 20, yPosition += humidityLines.length * 4.5 + 1)
+      .setFontSize(10)
       .text(assayLines, 25, yPosition += 7)
 
     doc.save(_sample.name + '.pdf')
