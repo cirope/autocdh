@@ -3,6 +3,7 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
+meteor-platform
 tap:i18n
 aldeed:collection2
 aldeed:autoform
@@ -27,17 +28,3 @@ cfs:gridfs
 cfs:autoform
 cfs:graphicsmagick
 cfs:ui
-standard-minifiers
-meteor-base
-mobile-experience
-mongo
-blaze-html-templates
-session
-jquery
-tracker
-logging
-reload
-random
-ejson
-spacebars
-check
