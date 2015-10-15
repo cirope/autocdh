@@ -54,5 +54,6 @@
   "graphic_aggregate_thin_y_label": "Aggregate thin",
   "graphic_aggregate_thin_reference": "Thin",
   "stats_deviation": "Standard deviation",
-  "stats_ten_percent_criteria": "10% criteria"
+  "stats_ten_percent_criteria": "10% criteria",
+  "stats_discard_high_erratic_values": "Discard high erratic values"
 }

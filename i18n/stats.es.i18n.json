@@ -54,5 +54,6 @@
   "graphic_aggregate_thin_y_label": "Porcentaje de finos p#200 (%)",
   "graphic_aggregate_thin_reference": "Finos",
   "stats_deviation": "Desviación estándar",
-  "stats_ten_percent_criteria": "Criterio del 10%"
+  "stats_ten_percent_criteria": "Criterio del 10%",
+  "stats_discard_high_erratic_values": "Descartar valores erráticos elevados"
 }
