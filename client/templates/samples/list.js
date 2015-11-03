@@ -9,6 +9,12 @@ Template.samplesList.helpers({
     return this.plantId && Plants.findOne(this.plantId).name
   },
 
+  strength: function () {
+    var concrete = Concretes.findOne({ sampleId: this._id })
+
+    return concrete && Strengths.findOne(concrete.strengthId).name
+  },
+
   customer: function () {
     var receipt = Receipts.findOne({ sampleId: this._id })
 
@@ -34,6 +40,7 @@ Template.samplesList.events({
 
     var search = {
       name:     template.$('#name').val(),
+      strength: template.$('#strength').val(),
       date:     date && moment(date, 'L').format('YYYY-MM-DD'),
       plant:    template.$('#plant').val(),
       customer: template.$('#customer').val(),

@@ -20,10 +20,11 @@
         <thead>
           <tr>
             <th>{{_ 'sample'}}</th>
+            <th class="hidden-xs">{{_ 'strength'}}</th>
             <th>{{_ 'sample_date'}}</th>
             <th class="hidden-xs">{{_ 'plant'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'customer'}}</th>
-            <th class="hidden-xs">{{_ 'sample_molding'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'sample_molding'}}</th>
             <th class="text-right">
               <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
                 <span class="glyphicon glyphicon-search"></span>
@@ -38,6 +39,9 @@
             <td class="form-group form-group-sm">
               <input class="form-control" type="text" name="name" id="name">
             </td>
+            <td class="hidden-xs form-group form-group-sm">
+              <input class="form-control" type="text" name="strength" id="strength">
+            </td>
             <td class="form-group form-group-sm">
               <input class="form-control" type="text" name="date" id="date">
             </td>
@@ -47,7 +51,7 @@
             <td class="hidden-xs hidden-sm form-group form-group-sm">
               <input class="form-control" type="text" name="customer" id="customer">
             </td>
-            <td class="hidden-xs form-group form-group-sm">
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
               <select class="form-control" name="molding" id="molding">
                 <option value="">{{_ 'graphic_filter_all'}}</option>
                 {{#each moldingOptions}}
@@ -66,10 +70,11 @@
           {{#each samples}}
             <tr class="visible-on-hover-parent">
               <td><a href="{{pathFor 'sample'}}">{{name}}</a></td>
+              <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{strength}}</a></td>
               <td><a href="{{pathFor 'sample'}}">{{l date}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{plant}}</a></td>
               <td class="hidden-xs hidden-sm"><a href="{{pathFor 'sample'}}">{{customer}}</a></td>
-              <td class="hidden-xs"><a href="{{pathFor 'sample'}}">{{moldingText}}</a></td>
+              <td class="hidden-xs hidden-sm"><a href="{{pathFor 'sample'}}">{{moldingText}}</a></td>
               <td class="text-right">
                 <a class="btn btn-xs btn-default visible-on-hover" href="#" title="{{_ 'sample_download_cracks_pdf'}}" data-download-cracks-pdf>
                   <span class="glyphicon glyphicon-file"></span>
