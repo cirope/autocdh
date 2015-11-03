@@ -33,7 +33,7 @@
   "graphic_hardened_concrete_7_days_resistance": "Resistencia a 7 días",
   "graphic_hardened_concrete_7_days_resistance_title": "Resistencia del hormigón endurecido a 7 días",
   "graphic_hardened_concrete_7_days_resistance_reference": "Resistencia (7 días)",
-  "graphic_hardened_concrete_7_days_resistance_y_label": "% Resistencia (7 días)",
+  "graphic_hardened_concrete_7_days_resistance_y_label": "% Resistencia a 28 días (relación resistencia 7/28 días)",
   "graphic_deviation": "Eficiencia",
   "graphic_deviation_efficiency": "Eficiencia",
   "graphic_deviation_efficiency_title": "Eficiencia del aglomerante",
