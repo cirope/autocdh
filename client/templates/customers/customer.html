@@ -1,5 +1,5 @@
 <template name="customer">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -13,9 +13,14 @@
           <strong>{{name}}</strong>
         </p>
 
-        <a href="{{pathFor 'customerEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'customer_update_title'}}">
-          {{_ 'edit'}}
-        </a>
+        <div class="pull-right">
+          <a href="{{pathFor 'customerCracks'}}" class="btn btn-sm btn-default" title="{{_ 'samples'}}">
+            {{_ 'samples'}}
+          </a>
+          <a href="{{pathFor 'customerEdit'}}" class="btn btn-sm btn-default" title="{{_ 'customer_update_title'}}">
+            {{_ 'edit'}}
+          </a>
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,46 @@
+<template name="customerCracks">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'customer_cracks_title' customer=customer.name}}
+        <a class="pull-right" href="{{pathFor 'customer' _id=customer._id}}">
+          {{_ 'go_back'}}
+        </a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{_ 'receipt'}}</th>
+            <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'crack_cracked_in'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'crack_age'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'crack_load'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'crack_stress'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+        {{#each cracks}}
+          <tr>
+            <td>{{receipt}}</td>
+            <td class="hidden-xs">{{l moldingIn 'L'}}</td>
+            <td class="hidden-xs hidden-sm">{{l crackedIn 'L'}}</td>
+            <td class="hidden-xs hidden-sm">{{age}}</td>
+            <td class="hidden-xs hidden-sm">{{r load}}</td>
+            <td class="hidden-xs hidden-sm">{{r stress 1}} MPa</td>
+          </tr>
+        {{else}}
+          <tr>
+            <td colspan="6">
+              <div class="alert alert-info">
+                {{_ 'customer_cracks_empty'}}
+              </div>
+            </td>
+          </tr>
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

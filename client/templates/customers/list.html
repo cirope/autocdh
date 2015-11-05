@@ -7,7 +7,7 @@
 </template>
 
 <template name="customersList">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
@@ -21,12 +21,18 @@
           <thead>
             <tr>
               <th>{{_ 'customer_name'}}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
           {{#each customers}}
-            <tr>
+            <tr class="visible-on-hover-parent">
               <td><a href="{{pathFor 'customer'}}">{{name}}</a></td>
+              <td class="text-right">
+                <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'customerCracks'}}" title="{{_ 'samples'}}">
+                  {{_ 'samples'}}
+                </a>
+              </td>
             </tr>
           {{/each}}
           </tbody>
