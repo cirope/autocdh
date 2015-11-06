@@ -6,7 +6,9 @@ Template.customerCracks.helpers({
   },
 
   age: function () {
-    var days = moment(this.crackedIn).diff(this.moldingIn, 'days')
+    var moldingIn = moment(this.moldingIn).endOf('day')
+    var crackedIn = moment(this.crackedIn).endOf('day')
+    var days      = crackedIn.diff(moldingIn, 'days')
 
     return moment.localeData().relativeTime(days, false, days === 1 ? 'd' : 'dd')
   }
