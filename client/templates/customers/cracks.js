@@ -1,8 +1,19 @@
 Template.customerCracks.helpers({
   receipt: function () {
-    var receipt = Receipts.findOne({ sampleId: this.sampleId })
+    return Receipts.findOne({ sampleId: this.sampleId })
+  },
 
-    return receipt && receipt.number
+  work: function () {
+    return this.workId && Works.findOne(this.workId).name
+  },
+
+  strength: function () {
+    var concrete = Concretes.findOne({ sampleId: this.sampleId })
+    var strength = concrete && Strengths.findOne(concrete.strengthId)
+
+    console.log('concrete', concrete, 'strength', strength)
+
+    return strength && strength.name
   },
 
   age: function () {

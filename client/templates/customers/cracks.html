@@ -13,21 +13,25 @@
         <thead>
           <tr>
             <th>{{_ 'receipt'}}</th>
+            <th>{{_ 'work'}}</th>
             <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'crack_cracked_in'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'strength'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'crack_age'}}</th>
-            <th class="hidden-xs hidden-sm">{{_ 'crack_load'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'crack_stress'}}</th>
           </tr>
         </thead>
         <tbody>
         {{#each cracks}}
           <tr>
-            <td>{{receipt}}</td>
+            {{#with receipt}}
+              <td>{{number}}</td>
+              <td>{{work}}</td>
+            {{/with}}
             <td class="hidden-xs">{{l moldingIn 'L'}}</td>
             <td class="hidden-xs hidden-sm">{{l crackedIn 'L'}}</td>
+            <td class="hidden-xs hidden-sm">{{strength}}</td>
             <td class="hidden-xs hidden-sm">{{age}}</td>
-            <td class="hidden-xs hidden-sm">{{r load}}</td>
             <td class="hidden-xs hidden-sm">{{r stress 1}} MPa</td>
           </tr>
         {{else}}
