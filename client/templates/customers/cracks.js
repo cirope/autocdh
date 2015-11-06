@@ -11,8 +11,6 @@ Template.customerCracks.helpers({
     var concrete = Concretes.findOne({ sampleId: this.sampleId })
     var strength = concrete && Strengths.findOne(concrete.strengthId)
 
-    console.log('concrete', concrete, 'strength', strength)
-
     return strength && strength.name
   },
 
