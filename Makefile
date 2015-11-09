@@ -32,7 +32,7 @@ deploy:
 		test -d $(APP_DIR) && mv $(APP_DIR) $(APP_DIR)_old/; \
 		mkdir -p $(APP_DIR); \
 		mv bundle/* $(APP_DIR); \
-		rmdir bundle; \
+		rm -rf bundle; \
 		cd $(APP_DIR)/programs/server; \
 		npm install"
 	ssh $(PRODUCTION_ROOT_ACCOUNT) "service $(SERVICE_NAME) restart"
