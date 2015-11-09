@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'customer_cracks_title' customer=customer.name}}
-        <a class="pull-right" href="{{pathFor 'customer' _id=customer._id}}">
+        <a class="pull-right" href="{{pathFor 'customers'}}">
           {{_ 'go_back'}}
         </a>
       </h3>
@@ -36,7 +36,7 @@
           </tr>
         {{else}}
           <tr>
-            <td colspan="6">
+            <td colspan="7">
               <div class="alert alert-info">
                 {{_ 'customer_cracks_empty'}}
               </div>
