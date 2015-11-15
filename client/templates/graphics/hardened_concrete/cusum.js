@@ -23,7 +23,7 @@ var updateChart = function (data) {
               }
             },
             axisY: {
-              axisTitle: 'MPa',
+              axisTitle: TAPi18n.__('graphic_hardened_concrete_cusum_y_label'),
               axisClass: 'ct-axis-title',
               offset: {
                 x: 0,

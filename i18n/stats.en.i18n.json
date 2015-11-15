@@ -29,6 +29,7 @@
   "graphic_hardened_concrete_cusum": "CuSum",
   "graphic_hardened_concrete_cusum_title": "Hardened concretes cusum",
   "graphic_hardened_concrete_cusum_reference": "Cusum (28 days)",
+  "graphic_hardened_concrete_cusum_y_label": "MPa",
   "graphic_hardened_concrete_7_days": "Fresh concrete at 7 days",
   "graphic_hardened_concrete_7_days_resistance": "Resistance at 7 days",
   "graphic_hardened_concrete_7_days_resistance_title": "Hardened concretes resistance at 7 days",
