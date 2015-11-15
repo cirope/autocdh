@@ -190,7 +190,7 @@ var commonEvents = {
       .setFontSize(10)
       .text(concreteLines, 25, yPosition += 7)
       .setFontSize(12)
-      .text(TAPi18n.__('assay'), 20, yPosition += concreteLines.length * 4.5 + 1)
+      .text(TAPi18n.__('assays'), 20, yPosition += concreteLines.length * 4.5 + 1)
       .setFontSize(10)
       .text(assayLines, 25, yPosition += 7)
       .setFontSize(12)
