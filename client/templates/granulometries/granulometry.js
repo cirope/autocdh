@@ -35,9 +35,10 @@ Template.granulometry.onRendered(function () {
   }
 
   new Chartist.Line('.ct-chart', data, {
-    lineSmooth:   false,
-    showPoint:    false,
-    fullWidth:    true,
+    lineSmooth: false,
+    showPoint:  false,
+    fullWidth:  true,
+    low:        0,
     axisX: {
       labelInterpolationFnc: function (value) {
         return _.first(value.split(' | '))
