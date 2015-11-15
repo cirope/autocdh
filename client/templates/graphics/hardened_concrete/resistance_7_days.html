@@ -17,6 +17,8 @@
               {{> afQuickField name='strengthId'}}
               {{> afQuickField name='aggregateId'}}
               {{> afQuickField name='settlementId'}}
+              {{> afQuickField name='customer'}}
+              {{> afQuickField name='work'}}
 
               <hr>
 
@@ -51,9 +53,11 @@
     </div>
   </div>
 
-  <div class="row hidden">
-    <div class="col-md-8 col-md-offset-2">
-      <span class="badge">{{sampleCount}}</span>
-    </div>
-  </div>
+  {{#if cracks.length}}
+    <hr>
+
+    {{> hardenedConcreteCracks}}
+  {{/if}}
+
+  <div class="hidden">{{sampleCount}}</div>
 </template>

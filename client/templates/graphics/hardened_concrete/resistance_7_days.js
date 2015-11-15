@@ -38,7 +38,7 @@ var updateChart = function (data) {
 
       new Chartist.Line('[data-chart]', data, options)
     }
-  }, 200)
+  }, 500)
 }
 
 Template.graphicHardenedConcrete7DaysResistance.onRendered(function () {
@@ -49,6 +49,6 @@ Template.graphicHardenedConcrete7DaysResistance.helpers({
   sampleCount: function () {
     updateChart(_.pick(this, 'labels', 'series'))
 
-    return this.samples.count()
+    return this.cracks.length
   }
 })
