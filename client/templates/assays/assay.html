@@ -33,7 +33,7 @@
         <div class="col-md-6">
           <p>
             {{_ 'assay_temperature'}} /
-            <strong>{{temperature}} °C</strong>
+            {{#if temperature}}<strong>{{temperature}} °C</strong>{{/if}}
           </p>
           <p>
             {{_ 'assay_air'}} /

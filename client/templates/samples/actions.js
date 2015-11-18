@@ -123,7 +123,7 @@ var assay = function (assay) {
     TAPi18n.__('assay_designation')  + ': ' + assay.designation,
     TAPi18n.__('assay_tubes')        + ': ' + TAPi18n.__('assay_tubes_' + assay.tubes),
     TAPi18n.__('assay_cured')        + ': ' + TAPi18n.__('assay_cured_' + assay.cured),
-    TAPi18n.__('assay_temperature')  + ': ' + assay.temperature + ' °C',
+    TAPi18n.__('assay_temperature')  + ': ' + (assay.temperature ? assay.temperature + ' °C' : ''),
     TAPi18n.__('assay_air')          + ': ' + (assay.air ? assay.air + '%' : ''),
     TAPi18n.__('assay_weight')       + ': ' + (assay.weight ? assay.weight + ' kg/m³' : ''),
     TAPi18n.__('assay_observations') + ': ' + (assay.observations || '')
