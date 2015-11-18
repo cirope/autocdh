@@ -20,6 +20,7 @@
         <thead>
           <tr>
             <th>{{_ 'granulometry_name'}}</th>
+            <th>{{_ 'material'}}</th>
             <th>{{_ 'granulometry_date'}}</th>
             <th class="hidden-xs">{{_ 'plant'}}</th>
           </tr>
@@ -28,6 +29,7 @@
           {{#each granulometries}}
             <tr>
               <td><a href="{{pathFor 'granulometry'}}">{{name}}</a></td>
+              <td><a href="{{pathFor 'granulometry'}}">{{material}}</a></td>
               <td><a href="{{pathFor 'granulometry'}}">{{l date 'L'}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'granulometry'}}">{{plant plantId}}</a></td>
             </tr>
