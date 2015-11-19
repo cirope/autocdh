@@ -211,6 +211,7 @@
   "granulometry_empty_title": "Mmm",
   "granulometry_empty_banner": "There is no granulometry here, lets create some...",
   "granulometry_new": "New granulometry",
+  "granulometry_limit_curves": "Limit curves",
   "humidities": "Humidities",
   "humidity": "Humidity",
   "humidity_incorporated": "Incorporated",

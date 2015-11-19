@@ -211,6 +211,7 @@
   "granulometry_empty_title": "Mmm",
   "granulometry_empty_banner": "No has cargado ninguna granulometría, podés comenzar ahora...",
   "granulometry_new": "Nueva granulometría",
+  "granulometry_limit_curves": "Curvas límite",
   "humidities": "Demandas de agua",
   "humidity": "Demanda de agua",
   "humidity_incorporated": "Incorporada en planta",
