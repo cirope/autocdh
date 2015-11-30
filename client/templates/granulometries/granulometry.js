@@ -42,7 +42,7 @@ var graphData = function () {
     _.each(limitCurves[type], function (values, i) {
       series.push({
         data:      values,
-        className: classes[i]
+        className: classes[i] + ' dotted-a'
       })
     })
   }
