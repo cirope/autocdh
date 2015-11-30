@@ -2,13 +2,16 @@ var updateChart = function (data) {
   setTimeout(function () {
     if ($('[data-chart]').length) {
       var options = {
-        low:      0,
+        low:   0,
         axisX: {
           labelInterpolationFnc: function (value, index) {
             var module = Math.round(data.labels.length / 12)
 
             return index % module === 0 ? value : null
           }
+        },
+        axisY: {
+          onlyInteger: true
         },
         plugins: [
           Chartist.plugins.tooltip(),
