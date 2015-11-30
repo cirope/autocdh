@@ -233,9 +233,26 @@
               {{_ 'hide'}}
             </button>
           {{else}}
-            <button class="btn btn-default" type="button" data-show="limit-curves">
-              {{_ 'show'}}
-            </button>
+            {{#if sand}}
+              <button class="btn btn-default" type="button" data-show="limit-curves" data-curve="default">
+                {{_ 'show'}}
+              </button>
+            {{else}}
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  {{_ 'show'}} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  {{#each sizes}}
+                    <li>
+                      <a href="#" data-show="limit-curves" data-curve="{{this}}">
+                        {{_ 'granulometry_nominal_size'}} {{this}}
+                      </a>
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
           {{/if}}
         </div>
       </div>

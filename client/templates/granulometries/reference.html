@@ -16,18 +16,26 @@
               <foreignObject x="100" y="35" width="200" height="25">
                 <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
                   {{_ 'granulometry_curve'}} A
+                  {{#unless sand}}
+                    ({{_ 'granulometry_nominal_size'}} {{showLimitCurves}})
+                  {{/unless}}
                 </span>
               </foreignObject>
               <foreignObject x="100" y="60" width="200" height="25">
                 <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
                   {{_ 'granulometry_curve'}} B
+                  {{#unless sand}}
+                    ({{_ 'granulometry_nominal_size'}} {{showLimitCurves}})
+                  {{/unless}}
                 </span>
               </foreignObject>
-              <foreignObject x="100" y="85" width="200" height="25">
-                <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
-                  {{_ 'granulometry_curve'}} C
-                </span>
-              </foreignObject>
+              {{#if sand}}
+                <foreignObject x="100" y="85" width="200" height="25">
+                  <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
+                    {{_ 'granulometry_curve'}} C
+                  </span>
+                </foreignObject>
+              {{/if}}
             {{/if}}
           </g>
           <g class="ct-series ct-series-a only-line">
@@ -40,9 +48,11 @@
             <g class="ct-series ct-series-c only-line dotted-a">
               <line class="ct-line" x1="10" y1="70" x2="75" y2="70" />
             </g>
-            <g class="ct-series ct-series-d only-line dotted-a">
-              <line class="ct-line" x1="10" y1="95" x2="75" y2="95" />
-            </g>
+            {{#if sand}}
+              <g class="ct-series ct-series-d only-line dotted-a">
+                <line class="ct-line" x1="10" y1="95" x2="75" y2="95" />
+              </g>
+            {{/if}}
           {{/if}}
         </svg>
       </div>

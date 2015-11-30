@@ -213,6 +213,7 @@
   "granulometry_new": "Nueva granulometría",
   "granulometry_limit_curves": "Curvas límite",
   "granulometry_curve": "Curva",
+  "granulometry_nominal_size": "TMN",
   "humidities": "Demandas de agua",
   "humidity": "Demanda de agua",
   "humidity_incorporated": "Incorporada en planta",

@@ -1,5 +1,9 @@
 Template.granulometryReference.helpers({
   showLimitCurves: function () {
-    return this.type === 'sand' && Session.get('showLimitCurves')
+    return Session.get('showLimitCurves')
+  },
+
+  sand: function () {
+    return this.type === 'sand'
   }
 })
