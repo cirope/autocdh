@@ -21,6 +21,12 @@
             {{_ 'edit'}}
           </a>
         </div>
+
+        {{#unless hasReceipts}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/unless}}
       </div>
     </div>
   </div>
