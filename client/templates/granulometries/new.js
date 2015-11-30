@@ -48,6 +48,8 @@ Template.granulometryNew.onCreated(function () {
 Template.granulometryNew.onDestroyed(function () {
   Granulometries.setType('sand')
   granulometry.set()
+  Session.set('humidity.massOfContainer')
+  Session.set('thin.massOfContainer')
 })
 
 Template.granulometryNew.helpers({
@@ -67,6 +69,14 @@ Template.granulometryNew.events({
 
       granulometry.set(_.extend(_granulometry, { test: testByType(type) }))
     }
+  },
+
+  'keyup [name$=".container"]': function (event) {
+    var $input    = $(event.currentTarget)
+    var type      = _.first($input.prop('name').split('.'))
+    var container = Containers.findOne({ name: $input.val() })
+
+    Session.set(type + '.massOfContainer', container && container.mass)
   }
 })
 
