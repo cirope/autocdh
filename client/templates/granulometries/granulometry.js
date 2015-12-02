@@ -45,11 +45,13 @@ var graphLabels = function () {
 }
 
 var scaleGravel = function (values) {
-  values.splice(1, 0, (values[0] + values[1]) / 2)
-  values.splice(3, 0, (values[2] + values[3]) / 2)
-  values.splice(10, 1)
+  var _values = _.clone(values)
 
-  return values
+  _values.splice(1, 0, (_values[0] + _values[1]) / 2)
+  _values.splice(3, 0, (_values[2] + _values[3]) / 2)
+  _values.splice(10, 1)
+
+  return _values
 }
 
 var graphData = function () {
