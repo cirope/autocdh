@@ -97,6 +97,11 @@ var updateChart = function () {
           return _.first(value.split(' | '))
         }
       },
+      axisY: {
+        labelInterpolationFnc: function (value) {
+          return Math.round(value)
+        }
+      },
       plugins: [
         Chartist.plugins.ctAxisTitle({
           axisX: {
