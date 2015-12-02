@@ -22,7 +22,7 @@ var updateChart = function (data) {
               }
             },
             axisY: {
-              axisTitle: TAPi18n.__('graphic_fresh_concrete_temperature') + ' (°C)',
+              axisTitle: TAPi18n.__('graphic_fresh_concrete_temperature_reference'),
               axisClass: 'ct-axis-title',
               offset: {
                 x: 0,
