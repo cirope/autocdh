@@ -33,7 +33,7 @@
 .ct-label.ct-vertical.ct-start {
   display: table-cell;
   vertical-align: bottom;
-  padding-top: 2em;
+  padding-top: 1em;
 }
 
 .ct-label.ct-vertical.text-left {

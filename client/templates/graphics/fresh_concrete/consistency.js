@@ -11,6 +11,7 @@ var updateChart = function (data) {
           }
         },
         axisY: {
+          scaleMinSpace: 10,
           onlyInteger: true
         },
         plugins: [
