@@ -1,0 +1,19 @@
+<template name="containerSearch">
+  <div class="form-group {{#if afFieldIsInvalid name=name}}has-error{{/if}}">
+    <label class="control-label" for="container-search">{{_ 'container'}}</label>
+    <div class="input-group">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+      {{> inputAutocomplete settings=settings value=value class='form-control' autocomplete='off' placeholder=placeholder data-search=true}}
+      {{> afFieldInput name=name type='hidden'}}
+    </div>
+    <span class="help-block">{{{afFieldMessage name=name}}}</span>
+  </div>
+</template>
+
+<template name="containerPill">
+  <div>{{name}}</div>
+</template>
+
+<template name="emptyContainerPill">
+  <div>{{_ 'container_search_empty'}} <kbd>{{getFilter}}</kbd></div>
+</template>

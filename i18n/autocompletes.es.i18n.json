@@ -1,4 +1,6 @@
 {
+  "container_search_placeholder": "Buscar recipiente...",
+  "container_search_empty": "No se encontraron recipientes con el criterio",
   "customer_search_placeholder": "Buscar cliente...",
   "customer_search_empty": "No se encontraron clientes con el criterio",
   "truck_search_placeholder": "Buscar camión...",

@@ -38,10 +38,34 @@
           </div>
           <div class="row">
             <div class="col-md-6">
-              {{> afQuickField name='humidity'}}
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    {{_ 'granulometry_humidity'}}
+                  </h3>
+                </div>
+                <div class="panel-body">
+                  {{> containerSearch name='humidity.container' update='humidity.massOfContainer'}}
+                  {{> afQuickField name='humidity.massOfContainer'}}
+                  {{> afQuickField name='humidity.massOfDryAggregate'}}
+                  {{> afQuickField name='humidity.massOfWetAggregate'}}
+                </div>
+              </div>
             </div>
             <div class="col-md-6">
-              {{> afQuickField name='thin'}}
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">
+                    {{_ 'granulometry_thin'}}
+                  </h3>
+                </div>
+                <div class="panel-body">
+                  {{> containerSearch name='thin.container' update='thin.massOfContainer'}}
+                  {{> afQuickField name='thin.massOfContainer'}}
+                  {{> afQuickField name='thin.massBeforeWash'}}
+                  {{> afQuickField name='thin.massAfterWash'}}
+                </div>
+              </div>
             </div>
           </div>
           <div class="row">

@@ -1,4 +1,6 @@
 {
+  "container_search_placeholder": "Search container...",
+  "container_search_empty": "There is no result with",
   "customer_search_placeholder": "Search customer...",
   "customer_search_empty": "There is no result with",
   "truck_search_placeholder": "Search truck...",
