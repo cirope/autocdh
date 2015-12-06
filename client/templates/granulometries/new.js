@@ -69,14 +69,6 @@ Template.granulometryNew.events({
 
       granulometry.set(_.extend(_granulometry, { test: testByType(type) }))
     }
-  },
-
-  'keyup [name$=".container"]': function (event) {
-    var $input    = $(event.currentTarget)
-    var type      = _.first($input.prop('name').split('.'))
-    var container = Containers.findOne({ name: $input.val() })
-
-    Session.set(type + '.massOfContainer', container && container.mass)
   }
 })
 

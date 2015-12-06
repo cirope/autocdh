@@ -4,7 +4,6 @@ Template.containerSearch.helpers({
   },
 
   settings: function () {
-    console.log(this);
     var containersRule = {
       collection:      Containers,
       field:           'name',
