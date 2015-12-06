@@ -1,0 +1,40 @@
+<template name="statsForSamples">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      {{#autoForm schema=filterSchema id='filterStatsForSamples' type='method' meteormethod='filterStatsForSamples' resetOnSuccess=false doc=filter}}
+        <fieldset>
+          <div class="row">
+            <div class="col-md-3">
+              {{> afQuickField name='start'}}
+            </div>
+            <div class="col-md-3">
+              {{> afQuickField name='end'}}
+            </div>
+            <div class="col-md-3">
+              {{> afQuickField name='strengthId'}}
+            </div>
+            <div class="col-md-3 bottom">
+              <button type="submit" class="btn btn-default btn-sm btn-block">
+                {{_ 'graphic_filter_apply'}}
+              </button>
+            </div>
+          </div>
+        </fieldset>
+      {{/autoForm}}
+    </div>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'samples'}} {{#if strength}}/ {{strength.name}}{{/if}}
+      </h3>
+    </div>
+    <div class="panel-body">
+      <p>
+        {{_ 'stats_samples_count'}}:
+        <span class="label label-default">{{samples.count}}</span>
+      </p>
+    </div>
+  </div>
+</template>

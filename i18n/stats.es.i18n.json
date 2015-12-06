@@ -57,5 +57,7 @@
   "stats_deviation": "Desviación estándar",
   "stats_ten_percent_criteria": "Criterio del 10%",
   "stats_discard_high_erratic_values": "Descartar valores erráticos elevados",
-  "stats_resistance_by_customer": "Resistencias por clientes"
+  "stats_for_samples": "Cantidad de muestras",
+  "stats_resistance_by_customer": "Resistencias por clientes",
+  "stats_samples_count": "Cantidad de muestras"
 }
