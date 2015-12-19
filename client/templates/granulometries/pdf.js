@@ -100,37 +100,38 @@ var svgImage = function () {
 Template.granulometry.events({
   'click [data-download-pdf]': function (event, template) {
     var granulometry = template.data
-    var doc          = new jsPDF('l')
     var yPosition    = 20
     var tableData    = table()
     var idealCurves  = granulometry.idealCurves ?
       TAPi18n.__('granulometry_ideal_curves') + ': ' + granulometry.idealCurves + ' mm' : ''
 
-    doc
-      .setFont('helvetica')
-      .setFontSize(14)
-      .text(TAPi18n.__('granulometry') + ': ' + name(granulometry), 20, yPosition)
-      .setFontSize(9)
+    PDF.new({ orientation: 'l' }, function (doc) {
+      doc
+        .setFont('helvetica')
+        .setFontSize(14)
+        .text(TAPi18n.__('granulometry') + ': ' + name(granulometry), 20, yPosition)
+        .setFontSize(9)
 
-    yPosition = putStaticData(granulometry, doc, yPosition)
+      yPosition = putStaticData(granulometry, doc, yPosition)
 
-    doc
-      .setFontSize(7)
-      .table(20, yPosition += 5, tableData.data, tableData.headers, {
-        printHeaders: true,
-        autoSize: false,
-        margins: { right: 0, left: 0, top: 0, bottom: 0 },
-        fontSize: 7
-      })
+      doc
+        .setFontSize(7)
+        .table(20, yPosition += 5, tableData.data, tableData.headers, {
+          printHeaders: true,
+          autoSize: false,
+          margins: { right: 0, left: 0, top: 0, bottom: 0 },
+          fontSize: 7
+        })
 
-    yPosition += tableData.data.length * 9
+      yPosition += tableData.data.length * 9
 
-    doc.setFontSize(9)
+      doc.setFontSize(9)
 
-    yPosition = putBriefData(granulometry, doc, yPosition)
+      yPosition = putBriefData(granulometry, doc, yPosition)
 
-    if (idealCurves) doc.text(idealCurves, 20, yPosition +=5)
+      if (idealCurves) doc.text(idealCurves, 20, yPosition +=5)
 
-    doc.save(granulometry.name + '.pdf')
+      doc.save(granulometry.name + '.pdf')
+    })
   }
 })

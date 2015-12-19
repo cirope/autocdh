@@ -166,7 +166,6 @@ var cracks = function (cracks) {
 var commonEvents = {
   'click [data-download-cracks-pdf]': function (event, template) {
     var data          = template.data
-    var doc           = new jsPDF
     var _sample       = data.sample || this
     var sampleLines   = sample(_sample)
     var receiptLines  = _sample.getReceipt()        ? receipt(_sample.getReceipt())        : ['-']
@@ -175,41 +174,43 @@ var commonEvents = {
     var crackLines    = _sample.getCracks().count() ? cracks(_sample.getCracks())          : ['-']
     var yPosition     = 20
 
-    doc
-      .setFont('helvetica')
-      .setFontSize(12)
-      .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
-      .setFontSize(10)
-      .text(sampleLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(receiptLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(concreteLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('assays'), 20, yPosition += concreteLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(assayLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 1)
-      .setFontSize(10)
+    PDF.new({}, function (doc) {
+      doc
+        .setFont('helvetica')
+        .setFontSize(12)
+        .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
+        .setFontSize(10)
+        .text(sampleLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(receiptLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(concreteLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('assays'), 20, yPosition += concreteLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(assayLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('cracks'), 20, yPosition += assayLines.length * 4.5 + 1)
+        .setFontSize(10)
 
-    yPosition += 2
+      yPosition += 2
 
-    _.each(crackLines, function (line) {
-      if (yPosition > 270) {
-        yPosition = 20
+      _.each(crackLines, function (line) {
+        if (yPosition > 270) {
+          yPosition = 20
 
-        doc.addPage()
-      }
+          doc.addPage()
+        }
 
-      doc.text(line, 25, yPosition += 4.5)
+        doc.text(line, 25, yPosition += 4.5)
+      })
+
+      doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
     })
-
-    doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
   }
 }
 
@@ -226,7 +227,6 @@ Template.sample.events({
 
   'click [data-download-pdf]': function (event, template) {
     var data          = template.data
-    var doc           = new jsPDF
     var _sample       = data.sample
     var sampleLines   = sample(_sample)
     var receiptLines  = _sample.getReceipt()  ? receipt(_sample.getReceipt())        : ['-']
@@ -235,29 +235,31 @@ Template.sample.events({
     var assayLines    = _sample.getAssay()    ? assay(_sample.getAssay())            : ['-']
     var yPosition     = 20
 
-    doc
-      .setFont('helvetica')
-      .setFontSize(12)
-      .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
-      .setFontSize(10)
-      .text(sampleLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(receiptLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(concreteLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('humidity'), 20, yPosition += concreteLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(humidityLines, 25, yPosition += 7)
-      .setFontSize(12)
-      .text(TAPi18n.__('assays'), 20, yPosition += humidityLines.length * 4.5 + 1)
-      .setFontSize(10)
-      .text(assayLines, 25, yPosition += 7)
+    PDF.new({}, function (doc) {
+      doc
+        .setFont('helvetica')
+        .setFontSize(12)
+        .text(TAPi18n.__('sample') + ': ' + _sample.name, 20, yPosition)
+        .setFontSize(10)
+        .text(sampleLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('receipt'), 20, yPosition += sampleLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(receiptLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('concrete'), 20, yPosition += receiptLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(concreteLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('humidity'), 20, yPosition += concreteLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(humidityLines, 25, yPosition += 7)
+        .setFontSize(12)
+        .text(TAPi18n.__('assays'), 20, yPosition += humidityLines.length * 4.5 + 1)
+        .setFontSize(10)
+        .text(assayLines, 25, yPosition += 7)
 
-    doc.save(_sample.name + '.pdf')
+      doc.save(_sample.name + '.pdf')
+    })
   }
 })
