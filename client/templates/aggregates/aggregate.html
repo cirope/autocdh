@@ -16,6 +16,12 @@
         <a href="{{pathFor 'aggregateEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'aggregate_update_title'}}">
           {{_ 'edit'}}
         </a>
+
+        {{#if hasNoUse}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/if}}
       </div>
     </div>
   </div>
