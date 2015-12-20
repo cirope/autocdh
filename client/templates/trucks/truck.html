@@ -21,6 +21,12 @@
         <a href="{{pathFor 'truckEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'truck_update_title'}}">
           {{_ 'edit'}}
         </a>
+
+        {{#unless hasReceipts}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/unless}}
       </div>
     </div>
   </div>
