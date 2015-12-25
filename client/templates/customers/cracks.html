@@ -19,30 +19,68 @@
             <th class="hidden-xs hidden-sm">{{_ 'strength'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'crack_age'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'crack_stress'}}</th>
+            <th class="text-right">
+              <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="hidden" href="{{pathFor 'customerCracks' _id=customer._id}}" title="{{_ 'cancel'}}" data-search-clean>
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </th>
+          </tr>
+
+          <tr class="collapse" id="search-filter">
+            <td class="form-group form-group-sm">
+              <input class="form-control" type="text" name="receipt" id="receipt">
+            </td>
+            <td class="form-group form-group-sm">
+              <input class="form-control" type="text" name="work" id="work">
+            </td>
+            <td class="hidden-xs form-group form-group-sm">
+              <input class="form-control" type="text" name="molding" id="molding">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="cracked" id="cracked">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="strength" id="strength">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="age" id="age" disabled>
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="stress" id="stress">
+            </td>
+            <td>
+              <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                {{_ 'search'}}
+              </button>
+            </td>
           </tr>
         </thead>
         <tbody>
-        {{#each cracks}}
-          <tr>
-            {{#with receipt}}
-              <td>{{number}}</td>
-              <td>{{work}}</td>
-            {{/with}}
-            <td class="hidden-xs">{{l moldingIn 'L'}}</td>
-            <td class="hidden-xs hidden-sm">{{l crackedIn 'L'}}</td>
-            <td class="hidden-xs hidden-sm">{{strength}}</td>
-            <td class="hidden-xs hidden-sm">{{age}}</td>
-            <td class="hidden-xs hidden-sm">{{r stress 1}} MPa</td>
-          </tr>
-        {{else}}
-          <tr>
-            <td colspan="7">
-              <div class="alert alert-info">
-                {{_ 'customer_cracks_empty'}}
-              </div>
-            </td>
-          </tr>
-        {{/each}}
+          {{#each cracks}}
+            <tr>
+              {{#with receipt}}
+                <td>{{number}}</td>
+                <td>{{work}}</td>
+              {{/with}}
+              <td class="hidden-xs">{{l moldingIn 'L'}}</td>
+              <td class="hidden-xs hidden-sm">{{l crackedIn 'L'}}</td>
+              <td class="hidden-xs hidden-sm">{{strength}}</td>
+              <td class="hidden-xs hidden-sm">{{age}}</td>
+              <td class="hidden-xs hidden-sm">{{r stress 1}} MPa</td>
+              <td></td>
+            </tr>
+          {{else}}
+            <tr>
+              <td colspan="8">
+                <div class="alert alert-info">
+                  {{_ 'search_with_no_results'}}
+                </div>
+              </td>
+            </tr>
+          {{/each}}
         </tbody>
       </table>
     </div>
