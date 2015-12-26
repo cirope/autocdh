@@ -9,16 +9,19 @@
       </h3>
     </div>
     <div class="panel-body">
-      <table class="table table-hover">
+      <button class="btn btn-xs btn-default pull-right" type="button" data-download-pdf>
+        {{_ 'download_pdf'}}
+      </button>
+      <table class="table table-hover" data-table="cracks">
         <thead>
           <tr>
-            <th>{{_ 'receipt'}}</th>
-            <th>{{_ 'work'}}</th>
-            <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
-            <th class="hidden-xs hidden-sm">{{_ 'crack_cracked_in'}}</th>
-            <th class="hidden-xs hidden-sm">{{_ 'strength'}}</th>
-            <th class="hidden-xs hidden-sm">{{_ 'crack_age'}}</th>
-            <th class="hidden-xs hidden-sm">{{_ 'crack_stress'}}</th>
+            <th data-header>{{_ 'receipt'}}</th>
+            <th data-header>{{_ 'work'}}</th>
+            <th class="hidden-xs" data-header>{{_ 'crack_molding_in'}}</th>
+            <th class="hidden-xs hidden-sm" data-header>{{_ 'crack_cracked_in'}}</th>
+            <th class="hidden-xs hidden-sm" data-header>{{_ 'strength'}}</th>
+            <th class="hidden-xs hidden-sm" data-header>{{_ 'crack_age'}}</th>
+            <th class="hidden-xs hidden-sm" data-header>{{_ 'crack_stress'}}</th>
             <th class="text-right">
               <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
                 <span class="glyphicon glyphicon-search"></span>
@@ -60,16 +63,16 @@
         </thead>
         <tbody>
           {{#each cracks}}
-            <tr>
+            <tr data-row>
               {{#with receipt}}
-                <td>{{number}}</td>
-                <td>{{work}}</td>
+                <td data-value>{{number}}</td>
+                <td data-value>{{work}}</td>
               {{/with}}
-              <td class="hidden-xs">{{l moldingIn 'L'}}</td>
-              <td class="hidden-xs hidden-sm">{{l crackedIn 'L'}}</td>
-              <td class="hidden-xs hidden-sm">{{strength}}</td>
-              <td class="hidden-xs hidden-sm">{{age}}</td>
-              <td class="hidden-xs hidden-sm">{{r stress 1}} MPa</td>
+              <td class="hidden-xs" data-value>{{l moldingIn 'L'}}</td>
+              <td class="hidden-xs hidden-sm" data-value>{{l crackedIn 'L'}}</td>
+              <td class="hidden-xs hidden-sm" data-value>{{strength}}</td>
+              <td class="hidden-xs hidden-sm" data-value>{{age}}</td>
+              <td class="hidden-xs hidden-sm" data-value>{{r stress 1}} MPa</td>
               <td></td>
             </tr>
           {{else}}
@@ -83,6 +86,11 @@
           {{/each}}
         </tbody>
       </table>
+
+      <button class="btn btn-default btn-sm pull-right" type="button" data-download-pdf>
+        {{_ 'download_pdf'}}
+        <span class="glyphicon glyphicon-file"></span>
+      </button>
     </div>
   </div>
 </template>
