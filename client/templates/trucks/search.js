@@ -29,14 +29,21 @@ Template.truckSearch.helpers({
 
 Template.truckSearch.events({
   'autocompleteselect #truck-search': function (event, template, doc) {
-    $('[name="truckId"]').val(doc && doc._id).trigger('change')
+    template.$('[name="truckId"]').val(doc && doc._id).trigger('change')
   },
 
   'change [name="truckId"]': function (event, template) {
-    var truck = Trucks.findOne($('[name="truckId"]').val())
+    var $truckId = template.$('[name="truckId"]')
+    var truck    = Trucks.findOne($truckId.val())
+
     template.data.truckDriver = null
 
     truckDriver.set(truck && truck.driver)
+  },
+
+  'change #truck-search': function (event, template) {
+    if (! $(event.currentTarget).val().trim())
+      template.$('[name="truckId"]').val('').trigger('change')
   }
 })
 
