@@ -40,3 +40,5 @@ random
 ejson
 spacebars
 check
+http
+aldeed:http

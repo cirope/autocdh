@@ -29,6 +29,11 @@ Template.workSearch.helpers({
 
 Template.workSearch.events({
   'autocompleteselect #work-search': function (event, template, doc) {
-    $('[name="workId"]').val(doc && doc._id).trigger('change')
+    template.$('[name="workId"]').val(doc && doc._id).trigger('change')
+  },
+
+  'change #work-search': function (event, template) {
+    if (! $(event.currentTarget).val().trim())
+      template.$('[name="workId"]').val('').trigger('change')
   }
 })

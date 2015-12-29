@@ -123,7 +123,6 @@
   "customer_empty_banner": "No has cargado ningún cliente, podés comenzar ahora...",
   "customer_new": "Nuevo cliente",
   "customer_cracks_title": "Muestras de __customer__",
-  "customer_cracks_empty": "Este cliente no tiene muestras con roturas de probeta completas",
   "deviations": "Calculo de la resistencia característica",
   "deviation": "Calculo de la resistencia característica",
   "deviation_value": "Valor",

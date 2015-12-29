@@ -29,6 +29,11 @@ Template.customerSearch.helpers({
 
 Template.customerSearch.events({
   'autocompleteselect #customer-search': function (event, template, doc) {
-    $('[name="customerId"]').val(doc && doc._id).trigger('change')
+    template.$('[name="customerId"]').val(doc && doc._id).trigger('change')
+  },
+
+  'change #customer-search': function (event, template) {
+    if (! $(event.currentTarget).val().trim())
+      template.$('[name="customerId"]').val('').trigger('change')
   }
 })

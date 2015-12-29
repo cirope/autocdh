@@ -21,20 +21,38 @@
           <thead>
             <tr>
               <th>{{_ 'customer_name'}}</th>
-              <th></th>
+              <th class="text-right">
+                <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                  <span class="glyphicon glyphicon-search"></span>
+                </a>
+                <a class="hidden" href="{{pathFor 'customers'}}" title="{{_ 'cancel'}}" data-search-clean>
+                  <span class="glyphicon glyphicon-remove"></span>
+                </a>
+              </th>
+            </tr>
+
+            <tr class="collapse" id="search-filter">
+              <td class="form-group form-group-sm">
+                <input class="form-control" type="text" name="name" id="name">
+              </td>
+              <td>
+                <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                  {{_ 'search'}}
+                </button>
+              </td>
             </tr>
           </thead>
           <tbody>
-          {{#each customers}}
-            <tr class="visible-on-hover-parent">
-              <td><a href="{{pathFor 'customer'}}">{{name}}</a></td>
-              <td class="text-right">
-                <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'customerCracks'}}" title="{{_ 'samples'}}">
-                  {{_ 'samples'}}
-                </a>
-              </td>
-            </tr>
-          {{/each}}
+            {{#each customers}}
+              <tr class="visible-on-hover-parent">
+                <td><a href="{{pathFor 'customer'}}">{{name}}</a></td>
+                <td class="text-right">
+                  <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'customerCracks'}}" title="{{_ 'samples'}}">
+                    {{_ 'samples'}}
+                  </a>
+                </td>
+              </tr>
+            {{/each}}
           </tbody>
         </table>
         <a class="btn btn-primary" href="{{pathFor 'customerNew'}}">{{_ 'customer_new'}}</a>

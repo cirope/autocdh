@@ -94,9 +94,6 @@ var putBriefData = function (granulometry, doc, yPosition) {
   return yPosition
 }
 
-var svgImage = function () {
-}
-
 Template.granulometry.events({
   'click [data-download-pdf]': function (event, template) {
     var granulometry = template.data

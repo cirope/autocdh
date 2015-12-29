@@ -3,6 +3,7 @@ accounts-password@1.1.4
 alanning:roles@1.2.14
 aldeed:autoform@5.8.1
 aldeed:collection2@2.7.1
+aldeed:http@0.2.2
 aldeed:simple-schema@1.5.3
 autoupdate@1.2.4
 babel-compiler@5.8.24_1

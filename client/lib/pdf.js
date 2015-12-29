@@ -1,38 +1,59 @@
 PDF = {
+  logoData: null,
+
   new: function (options, callback) {
-    var doc        = new jsPDF(options)
-    var logoUrl    = this.logoUrl()
-    var dimensions = this.logoDimensions()
-    var factor     = dimensions.width > 80 ? 6 : 4
-    var width      = dimensions.width / factor
-    var height     = dimensions.height / factor
-    var x          = options && options.orientation === 'l' ? 280 : 195
-    var y          = 15
-    var type       = _.last(logoUrl.split('.')).toUpperCase()
+    var self = this
+    var doc  = new jsPDF(options)
 
-    this._convertToDataURL(logoUrl, function (imgData) {
-      doc.addImage(imgData, type, x - width, y, width, height)
+    doc.options = options
 
-      callback(doc)
-    })
+    self._overrideAddPage(doc)
+
+    if (self.logoData)
+      self.addLogo(doc, callback)
+    else
+      self._convertToDataURL(self.logoUrl(), function (imgData) {
+        self.logoData = imgData
+
+        self.addLogo(doc, callback)
+      })
   },
 
   _convertToDataURL: function (url, callback) {
-    var xhr = new XMLHttpRequest
-
-    xhr.responseType = 'blob'
-    xhr.onload       = function() {
-      var reader  = new FileReader
+    HTTP.get(url, { responseType: 'blob' }, function (error, result) {
+      var reader = new FileReader
 
       reader.onloadend = function () {
         callback(reader.result)
       }
 
-      reader.readAsDataURL(xhr.response)
-    }
+      reader.readAsDataURL(result.content)
+    })
+  },
 
-    xhr.open('GET', url)
-    xhr.send()
+  _overrideAddPage: function (doc) {
+    var self    = this
+    var addPage = doc.addPage
+
+    doc.addPage = function () {
+      addPage.call(doc)
+      self.addLogo(doc)
+    }
+  },
+
+  addLogo: function (doc, callback) {
+    var logoUrl    = this.logoUrl()
+    var dimensions = this.logoDimensions()
+    var factor     = dimensions.width > 80 ? 6 : 4
+    var width      = dimensions.width / factor
+    var height     = dimensions.height / factor
+    var x          = doc.options && doc.options.orientation === 'l' ? 280 : 195
+    var y          = 15
+    var type       = _.last(logoUrl.split('.')).toUpperCase()
+
+    doc.addImage(this.logoData, type, x - width, y, width, height)
+
+    if (typeof callback === 'function') callback(doc)
   },
 
   $logo: function () {
@@ -52,3 +73,7 @@ PDF = {
     }
   }
 }
+
+Accounts.onLogin(function () {
+  PDF.logoData = null
+})
