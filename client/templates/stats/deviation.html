@@ -46,28 +46,48 @@
       <h3 class="panel-title">{{_ 'deviation'}} / {{strength.name}}</h3>
     </div>
     <div class="panel-body">
-      <p>
-        {{_ 'deviation_stresses_count'}} (n): <strong>{{stresses.length}}</strong>
+      {{#if enoughStresses}}
+        <div class="pull-right">
+          <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+            {{_ 'download_pdf'}}
+            <span class="glyphicon glyphicon-file"></span>
+          </button>
+        </div>
+      {{/if}}
+
+      <p data-item>
+        <span data-label>{{_ 'deviation_stresses_count'}} (n):</span>
+        <strong data-value>{{stresses.length}}</strong>
       </p>
 
       {{#if enoughStresses}}
-        <p>
-          {{_ 'deviation_mean_resistance'}} (f'cm): <strong>{{r meanResistance 1}}</strong>
+        <p data-item>
+          <span data-label>{{_ 'deviation_mean_resistance'}} (f'cm):</span>
+          <strong data-value>{{r meanResistance 1}}</strong>
         </p>
 
-        <p>
-          {{_ 'deviation_standard_deviation'}} (s): <strong>{{r standardDeviation 1}}</strong>
+        <p data-item>
+          <span data-label>{{_ 'deviation_mean_resistance'}} (f'cm):</span>
+          <strong data-value>{{r meanResistance 1}}</strong>
         </p>
 
-        <p>
-          {{_ 'deviation_resistance'}} (f'c): <strong>{{r resistance 1}}</strong>
+        <p data-item>
+          <span data-label>{{_ 'deviation_standard_deviation'}} (s):</span>
+          <strong data-value>{{r standardDeviation 1}}</strong>
         </p>
 
-        <p>
-          {{_ 'deviation_coefficient'}} (δ): <strong>{{r coefficient 1}}</strong>
+        <p data-item>
+          <span data-label>{{_ 'deviation_resistance'}} (f'c):</span>
+          <strong data-value>{{r resistance 1}}</strong>
         </p>
 
-        <table class="table table-hover table-condensed">
+        <p data-item>
+          <span class="hidden" data-label>{{_ 'deviation_coefficient'}}:</span>
+          {{_ 'deviation_coefficient'}} (ẟ):
+          <strong data-value>{{r coefficient 1}}</strong>
+        </p>
+
+        <table class="table table-hover table-condensed" data-table="cracks">
           <thead>
             <tr>
               <th>{{_ 'sample'}}</th>
