@@ -1,0 +1,57 @@
+<template name="graphicFreshConcreteVolumetricWeight">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{#autoForm schema=filterSchema id='filterFreshConcreteVolumetricWeight' type='method' meteormethod='filterVolumetricWeight' resetOnSuccess=false doc=filter}}
+            <fieldset>
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='start'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='end'}}
+                </div>
+              </div>
+              {{> afQuickField name='plantId'}}
+              {{> afQuickField name='strengthId'}}
+              {{> afQuickField name='aggregateId'}}
+              {{> afQuickField name='settlementId'}}
+
+              <hr>
+
+              <button type="submit" class="btn btn-default btn-block">
+                {{_ 'graphic_filter_apply'}}
+              </button>
+            </fieldset>
+          {{/autoForm}}
+        </div>
+      </div>
+
+      {{> graphicFreshConcreteVolumetricWeightReference}}
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{_ 'graphic_fresh_concrete_volumetric_weight_title'}}</h3>
+        </div>
+
+        <div class="panel-body">
+          {{#if series.length}}
+            <div class="ct-chart ct-golden-section" data-chart></div>
+          {{else}}
+            <h4 class="text-warning text-center">
+              {{_ 'graphic_no_data'}}
+            </h4>
+          {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row hidden">
+    <div class="col-md-8 col-md-offset-2">
+      <span class="badge">{{sampleCount}}</span>
+    </div>
+  </div>
+</template>
