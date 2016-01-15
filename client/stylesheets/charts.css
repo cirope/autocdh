@@ -59,17 +59,21 @@
 .chartist-tooltip {
   position: absolute;
   display: inline-block;
+  opacity: 0;
   min-width: 5em;
   padding: .5em;
   background: #93c54b;
   color: #fff;
-  font-weight: 700;
   text-align: center;
   pointer-events: none;
   z-index: 1;
+  -webkit-transition: opacity .2s linear;
+  -moz-transition: opacity .2s linear;
+  -o-transition: opacity .2s linear;
+  transition: opacity .2s linear;
 }
 
-.chartist-tooltip:after {
+.chartist-tooltip:before {
   content: "";
   position: absolute;
   top: 100%;
@@ -81,4 +85,8 @@
   border-right: 10px solid transparent;
   border-top: 15px solid transparent;
   border-top-color: #93c54b;
+}
+
+.chartist-tooltip.tooltip-show {
+  opacity: 1;
 }
