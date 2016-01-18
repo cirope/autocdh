@@ -59,7 +59,7 @@ email@1.0.8
 fastclick@1.0.7
 fourseven:scss@3.4.1
 francocatena:autoform-bs-datetimepicker@1.1.0
-francocatena:status@1.5.0
+francocatena:status@1.5.1
 geojson-utils@1.0.4
 ground:db@0.3.14
 ground:dictionary@0.2.1
@@ -89,7 +89,7 @@ logging@1.0.8
 mdg:validation-error@0.3.0
 meteor@1.1.10
 meteor-base@1.0.1
-meteorhacks:kadira@2.27.0
+meteorhacks:kadira@2.27.1
 meteorhacks:meteorx@1.4.1
 meteorhacks:subs-manager@1.6.3
 meteorspark:util@0.2.0
