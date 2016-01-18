@@ -1,4 +1,19 @@
 var putStaticData = function (doc, yPosition) {
+  $('[data-filter]').each(function (i, element) {
+    var $input = $(element).find('.form-control')
+    var label  = $(element).find('.control-label').text()
+    var value  = $input.find('option:selected').text() || $input.val()
+
+    doc.text(label + ': ' + value, 20, yPosition += 5)
+  })
+
+  var tenPercentCriteria = TAPi18n.__('stats_ten_percent_criteria') + ': ' +
+    TAPi18n.__($('[name="tenPercentCriteria"]').is(':checked') ? 'yes' : 'no')
+
+  doc.text(tenPercentCriteria, 20, yPosition += 5)
+
+  yPosition += 5
+
   $('[data-item]').each(function (i, element) {
     var label = $(element).find('[data-label]').text()
     var value = $(element).find('[data-value]').text()

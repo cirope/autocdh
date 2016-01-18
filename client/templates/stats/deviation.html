@@ -4,24 +4,24 @@
       {{#autoForm schema=filterSchema id='filterStatsDeviation' type='method' meteormethod='filterStatsDeviation' resetOnSuccess=false doc=filter}}
         <fieldset>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-filter>
               {{> afQuickField name='start'}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-filter>
               {{> afQuickField name='end'}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-filter>
               {{> afQuickField name='plantId'}}
             </div>
           </div>
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-filter>
               {{> afQuickField name='strengthId' firstOption=false}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-filter>
               {{> afQuickField name='aggregateId'}}
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-filter>
               {{> afQuickField name='settlementId'}}
             </div>
           </div>
