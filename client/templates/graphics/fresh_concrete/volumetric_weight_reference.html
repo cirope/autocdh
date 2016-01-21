@@ -5,7 +5,7 @@
     </div>
     <div class="panel-body">
       <div class="ct-chart ct-slim">
-        <svg width="100%" height="90px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg width="100%" height="120px" version="1.1" xmlns="http://www.w3.org/2000/svg">
           <g class="ct-labels">
             <foreignObject x="100" y="10" width="200" height="30">
               <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
@@ -19,7 +19,12 @@
             </foreignObject>
             <foreignObject x="100" y="70" width="200" height="30">
               <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
-                {{_ 'graphic_fresh_concrete_volumetric_weight_from_formula'}}
+                {{_ 'graphic_fresh_concrete_volumetric_weight_average_reference'}}
+              </span>
+            </foreignObject>
+            <foreignObject x="100" y="100" width="200" height="30">
+              <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
+                {{_ 'graphic_fresh_concrete_volumetric_weight_theoretical_average_reference'}}
               </span>
             </foreignObject>
           </g>
@@ -29,8 +34,11 @@
           <g class="ct-series ct-series-f only-points">
             <line class="ct-point" x1="40" y1="50" x2="40" y2="50" />
           </g>
-          <g class="ct-series ct-series-b only-line dotted-a">
+          <g class="ct-series ct-series-a only-line dotted-a">
             <line class="ct-line" x1="10" y1="80" x2="75" y2="80" />
+          </g>
+          <g class="ct-series ct-series-f only-line dotted-a">
+            <line class="ct-line" x1="10" y1="110" x2="75" y2="110" />
           </g>
         </svg>
       </div>
