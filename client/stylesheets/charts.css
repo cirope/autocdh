@@ -14,6 +14,10 @@
   display: none;
 }
 
+.ct-chart .ct-series.transparent-points .ct-point {
+  opacity: 0;
+}
+
 .ct-granulometry .ct-label.ct-horizontal {
   transform-origin: 0em 12em;
   transform: rotate(-15deg);
