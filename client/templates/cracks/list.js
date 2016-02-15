@@ -23,14 +23,14 @@ Template.cracksList.helpers({
 
 Template.cracksList.events({
   'click [data-action="search"]': function (event, template) {
-    var moldingIn = template.$('#molding-in').val()
-    var crackIn   = template.$('#crack-in').val()
+    var moldingIn = DateRangeHelper.getRange(template.$('#molding-in'))
+    var crackIn   = DateRangeHelper.getRange(template.$('#crack-in'))
 
     var search = {
       designation: template.$('#designation').val(),
       moldingTime: template.$('#molding-time').val(),
-      moldingIn:   moldingIn && moment(moldingIn, 'L').format('YYYY-MM-DD'),
-      crackIn:     crackIn   && moment(crackIn, 'L').format('YYYY-MM-DD')
+      moldingIn:   moldingIn && moldingIn.join('|'),
+      crackIn:     crackIn   && crackIn.join('|')
     }
 
     Router.go('cracks', {}, { query: search })
@@ -43,8 +43,12 @@ Template.cracksList.events({
   'shown.bs.collapse': function (event, template) {
     template.$('input:first').focus()
 
-    template.$('#molding-in').datetimepicker({ format: 'L' })
-    template.$('#crack-in').datetimepicker({ format: 'L' })
+    template.$('#molding-in').
+      daterangepicker(DateRangeHelper.filterOptions()).
+      daterangepickerFilterEvents()
+    template.$('#crack-in').
+      daterangepicker(DateRangeHelper.filterOptions()).
+      daterangepickerFilterEvents()
 
     template.$('[data-search-clean]').removeClass('hidden')
     template.$('[data-search]').addClass('hidden')

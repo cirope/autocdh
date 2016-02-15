@@ -36,12 +36,12 @@ Template.samplesList.helpers({
 
 Template.samplesList.events({
   'click [data-action="search"]': function (event, template) {
-    var date = template.$('#date').val()
+    var dateRange = DateRangeHelper.getRange(template.$('#date'))
 
     var search = {
       name:     template.$('#name').val(),
       strength: template.$('#strength').val(),
-      date:     date && moment(date, 'L').format('YYYY-MM-DD'),
+      date:     dateRange && dateRange.join('|'),
       plant:    template.$('#plant').val(),
       customer: template.$('#customer').val(),
       molding:  template.$('#molding').val()
@@ -57,7 +57,9 @@ Template.samplesList.events({
   'shown.bs.collapse': function (event, template) {
     template.$('input:first').focus()
 
-    template.$('#date').datetimepicker({ format: 'L' })
+    template.$('#date').
+      daterangepicker(DateRangeHelper.filterOptions()).
+      daterangepickerFilterEvents()
 
     template.$('[data-search-clean]').removeClass('hidden')
     template.$('[data-search]').addClass('hidden')

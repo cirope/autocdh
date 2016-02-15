@@ -25,14 +25,14 @@ Template.customerCracks.helpers({
 
 Template.customerCracks.events({
   'click [data-action="search"]': function (event, template) {
-    var molding = template.$('#molding').val()
-    var cracked = template.$('#cracked').val()
+    var molding = DateRangeHelper.getRange(template.$('#molding'))
+    var cracked = DateRangeHelper.getRange(template.$('#cracked'))
 
     var search = {
       receipt:  template.$('#receipt').val(),
       work:     template.$('#work').val(),
-      molding:  molding && moment(molding, 'L').format('YYYY-MM-DD'),
-      cracked:  cracked && moment(cracked, 'L').format('YYYY-MM-DD'),
+      molding:  molding && molding.join('|'),
+      cracked:  cracked && cracked.join('|'),
       strength: template.$('#strength').val(),
       age:      template.$('#age').val(),
       stress:   template.$('#stress').val()
@@ -48,8 +48,12 @@ Template.customerCracks.events({
   'shown.bs.collapse': function (event, template) {
     template.$('input:first').focus()
 
-    template.$('#molding').datetimepicker({ format: 'L' })
-    template.$('#cracked').datetimepicker({ format: 'L' })
+    template.$('#molding').
+      daterangepicker(DateRangeHelper.filterOptions()).
+      daterangepickerFilterEvents()
+    template.$('#cracked').
+      daterangepicker(DateRangeHelper.filterOptions()).
+      daterangepickerFilterEvents()
 
     template.$('[data-search-clean]').removeClass('hidden')
     template.$('[data-search]').addClass('hidden')
