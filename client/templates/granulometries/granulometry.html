@@ -1,5 +1,5 @@
 <template name="granulometry">
-  <div class="panel panel-default">
+  <div class="panel panel-default hide-on-pdf-export">
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'granulometry'}}: {{name}} / {{material}}
@@ -222,7 +222,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 hide-on-pdf-export">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">{{_ 'granulometry_limit_curves'}}</h3>
@@ -259,7 +259,7 @@
 
       {{> granulometryReference}}
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 show-on-pdf-export" data-graph-container>
       <div class="panel panel-default">
         <div class="panel-body">
           <div class="ct-chart ct-golden-section ct-granulometry"></div>

@@ -93,6 +93,35 @@ var putBriefData = function (granulometry, doc, yPosition) {
   return yPosition
 }
 
+var putGraphImage = function (doc, yPosition, callback) {
+  $('body').addClass('pdf-export')
+
+  var canvas = document.createElement('canvas')
+  var html   = _.first($('html')).innerHTML
+  var width  = $('[data-graph-container]').outerWidth()  * 1.2
+  var height = $('[data-graph-container]').outerHeight() * 1.2
+  var ctx    = canvas.getContext('2d')
+
+  canvas.width  = width
+  canvas.height = height
+
+  ctx.fillStyle = '#ffffff'
+  ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+  $('body').removeClass('pdf-export')
+
+  rasterizeHTML.drawHTML(html, canvas).then(function (result) {
+    var data   = canvas.toDataURL('image/png')
+    var factor = 5
+
+    doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
+
+    if (typeof callback === 'function') callback()
+  }, function () {
+    console.log('error')
+  });
+}
+
 Template.granulometry.events({
   'click [data-download-pdf]': function (event, template) {
     var granulometry = template.data
@@ -127,7 +156,9 @@ Template.granulometry.events({
 
       if (idealCurves) doc.text(idealCurves, 20, yPosition +=5)
 
-      doc.save(granulometry.name + '.pdf')
+      putGraphImage(doc, yPosition, function () {
+        doc.save(granulometry.name + '.pdf')
+      })
     })
   }
 })

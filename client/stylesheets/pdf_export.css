@@ -1,0 +1,17 @@
+.pdf-export {
+  background: #fff;
+}
+
+.pdf-export .show-on-pdf-export {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.pdf-export .show-on-pdf-export .panel-default {
+  border: none;
+}
+
+.pdf-export .hide-on-pdf-export {
+  display: none;
+}
