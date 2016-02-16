@@ -19,18 +19,21 @@
               {{> afQuickField name='strengthId' firstOption=false}}
             </div>
             <div class="col-md-4" data-filter>
-              {{> afQuickField name='aggregateId'}}
+              {{> afQuickField name='download'}}
             </div>
             <div class="col-md-4" data-filter>
-              {{> afQuickField name='settlementId'}}
+              {{> afQuickField name='aggregateId'}}
             </div>
           </div>
 
           <div class="row">
             <div class="col-md-4">
+              {{> afQuickField name='settlementId'}}
+            </div>
+            <div class="col-md-4 bottom">
               {{> afQuickField name='tenPercentCriteria'}}
             </div>
-            <div class="col-md-offset-4 col-md-4">
+            <div class="col-md-4">
               <button type="submit" class="btn btn-default btn-block">
                 {{_ 'graphic_filter_apply'}}
               </button>
