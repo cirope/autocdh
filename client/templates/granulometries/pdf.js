@@ -112,7 +112,7 @@ var putGraphImage = function (doc, yPosition, callback) {
 
   rasterizeHTML.drawHTML(html, canvas).then(function (result) {
     var data   = canvas.toDataURL('image/png')
-    var factor = 5
+    var factor = 5.5
 
     doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
 

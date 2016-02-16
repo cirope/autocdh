@@ -221,49 +221,51 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-md-4 hide-on-pdf-export">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">{{_ 'granulometry_limit_curves'}}</h3>
-        </div>
-        <div class="panel-body">
-          {{#if showLimitCurves}}
-            <button class="btn btn-default" type="button" data-hide="limit-curves">
-              {{_ 'hide'}}
-            </button>
-          {{else}}
-            {{#if sand}}
-              <button class="btn btn-default" type="button" data-show="limit-curves" data-curve="default">
-                {{_ 'show'}}
-              </button>
-            {{else}}
-              <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                  {{_ 'show'}} <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                  {{#each sizes}}
-                    <li>
-                      <a href="#" data-show="limit-curves" data-curve="{{this}}">
-                        {{_ 'granulometry_nominal_size'}} {{this}}
-                      </a>
-                    </li>
-                  {{/each}}
-                </ul>
-              </div>
-            {{/if}}
-          {{/if}}
+  <div class="show-on-pdf-export" data-graph-container>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="ct-chart ct-golden-section ct-granulometry"></div>
+          </div>
         </div>
       </div>
-
-      {{> granulometryReference}}
-    </div>
-    <div class="col-md-8 show-on-pdf-export" data-graph-container>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="ct-chart ct-golden-section ct-granulometry"></div>
+      <div class="col-md-4">
+        <div class="panel panel-default hide-on-pdf-export">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{_ 'granulometry_limit_curves'}}</h3>
+          </div>
+          <div class="panel-body">
+            {{#if showLimitCurves}}
+              <button class="btn btn-default" type="button" data-hide="limit-curves">
+                {{_ 'hide'}}
+              </button>
+            {{else}}
+              {{#if sand}}
+                <button class="btn btn-default" type="button" data-show="limit-curves" data-curve="default">
+                  {{_ 'show'}}
+                </button>
+              {{else}}
+                <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    {{_ 'show'}} <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    {{#each sizes}}
+                      <li>
+                        <a href="#" data-show="limit-curves" data-curve="{{this}}">
+                          {{_ 'granulometry_nominal_size'}} {{this}}
+                        </a>
+                      </li>
+                    {{/each}}
+                  </ul>
+                </div>
+              {{/if}}
+            {{/if}}
+          </div>
         </div>
+
+        {{> granulometryReference}}
       </div>
     </div>
   </div>

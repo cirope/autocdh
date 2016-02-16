@@ -6,10 +6,17 @@
   position: absolute;
   top: 0px;
   left: 0px;
+  width: 1200px;
 }
 
 .pdf-export .show-on-pdf-export .panel-default {
   border: none;
+}
+
+.pdf-export .show-on-pdf-export .panel .panel-heading {
+  color: #333;
+  border: none;
+  background: transparent;
 }
 
 .pdf-export .hide-on-pdf-export {
