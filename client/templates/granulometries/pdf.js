@@ -13,20 +13,20 @@ var putStaticData = function (granulometry, doc, yPosition) {
 
   doc
     .text(responsible, 20, yPosition += 5)
-    .text(date, 145, yPosition)
+    .text(date, 100, yPosition)
 
   var plant        = TAPi18n.__('plant')                      + ': ' + Plants.findOne(granulometry.plantId).name
   var sampleWeight = TAPi18n.__('granulometry_sample_weight') + ': ' + granulometry.sampleWeight + ' kg'
 
   doc
     .text(plant, 20, yPosition += 5)
-    .text(sampleWeight, 145, yPosition)
+    .text(sampleWeight, 100, yPosition)
 
   if (granulometry.humidity)
     doc.text(TAPi18n.__('granulometry_humidity'), 20, yPosition += 5)
 
   if (granulometry.thin)
-    doc.text(TAPi18n.__('granulometry_thin'), 145, granulometry.humidity ? yPosition : yPosition += 5)
+    doc.text(TAPi18n.__('granulometry_thin'), 100, granulometry.humidity ? yPosition : yPosition += 5)
 
   $('[data-humidity]').find('[data-attribute]').each(function (i, element) {
     var label = $(element).find('[data-label]').text()
@@ -41,7 +41,7 @@ var putStaticData = function (granulometry, doc, yPosition) {
     var label = $(element).find('[data-label]').text()
     var value = $(element).find('[data-value]').text()
 
-    doc.text("\t" + label + ': ' + value, 145, column2yPosition += 5)
+    doc.text("\t" + label + ': ' + value, 100, column2yPosition += 5)
   })
 
   var weight = TAPi18n.__('granulometry_granulometry_weight') + ': ' + granulometry.granulometryWeight + ' g'
@@ -50,8 +50,7 @@ var putStaticData = function (granulometry, doc, yPosition) {
 
   doc
     .text(weight, 20, yPosition += 5)
-    .text(dried, 145, yPosition)
-    .text(washed, 205, yPosition)
+    .text(dried + ' ' + washed, 100, yPosition)
 
   return yPosition
 }
@@ -61,8 +60,8 @@ var table = function () {
   var headers = []
   var data    = []
   var widths  = table.find('thead th').length === 6 ?
-    [90, 50, 50, 40, 40, 65] :
-    [90, 30, 40, 40, 35, 30, 30, 50]
+    [60, 40, 40, 30, 30, 45] :
+    [60, 20, 35, 30, 25, 20, 20, 35]
 
   table.find('thead th').each(function (i, element) {
     var header = $(element).text()
@@ -102,7 +101,7 @@ Template.granulometry.events({
     var idealCurves  = granulometry.idealCurves ?
       TAPi18n.__('granulometry_ideal_curves') + ': ' + granulometry.idealCurves + ' mm' : ''
 
-    PDF.new({ orientation: 'l' }, function (doc) {
+    PDF.new({}, function (doc) {
       doc
         .setFont('helvetica')
         .setFontSize(14)
