@@ -63,7 +63,7 @@
         </thead>
         <tbody>
           {{#each cracks}}
-            <tr data-row>
+            <tr class="visible-on-hover-parent {{trClass}}" data-row>
               {{#with receipt}}
                 <td data-value>{{number}}</td>
                 <td data-value>{{work}}</td>
@@ -73,7 +73,17 @@
               <td class="hidden-xs hidden-sm" data-value>{{strength}}</td>
               <td class="hidden-xs hidden-sm" data-value>{{age}}</td>
               <td class="hidden-xs hidden-sm" data-value>{{r stress 1}} MPa</td>
-              <td></td>
+              <td>
+                {{#if isHidden}}
+                  <a href="#" class="visible-on-hover" title="{{_ 'customer_cracks_show'}}" data-show-on-pdf>
+                    <span class="glyphicon glyphicon-eye-open"></span>
+                  </a>
+                {{else}}
+                  <a href="#" class="visible-on-hover" title="{{_ 'customer_cracks_hide'}}" data-hide-on-pdf>
+                    <span class="glyphicon glyphicon-eye-close"></span>
+                  </a>
+                {{/if}}
+              </td>
             </tr>
           {{else}}
             <tr>

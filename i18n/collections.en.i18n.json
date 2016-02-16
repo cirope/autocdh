@@ -123,6 +123,8 @@
   "customer_empty_banner": "There is no customer here, lets create some...",
   "customer_new": "New customer",
   "customer_cracks_title": "Cracks for __customer__",
+  "customer_cracks_hide": "Hide on PDF",
+  "customer_cracks_show": "Show on PDF",
   "deviations": "Deviations",
   "deviation": "Deviation",
   "deviation_value": "Value",

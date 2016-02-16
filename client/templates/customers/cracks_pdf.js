@@ -10,7 +10,7 @@ var table = function () {
     headers.push({ name: header, prompt: header, width: widths[i] })
   })
 
-  table.find('tbody tr[data-row]').each(function (i, element) {
+  table.find('tbody tr[data-row]:not(.text-muted)').each(function (i, element) {
     var obj = {}
 
     $(element).find('td[data-value]').each(function (j, cell) {
@@ -22,6 +22,22 @@ var table = function () {
 
   return { data: data, headers: headers }
 }
+
+Template.customerCracks.onDestroyed(function () {
+  Session.set('hideOnPdf')
+})
+
+Template.customerCracks.helpers({
+  trClass: function () {
+    var omited = _.contains(Session.get('hideOnPdf'), this._id)
+
+    return omited && 'text-muted'
+  },
+
+  isHidden: function () {
+    return _.contains(Session.get('hideOnPdf'), this._id)
+  }
+})
 
 Template.customerCracks.events({
   'click [data-download-pdf]': function (event, template) {
@@ -49,5 +65,25 @@ Template.customerCracks.events({
 
       doc.save(title + '.pdf')
     })
+  },
+
+  'click [data-hide-on-pdf]': function (event, template) {
+    event.preventDefault()
+
+    var hidden = Session.get('hideOnPdf') || []
+
+    hidden.push(this._id)
+
+    Session.set('hideOnPdf', hidden)
+  },
+
+  'click [data-show-on-pdf]': function (event, template) {
+    event.preventDefault()
+
+    var hidden = Session.get('hideOnPdf') || []
+
+    hidden = _.without(hidden, this._id)
+
+    Session.set('hideOnPdf', hidden)
   }
 })
