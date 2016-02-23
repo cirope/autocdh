@@ -12,6 +12,8 @@ var events = {
       download:     download,
       aggregateId:  aggregateId,
       settlementId: settlementId
+    }, {
+      sort: { createdAt: -1 }
     })
 
     if (params) {
