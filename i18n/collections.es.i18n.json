@@ -40,6 +40,8 @@
   "assay_tubes_3": "3 (7 y 28 días)",
   "assay_tubes_4": "4 (3, 7 y 28 días)",
   "assay_tubes_-4": "4 (7 y 28 días)",
+  "assay_tubes_5": "5 (7, 28 y 90 días)",
+  "assay_tubes_-5": "5 (7, 28 y 56 días)",
   "assay_tubes_16": "16 (Evolución completa)",
   "assay_tube_type": "Tipo de probeta",
   "assay_cured": "Tipo de curado",
