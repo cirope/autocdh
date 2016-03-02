@@ -43,13 +43,26 @@
           </div>
 
           <div class="row">
-            <div class="col-lg-6">
-              {{> afQuickField name='ratio'}}
-            </div>
             <div class="col-lg-6 bottom">
               {{> afQuickField name='inTruck'}}
               {{> afQuickField name='flowmeterCorrection'}}
             </div>
+            <div class="col-lg-6">
+              {{> afQuickField name='ratio'}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-xs-6">
+              {{> afQuickField name='hasAdditionalWater'}}
+            </div>
+            {{#if showAdditionalWater}}
+              <div class="col-xs-6">
+                {{> afQuickField name='additionalWater' label=false}}
+              </div>
+            {{else}}
+              {{> afFieldInput name='additionalWater' type='hidden' value=''}}
+            {{/if}}
           </div>
         </fieldset>
         {{#unless disabled}}

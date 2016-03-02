@@ -50,6 +50,19 @@
               {{> afQuickField name='flowmeterCorrection'}}
             </div>
           </div>
+
+          <div class="row">
+            <div class="col-xs-4">
+              {{> afQuickField name='hasAdditionalWater'}}
+            </div>
+            {{#if showAdditionalWater}}
+              <div class="col-xs-8">
+                {{> afQuickField name='additionalWater' label=false}}
+              </div>
+            {{else}}
+              {{> afFieldInput name='additionalWater' type='hidden' value=''}}
+            {{/if}}
+          </div>
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'humidity_create'}}</button>

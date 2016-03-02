@@ -5,6 +5,12 @@ Template.humidity.helpers({
     return ice || TAPi18n.__('no')
   },
 
+  additionalWater: function () {
+    var additionalWater = (this.hasAdditionalWater && this.additionalWater) && this.additionalWater + ' l/m³'
+
+    return additionalWater || TAPi18n.__('no')
+  },
+
   inTruck: function () {
     return TAPi18n.__(this.inTruck ? 'yes' : 'no')
   },
