@@ -1,9 +1,9 @@
 accounts-base@1.2.2
 accounts-password@1.1.4
-alanning:roles@1.2.14
+alanning:roles@1.2.15
 aldeed:autoform@5.8.1
-aldeed:collection2@2.8.0
-aldeed:collection2-core@1.0.0
+aldeed:collection2@2.9.0
+aldeed:collection2-core@1.1.0
 aldeed:http@0.2.2
 aldeed:schema-deny@1.0.1
 aldeed:schema-index@1.0.1
@@ -86,10 +86,10 @@ launch-screen@1.0.4
 livedata@1.0.15
 localstorage@1.0.5
 logging@1.0.8
-mdg:validation-error@0.4.0
+mdg:validation-error@0.5.1
 meteor@1.1.10
 meteor-base@1.0.1
-meteorhacks:kadira@2.27.3
+meteorhacks:kadira@2.28.2
 meteorhacks:meteorx@1.4.1
 meteorhacks:subs-manager@1.6.3
 meteorspark:util@0.2.0
