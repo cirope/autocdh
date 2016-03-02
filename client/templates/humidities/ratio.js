@@ -10,6 +10,7 @@ var updateRatio = function () {
   var concrete            = sampleId && Concretes.findOne({ sampleId: sampleId })
   var concreteAmount      = concrete && concrete.concretes && concrete.concretes[0].amount
   var ice                 = +$('[name="ice"]').val()
+  var additionalWater     = +$('[name="additionalWater"]').val()
   var water               = +$('[name="incorporated"]').val()
   var flowmeterCorrection = +$('[name="flowmeterCorrection"]').val()
   var materials           = Materials.first() || { sands: [], gravels: [] }
@@ -36,7 +37,7 @@ var updateRatio = function () {
     })
   })
 
-  var ratio = concreteAmount && ((water + ice) * flowmeterCorrection + aggregatesHumidity) / concreteAmount
+  var ratio = concreteAmount && ((water + ice + additionalWater) * flowmeterCorrection + aggregatesHumidity) / concreteAmount
 
   if (inTruck)
     $('[name="ratio"]').val(TAPi18n.__('humidity_cannot_calculate_ratio')).prop('disabled', true)
