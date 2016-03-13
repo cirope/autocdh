@@ -1,0 +1,10 @@
+<template name="truckNumberSearch">
+  <div class="form-group {{#if afFieldIsInvalid name='truckId'}}has-error{{/if}}">
+    <label class="control-label" for="truck-search">{{_ 'truck'}}</label>
+    <div class="input-group">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+      {{> inputAutocomplete settings=settings value=truck id='truck-number-search' class='form-control' autocomplete='off' placeholder=placeholder}}
+      {{> afFieldInput name='truckId' type='hidden'}}
+    </div>
+  </div>
+</template>

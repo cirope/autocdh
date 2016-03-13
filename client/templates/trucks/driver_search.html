@@ -1,0 +1,18 @@
+<template name="truckDriverSearch">
+  <div class="form-group {{#if afFieldIsInvalid name='truckId'}}has-error{{/if}}">
+    <label class="control-label" for="truck-search">{{_ 'truck_driver'}}</label>
+    <div class="input-group">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+      {{> inputAutocomplete settings=settings value=truck id='truck-driver-search' class='form-control' autocomplete='off' placeholder=placeholder}}
+      {{> afFieldInput name='truckDriver' type='hidden'}}
+    </div>
+  </div>
+</template>
+
+<template name="truckDriverPill">
+  <div>{{driver}}</div>
+</template>
+
+<template name="emptyTruckDriverPill">
+  <div>{{_ 'truck_driver_search_empty'}} <kbd>{{getFilter}}</kbd></div>
+</template>
