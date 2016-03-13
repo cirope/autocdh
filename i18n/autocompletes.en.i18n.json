@@ -4,7 +4,9 @@
   "customer_search_placeholder": "Search customer...",
   "customer_search_empty": "There is no result with",
   "truck_search_placeholder": "Search truck...",
+  "truck_driver_search_placeholder": "Search driver...",
   "truck_search_empty": "There is no result with",
+  "truck_driver_search_empty": "There is no result with",
   "work_search_placeholder": "Search work...",
   "work_search_empty": "There is no result with"
 }
