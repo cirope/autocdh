@@ -46,23 +46,20 @@
           {{/if}}
         </div>
       </div>
-    </div>
-  </div>
 
-  {{#if series.length}}
-    <div class="row">
-      <div class="col-md-8 col-md-offset-4">
+      {{#if series.length}}
         <p>
           {{_ 'graphic_fresh_concrete_settlement_average'}}:
           <strong>{{r mean 1}} cm</strong>
         </p>
         <p>
           {{_ 'deviation_standard_deviation'}} (s):
-          <strong>{{r standardDeviation 1}} cm</strong>
+          <strong>{{r deviation 1}} cm</strong>
         </p>
-      </div>
+      {{/if}}
     </div>
-  {{/if}}
+  </div>
+
 
   <span class="hidden">{{sampleCount}}</span>
 </template>

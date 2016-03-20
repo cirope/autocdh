@@ -47,6 +47,17 @@
           {{/if}}
         </div>
       </div>
+
+      {{#if series.length}}
+        <p>
+          {{_ 'graphic_fresh_concrete_consistency_average'}}:
+          <strong>{{r mean 1}} cm</strong>
+        </p>
+        <p>
+          {{_ 'deviation_standard_deviation'}} (s):
+          <strong>{{r deviation 1}} cm</strong>
+        </p>
+      {{/if}}
     </div>
   </div>
 

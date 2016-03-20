@@ -1,27 +1,3 @@
-var mean = function (settlements) {
-  var sum = _.reduce(settlements, function (memo, settlement) {
-    return memo + settlement
-  }, 0)
-
-  return sum / settlements.length
-}
-
-var deviation = function (settlements) {
-  var _mean         = mean(settlements)
-  var deviations    = []
-  var deviationsSum = 0
-
-  _.each(settlements, function (settlement) {
-    deviations.push(Math.pow(settlement - _mean, 2))
-  })
-
-  deviationsSum = _.reduce(deviations, function (memo, d) {
-    return memo + d
-  }, 0)
-
-  return Math.sqrt(deviationsSum / (settlements.length - 1))
-}
-
 var updateChart = function (data) {
   setTimeout(function () {
     if ($('[data-chart]').length) {
@@ -77,13 +53,5 @@ Template.graphicFreshConcreteSettlement.helpers({
     updateChart(_.pick(this, 'labels', 'series'))
 
     return this.samples.count()
-  },
-
-  mean: function () {
-    return mean(this.values)
-  },
-
-  standardDeviation: function () {
-    return deviation(this.values)
   }
 })
