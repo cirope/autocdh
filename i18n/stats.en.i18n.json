@@ -46,6 +46,7 @@
   "graphic_hardened_concrete_7_days_resistance_title": "Hardened concretes resistance at 7 days",
   "graphic_hardened_concrete_7_days_resistance_reference": "Resistance (7 days)",
   "graphic_hardened_concrete_7_days_resistance_y_label": "Resistance (MPa) / Concrete type",
+  "graphic_hardened_concrete_7_days_resistance_mean": "Mean",
   "graphic_deviation": "Deviation",
   "graphic_deviation_efficiency": "Deviation",
   "graphic_deviation_efficiency_title": "Concrete deviation",
