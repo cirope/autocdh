@@ -35,6 +35,7 @@
   "graphic_hardened_concrete_resistance_title": "Cartas de media móvil a 28 días",
   "graphic_hardened_concrete_resistance_reference": "Resistencia a compresión (28 días)",
   "graphic_hardened_concrete_resistance_mean": "Media móvil",
+  "graphic_hardened_concrete_resistance_global_mean": "Promedio",
   "graphic_hardened_concrete_resistance_y_label": "Resistencia a compresión (MPa)",
   "graphic_hardened_concrete_cusum": "Cartas tipo CuSum a 28 días",
   "graphic_hardened_concrete_cusum_title": "Cartas tipo CuSum a 28 días",
