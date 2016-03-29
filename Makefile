@@ -18,13 +18,14 @@ endif
 SANDBOX_ACCOUNT=deployer@localhost
 SANDBOX_ROOT_ACCOUNT=root@localhost
 APP_BUNDLE=autocdh.tar.gz
+TMP_DIR=../tmp_build
 
 .PHONY : deploy sandbox-deploy
 
 deploy:
-	meteor build .
-	scp $(APP_BUNDLE) $(PRODUCTION_ACCOUNT):
-	rm $(APP_BUNDLE)
+	meteor build $(TMP_DIR)
+	scp $(TMP_DIR)/$(APP_BUNDLE) $(PRODUCTION_ACCOUNT):
+	rm -rf $(TMP_DIR)
 	ssh $(PRODUCTION_ACCOUNT) \
 		"tar -zxf $(APP_BUNDLE); \
 		rm $(APP_BUNDLE); \
