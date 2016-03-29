@@ -26,6 +26,7 @@ cfs:gridfs
 cfs:autoform
 cfs:graphicsmagick
 cfs:ui
+standard-minifiers
 meteor-base
 mobile-experience
 mongo
@@ -41,5 +42,3 @@ spacebars
 check
 http
 aldeed:http
-standard-minifier-css
-standard-minifier-js
