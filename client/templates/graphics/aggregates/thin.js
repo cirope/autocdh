@@ -1,8 +1,9 @@
-var updateChart = function (data) {
+var updateChart = function (data, type) {
   setTimeout(function () {
     if ($('[data-chart]').length) {
       var options = {
-        low:   0,
+        low: 0,
+        high: type === 'sand' ? 10 : 3,
         showLine: true,
         axisX: {
           labelInterpolationFnc: function (value, index) {
@@ -42,13 +43,17 @@ var updateChart = function (data) {
 }
 
 Template.graphicAggregateThin.onRendered(function () {
-  updateChart(_.pick(this.data, 'labels', 'series'))
+  var self = this
+
+  updateChart(_.pick(self.data, 'labels', 'series'), self.data.material.type)
 })
 
 Template.graphicAggregateThin.helpers({
   granulometriesCount: function () {
-    updateChart(_.pick(this, 'labels', 'series'))
+    var self = this
 
-    return this.granulometries.count()
+    updateChart(_.pick(self, 'labels', 'series'), self.material.type)
+
+    return self.granulometries.count()
   }
 })
