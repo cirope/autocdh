@@ -252,6 +252,8 @@
   "humidity_create": "Guardar demanda de agua",
   "humidity_update_title": "Editar demanda de agua y correcciones por humedad",
   "humidity_update": "Actualizar demanda de agua",
+  "maintenance": "Mantenimiento",
+  "maintenances": "Instrumental",
   "materials": "Materiales",
   "material": "Material",
   "material_default": "Por defecto",

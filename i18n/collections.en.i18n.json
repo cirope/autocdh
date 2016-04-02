@@ -252,6 +252,8 @@
   "humidity_create": "Create humidity",
   "humidity_update_title": "Edit a humidity",
   "humidity_update": "Update humidity",
+  "maintenance": "Maintenance",
+  "maintenances": "Maintenances",
   "materials": "Materials",
   "material": "Material",
   "material_default": "Default",
