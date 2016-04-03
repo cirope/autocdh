@@ -1,0 +1,36 @@
+<template name="instrument">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'instrument'}}
+          <a class="pull-right" href="{{pathFor 'instruments'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'instrument_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+        <p>
+          {{_ 'instrument_calibratable'}} /
+          <strong>{{calibratable}}</strong>
+        </p>
+        <p>
+          {{_ 'instrument_checklist'}} /
+          <strong>{{checklist}}</strong>
+        </p>
+
+        <a href="{{pathFor 'instrumentEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'instrument_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+
+        {{#unless hasMaintenances}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/unless}}
+      </div>
+    </div>
+  </div>
+</template>

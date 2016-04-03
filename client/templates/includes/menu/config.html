@@ -38,6 +38,11 @@
       <li class="{{activeRouteClass 'containers' 'container' 'containerNew' 'containerEdit'}}">
         <a href="{{pathFor 'containers'}}">{{_ 'containers'}}</a>
       </li>
+      {{#if isInRole 'monitor'}}
+        <li class="{{activeRouteClass 'instruments' 'instrument' 'instrumentNew' 'instrumentEdit'}}">
+          <a href="{{pathFor 'instruments'}}">{{_ 'instruments'}}</a>
+        </li>
+      {{/if}}
     </ul>
   </li>
 </template>

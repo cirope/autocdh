@@ -1,0 +1,42 @@
+<template name="instruments">
+  {{#if instruments.count}}
+    {{> instrumentsList}}
+  {{else}}
+    {{> instrumentsEmpty}}
+  {{/if}}
+</template>
+
+<template name="instrumentsList">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'instruments'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'instrumentNew'}}">{{_ 'instrument_new'}}</a>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>{{_ 'instrument_name'}}</th>
+              <th>{{_ 'instrument_calibratable'}}</th>
+              <th>{{_ 'instrument_checklist'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+          {{#each instruments}}
+            <tr>
+              <td><a href="{{pathFor 'instrument'}}">{{name}}</a></td>
+              <td><a href="{{pathFor 'instrument'}}">{{calibratable}}</a></td>
+              <td><a href="{{pathFor 'instrument'}}">{{checklist}}</a></td>
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'instrumentNew'}}">{{_ 'instrument_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>
