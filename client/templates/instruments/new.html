@@ -10,7 +10,7 @@
       <div class="panel-body">
         {{#autoForm collection='Instruments' id='newInstrumentForm' type='method' meteormethod='createInstrument'}}
           <fieldset>
-            {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+            {{> afQuickField name='name' autofocus=true}}
             {{> afQuickField name='checklist'}}
             {{> afQuickField name='calibratable'}}
           </fieldset>
