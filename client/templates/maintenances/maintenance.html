@@ -1,0 +1,73 @@
+<template name="maintenance">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'maintenance'}}
+        <a class="pull-right" href="{{pathFor 'maintenances'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'maintenance_instrument'}} /
+            <strong>{{instrument}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_brand'}} /
+            <strong>{{brand}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_code'}} /
+            <strong>{{code}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_characteristics'}} /
+            <strong>{{characteristics}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_date'}} /
+            <strong>{{l date 'L'}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'maintenance_type'}} /
+            <strong>{{type}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_serial'}} /
+            <strong>{{serial}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_quantity'}} /
+            <strong>{{quantity}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_report'}} /
+            <strong>{{report}}</strong>
+          </p>
+          <p>
+            {{_ 'maintenance_period'}} /
+            {{#if period}}
+              <strong>{{period}} {{_ 'maintenance_period_unit'}}</strong>
+            {{/if}}
+          </p>
+        </div>
+      </div>
+
+      <p>
+        {{_ 'maintenance_valid_until'}} /
+        <strong>{{l validUntil 'L'}}</strong>
+      </p>
+
+      <a href="{{pathFor 'maintenanceEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'maintenance_update_title'}}">
+        {{_ 'edit'}}
+      </a>
+
+      <button class="btn btn-sm btn-danger" type="button" data-delete>
+        {{_ 'maintenance_deactivate'}}
+      </button>
+    </div>
+  </div>
+</template>
