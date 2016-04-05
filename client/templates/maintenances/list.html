@@ -19,6 +19,7 @@
       <table class="table table-hover">
         <thead>
           <tr>
+            <th></th>
             <th>{{_ 'maintenance_type'}}</th>
             <th class="hidden-xs">{{_ 'maintenance_quantity'}}</th>
             <th>{{_ 'maintenance_code'}}</th>
@@ -32,6 +33,13 @@
         <tbody>
           {{#each maintenances}}
             <tr>
+              <td>
+                {{#if displayWarning}}
+                  <span class="label {{labelClass}}">
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                  </span>
+                {{/if}}
+              </td>
               <td><a href="{{pathFor 'maintenance'}}">{{type}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'maintenance'}}">{{quantity}}</a></td>
               <td><a href="{{pathFor 'maintenance'}}">{{code}}</a></td>
