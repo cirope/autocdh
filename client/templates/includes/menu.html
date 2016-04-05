@@ -30,7 +30,14 @@
               <a href="{{pathFor 'granulometries'}}">{{_ 'granulometries'}}</a>
             </li>
             <li class="{{activeRouteClass 'maintenances' 'maintenance' 'maintenanceNew' 'maintenanceEdit'}}">
-              <a href="{{pathFor 'maintenances'}}">{{_ 'maintenances'}}</a>
+              <a href="{{pathFor 'maintenances'}}">
+                {{_ 'maintenances'}}
+                {{#if nextToOverdueMaintenances}}
+                  <span class="label {{#if overdueMaintenances}}label-danger{{else}}label-warning{{/if}}">
+                    <span class="glyphicon glyphicon-warning-sign"></span>
+                  </span>
+                {{/if}}
+              </a>
             </li>
             {{#if isInRole 'admin'}}
               <li class="{{activeRouteClass 'stats' 'graphics'}}">

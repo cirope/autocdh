@@ -52,6 +52,23 @@
     {{/if}}
   </div>
 
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>{{_ 'maintenances'}}</h3>
+      <a href="{{pathFor 'maintenanceNew'}}" class="btn btn-default btn-block">
+        {{_ 'maintenance_new'}}
+      </a>
+      <a href="{{pathFor 'maintenances'}}" class="btn btn-default btn-block">
+        {{_ 'maintenances'}}
+        {{#if nextToOverdueMaintenances}}
+          <span class="label {{#if overdueMaintenances}}label-danger{{else}}label-warning{{/if}}">
+            <span class="glyphicon glyphicon-warning-sign"></span>
+          </span>
+        {{/if}}
+      </a>
+    </div>
+  </div>
+
   {{#if isInRole 'admin'}}
     <h3>{{_ 'dashboard_data_entry'}}</h3>
 

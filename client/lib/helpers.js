@@ -29,3 +29,19 @@ Template.registerHelper('activeRouteClass', function () {
 Template.registerHelper('overdueCracks', function () {
   return Cracks.find({ stress: null, crackIn: { $lt: new Date } }).count()
 })
+
+Template.registerHelper('nextToOverdueMaintenances', function () {
+  var validUntil = moment().add(15, 'days').toDate()
+
+  return Maintenances.find({
+    active:     true,
+    validUntil: { $lt: validUntil }
+  }).count()
+})
+
+Template.registerHelper('overdueMaintenances', function () {
+  return Maintenances.find({
+    active:     true,
+    validUntil: { $lt: new Date }
+  }).count()
+})
