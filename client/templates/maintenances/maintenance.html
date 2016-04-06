@@ -50,7 +50,7 @@
           <p>
             {{_ 'maintenance_period'}} /
             {{#if period}}
-              <strong>{{period}} {{_ 'maintenance_period_unit'}}</strong>
+              <strong>{{period}} {{_ 'maintenance_period_unit' count=period}}</strong>
             {{/if}}
           </p>
         </div>

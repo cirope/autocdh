@@ -1,0 +1,46 @@
+<template name="maintenanceReports">
+  <div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation">
+        <a href="{{pathFor 'maintenances'}}">
+          {{_ 'maintenance_list_title'}}
+        </a>
+      </li>
+      <li role="presentation" class="active">
+        <a href="{{pathFor 'maintenanceReports'}}">
+          {{_ 'maintenance_reports_title'}}
+        </a>
+      </li>
+    </ul>
+
+    <br>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="reports">
+        <div class="row">
+          <div class="col-lg-4">
+            <button type="button" class="btn btn-default btn-block">
+              {{_ 'maintenance_master_list'}}
+            </button>
+
+            <br class="hidden-lg">
+          </div>
+          <div class="col-lg-4">
+            <button type="button" class="btn btn-default btn-block">
+              {{_ 'maintenance_status'}}
+            </button>
+
+            <br class="hidden-lg">
+          </div>
+          <div class="col-lg-4">
+            <button type="button" class="btn btn-default btn-block">
+              {{_ 'maintenance_preventive'}}
+            </button>
+
+            <br class="hidden-lg">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

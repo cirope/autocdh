@@ -1,6 +1,6 @@
 Template.maintenancesList.helpers({
-  type: function () {
-    return TAPi18n.__('maintenance_' + this.type)
+  instrument: function () {
+    return Instruments.findOne(this.instrumentId).name
   },
 
   displayWarning: function () {
@@ -13,5 +13,9 @@ Template.maintenancesList.helpers({
     var expired = moment().isAfter(this.validUntil)
 
     return expired ? 'label-danger' : 'label-warning'
+  },
+
+  date: function () {
+    return this.date ? moment(this.date).format('L') : TAPi18n.__('maintenance_no_calibratable')
   }
 })
