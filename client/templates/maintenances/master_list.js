@@ -1,7 +1,6 @@
 var table = function () {
-  var data    = []
-  var headers = []
-  var headers  = [
+  var data    = null
+  var headers = [
     { name: 'type',            prompt: TAPi18n.__('maintenance_type'),            width: 35 },
     { name: 'code',            prompt: TAPi18n.__('maintenance_code'),            width: 35 },
     { name: 'instrument',      prompt: TAPi18n.__('maintenance_instrument'),      width: 55 },
@@ -11,8 +10,7 @@ var table = function () {
     { name: 'period',          prompt: TAPi18n.__('maintenance_period'),          width: 40 }
   ]
 
-  _.times(40, function () {
-  data = data.concat(Maintenances.find().map(function (maintenance) {
+  data = Maintenances.find().map(function (maintenance) {
     maintenance.type            = TAPi18n.__('maintenance_' + maintenance.type)
     maintenance.code            = maintenance.code || ''
     maintenance.instrument      = Instruments.findOne(maintenance.instrumentId).name
@@ -22,7 +20,6 @@ var table = function () {
       maintenance.period + ' ' + TAPi18n.__('maintenance_period_unit', { count: maintenance.period }) : ''
 
     return maintenance
-  }))
   })
 
   return { data: data, headers: headers }
