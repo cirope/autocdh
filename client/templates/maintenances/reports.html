@@ -19,16 +19,23 @@
       <div role="tabpanel" class="tab-pane active" id="reports">
         <div class="row">
           <div class="col-lg-4">
-            <button type="button" class="btn btn-default btn-block">
+            <button type="button" class="btn btn-default btn-block" data-pdf="master-list">
+              <span class="glyphicon glyphicon-file"></span>
               {{_ 'maintenance_master_list'}}
             </button>
 
             <br class="hidden-lg">
           </div>
           <div class="col-lg-4">
-            <button type="button" class="btn btn-default btn-block">
-              {{_ 'maintenance_status'}}
-            </button>
+            {{#if disableStatus}}
+              <button type="button" class="btn btn-default btn-block disabled">
+                {{_ 'maintenance_status'}}
+              </button>
+            {{else}}
+              <a href={{pathFor 'maintenanceStatus'}} class="btn btn-default btn-block">
+                {{_ 'maintenance_status'}}
+              </a>
+            {{/if}}
 
             <br class="hidden-lg">
           </div>

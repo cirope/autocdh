@@ -1,0 +1,61 @@
+<template name="maintenanceStatus">
+  <div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation">
+        <a href="{{pathFor 'maintenances'}}">
+          {{_ 'maintenance_list_title'}}
+        </a>
+      </li>
+      <li role="presentation" class="active">
+        <a href="{{pathFor 'maintenanceReports'}}">
+          {{_ 'maintenance_reports_title'}}
+        </a>
+      </li>
+    </ul>
+
+    <br>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="maintenances">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{_ 'maintenances'}}
+              <a class="pull-right" href="{{pathFor 'maintenanceReports'}}">{{_ 'go_back'}}</a>
+            </h3>
+          </div>
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>{{_ 'maintenance_instrument'}}</th>
+                  <th class="hidden-xs">{{_ 'maintenance_quantity'}}</th>
+                  <th>{{_ 'maintenance_code'}}</th>
+                  <th class="hidden-xs hidden-sm hidden-md">{{_ 'maintenance_report'}}</th>
+                  <th class="hidden-xs">{{_ 'maintenance_date'}}</th>
+                  <th class="hidden-xs">{{_ 'maintenance_valid_until'}}</th>
+                  <th class="hidden-xs hidden-sm">{{_ 'maintenance_period'}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each maintenances}}
+                  <tr>
+                    <td>{{instrument}}</td>
+                    <td class="hidden-xs">{{quantity}}</td>
+                    <td>{{code}}</td>
+                    <td class="hidden-xs hidden-sm hidden-md">{{report}}</td>
+                    <td class="hidden-xs">{{l date 'L'}}</td>
+                    <td class="hidden-xs">{{l validUntil 'L'}}</td>
+                    <td class="hidden-xs hidden-sm">
+                      {{period}} {{_ 'maintenance_period_unit' count=period}}
+                    </td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
