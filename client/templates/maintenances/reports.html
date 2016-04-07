@@ -18,15 +18,15 @@
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="reports">
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-md-6">
             <button type="button" class="btn btn-default btn-block" data-pdf="master-list">
               <span class="glyphicon glyphicon-file"></span>
               {{_ 'maintenance_master_list'}}
             </button>
 
-            <br class="hidden-lg">
+            <br class="hidden-lg hidden-md">
           </div>
-          <div class="col-lg-4">
+          <div class="col-md-6">
             {{#if disableStatus}}
               <button type="button" class="btn btn-default btn-block disabled">
                 {{_ 'maintenance_status'}}
@@ -37,14 +37,7 @@
               </a>
             {{/if}}
 
-            <br class="hidden-lg">
-          </div>
-          <div class="col-lg-4">
-            <button type="button" class="btn btn-default btn-block">
-              {{_ 'maintenance_preventive'}}
-            </button>
-
-            <br class="hidden-lg">
+            <br class="hidden-lg hidden-md">
           </div>
         </div>
       </div>
