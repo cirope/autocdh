@@ -25,8 +25,18 @@ var table = function () {
   return { data: data, headers: headers }
 }
 
-Template.maintenanceReports.events({
-  'click [data-pdf="master-list"]': function () {
+Template.maintenanceMasterList.helpers({
+  instrument: function () {
+    return Instruments.findOne(this.instrumentId).name
+  },
+
+  type: function () {
+    return TAPi18n.__('maintenance_' + this.type)
+  }
+})
+
+Template.maintenanceMasterList.events({
+  'click [data-download-pdf]': function () {
     var yPosition    = 20
     var tableData    = table()
 

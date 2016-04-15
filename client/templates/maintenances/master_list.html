@@ -1,0 +1,69 @@
+<template name="maintenanceMasterList">
+  <div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation">
+        <a href="{{pathFor 'maintenances'}}">
+          {{_ 'maintenance_list_title'}}
+        </a>
+      </li>
+      <li role="presentation" class="active">
+        <a href="{{pathFor 'maintenanceReports'}}">
+          {{_ 'maintenance_reports_title'}}
+        </a>
+      </li>
+    </ul>
+
+    <br>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="maintenances">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{_ 'maintenance_master_list'}}
+              <a class="pull-right" href="{{pathFor 'maintenanceReports'}}">{{_ 'go_back'}}</a>
+            </h3>
+          </div>
+          <div class="panel-body">
+            <button type="button" class="btn btn-xs btn-default pull-right" data-download-pdf>
+              <span class="glyphicon glyphicon-file"></span>
+              {{_ 'download_pdf'}}
+            </button>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th class="hidden-xs">{{_ 'maintenance_type'}}</th>
+                  <th>{{_ 'maintenance_code'}}</th>
+                  <th>{{_ 'maintenance_instrument'}}</th>
+                  <th class="hidden-xs hidden-sm hidden-md">{{_ 'maintenance_brand'}}</th>
+                  <th class="hidden-xs hidden-sm hidden-md">{{_ 'maintenance_characteristics'}}</th>
+                  <th class="hidden-xs">{{_ 'maintenance_quantity'}}</th>
+                  <th class="hidden-xs hidden-sm">{{_ 'maintenance_period'}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each maintenances}}
+                  <tr>
+                    <td class="hidden-xs">{{type}}</td>
+                    <td>{{code}}</td>
+                    <td>{{instrument}}</td>
+                    <td class="hidden-xs hidden-sm hidden-md">{{brand}}</td>
+                    <td class="hidden-xs hidden-sm hidden-md">{{characteristics}}</td>
+                    <td class="hidden-xs">{{quantity}}</td>
+                    <td class="hidden-xs hidden-sm">
+                      {{period}} {{_ 'maintenance_period_unit' count=period}}
+                    </td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+            <button type="button" class="btn btn-default" data-download-pdf>
+              <span class="glyphicon glyphicon-file"></span>
+              {{_ 'download_pdf'}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
