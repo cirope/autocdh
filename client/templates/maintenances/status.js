@@ -33,8 +33,8 @@ Template.maintenanceStatus.helpers({
 
 Template.maintenanceStatus.events({
   'click [data-download-pdf]': function () {
-    var yPosition    = 20
-    var tableData    = table()
+    var yPosition = 20
+    var tableData = table()
 
     PDF.new({}, function (doc) {
       doc
