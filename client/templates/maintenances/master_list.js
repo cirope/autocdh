@@ -2,8 +2,8 @@ var table = function () {
   var data    = null
   var headers = [
     { name: 'type',            prompt: TAPi18n.__('maintenance_type'),            width: 35 },
-    { name: 'code',            prompt: TAPi18n.__('maintenance_code'),            width: 35 },
-    { name: 'instrument',      prompt: TAPi18n.__('maintenance_instrument'),      width: 55 },
+    { name: 'code',            prompt: TAPi18n.__('maintenance_code_short'),      width: 20 },
+    { name: 'instrument',      prompt: TAPi18n.__('maintenance_instrument'),      width: 70 },
     { name: 'brand',           prompt: TAPi18n.__('maintenance_brand'),           width: 20 },
     { name: 'characteristics', prompt: TAPi18n.__('maintenance_characteristics'), width: 30 },
     { name: 'quantity',        prompt: TAPi18n.__('maintenance_quantity'),        width: 20 },
