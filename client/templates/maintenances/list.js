@@ -6,7 +6,7 @@ Template.maintenancesList.helpers({
   displayWarning: function () {
     var warningDate = moment().add(15, 'days')
 
-    return this.validUntil && warningDate.isAfter(this.validUntil)
+    return this.active && this.validUntil && warningDate.isAfter(this.validUntil)
   },
 
   labelClass: function () {

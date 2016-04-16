@@ -19,9 +19,15 @@
       <div role="tabpanel" class="tab-pane active" id="reports">
         <div class="row">
           <div class="col-md-6">
-            <a href="{{pathFor 'maintenanceMasterList'}}" class="btn btn-default btn-block">
-              {{_ 'maintenance_master_list'}}
-            </a>
+            {{#if disableMasterList}}
+              <button type="button" class="btn btn-default btn-block disabled">
+                {{_ 'maintenance_master_list'}}
+              </button>
+            {{else}}
+              <a href="{{pathFor 'maintenanceMasterList'}}" class="btn btn-default btn-block">
+                {{_ 'maintenance_master_list'}}
+              </a>
+            {{/if}}
 
             <br class="hidden-lg hidden-md">
           </div>

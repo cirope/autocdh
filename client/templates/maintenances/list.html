@@ -50,7 +50,7 @@
               </thead>
               <tbody>
                 {{#each maintenances}}
-                  <tr>
+                  <tr class="{{#unless active}}strike{{/unless}}">
                     <td>
                       {{#if displayWarning}}
                         <span class="label {{labelClass}}">
@@ -64,7 +64,15 @@
                     <td class="hidden-xs hidden-sm hidden-md"><a href="{{pathFor 'maintenance'}}">{{brand}}</a></td>
                     <td class="hidden-xs hidden-sm"><a href="{{pathFor 'maintenance'}}">{{serial}}</a></td>
                     <td class="hidden-xs hidden-sm hidden-md"><a href="{{pathFor 'maintenance'}}">{{characteristics}}</a></td>
-                    <td class="hidden-xs"><a href="{{pathFor 'maintenance'}}">{{date}}</a></td>
+                    <td class="hidden-xs">
+                      <a href="{{pathFor 'maintenance'}}">
+                        {{#if active}}
+                          {{date}}
+                        {{else}}
+                          {{_ 'maintenance_not_active'}}
+                        {{/if}}
+                      </a>
+                    </td>
                     <td class="hidden-xs hidden-sm">
                       {{#if period}}
                         <a href="{{pathFor 'maintenance'}}">{{period}} {{_ 'maintenance_period_unit' count=period}}</a>

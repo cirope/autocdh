@@ -284,6 +284,8 @@
   "maintenance_period": "Period",
   "maintenance_valid_until": "Valid until",
   "maintenance_valid_until_short": "Valid until",
+  "maintenance_reason": "Reason",
+  "maintenance_not_active": "Not active",
   "maintenance_list_title": "Maintenances",
   "maintenance_reports_title": "Reports",
   "maintenance_master_list": "Master list",

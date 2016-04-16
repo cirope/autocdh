@@ -284,6 +284,8 @@
   "maintenance_period": "Período de calibración",
   "maintenance_valid_until": "Fecha de fin de calibración",
   "maintenance_valid_until_short": "Fin de calibración",
+  "maintenance_reason": "Causas de baja del instrumental",
+  "maintenance_not_active": "Dado de baja",
   "maintenance_list_title": "Carga, consulta y modificación",
   "maintenance_reports_title": "Informes",
   "maintenance_master_list": "Lista maestra de instrumentos",

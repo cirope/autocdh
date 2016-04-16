@@ -10,7 +10,7 @@ var table = function () {
     { name: 'period',          prompt: TAPi18n.__('maintenance_period'),          width: 40 }
   ]
 
-  data = Maintenances.find().map(function (maintenance) {
+  data = Maintenances.find({ active: true }).map(function (maintenance) {
     maintenance.type            = TAPi18n.__('maintenance_' + maintenance.type)
     maintenance.code            = maintenance.code || ''
     maintenance.instrument      = Instruments.findOne(maintenance.instrumentId).name

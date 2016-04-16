@@ -1,3 +1,4 @@
+var deactivating = new ReactiveVar
 var table = function () {
   var table   = $('[data-table="checklist"]')
   var headers = []
@@ -38,7 +39,15 @@ Template.maintenance.helpers({
     var instrument = Instruments.findOne(this.instrumentId)
 
     return 'maintenanceChecklist' + instrument.checklist
+  },
+
+  deactivating: function () {
+    return deactivating.get()
   }
+})
+
+Template.maintenance.onDestroyed(function () {
+  deactivating.set()
 })
 
 Template.maintenance.events({
@@ -71,5 +80,30 @@ Template.maintenance.events({
 
       doc.save(TAPi18n.__('maintenance_checklist') + '.pdf')
     })
+  },
+
+  'click [data-deactivate]': function (event, template) {
+    deactivating.set(true)
+  },
+
+  'click [data-cancel]': function (event, template) {
+    event.preventDefault()
+    deactivating.set()
+  }
+})
+
+AutoForm.addHooks('deactivateMaintenanceForm', {
+  before: {
+    'method-update': function (doc, b) {
+      if (confirm(TAPi18n.__('confirm_delete'))) {
+        delete doc.$unset
+
+        return {
+          $set: _.extend(doc.$set, { active: false })
+        }
+      } else {
+        return false
+      }
+    }
   }
 })

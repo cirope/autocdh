@@ -61,13 +61,32 @@
         <strong>{{l validUntil 'L'}}</strong>
       </p>
 
-      <a href="{{pathFor 'maintenanceEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'maintenance_update_title'}}">
-        {{_ 'edit'}}
-      </a>
+      {{#if active}}
+        {{#if deactivating}}
+          {{#autoForm collection='Maintenances' id='deactivateMaintenanceForm' type='method-update' meteormethod='updateMaintenance' doc=..}}
+            <fieldset>
+              {{> afQuickField name='reason' autofocus=true}}
+              {{> afQuickField name='active' value=false}}
+            </fieldset>
 
-      <button class="btn btn-sm btn-danger" type="button" data-delete>
-        {{_ 'maintenance_deactivate'}}
-      </button>
+            <a href="#" class="pull-right" data-cancel>{{_ 'cancel'}}</a>
+            <button type="submit" class="btn btn-danger">{{_ 'maintenance_deactivate'}}</button>
+          {{/autoForm}}
+        {{else}}
+          <a href="{{pathFor 'maintenanceEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'maintenance_update_title'}}">
+            {{_ 'edit'}}
+          </a>
+
+          <button class="btn btn-sm btn-danger" type="button" data-deactivate>
+            {{_ 'maintenance_deactivate'}}
+          </button>
+        {{/if}}
+      {{else}}
+        <p>
+          {{_ 'maintenance_reason'}} /
+          <strong>{{reason}}</strong>
+        </p>
+      {{/if}}
     </div>
   </div>
 

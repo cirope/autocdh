@@ -99,6 +99,10 @@ label {
   border: none;
 }
 
+.strike {
+  text-decoration: line-through;
+}
+
 .visible-on-hover {
   visibility: hidden;
 }
