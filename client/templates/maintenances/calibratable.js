@@ -23,15 +23,18 @@ var events = {
   },
 
   'change [name="type"]': function (event, template) {
-    var value     = $(event.currentTarget).val()
-    var $quantity = template.$('[name="quantity"]')
+    var value = $(event.currentTarget).val()
 
     selectedType.set(value)
 
-    if (value === 'calibratable')
-      $quantity.val('1').prop('readonly', true).trigger('change')
-    else
-      $quantity.val('').prop('readonly', false).trigger('change')
+    setTimeout(function () {
+      var $quantity = template.$('[name="quantity"]')
+
+      if (value === 'calibratable')
+        $quantity.val('1').prop('readonly', true)
+      else
+        $quantity.val('').prop('readonly', false)
+    }, 300)
   }
 }
 
