@@ -1,0 +1,46 @@
+<template name="maintenanceChecklist1">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{_ 'maintenance_checklist'}}</h3>
+    </div>
+
+    <div class="panel-body">
+      <div class="pull-right">
+        <button class="btn btn-default btn-sm" type="button" data-download-pdf>
+          <span class="glyphicon glyphicon-file"></span>
+          {{_ 'download_pdf'}}
+        </button>
+      </div>
+
+      <ul class="list-unstyled">
+        <li>{{_ 'maintenance_checklist_date'}}:</li>
+        <li>{{_ 'maintenance_checklist_made_by'}}:</li>
+      </ul>
+
+      <div class="table-responsive">
+        <table class="table table-bordered" data-table="checklist">
+          <thead>
+            <tr>
+              <th>{{_ 'maintenance_code'}}</th>
+              <th>{{_ 'maintenance_quantity'}}</th>
+              <th>{{_ 'maintenance_checklist_status'}}</th>
+              <th>{{_ 'maintenance_checklist_cleaning'}}</th>
+              <th>{{_ 'maintenance_checklist_defects'}}</th>
+              <th>{{_ 'maintenance_checklist_observations'}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{code}}</td>
+              <td>{{quantity}}</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
