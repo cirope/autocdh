@@ -64,7 +64,9 @@
 
             {{_ 'maintenance_file'}} /
             {{#if fileId}}
-              <a href="{{file.url}}">{{_ 'download_file'}}</a>
+              <a href="{{file.url}}" target="_blank">
+                {{_ 'download_file'}}
+              </a>
             {{/if}}
           </p>
         </div>
