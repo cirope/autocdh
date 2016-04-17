@@ -3,6 +3,8 @@
   "container_search_empty": "No se encontraron recipientes con el criterio",
   "customer_search_placeholder": "Buscar cliente...",
   "customer_search_empty": "No se encontraron clientes con el criterio",
+  "formula_search_placeholder": "Buscar dosificación...",
+  "formula_search_empty": "No se encontraron dosificaciones con el criterio",
   "truck_search_placeholder": "Buscar camión...",
   "truck_driver_search_placeholder": "Buscar chofer...",
   "truck_search_empty": "No se encontraron camiones con el criterio",

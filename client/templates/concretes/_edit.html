@@ -11,6 +11,7 @@
     <div class="panel-body">
       {{#autoForm collection='Concretes' id='editConcreteForm' validation='blur' type='method-update' meteormethod='updateConcrete' doc=concrete}}
         <fieldset disabled={{disabled}}>
+          {{> formulaSearch}}
           {{> afFieldInput name='sampleId' value=sample._id}}
           {{> afQuickField name='strengthId' options=strengthOptions}}
           {{> afQuickField name='download' firstOption=false}}

@@ -9,6 +9,7 @@
     <div class="panel-body">
       {{#autoForm collection='Concretes' id='newConcreteForm' validation='blur' type='method' meteormethod='createConcrete' doc=concrete}}
         <fieldset>
+          {{> formulaSearch}}
           {{> afFieldInput name='sampleId' value=sample._id}}
           {{> afQuickField name='strengthId' firstOption=firstOptionForSelect}}
           {{> afQuickField name='download' firstOption=firstOptionForSelect}}
