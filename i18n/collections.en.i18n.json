@@ -285,6 +285,8 @@
   "maintenance_valid_until": "Valid until",
   "maintenance_valid_until_short": "Valid until",
   "maintenance_reason": "Reason",
+  "maintenance_file": "File",
+  "maintenance_attach_file": "Attach",
   "maintenance_not_active": "Not active",
   "maintenance_list_title": "Maintenances",
   "maintenance_reports_title": "Reports",

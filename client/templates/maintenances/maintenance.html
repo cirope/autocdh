@@ -29,6 +29,10 @@
             {{_ 'maintenance_date'}} /
             <strong>{{l date 'L'}}</strong>
           </p>
+          <p>
+            {{_ 'maintenance_valid_until'}} /
+            <strong>{{l validUntil 'L'}}</strong>
+          </p>
         </div>
         <div class="col-md-6">
           <p>
@@ -53,13 +57,18 @@
               <strong>{{period}} {{_ 'maintenance_period_unit' count=period}}</strong>
             {{/if}}
           </p>
+          <p>
+            <div class="pull-right">
+              {{> maintenanceFile}}
+            </div>
+
+            {{_ 'maintenance_file'}} /
+            {{#if fileId}}
+              <a href="{{file.url}}">{{_ 'download_file'}}</a>
+            {{/if}}
+          </p>
         </div>
       </div>
-
-      <p>
-        {{_ 'maintenance_valid_until'}} /
-        <strong>{{l validUntil 'L'}}</strong>
-      </p>
 
       {{#if active}}
         {{#if deactivating}}
@@ -69,8 +78,12 @@
               {{> afQuickField name='active' value=false}}
             </fieldset>
 
-            <a href="#" class="pull-right" data-cancel>{{_ 'cancel'}}</a>
-            <button type="submit" class="btn btn-danger">{{_ 'maintenance_deactivate'}}</button>
+            <a href="#" class="pull-right" data-cancel="deactivating">
+              {{_ 'cancel'}}
+            </a>
+            <button type="submit" class="btn btn-danger">
+              {{_ 'maintenance_deactivate'}}
+            </button>
           {{/autoForm}}
         {{else}}
           <a href="{{pathFor 'maintenanceEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'maintenance_update_title'}}">

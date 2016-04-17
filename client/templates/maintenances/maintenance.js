@@ -1,5 +1,5 @@
 var deactivating = new ReactiveVar
-var table = function () {
+var table        = function () {
   var table   = $('[data-table="checklist"]')
   var headers = []
   var data    = []
@@ -29,6 +29,10 @@ var table = function () {
 Template.maintenance.helpers({
   instrument: function () {
     return Instruments.findOne(this.instrumentId).name
+  },
+
+  file: function () {
+    return Files.findOne(this.fileId)
   },
 
   type: function () {
@@ -86,7 +90,7 @@ Template.maintenance.events({
     deactivating.set(true)
   },
 
-  'click [data-cancel]': function (event, template) {
+  'click [data-cancel="deactivating"]': function (event, template) {
     event.preventDefault()
     deactivating.set()
   }
