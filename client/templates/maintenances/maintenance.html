@@ -25,14 +25,16 @@
             {{_ 'maintenance_characteristics'}} /
             <strong>{{characteristics}}</strong>
           </p>
-          <p>
-            {{_ 'maintenance_date'}} /
-            <strong>{{l date 'L'}}</strong>
-          </p>
-          <p>
-            {{_ 'maintenance_valid_until'}} /
-            <strong>{{l validUntil 'L'}}</strong>
-          </p>
+          {{#if isCalibratable}}
+            <p>
+              {{_ 'maintenance_date'}} /
+              <strong>{{l date 'L'}}</strong>
+            </p>
+            <p>
+              {{_ 'maintenance_valid_until'}} /
+              <strong>{{l validUntil 'L'}}</strong>
+            </p>
+          {{/if}}
         </div>
         <div class="col-md-6">
           <p>
@@ -47,28 +49,30 @@
             {{_ 'maintenance_quantity'}} /
             <strong>{{quantity}}</strong>
           </p>
-          <p>
-            {{_ 'maintenance_report'}} /
-            <strong>{{report}}</strong>
-          </p>
-          <p>
-            {{_ 'maintenance_period'}} /
-            {{#if period}}
-              <strong>{{period}} {{_ 'maintenance_period_unit' count=period}}</strong>
-            {{/if}}
-          </p>
-          <p>
-            <div class="pull-right">
-              {{> maintenanceFile}}
-            </div>
+          {{#if isCalibratable}}
+            <p>
+              {{_ 'maintenance_report'}} /
+              <strong>{{report}}</strong>
+            </p>
+            <p>
+              {{_ 'maintenance_period'}} /
+              {{#if period}}
+                <strong>{{period}} {{_ 'maintenance_period_unit' count=period}}</strong>
+              {{/if}}
+            </p>
+            <p>
+              <div class="pull-right">
+                {{> maintenanceFile}}
+              </div>
 
-            {{_ 'maintenance_file'}} /
-            {{#if fileId}}
-              <a href="{{file.url}}" target="_blank">
-                {{_ 'download_file'}}
-              </a>
-            {{/if}}
-          </p>
+              {{_ 'maintenance_file'}} /
+              {{#if fileId}}
+                <a href="{{file.url}}" target="_blank">
+                  {{_ 'download_file'}}
+                </a>
+              {{/if}}
+            </p>
+          {{/if}}
         </div>
       </div>
 

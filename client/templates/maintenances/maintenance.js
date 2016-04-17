@@ -39,6 +39,10 @@ Template.maintenance.helpers({
     return TAPi18n.__('maintenance_' + this.type)
   },
 
+  isCalibratable: function () {
+    return this.type === 'calibratable'
+  },
+
   preventiveTemplate: function () {
     var instrument = Instruments.findOne(this.instrumentId)
 
