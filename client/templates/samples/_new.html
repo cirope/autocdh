@@ -10,6 +10,11 @@
     </div>
     <div class="panel-body">
       {{#autoForm collection='Samples' id='newSampleForm' type='method' validation='blur' meteormethod='createSample' doc=sample}}
+        {{#unless disabled}}
+          <div class="clearfix">
+            <button type="submit" class="btn btn-primary btn-xs pull-right">{{_ 'sample_create'}}</button>
+          </div>
+        {{/unless}}
         <fieldset disabled={{disabled}}>
           {{> afQuickField name='name'}}
           {{> afQuickField name='plantId'}}

@@ -8,6 +8,11 @@
     </div>
     <div class="panel-body">
       {{#autoForm collection='Concretes' id='newConcreteForm' validation='blur' type='method' meteormethod='createConcrete' doc=concrete}}
+        {{#unless disabled}}
+          <div class="clearfix">
+            <button type="submit" class="btn btn-primary btn-xs pull-right">{{_ 'concrete_create'}}</button>
+          </div>
+        {{/unless}}
         <fieldset>
           {{> formulaSearch}}
           {{> afFieldInput name='sampleId' value=sample._id}}

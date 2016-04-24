@@ -16,6 +16,9 @@
     </div>
     <div class="panel-body">
       {{#autoForm collection='Assays' id='editAssayForm' validation='blur' type='method-update' meteormethod='updateAssay' doc=..}}
+        <div class="clearfix">
+          <button type="submit" class="btn btn-primary btn-xs pull-right">{{_ 'assay_update'}}</button>
+        </div>
         <fieldset>
           <div class="row">
             <div class="col-md-6">

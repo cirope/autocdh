@@ -10,6 +10,11 @@
     </div>
     <div class="panel-body">
       {{#autoForm collection='Humidities' id='newHumidityForm' validation='blur' type='method' meteormethod='createHumidity' doc=..}}
+        {{#unless disabled}}
+          <div class="clearfix">
+            <button type="submit" class="btn btn-primary btn-xs pull-right">{{_ 'humidity_create'}}</button>
+          </div>
+        {{/unless}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
           <div class="row">

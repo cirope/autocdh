@@ -10,7 +10,11 @@
     </div>
     <div class="panel-body">
       {{#autoForm collection='Receipts' id='editReceiptForm' validation='blur' type='method-update' meteormethod='updateReceipt' doc=receipt}}
-
+        {{#unless disabled}}
+          <div class="clearfix">
+            <button type="submit" class="btn btn-primary btn-xs pull-right">{{_ 'receipt_update'}}</button>
+          </div>
+        {{/unless}}
         <fieldset disabled={{disabled}}>
           {{> afFieldInput name='sampleId' type='hidden'}}
           {{> customerSearch customer=customer}}
