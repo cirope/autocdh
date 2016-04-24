@@ -60,11 +60,9 @@ Template.maintenance.onDestroyed(function () {
 
 Template.maintenance.events({
   'click [data-download-pdf]': function (event, template) {
-    var maintenance = template.data
-    var instrument  = Instruments.findOne(maintenance.instrumentId)
-    var yPosition   = 30
-    var tableData   = table()
-    var title       = TAPi18n.__('maintenance_checklist') + ' - ' + instrument.name
+    var yPosition = 30
+    var tableData = table()
+    var title     = $('[data-table="checklist"]').closest('.panel').find('.panel-title').text()
 
     PDF.new({ orientation: 'l' }, function (doc) {
       doc

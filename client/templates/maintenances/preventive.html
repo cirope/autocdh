@@ -1,0 +1,42 @@
+<template name="maintenancePreventive">
+  <div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation">
+        <a href="{{pathFor 'maintenances'}}">
+          {{_ 'maintenance_list_title'}}
+        </a>
+      </li>
+      <li role="presentation" class="active">
+        <a href="{{pathFor 'maintenanceReports'}}">
+          {{_ 'maintenance_reports_title'}}
+        </a>
+      </li>
+    </ul>
+
+    <br>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="maintenances">
+        <h2>
+          {{_ 'maintenance_preventive_title'}}
+
+          <small class="pull-right">
+            <button type="button" class="btn btn-sm btn-default" data-download-pdf>
+              <span class="glyphicon glyphicon-file"></span>
+              {{_ 'download_pdf'}}
+            </button>
+          </small>
+        </h2>
+
+        {{#each maintenances}}
+          {{> Template.dynamic template=preventiveTemplate data=data}}
+        {{/each}}
+
+        <button type="button" class="btn btn-default" data-download-pdf>
+          <span class="glyphicon glyphicon-file"></span>
+          {{_ 'download_pdf'}}
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

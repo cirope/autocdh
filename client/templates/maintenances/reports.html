@@ -28,9 +28,12 @@
                 {{_ 'maintenance_master_list'}}
               </a>
             {{/if}}
-
-            <br class="hidden-lg hidden-md">
           </div>
+        </div>
+
+        <br>
+
+        <div class="row">
           <div class="col-md-6">
             {{#if disableStatus}}
               <button type="button" class="btn btn-default btn-block disabled">
@@ -41,8 +44,22 @@
                 {{_ 'maintenance_status'}}
               </a>
             {{/if}}
+          </div>
+        </div>
 
-            <br class="hidden-lg hidden-md">
+        <br>
+
+        <div class="row">
+          <div class="col-md-6">
+            {{#if disablePreventive}}
+              <button type="button" class="btn btn-default btn-block disabled">
+                {{_ 'maintenance_preventive'}}
+              </button>
+            {{else}}
+              <a href="{{pathFor 'maintenancePreventive'}}" class="btn btn-default btn-block">
+                {{_ 'maintenance_preventive'}}
+              </a>
+            {{/if}}
           </div>
         </div>
       </div>
