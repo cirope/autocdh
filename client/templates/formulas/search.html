@@ -1,6 +1,6 @@
 <template name="formulaSearch">
   <div class="form-group {{#if afFieldIsInvalid name='formulaId'}}has-error{{/if}}">
-    <label class="control-label" for="formula-search">{{_ 'formula'}}</label>
+    <label class="control-label" for="formula-search">{{_ 'formula_coding_long'}}</label>
     <div class="input-group">
       <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
       {{> inputAutocomplete settings=settings value=formula id='formula-search' class='form-control' autocomplete='off' placeholder=placeholder}}

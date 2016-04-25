@@ -163,6 +163,7 @@
   "formulas": "Dosificaciones de H°",
   "formula": "Dosificación de H°",
   "formula_coding": "Codificación interna",
+  "formula_coding_long": "Codificación interna de dosificación",
   "formula_water": "Agua",
   "formula_concretes": "Aglomerantes",
   "formula_concretes_id": "Aglomerante",
