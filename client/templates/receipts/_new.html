@@ -19,6 +19,9 @@
           {{> afFieldInput name='sampleId' value=sample._id type='hidden'}}
           {{> customerSearch customer=customer}}
           {{> workSearch work=work}}
+          {{#if showStructure}}
+            {{> afQuickField name='structure'}}
+          {{/if}}
           {{> truckSearch truck=truck}}
           <div class="row">
             <div class="col-md-6">

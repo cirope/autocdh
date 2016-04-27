@@ -446,6 +446,7 @@
   "receipt_number": "Número de remito",
   "receipt_number_placeholder": "Ingrese un número...",
   "receipt_volume": "Volumen",
+  "receipt_structure": "Elemento / Estructura",
   "receipt_surplus": "Carga sobre sobrante",
   "receipt_surplus_comment": "Comentario",
   "receipt_create_title": "Datos del cliente y viaje",
