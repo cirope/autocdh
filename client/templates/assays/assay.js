@@ -1,6 +1,8 @@
 Template.assay.helpers({
   tubes: function () {
-    return TAPi18n.__('assay_tubes_' + this.tubes)
+    var tubes = this.tubes.toString().replace('.', '-')
+
+    return TAPi18n.__('assay_tubes_' + tubes)
   },
 
   cured: function () {

@@ -139,18 +139,19 @@ var humidity = function (humidity) {
 }
 
 var assay = function (assay) {
+  var tubes             = assay.tubes.toString().replace('.', '-')
   var otherAssay        = assay.otherAssay ? TAPi18n.__('assay_other_assay_' + assay.otherAssay) : TAPi18n.__('no')
   var observations      = TAPi18n.__('assay_observations') + ': ' + (assay.observations || '')
   var observationsLines = splitInLines(observations)
   var lines             = [
-    TAPi18n.__('assay_settlement')   + ': ' + assay.settlement + ' cm',
-    TAPi18n.__('assay_extended')     + ': ' + TAPi18n.__(assay.extended ? 'yes' : 'no'),
-    TAPi18n.__('assay_designation')  + ': ' + assay.designation,
-    TAPi18n.__('assay_tubes')        + ': ' + TAPi18n.__('assay_tubes_' + assay.tubes),
-    TAPi18n.__('assay_cured')        + ': ' + TAPi18n.__('assay_cured_' + assay.cured),
-    TAPi18n.__('assay_temperature')  + ': ' + (assay.temperature ? assay.temperature + ' °C' : ''),
-    TAPi18n.__('assay_air')          + ': ' + (assay.air ? assay.air + '%' : ''),
-    TAPi18n.__('assay_weight')       + ': ' + (assay.weight ? assay.weight + ' kg/m³' : '')
+    TAPi18n.__('assay_settlement')  + ': ' + assay.settlement + ' cm',
+    TAPi18n.__('assay_extended')    + ': ' + TAPi18n.__(assay.extended ? 'yes' : 'no'),
+    TAPi18n.__('assay_designation') + ': ' + assay.designation,
+    TAPi18n.__('assay_tubes')       + ': ' + TAPi18n.__('assay_tubes_' + tubes),
+    TAPi18n.__('assay_cured')       + ': ' + TAPi18n.__('assay_cured_' + assay.cured),
+    TAPi18n.__('assay_temperature') + ': ' + (assay.temperature ? assay.temperature + ' °C' : ''),
+    TAPi18n.__('assay_air')         + ': ' + (assay.air ? assay.air + '%' : ''),
+    TAPi18n.__('assay_weight')      + ': ' + (assay.weight ? assay.weight + ' kg/m³' : '')
   ]
 
   return lines.concat(observationsLines)
