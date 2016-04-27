@@ -403,6 +403,7 @@
   "settings": "Configuraciones de eficiencia y resistencia",
   "setting_efficiency_desirable": "Valor de eficiencia deseable",
   "setting_efficiency_desirable_low": "Valor de eficiencia mínimo deseable",
+  "setting_resistance_3_days": "% de resistencia a 3 días",
   "setting_resistance_7_days": "% de resistencia a 7 días",
   "setting_create_title": "Agregar una nueva configuración",
   "setting_create": "Guardar",

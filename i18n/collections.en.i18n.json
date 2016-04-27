@@ -403,6 +403,7 @@
   "settings": "Settings",
   "setting_efficiency_desirable": "Desirable efficiency",
   "setting_efficiency_desirable_low": "Desirable efficiency low",
+  "setting_resistance_3_days": "3 days resistance (%)",
   "setting_resistance_7_days": "7 days resistance (%)",
   "setting_create_title": "Add a new setting",
   "setting_create": "Create setting",
