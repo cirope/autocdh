@@ -46,6 +46,10 @@ Template.graphicHardenedConcrete3DaysResistance.onRendered(function () {
 })
 
 Template.graphicHardenedConcrete3DaysResistance.helpers({
+  showGraph: function () {
+    return _.isNumber(this.mean) && ! _.isNaN(this.mean)
+  },
+
   sampleCount: function () {
     updateChart(_.pick(this, 'labels', 'series'))
 
