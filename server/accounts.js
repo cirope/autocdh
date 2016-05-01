@@ -60,19 +60,19 @@ Accounts.onLogin(function (info) {
 
   if (additives.count() === 0) {
     _.each(defaultAdditives, function (additive) {
-      Additives.insert(_.extend(additive, defaults))
+      Additives.insert(_.extend(additive, defaults, { _id: Random.id() }))
     })
   }
 
   if (instruments.count() === 0) {
     _.each(defaultInstruments, function (instrument) {
-      Instruments.insert(_.extend(instrument, defaults))
+      Instruments.insert(_.extend(instrument, defaults, { _id: Random.id() }))
     })
   }
 
   if (settlements.count() === 0) {
     _.each(defaultSettlements, function (settlement) {
-      Settlements.insert(_.extend(settlement, defaults))
+      Settlements.insert(_.extend(settlement, defaults, { id: Random.id() }))
     })
   }
 })
