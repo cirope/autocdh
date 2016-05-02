@@ -20,7 +20,9 @@
           <tr>
             <th>{{_ 'setting_efficiency_desirable'}}</th>
             <th>{{_ 'setting_efficiency_desirable_low'}}</th>
-            <th>{{_ 'setting_resistance_3_days'}}</th>
+            {{#if show3daysResistanceOptions}}
+              <th>{{_ 'setting_resistance_3_days'}}</th>
+            {{/if}}
             <th>{{_ 'setting_resistance_7_days'}}</th>
             <th></th>
           </tr>
@@ -30,7 +32,9 @@
           <tr class="visible-on-hover-parent">
             <td><a href="{{pathFor 'setting'}}">{{efficiencyDesirable}}</a></td>
             <td><a href="{{pathFor 'setting'}}">{{efficiencyDesirableLow}}</a></td>
-            <td><a href="{{pathFor 'setting'}}">{{resistance3Days}}</a></td>
+            {{#if show3daysResistanceOptions}}
+              <td><a href="{{pathFor 'setting'}}">{{resistance3Days}}</a></td>
+            {{/if}}
             <td><a href="{{pathFor 'setting'}}">{{resistance7Days}}</a></td>
             <td class="text-right">
               <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'settingEdit'}}" title="{{_ 'edit'}}">

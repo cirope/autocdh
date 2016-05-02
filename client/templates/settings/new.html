@@ -12,7 +12,9 @@
           <fieldset>
             {{> afQuickField name='efficiencyDesirable'}}
             {{> afQuickField name='efficiencyDesirableLow'}}
-            {{> afQuickField name='resistance3Days'}}
+            {{#if show3daysResistanceOptions}}
+              {{> afQuickField name='resistance3Days'}}
+            {{/if}}
             {{> afQuickField name='resistance7Days'}}
           </fieldset>
 

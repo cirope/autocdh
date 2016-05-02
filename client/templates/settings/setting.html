@@ -16,10 +16,12 @@
           {{_ 'setting_efficiency_desirable_low'}} /
           <strong>{{efficiencyDesirableLow}}</strong>
         </p>
-        <p>
-          {{_ 'setting_resistance_3_days'}} /
-          <strong>{{resistance3Days}}</strong>
-        </p>
+        {{#if show3daysResistanceOptions}}
+          <p>
+            {{_ 'setting_resistance_3_days'}} /
+            <strong>{{resistance3Days}}</strong>
+          </p>
+        {{/if}}
         <p>
           {{_ 'setting_resistance_7_days'}} /
           <strong>{{resistance7Days}}</strong>
