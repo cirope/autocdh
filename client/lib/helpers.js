@@ -45,9 +45,3 @@ Template.registerHelper('overdueMaintenances', function () {
     validUntil: { $lt: new Date }
   }).count()
 })
-
-Template.registerHelper('show3daysResistanceOptions', function () {
-  var settings = Settings.findOne()
-
-  return settings && settings.customOptions && settings.customOptions.show3daysResistanceOptions
-})
