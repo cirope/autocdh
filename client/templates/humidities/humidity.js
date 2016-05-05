@@ -12,7 +12,7 @@ Template.humidity.helpers({
   },
 
   additionalAdditive: function () {
-    var additionalAdditive = (this.hasAdditionalAdditive && this.additionalAdditive) && this.additionalAdditive + ' kg/m³'
+    var additionalAdditive = (this.hasAdditionalAdditive && this.additionalAdditive) && this.additionalAdditive + ' l/m³'
 
     return additionalAdditive || TAPi18n.__('no')
   },
