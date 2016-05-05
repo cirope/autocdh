@@ -11,6 +11,12 @@ Template.humidity.helpers({
     return additionalWater || TAPi18n.__('no')
   },
 
+  additionalAdditive: function () {
+    var additionalAdditive = (this.hasAdditionalAdditive && this.additionalAdditive) && this.additionalAdditive + ' kg/m³'
+
+    return additionalAdditive || TAPi18n.__('no')
+  },
+
   inTruck: function () {
     return TAPi18n.__(this.inTruck ? 'yes' : 'no')
   },
