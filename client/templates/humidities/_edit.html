@@ -74,14 +74,20 @@
             <div class="col-xs-6">
               {{> afQuickField name='hasAdditionalAdditive'}}
             </div>
-            {{#if showAdditionalAdditive}}
-              <div class="col-xs-6">
-                {{> afQuickField name='additionalAdditive' label=false}}
-              </div>
-            {{else}}
-              {{> afFieldInput name='additionalAdditive' type='hidden' value=''}}
-            {{/if}}
           </div>
+          {{#if showAdditionalAdditive}}
+            <div class="row">
+              <div class="col-xs-6">
+                {{> afQuickField name='additionalAdditiveId' firstOption=firstOptionForSelect}}
+              </div>
+              <div class="col-xs-6">
+                {{> afQuickField name='additionalAdditive'}}
+              </div>
+            </div>
+          {{else}}
+            {{> afQuickField name='additionalAdditiveId' type='hidden' value=''}}
+            {{> afFieldInput name='additionalAdditive' type='hidden' value=''}}
+          {{/if}}
         </fieldset>
         {{#unless disabled}}
           <button type="submit" class="btn btn-primary">{{_ 'humidity_update'}}</button>

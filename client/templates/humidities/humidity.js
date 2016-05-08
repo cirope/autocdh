@@ -14,6 +14,9 @@ Template.humidity.helpers({
   additionalAdditive: function () {
     var additionalAdditive = (this.hasAdditionalAdditive && this.additionalAdditive) && this.additionalAdditive + ' l/m³'
 
+    if (this.additionalAdditiveId)
+      additionalAdditive = additionalAdditive + ' (' + Additives.findOne(this.additionalAdditiveId).name + ')'
+
     return additionalAdditive || TAPi18n.__('no')
   },
 
