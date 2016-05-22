@@ -1,0 +1,21 @@
+<template name="afArrayField_tubes">
+  {{#if afFieldIsInvalid name=this.atts.name}}
+    <div class="has-error">
+      <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+    </div>
+  {{/if}}
+
+  {{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+    <div class="row">
+      {{> afObjectField name=this.name template='tubes'}}
+    </div>
+  {{/afEachArrayItem}}
+</template>
+
+<template name="afObjectField_tubes">
+  {{#each afFieldNames name=this.name}}
+    <div class="col-md-{{cols}}">
+      {{> afQuickField quickFieldAtts}}
+    </div>
+  {{/each}}
+</template>

@@ -1,0 +1,67 @@
+<template name="providedCrackNew">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'provided_crack_create_title'}}
+        <a class="pull-right" href="{{backPath}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      {{#autoForm collection='ProvidedCracks' id='newProvidedCrackForm' validation='blur' type='method' meteormethod='createProvidedCrack' doc=providedCrack}}
+        <fieldset>
+          <div class="row">
+            <div class="col-md-6">
+              {{> workSearch work=work}}
+              {{> customerSearch customer=customer}}
+              {{> afQuickField name='quantity'}}
+              {{> afQuickField name='tubeType'}}
+              {{> afQuickField name='defects'}}
+            </div>
+            <div class="col-md-6">
+              {{> afQuickField name='pressId'}}
+              {{> afQuickField name='responsibleId' firstOption=firstOptionForSelect}}
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='date'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='crackDate'}}
+                </div>
+              </div>
+              {{> afQuickField name='headerType'}}
+              {{> afQuickField name='observations'}}
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-2">
+              <strong>{{_ 'provided_crack_tubes_identification'}}</strong>
+            </div>
+            <div class="col-md-2">
+              <strong>{{_ 'provided_crack_tubes_casted_at'}}</strong>
+            </div>
+            <div class="col-md-2">
+              <strong>{{_ 'provided_crack_tubes_cracked_at'}}</strong>
+            </div>
+            <div class="col-md-1">
+              <strong>{{_ 'provided_crack_tubes_diameter'}} (mm)</strong>
+            </div>
+            <div class="col-md-1">
+              <strong>{{_ 'provided_crack_tubes_height'}} (mm)</strong>
+            </div>
+            <div class="col-md-2">
+              <strong>{{_ 'provided_crack_tubes_load'}}</strong>
+            </div>
+            <div class="col-md-2">
+              <strong>{{_ 'provided_crack_tubes_stress'}} (MPa)</strong>
+            </div>
+          </div>
+
+          {{> afQuickField name='tubes'}}
+
+        </fieldset>
+        <button type="submit" class="btn btn-primary">{{_ 'provided_crack_create'}}</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

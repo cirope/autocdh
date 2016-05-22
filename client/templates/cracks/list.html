@@ -10,13 +10,18 @@
   <div role="tabpanel">
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active">
-        <a href="{{pathFor 'cracks'}}" aria-controls="pending" role="tab" data-toggle="tab">
+        <a href="{{pathFor 'cracks'}}">
           {{_ 'crack_pending'}}
         </a>
       </li>
       <li role="presentation">
         <a href="{{pathFor 'cracksCracked'}}">
           {{_ 'crack_cracked'}}
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="{{pathFor 'providedCracks'}}">
+          {{_ 'provided_cracks'}}
         </a>
       </li>
     </ul>

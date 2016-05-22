@@ -1,0 +1,103 @@
+<template name="providedCrack">
+  <div class="panel panel-default hide-on-pdf-export">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'provided_crack'}}
+        <a class="pull-right" href="{{pathFor 'providedCracks'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'work'}} /
+            <strong>{{work}}</strong>
+          </p>
+          <p>
+            {{_ 'customer'}} /
+            <strong>{{customer}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_quantity'}} /
+            <strong>{{quantity}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_tube_type'}} /
+            <strong>{{tubeType}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_defects'}} /
+            <strong>{{defects}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_observations'}} /
+            <strong>{{observations}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'press'}} /
+            <strong>{{press}}</strong>
+          </p>
+          <p>
+            {{_ 'responsible'}} /
+            <strong>{{responsible}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_date'}} /
+            <strong>{{l date 'L'}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_crack_date'}} /
+            <strong>{{l crackDate 'L'}}</strong>
+          </p>
+          <p>
+            {{_ 'provided_crack_header_type'}} /
+            <strong>{{headerType}}</strong>
+          </p>
+        </div>
+      </div>
+
+      <table class="table table-condensed">
+        <thead>
+          <tr>
+            <th>{{_ 'provided_crack_tubes_identification'}}</th>
+            <th>{{_ 'provided_crack_tubes_casted_at'}}</th>
+            <th>{{_ 'provided_crack_tubes_cracked_at'}}</th>
+            <th>{{_ 'provided_crack_tubes_diameter'}}</th>
+            <th>{{_ 'provided_crack_tubes_height'}}</th>
+            <th>{{_ 'provided_crack_tubes_load'}}</th>
+            <th>{{_ 'provided_crack_tubes_stress'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each tubes}}
+            <tr>
+              <td>{{identification}}</td>
+              <td>{{l castedAt 'L'}}</td>
+              <td>{{l crackedAt 'L'}}</td>
+              <td>{{diameter}}</td>
+              <td>{{height}}</td>
+              <td>{{load}}</td>
+              <td>{{stress}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+      <div class="pull-right">
+        <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+          {{_ 'download_pdf'}}
+          <span class="glyphicon glyphicon-file"></span>
+        </button>
+        <a href="{{pathFor 'providedCrackEdit'}}" class="btn btn-sm btn-default" title="{{_ 'provided_crack_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
+
+      <button class="btn btn-sm btn-danger" type="button" data-delete>
+        {{_ 'delete'}}
+      </button>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,75 @@
+<template name="providedCracks">
+  <div role="tabpanel">
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation">
+        <a href="{{pathFor 'cracks'}}">
+          {{_ 'crack_pending'}}
+        </a>
+      </li>
+      <li role="presentation">
+        <a href="{{pathFor 'cracksCracked'}}">
+          {{_ 'crack_cracked'}}
+        </a>
+      </li>
+      <li role="presentation" class="active">
+        <a href="{{pathFor 'providedCracks'}}">
+          {{_ 'provided_cracks'}}
+        </a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div role="tabpanel" class="tab-pane active" id="provided-cracks">
+        <br>
+
+        {{#if providedCracks.count}}
+          {{> providedCracksList}}
+        {{else}}
+          {{> providedCracksEmpty}}
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="providedCracksList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'provided_cracks'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>{{_ 'work'}}</th>
+            <th class="hidden-xs">{{_ 'customer'}}</th>
+            <th class="hidden-sm hidden-xs">{{_ 'provided_crack_quantity'}}</th>
+            <th class="hidden-sm hidden-xs">{{_ 'provided_crack_date'}}</th>
+            <th class="hidden-sm hidden-xs">{{_ 'provided_crack_crack_date'}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each providedCracks}}
+            <tr class="visible-on-hover-parent">
+              <td><a href="{{pathFor 'providedCrack'}}">{{work}}</a></td>
+              <td class="hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{customer}}</a></td>
+              <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{quantity}}</a></td>
+              <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{l date 'L'}}</a></td>
+              <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{l crackDate 'L'}}</a></td>
+              <td class="text-right">
+                <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'providedCrackEdit'}}" title="{{_ 'edit'}}">
+                  {{_ 'edit'}}
+                </a>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <a class="btn btn-primary" href="{{pathFor 'providedCrackNew'}}">{{_ 'provided_crack_new'}}</a>
+    </div>
+  </div>
+</template>
