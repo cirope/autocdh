@@ -23,6 +23,7 @@
             <th>{{_ 'material'}}</th>
             <th>{{_ 'granulometry_date'}}</th>
             <th class="hidden-xs">{{_ 'plant'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'provider'}}</th>
             <th class="text-right">
               <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
                 <span class="glyphicon glyphicon-search"></span>
@@ -46,6 +47,9 @@
             <td class="hidden-xs form-group form-group-sm">
               <input class="form-control" type="text" name="plant" id="plant">
             </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="provider" id="provider">
+            </td>
             <td>
               <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
                 {{_ 'search'}}
@@ -60,6 +64,7 @@
               <td><a href="{{pathFor 'granulometry'}}">{{material}}</a></td>
               <td><a href="{{pathFor 'granulometry'}}">{{l date 'L'}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'granulometry'}}">{{plant plantId}}</a></td>
+              <td class="hidden-xs hidden-sm"><a href="{{pathFor 'granulometry'}}">{{provider providerId}}</a></td>
               <td></td>
             </tr>
           {{else}}

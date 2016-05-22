@@ -9,6 +9,10 @@ Template.granulometriesList.helpers({
     return plantId && Plants.findOne(plantId).name
   },
 
+  provider: function (providerId) {
+    return providerId && Providers.findOne(providerId).name
+  },
+
   material: function () {
     var materialId    = this.materialId
     var materialList  = Materials.first()
@@ -27,7 +31,8 @@ Template.granulometriesList.events({
       name:     template.$('#name').val(),
       material: template.$('#material').val(),
       date:     dateRange && dateRange.join('|'),
-      plant:    template.$('#plant').val()
+      plant:    template.$('#plant').val(),
+      provider: template.$('#provider').val()
     }
 
     Router.go('granulometries', {}, { query: search })
