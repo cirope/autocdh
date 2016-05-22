@@ -58,32 +58,34 @@
         </div>
       </div>
 
-      <table class="table table-condensed">
-        <thead>
-          <tr>
-            <th>{{_ 'provided_crack_tubes_identification'}}</th>
-            <th>{{_ 'provided_crack_tubes_casted_at'}}</th>
-            <th>{{_ 'provided_crack_tubes_cracked_at'}}</th>
-            <th>{{_ 'provided_crack_tubes_diameter'}}</th>
-            <th>{{_ 'provided_crack_tubes_height'}}</th>
-            <th>{{_ 'provided_crack_tubes_load'}}</th>
-            <th>{{_ 'provided_crack_tubes_stress'}}</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each tubes}}
+      <div class="table-responsive">
+        <table class="table table-condensed" data-table="tubes">
+          <thead>
             <tr>
-              <td>{{identification}}</td>
-              <td>{{l castedAt 'L'}}</td>
-              <td>{{l crackedAt 'L'}}</td>
-              <td>{{diameter}}</td>
-              <td>{{height}}</td>
-              <td>{{load}}</td>
-              <td>{{stress}}</td>
+              <th>{{_ 'provided_crack_tubes_identification'}}</th>
+              <th>{{_ 'provided_crack_tubes_casted_at'}}</th>
+              <th>{{_ 'provided_crack_tubes_cracked_at'}}</th>
+              <th>{{_ 'provided_crack_tubes_diameter'}} (mm)</th>
+              <th>{{_ 'provided_crack_tubes_height'}} (mm)</th>
+              <th>{{_ 'provided_crack_tubes_load'}}</th>
+              <th>{{_ 'provided_crack_tubes_stress'}} (MPa)</th>
             </tr>
-          {{/each}}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {{#each tubes}}
+              <tr>
+                <td>{{identification}}</td>
+                <td>{{l castedAt 'L'}}</td>
+                <td>{{l crackedAt 'L'}}</td>
+                <td>{{diameter}}</td>
+                <td>{{height}}</td>
+                <td>{{load}}</td>
+                <td>{{stress}}</td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
 
       <div class="pull-right">
         <button class="btn btn-sm btn-default" type="button" data-download-pdf>
