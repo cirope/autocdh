@@ -1,0 +1,22 @@
+<template name="providerSearch">
+  <div class="form-group {{#if afFieldIsInvalid name='providerId'}}has-error{{/if}}">
+    <label class="control-label" for="provider-search">{{_ 'provider'}}</label>
+    <div class="input-group">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+      {{> inputAutocomplete settings=settings value=provider id='provider-search' class='form-control' autocomplete='off' placeholder=placeholder}}
+      {{> afFieldInput name='providerId' type='hidden'}}
+    </div>
+    <span class="help-block">{{{afFieldMessage name='providerId'}}}</span>
+  </div>
+</template>
+
+<template name="providerPill">
+  <div>{{name}}</div>
+</template>
+
+<template name="emptyProviderPill">
+  <div>{{_ 'provider_search_empty'}} <kbd>{{getFilter}}</kbd></div>
+  {{#if showNewOnEmpty}}
+    <div><a href="#" class="btn btn-xs btn-default pull-right" data-new-provider>{{_ 'provider_new'}}</a></div>
+  {{/if}}
+</template>

@@ -1,0 +1,20 @@
+<template name="providerEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'provider_update_title'}}
+          <a class="pull-right" href="{{pathFor 'provider'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        {{#autoForm collection='Providers' id='editProviderForm' type='method-update' meteormethod='updateProvider' doc=..}}
+          <fieldset>
+            {{> afQuickField name='name' autofocus=true}}
+          </fieldset>
+          <button type="submit" class="btn btn-primary">{{_ 'provider_update'}}</button>
+        {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
