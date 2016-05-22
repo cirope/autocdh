@@ -192,6 +192,8 @@
   "granulometry_type_sand": "Agregado fino",
   "granulometry_type_gravel": "Agregado grueso",
   "granulometry_sample_weight": "Peso total de la muestra antes de su reducción",
+  "granulometry_origin": "Procedencia u origen",
+  "granulometry_receipt": "Remito",
   "granulometry_humidity": "Contenido de humedad",
   "granulometry_humidity_container": "Recipiente",
   "granulometry_humidity_mass_of_container": "Masa del recipiente vacío",

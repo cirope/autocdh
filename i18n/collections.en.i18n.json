@@ -192,6 +192,8 @@
   "granulometry_type_sand": "Sand",
   "granulometry_type_gravel": "Gravel",
   "granulometry_sample_weight": "Sample weight",
+  "granulometry_origin": "Origin",
+  "granulometry_receipt": "Receipt",
   "granulometry_humidity": "Humidity",
   "granulometry_humidity_container": "Container",
   "granulometry_humidity_mass_of_container": "Mass of container",
