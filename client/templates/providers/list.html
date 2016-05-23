@@ -1,0 +1,57 @@
+<template name="providers">
+  {{#if providers.count}}
+    {{> providersList}}
+  {{else}}
+    {{> providersEmpty}}
+  {{/if}}
+</template>
+
+<template name="providersList">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'providers'}}
+          <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'providerNew'}}">{{_ 'provider_new'}}</a>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>{{_ 'provider_name'}}</th>
+              <th class="text-right">
+                <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                  <span class="glyphicon glyphicon-search"></span>
+                </a>
+                <a class="hidden" href="{{pathFor 'providers'}}" title="{{_ 'cancel'}}" data-search-clean>
+                  <span class="glyphicon glyphicon-remove"></span>
+                </a>
+              </th>
+            </tr>
+
+            <tr class="collapse" id="search-filter">
+              <td class="form-group form-group-sm">
+                <input class="form-control" type="text" name="name" id="name">
+              </td>
+              <td>
+                <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                  {{_ 'search'}}
+                </button>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each providers}}
+              <tr class="visible-on-hover-parent">
+                <td colspan="2"><a href="{{pathFor 'provider'}}">{{name}}</a></td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+        <a class="btn btn-primary" href="{{pathFor 'providerNew'}}">{{_ 'provider_new'}}</a>
+      </div>
+    </div>
+  </div>
+</template>

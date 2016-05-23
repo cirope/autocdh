@@ -165,6 +165,10 @@ Template.granulometry.helpers({
     return this.responsibleId && Responsible.findOne(this.responsibleId).name
   },
 
+  provider: function () {
+    return this.providerId && Providers.findOne(this.providerId).name
+  },
+
   plant: function () {
     return this.plantId && Plants.findOne(this.plantId).name
   },

@@ -1,0 +1,4 @@
+{
+  "email_crack_boundaries_subject": "Advertencia en __organization__",
+  "email_crack_boundaries_body": "La rotura de probeta \"__designation__\" programada a __days__ días en __organization__ tiene __value__% del valor de resistencia teórico a 28 días"
+}

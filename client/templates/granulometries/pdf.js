@@ -22,6 +22,18 @@ var putStaticData = function (granulometry, doc, yPosition) {
     .text(plant, 20, yPosition += 5)
     .text(sampleWeight, 100, yPosition)
 
+  var origin  = TAPi18n.__('granulometry_origin')  + ': ' + (granulometry.origin  || '')
+  var receipt = TAPi18n.__('granulometry_receipt') + ': ' + (granulometry.receipt || '')
+
+  doc
+    .text(origin, 20, yPosition += 5)
+    .text(receipt, 100, yPosition)
+
+  var provider = TAPi18n.__('provider')  + ': ' + (granulometry.providerId && Providers.findOne(granulometry.providerId).name || '')
+
+  doc
+    .text(provider, 20, yPosition += 5)
+
   if (granulometry.humidity)
     doc.text(TAPi18n.__('granulometry_humidity'), 20, yPosition += 5)
 
@@ -112,7 +124,7 @@ var putGraphImage = function (doc, yPosition, callback) {
 
   rasterizeHTML.drawHTML(html, canvas).then(function (result) {
     var data   = canvas.toDataURL('image/png')
-    var factor = 5.5
+    var factor = 6
 
     doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
 

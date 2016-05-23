@@ -1,0 +1,30 @@
+<template name="provider">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'provider'}}
+          <a class="pull-right" href="{{pathFor 'providers'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'provider_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+
+        <div class="pull-right">
+          <a href="{{pathFor 'providerEdit'}}" class="btn btn-sm btn-default" title="{{_ 'provider_update_title'}}">
+            {{_ 'edit'}}
+          </a>
+        </div>
+
+        {{#unless hasGranulometries}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/unless}}
+      </div>
+    </div>
+  </div>
+</template>
