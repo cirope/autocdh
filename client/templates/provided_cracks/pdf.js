@@ -70,6 +70,10 @@ Template.providedCrack.events({
     var providedCrack = template.data
     var yPosition     = 20
     var tableData     = table()
+    var customerName  = Customers.findOne(providedCrack.customerId).name
+    var fileName      = TAPi18n.__('provided_crack') + ' - ' +
+      customerName + ' - ' +
+      moment(providedCrack.date).format('DD-MM-YYYY')
 
     PDF.new({}, function (doc) {
       doc
@@ -89,7 +93,7 @@ Template.providedCrack.events({
           fontSize: 7
         })
 
-      doc.save(TAPi18n.__('provided_crack') + '.pdf')
+      doc.save(fileName + '.pdf')
     })
   }
 })
