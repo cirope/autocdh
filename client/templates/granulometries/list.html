@@ -21,6 +21,7 @@
           <tr>
             <th>{{_ 'granulometry_name'}}</th>
             <th>{{_ 'material'}}</th>
+            <th class="hidden-xs hidden-sm">{{_ 'granulometry_test_fineness'}}</th>
             <th>{{_ 'granulometry_date'}}</th>
             <th class="hidden-xs">{{_ 'plant'}}</th>
             <th class="hidden-xs hidden-sm">{{_ 'provider'}}</th>
@@ -40,6 +41,9 @@
             </td>
             <td class="form-group form-group-sm">
               <input class="form-control" type="text" name="material" id="material">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="fineness" id="fineness">
             </td>
             <td class="form-group form-group-sm">
               <input class="form-control" type="text" name="date" id="date">
@@ -62,6 +66,7 @@
             <tr>
               <td><a href="{{pathFor 'granulometry'}}">{{name}}</a></td>
               <td><a href="{{pathFor 'granulometry'}}">{{material}}</a></td>
+              <td class="hidden-xs hidden-sm"><a href="{{pathFor 'granulometry'}}">{{r fineness 2}}</a></td>
               <td><a href="{{pathFor 'granulometry'}}">{{l date 'L'}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'granulometry'}}">{{plant plantId}}</a></td>
               <td class="hidden-xs hidden-sm"><a href="{{pathFor 'granulometry'}}">{{provider providerId}}</a></td>
@@ -69,7 +74,7 @@
             </tr>
           {{else}}
             <tr>
-              <td colspan="5">
+              <td colspan="7">
                 <div class="alert alert-info">
                   {{_ 'search_with_no_results'}}
                 </div>

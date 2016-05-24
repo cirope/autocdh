@@ -1,5 +1,5 @@
 <template name="formulas">
-  {{#if formulas.count}}
+  {{#if showList}}
     {{> formulasList}}
   {{else}}
     {{> formulasEmpty}}
@@ -23,7 +23,42 @@
             <th class="hidden-sm hidden-xs">{{_ 'download'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'aggregate'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'settlement'}}</th>
-            <th></th>
+            <th class="text-right">
+              <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                <span class="glyphicon glyphicon-search"></span>
+              </a>
+              <a class="hidden" href="{{pathFor 'formulas'}}" title="{{_ 'cancel'}}" data-search-clean>
+                <span class="glyphicon glyphicon-remove"></span>
+              </a>
+            </th>
+          </tr>
+
+          <tr class="collapse" id="search-filter">
+            <td class="form-group form-group-sm">
+              <input class="form-control" type="text" name="coding" id="coding">
+            </td>
+            <td class="hidden-xs form-group form-group-sm">
+              <input class="form-control" type="text" name="strength" id="strength">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <select class="form-control" name="download" id="download">
+                <option value="">{{_ 'graphic_filter_all'}}</option>
+                {{#each downloadOptions}}
+                  <option value="{{value}}">{{label}}</option>
+                {{/each}}
+              </select>
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="aggregate" id="aggregate">
+            </td>
+            <td class="hidden-xs hidden-sm form-group form-group-sm">
+              <input class="form-control" type="text" name="settlement" id="settlement">
+            </td>
+            <td>
+              <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                {{_ 'search'}}
+              </button>
+            </td>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +73,14 @@
                 <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'formulaEdit'}}" title="{{_ 'edit'}}">
                   {{_ 'edit'}}
                 </a>
+              </td>
+            </tr>
+          {{else}}
+            <tr>
+              <td colspan="6">
+                <div class="alert alert-info">
+                  {{_ 'search_with_no_results'}}
+                </div>
               </td>
             </tr>
           {{/each}}

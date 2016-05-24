@@ -30,6 +30,7 @@ Template.granulometriesList.events({
     var search = {
       name:     template.$('#name').val(),
       material: template.$('#material').val(),
+      fineness: template.$('#fineness').val(),
       date:     dateRange && dateRange.join('|'),
       plant:    template.$('#plant').val(),
       provider: template.$('#provider').val()
