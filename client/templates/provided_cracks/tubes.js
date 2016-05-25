@@ -11,6 +11,6 @@ Template.afObjectField_tubes.helpers({
   cols: function () {
     var name = this.name.replace(/tubes\.\d+\./, '')
 
-    return _.contains(['diameter', 'height'], name) && '1' || '2'
+    return _.contains(['diameter', 'height', 'age', 'load'], name) && '1' || '2'
   }
 })

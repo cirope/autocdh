@@ -12,7 +12,7 @@ var putStaticData = function (providedCrack, doc, yPosition) {
   var customer    = TAPi18n.__('customer')                  + ': ' + Customers.findOne(providedCrack.customerId).name
   var press       = TAPi18n.__('press')                     + ': ' + Presses.findOne(providedCrack.pressId).name
   var responsible = TAPi18n.__('responsible')               + ': ' + Responsible.findOne(providedCrack.responsibleId).name
-  var date        = TAPi18n.__('provided_crack_date')       + ': ' + moment(providedCrack.date).format('L')
+  var date        = TAPi18n.__('provided_crack_date')       + ': ' + providedCrack.date && moment(providedCrack.date).format('L')
   var crackDate   = TAPi18n.__('provided_crack_crack_date') + ': ' + moment(providedCrack.crackDate).format('L')
 
   var tubeType    = providedCrack.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : providedCrack.tubeType
@@ -44,7 +44,7 @@ var table = function () {
   var table   = $('[data-table="tubes"]')
   var headers = []
   var data    = []
-  var widths  = [30, 35, 40, 25, 25, 40, 40]
+  var widths  = [24, 35, 33, 25, 25, 21, 35, 39]
 
   table.find('thead th').each(function (i, element) {
     var header = $(element).text()

@@ -389,6 +389,8 @@
   "provided_crack_tubes_casted_at": "Casted at",
   "provided_crack_tubes_cracked_at": "Cracked at",
   "provided_crack_tubes_age": "Age",
+  "provided_crack_tubes_age_with_unit": "__count__ day",
+  "provided_crack_tubes_age_with_unit_plural": "__count__ days",
   "provided_crack_tubes_diameter": "Diameter",
   "provided_crack_tubes_height": "Height",
   "provided_crack_tubes_load": "Load",

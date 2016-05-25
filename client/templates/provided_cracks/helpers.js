@@ -109,6 +109,18 @@ var events = {
 
     providedCrack.set(_.extend(providedCrack.get(), { crackDate: newDate }))
     setInAllTubes({ crackedAt: moment(crackDate, 'L').toDate() })
+  },
+
+
+  'dp.change [name$=".castedAt"], dp.change [name$=".crackedAt"]': function (event, template) {
+    var $element  = template.$(event.currentTarget)
+    var index     = +$element.prop('name').split('.')[1]
+    var castedAt  = moment(template.$('[name="tubes.' + index + '.castedAt"]').val(), 'L')
+    var crackedAt = moment(template.$('[name="tubes.' + index + '.crackedAt"]').val(), 'L')
+    var age       = crackedAt.diff(castedAt, 'days')
+
+    if (age)
+      template.$('[name="tubes.' + index + '.age"]').val(age).trigger('change')
   }
 }
 

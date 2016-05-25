@@ -21,6 +21,10 @@ Template.providedCrack.helpers({
 
   tubeType: function () {
     return this.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : this.tubeType
+  },
+
+  age: function () {
+    return this.age && TAPi18n.__('provided_crack_tubes_age_with_unit', { count: this.age })
   }
 })
 
