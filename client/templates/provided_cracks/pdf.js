@@ -8,8 +8,8 @@ var name = function (providedCrack) {
 }
 
 var putStaticData = function (providedCrack, doc, yPosition) {
-  var work        = TAPi18n.__('work')                      + ': ' + Works.findOne(providedCrack.workId).name
   var customer    = TAPi18n.__('customer')                  + ': ' + Customers.findOne(providedCrack.customerId).name
+  var work        = TAPi18n.__('work')                      + ': ' + Works.findOne(providedCrack.workId).name
   var press       = TAPi18n.__('press')                     + ': ' + Presses.findOne(providedCrack.pressId).name
   var responsible = TAPi18n.__('responsible')               + ': ' + Responsible.findOne(providedCrack.responsibleId).name
   var date        = TAPi18n.__('provided_crack_date')       + ': ' + providedCrack.date && moment(providedCrack.date).format('L')
@@ -19,9 +19,9 @@ var putStaticData = function (providedCrack, doc, yPosition) {
   var headerType  = TAPi18n.__('provided_crack_header_type_' + providedCrack.headerType)
 
   doc
-    .text(work, 20, yPosition += 5)
-    .text(press, 100, yPosition)
     .text(customer, 20, yPosition += 5)
+    .text(press, 100, yPosition)
+    .text(work, 20, yPosition += 5)
     .text(responsible, 100, yPosition)
 
   doc

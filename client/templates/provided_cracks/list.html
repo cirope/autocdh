@@ -44,8 +44,8 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>{{_ 'work'}}</th>
-            <th class="hidden-xs">{{_ 'customer'}}</th>
+            <th>{{_ 'customer'}}</th>
+            <th class="hidden-xs">{{_ 'work'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'provided_crack_quantity'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'provided_crack_date'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'provided_crack_crack_date'}}</th>
@@ -55,8 +55,8 @@
         <tbody>
           {{#each providedCracks}}
             <tr class="visible-on-hover-parent">
-              <td><a href="{{pathFor 'providedCrack'}}">{{work}}</a></td>
-              <td class="hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{customer}}</a></td>
+              <td><a href="{{pathFor 'providedCrack'}}">{{customer}}</a></td>
+              <td class="hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{work}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{quantity}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{l date 'L'}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{l crackDate 'L'}}</a></td>

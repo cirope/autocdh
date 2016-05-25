@@ -3,7 +3,7 @@
     <div class="panel-heading">
       <h3 class="panel-title">
         {{_ 'provided_crack_create_title'}}
-        <a class="pull-right" href="{{backPath}}">{{_ 'go_back'}}</a>
+        <a class="pull-right" href="{{pathFor 'providedCracks'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
     <div class="panel-body">
@@ -11,8 +11,8 @@
         <fieldset>
           <div class="row">
             <div class="col-md-6">
-              {{> workSearch work=work}}
               {{> customerSearch customer=customer}}
+              {{> workSearch work=work}}
               {{> afQuickField name='quantity'}}
               {{> afQuickField name='tubeType'}}
               {{> afQuickField name='defects'}}
