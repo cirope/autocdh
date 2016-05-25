@@ -1,20 +1,3 @@
-var split = function (string, limit) {
-  return string.split(/\s+/).reduce(function (previous, current) {
-    if (previous.length && (previous[previous.length - 1] + ' ' + current).length <= limit)
-      previous[previous.length - 1] += ' ' + current
-    else
-      previous.push(current)
-
-    return previous
-  }, [])
-}
-
-var splitInLines = function (string) {
-  return _.flatten(_.map(string.split(/\r?\n/), function (line) {
-    return split(line, 90)
-  }))
-}
-
 var sample = function (sample) {
   return [
     TAPi18n.__('plant')              + ': ' + Plants.findOne(sample.plantId).name,
@@ -142,7 +125,7 @@ var assay = function (assay) {
   var tubes             = assay.tubes.toString().replace('.', '-')
   var otherAssay        = assay.otherAssay ? TAPi18n.__('assay_other_assay_' + assay.otherAssay) : TAPi18n.__('no')
   var observations      = TAPi18n.__('assay_observations') + ': ' + (assay.observations || '')
-  var observationsLines = splitInLines(observations)
+  var observationsLines = PDF.splitInLines(observations)
   var lines             = [
     TAPi18n.__('assay_settlement')  + ': ' + assay.settlement + ' cm',
     TAPi18n.__('assay_extended')    + ': ' + TAPi18n.__(assay.extended ? 'yes' : 'no'),
@@ -164,7 +147,7 @@ var cracks = function (cracks) {
 
   cracks.forEach(function (crack, i) {
     var sibling           = Cracks.siblingOf(crack)
-    var observationsLines = splitInLines(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
+    var observationsLines = PDF.splitInLines(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
 
     if (i === 0)
       lines.push(TAPi18n.__('responsible')    + ': ' + (crack.responsibleId && Responsible.findOne(crack.responsibleId).name || ''))

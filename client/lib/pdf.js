@@ -71,6 +71,23 @@ PDF = {
       width:  logo.naturalWidth,
       height: logo.naturalHeight
     }
+  },
+
+  split: function (string, limit) {
+    return string.split(/\s+/).reduce(function (previous, current) {
+      if (previous.length && (previous[previous.length - 1] + ' ' + current).length <= limit)
+        previous[previous.length - 1] += ' ' + current
+      else
+        previous.push(current)
+
+      return previous
+    }, [])
+  },
+
+  splitInLines: function (string) {
+    return _.flatten(_.map(string.split(/\r?\n/), function (line) {
+      return PDF.split(line, 105)
+    }))
   }
 }
 

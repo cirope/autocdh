@@ -8,15 +8,17 @@ var name = function (providedCrack) {
 }
 
 var putStaticData = function (providedCrack, doc, yPosition) {
-  var customer    = TAPi18n.__('customer')                  + ': ' + Customers.findOne(providedCrack.customerId).name
-  var work        = TAPi18n.__('work')                      + ': ' + Works.findOne(providedCrack.workId).name
-  var press       = TAPi18n.__('press')                     + ': ' + Presses.findOne(providedCrack.pressId).name
-  var responsible = TAPi18n.__('responsible')               + ': ' + Responsible.findOne(providedCrack.responsibleId).name
-  var date        = TAPi18n.__('provided_crack_date')       + ': ' + providedCrack.date && moment(providedCrack.date).format('L')
-  var crackDate   = TAPi18n.__('provided_crack_crack_date') + ': ' + moment(providedCrack.crackDate).format('L')
+  var customer          = TAPi18n.__('customer')                  + ': ' + Customers.findOne(providedCrack.customerId).name
+  var work              = TAPi18n.__('work')                      + ': ' + Works.findOne(providedCrack.workId).name
+  var press             = TAPi18n.__('press')                     + ': ' + Presses.findOne(providedCrack.pressId).name
+  var responsible       = TAPi18n.__('responsible')               + ': ' + Responsible.findOne(providedCrack.responsibleId).name
+  var date              = TAPi18n.__('provided_crack_date')       + ': ' + providedCrack.date && moment(providedCrack.date).format('L')
+  var crackDate         = TAPi18n.__('provided_crack_crack_date') + ': ' + moment(providedCrack.crackDate).format('L')
+  var defectLines       = PDF.splitInLines(TAPi18n.__('provided_crack_defects') + ': ' + (providedCrack.defects || ''))
+  var observationsLines = PDF.splitInLines(TAPi18n.__('provided_crack_observations') + ': ' + (providedCrack.observations || ''))
 
-  var tubeType    = providedCrack.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : providedCrack.tubeType
-  var headerType  = TAPi18n.__('provided_crack_header_type_' + providedCrack.headerType)
+  var tubeType          = providedCrack.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : providedCrack.tubeType
+  var headerType        = TAPi18n.__('provided_crack_header_type_' + providedCrack.headerType)
 
   doc
     .text(customer, 20, yPosition += 5)
@@ -34,10 +36,14 @@ var putStaticData = function (providedCrack, doc, yPosition) {
 
   doc
     .text(TAPi18n.__('provided_crack_header_type') + ': ' + headerType, 20, yPosition += 5)
-    .text(TAPi18n.__('provided_crack_defects') + ': ' + (providedCrack.defects || ''), 20, yPosition += 5)
-    .text(TAPi18n.__('provided_crack_observations') + ': ' + (providedCrack.observations || ''), 20, yPosition += 5)
+    .text(defectLines, 20, yPosition += 5)
 
-  return yPosition
+  yPosition += (defectLines.length - 1) * 4.5
+
+  doc
+    .text(observationsLines, 20, yPosition += 5)
+
+  return (yPosition + (observationsLines.length - 1) * 4.5)
 }
 
 var table = function () {
