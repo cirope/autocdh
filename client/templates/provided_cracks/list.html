@@ -46,7 +46,7 @@
           <tr>
             <th>{{_ 'customer'}}</th>
             <th class="hidden-xs">{{_ 'work'}}</th>
-            <th class="hidden-sm hidden-xs">{{_ 'provided_crack_quantity'}}</th>
+            <th class="hidden-md hidden-sm hidden-xs">{{_ 'provided_crack_quantity'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'provided_crack_date'}}</th>
             <th class="hidden-sm hidden-xs">{{_ 'provided_crack_crack_date'}}</th>
             <th></th>
@@ -57,12 +57,15 @@
             <tr class="visible-on-hover-parent">
               <td><a href="{{pathFor 'providedCrack'}}">{{customer}}</a></td>
               <td class="hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{work}}</a></td>
-              <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{quantity}}</a></td>
+              <td class="hidden-md hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{quantity}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{l date 'L'}}</a></td>
               <td class="hidden-sm hidden-xs"><a href="{{pathFor 'providedCrack'}}">{{l crackDate 'L'}}</a></td>
               <td class="text-right">
                 <a class="btn btn-xs btn-default visible-on-hover" href="{{pathFor 'providedCrackEdit'}}" title="{{_ 'edit'}}">
                   {{_ 'edit'}}
+                </a>
+                <a class="btn btn-xs btn-default visible-on-hover" href="#" title="{{_ 'download_pdf'}}" data-download="pdf">
+                  <span class="glyphicon glyphicon-file"></span>
                 </a>
               </td>
             </tr>
@@ -70,6 +73,12 @@
         </tbody>
       </table>
       <a class="btn btn-primary" href="{{pathFor 'providedCrackNew'}}">{{_ 'provided_crack_new'}}</a>
+
+      <div class="hidden">
+        {{#if providedCrack}}
+          {{> Template.dynamic template='providedCrack' data=providedCrack }}
+        {{/if}}
+      </div>
     </div>
   </div>
 </template>
