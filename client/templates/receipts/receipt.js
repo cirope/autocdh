@@ -15,5 +15,12 @@ Template.receipt.helpers({
     var hasSurplus = TAPi18n.__(this.surplus ? 'yes' : 'no')
 
     return _.compact([hasSurplus, this.surplusComment]).join(': ')
+  },
+
+  receiptNumberLabel: function () {
+    var settings = Settings.findOne()
+    var customLabel = settings && settings.customOptions && settings.customOptions.receiptNumberLabel
+
+    return customLabel || TAPi18n.__('receipt_number')
   }
 })

@@ -11,6 +11,7 @@ var sample = function (sample) {
 
 var receipt = function (receipt) {
   var settings = Settings.findOne()
+  var receiptCustomNumberLabel = settings && settings.customOptions && settings.customOptions.receiptNumberLabel
   var result   = [
     TAPi18n.__('customer') + ': ' + Customers.findOne(receipt.customerId).name,
     TAPi18n.__('work')     + ': ' + Works.findOne(receipt.workId).name
@@ -22,7 +23,7 @@ var receipt = function (receipt) {
   return result.concat([
     TAPi18n.__('truck')           + ': ' + Trucks.findOne(receipt.truckId).number,
     TAPi18n.__('truck_driver')    + ': ' + receipt.truckDriver,
-    TAPi18n.__('receipt_number')  + ': ' + receipt.number,
+    (receiptCustomNumberLabel || TAPi18n.__('receipt_number'))  + ': ' + receipt.number,
     TAPi18n.__('receipt_volume')  + ': ' + receipt.volume,
     TAPi18n.__('receipt_surplus') + ': ' + _.compact([
       TAPi18n.__(receipt.surplus ? 'yes' : 'no'),
