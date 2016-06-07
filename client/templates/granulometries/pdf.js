@@ -16,7 +16,8 @@ var putStaticData = function (granulometry, doc, yPosition) {
     .text(date, 100, yPosition)
 
   var plant        = TAPi18n.__('plant')                      + ': ' + Plants.findOne(granulometry.plantId).name
-  var sampleWeight = TAPi18n.__('granulometry_sample_weight') + ': ' + (granulometry.sampleWeight && (granulometry.sampleWeight + ' kg'))
+  var sampleWeight = TAPi18n.__('granulometry_sample_weight') + ': ' +
+    (granulometry.sampleWeight && (Math.round(granulometry.sampleWeight * 100) / 100 + ' kg'))
 
   doc
     .text(plant, 20, yPosition += 5)
@@ -95,11 +96,16 @@ var table = function () {
 }
 
 var putBriefData = function (granulometry, doc, yPosition) {
+  var xPosition = 20
+
   $('[data-brief]').find('[data-attribute]').each(function (i, element) {
     var label = $(element).find('[data-label]').text()
     var value = $(element).find('[data-value]').text()
 
-    doc.text(label + ': ' + value, 20, yPosition += 5)
+    doc.text(label + ': ' + value, xPosition, yPosition)
+
+    xPosition  = xPosition === 20 ? 100 : 20
+    yPosition += xPosition === 20 ? 5   : 0
   })
 
   return yPosition
@@ -146,8 +152,11 @@ Template.granulometry.events({
       doc
         .setFont('helvetica')
         .setFontSize(14)
-        .text(TAPi18n.__('granulometry') + ': ' + name(granulometry), 20, yPosition)
+        .text(TAPi18n.__('granulometry'), 20, yPosition)
         .setFontSize(9)
+        .setFontStyle('bold')
+        .text(name(granulometry), 20, yPosition += 5)
+        .setFontStyle('normal')
 
       yPosition = putStaticData(granulometry, doc, yPosition)
 
