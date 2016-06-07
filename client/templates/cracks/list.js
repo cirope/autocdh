@@ -1,6 +1,6 @@
 Template.cracks.helpers({
   showList: function () {
-    return this.cracks.count() || this.query
+    return (this.cracks && this.cracks.count()) || this.query
   }
 })
 

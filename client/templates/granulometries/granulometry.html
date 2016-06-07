@@ -31,7 +31,9 @@
         <div class="col-md-6">
           <p>
             {{_ 'granulometry_sample_weight'}} /
-            <strong>{{this.sampleWeight}} g</strong>
+            {{#if this.sampleWeight}}
+              <strong>{{this.sampleWeight}} g</strong>
+            {{/if}}
           </p>
         </div>
       </div>
@@ -204,7 +206,7 @@
           <div data-brief>
             <p data-attribute>
               <span data-label>{{_ 'granulometry_test_sample_weight'}}</span> /
-              <strong data-value>{{r sampleWeight}} g</strong>
+              <strong data-value>{{#if sampleWeight}}{{r sampleWeight}} g{{/if}}</strong>
             </p>
 
             <p data-attribute>

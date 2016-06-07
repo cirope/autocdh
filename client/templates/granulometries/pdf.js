@@ -16,7 +16,7 @@ var putStaticData = function (granulometry, doc, yPosition) {
     .text(date, 100, yPosition)
 
   var plant        = TAPi18n.__('plant')                      + ': ' + Plants.findOne(granulometry.plantId).name
-  var sampleWeight = TAPi18n.__('granulometry_sample_weight') + ': ' + granulometry.sampleWeight + ' kg'
+  var sampleWeight = TAPi18n.__('granulometry_sample_weight') + ': ' + (granulometry.sampleWeight && (granulometry.sampleWeight + ' kg'))
 
   doc
     .text(plant, 20, yPosition += 5)
