@@ -102,10 +102,11 @@ var putBriefData = function (granulometry, doc, yPosition) {
     var label = $(element).find('[data-label]').text()
     var value = $(element).find('[data-value]').text()
 
+    yPosition += xPosition === 20 ? 5 : 0
+
     doc.text(label + ': ' + value, xPosition, yPosition)
 
     xPosition  = xPosition === 20 ? 100 : 20
-    yPosition += xPosition === 20 ? 5   : 0
   })
 
   return yPosition
@@ -169,7 +170,7 @@ Template.granulometry.events({
           fontSize: 7
         })
 
-      yPosition += tableData.data.length * 9
+      yPosition += tableData.data.length * 8.6 + 1.5
 
       doc.setFontSize(9)
 
