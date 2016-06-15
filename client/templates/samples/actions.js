@@ -81,11 +81,22 @@ var concrete = function (concrete) {
 }
 
 var concreteBrief = function (concrete) {
-  var aggregate = concrete.aggregateId && Aggregates.findOne(concrete.aggregateId)
-  var result    = [
-    TAPi18n.__('strength')  + ': ' + Strengths.findOne(concrete.strengthId).name,
-    TAPi18n.__('aggregate') + ': ' + (aggregate && aggregate.name)
+  var aggregate  = concrete.aggregateId && Aggregates.findOne(concrete.aggregateId)
+  var settlement = concrete.settlementId && Settlements.findOne(concrete.settlementId)
+  var formula    = Formulas.findOne({
+    strengthId:   concrete.strengthId,
+    download:     concrete.download,
+    aggregateId:  concrete.aggregateId,
+    settlementId: concrete.settlementId
+  })
+  var result     = [
+    TAPi18n.__('strength')   + ': ' + Strengths.findOne(concrete.strengthId).name,
+    TAPi18n.__('aggregate')  + ': ' + (aggregate && aggregate.name),
+    TAPi18n.__('settlement') + ': ' + (settlement && settlement.name)
   ]
+
+  if (formula)
+    result.unshift(TAPi18n.__('formula_coding') + ': ' + formula.coding)
 
   return result
 }
