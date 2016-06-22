@@ -1,0 +1,96 @@
+<template name="mixture">
+  <div class="panel panel-default hide-on-pdf-export">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'mixtures'}}
+        <a class="pull-right" href="{{pathFor 'mixtures'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-condensed table-hover" data-table="test">
+        <thead>
+          <tr>
+            <th>{{_ 'granulometry_test_sieve'}}</th>
+            {{#each granulometries}}
+              <th>{{name}} ({{percentage}}%)</th>
+            {{/each}}
+            <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_retained_accumulated'}}</th>
+            <th class="hidden-sm hidden-xs">% {{_ 'granulometry_test_passed'}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each test}}
+            <tr>
+              {{#each items}}
+                <td>{{this}}</td>
+              {{/each}}
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+      <div data-brief>
+        <p class="text-right" data-attribute>
+          <strong>
+            <span data-label>Mf</span> =
+            <span data-value>{{r mf 2}}</span>
+          </strong>
+        </p>
+      </div>
+
+      <div class="pull-right">
+        <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+          {{_ 'download_pdf'}}
+          <span class="glyphicon glyphicon-file"></span>
+        </button>
+      </div>
+
+      <button class="btn btn-sm btn-danger" type="button" data-delete>
+        {{_ 'delete'}}
+      </button>
+    </div>
+  </div>
+
+  <div class="show-on-pdf-export" data-graph-container>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="ct-chart ct-golden-section ct-granulometry"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default hide-on-pdf-export">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{_ 'granulometry_limit_curves'}}</h3>
+          </div>
+          <div class="panel-body">
+            {{#if showLimitCurves}}
+              <button class="btn btn-default" type="button" data-hide="limit-curves">
+                {{_ 'hide'}}
+              </button>
+            {{else}}
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                  {{_ 'show'}} <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  {{#each sizes}}
+                    <li>
+                      <a href="#" data-show="limit-curves" data-curve="{{this}}">
+                        {{_ 'granulometry_nominal_size'}} {{this}}
+                      </a>
+                    </li>
+                  {{/each}}
+                </ul>
+              </div>
+            {{/if}}
+          </div>
+        </div>
+
+        {{> mixtureReference}}
+      </div>
+    </div>
+  </div>
+</template>

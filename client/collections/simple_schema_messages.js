@@ -18,6 +18,7 @@ loadSimpleSchemaMessages = function () {
     expectedArray: TAPi18n.__('validation_expected_array'),
     expectedObject: TAPi18n.__('validation_expected_object'),
     expectedConstructor: TAPi18n.__('validation_expected_constructor'),
+    expectedAmount: TAPi18n.__('validation_expected_amount'),
     regEx: [
       { msg: TAPi18n.__('validation_regex_msg') },
       { exp: SimpleSchema.RegEx.Email, msg: TAPi18n.__('validation_regex_email') },

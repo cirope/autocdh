@@ -1,0 +1,19 @@
+<template name="granulometrySearch">
+  <div class="form-group {{#if afFieldIsInvalid name=name}}has-error{{/if}}">
+    <label class="control-label" for="{{name}}">{{_ 'granulometry_name'}}</label>
+    <div class="input-group">
+      <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+      {{> inputAutocomplete settings=settings value=granulometry id=name class='form-control granulometry-search' autocomplete='off' readonly='readonly' placeholder=placeholder}}
+      {{> afFieldInput name=name type='hidden'}}
+    </div>
+    <span class="help-block">{{{afFieldMessage name=name}}}</span>
+  </div>
+</template>
+
+<template name="granulometryPill">
+  <div>{{name}}</div>
+</template>
+
+<template name="emptyGranulometryPill">
+  <div>{{_ 'granulometry_search_empty'}} <kbd>{{getFilter}}</kbd></div>
+</template>

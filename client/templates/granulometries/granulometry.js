@@ -189,6 +189,10 @@ Template.granulometry.helpers({
 
   sizes: function () {
     return [13, 19, 25, 38, 50]
+  },
+
+  hasMixtures: function () {
+    return Mixtures.find({ 'granulometries.id': this._id }).count()
   }
 })
 

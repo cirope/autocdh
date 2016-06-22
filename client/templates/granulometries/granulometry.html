@@ -239,9 +239,11 @@
         </a>
       </div>
 
-      <button class="btn btn-sm btn-danger" type="button" data-delete>
-        {{_ 'delete'}}
-      </button>
+      {{#unless hasMixtures}}
+        <button class="btn btn-sm btn-danger" type="button" data-delete>
+          {{_ 'delete'}}
+        </button>
+      {{/unless}}
     </div>
   </div>
 

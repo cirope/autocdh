@@ -5,6 +5,8 @@
   "customer_search_empty": "No se encontraron clientes con el criterio",
   "formula_search_placeholder": "Buscar dosificación...",
   "formula_search_empty": "No se encontraron dosificaciones con el criterio",
+  "granulometry_search_placeholder": "Buscar granulometría...",
+  "granulometry_search_empty": "No se encontraron granulometrías con el criterio",
   "provider_search_placeholder": "Buscar proveedor...",
   "provider_search_empty": "No se encontraron proveedores con el criterio",
   "truck_search_placeholder": "Buscar camión...",

@@ -17,6 +17,7 @@
   "validation_expected_array": "[label] debe ser un arreglo",
   "validation_expected_object": "[label] debe ser un objeto",
   "validation_expected_constructor": "[label] debe ser un [type]",
+  "validation_expected_amount": "la suma debe ser [value]",
   "validation_regex_msg": "[label] tiene un formato no válido",
   "validation_regex_email": "[label] debe ser una dirección de correo válida",
   "validation_regex_domain": "[label] debe ser un nombre de dominio válido",

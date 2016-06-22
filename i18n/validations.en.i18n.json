@@ -17,6 +17,7 @@
   "validation_expected_array": "[label] must be an array",
   "validation_expected_object": "[label] must be an object",
   "validation_expected_constructor": "[label] must be a [type]",
+  "validation_expected_amount": "the sum must be [value]",
   "validation_regex_msg": "[label] failed regular expression validation",
   "validation_regex_email": "[label] must be a valid e-mail address",
   "validation_regex_domain": "[label] must be a valid domain",
