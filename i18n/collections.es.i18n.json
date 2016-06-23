@@ -221,7 +221,7 @@
   "granulometry_test_total_weight": "Total (incluido pasa # 200)",
   "granulometry_test_passed": "Pasado",
   "granulometry_test_retained_accumulated": "Retenido acumulado",
-  "granulometry_test_fineness": "Módulo de fineza",
+  "granulometry_test_fineness": "Módulo de finura",
   "granulometry_ideal_curves": "Curvas ideales",
   "granulometry_graph_x_label": "Abertura de tamiz (mm)",
   "granulometry_graph_y_label": "Porcentaje que pasa en peso (%)",
