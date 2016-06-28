@@ -1,27 +1,15 @@
-<template name="mixtureNew">
+<template name="mixtureEdit">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        {{_ 'mixture_create_title'}}
-        <a class="pull-right" href="{{pathFor 'mixtures'}}">{{_ 'go_back'}}</a>
+        {{_ 'mixture_update_title'}}
+        <a class="pull-right" href="{{pathFor 'mixture'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
     <div class="panel-body">
-      {{#autoForm collection='Mixtures' id='newMixtureForm' type='method' validation='blur' meteormethod='createMixture'}}
+      {{#autoForm collection='Mixtures' id='editMixtureForm' type='method-update' validation='blur' meteormethod='updateMixture' doc=..}}
         <fieldset>
           {{>afQuickField name='name'}}
-
-          <div class="form-group">
-            <label for="granulometries-count">
-              {{_ 'mixture_granulometry_count'}}
-            </label>
-
-            <select class="form-control" name="granulometriesCount" id="granulometries-count">
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-            </select>
-          </div>
 
           {{#each granulometries}}
             <div class="row">
@@ -31,13 +19,10 @@
                     {{_ 'mixture_granulometry_id'}}
                   </label>
                   <select class="form-control granulometry-aggregate" name="granulometry_aggregate_{{index}}" id="granulometry-aggregate-{{index}}">
-                    <optgroup>
-                      <option value=""></option>
-                    </optgroup>
                     {{#each aggregates}}
                       <optgroup label="{{optgroup}}">
                         {{#each options}}
-                          <option value="{{value}}">{{label}}</option>
+                          <option value="{{value}}" selected="{{selected ../..}}">{{label}}</option>
                         {{/each}}
                       </optgroup>
                     {{/each}}
@@ -45,7 +30,7 @@
                 </div>
               </div>
               <div class="col-md-4">
-                {{> granulometrySearch name=granulometrySearchName index=index}}
+                {{> granulometrySearch name=granulometrySearchName index=index granulometry=granulometry}}
               </div>
               <div class="col-md-4">
                 {{> afQuickField name=percentageName data-percentage=''}}
@@ -53,7 +38,7 @@
             </div>
           {{/each}}
         </fieldset>
-        <button type="submit" class="btn btn-primary">{{_ 'mixture_create'}}</button>
+        <button type="submit" class="btn btn-primary">{{_ 'mixture_update'}}</button>
       {{/autoForm}}
     </div>
   </div>

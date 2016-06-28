@@ -7,6 +7,11 @@
       </h3>
     </div>
     <div class="panel-body">
+      <p>
+        {{_ 'mixture_name'}}:
+        <strong>{{name}}</strong>
+      </p>
+
       <table class="table table-condensed table-hover" data-table="test">
         <thead>
           <tr>
@@ -43,6 +48,9 @@
           {{_ 'download_pdf'}}
           <span class="glyphicon glyphicon-file"></span>
         </button>
+        <a href="{{pathFor 'mixtureEdit'}}" class="btn btn-sm btn-default" title="{{_ 'mixture_update_title'}}">
+          {{_ 'edit'}}
+        </a>
       </div>
 
       <button class="btn btn-sm btn-danger" type="button" data-delete>

@@ -29,13 +29,21 @@
         <table class="table table-hover">
           <thead>
             <tr>
-              <th>{{_ 'mixture'}}</th>
+              <th>{{_ 'mixture_name'}}</th>
+              <th class="hidden-xs">{{_ 'mixture'}}</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {{#each mixtures}}
-              <tr>
-                <td><a href="{{pathFor 'mixture'}}">{{mixture}}</a></td>
+              <tr class="visible-on-hover-parent">
+                <td><a href="{{pathFor 'mixture'}}">{{name}}</a></td>
+                <td class="hidden-xs"><a href="{{pathFor 'mixture'}}">{{mixture}}</a></td>
+                <td class="text-right">
+                  <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'mixtureEdit'}}" title="{{_ 'edit'}}">
+                    {{_ 'edit'}}
+                  </a>
+                </td>
               </tr>
             {{/each}}
           </tbody>
