@@ -84,6 +84,9 @@ Template.mixture.events({
         .setFontSize(14)
         .text(TAPi18n.__('mixture'), 20, yPosition)
         .setFontSize(9)
+        .setFontStyle('bold')
+        .text(template.data.name, 20, yPosition += 5)
+        .setFontStyle('normal')
 
       doc
         .setFontSize(7)
@@ -101,7 +104,7 @@ Template.mixture.events({
       yPosition = putBriefData(doc, yPosition)
 
       putGraphImage(doc, yPosition, function () {
-        doc.save(TAPi18n.__('mixture') + '.pdf')
+        doc.save(template.data.name + '.pdf')
       })
     })
   }
