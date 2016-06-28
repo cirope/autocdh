@@ -47,9 +47,11 @@ var limitCurves = {
 var graphLabels = function () {
   var seedLabels = _.pluck(tests, 'sieve').slice(0, -1).reverse()
 
-  seedLabels.splice(5, 0, '')
-  seedLabels.splice(7, 0, '')
-  seedLabels.splice(14, 1)
+  _.each([1, 3, 5, 7, 9, 11], function (i) {
+    seedLabels.splice(i, 0, '')
+  })
+
+  seedLabels.splice(18, 1)
 
   return seedLabels
 }
@@ -58,9 +60,11 @@ var scaleGravel = function (values) {
   var _values = _.clone(values)
 
   if (_values) {
-    _values.splice(5, 0, (_values[4] + _values[5]) / 2)
-    _values.splice(7, 0, (_values[6] + _values[7]) / 2)
-    _values.splice(14, 1)
+    _.each([1, 3, 5, 7, 9, 11], function (i) {
+      _values.splice(i, 0, (_values[i - 1] + _values[i]) / 2)
+    })
+
+    _values.splice(18, 1)
   }
 
   return _values
