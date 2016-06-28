@@ -207,8 +207,9 @@ Template.mixture.helpers({
   },
 
   granulometries: function () {
-    return _.map(this.granulometries, function (granulometry) {
+    return _.map(this.granulometries, function (granulometry, i) {
       return _.extend(Granulometries.findOne(granulometry.id), {
+        index:      i + 1,
         percentage: granulometry.percentage
       })
     })

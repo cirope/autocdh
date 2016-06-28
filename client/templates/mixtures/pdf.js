@@ -9,7 +9,10 @@ var table = function () {
   }[table.find('thead th').length]
 
   table.find('thead th').each(function (i, element) {
-    var header = $(element).text()
+    var $th    = $(element)
+    var header = $th.data('reference') ?
+      '* ' + $th.data('reference') + ' (' + $th.data('percentage') + '%)' :
+      $(element).text()
 
     headers.push({ name: header, prompt: header, width: widths[i] })
   })
@@ -25,6 +28,19 @@ var table = function () {
   })
 
   return { data: data, headers: headers }
+}
+
+var putReferenceData = function (doc, yPosition) {
+  var table = $('[data-table="test"]')
+
+  table.find('thead th[data-reference]').each(function (i, element) {
+    var $th  = $(element)
+    var text = '* ' + $th.data('reference') + ': ' + $th.text().trim()
+
+    doc.text(text, 20, yPosition += 5)
+  })
+
+  return yPosition
 }
 
 var putBriefData = function (doc, yPosition) {
@@ -88,9 +104,11 @@ Template.mixture.events({
         .text(template.data.name, 20, yPosition += 5)
         .setFontStyle('normal')
 
+      yPosition = putReferenceData(doc, yPosition += 2.5)
+
       doc
         .setFontSize(7)
-        .table(20, yPosition += 15, tableData.data, tableData.headers, {
+        .table(20, yPosition += 5, tableData.data, tableData.headers, {
           printHeaders: true,
           autoSize: false,
           margins: { right: 0, left: 0, top: 0, bottom: 0 },

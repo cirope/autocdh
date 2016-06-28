@@ -17,7 +17,9 @@
           <tr>
             <th>{{_ 'granulometry_test_sieve'}}</th>
             {{#each granulometries}}
-              <th>{{name}} ({{percentage}}%)</th>
+              <th data-reference="{{index}}" data-percentage={{percentage}}>
+                {{name}} ({{percentage}}%)
+              </th>
             {{/each}}
             <th class="hidden-sm hidden-xs">{{_ 'granulometry_test_retained_accumulated'}}</th>
             <th class="hidden-sm hidden-xs">% {{_ 'granulometry_test_passed'}}</th>
