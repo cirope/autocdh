@@ -342,6 +342,7 @@
   "mixture_granulometry_id": "Identification",
   "mixture_granulometry_percentage": "Percentage",
   "mixture_granulometry_count": "Granulometry count",
+  "mixture_granulometry_reference": "Granulometry __count__",
   "mixture_create_title": "Add a new mixture",
   "mixture_create": "Create mixture",
   "mixture_update_title": "Edit a mixture",

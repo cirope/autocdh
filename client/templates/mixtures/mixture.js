@@ -282,6 +282,14 @@ Template.mixture.helpers({
 
   sizes: function () {
     return [13, 19, 25, 38, 50]
+  },
+
+  aggregate: function () {
+    var materialList = Materials.first()
+    var materials    = materialList && materialList[this.type + 's']
+    var material     = _.findWhere(materials, { _id: this.materialId })
+
+    return material && material.name
   }
 })
 

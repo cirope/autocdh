@@ -11,7 +11,7 @@ var table = function () {
   table.find('thead th').each(function (i, element) {
     var $th    = $(element)
     var header = $th.data('reference') ?
-      '* ' + $th.data('reference') + ' (' + $th.data('percentage') + '%)' :
+      $th.data('reference') + ' (' + $th.data('percentage') + '%)' :
       $(element).text()
 
     headers.push({ name: header, prompt: header, width: widths[i] })
@@ -35,7 +35,9 @@ var putReferenceData = function (doc, yPosition) {
 
   table.find('thead th[data-reference]').each(function (i, element) {
     var $th  = $(element)
-    var text = '* ' + $th.data('reference') + ': ' + $th.text().trim()
+    var text = $th.data('reference') + ': ' +
+      $th.data('aggregate') + ' - ' +
+      $th.text().trim()
 
     doc.text(text, 20, yPosition += 5)
   })

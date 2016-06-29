@@ -342,6 +342,7 @@
   "mixture_granulometry_id": "Identificación",
   "mixture_granulometry_percentage": "Porcentaje",
   "mixture_granulometry_count": "Cantidad de agregados a emplear en la curva mezcla",
+  "mixture_granulometry_reference": "Agregado __count__",
   "mixture_create_title": "Agregar una nueva curva mezcla",
   "mixture_create": "Crear curva mezcla",
   "mixture_update_title": "Editar curva mezcla",

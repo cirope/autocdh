@@ -17,7 +17,7 @@
           <tr>
             <th>{{_ 'granulometry_test_sieve'}}</th>
             {{#each granulometries}}
-              <th data-reference="{{index}}" data-percentage={{percentage}}>
+              <th data-reference="{{_ 'mixture_granulometry_reference' count=index}}" data-aggregate={{aggregate}} data-percentage={{percentage}}>
                 {{name}} ({{percentage}}%)
               </th>
             {{/each}}
