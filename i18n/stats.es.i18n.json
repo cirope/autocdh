@@ -67,7 +67,7 @@
   "graphic_aggregate_fineness_y_label": "Módulo de finura del agregado",
   "graphic_aggregate_fineness_reference": "Finura",
   "graphic_aggregate_fineness_mean": "Promedio",
-  "graphic_aggregate_humidity": "Humedad",
+  "graphic_aggregate_humidity": "Contenido de humedad",
   "graphic_aggregate_humidity_title": "Humedad por agregado",
   "graphic_aggregate_humidity_average": "Promedio",
   "graphic_aggregate_humidity_y_label": "Humedad del agregado",
