@@ -73,14 +73,18 @@
           </thead>
           <tbody>
             {{#each granulometries}}
-              <tr>
+              <tr class="visible-on-hover-parent">
                 <td><a href="{{pathFor 'granulometry'}}">{{name}}</a></td>
                 <td><a href="{{pathFor 'granulometry'}}">{{material}}</a></td>
                 <td class="hidden-xs hidden-sm"><a href="{{pathFor 'granulometry'}}">{{r fineness 2}}</a></td>
                 <td><a href="{{pathFor 'granulometry'}}">{{l date 'L'}}</a></td>
                 <td class="hidden-xs"><a href="{{pathFor 'granulometry'}}">{{plant plantId}}</a></td>
                 <td class="hidden-xs hidden-sm"><a href="{{pathFor 'granulometry'}}">{{provider providerId}}</a></td>
-                <td></td>
+                <td class="text-right">
+                  <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'granulometryEdit'}}" title="{{_ 'edit'}}">
+                    {{_ 'edit'}}
+                  </a>
+                </td>
               </tr>
             {{else}}
               <tr>
