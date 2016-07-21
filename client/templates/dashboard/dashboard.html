@@ -38,21 +38,6 @@
       </a>
     </div>
 
-    {{#if isInRole 'admin'}}
-      <div class="col-lg-3">
-        <h3>{{_ 'formulas'}}</h3>
-
-        <a href="{{pathFor 'formulaNew'}}" class="btn btn-default btn-block">
-          {{_ 'formula_new'}}
-        </a>
-        <a href="{{pathFor 'formulas'}}" class="btn btn-default btn-block">
-          {{_ 'formulas'}}
-        </a>
-      </div>
-    {{/if}}
-  </div>
-
-  <div class="row">
     <div class="col-lg-3">
       <h3>{{_ 'maintenances'}}</h3>
       <a href="{{pathFor 'maintenanceNew'}}" class="btn btn-default btn-block">
@@ -67,6 +52,29 @@
         {{/if}}
       </a>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3">
+      <h3>{{_ 'documents'}}</h3>
+
+      <a href="{{pathFor 'documents' type='protocols'}}" class="btn btn-default btn-block">
+        {{_ 'documents'}}
+      </a>
+    </div>
+
+    {{#if isInRole 'admin'}}
+      <div class="col-lg-3">
+        <h3>{{_ 'formulas'}}</h3>
+
+        <a href="{{pathFor 'formulaNew'}}" class="btn btn-default btn-block">
+          {{_ 'formula_new'}}
+        </a>
+        <a href="{{pathFor 'formulas'}}" class="btn btn-default btn-block">
+          {{_ 'formulas'}}
+        </a>
+      </div>
+    {{/if}}
   </div>
 
   {{#if isInRole 'admin'}}
