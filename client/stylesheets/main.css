@@ -60,6 +60,10 @@ label {
   padding: 10px;
 }
 
+.navbar .nav > li > a {
+  line-height: 12px;
+}
+
 .panel {
   margin-bottom: 10px;
 }

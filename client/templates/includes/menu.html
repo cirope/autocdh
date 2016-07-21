@@ -16,22 +16,22 @@
         {{#if currentUser}}
           <ul class="nav navbar-nav">
             <li class="{{activeRouteClass 'samples' 'sample' 'sampleNew' 'sampleEdit'}}">
-              <a href="{{pathFor 'samples'}}">{{_ 'samples'}}</a>
+              <a href="{{pathFor 'samples'}}">{{{_ 'menu_samples'}}}</a>
             </li>
             <li class="{{activeRouteClass 'cracks' 'crack' 'crackEdit' 'cracksCracked'}}">
               <a href="{{pathFor 'cracks'}}">
-                {{_ 'cracks'}}
+                {{{_ 'menu_cracks'}}}
                 {{#if overdueCracks}}
                   <span class="badge" title="{{_ 'crack_overdue' count=overdueCracks}}">{{overdueCracks}}</span>
                 {{/if}}
               </a>
             </li>
             <li class="{{activeRouteClass 'granulometries' 'granulometry' 'granulometryNew' 'granulometryEdit'}}">
-              <a href="{{pathFor 'granulometries'}}">{{_ 'granulometries'}}</a>
+              <a href="{{pathFor 'granulometries'}}">{{{_ 'menu_granulometries'}}}</a>
             </li>
             <li class="{{activeRouteClass 'maintenances' 'maintenance' 'maintenanceNew' 'maintenanceEdit' 'maintenanceReports' 'maintenanceStatus' 'maintenanceMasterList'}}">
               <a href="{{pathFor 'maintenances'}}">
-                {{_ 'maintenances'}}
+                {{{_ 'menu_maintenances'}}}
                 {{#if nextToOverdueMaintenances}}
                   <span class="label {{#if overdueMaintenances}}label-danger{{else}}label-warning{{/if}}">
                     <span class="glyphicon glyphicon-warning-sign"></span>
@@ -41,11 +41,11 @@
               </a>
             </li>
             <li class="{{activeRouteClass 'documents' 'document' 'documentNew' 'documentEdit'}}">
-              <a href="{{pathFor 'documents' type='protocols'}}">{{_ 'documents'}}</a>
+              <a href="{{pathFor 'documents' type='protocols'}}">{{{_ 'menu_documents'}}}</a>
             </li>
             {{#if isInRole 'admin'}}
               <li class="{{activeRouteClass 'stats' 'graphics'}}">
-                <a href="{{pathFor 'stats'}}">{{_ 'stats'}}</a>
+                <a href="{{pathFor 'stats'}}">{{{_ 'menu_stats'}}}</a>
               </li>
 
               {{> menuConfig}}
