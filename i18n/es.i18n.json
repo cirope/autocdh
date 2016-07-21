@@ -24,6 +24,7 @@
   "password_change_success": "Contraseña actualizada correctamente",
   "password_change_error": "No se pudo realizar el cambio, la contraseña anterior no coincide. Intente nuevamente",
   "save": "Guardar",
+  "saving": "Guardando...",
   "edit": "Editar",
   "delete": "Eliminar",
   "show": "Mostrar",

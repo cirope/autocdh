@@ -1,0 +1,54 @@
+<template name="document">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'document'}}
+          <a class="pull-right" href="{{pathFor 'documents'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'document_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+        <p>
+          {{_ 'document_type'}} /
+          <strong>{{type}}</strong>
+        </p>
+
+        {{#if isProtocol}}
+          <p>
+            {{_ 'document_category'}} /
+            <strong>{{category}}</strong>
+          </p>
+          <p>
+            {{_ 'document_validity'}} /
+            <strong>{{validity}}</strong>
+          </p>
+        {{/if}}
+
+        <div class="pull-right">
+          {{#if file}}
+            <a class="btn btn-sm btn-default" href="{{file.url}}" target="_blank">
+              <span class="glyphicon glyphicon-download"></span>
+              {{_ 'download_file'}}
+            </a>
+          {{/if}}
+
+          {{#if canModify}}
+            <a href="{{pathFor 'documentEdit'}}" class="btn btn-sm btn-default" title="{{_ 'document_update_title'}}">
+              {{_ 'edit'}}
+            </a>
+          {{/if}}
+        </div>
+
+        {{#if canModify}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

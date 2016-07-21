@@ -1,0 +1,53 @@
+<template name="documentNew">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{_ 'document_create_title'}}
+            <a class="pull-right" href="{{pathFor 'documents'}}">{{_ 'go_back'}}</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {{#autoForm collection='Documents' id='newDocumentForm' type='method' meteormethod='createDocument'}}
+            <fieldset>
+              {{> afQuickField name='name' autofocus=true}}
+              {{> afQuickField name='type' value=type}}
+
+              {{#if isProtocol}}
+                {{> afQuickField name='category'}}
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      {{_ 'document_validity'}}
+                    </h4>
+                  </div>
+
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        {{> afQuickField name='validity.start'}}
+                      </div>
+                      <div class="col-sm-6">
+                        {{> afQuickField name='validity.end'}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              {{> afQuickField name='fileId' placeholder=filePlaceholder}}
+            </fieldset>
+
+            {{#if isSubmitting}}
+              <button type="button" class="btn btn-primary" disabled>{{_ 'saving'}}</button>
+            {{else}}
+              <button type="submit" class="btn btn-primary">{{_ 'document_create'}}</button>
+            {{/if}}
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

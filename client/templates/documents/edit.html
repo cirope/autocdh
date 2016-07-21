@@ -1,0 +1,59 @@
+<template name="documentEdit">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{_ 'document_update_title'}}
+            <a class="pull-right" href="{{pathFor 'document'}}">{{_ 'go_back'}}</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {{#autoForm collection='Documents' id='editDocumentForm' type='method-update' meteormethod='updateDocument' doc=..}}
+            <fieldset>
+              {{> afQuickField name='name' autofocus=true}}
+              {{> afQuickField name='type'}}
+
+              {{#if isProtocol}}
+                {{> afQuickField name='category'}}
+
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      {{_ 'document_validity'}}
+                    </h4>
+                  </div>
+
+                  <div class="panel-body">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        {{> afQuickField name='validity.start'}}
+                      </div>
+                      <div class="col-sm-6">
+                        {{> afQuickField name='validity.end'}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{/if}}
+
+              <p>
+                <div class="pull-right">
+                  {{> documentFile}}
+                </div>
+
+                {{_ 'document_file'}} /
+                {{#if fileId}}
+                  <a href="{{file.url}}" target="_blank">
+                    {{_ 'download_file'}}
+                  </a>
+                {{/if}}
+              </p>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">{{_ 'document_update'}}</button>
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

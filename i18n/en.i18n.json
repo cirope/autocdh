@@ -24,6 +24,7 @@
   "password_change_success": "Password successfully changed",
   "password_change_error": "The old password is not right, please try again",
   "save": "Save",
+  "saving": "Saving...",
   "edit": "Edit",
   "delete": "Delete",
   "show": "Show",

@@ -1,0 +1,19 @@
+<template name="documentFile">
+  <div class="form-group">
+    {{#if uploading}}
+      {{> spinner spinnerOptions}}
+    {{else}}
+      {{#if success}}
+        <p class="text-success">
+          <span class="glyphicon glyphicon-ok"></span>
+        </p>
+      {{else}}
+        <label for="document-file" class="btn btn-default btn-xs pull-right">
+          <span class="glyphicon glyphicon-upload"></span>
+          {{_ 'document_attach_file'}}
+        </label>
+        <input type="file" class="hidden" id="document-file">
+      {{/if}}
+    {{/if}}
+  </div>
+</template>
