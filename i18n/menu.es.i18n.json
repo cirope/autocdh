@@ -1,8 +1,8 @@
 {
-  "menu_samples": "Muestras de<br>hormigón",
-  "menu_cracks": "Rotura de<br>probetas",
-  "menu_granulometries": "Agregados<br>&nbsp;",
-  "menu_maintenances": "Instrumental<br>y equipos",
-  "menu_documents": "Centro de<br>documentación",
-  "menu_stats": "Estadísticas<br>&nbsp;"
+  "menu_samples": "Muestras de<br class=\"hidden-xs\">hormigón",
+  "menu_cracks": "Rotura de<br class=\"hidden-xs\">probetas",
+  "menu_granulometries": "Ensayos de<br class=\"hidden-xs\">Agregados",
+  "menu_maintenances": "Instrumental<br class=\"hidden-xs\">y equipos",
+  "menu_documents": "Centro de<br class=\"hidden-xs\">documentación",
+  "menu_stats": "Análisis<br class=\"hidden-xs\">estadístico"
 }
