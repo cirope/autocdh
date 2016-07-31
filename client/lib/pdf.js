@@ -62,7 +62,7 @@ PDF = {
   },
 
   $logo: function () {
-    return $('img.navbar-brand')
+    return $('.navbar-brand img')
   },
 
   logoUrl: function () {
