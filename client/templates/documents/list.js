@@ -1,6 +1,6 @@
 Template.documents.helpers({
   types: function () {
-    var types = ['protocols', 'instructive', 'manuals', 'controls', 'fissures', 'techniques', 'others']
+    var types = ['protocols', 'instructive', 'manuals', 'controls', 'fissures', 'techniques', 'sustainability', 'others']
 
     return _.map(types, function (type) {
       return {
