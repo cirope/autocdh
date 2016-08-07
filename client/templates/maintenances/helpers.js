@@ -1,3 +1,4 @@
+var hasPlant     = new ReactiveVar
 var selectedType = new ReactiveVar
 
 var helpers = {
@@ -7,6 +8,10 @@ var helpers = {
 
   isCalibratable: function () {
     return selectedType.get() === 'calibratable'
+  },
+
+  hasPlant: function () {
+    return hasPlant.get()
   }
 }
 
@@ -16,8 +21,11 @@ var events = {
     var instrument = Instruments.findOne(value)
     var type = ''
 
-    if (instrument)
+    if (instrument) {
       type = instrument.calibratable && 'calibratable' || 'no_calibratable'
+
+      hasPlant.set(instrument.hasPlant)
+    }
 
     template.$('[name="type"]').val(type).trigger('change')
   },

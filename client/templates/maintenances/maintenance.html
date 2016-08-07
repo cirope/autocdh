@@ -41,6 +41,12 @@
             {{_ 'maintenance_type'}} /
             <strong>{{type}}</strong>
           </p>
+          {{#if hasPlant}}
+            <p>
+              {{_ 'plant'}} /
+              <strong>{{plant}}</strong>
+            </p>
+          {{/if}}
           <p>
             {{_ 'maintenance_serial'}} /
             <strong>{{serial}}</strong>
@@ -109,5 +115,7 @@
     </div>
   </div>
 
-  {{> Template.dynamic template=preventiveTemplate}}
+  {{#if preventiveTemplate}}
+    {{> Template.dynamic template=preventiveTemplate}}
+  {{/if}}
 </template>

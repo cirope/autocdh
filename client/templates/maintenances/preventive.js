@@ -28,7 +28,7 @@ Template.maintenancePreventive.helpers({
   preventiveTemplate: function () {
     var instrument = Instruments.findOne(this.instrumentId)
 
-    return 'maintenanceChecklist' + instrument.checklist
+    return instrument.checklist && ('maintenanceChecklist' + instrument.checklist)
   },
 
   data: function () {

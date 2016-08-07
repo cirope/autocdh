@@ -31,6 +31,14 @@ Template.maintenance.helpers({
     return Instruments.findOne(this.instrumentId).name
   },
 
+  hasPlant: function () {
+    return Instruments.findOne(this.instrumentId).hasPlant
+  },
+
+  plant: function () {
+    return Plants.findOne(this.plantId).name
+  },
+
   file: function () {
     return Files.findOne(this.fileId)
   },
@@ -46,7 +54,7 @@ Template.maintenance.helpers({
   preventiveTemplate: function () {
     var instrument = Instruments.findOne(this.instrumentId)
 
-    return 'maintenanceChecklist' + instrument.checklist
+    return instrument.checklist && ('maintenanceChecklist' + instrument.checklist)
   },
 
   deactivating: function () {
