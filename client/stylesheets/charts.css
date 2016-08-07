@@ -19,8 +19,8 @@
 }
 
 .ct-granulometry .ct-label.ct-horizontal {
-  transform-origin: 0em 12em;
-  transform: rotate(-15deg);
+  transform-origin: .5em 10em;
+  transform: rotate(-25deg);
 }
 
 .ct-label.ct-horizontal {
