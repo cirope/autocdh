@@ -3,7 +3,6 @@ var tests = [
   { sieve: '63 mm | 2 ½″' },
   { sieve: '51 mm | 2″' },
   { sieve: '38 mm | 1 ½″' },
-  { sieve: '32 mm | 1 ¼' },
   { sieve: '25 mm | 1' },
   { sieve: '19 mm | 3/4″' },
   { sieve: '13 mm | 1/2″' },
@@ -19,29 +18,29 @@ var tests = [
 
 var limitCurves = {
   13: [
-    [2, 5, 12, 24, 36, 48, 70, 95, 100, 100, 100, 100, 100, 100, 100],
-    [3, 12, 27, 41, 48, 52, 78, 97, 100, 100, 100, 100, 100, 100, 100],
-    [5, 20, 35, 50, 64, 78, 93, 100, 100, 100, 100, 100, 100, 100, 100]
+    [2, 5, 12, 24, 36, 48, 70, 95, 100, 100, 100, 100, 100, 100],
+    [3, 12, 27, 41, 48, 52, 78, 97, 100, 100, 100, 100, 100, 100],
+    [5, 20, 35, 50, 64, 78, 93, 100, 100, 100, 100, 100, 100, 100]
   ],
   19: [
-    [1, 4, 11, 22, 32, 41, 55, 70, 94, 100, 100, 100, 100, 100, 100],
-    [2, 10, 24, 36, 43, 46, 65, 77, 97, 100, 100, 100, 100, 100, 100],
-    [4, 15, 28, 44, 58, 72, 86, 93, 100, 100, 100, 100, 100, 100, 100]
+    [1, 4, 11, 22, 32, 41, 55, 70, 94, 100, 100, 100, 100, 100],
+    [2, 10, 24, 36, 43, 46, 65, 77, 97, 100, 100, 100, 100, 100],
+    [4, 15, 28, 44, 58, 72, 86, 93, 100, 100, 100, 100, 100, 100]
   ],
   25: [
-    [1, 4, 10, 19, 27, 35, 48, 55, 75, 95, 98, 100, 100, 100, 100],
-    [2, 9, 22, 33, 38, 43, 58, 66, 82, 98, 99, 100, 100, 100, 100],
-    [5, 18, 31, 44, 56, 69, 81, 87, 94, 100, 100, 100, 100, 100, 100]
+    [1, 4, 10, 19, 27, 35, 48, 55, 75, 95, 100, 100, 100, 100],
+    [2, 9, 22, 33, 38, 43, 58, 66, 82, 98, 100, 100, 100, 100],
+    [5, 18, 31, 44, 56, 69, 81, 87, 94, 100, 100, 100, 100, 100]
   ],
   38: [
-    [1, 4, 10, 20, 29, 39, 45, 52, 60, 78, 88, 97, 100, 100, 100],
-    [2, 9, 22, 33, 38, 43, 52, 61, 71, 85, 92, 98, 100, 100, 100],
-    [4, 17, 30, 42, 53, 66, 77, 83, 88, 94, 97, 100, 100, 100, 100]
+    [1, 4, 10, 20, 29, 39, 45, 52, 60, 78, 97, 100, 100, 100],
+    [2, 9, 22, 33, 38, 43, 52, 61, 71, 85, 98, 100, 100, 100],
+    [4, 17, 30, 42, 53, 66, 77, 83, 88, 94, 100, 100, 100, 100]
   ],
   50: [
-    [1, 4, 10, 18, 25, 33, 40, 44, 51, 59, 68, 78, 95, 100, 100],
-    [4, 14, 27, 37, 41, 44, 53, 59, 71, 82, 86, 91, 100, 100, 100],
-    [4, 17, 30, 42, 53, 63, 74, 79, 85, 90, 92, 95, 100, 100, 100]
+    [1, 4, 10, 18, 25, 33, 40, 44, 51, 59, 78, 95, 100, 100],
+    [4, 14, 27, 37, 41, 44, 53, 59, 71, 82, 91, 100, 100, 100],
+    [4, 17, 30, 42, 53, 63, 74, 79, 85, 90, 95, 100, 100, 100]
   ]
 }
 
@@ -52,13 +51,7 @@ var graphLabels = function () {
     seedLabels.splice(i, 0, '')
   })
 
-  seedLabels.splice(19, 1)
-
-  _.times(seedLabels.length, function (i) {
-    if (i !== 15 && i < 18) seedLabels.splice(i * 2 + 1, 0, '')
-  })
-
-  console.log('labels', seedLabels)
+  seedLabels.splice(18, 1)
 
   return seedLabels
 }
@@ -71,14 +64,7 @@ var scaleGravel = function (values) {
       _values.splice(i, 0, (_values[i - 1] + _values[i]) / 2)
     })
 
-    _values.splice(19, 1)
-
-    _.times(_values.length, function (i) {
-      var position = i * 2 + 1
-
-      if (i !== 15 && i < 18)
-        _values.splice(position, 0, (_values[position - 1] + _values[position]) / 2)
-    })
+    _values.splice(18, 1)
   }
 
   return _values
@@ -244,7 +230,7 @@ Template.mixture.helpers({
     var template       = Template.instance()
     var result         = []
     var chartData      = []
-    var selection      = [0, 3, 6, 8, 9, 10, 11, 12, 13, 14]
+    var selection      = [0, 3, 5, 7, 8, 9, 10, 11, 12, 13]
     var mf             = 0
     var granulometries = _.map(self.granulometries, function (granulometry) {
       var _granulometry = Granulometries.findOne(granulometry.id)
@@ -262,16 +248,6 @@ Template.mixture.helpers({
       _.each(granulometries, function (granulometry) {
         var test              = _.findWhere(granulometry.test, { sieve: t.sieve })
         var defaultPercentage = granulometry.type === 'sand' ? 0 : 100
-
-        if (! test && t.sieve === '32 mm | 1 ¼') {
-          var test38mm = _.findWhere(granulometry.test, { sieve: '38 mm | 1 ½″' })
-          var test25mm = _.findWhere(granulometry.test, { sieve: '25 mm | 1' })
-
-          if (test38mm && test25mm)
-            test = {
-              retainedAccumulatedPercentage: (test38mm.retainedAccumulatedPercentage + test25mm.retainedAccumulatedPercentage) / 2
-            }
-        }
 
         row.push(test ? test.retainedAccumulatedPercentage : defaultPercentage)
 
