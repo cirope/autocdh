@@ -23,6 +23,11 @@
   transform: rotate(-15deg);
 }
 
+.ct-resistance-evolution .ct-label.ct-horizontal {
+  transform-origin: 1em 1em;
+  transform: rotate(-25deg);
+}
+
 .ct-label.ct-horizontal {
   white-space: nowrap;
   transform-origin: 2em 7em;
