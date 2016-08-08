@@ -66,6 +66,24 @@
                 <strong>{{period}} {{_ 'maintenance_period_unit' count=period}}</strong>
               {{/if}}
             </p>
+
+            {{#unless hasPlant}}
+              <p>
+                <div class="pull-right">
+                  {{> maintenanceFile}}
+                </div>
+
+                {{_ 'maintenance_file'}} /
+                {{#if fileId}}
+                  <a href="{{file.url}}" target="_blank">
+                    {{_ 'download_file'}}
+                  </a>
+                {{/if}}
+              </p>
+            {{/unless}}
+          {{/if}}
+
+          {{#if hasPlant}}
             <p>
               <div class="pull-right">
                 {{> maintenanceFile}}
