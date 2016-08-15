@@ -49,6 +49,7 @@
   "graphic_hardened_concrete_resistance_evolution_table_label": "Resistencia a __days__ días",
   "graphic_hardened_concrete_resistance_evolution_table_no_value": "Sin datos",
   "graphic_hardened_concrete_resistance_evolution_table_value": "__percentage__% de la resistencia a 28 días",
+  "graphic_hardened_concrete_resistance_evolution_day_label": "Día",
   "graphic_hardened_concrete_3_days": "Hormigón endurecido (3 días)",
   "graphic_hardened_concrete_3_days_resistance": "Resistencia a 3 días",
   "graphic_hardened_concrete_3_days_resistance_title": "Resistencia del hormigón endurecido a 3 días",

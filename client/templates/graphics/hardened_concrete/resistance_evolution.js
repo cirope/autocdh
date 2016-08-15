@@ -78,5 +78,14 @@ Template.graphicHardenedConcreteResistanceEvolution.helpers({
     })
 
     return result
+  },
+
+  values: function () {
+    return _.map(this.values, function (value, i) {
+      return {
+        index: i + 1,
+        value: Math.round(value)
+      }
+    })
   }
 })

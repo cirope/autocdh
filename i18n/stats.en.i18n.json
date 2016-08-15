@@ -49,6 +49,7 @@
   "graphic_hardened_concrete_resistance_evolution_table_label": "Resistance at __days__ days",
   "graphic_hardened_concrete_resistance_evolution_table_no_value": "Without data",
   "graphic_hardened_concrete_resistance_evolution_table_value": "__percentage__% of the resistance at 28 days",
+  "graphic_hardened_concrete_resistance_evolution_day_label": "Day",
   "graphic_hardened_concrete_3_days": "Fresh concrete at 3 days",
   "graphic_hardened_concrete_3_days_resistance": "Resistance at 3 days",
   "graphic_hardened_concrete_3_days_resistance_title": "Hardened concretes resistance at 3 days",
