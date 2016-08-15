@@ -16,6 +16,7 @@
               {{> afQuickField name='concretes'}}
               {{> afQuickField name='plantId'}}
               {{> afQuickField name='strengthId'}}
+              {{> afQuickField name='additiveId'}}
               {{> afQuickField name='molding'}}
               {{> afQuickField name='cured'}}
 
@@ -33,32 +34,30 @@
     </div>
 
     <div class="col-md-8">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            {{_ 'graphic_hardened_concrete_resistance_evolution_title'}} / {{strength.name}}
-          </h3>
-        </div>
+      {{#if cracks.length}}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{_ 'graphic_hardened_concrete_resistance_evolution_title'}} / {{strength.name}}
+            </h3>
+          </div>
 
-        <div class="panel-body">
-          {{#if cracks.length}}
-            <table class="table table-condensed table-striped">
-              <tbody>
-                {{#each percentageRatios}}
-                  <tr>
-                    <td>{{label}}</td>
-                    <td>{{value}}</td>
-                  </tr>
-                {{/each}}
-              </tbody>
-            </table>
-          {{else}}
-            <h4 class="text-warning text-center">
-              {{_ 'graphic_no_data'}}
-            </h4>
-          {{/if}}
+          <div class="panel-body">
+            {{#if cracks.length}}
+              <table class="table table-condensed table-striped">
+                <tbody>
+                  {{#each percentageRatios}}
+                    <tr>
+                      <td>{{label}}</td>
+                      <td>{{value}}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            {{/if}}
+          </div>
         </div>
-      </div>
+      {{/if}}
 
       <div class="panel panel-default">
         <div class="panel-body">
@@ -71,31 +70,29 @@
           {{/if}}
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-8 col-md-offset-4">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <table class="table table-condensed small">
-            <thead>
-              <tr>
-                <th>{{_ 'graphic_hardened_concrete_resistance_evolution_day_label'}}</th>
-                <th>%</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each values}}
+      {{#if values.length}}
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <table class="table table-condensed small">
+              <thead>
                 <tr>
-                  <td>{{index}}</td>
-                  <td>{{value}}%</td>
+                  <th>{{_ 'graphic_hardened_concrete_resistance_evolution_day_label'}}</th>
+                  <th>%</th>
                 </tr>
-              {{/each}}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {{#each values}}
+                  <tr>
+                    <td>{{index}}</td>
+                    <td>{{value}}%</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
         </div>
-      </div>
+      {{/if}}
     </div>
   </div>
 
