@@ -1,7 +1,7 @@
 <template name="graphicHardenedConcreteResistanceEvolution">
-  <div class="row">
+  <div class="row" data-container>
     <div class="col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default hide-on-pdf-export">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterHardenedConcreteResistanceEvolution' type='method' meteormethod='filterResistanceEvolution' resetOnSuccess=false doc=filter}}
             <fieldset>
@@ -13,6 +13,7 @@
                   {{> afQuickField name='end'}}
                 </div>
               </div>
+
               {{> afQuickField name='concretes'}}
               {{> afQuickField name='plantId'}}
               {{> afQuickField name='strengthId'}}
@@ -36,7 +37,7 @@
 
     <div class="col-md-8">
       {{#if cracks.length}}
-        <div class="panel panel-default">
+        <div class="panel panel-default hide-on-pdf-export">
           <div class="panel-heading">
             <h3 class="panel-title">
               {{_ 'graphic_hardened_concrete_resistance_evolution_title'}} / {{strength.name}}
@@ -45,7 +46,13 @@
 
           <div class="panel-body">
             {{#if cracks.length}}
-              <table class="table table-condensed table-striped">
+              <table class="table table-condensed table-striped" data-table="evolution">
+                <thead class="hidden">
+                  <tr>
+                    <th>{{_ 'graphic_hardened_concrete_resistance_evolution_day_label'}}</th>
+                    <th>%</th>
+                  </tr>
+                </thead>
                 <tbody>
                   {{#each percentageRatios}}
                     <tr>
@@ -73,9 +80,9 @@
       </div>
 
       {{#if values.length}}
-        <div class="panel panel-default">
+        <div class="panel panel-default hide-on-pdf-export">
           <div class="panel-body">
-            <table class="table table-condensed small">
+            <table class="table table-condensed small" data-table="percentages">
               <thead>
                 <tr>
                   <th>{{_ 'graphic_hardened_concrete_resistance_evolution_day_label'}}</th>
@@ -98,4 +105,11 @@
   </div>
 
   <div class="hidden">{{sampleCount}}</div>
+
+  <div class="hide-on-pdf-export pull-right">
+    <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+      {{_ 'download_pdf'}}
+      <span class="glyphicon glyphicon-file"></span>
+    </button>
+  </div>
 </template>

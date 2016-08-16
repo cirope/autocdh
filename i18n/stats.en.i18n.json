@@ -4,6 +4,7 @@
   "graphic_references": "References",
   "graphic_upper_limit": "Upper limit",
   "graphic_lower_limit": "Lower limit",
+  "graphic_filter": "Filter",
   "graphic_filter_apply": "Apply",
   "graphic_filter_all": "All",
   "graphic_filter_start": "Start",
