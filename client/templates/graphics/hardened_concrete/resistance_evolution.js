@@ -66,7 +66,7 @@ Template.graphicHardenedConcreteResistanceEvolution.helpers({
         value = TAPi18n.__('graphic_hardened_concrete_resistance_evolution_table_no_value')
       }
 
-      return {
+      return +days !== 28 && {
         label: TAPi18n.__('graphic_hardened_concrete_resistance_evolution_table_label', { days: days }),
         value: value
       }
@@ -77,7 +77,7 @@ Template.graphicHardenedConcreteResistanceEvolution.helpers({
       value: '100%'
     })
 
-    return result
+    return _.compact(result)
   },
 
   values: function () {
