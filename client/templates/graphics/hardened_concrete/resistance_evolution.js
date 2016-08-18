@@ -1,9 +1,10 @@
-var updateChart = function (data) {
+var daysToDisplay = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 17,  21, 28, 42, 56, 72, 90]
+var updateChart   = function (data) {
   setTimeout(function () {
     if ($('[data-chart]').length) {
       var options = {
         low:      0,
-        lineSmooth: Chartist.Interpolation.cardinal({
+        lineSmooth: Chartist.Interpolation.monotoneCubic({
           fillHoles: true
         }),
         axisX: {
@@ -81,11 +82,13 @@ Template.graphicHardenedConcreteResistanceEvolution.helpers({
   },
 
   values: function () {
-    return _.map(this.values, function (value, i) {
-      return {
-        index: i + 1,
+    var values = _.map(this.values, function (value, i) {
+      return _.include(daysToDisplay, i) && {
+        index: i,
         value: Math.round(value)
       }
     })
+
+    return _.compact(values)
   }
 })
