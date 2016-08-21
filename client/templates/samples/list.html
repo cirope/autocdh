@@ -112,6 +112,9 @@
         {{#unless ready}}{{> spinner}}{{/unless}}
       {{/if}}
 
+      <button class="btn btn-default pull-right" type="button" data-download-csv>
+        {{_ 'download_csv'}}
+      </button>
       <a class="btn btn-primary" href="{{pathFor 'sampleNew'}}">{{_ 'sample_new'}}</a>
     </div>
   </div>
