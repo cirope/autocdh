@@ -1,5 +1,5 @@
 var download = function (csvString) {
-  var blob   = new Blob([csvString])
+  var blob   = new Blob(["\ufeff", csvString])
   var a      = window.document.createElement('a')
 
   a.href     = window.URL.createObjectURL(blob, { type: 'text/plain' })
@@ -157,7 +157,7 @@ Template.samplesList.events({
         return row
       })
 
-      download(Papa.unparse(_.compact(data), { quotes: true, delimiter: "\t" }))
+      download(Papa.unparse(_.compact(data), { quotes: true, delimiter: ';' }))
     })
   }
 })
