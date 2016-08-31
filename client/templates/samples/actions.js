@@ -234,6 +234,7 @@ var commonEvents = {
         doc.text(line, 25, yPosition += 4.5)
       })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
     })
   }
@@ -284,6 +285,7 @@ Template.sample.events({
         .setFontSize(10)
         .text(assayLines, 25, yPosition += 7)
 
+      doc.putTotalPages('___total_pages___')
       doc.save(_sample.name + '.pdf')
     })
   }

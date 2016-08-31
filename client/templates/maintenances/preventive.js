@@ -78,6 +78,7 @@ Template.maintenancePreventive.events({
             })
         })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(TAPi18n.__('maintenance_preventive_title') + '.pdf')
     })
   }

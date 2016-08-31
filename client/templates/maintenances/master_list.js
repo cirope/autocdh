@@ -56,6 +56,7 @@ Template.maintenanceMasterList.events({
           fontSize: 7
         })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(TAPi18n.__('maintenance_master_list') + '.pdf')
     })
   }

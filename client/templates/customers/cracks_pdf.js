@@ -63,6 +63,7 @@ Template.customerCracks.events({
           fontSize: 9
         })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(title + '.pdf')
     })
   },

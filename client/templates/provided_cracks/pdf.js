@@ -99,6 +99,7 @@ Template.providedCrack.events({
           fontSize: 7
         })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(fileName + '.pdf')
     })
   }

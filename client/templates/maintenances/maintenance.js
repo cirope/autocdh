@@ -92,6 +92,7 @@ Template.maintenance.events({
           fontSize: 7
         })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(TAPi18n.__('maintenance_checklist') + '.pdf')
     })
   },

@@ -124,6 +124,7 @@ Template.mixture.events({
       yPosition = putBriefData(doc, yPosition)
 
       putGraphImage(doc, yPosition, function () {
+        doc.putTotalPages('___total_pages___')
         doc.save(template.data.name + '.pdf')
       })
     })

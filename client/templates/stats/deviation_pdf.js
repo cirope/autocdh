@@ -73,6 +73,7 @@ Template.statsDeviation.events({
           fontSize: 7
         })
 
+      doc.putTotalPages('___total_pages___')
       doc.save(title + '.pdf')
     })
   }

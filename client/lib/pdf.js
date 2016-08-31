@@ -6,17 +6,21 @@ PDF = {
     var doc  = new jsPDF(options)
 
     doc.options = options
+    doc.page    = 1
 
     self._overrideAddPage(doc)
 
-    if (self.logoData)
+    if (self.logoData) {
+      self.addFooter(doc)
       self.addLogo(doc, callback)
-    else
+    } else {
       self._convertToDataURL(self.logoUrl(), function (imgData) {
         self.logoData = imgData
 
+        self.addFooter(doc)
         self.addLogo(doc, callback)
       })
+    }
   },
 
   _convertToDataURL: function (url, callback) {
@@ -37,6 +41,7 @@ PDF = {
 
     doc.addPage = function () {
       addPage.call(doc)
+      self.addFooter(doc)
       self.addLogo(doc)
     }
   },
@@ -71,6 +76,19 @@ PDF = {
       width:  logo.naturalWidth,
       height: logo.naturalHeight
     }
+  },
+
+  addFooter: function (doc) {
+    var x    = doc.options && doc.options.orientation === 'l' ? 250 : 180
+    var y    = doc.options && doc.options.orientation === 'l' ? 200 : 290
+    var size = doc.internal.getFontSize()
+
+    doc.
+      setFontSize(9).
+      text(TAPi18n.__('page') + ' ' + doc.page + '/___total_pages___', x, y).
+      setFontSize(size)
+
+    doc.page++
   },
 
   split: function (string, limit) {
