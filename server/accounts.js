@@ -62,6 +62,8 @@ Accounts.onLogin(function (info) {
   var instruments = Instruments.find(defaults)
   var settlements = Settlements.find(defaults)
 
+  if (! Settings.findOne(defaults)) Settings.insert(defaults)
+
   if (additives.count() === 0) {
     _.each(defaultAdditives, function (additive) {
       Additives.insert(_.extend(additive, defaults, { _id: Random.id() }))

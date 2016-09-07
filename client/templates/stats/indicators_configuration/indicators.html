@@ -1,0 +1,373 @@
+<template name="statsIndicatorsConfigurationIndicators">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        {{_ 'stats_indicators_indicators'}}
+      </h4>
+    </div>
+
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><strong>{{_ 'stats_indicators_indicator_resistance_7_days'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-resistance-7-days-min"
+                           value="{{indicatorValue 'resistance7DaysMin'}}"
+                           data-indicator="resistance7DaysMin"
+                           data-join="resistance7Days"
+                           data-target="indicator-resistance-7-days">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-resistance-7-days-max"
+                           value="{{indicatorValue 'resistance7DaysMax'}}"
+                           data-indicator="resistance7DaysMax"
+                           data-join="resistance7Days"
+                           data-target="indicator-resistance-7-days">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-resistance-7-days"
+                           value="{{indicatorJoinedValue 'resistance7Days'}}"
+                           disabled>
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td><strong>{{_ 'stats_indicators_indicator_deviation'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-deviation-max"
+                           value="{{indicatorValue 'deviationMax'}}"
+                           data-indicator="deviationMax"
+                           data-join="deviation"
+                           data-target="indicator-deviation">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                         type="text"
+                         name="indicator-deviation"
+                         value="{{indicatorJoinedValue 'deviation'}}"
+                         disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-deviation-min"
+                           value="{{indicatorValue 'deviationMin'}}"
+                           data-indicator="deviationMin"
+                           data-join="deviation"
+                           data-target="indicator-deviation">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td><strong>{{_ 'stats_indicators_indicator_deviation_coefficient'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-deviation-coefficient-max"
+                           value="{{indicatorValue 'deviationCoefficientMax'}}"
+                           data-indicator="deviationCoefficientMax"
+                           data-join="deviationCoefficient"
+                           data-target="indicator-deviation-coefficient">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-deviation-coefficient"
+                           value="{{indicatorJoinedValue 'deviationCoefficient'}}"
+                           disabled>
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-deviation-coefficient-min"
+                           value="{{indicatorValue 'deviationCoefficientMin'}}"
+                           data-indicator="deviationCoefficientMin"
+                           data-join="deviationCoefficient"
+                           data-target="indicator-deviation-coefficient">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td><strong>{{_ 'stats_indicators_indicator_resistance_ratio'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-resistance-ratio-min"
+                           value="{{indicatorValue 'resistanceRatioMin'}}"
+                           data-indicator="resistanceRatioMin"
+                           data-join="resistanceRatio"
+                           data-target="indicator-resistance-ratio">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-resistance-ratio-max"
+                           value="{{indicatorValue 'resistanceRatioMax'}}"
+                           data-indicator="resistanceRatioMax"
+                           data-join="resistanceRatio"
+                           data-target="indicator-resistance-ratio">
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                         type="text"
+                         name="indicator-resistance-ratio"
+                         value="{{indicatorJoinedValue 'resistanceRatio'}}"
+                         disabled>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td><strong>{{_ 'stats_indicators_indicator_efficiency'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-efficiency-min"
+                           value="{{indicatorValue 'efficiencyMin'}}"
+                           data-indicator="efficiencyMin"
+                           data-join="efficiency"
+                           data-target="indicator-efficiency">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                         type="text"
+                         name="indicator-efficiency"
+                         value="{{indicatorJoinedValue 'efficiency'}}"
+                         disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-efficiency-max"
+                           value="{{indicatorValue 'efficiencyMax'}}"
+                           data-indicator="efficiencyMax"
+                           data-join="efficiency"
+                           data-target="indicator-efficiency">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>6</td>
+              <td><strong>{{_ 'stats_indicators_indicator_volume'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-volume-max"
+                           value="{{indicatorValue 'volumeMax'}}"
+                           data-indicator="volumeMax"
+                           data-join="volume"
+                           data-target="indicator-volume">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                         type="text"
+                         name="indicator-volume"
+                         value="{{indicatorJoinedValue 'volume'}}"
+                         disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-volume-min"
+                           value="{{indicatorValue 'volumeMin'}}"
+                           data-indicator="volumeMin"
+                           data-join="volume"
+                           data-target="indicator-volume">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>7</td>
+              <td><strong>{{_ 'stats_indicators_indicator_claims_percentage'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-claims-percentage-max"
+                           value="{{indicatorValue 'claimsPercentageMax'}}"
+                           data-indicator="claimsPercentageMax"
+                           data-join="claimsPercentage"
+                           data-target="indicator-claims-percentage">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-claims-percentage"
+                           value="{{indicatorJoinedValue 'claimsPercentage'}}"
+                           disabled>
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-claims-percentage-min"
+                           value="{{indicatorValue 'claimsPercentageMin'}}"
+                           data-indicator="claimsPercentageMin"
+                           data-join="claimsPercentage"
+                           data-target="indicator-claims-percentage">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td>8</td>
+              <td><strong>{{_ 'stats_indicators_indicator_nonconform_percentage'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-nonconform-percentage-max"
+                           value="{{indicatorValue 'nonconformPercentageMax'}}"
+                           data-indicator="nonconformPercentageMax"
+                           data-join="nonconformPercentage"
+                           data-target="indicator-nonconform-percentage">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-nonconform-percentage"
+                           value="{{indicatorJoinedValue 'nonconformPercentage'}}"
+                           disabled>
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-nonconform-percentage-min"
+                           value="{{indicatorValue 'nonconformPercentageMin'}}"
+                           data-indicator="nonconformPercentageMin"
+                           data-join="nonconformPercentage"
+                           data-target="indicator-nonconform-percentage">
+                    <div class="input-group-addon" data-unit>%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
