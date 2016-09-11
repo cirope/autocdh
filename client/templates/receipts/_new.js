@@ -5,7 +5,18 @@ var save    = function () {
 
 Template._receiptNew.helpers({
   receipt: function () {
-    return receipt.get()
+    var instance = receipt.get()
+
+    //  use the sample name as receipt number if customOptions.copyReceiptNumberFromSample is enabled
+    if(!this.disabled && this.sample && !instance.number){
+      var settings = Settings.findOne()
+      var copyReceiptNumberFromSample = settings && settings.customOptions && settings.customOptions.copyReceiptNumberFromSample
+
+      if(copyReceiptNumberFromSample) {
+        instance.number = this.sample.name
+      }
+    }
+    return instance
   },
 
   customer: function () {
