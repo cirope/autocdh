@@ -57,6 +57,7 @@
   "assay_tubes_6": "6 probetas (3 a 28 y 3 a 56 días)",
   "assay_tubes_-6": "6 probetas (2 a 28, 2 a 56 y 2 a 90 días)",
   "assay_tubes_6-1": "6 probetas (2 a 7, 2 a 28 y 2 a 56 días)",
+  "assay_tubes_-6-1": "6 probetas (2 a 1, 2 a 7 y 2 a 28 días)",
   "assay_tube_type": "Tipo de probeta",
   "assay_cured": "Tipo de curado",
   "assay_cured_normalized": "Normalizado",

@@ -57,6 +57,7 @@
   "assay_tubes_6": "6 (28 and 56 days)",
   "assay_tubes_-6": "6 (28, 56 and 90 days)",
   "assay_tubes_6-1": "6 (7, 28 and 56 days)",
+  "assay_tubes_-6-1": "6 (1, 7 and 28 days)",
   "assay_tube_type": "Test tube type",
   "assay_cured": "Cured",
   "assay_cured_normalized": "Normalized",
