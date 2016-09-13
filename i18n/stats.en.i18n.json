@@ -116,12 +116,13 @@
   "stats_indicators_nonconform_volume_label": "Non conform volume",
   "stats_indicators_indicators": "QA indicators",
   "stats_indicators_indicators_join": "__lower__ and __higher__",
-  "stats_indicators_indicator_resistance_7_days": "% 7 days resistance / specified (%)",
-  "stats_indicators_indicator_deviation": "Standard pondered deviation (%)",
-  "stats_indicators_indicator_deviation_coefficient": "Weighted coefficient deviation (MPa)",
-  "stats_indicators_indicator_resistance_ratio": "Resistance ratio",
-  "stats_indicators_indicator_efficiency": "Strength efficiency (MPa / 10 kg concrete)",
-  "stats_indicators_indicator_volume": "Volume / Samples (m³ / N° samples)",
-  "stats_indicators_indicator_claims_percentage": "Strength with claims / Dispatched strength (%)",
-  "stats_indicators_indicator_nonconform_percentage": "Strength with non conforms / Dispatched strength (%)"
+  "stats_indicators_1_resistance_7_days": "% 7 days resistance / specified (%)",
+  "stats_indicators_2_deviation": "Standard pondered deviation (%)",
+  "stats_indicators_3_deviation_coefficient": "Weighted coefficient deviation (MPa)",
+  "stats_indicators_4_resistance_ratio": "Resistance ratio",
+  "stats_indicators_5_efficiency": "Strength efficiency (MPa / 10 kg concrete)",
+  "stats_indicators_6_volume": "Volume / Samples (m³ / N° samples)",
+  "stats_indicators_7_claims_percentage": "Strength with claims / Dispatched strength (%)",
+  "stats_indicators_8_nonconform_percentage": "Strength with non conforms / Dispatched strength (%)",
+  "stats_indicators_dashboard": "Tablero de indicadores de calidad"
 }
