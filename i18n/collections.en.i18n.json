@@ -220,6 +220,7 @@
   "formula_empty_banner": "There is no formula here, lets create some...",
   "formula_new": "New formula",
   "granulometries": "Granulometries",
+  "granulometries_label": "Granulometries",
   "granulometry": "Granulometry",
   "granulometry_name": "Name",
   "granulometry_date": "Date",

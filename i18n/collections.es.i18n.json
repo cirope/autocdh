@@ -220,6 +220,7 @@
   "formula_empty_banner": "No has cargado ninguna dosificación, podés comenzar ahora...",
   "formula_new": "Nueva dosificación",
   "granulometries": "Agregados",
+  "granulometries_label": "Granulometrías",
   "granulometry": "Agregado",
   "granulometry_name": "Identificación de la muestra",
   "granulometry_date": "Fecha de ensayo",
