@@ -1,3 +1,3 @@
-Meteor.publish('provided_cracks', function () {
+Meteor.publish('providedCracks', function () {
   return publish.call(this, ProvidedCracks)
 })

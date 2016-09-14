@@ -49,6 +49,6 @@ Template.graphicAggregateHumidity.helpers({
   granulometriesCount: function () {
     updateChart(_.pick(this, 'labels', 'series'))
 
-    return this.granulometries.count()
+    return this.granulometries.count() + this.granulometryHumidities.count()
   }
 })

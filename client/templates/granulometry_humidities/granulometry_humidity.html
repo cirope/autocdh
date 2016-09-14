@@ -1,0 +1,124 @@
+<template name="granulometryHumidity">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'granulometry'}}: {{name}} / {{material}}
+        <a class="pull-right" href="{{pathFor 'granulometryHumidities'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'responsible'}} /
+            <strong>{{responsible}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_date'}} /
+            <strong>{{l date 'L'}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'plant'}} /
+            <strong>{{plant}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_sample_weight'}} /
+            {{#if this.sampleWeight}}
+              <strong>{{this.sampleWeight}} g</strong>
+            {{/if}}
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_origin'}} /
+            <strong>{{origin}}</strong>
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p>
+            {{_ 'granulometry_receipt'}} /
+            <strong>{{receipt}}</strong>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p>
+            {{_ 'provider'}} /
+            <strong>{{provider}}</strong>
+          </p>
+        </div>
+      </div>
+
+      {{#if humidity}}
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">{{_ 'granulometry_humidity'}}</h3>
+          </div>
+
+          <div class="panel-body" data-humidity>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_humidity_container'}}</span> /
+              <strong data-value>{{humidity.container}}</strong>
+            </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_humidity_mass_of_container'}}</span> /
+              <strong data-value>{{r humidity.massOfContainer}} g</strong>
+            </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_humidity_mass_of_wet_aggregate'}}</span> /
+              <strong data-value>{{r humidity.massOfWetAggregate}} g</strong>
+            </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_humidity_mass_of_dry_aggregate'}}</span> /
+              <strong data-value>{{r humidity.massOfDryAggregate}} g</strong>
+            </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_humidity_percentage'}}</span> /
+              <strong data-value>{{r humidity.percentage 1}}%</strong>
+            </p>
+            <p data-attribute>
+              <span data-label>{{_ 'granulometry_humidity_date'}}</span> /
+              <strong data-value>{{l humidity.date 'L LT'}}</strong>
+            </p>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="row">
+        <div class="col-md-3">
+          <p>
+            {{_ 'granulometry_dried'}} /
+            <strong>{{dried}}</strong>
+          </p>
+        </div>
+        <div class="col-md-3">
+          <p>
+            {{_ 'granulometry_washed'}} /
+            <strong>{{washed}}</strong>
+          </p>
+        </div>
+      </div>
+
+      <div class="pull-right">
+        <a href="{{pathFor 'granulometryHumidityEdit'}}" class="btn btn-sm btn-default" title="{{_ 'granulometry_humidity_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+      </div>
+
+      <button class="btn btn-sm btn-danger" type="button" data-delete>
+        {{_ 'delete'}}
+      </button>
+    </div>
+  </div>
+</template>
