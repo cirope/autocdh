@@ -26,7 +26,7 @@ var updateChart = function (data) {
               }
             },
             axisY: {
-              axisTitle: TAPi18n.__('graphic_fresh_concrete_settlement_y_label'),
+              axisTitle: TAPi18n.__('graphic_fresh_concrete_air_y_label'),
               axisClass: 'ct-axis-title',
               offset: {
                 x: 0,
@@ -44,11 +44,11 @@ var updateChart = function (data) {
   }, 200)
 }
 
-Template.graphicFreshConcreteSettlement.onRendered(function () {
+Template.graphicFreshConcreteAir.onRendered(function () {
   updateChart(_.pick(this.data, 'labels', 'series'))
 })
 
-Template.graphicFreshConcreteSettlement.helpers({
+Template.graphicFreshConcreteAir.helpers({
   sampleCount: function () {
     updateChart(_.pick(this, 'labels', 'series'))
 

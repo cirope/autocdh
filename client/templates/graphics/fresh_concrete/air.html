@@ -1,9 +1,9 @@
-<template name="graphicFreshConcreteSettlement">
+<template name="graphicFreshConcreteAir">
   <div class="row">
     <div class="col-md-4">
       <div class="panel panel-default">
         <div class="panel-body">
-          {{#autoForm schema=filterSchema id='filterFreshConcreteSettlement' type='method' meteormethod='filterSettlement' resetOnSuccess=false doc=filter}}
+          {{#autoForm schema=filterSchema id='filterFreshConcreteAir' type='method' meteormethod='filterAir' resetOnSuccess=false doc=filter}}
             <fieldset>
               <div class="row">
                 <div class="col-md-6">
@@ -28,12 +28,12 @@
         </div>
       </div>
 
-      {{> graphicFreshConcreteSettlementReference}}
+      {{> graphicFreshConcreteAirReference}}
     </div>
     <div class="col-md-8">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">{{_ 'graphic_fresh_concrete_settlement_title'}}</h3>
+          <h3 class="panel-title">{{_ 'graphic_fresh_concrete_air_title'}}</h3>
         </div>
 
         <div class="panel-body">
@@ -49,12 +49,12 @@
 
       {{#if series.length}}
         <p>
-          {{_ 'graphic_fresh_concrete_settlement_average'}}:
-          <strong>{{r mean 1}} cm</strong>
+          {{_ 'graphic_fresh_concrete_air_average'}}:
+          <strong>{{r mean 1}}%</strong>
         </p>
         <p>
           {{_ 'deviation_standard_deviation'}} (s):
-          <strong>{{r deviation 1}} cm</strong>
+          <strong>{{r deviation 1}}%</strong>
         </p>
       {{/if}}
     </div>
