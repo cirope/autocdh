@@ -1,0 +1,65 @@
+<template name="graphicFreshConcreteSettlement">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{#autoForm schema=filterSchema id='filterFreshConcreteSettlement' type='method' meteormethod='filterSettlement' resetOnSuccess=false doc=filter}}
+            <fieldset>
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='start'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='end'}}
+                </div>
+              </div>
+              {{> truckNumberSearch}}
+              {{> truckDriverSearch}}
+              {{> afQuickField name='plantId'}}
+              {{> afQuickField name='settlementId'}}
+
+              <hr>
+
+              <button type="submit" class="btn btn-default btn-block">
+                {{_ 'graphic_filter_apply'}}
+              </button>
+            </fieldset>
+          {{/autoForm}}
+        </div>
+      </div>
+
+      {{> graphicFreshConcreteSettlementReference}}
+    </div>
+    <div class="col-md-8">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{_ 'graphic_fresh_concrete_settlement_title'}}</h3>
+        </div>
+
+        <div class="panel-body">
+          {{#if series.length}}
+            <div class="ct-chart ct-golden-section" data-chart></div>
+          {{else}}
+            <h4 class="text-warning text-center">
+              {{_ 'graphic_no_data'}}
+            </h4>
+          {{/if}}
+        </div>
+      </div>
+
+      {{#if series.length}}
+        <p>
+          {{_ 'graphic_fresh_concrete_settlement_average'}}:
+          <strong>{{r mean 1}} cm</strong>
+        </p>
+        <p>
+          {{_ 'deviation_standard_deviation'}} (s):
+          <strong>{{r deviation 1}} cm</strong>
+        </p>
+      {{/if}}
+    </div>
+  </div>
+
+
+  <span class="hidden">{{sampleCount}}</span>
+</template>
