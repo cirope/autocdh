@@ -75,9 +75,10 @@
 
                 {{_ 'maintenance_file'}} /
                 {{#if fileId}}
-                  <a href="{{file.url}}" target="_blank">
-                    {{_ 'download_file'}}
+                  <a class="btn btn-default btn-xs" href="{{file.url}}" target="_blank">
+                    {{_ 'download_file'}} {{file.name}}
                   </a>
+                  <button class="btn btn-danger btn-xs" title="{{_ 'delete'}}" data-delete-file>X</button>
                 {{/if}}
               </p>
             {{/unless}}

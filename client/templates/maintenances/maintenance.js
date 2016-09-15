@@ -104,6 +104,14 @@ Template.maintenance.events({
   'click [data-cancel="deactivating"]': function (event, template) {
     event.preventDefault()
     deactivating.set()
+  },
+
+  'click [data-delete-file]': function (event, template) {
+    if (confirm(TAPi18n.__('confirm_delete'))) {
+      Meteor.call('deleteMaintenanceFile', this._id, function (error, result) {
+        if (error) console.log(error)
+      })
+    }
   }
 })
 
