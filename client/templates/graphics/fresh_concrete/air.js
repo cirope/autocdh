@@ -3,13 +3,16 @@ var updateChart = function (data) {
     if ($('[data-chart]').length) {
       var options = {
         low:   0,
-        showLine: true,
         axisX: {
           labelInterpolationFnc: function (value, index) {
-            var module = Math.round(data.labels.length / 24)
+            var module = Math.round(data.labels.length / 12)
 
             return index % module === 0 ? value : null
           }
+        },
+        axisY: {
+          scaleMinSpace: 10,
+          onlyInteger: true
         },
         plugins: [
           Chartist.plugins.tooltip(),
@@ -23,7 +26,7 @@ var updateChart = function (data) {
               }
             },
             axisY: {
-              axisTitle: TAPi18n.__('graphic_aggregate_humidity_y_label'),
+              axisTitle: TAPi18n.__('graphic_fresh_concrete_air_y_label'),
               axisClass: 'ct-axis-title',
               offset: {
                 x: 0,
@@ -41,14 +44,14 @@ var updateChart = function (data) {
   }, 200)
 }
 
-Template.graphicAggregateHumidity.onRendered(function () {
+Template.graphicFreshConcreteAir.onRendered(function () {
   updateChart(_.pick(this.data, 'labels', 'series'))
 })
 
-Template.graphicAggregateHumidity.helpers({
-  granulometriesCount: function () {
+Template.graphicFreshConcreteAir.helpers({
+  sampleCount: function () {
     updateChart(_.pick(this, 'labels', 'series'))
 
-    return this.granulometries.count() + this.granulometryHumidities.count()
+    return this.samples.count()
   }
 })

@@ -15,9 +15,15 @@
       <a href="{{pathFor 'graphicFreshConcreteVolumetricWeight'}}" class="btn btn-default btn-block">
         {{_ 'graphic_fresh_concrete_volumetric_weight'}}
       </a>
-      <a href="{{pathFor 'graphicFreshConcreteSettlement'}}" class="btn btn-default btn-block">
-        {{_ 'graphic_fresh_concrete_settlement_title'}}
-      </a>
+      {{#if showAirGraphic}}
+        <a href="{{pathFor 'graphicFreshConcreteAir'}}" class="btn btn-default btn-block">
+          {{_ 'graphic_fresh_concrete_air_title'}}
+        </a>
+      {{else}}
+        <a href="{{pathFor 'graphicFreshConcreteSettlement'}}" class="btn btn-default btn-block">
+          {{_ 'graphic_fresh_concrete_settlement_title'}}
+        </a>
+      {{/if}}
       <a href="{{pathFor 'statsForSamples'}}" class="btn btn-default btn-block">
         {{_ 'stats_for_samples'}}
       </a>
@@ -38,7 +44,7 @@
       <a href="{{pathFor 'graphicHardenedConcrete7DaysResistance'}}" class="btn btn-default btn-block">
         {{_ 'graphic_hardened_concrete_7_days_resistance'}}
       </a>
-      <a href="{{pathFor 'customers'}}" class="btn btn-default btn-block">
+      <a href="{{customersPath}}" class="btn btn-default btn-block">
         {{_ 'stats_resistance_by_customer'}}
       </a>
       <a href="{{pathFor 'graphicHardenedConcreteResistanceEvolution'}}" class="btn btn-default btn-block">
