@@ -3,6 +3,12 @@ var save    = function () {
   receipt.set(AutoForm.getFormValues('newReceiptForm').insertDoc)
 }
 
+Template._receiptNew.onRendered(function(){
+  // restart receipt and truck driver when it started
+  receipt = new ReactiveVar({})
+  truckDriver = new ReactiveVar({})
+})
+
 Template._receiptNew.helpers({
   receipt: function () {
     var instance = receipt.get()

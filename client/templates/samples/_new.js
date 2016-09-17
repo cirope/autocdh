@@ -1,4 +1,4 @@
-var sample = new ReactiveVar
+var sample = new ReactiveVar({})
 var save   = function () {
   sample.set(AutoForm.getFormValues('newSampleForm').insertDoc)
 }
