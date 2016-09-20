@@ -1,15 +1,3 @@
-var download = function (csvString) {
-  var blob   = new Blob(["\ufeff", csvString])
-  var a      = window.document.createElement('a')
-
-  a.href     = window.URL.createObjectURL(blob, { type: 'text/plain' })
-  a.download = TAPi18n.__('samples') + '.csv'
-
-  document.body.appendChild(a)
-  a.click()
-  document.body.removeChild(a)
-}
-
 var putSample = function (row, sample) {
   row[TAPi18n.__('sample_name')]        = sample.name
   row[TAPi18n.__('plant')]              = Plants.findOne(sample.plantId).name
@@ -157,7 +145,7 @@ Template.samplesList.events({
         return row
       })
 
-      download(Papa.unparse(_.compact(data), { quotes: true, delimiter: ';' }))
+      CSV.save(TAPi18n.__('samples'), data)
     })
   }
 })
