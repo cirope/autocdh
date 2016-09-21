@@ -11,6 +11,16 @@ Template._crack.helpers({
     return this.otherAssay ?
       TAPi18n.__('assay_other_assay_' + this.otherAssay) :
       TAPi18n.__('no')
+  },
+
+  crackTubeType: function () {
+    return this.tubeType ?
+        this.tubeType === 'bending' ?
+            TAPi18n.__('assay_tube_type_bending') :
+            this.tubeType === 'other' ?
+                TAPi18n.__('assay_tube_type_other') :
+                this.tubeType
+        : TAPi18n.__('no')
   }
 })
 
