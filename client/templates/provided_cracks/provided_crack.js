@@ -20,7 +20,7 @@ Template.providedCrack.helpers({
   },
 
   tubeType: function () {
-    return this.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : this.tubeType
+    return this.tubeType === 'bending' ? TAPi18n.__('assay_tube_type_bending') : this.tubeType === 'other' ? TAPi18n.__('assay_tube_type_other') : this.tubeType
   },
 
   age: function () {
