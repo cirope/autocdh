@@ -21,6 +21,12 @@ Template._crack.helpers({
                 TAPi18n.__('assay_tube_type_other') :
                 this.tubeType
         : TAPi18n.__('no')
+  },
+
+  diameterLabel: function () {
+    return this.tubeType === 'bending' ?
+            TAPi18n.__('crack_width') :
+            TAPi18n.__('crack_diameter')
   }
 })
 
