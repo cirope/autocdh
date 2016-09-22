@@ -1,7 +1,14 @@
 var setTubeType = function (tubeType, revalidate) {
-  var dimensions = _.map(tubeType.split('x'), function (d) { return +d * 10 })
-  var diameter   = dimensions[0]
-  var height     = dimensions[1]
+  var diameter   = 150
+  var height     = 150
+
+  if(tubeType !== 'bending') {
+    var dimensions = _.map(tubeType.split('x'), function(d){return +d * 10})
+    diameter = dimensions[0]
+    height = dimensions[1]
+  } else {
+
+  }
 
   Schemas.Crack.schema().diameter.min = diameter - 10
   Schemas.Crack.schema().diameter.max = diameter + 10
