@@ -1,3 +1,5 @@
+var _diameterLabel = new ReactiveVar(TAPi18n.__('crack_diameter'))
+
 var setTubeType = function (tubeType, revalidate) {
   var diameter   = 150
   var height     = 150
@@ -6,8 +8,9 @@ var setTubeType = function (tubeType, revalidate) {
     var dimensions = _.map(tubeType.split('x'), function(d){return +d * 10})
     diameter = dimensions[0]
     height = dimensions[1]
+    _diameterLabel.set(TAPi18n.__('crack_diameter'))
   } else {
-
+    _diameterLabel.set(TAPi18n.__('crack_width'))
   }
 
   Schemas.Crack.schema().diameter.min = diameter - 10
@@ -29,7 +32,10 @@ Template._crackEdit.helpers({
     setTubeType(this.tubeType)
 
     return this.tubeType
-  }
+  },
+  diameterLabel: function () {
+    return _diameterLabel.get()
+  },
 })
 
 Template._crackEdit.events({
