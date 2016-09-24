@@ -120,6 +120,7 @@
   "crack_diameter": "Diameter",
   "crack_height": "Height",
   "crack_width": "Width",
+  "crack_light": "Trial light",
   "crack_load": "Load",
   "crack_stress": "Stress",
   "crack_age": "Age",

@@ -1,15 +1,20 @@
 var _diameterLabel = new ReactiveVar(TAPi18n.__('crack_diameter'))
 
 var setTubeType = function (tubeType, revalidate) {
-  var diameter   = 150
-  var height     = 150
+  var diameter = 150
+  var height   = 150
+  var light    = 0
 
   if(tubeType !== 'bending') {
     var dimensions = _.map(tubeType.split('x'), function(d){return +d * 10})
     diameter = dimensions[0]
     height = dimensions[1]
+    light = 0
     _diameterLabel.set(TAPi18n.__('crack_diameter'))
   } else {
+    diameter = 150   // width
+    height = 150
+    light = 450
     _diameterLabel.set(TAPi18n.__('crack_width'))
   }
 
