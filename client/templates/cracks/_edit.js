@@ -57,10 +57,17 @@ Template._crackEdit.events({
   'keyup [data-stress-modifier], change [name="pressId"]': function (event) {
     var measuredLoad = +$('[name="load"]').val()
     var diameter     = +$('[name="diameter"]').val()
-    var press        = Presses.findOne($('[name="pressId"]').val())
-    var load         = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
-    var stress       = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
+    var press = Presses.findOne($('[name="pressId"]').val())
+    var load = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
 
+    var stress;
+    if($('[name="tubeType"]').val() !== 'bending') {
+      stress = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
+    } else {
+      var height = +$('[name="height"]').val()
+      var light = +450
+      stress = 10.0 * load * light / (diameter * height * height)
+    }
     $('[name="stress"]').val(stress.toFixed(1))
   }
 })
