@@ -459,6 +459,8 @@
   "provided_crack_tubes_age_with_unit_plural": "__count__ días",
   "provided_crack_tubes_diameter": "Diámetro",
   "provided_crack_tubes_height": "Altura",
+  "provided_crack_tubes_width": "Ancho",
+  "provided_crack_tubes_light": "Luz de ensayo",
   "provided_crack_tubes_load": "Lectura de la prensa",
   "provided_crack_tubes_breaking_load": "Carga de rotura",
   "provided_crack_tubes_stress": "Tensión de rotura",

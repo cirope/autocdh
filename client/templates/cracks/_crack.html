@@ -48,6 +48,13 @@
             <strong>{{crackTubeType}}</strong>
           </p>
 
+          {{#if isBendingTubeType}}
+          <p>
+            {{_ 'crack_light'}} /
+            <strong>{{light}} mm</strong>
+          </p>
+          {{/if}}
+
           <p>
             {{diameterLabel}} /
             <strong>{{diameter}} mm</strong>
@@ -56,11 +63,6 @@
           <p>
             {{_ 'crack_height'}} /
             <strong>{{height}} mm</strong>
-          </p>
-
-          <p>
-            {{_ 'crack_light'}} /
-            <strong>{{light}} mm</strong>
           </p>
 
           <p>

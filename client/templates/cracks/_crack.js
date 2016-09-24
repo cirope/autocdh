@@ -27,6 +27,10 @@ Template._crack.helpers({
     return this.tubeType === 'bending' ?
             TAPi18n.__('crack_width') :
             TAPi18n.__('crack_diameter')
+  },
+
+  isBendingTubeType: function () {
+    return this.tubeType && this.tubeType === 'bending'
   }
 })
 
