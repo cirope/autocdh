@@ -22,9 +22,12 @@ var setTubeType = function (tubeType, revalidate) {
   Schemas.Crack.schema().diameter.max = diameter + 10
   Schemas.Crack.schema().height.min   = height - 10
   Schemas.Crack.schema().height.max   = height + 10
+  Schemas.Crack.schema().light.min   = light - 100
+  Schemas.Crack.schema().light.max   = light + 100
 
   $('[name="diameter"]').val(diameter).trigger('keyup')
   $('[name="height"]').val(height).trigger('keyup')
+  $('[name="light"]').val(light).trigger('keyup')
 
   if (revalidate) {
     AutoForm.validateField('editCrackForm', 'diameter')
@@ -70,7 +73,7 @@ Template._crackEdit.events({
       stress = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
     } else {
       var height = +$('[name="height"]').val()
-      var light = +450
+      var light = +$('[name="light"]').val()
       stress = 10.0 * load * light / (diameter * height * height)
     }
     $('[name="stress"]').val(stress.toFixed(1))

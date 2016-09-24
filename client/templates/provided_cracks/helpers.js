@@ -27,7 +27,8 @@ var setTubeType = function (tubeType) {
 
   setInAllTubes({
     diameter:  diameter || '',
-    height:    height   || ''
+    height:    height   || '',
+    light:     light    || ''
   })
 }
 var tube = function (template) {
@@ -53,7 +54,8 @@ var tube = function (template) {
   return {
     crackedAt: moment(crackDate || new Date, 'L').toDate(),
     diameter:  diameter         || '',
-    height:    height           || ''
+    height:    height           || '',
+    light:     light            || ''
   }
 }
 
@@ -115,6 +117,8 @@ var events = {
     var diameter     = +template.$('[name="tubes.' + index + '.diameter"]').val()
     var press        = Presses.findOne($pressId.val())
     var load         = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
+
+
     var stress       = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
 
     template.$('[name="tubes.' + index + '.stress"]').val(stress.toFixed(1))
