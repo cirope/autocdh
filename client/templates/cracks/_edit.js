@@ -1,4 +1,5 @@
 var _diameterLabel = new ReactiveVar(TAPi18n.__('crack_diameter'))
+var _bendingTubeType = new ReactiveVar(false)
 
 var setTubeType = function (tubeType, revalidate) {
   var diameter = 150
@@ -11,11 +12,13 @@ var setTubeType = function (tubeType, revalidate) {
     height = dimensions[1]
     light = 0
     _diameterLabel.set(TAPi18n.__('crack_diameter'))
+    _bendingTubeType.set(false)
   } else {
     diameter = 150   // width
     height = 150
     light = 450
     _diameterLabel.set(TAPi18n.__('crack_width'))
+    _bendingTubeType.set(true)
   }
 
   Schemas.Crack.schema().diameter.min = diameter - 10
@@ -45,7 +48,10 @@ Template._crackEdit.helpers({
     return _diameterLabel.get()
   },
   isBendingTubeType: function () {
-    return this.tubeType && this.tubeType === 'bending'
+    return _bendingTubeType.get()
+  },
+  responsibleClass: function () {
+    return _bendingTubeType.get() ? 'col-md-6' : 'col-md-12'
   }
 })
 

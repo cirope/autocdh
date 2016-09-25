@@ -17,19 +17,16 @@
           <div class="row">
             <div class="col-md-6">
               {{> afQuickField name='pressId'}}
-
-              {{#if isBendingTubeType}}
               <div class="row">
-                 <div class="col-md-6">
+                 <div class="{{responsibleClass}}">
                      {{> afQuickField name='responsibleId'}}
                  </div>
+                 {{#if isBendingTubeType}}
                  <div class="col-md-6">
                      {{> afQuickField name='light'}}
                  </div>
+                 {{/if}}
               </div>
-              {{else}}
-                  {{> afQuickField name='responsibleId'}}
-              {{/if}}
               <div class="row">
                 <div class="col-md-6">
                   {{> afQuickField name='moldingIn'}}
