@@ -83,7 +83,7 @@ Template._crackEdit.events({
     } else {
       var height = +$('[name="height"]').val()
       var light = +$('[name="light"]').val()
-      stress = 10.0 * load * light / (diameter * height * height)
+      stress = diameter && height && (10.0 * load * light / (diameter * height * height))
     }
     $('[name="stress"]').val(stress.toFixed(1))
   }
