@@ -11,24 +11,24 @@ var setInAllTubes = function (newValues) {
 var setTubeType = function (tubeType) {
   var diameter = 150
   var height   = 150
-  var light    = 0
+  //var light    = 0
   if(assay.tubeType !== 'bending') {
     var dimensions  = _.map(tubeType.split('x'), function (d) {
       return +d * 10
     })
     diameter = dimensions[0]
     height = dimensions[1]
-    light = 0
+    //light = 0
   } else {
     diameter = 150   // width
     height = 150
-    light = 450
+    //light = 450
   }
 
   setInAllTubes({
     diameter:  diameter || '',
-    height:    height   || '',
-    light:     light    || ''
+    height:    height   || ''
+    //light:     light    || ''
   })
 }
 var tube = function (template) {
@@ -37,25 +37,25 @@ var tube = function (template) {
 
   var diameter = 150
   var height   = 150
-  var light    = 0
+  //var light    = 0
   if(assay.tubeType !== 'bending') {
     var dimensions  = _.map(tubeType.split('x'), function (d) {
       return +d * 10
     })
     diameter = dimensions[0]
     height = dimensions[1]
-    light = 0
+    //light = 0
   } else {
     diameter = 150   // width
     height = 150
-    light = 450
+    //light = 450
   }
 
   return {
     crackedAt: moment(crackDate || new Date, 'L').toDate(),
     diameter:  diameter         || '',
-    height:    height           || '',
-    light:     light            || ''
+    height:    height           || ''
+    //light:     light            || ''
   }
 }
 
