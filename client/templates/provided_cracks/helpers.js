@@ -9,26 +9,53 @@ var setInAllTubes = function (newValues) {
   providedCrack.set(_.extend(_providedCrack, { tubes: newTubes }))
 }
 var setTubeType = function (tubeType) {
-  var dimensions = _.map(tubeType.split('x'), function (d) { return +d * 10 })
-  var diameter   = dimensions[0]
-  var height     = dimensions[1]
+  var diameter = 150
+  var height   = 150
+  //var light    = 0
+  if(assay.tubeType !== 'bending') {
+    var dimensions  = _.map(tubeType.split('x'), function (d) {
+      return +d * 10
+    })
+    diameter = dimensions[0]
+    height = dimensions[1]
+    //light = 0
+  } else {
+    diameter = 150   // width
+    height = 150
+    //light = 450
+  }
 
   setInAllTubes({
     diameter:  diameter || '',
     height:    height   || ''
+    //light:     light    || ''
   })
 }
 var tube = function (template) {
   var tubeType   = template.$('[name="tubeType"]').val()
   var crackDate  = template.$('[name="crackDate"]').val()
-  var dimensions = _.map(tubeType.split('x'), function (d) { return +d * 10 })
-  var diameter   = dimensions[0]
-  var height     = dimensions[1]
+
+  var diameter = 150
+  var height   = 150
+  //var light    = 0
+  if(assay.tubeType !== 'bending') {
+    var dimensions  = _.map(tubeType.split('x'), function (d) {
+      return +d * 10
+    })
+    diameter = dimensions[0]
+    height = dimensions[1]
+    //light = 0
+  } else {
+    diameter = 150   // width
+    height = 150
+    //light = 450
+  }
 
   return {
     crackedAt: moment(crackDate || new Date, 'L').toDate(),
     diameter:  diameter         || '',
     height:    height           || ''
+    //light:     light            || ''
   }
 }
 
@@ -90,6 +117,8 @@ var events = {
     var diameter     = +template.$('[name="tubes.' + index + '.diameter"]').val()
     var press        = Presses.findOne($pressId.val())
     var load         = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
+
+
     var stress       = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
 
     template.$('[name="tubes.' + index + '.stress"]').val(stress.toFixed(1))

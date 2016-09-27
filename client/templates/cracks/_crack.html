@@ -45,11 +45,18 @@
         <div class="col-md-6">
           <p>
             {{_ 'crack_tube_type'}} /
-            <strong>{{tubeType}}</strong>
+            <strong>{{crackTubeType}}</strong>
           </p>
 
+          {{#if isBendingTubeType}}
           <p>
-            {{_ 'crack_diameter'}} /
+            {{_ 'crack_light'}} /
+            <strong>{{light}} mm</strong>
+          </p>
+          {{/if}}
+
+          <p>
+            {{diameterLabel}} /
             <strong>{{diameter}} mm</strong>
           </p>
 
