@@ -171,8 +171,17 @@ var cracks = function (cracks) {
     else
       lines.push(TAPi18n.__('crack_crack_in')   + ': ' + moment(crack.crackIn).format(dateFormat))
 
-    lines.push(TAPi18n.__('crack_tube_type')    + ': ' + (crack.tubeType || ''))
-    lines.push(TAPi18n.__('crack_diameter')     + ': ' + (crack.diameter || '') + ' mm')
+    var bendingCrackTubeType = crack.tubeType ? crack.tubeType === 'bending' : false
+    var crackTubeType = crack.tubeType ? (bendingCrackTubeType ? TAPi18n.__('assay_tube_type_bending') : crack.tubeType) : ''
+
+    lines.push(TAPi18n.__('crack_tube_type')    + ': ' + crackTubeType)
+    if(!bendingCrackTubeType) {
+      lines.push(TAPi18n.__('crack_diameter') + ': ' + (crack.diameter || '') + ' mm')
+    } else {
+      lines.push(TAPi18n.__('crack_width') + ': ' + (crack.diameter || '') + ' mm')
+      lines.push(TAPi18n.__('crack_height') + ': ' + (crack.height || '') + ' mm')
+      lines.push(TAPi18n.__('crack_light') + ': ' + (crack.light || '') + ' mm')
+    }
     lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && (crack.stress.toFixed(1) + ' MPa') || '-'))
 
     if (crack.stress && sibling && sibling.stress)
