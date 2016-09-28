@@ -147,10 +147,10 @@ Template.granulometry.onDestroyed(function () {
 
 Template.granulometry.helpers({
   material: function () {
-    var materialId    = this.materialId
-    var materialList  = Materials.first()
-    var materials     = materialList && materialList[this.type + 's']
-    var material      = _.findWhere(materials, { _id: materialId })
+    var materialId   = this.materialId
+    var materialList = Materials.first()
+    var materials    = materialList && materialList[this.type + 's']
+    var material     = _.findWhere(materials, { _id: materialId })
 
     return material && material.name
   },
