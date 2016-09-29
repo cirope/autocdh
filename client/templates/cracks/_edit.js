@@ -15,7 +15,7 @@ var setTubeType = function (tubeType, revalidate) {
       _bendingTubeType.set(true)
     } else if (tubeType === 'other') {
       diameter = 152
-      height = 100
+      height = 102
       light = 0
       _diameterLabel.set(TAPi18n.__('crack_diameter'))
       _bendingTubeType.set(false)

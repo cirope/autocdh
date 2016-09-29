@@ -10,7 +10,7 @@ var setInAllTubes = function (newValues) {
 }
 var setTubeType = function (tubeType) {
   var diameter = 152
-  var height   = 100
+  var height   = 102
   if(tubeType) {
     if (tubeType.match(/\d+x\d+/)) {
       var dimensions = _.map(tubeType.split('x'), function (d) {
