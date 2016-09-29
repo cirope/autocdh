@@ -14,17 +14,28 @@ Template._crack.helpers({
   },
 
   crackTubeType: function () {
-    return this.tubeType ?
-        this.tubeType === 'bending' ?
-            TAPi18n.__('assay_tube_type_bending') :
-            this.tubeType === 'other' ?
-                TAPi18n.__('assay_tube_type_other') :
-                this.tubeType
-        : TAPi18n.__('no')
+    var label = TAPi18n.__('no')
+    if(this.tubeType) {
+      switch (this.tubeType) {
+        case '15x30':
+          label = TAPi18n.__('assay_tube_type_15x30')
+          break
+        case '10x20':
+          label = TAPi18n.__('assay_tube_type_10x20')
+          break
+        case 'bending':
+          label = TAPi18n.__('assay_tube_type_bending')
+          break
+        case 'other':
+          label = TAPi18n.__('assay_tube_type_other')
+          break
+      }
+    }
+    return label
   },
 
   diameterLabel: function () {
-    return this.tubeType === 'bending' ?
+    return this.tubeType && this.tubeType === 'bending' ?
             TAPi18n.__('crack_width') :
             TAPi18n.__('crack_diameter')
   },

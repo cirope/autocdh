@@ -6,19 +6,29 @@ var setTubeType = function (tubeType, revalidate) {
   var height   = 150
   var light    = 0
 
-  if(tubeType !== 'bending') {
-    var dimensions = _.map(tubeType.split('x'), function(d){return +d * 10})
-    diameter = dimensions[0]
-    height = dimensions[1]
-    light = 0
-    _diameterLabel.set(TAPi18n.__('crack_diameter'))
-    _bendingTubeType.set(false)
-  } else {
-    diameter = 150   // width
-    height = 150
-    light = 450
-    _diameterLabel.set(TAPi18n.__('crack_width'))
-    _bendingTubeType.set(true)
+  if(tubeType) {
+    if (tubeType === 'bending') {
+      diameter = 150   // width
+      height = 150
+      light = 450
+      _diameterLabel.set(TAPi18n.__('crack_width'))
+      _bendingTubeType.set(true)
+    } else if (tubeType === 'other') {
+      diameter = 152
+      height = 100
+      light = 0
+      _diameterLabel.set(TAPi18n.__('crack_diameter'))
+      _bendingTubeType.set(false)
+    } else if (tubeType.match(/\d+x\d+/)) {
+      var dimensions = _.map(tubeType.split('x'), function (d) {
+        return +d * 10
+      })
+      diameter = dimensions[0]
+      height = dimensions[1]
+      light = 0
+      _diameterLabel.set(TAPi18n.__('crack_diameter'))
+      _bendingTubeType.set(false)
+    }
   }
 
   Schemas.Crack.schema().diameter.min = diameter - 10
@@ -74,11 +84,11 @@ Template._crackEdit.events({
   'keyup [data-stress-modifier], change [name="pressId"]': function (event) {
     var measuredLoad = +$('[name="load"]').val()
     var diameter     = +$('[name="diameter"]').val()
-    var press = Presses.findOne($('[name="pressId"]').val())
-    var load = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
 
     var stress;
     if($('[name="tubeType"]').val() !== 'bending') {
+      var press = Presses.findOne($('[name="pressId"]').val())
+      var load = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
       stress = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
     } else {
       var height = +$('[name="height"]').val()

@@ -171,8 +171,25 @@ var cracks = function (cracks) {
     else
       lines.push(TAPi18n.__('crack_crack_in')   + ': ' + moment(crack.crackIn).format(dateFormat))
 
-    var bendingCrackTubeType = crack.tubeType ? crack.tubeType === 'bending' : false
-    var crackTubeType = crack.tubeType ? (bendingCrackTubeType ? TAPi18n.__('assay_tube_type_bending') : crack.tubeType) : ''
+    var bendingCrackTubeType = false
+    var crackTubeType = crack.tubeType
+    if(crack.tubeType) {
+      switch (crack.tubeType) {
+        case '15x30':
+          crackTubeType = TAPi18n.__('assay_tube_type_15x30')
+          break
+        case '10x20':
+          crackTubeType = TAPi18n.__('assay_tube_type_10x20')
+          break
+        case 'bending':
+          bendingCrackTubeType = true
+          crackTubeType = TAPi18n.__('assay_tube_type_bending')
+          break
+        case 'other':
+          crackTubeType = TAPi18n.__('assay_tube_type_other')
+          break
+      }
+    }
 
     lines.push(TAPi18n.__('crack_tube_type')    + ': ' + crackTubeType)
     if(!bendingCrackTubeType) {
