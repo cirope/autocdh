@@ -9,53 +9,44 @@ var setInAllTubes = function (newValues) {
   providedCrack.set(_.extend(_providedCrack, { tubes: newTubes }))
 }
 var setTubeType = function (tubeType) {
-  var diameter = 150
-  var height   = 150
-  //var light    = 0
-  if(assay.tubeType !== 'bending') {
-    var dimensions  = _.map(tubeType.split('x'), function (d) {
-      return +d * 10
-    })
-    diameter = dimensions[0]
-    height = dimensions[1]
-    //light = 0
-  } else {
-    diameter = 150   // width
-    height = 150
-    //light = 450
+  var diameter = 152
+  var height   = 102
+  if(tubeType) {
+    if (tubeType.match(/\d+x\d+/)) {
+      var dimensions = _.map(tubeType.split('x'), function (d) {
+        return +d * 10
+      })
+      diameter = dimensions[0]
+      height = dimensions[1]
+    }
   }
 
   setInAllTubes({
     diameter:  diameter || '',
     height:    height   || ''
-    //light:     light    || ''
   })
 }
 var tube = function (template) {
   var tubeType   = template.$('[name="tubeType"]').val()
   var crackDate  = template.$('[name="crackDate"]').val()
 
-  var diameter = 150
-  var height   = 150
-  //var light    = 0
-  if(assay.tubeType !== 'bending') {
-    var dimensions  = _.map(tubeType.split('x'), function (d) {
-      return +d * 10
-    })
-    diameter = dimensions[0]
-    height = dimensions[1]
-    //light = 0
-  } else {
-    diameter = 150   // width
-    height = 150
-    //light = 450
+  var diameter = 152
+  var height   = 102
+
+  if(tubeType) {
+    if (tubeType.match(/\d+x\d+/)) {
+      var dimensions = _.map(tubeType.split('x'), function (d) {
+        return +d * 10
+      })
+      diameter = dimensions[0]
+      height = dimensions[1]
+    }
   }
 
   return {
     crackedAt: moment(crackDate || new Date, 'L').toDate(),
     diameter:  diameter         || '',
     height:    height           || ''
-    //light:     light            || ''
   }
 }
 
