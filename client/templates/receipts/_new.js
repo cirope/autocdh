@@ -59,6 +59,7 @@ Template._receiptNew.events({
     event.preventDefault()
 
     var params = Router.current() && Router.current().params
+    console.log(">> "+JSON.stringify(params))
 
     save()
     AutoForm.resetForm('newReceiptForm')
