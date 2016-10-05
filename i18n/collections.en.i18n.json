@@ -548,6 +548,7 @@
   "strength": "Strength",
   "strength_name": "Name",
   "strength_name_placeholder": "Enter a name...",
+  "strength_resistant": "Resistant category",
   "strength_individual_criteria": "Individual criteria",
   "strength_average_criteria": "Average criteria",
   "strength_cusum_target": "CuSum target",

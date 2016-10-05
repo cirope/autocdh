@@ -548,6 +548,7 @@
   "strength": "Tipo de hormigón",
   "strength_name": "Nombre",
   "strength_name_placeholder": "Ingrese un nombre...",
+  "strength_resistant": "Categoría resistente",
   "strength_individual_criteria": "Criterio individual",
   "strength_average_criteria": "Criterio media móvil",
   "strength_cusum_target": "Media de dosificación deseada (CuSuM)",
