@@ -10,7 +10,7 @@ var setInAllTubes = function (newValues) {
 }
 var setTubeType = function (tubeType) {
   var diameter = 152
-  var height   = 102
+  var height   = 106
   if(tubeType) {
     if (tubeType.match(/\d+x\d+/)) {
       var dimensions = _.map(tubeType.split('x'), function (d) {
@@ -31,7 +31,7 @@ var tube = function (template) {
   var crackDate  = template.$('[name="crackDate"]').val()
 
   var diameter = 152
-  var height   = 102
+  var height   = 106
 
   if(tubeType) {
     if (tubeType.match(/\d+x\d+/)) {

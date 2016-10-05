@@ -15,7 +15,7 @@ var setTubeType = function (tubeType, revalidate) {
       _bendingTubeType.set(true)
     } else if (tubeType === 'other') {
       diameter = 152
-      height = 102
+      height = 106
       light = 0
       _diameterLabel.set(TAPi18n.__('crack_diameter'))
       _bendingTubeType.set(false)
@@ -90,11 +90,13 @@ Template._crackEdit.events({
       var press = Presses.findOne($('[name="pressId"]').val())
       var load = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
       stress = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
+      stress = stress.toFixed(1)
     } else {
       var height = +$('[name="height"]').val()
       var light = +$('[name="light"]').val()
       stress = diameter && height && (measuredLoad * light / (diameter * Math.pow(height, 2))) * 10
+      stress = stress.toFixed(2)
     }
-    $('[name="stress"]').val(stress.toFixed(1))
+    $('[name="stress"]').val(stress)
   }
 })
