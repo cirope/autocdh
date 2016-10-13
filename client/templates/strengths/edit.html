@@ -11,6 +11,7 @@
         {{#autoForm collection='Strengths' id='editStrengthForm' type='method-update' meteormethod='updateStrength' doc=..}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true}}
+            {{> afQuickField name='resistant' autofocus=true}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'strength_update'}}</button>
         {{/autoForm}}

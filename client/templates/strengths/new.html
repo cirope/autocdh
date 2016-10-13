@@ -11,6 +11,7 @@
         {{#autoForm collection='Strengths' id='newStrengthForm' type='method' meteormethod='createStrength'}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
+            {{> afQuickField name='resistant'}}
           </fieldset>
           <button type="submit" class="btn btn-primary">{{_ 'strength_create'}}</button>
         {{/autoForm}}
