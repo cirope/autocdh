@@ -42,15 +42,15 @@ Template.statsIndicatorsDashboardResistance7Days.helpers({
       })
 
       _.each(cracks, function (crack) {
-        var concrete       = Concretes.findOne({ sampleId: crack.sampleId }, { reactive: false })
-        var strength       = Strengths.findOne(concrete.strengthId, { reactive: false })
-        var concreteNumber = strength && strength.name.match(/\d+/)
-        var crackedIn      = moment(crack.crackedIn).endOf('day')
-        var moldingIn      = moment(crack.moldingIn).endOf('day')
-        var dateDiff       = crackedIn.diff(moldingIn, 'days')
+        var concrete  = Concretes.findOne({ sampleId: crack.sampleId }, { reactive: false })
+        var strength  = Strengths.findOne(concrete.strengthId, { reactive: false })
+        var resistant = strength && strength.resistant
+        var crackedIn = moment(crack.crackedIn).endOf('day')
+        var moldingIn = moment(crack.moldingIn).endOf('day')
+        var dateDiff  = crackedIn.diff(moldingIn, 'days')
 
-        if (concreteNumber && dateDiff >= 6 && dateDiff <= 11)
-          values.push(Math.round(crack.stress / +concreteNumber[0] * 100))
+        if (resistant && dateDiff >= 6 && dateDiff <= 11)
+          values.push(Math.round(crack.stress / resistant * 100))
       })
 
       var result   = Math.round(Graphics.mean(values))
