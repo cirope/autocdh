@@ -1,4 +1,4 @@
-StatsDeviation = {
+StatsIndicators = {
   categoryLimits: {
     'lower_than_17': {
       min: 0,
@@ -52,7 +52,7 @@ StatsDeviation = {
     var values = {}
 
     _.each(this.strengths, function (data, resistant) {
-      var cracks   = StatsDeviation.filterByMonth(data.cracks, month)
+      var cracks   = StatsIndicators.filterByMonth(data.cracks, month)
       var stresses = Stats.tenPercentCriteria(_.pluck(cracks, 'stress'))
 
       if (stresses.length >= 18) {
@@ -76,7 +76,7 @@ StatsDeviation = {
 
     _.each(settings, function (setting) {
       var label  = TAPi18n.__('stats_indicators_strength_category_' + setting.type)
-      var limits = StatsDeviation.categoryLimits[setting.type]
+      var limits = StatsIndicators.categoryLimits[setting.type]
 
       distribution[label] = {
         percentage: setting.value,
@@ -87,7 +87,7 @@ StatsDeviation = {
       }
     })
 
-    return settings.length == _.size(StatsDeviation.categoryLimits) && distribution
+    return settings.length == _.size(StatsIndicators.categoryLimits) && distribution
   },
 
   fillTheBlanks: function (values) {

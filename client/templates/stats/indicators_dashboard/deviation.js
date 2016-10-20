@@ -12,21 +12,21 @@ Template.statsIndicatorsDashboardDeviation.onCreated(function () {
     max: indicators.deviationMax
   }
 
-  StatsDeviation.strengths            = this.data.strengths
-  StatsDeviation.deviationPercentages = percentages
+  StatsIndicators.strengths            = this.data.strengths
+  StatsIndicators.deviationPercentages = percentages
 })
 
 Template.statsIndicatorsDashboardDeviation.onDestroyed(function () {
-  deviationSettings                   = null
-  StatsDeviation.strengths            = null
-  StatsDeviation.deviationPercentages = null
+  deviationSettings                    = null
+  StatsIndicators.strengths            = null
+  StatsIndicators.deviationPercentages = null
 })
 
 Template.statsIndicatorsDashboardDeviation.helpers({
   deviation: function () {
     if (deviationSettings) {
       var month     = moment(this.value, 'YYYYMM')
-      var deviation = StatsDeviation.deviationFor(month)
+      var deviation = StatsIndicators.deviationFor(month)
       var cssClass  = 'success'
 
       if (deviation < deviationSettings.min) cssClass = 'danger'
