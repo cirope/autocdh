@@ -87,7 +87,7 @@ StatsIndicators = {
       }
     })
 
-    return settings.length == _.size(StatsIndicators.categoryLimits) && distribution
+    return settings.length === _.size(StatsIndicators.categoryLimits) && distribution
   },
 
   fillTheBlanks: function (values) {
