@@ -1,9 +1,9 @@
-var volumesSettings = null
+var dispatchedSettings = null
 var volumeSettings  = null
 var samples         = null
 
 var volumeFor = function (month) {
-  var dispatched = _.findWhere(volumesSettings, { month: +month })
+  var dispatched = _.findWhere(dispatchedSettings, { month: +month })
   var _samples   = samples[month]
 
   if (dispatched && dispatched.value && _samples && _samples.length)
@@ -19,17 +19,18 @@ Template.statsIndicatorsDashboardVolume.onCreated(function () {
 
   if (! volumes || ! indicators) return
 
-  samples         = this.data.samples
-  volumesSettings = volumes
-  volumeSettings  = indicators.volumeMin && indicators.volumeMax && {
+  samples            = this.data.samples
+  dispatchedSettings = volumes
+  volumeSettings     = indicators.volumeMin && indicators.volumeMax && {
     min: indicators.volumeMin,
     max: indicators.volumeMax
   }
 })
 
 Template.statsIndicatorsDashboardVolume.onDestroyed(function () {
-  samples        = null
-  volumeSettings = null
+  samples            = null
+  dispatchedSettings = null
+  volumeSettings     = null
 })
 
 Template.statsIndicatorsDashboardVolume.helpers({
