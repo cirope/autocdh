@@ -119,8 +119,8 @@ Template.statsIndicatorsDashboardResistanceRatio.helpers({
       var resistanceRatio = resistanceRatioFor(month)
       var cssClass        = 'success'
 
-      if (resistanceRatio < resistanceRatioSettings.min) cssClass = 'danger'
-      if (resistanceRatio > resistanceRatioSettings.max) cssClass = 'warning'
+      if (+resistanceRatio < resistanceRatioSettings.min) cssClass = 'danger'
+      if (+resistanceRatio > resistanceRatioSettings.max) cssClass = 'warning'
 
       return {
         value: resistanceRatio,
