@@ -4,7 +4,9 @@
       <strong>{{_ 'stats_indicators_8_nonconform_percentage'}}</strong>
     </td>
     {{#each months}}
-      <td>S/D</td>
+      {{#with nonconformPercentage}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
     {{/each}}
   </tr>
 </template>
