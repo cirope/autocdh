@@ -4,7 +4,9 @@
       <strong>{{_ 'stats_indicators_5_efficiency'}}</strong>
     </td>
     {{#each months}}
-      <td>S/D</td>
+      {{#with efficiency}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
     {{/each}}
   </tr>
 </template>

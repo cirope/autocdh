@@ -1,6 +1,6 @@
 var resistanceRatioPercentages = null
 var resistanceRatioSettings    = null
-var strengths            = null
+var strengths                  = null
 
 var filterByMonth = function (cracks, month) {
   var count          = 0
