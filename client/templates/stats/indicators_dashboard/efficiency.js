@@ -113,12 +113,34 @@ Template.statsIndicatorsDashboardEfficiency.helpers({
 
       return {
         value: efficiency,
-        class: efficiency !== TAPi18n.__('no_data_abbr') && cssClass
+        class: efficiency !== TAPi18n.__('no_data_abbr') && (cssClass + ' pointer-cursor')
       }
     } else {
       return {
         value: TAPi18n.__('no_data_abbr')
       }
     }
+  }
+})
+
+Template.statsIndicatorsDashboardEfficiency.events({
+  'click [data-details-for]': function (event, template) {
+    var _month        = $(event.currentTarget).data('detailsFor')
+    var month         = moment(_month, 'YYYYMM')
+    var _efficiencies = efficiencies(month)
+    var data          = {
+      month:        month.format('MMMM YYYY').toUpperCase(),
+      efficiencies: Strengths.find().map(function (strength) {
+        var efficiency = _efficiencies[strength.resistant]
+
+        return {
+          strength:   strength.name,
+          efficiency: _.isNumber(efficiency) ? efficiency.toFixed(2) : efficiency
+        }
+      })
+    }
+
+    Session.set('indicatorDetailsTemplateData', data)
+    Session.set('indicatorDetailsTemplate', 'statsIndicatorsDashboardEfficiencyDetails')
   }
 })

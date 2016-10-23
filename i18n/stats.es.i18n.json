@@ -126,5 +126,7 @@
   "stats_indicators_8_nonconform_percentage": "H° no conforme / H° despachado (%)",
   "stats_indicators_coefficient": "Coeficiente",
   "stats_indicators_dashboard": "Tablero de indicadores de calidad",
-  "stats_indicators_deviation": "Desviación"
+  "stats_indicators_deviation": "Desviación",
+  "stats_indicators_mean": "Media",
+  "stats_indicators_ratio": "Relación"
 }

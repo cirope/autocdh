@@ -126,5 +126,7 @@
   "stats_indicators_8_nonconform_percentage": "Strength with non conforms / Dispatched strength (%)",
   "stats_indicators_coefficient": "Coefficient",
   "stats_indicators_dashboard": "Indicators dashboard",
-  "stats_indicators_deviation": "Deviation"
+  "stats_indicators_deviation": "Deviation",
+  "stats_indicators_mean": "Mean",
+  "stats_indicators_ratio": "Ratio"
 }

@@ -5,7 +5,7 @@
     </td>
     {{#each months}}
       {{#with efficiency}}
-        <td class="{{class}}">{{value}}</td>
+        <td class="{{class}}" data-details-for="{{../value}}">{{value}}</td>
       {{/with}}
     {{/each}}
   </tr>
