@@ -13,6 +13,28 @@ var helpers = {
 
 Template.statsIndicatorsDashboard.helpers(helpers)
 
+Template.statsIndicatorsDashboard.helpers({
+  detailsTemplate: function () {
+    return Session.get('indicatorDetailsTemplate')
+  },
+
+  detailsTemplateData: function () {
+    return Session.get('indicatorDetailsTemplateData')
+  }
+})
+
+Template.statsIndicatorsDashboard.events({
+  'click [data-close]': function (event, template) {
+    Session.set('indicatorDetailsTemplate')
+    Session.set('indicatorDetailsTemplateData')
+  }
+})
+
+Template.statsIndicatorsDashboard.onDestroyed(function () {
+  Session.set('indicatorDetailsTemplate')
+  Session.set('indicatorDetailsTemplateData')
+})
+
 Template.statsIndicatorsDashboardResistance7Days.helpers(helpers)
 Template.statsIndicatorsDashboardDeviation.helpers(helpers)
 Template.statsIndicatorsDashboardDeviationCoefficient.helpers(helpers)

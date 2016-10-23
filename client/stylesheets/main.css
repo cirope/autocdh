@@ -19,6 +19,10 @@ label {
   line-height: 1.75;
 }
 
+.pointer-cursor {
+  cursor: pointer;
+}
+
 .form-group {
   position: relative; /* Needed for date picker fields */
 }
