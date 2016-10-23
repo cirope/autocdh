@@ -124,5 +124,7 @@
   "stats_indicators_6_volume": "Volume / Samples (m³ / N° samples)",
   "stats_indicators_7_claims_percentage": "Strength with claims / Dispatched strength (%)",
   "stats_indicators_8_nonconform_percentage": "Strength with non conforms / Dispatched strength (%)",
-  "stats_indicators_dashboard": "Tablero de indicadores de calidad"
+  "stats_indicators_coefficient": "Coefficient",
+  "stats_indicators_dashboard": "Indicators dashboard",
+  "stats_indicators_deviation": "Deviation"
 }

@@ -34,12 +34,36 @@ Template.statsIndicatorsDashboardDeviationCoefficient.helpers({
 
       return {
         value: deviationCoefficient,
-        class: deviationCoefficient !== TAPi18n.__('no_data_abbr') && cssClass
+        class: deviationCoefficient !== TAPi18n.__('no_data_abbr') && (cssClass + ' pointer-cursor')
       }
     } else {
       return {
         value: TAPi18n.__('no_data_abbr')
       }
     }
+  }
+})
+
+Template.statsIndicatorsDashboardDeviationCoefficient.events({
+  'click [data-details-for]': function (event, template) {
+    var _month     = $(event.currentTarget).data('detailsFor')
+    var month      = moment(_month, 'YYYYMM')
+    var deviations = StatsIndicators.deviations(month, { coefficient: true, unit: '%' })
+    var data       = {
+      month:      month.format('MMMM YYYY').toUpperCase(),
+      deviations: Strengths.find().map(function (strength) {
+        var coefficient = deviations[strength.resistant]
+        var deviation   = coefficient * strength.resistant / 100
+
+        return {
+          strength:    strength.name,
+          deviation:   isNaN(deviation) ? TAPi18n.__('no_data_abbr') : deviation.toFixed(1),
+          coefficient: _.isNumber(coefficient) ? coefficient.toFixed(1) + '%' : coefficient
+        }
+      })
+    }
+
+    Session.set('indicatorDetailsTemplateData', data)
+    Session.set('indicatorDetailsTemplate', 'statsIndicatorsDashboardDeviationCoefficientDetails')
   }
 })
