@@ -124,12 +124,36 @@ Template.statsIndicatorsDashboardResistanceRatio.helpers({
 
       return {
         value: resistanceRatio,
-        class: resistanceRatio !== TAPi18n.__('no_data_abbr') && cssClass
+        class: resistanceRatio !== TAPi18n.__('no_data_abbr') && (cssClass + ' pointer-cursor')
       }
     } else {
       return {
         value: TAPi18n.__('no_data_abbr')
       }
     }
+  }
+})
+
+Template.statsIndicatorsDashboardResistanceRatio.events({
+  'click [data-details-for]': function (event, template) {
+    var _month = $(event.currentTarget).data('detailsFor')
+    var month  = moment(_month, 'YYYYMM')
+    var ratios = resistanceRatios(month)
+    var data   = {
+      month:      month.format('MMMM YYYY').toUpperCase(),
+      ratios: Strengths.find().map(function (strength) {
+        var ratio = ratios[strength.resistant]
+        var mean  = ratio * strength.resistant
+
+        return {
+          strength: strength.name,
+          mean:     isNaN(mean) ? TAPi18n.__('no_data_abbr') : mean.toFixed(1),
+          ratio:    _.isNumber(ratio) ? ratio.toFixed(2) : ratio
+        }
+      })
+    }
+
+    Session.set('indicatorDetailsTemplateData', data)
+    Session.set('indicatorDetailsTemplate', 'statsIndicatorsDashboardResistanceRatioDetails')
   }
 })
