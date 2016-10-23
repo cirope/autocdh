@@ -34,12 +34,34 @@ Template.statsIndicatorsDashboardDeviation.helpers({
 
       return {
         value: deviation,
-        class: deviation !== TAPi18n.__('no_data_abbr') && cssClass
+        class: deviation !== TAPi18n.__('no_data_abbr') && (cssClass + ' pointer-cursor')
       }
     } else {
       return {
         value: TAPi18n.__('no_data_abbr')
       }
     }
+  }
+})
+
+Template.statsIndicatorsDashboardDeviation.events({
+  'click [data-details-for]': function (event, template) {
+    var _month     = $(event.currentTarget).data('detailsFor')
+    var month      = moment(_month, 'YYYYMM')
+    var deviations = StatsIndicators.deviations(month, { unit: '' })
+    var data       = {
+      month:      month.format('MMMM YYYY').toUpperCase(),
+      deviations: Strengths.find().map(function (strength) {
+        var deviation = deviations[strength.resistant]
+
+        return {
+          strength:  strength.name,
+          deviation: _.isNumber(deviation) ? deviation.toFixed(1) : deviation
+        }
+      })
+    }
+
+    Session.set('indicatorDetailsTemplateData', data)
+    Session.set('indicatorDetailsTemplate', 'statsIndicatorsDashboardDeviationDetails')
   }
 })
