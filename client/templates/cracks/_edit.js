@@ -1,4 +1,5 @@
 var _diameterLabel = new ReactiveVar(TAPi18n.__('crack_diameter'))
+var _stressLabel = new ReactiveVar(TAPi18n.__('crack_stress'))
 var _bendingTubeType = new ReactiveVar(false)
 
 var setTubeType = function (tubeType, revalidate) {
@@ -12,12 +13,14 @@ var setTubeType = function (tubeType, revalidate) {
       height = 150
       light = 450
       _diameterLabel.set(TAPi18n.__('crack_width'))
+      _stressLabel.set(TAPi18n.__('crack_stress_bending'))
       _bendingTubeType.set(true)
     } else if (tubeType === 'other') {
       diameter = 152
       height = 106
       light = 0
       _diameterLabel.set(TAPi18n.__('crack_diameter'))
+      _stressLabel.set(TAPi18n.__('crack_stress'))
       _bendingTubeType.set(false)
     } else if (tubeType.match(/\d+x\d+/)) {
       var dimensions = _.map(tubeType.split('x'), function (d) {
@@ -27,6 +30,7 @@ var setTubeType = function (tubeType, revalidate) {
       height = dimensions[1]
       light = 0
       _diameterLabel.set(TAPi18n.__('crack_diameter'))
+      _stressLabel.set(TAPi18n.__('crack_stress'))
       _bendingTubeType.set(false)
     }
   }
@@ -56,6 +60,9 @@ Template._crackEdit.helpers({
   },
   diameterLabel: function () {
     return _diameterLabel.get()
+  },
+  stressLabel: function () {
+    return _stressLabel.get()
   },
   isBendingTubeType: function () {
     return _bendingTubeType.get()
@@ -90,13 +97,12 @@ Template._crackEdit.events({
       var press = Presses.findOne($('[name="pressId"]').val())
       var load = press && (press.constant.a * Math.pow(measuredLoad, 2) + press.constant.b * measuredLoad + press.constant.c)
       stress = diameter && (load / (Math.PI * Math.pow(diameter, 2) / 4)) * 10 * 1000
-      stress = stress.toFixed(1)
     } else {
       var height = +$('[name="height"]').val()
       var light = +$('[name="light"]').val()
       stress = diameter && height && (measuredLoad * light / (diameter * Math.pow(height, 2))) * 10
-      stress = stress.toFixed(2)
     }
+    stress = stress.toFixed(1)
     $('[name="stress"]').val(stress)
   }
 })

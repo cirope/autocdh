@@ -157,6 +157,7 @@ var cracks = function (cracks) {
   var datetimeFormat = TAPi18n.__('datetime_default')
   var dateFormat = TAPi18n.__('date_default')
 
+
   cracks.forEach(function (crack, i) {
     var sibling           = Cracks.siblingOf(crack)
     var observationsLines = PDF.splitInLines(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
@@ -199,10 +200,12 @@ var cracks = function (cracks) {
       lines.push(TAPi18n.__('crack_height') + ': ' + (crack.height || '') + ' mm')
       lines.push(TAPi18n.__('crack_light') + ': ' + (crack.light || '') + ' mm')
     }
-    lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && (crack.stress.toFixed(1) + ' MPa') || '-'))
+    lines.push((bendingCrackTubeType ? TAPi18n.__('crack_stress_bending') : TAPi18n.__('crack_stress')) + ': ' +
+        (crack.stress && (crack.stress.toFixed(1) + ' MPa') || '-'))
 
     if (crack.stress && sibling && sibling.stress)
-      lines.push(TAPi18n.__('crack_stress_average') + ': ' + (((crack.stress + sibling.stress) / 2).toFixed(1) + ' MPa') || '-')
+      lines.push((bendingCrackTubeType ? TAPi18n.__('crack_stress_bending_average') : TAPi18n.__('crack_stress_average')) + ': ' +
+          (((crack.stress + sibling.stress) / 2).toFixed(1) + ' MPa') || '-')
 
     _.each(observationsLines, function (line) {
       lines.push(line)
