@@ -43,6 +43,5 @@
   "crack_overdue": "one cracks overdue",
   "crack_overdue_plural": "__count__ cracks overdue",
   "criteria": "Criteria",
-  "breadcrumb_step": "Step <span class=\"badge\">__count__</span>",
-  "no_data_abbr": "N/D"
+  "breadcrumb_step": "Step <span class=\"badge\">__count__</span>"
 }

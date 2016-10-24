@@ -1,29 +1,51 @@
+var mean = function (stresses) {
+  var sum = _.reduce(stresses, function (memo, s) {
+    return memo + s.stress
+  }, 0)
+
+  return sum / stresses.length
+}
+
+var deviation = function (stresses) {
+  var _mean         = mean(stresses)
+  var deviations    = []
+  var deviationsSum = 0
+
+  _.each(stresses, function (s) {
+    deviations.push(Math.pow(s.stress - _mean, 2))
+  })
+
+  deviationsSum = _.reduce(deviations, function (memo, d) {
+    return memo + d
+  }, 0)
+
+  return Math.sqrt(deviationsSum / (stresses.length - 1))
+}
+
 Template.statsDeviation.helpers({
   enoughStresses: function () {
     return this.stresses && this.stresses.length >= 15
   },
 
   meanResistance: function () {
-    return Stats.mean(_.pluck(this.stresses, 'stress'))
+    return mean(this.stresses)
   },
 
   standardDeviation: function () {
-    return Stats.deviation(_.pluck(this.stresses, 'stress'))
+    return deviation(this.stresses)
   },
 
   resistance: function () {
-    var stresses  = _.pluck(this.stresses, 'stress')
-    var mean      = Stats.mean(stresses)
-    var deviation = Stats.deviation(stresses)
+    var _mean      = mean(this.stresses)
+    var _deviation = deviation(this.stresses)
 
-    return mean - this.deviation * deviation
+    return _mean - this.deviation * _deviation
   },
 
   coefficient: function () {
-    var stresses  = _.pluck(this.stresses, 'stress')
-    var mean      = Stats.mean(stresses)
-    var deviation = Stats.deviation(stresses)
+    var _mean      = mean(this.stresses)
+    var _deviation = deviation(this.stresses)
 
-    return deviation / mean * 100
+    return _deviation / _mean * 100
   }
 })
