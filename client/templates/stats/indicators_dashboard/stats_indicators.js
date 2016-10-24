@@ -73,6 +73,7 @@ StatsIndicators = {
     var monthNumber  = +month.format('YYYYMM')
     var settings     = _.where(this.deviationPercentages, { month: monthNumber })
     var total        = Stats.sum(_.pluck(settings, 'value'))
+    var isValid      = total >= 75 && settings.length === _.size(StatsIndicators.categoryLimits)
 
     _.each(settings, function (setting) {
       var label  = TAPi18n.__('stats_indicators_strength_category_' + setting.type)
@@ -87,7 +88,7 @@ StatsIndicators = {
       }
     })
 
-    return settings.length === _.size(StatsIndicators.categoryLimits) && distribution
+    return isValid && distribution
   },
 
   fillTheBlanks: function (values) {
@@ -133,7 +134,7 @@ StatsIndicators = {
       return _.isNumber(v)
     })
 
-    if (allNumbers) {
+    if (allNumbers && distribution) {
       deviation = 0
 
       _.each(distribution, function (data, categoryName) {

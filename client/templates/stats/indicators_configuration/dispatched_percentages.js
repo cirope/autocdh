@@ -1,7 +1,30 @@
 var qaSettings = null
 
+var checkMonth = function (month) {
+  var $inputs  = $('[data-dispatched-percentage-month="' + month + '"]')
+  var values   = $inputs.map(function (i, e) { return parseFloat($(e).val()) })
+  var allValid = _.every(values, function (v) { return _.isNumber(v) && ! isNaN(v) })
+  var total    = Stats.sum(values)
+  var hasError = allValid && total < 75
+
+  if (hasError)
+    $inputs.closest('.form-group').addClass('has-error')
+  else
+    $inputs.closest('.form-group').removeClass('has-error')
+
+  return ! hasError
+}
+
 Template.statsIndicatorsConfigurationDispatchedPercentages.onCreated(function () {
   qaSettings = this.data && this.data.settings && this.data.settings.qa
+})
+
+Template.statsIndicatorsConfigurationDispatchedPercentages.onRendered(function () {
+  _.times(13, function (i) {
+    var month = moment().subtract(12 - i, 'months')
+
+    checkMonth(month.format('YYYYMM'))
+  })
 })
 
 Template.statsIndicatorsConfigurationDispatchedPercentages.onDestroyed(function () {
@@ -77,8 +100,10 @@ Template.statsIndicatorsConfigurationDispatchedPercentages.events({
       }
     }
 
+    if (checkMonth(month))
+      $input.closest('.form-group').removeClass('has-error')
+
     $input.prop('disabled', true)
-    $input.closest('.form-group').removeClass('has-error')
 
     Meteor.call('updateSettingValue', operation, id, selector, function (error, result) {
       if (error)

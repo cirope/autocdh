@@ -36,6 +36,7 @@ var distributionFor = function (month) {
   var monthNumber  = +month.format('YYYYMM')
   var settings     = _.where(efficiencyPercentages, { month: monthNumber })
   var total        = Stats.sum(_.pluck(settings, 'value'))
+  var isValid      = total >= 75 && settings.length === _.size(StatsIndicators.categoryLimits)
 
   _.each(settings, function (setting) {
     var label  = TAPi18n.__('stats_indicators_strength_category_' + setting.type)
@@ -50,7 +51,7 @@ var distributionFor = function (month) {
     }
   })
 
-  return settings.length === _.size(StatsIndicators.categoryLimits) && distribution
+  return isValid && distribution
 }
 
 var efficiencyFor = function (month) {
@@ -62,7 +63,7 @@ var efficiencyFor = function (month) {
     return _.isNumber(v)
   })
 
-  if (allNumbers) {
+  if (allNumbers && distribution) {
     efficiency = 0
 
     _.each(distribution, function (data, categoryName) {
