@@ -31,6 +31,9 @@ Template.formulasList.helpers({
     if (settings && settings.customOptions && settings.customOptions.showPavement)
       options.push({ value: 'pavement', label: TAPi18n.__('download_pavement') })
 
+    if (settings && settings.customOptions && settings.customOptions.showDump)
+      options.push({ value: 'dump', label: TAPi18n.__('download_dump') })
+
     return options
   }
 })

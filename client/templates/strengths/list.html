@@ -19,6 +19,7 @@
         <thead>
           <tr>
             <th>{{_ 'strength_name'}}</th>
+            <th>{{_ 'strength_resistant'}}</th>
             <th></th>
           </tr>
         </thead>
@@ -26,6 +27,7 @@
         {{#each strengths}}
           <tr class="visible-on-hover-parent">
             <td><a href="{{pathFor 'strength'}}">{{name}}</a></td>
+            <td><a href="{{pathFor 'strength'}}">{{resistant}}</a></td>
             <td class="text-right">
               <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'strengthEdit'}}" title="{{_ 'edit'}}">
                 {{_ 'edit'}}

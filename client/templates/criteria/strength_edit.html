@@ -12,6 +12,7 @@
           {{#autoForm collection='Strengths' id='editStrengthCriteriaForm' type='method-update' meteormethod='updateStrengthCriteria' doc=..}}
             <fieldset>
               {{> afQuickField name='name' readonly=true}}
+              {{> afQuickField name='resistant'}}
               {{> afQuickField name='individualCriteria' autofocus=true}}
               {{> afQuickField name='averageCriteria'}}
               {{> afQuickField name='cusumTarget'}}

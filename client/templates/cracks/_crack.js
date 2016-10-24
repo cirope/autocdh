@@ -40,6 +40,12 @@ Template._crack.helpers({
             TAPi18n.__('crack_diameter')
   },
 
+  stressLabel: function () {
+    return this.tubeType && this.tubeType === 'bending' ?
+            TAPi18n.__('crack_stress_bending') :
+            TAPi18n.__('crack_stress')
+  },
+
   isBendingTubeType: function () {
     return this.tubeType && this.tubeType === 'bending'
   }
