@@ -1,0 +1,12 @@
+<template name="statsIndicatorsDashboardResistance7Days">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_indicators_1_resistance_7_days'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with resistance}}
+        <td class="{{class}}" data-details-for="{{../value}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>
