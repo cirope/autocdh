@@ -71,6 +71,9 @@ var putGraphImage = function (doc, yPosition, callback) {
 
     doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
 
+    yPosition += 5 + height / factor
+    doc.lastCellPos.y = yPosition
+
     if (typeof callback === 'function') callback()
   }, function () {
     console.log('error')
@@ -118,6 +121,11 @@ Template.graphicHardenedConcreteResistanceEvolution.events({
       yPosition = putFilterData(template.data.filter, doc, yPosition += 5)
 
       putGraphImage(doc, yPosition += 5, function () {
+        yPosition = doc.lastCellPos.y + 10
+
+        // adding digital signature
+        yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfHardenedConcreteEvolution', yPosition)
+
         doc.putTotalPages('___total_pages___')
         doc.save(name + '.pdf')
       })
