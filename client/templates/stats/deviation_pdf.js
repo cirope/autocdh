@@ -73,6 +73,11 @@ Template.statsDeviation.events({
           fontSize: 7
         })
 
+      yPosition = doc.lastCellPos.y + 10
+
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfStatsDeviation', yPosition)
+
       doc.putTotalPages('___total_pages___')
       doc.save(title + '.pdf')
     })
