@@ -7,7 +7,7 @@ DigitalSignature = {
             if(settings && settings.digitalSignature && settings.digitalSignature.enabled && settings.digitalSignature[type]) {
                 console.log("--------------------------------------["+type+"] enabled")
 
-                if (yPosition > 270) {
+                if (yPosition > 270 || (yPosition > 180 && pdf.options.orientation == 'l')) {
                     console.log("--------------------------------------["+type+"] new page!!!")
                     yPosition = 20
                     pdf.addPage()

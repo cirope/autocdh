@@ -63,6 +63,11 @@ Template.customerCracks.events({
           fontSize: 9
         })
 
+      yPosition = doc.lastCellPos.y + 10
+
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfCustomerCracks', yPosition)
+
       doc.putTotalPages('___total_pages___')
       doc.save(title + '.pdf')
     })
