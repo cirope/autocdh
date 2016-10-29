@@ -135,6 +135,9 @@ var putGraphImage = function (doc, yPosition, callback) {
 
     doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
 
+    yPosition += 5 + height / factor
+    doc.lastCellPos.y = yPosition
+
     if (typeof callback === 'function') callback()
   }, function () {
     console.log('error')
@@ -179,6 +182,11 @@ Template.granulometry.events({
       if (idealCurves) doc.text(idealCurves, 20, yPosition +=5)
 
       putGraphImage(doc, yPosition, function () {
+        yPosition = doc.lastCellPos.y + 10
+
+        // adding digital signature
+        yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfGranulometries', yPosition)
+
         doc.putTotalPages('___total_pages___')
         doc.save(granulometry.name + '.pdf')
       })
