@@ -78,6 +78,11 @@ Template.maintenancePreventive.events({
             })
         })
 
+      yPosition = doc.lastCellPos.y + 50
+
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMaintenance', yPosition)
+
       doc.putTotalPages('___total_pages___')
       doc.save(TAPi18n.__('maintenance_preventive_title') + '.pdf')
     })
