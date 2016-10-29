@@ -263,7 +263,8 @@ var commonEvents = {
         doc.text(line, 25, yPosition += 4.5)
       })
 
-      DigitalSignature.addSignatureToPdf(doc, yPosition)
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition)
 
       doc.putTotalPages('___total_pages___')
       doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
@@ -288,7 +289,7 @@ Template.sample.events({
     var sampleLines   = sample(_sample)
     var receiptLines  = _sample.getReceipt()  ? receipt(_sample.getReceipt())        : ['-']
     var concreteLines = _sample.getConcrete() ? concreteBrief(_sample.getConcrete()) : ['-']
-    var humidityLines = _sample.getHumidity() ? humidity(_sample.getHumidity())      : ['-']
+    var   humidityLines = _sample.getHumidity() ? humidity(_sample.getHumidity())      : ['-']
     var assayLines    = _sample.getAssay()    ? assay(_sample.getAssay())            : ['-']
     var yPosition     = 20
 
@@ -316,7 +317,8 @@ Template.sample.events({
         .setFontSize(10)
         .text(assayLines, 25, yPosition += 7)
 
-      DigitalSignature.addSignatureToPdf(doc, yPosition)
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition + assayLines.length * 4.5 + 1)
 
       doc.putTotalPages('___total_pages___')
       doc.save(_sample.name + '.pdf')
