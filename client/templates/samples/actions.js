@@ -263,6 +263,8 @@ var commonEvents = {
         doc.text(line, 25, yPosition += 4.5)
       })
 
+      DigitalSignature.addSignatureToPdf(doc, yPosition)
+
       doc.putTotalPages('___total_pages___')
       doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
     })
@@ -313,6 +315,8 @@ Template.sample.events({
         .text(TAPi18n.__('assays'), 20, yPosition += humidityLines.length * 4.5 + 1)
         .setFontSize(10)
         .text(assayLines, 25, yPosition += 7)
+
+      DigitalSignature.addSignatureToPdf(doc, yPosition)
 
       doc.putTotalPages('___total_pages___')
       doc.save(_sample.name + '.pdf')
