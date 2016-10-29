@@ -15,6 +15,8 @@ DigitalSignature = {
 
                 console.log("--------------------------------------["+type+"] y="+yPosition)
                 pdf.text("PDFs rocks!!!!!!!!!!!!!!!", 20, yPosition += 10)
+            } else {
+                console.log("--------------------------------------["+type+"] disabled !!!!!!!!!!!!!!!!!")
             }
         }
         console.log("-------------------------------------- END ["+type+"] "+yPosition)

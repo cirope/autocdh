@@ -85,6 +85,9 @@ var putGraphImage = function (doc, yPosition, callback) {
 
     doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
 
+    yPosition += 5 + height / factor
+    doc.lastCellPos.y = yPosition
+
     if (typeof callback === 'function') callback()
   }, function () {
     console.log('error')
@@ -124,6 +127,11 @@ Template.mixture.events({
       yPosition = putBriefData(doc, yPosition)
 
       putGraphImage(doc, yPosition, function () {
+        yPosition = doc.lastCellPos.y + 10
+
+        // adding digital signature
+        yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMixtures', yPosition)
+
         doc.putTotalPages('___total_pages___')
         doc.save(template.data.name + '.pdf')
       })
