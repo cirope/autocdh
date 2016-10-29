@@ -116,8 +116,10 @@ Template.providedCrack.events({
           fontSize: 7
         })
 
+      yPosition = doc.lastCellPos.y + 10
+
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfProvidedCracks', doc.lastCellPos.y + 35)
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfProvidedCracks', yPosition)
 
       doc.putTotalPages('___total_pages___')
       doc.save(fileName + '.pdf')
