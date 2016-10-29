@@ -83,6 +83,8 @@ Template.maintenance.events({
         .text(TAPi18n.__('maintenance_checklist_date') + ':', 20, yPosition += 10)
         .text(TAPi18n.__('maintenance_checklist_made_by') + ':', 20, yPosition += 5)
 
+      console.log("------------------------------ y="+yPosition)
+
       doc
         .setFontSize(7)
         .table(20, yPosition += 5, tableData.data, tableData.headers, {
@@ -91,6 +93,11 @@ Template.maintenance.events({
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
           fontSize: 7
         })
+
+      yPosition = doc.lastCellPos.y + 50
+
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMaintenanceCheckList', yPosition)
 
       doc.putTotalPages('___total_pages___')
       doc.save(TAPi18n.__('maintenance_checklist') + '.pdf')

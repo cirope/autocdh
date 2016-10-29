@@ -56,6 +56,11 @@ Template.maintenanceMasterList.events({
           fontSize: 7
         })
 
+      yPosition = doc.lastCellPos.y + 10
+
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMaintenance', yPosition)
+
       doc.putTotalPages('___total_pages___')
       doc.save(TAPi18n.__('maintenance_master_list') + '.pdf')
     })
