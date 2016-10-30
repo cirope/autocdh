@@ -83,8 +83,6 @@ Template.maintenance.events({
         .text(TAPi18n.__('maintenance_checklist_date') + ':', 20, yPosition += 10)
         .text(TAPi18n.__('maintenance_checklist_made_by') + ':', 20, yPosition += 5)
 
-      console.log("------------------------------ y="+yPosition)
-
       doc
         .setFontSize(7)
         .table(20, yPosition += 5, tableData.data, tableData.headers, {
