@@ -49,9 +49,10 @@ Template.statsIndicatorsDashboardDeviation.events({
     var _month     = $(event.currentTarget).data('detailsFor')
     var month      = moment(_month, 'YYYYMM')
     var deviations = StatsIndicators.deviations(month, { unit: '' })
+    var options    = { sort: { resistant: 1 } }
     var data       = {
       month:      month.format('MMMM YYYY').toUpperCase(),
-      deviations: Strengths.find().map(function (strength) {
+      deviations: Strengths.find({}, options).map(function (strength) {
         var deviation = deviations[strength.resistant]
 
         return {

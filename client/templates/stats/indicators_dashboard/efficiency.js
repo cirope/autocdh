@@ -131,9 +131,10 @@ Template.statsIndicatorsDashboardEfficiency.events({
     var _month        = $(event.currentTarget).data('detailsFor')
     var month         = moment(_month, 'YYYYMM')
     var _efficiencies = efficiencies(month)
+    var options       = { sort: { resistant: 1 } }
     var data          = {
       month:        month.format('MMMM YYYY').toUpperCase(),
-      efficiencies: Strengths.find().map(function (strength) {
+      efficiencies: Strengths.find({}, options).map(function (strength) {
         var efficiency = _efficiencies[strength.resistant]
 
         return {

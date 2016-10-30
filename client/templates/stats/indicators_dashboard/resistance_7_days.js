@@ -61,10 +61,11 @@ var resistanceFor = function (month) {
 Template.statsIndicatorsDashboardResistance7Days.onCreated(function () {
   var qaSettings = this.data.settings && this.data.settings.qa
   var indicators = qaSettings && qaSettings.indicators
+  var options    = { sort: { resistant: 1 }, reactive: false }
 
   if (! indicators) return
 
-  strengths          = Strengths.find({}, { reactive: false }).fetch()
+  strengths          = Strengths.find({}, options).fetch()
   concretes          = this.data.concretes
   samples            = this.data.samples
   resistanceSettings = indicators.resistance7DaysMin && indicators.resistance7DaysMax && {

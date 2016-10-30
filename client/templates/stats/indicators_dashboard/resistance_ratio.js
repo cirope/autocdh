@@ -139,12 +139,13 @@ Template.statsIndicatorsDashboardResistanceRatio.helpers({
 
 Template.statsIndicatorsDashboardResistanceRatio.events({
   'click [data-details-for]': function (event, template) {
-    var _month = $(event.currentTarget).data('detailsFor')
-    var month  = moment(_month, 'YYYYMM')
-    var ratios = resistanceRatios(month)
-    var data   = {
+    var _month  = $(event.currentTarget).data('detailsFor')
+    var month   = moment(_month, 'YYYYMM')
+    var ratios  = resistanceRatios(month)
+    var options = { sort: { resistant: 1 } }
+    var data    = {
       month:      month.format('MMMM YYYY').toUpperCase(),
-      ratios: Strengths.find().map(function (strength) {
+      ratios: Strengths.find({}, options).map(function (strength) {
         var ratio = ratios[strength.resistant]
         var mean  = ratio * strength.resistant
 
