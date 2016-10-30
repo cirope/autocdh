@@ -69,6 +69,7 @@ var distributionFor = function (month) {
 
 var resistanceRatioFor = function (month) {
   var resistanceRatio = null
+  var lastValue       = null
   var values          = resistanceRatios(month)
   var distribution    = distributionFor(month)
   var filledValues    = StatsIndicators.fillTheBlanks(values)
@@ -83,8 +84,9 @@ var resistanceRatioFor = function (month) {
       var stresses = _.filter(filledValues, function (__, resistant) {
         return data.match(resistant)
       })
-      var mean     = stresses.length && Stats.mean(stresses) || 0
+      var mean     = stresses.length && Stats.mean(stresses) || lastValue || 0
 
+      lastValue        = mean
       resistanceRatio += mean * data.proportion
     })
   }

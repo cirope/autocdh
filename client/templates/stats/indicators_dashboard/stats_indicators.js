@@ -103,6 +103,7 @@ StatsIndicators = {
         lastValue = _.find(values, function (value, __) {
           return _.isNumber(value)
         })
+
         filledValues[resistant] = lastValue
       } else if (index + 1 === _.size(values)) {
         filledValues[resistant] = lastValue
@@ -117,6 +118,8 @@ StatsIndicators = {
 
         if (_.isNumber(average) && ! isNaN(average))
           filledValues[resistant] = average
+        else
+          filledValues[resistant] = lastValue
       }
 
       index += 1
@@ -127,6 +130,7 @@ StatsIndicators = {
 
   _deviationFor: function (month, options) {
     var deviation    = null
+    var lastValue    = null
     var values       = this.deviations(month, options)
     var distribution = this.distributionFor(month)
     var filledValues = this.fillTheBlanks(values)
@@ -141,8 +145,9 @@ StatsIndicators = {
         var stresses = _.filter(filledValues, function (__, resistant) {
           return data.match(resistant)
         })
-        var mean     = stresses.length && Stats.mean(stresses) || 0
+        var mean     = stresses.length && Stats.mean(stresses) || lastValue || 0
 
+        lastValue  = mean
         deviation += mean * data.proportion
       })
     }

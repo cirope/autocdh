@@ -55,7 +55,8 @@ var distributionFor = function (month) {
 }
 
 var efficiencyFor = function (month) {
-  var efficiency = null
+  var efficiency      = null
+  var lastValue       = null
   var values          = efficiencies(month)
   var distribution    = distributionFor(month)
   var filledValues    = StatsIndicators.fillTheBlanks(values)
@@ -70,8 +71,9 @@ var efficiencyFor = function (month) {
       var stresses = _.filter(filledValues, function (__, resistant) {
         return data.match(resistant)
       })
-      var mean     = stresses.length && Stats.mean(stresses) || 0
+      var mean     = stresses.length && Stats.mean(stresses) || lastValue || 0
 
+      lastValue   = mean
       efficiency += mean * data.proportion
     })
   }
