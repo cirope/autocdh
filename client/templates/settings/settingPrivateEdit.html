@@ -1,0 +1,50 @@
+<template name="settingPrivateEdit">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'setting_pdf'}}
+        </h3>
+      </div>
+      <div class="panel-body">
+      {{#autoForm collection='Settings' id='editSettingForm' type='method-update' meteormethod='updatePrivateSetting' doc=..}}
+          <fieldset>
+              {{> afQuickField name='digitalSignature.enabled' }}
+              {{> afQuickField name='digitalSignature.pdfSample'}}
+              {{> afQuickField name='digitalSignature.pdfProvidedCracks' }}
+              {{> afQuickField name='digitalSignature.pdfStatsDeviation' }}
+              {{> afQuickField name='digitalSignature.pdfMixtures' }}
+              {{> afQuickField name='digitalSignature.pdfCustomerCracks' }}
+              {{> afQuickField name='digitalSignature.pdfGranulometries' }}
+              {{> afQuickField name='digitalSignature.pdfHardenedConcreteEvolution' }}
+              {{> afQuickField name='digitalSignature.pdfMaintenance' }}
+              {{> afQuickField name='digitalSignature.pdfMaintenanceCheckList' }}
+
+              {{> afQuickField name='digitalSignature.signatureImageId' }}
+              {{> afQuickField name='digitalSignature.title1' }}
+              {{> afQuickField name='digitalSignature.title2' }}
+              {{> afQuickField name='digitalSignature.title3' }}
+              {{> afQuickField name='digitalSignature.title4' }}
+              {{> afQuickField name='digitalSignature.title5' }}
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                      <h4 class="panel-title">
+                          {{_ 'setting_pdf'}}
+                      </h4>
+                  </div>
+                  <div class="panel-body">
+                      {{> afQuickField name='digitalSignature.subtitle1' }}
+                      {{> afQuickField name='digitalSignature.subtitle2' label=false }}
+                      {{> afQuickField name='digitalSignature.subtitle3' }}
+                      {{> afQuickField name='digitalSignature.subtitle4' }}
+                      {{> afQuickField name='digitalSignature.subtitle5' }}
+                  </div>
+              </div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary">{{_ 'setting_pdf_update_button'}}</button>
+      {{/autoForm}}
+      </div>
+    </div>
+  </div>
+</template>
