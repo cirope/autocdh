@@ -289,7 +289,7 @@ Template.sample.events({
     var sampleLines   = sample(_sample)
     var receiptLines  = _sample.getReceipt()  ? receipt(_sample.getReceipt())        : ['-']
     var concreteLines = _sample.getConcrete() ? concreteBrief(_sample.getConcrete()) : ['-']
-    var   humidityLines = _sample.getHumidity() ? humidity(_sample.getHumidity())      : ['-']
+    var humidityLines = _sample.getHumidity() ? humidity(_sample.getHumidity())      : ['-']
     var assayLines    = _sample.getAssay()    ? assay(_sample.getAssay())            : ['-']
     var yPosition     = 20
 
