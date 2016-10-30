@@ -38,13 +38,11 @@ Template.statsIndicatorsDashboardNonconformPercentage.helpers({
   nonconformPercentage: function () {
     if (nonconformSettings) {
       var month      = moment(this.value, 'YYYYMM')
-      var nonconform = nonconformFor(month.format('YYYYMM'))
+      var nonconform = Math.round(nonconformFor(month.format('YYYYMM')) * 10) / 10
       var cssClass   = 'success'
 
-      if (nonconform) {
-        if (nonconform < nonconformSettings.min) cssClass = 'danger'
-        if (nonconform > nonconformSettings.max) cssClass = 'warning'
-      }
+      if (nonconform > nonconformSettings.min) cssClass = 'warning'
+      if (nonconform > nonconformSettings.max) cssClass = 'danger'
 
       return {
         value: nonconform.toFixed(1) + '%',

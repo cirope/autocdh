@@ -40,8 +40,8 @@ Template.statsIndicatorsDashboardVolume.helpers({
       var volume   = volumeFor(month.format('YYYYMM'))
       var cssClass = 'success'
 
-      if (volume < volumeSettings.min) cssClass = 'danger'
-      if (volume > volumeSettings.max) cssClass = 'warning'
+      if (volume > volumeSettings.min) cssClass = 'warning'
+      if (volume > volumeSettings.max) cssClass = 'danger'
 
       return {
         value: volume,

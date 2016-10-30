@@ -38,13 +38,11 @@ Template.statsIndicatorsDashboardClaimsPercentage.helpers({
   claimsPercentage: function () {
     if (claimSettings) {
       var month    = moment(this.value, 'YYYYMM')
-      var claim    = claimFor(month.format('YYYYMM'))
+      var claim    = Math.round(claimFor(month.format('YYYYMM')) * 10) / 10
       var cssClass = 'success'
 
-      if (claim) {
-        if (claim < claimSettings.min) cssClass = 'danger'
-        if (claim > claimSettings.max) cssClass = 'warning'
-      }
+      if (claim > claimSettings.min) cssClass = 'warning'
+      if (claim > claimSettings.max) cssClass = 'danger'
 
       return {
         value: claim.toFixed(1) + '%',

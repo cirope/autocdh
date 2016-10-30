@@ -2,15 +2,15 @@ StatsIndicators = {
   categoryLimits: {
     'lower_than_17': {
       min: 0,
-      max: 16
+      max: 15
     },
     '17_to_20': {
-      min: 17,
+      min: 16,
       max: 20
     },
     '21_to_25': {
       min: 21,
-      max: 25
+      max: 29
     },
     '30_to_35': {
       min: 30,

@@ -29,8 +29,8 @@ Template.statsIndicatorsDashboardDeviationCoefficient.helpers({
       var deviationCoefficient = StatsIndicators.deviationCoefficientFor(month)
       var cssClass             = 'success'
 
-      if (parseFloat(deviationCoefficient) < deviationCoefficientSettings.min) cssClass = 'danger'
-      if (parseFloat(deviationCoefficient) > deviationCoefficientSettings.max) cssClass = 'warning'
+      if (parseFloat(deviationCoefficient) > deviationCoefficientSettings.min) cssClass = 'warning'
+      if (parseFloat(deviationCoefficient) > deviationCoefficientSettings.max) cssClass = 'danger'
 
       return {
         value: deviationCoefficient,

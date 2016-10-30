@@ -29,8 +29,8 @@ Template.statsIndicatorsDashboardDeviation.helpers({
       var deviation = StatsIndicators.deviationFor(month)
       var cssClass  = 'success'
 
-      if (deviation < deviationSettings.min) cssClass = 'danger'
-      if (deviation > deviationSettings.max) cssClass = 'warning'
+      if (deviation > deviationSettings.min) cssClass = 'warning'
+      if (deviation > deviationSettings.max) cssClass = 'danger'
 
       return {
         value: deviation,

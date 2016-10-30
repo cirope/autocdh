@@ -107,12 +107,12 @@ Template.statsIndicatorsDashboardEfficiency.onDestroyed(function () {
 Template.statsIndicatorsDashboardEfficiency.helpers({
   efficiency: function () {
     if (efficiencySettings) {
-      var month           = moment(this.value, 'YYYYMM')
+      var month      = moment(this.value, 'YYYYMM')
       var efficiency = efficiencyFor(month)
-      var cssClass        = 'success'
+      var cssClass   = 'warning'
 
       if (efficiency < efficiencySettings.min) cssClass = 'danger'
-      if (efficiency > efficiencySettings.max) cssClass = 'warning'
+      if (efficiency > efficiencySettings.max) cssClass = 'success'
 
       return {
         value: efficiency,
