@@ -105,6 +105,13 @@
               <div class="panel-body">
                 <p>
                   <strong>{{digitalSignature.signatureImageId}}</strong>
+
+
+                    {{#if digitalSignature.signatureImageId}}
+                        {{#with signatureImage}}
+                                <img class="" src="{{url store='thumbs'}}">
+                        {{/with}}
+                    {{/if}}
                 </p>
                   <div class="panel panel-default">
                       <div class="panel-heading">
