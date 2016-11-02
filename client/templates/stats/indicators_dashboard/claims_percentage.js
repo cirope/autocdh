@@ -38,14 +38,15 @@ Template.statsIndicatorsDashboardClaimsPercentage.helpers({
   claimsPercentage: function () {
     if (claimSettings) {
       var month    = moment(this.value, 'YYYYMM')
-      var claim    = Math.round(claimFor(month.format('YYYYMM')) * 10) / 10
+      var claim    = claimFor(month.format('YYYYMM'))
+      var rounded  = Math.round(claim * 10) / 10
       var cssClass = 'success'
 
-      if (claim > claimSettings.min) cssClass = 'warning'
-      if (claim > claimSettings.max) cssClass = 'danger'
+      if (rounded > claimSettings.min) cssClass = 'warning'
+      if (rounded > claimSettings.max) cssClass = 'danger'
 
       return {
-        value: claim.toFixed(1) + '%',
+        value: _.isNumber(claim) ? claim.toFixed(1) + '%' : claim,
         class: claim !== TAPi18n.__('no_data_abbr') && cssClass
       }
     } else {

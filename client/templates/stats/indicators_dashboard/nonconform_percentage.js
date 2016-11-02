@@ -38,14 +38,15 @@ Template.statsIndicatorsDashboardNonconformPercentage.helpers({
   nonconformPercentage: function () {
     if (nonconformSettings) {
       var month      = moment(this.value, 'YYYYMM')
-      var nonconform = Math.round(nonconformFor(month.format('YYYYMM')) * 10) / 10
+      var nonconform = nonconformFor(month.format('YYYYMM'))
+      var rounded    = Math.round(nonconform * 10) / 10
       var cssClass   = 'success'
 
-      if (nonconform > nonconformSettings.min) cssClass = 'warning'
-      if (nonconform > nonconformSettings.max) cssClass = 'danger'
+      if (rounded > nonconformSettings.min) cssClass = 'warning'
+      if (rounded > nonconformSettings.max) cssClass = 'danger'
 
       return {
-        value: nonconform.toFixed(1) + '%',
+        value: _.isNumber(nonconform) ? nonconform.toFixed(1) + '%' : nonconform,
         class: nonconform !== TAPi18n.__('no_data_abbr') && cssClass
       }
     } else {
