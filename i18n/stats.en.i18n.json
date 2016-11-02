@@ -69,7 +69,6 @@
   "graphic_hardened_concrete_7_days_resistance_reference": "Resistance (7 days)",
   "graphic_hardened_concrete_7_days_resistance_y_label": "Resistance (MPa) / Concrete type",
   "graphic_hardened_concrete_7_days_resistance_mean": "Mean",
-  "graphic_deviation": "Deviation",
   "graphic_deviation_efficiency": "Deviation",
   "graphic_deviation_efficiency_title": "Concrete deviation",
   "graphic_deviation_efficiency_reference": "Efficiency",
@@ -99,7 +98,6 @@
   "stats_for_samples": "Samples",
   "stats_resistance_by_customer": "Resistance by customer",
   "stats_samples_count": "Samples count",
-  "stats_indicators": "Indicators",
   "stats_indicators_configuration": "Configuration",
   "stats_indicators_repeat_previous_month_values": "Repeat previous month values",
   "stats_indicators_dispatched_percentages": "Dispatched percentages",
@@ -132,5 +130,6 @@
   "stats_indicators_dashboard": "Indicators dashboard",
   "stats_indicators_deviation": "Deviation",
   "stats_indicators_mean": "Mean",
-  "stats_indicators_ratio": "Ratio"
+  "stats_indicators_ratio": "Ratio",
+  "stats_management_indicators": "Management indicators"
 }

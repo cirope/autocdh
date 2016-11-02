@@ -69,7 +69,6 @@
   "graphic_hardened_concrete_7_days_resistance_reference": "% Resistencia a 28 días (relación resistencia 7/28 días)",
   "graphic_hardened_concrete_7_days_resistance_y_label": "% Resistencia a 28 días (relación resistencia 7/28 días)",
   "graphic_hardened_concrete_7_days_resistance_mean": "Promedio",
-  "graphic_deviation": "Eficiencia",
   "graphic_deviation_efficiency": "Eficiencia",
   "graphic_deviation_efficiency_title": "Eficiencia del aglomerante",
   "graphic_deviation_efficiency_reference": "Eficiencia",
@@ -99,7 +98,6 @@
   "stats_for_samples": "Cantidad de muestras",
   "stats_resistance_by_customer": "Informes de resistencias",
   "stats_samples_count": "Cantidad de muestras",
-  "stats_indicators": "Indicadores de gestión",
   "stats_indicators_configuration": "Configuración de indicadores",
   "stats_indicators_repeat_previous_month_values": "Repetir valores mes anterior",
   "stats_indicators_dispatched_percentages": "% de hormigones despachados",
@@ -132,5 +130,6 @@
   "stats_indicators_dashboard": "Tablero de indicadores de calidad",
   "stats_indicators_deviation": "Desviación",
   "stats_indicators_mean": "Media",
-  "stats_indicators_ratio": "Relación"
+  "stats_indicators_ratio": "Relación",
+  "stats_management_indicators": "Indicadores de gestión"
 }
