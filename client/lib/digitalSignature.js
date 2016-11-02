@@ -16,19 +16,20 @@ DigitalSignature = {
                 console.log("--------------------------------------["+type+"] y="+yPosition)
 
                 if(settings.digitalSignature.signatureImageId){
-                    //pdf.setDrawColor(255, 0, 0);
-                    //pdf.rect(20, yPosition, 100, 25, 'S');
-                    yPosition += 30;
+                    pdf.setDrawColor(255, 0, 0);
+                    pdf.rect(20, yPosition, 100, 30, 'S');
+                    yPosition += 35;
                 } else {
-                    //pdf.setDrawColor(0, 0, 255);
-                    //pdf.rect(20, yPosition, 100, 25, 'S');
-                    yPosition += 30;
+                    yPosition += 40;
                 }
 
                 var show = function(prop, position, margin){
                     if(prop) {
-                        pdf.text(prop, 20, position, null, "center");
-                        //pdf.rect(10, position, 120, 10, 'S');
+                        var xx = (pdf.options.orientation == 'l' ? 135 : 90) - (pdf.getStringUnitWidth(prop) * pdf.activeFontSize / pdf.k);
+                        pdf.text(prop, xx, position, null, null, "center");
+
+
+                        //pdf.rect(10, position, 120, margin, 'S');
 
                         position += margin;
                     }
