@@ -14,7 +14,41 @@ DigitalSignature = {
                 }
 
                 console.log("--------------------------------------["+type+"] y="+yPosition)
-                pdf.text("PDFs rocks!!!!!!!!!!!!!!!", 20, yPosition += 10)
+
+                if(settings.digitalSignature.signatureImageId){
+                    //pdf.setDrawColor(255, 0, 0);
+                    //pdf.rect(20, yPosition, 100, 25, 'S');
+                    yPosition += 30;
+                } else {
+                    //pdf.setDrawColor(0, 0, 255);
+                    //pdf.rect(20, yPosition, 100, 25, 'S');
+                    yPosition += 30;
+                }
+
+                var show = function(prop, position, margin){
+                    if(prop) {
+                        pdf.text(prop, 20, position, null, "center");
+                        //pdf.rect(10, position, 120, 10, 'S');
+
+                        position += margin;
+                    }
+                    return position;
+                };
+
+                pdf.setFontSize(11);
+                yPosition = show(settings.digitalSignature.title1, yPosition, 4);
+                yPosition = show(settings.digitalSignature.title2, yPosition, 4);
+                yPosition = show(settings.digitalSignature.title3, yPosition, 4);
+                yPosition = show(settings.digitalSignature.title4, yPosition, 4);
+                yPosition = show(settings.digitalSignature.title5, yPosition, 4);
+
+                pdf.setFontSize(9);
+                yPosition = show(settings.digitalSignature.subtitle1, yPosition, 4);
+                yPosition = show(settings.digitalSignature.subtitle2, yPosition, 4);
+                yPosition = show(settings.digitalSignature.subtitle3, yPosition, 4);
+                yPosition = show(settings.digitalSignature.subtitle4, yPosition, 4);
+                yPosition = show(settings.digitalSignature.subtitle5, yPosition, 4);
+
             } else {
                 console.log("--------------------------------------["+type+"] disabled !!!!!!!!!!!!!!!!!")
             }
