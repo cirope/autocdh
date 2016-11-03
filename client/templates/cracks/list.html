@@ -28,6 +28,12 @@
 
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="pending">
+        <div class="pull-right">
+          <button class="btn btn-xs btn-default" type="button" data-download-csv>
+            {{_ 'download_csv'}}
+          </button>
+        </div>
+
         <table class="table table-hover">
           <thead>
             <tr>
@@ -89,6 +95,10 @@
             {{/each}}
           </tbody>
         </table>
+
+        <button class="btn btn-default pull-right" type="button" data-download-csv>
+          {{_ 'download_csv'}}
+        </button>
 
         {{#if nextPath}}
           <div class="row">

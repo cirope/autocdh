@@ -157,6 +157,7 @@ var cracks = function (cracks) {
   var datetimeFormat = TAPi18n.__('datetime_default')
   var dateFormat = TAPi18n.__('date_default')
 
+
   cracks.forEach(function (crack, i) {
     var sibling           = Cracks.siblingOf(crack)
     var observationsLines = PDF.splitInLines(TAPi18n.__('crack_observations') + ': ' + (crack.observations || '-'))
@@ -171,12 +172,40 @@ var cracks = function (cracks) {
     else
       lines.push(TAPi18n.__('crack_crack_in')   + ': ' + moment(crack.crackIn).format(dateFormat))
 
-    lines.push(TAPi18n.__('crack_tube_type')    + ': ' + (crack.tubeType || ''))
-    lines.push(TAPi18n.__('crack_diameter')     + ': ' + (crack.diameter || '') + ' mm')
-    lines.push(TAPi18n.__('crack_stress')       + ': ' + (crack.stress && (crack.stress.toFixed(1) + ' MPa') || '-'))
+    var bendingCrackTubeType = false
+    var crackTubeType = crack.tubeType
+    if(crack.tubeType) {
+      switch (crack.tubeType) {
+        case '15x30':
+          crackTubeType = TAPi18n.__('assay_tube_type_15x30')
+          break
+        case '10x20':
+          crackTubeType = TAPi18n.__('assay_tube_type_10x20')
+          break
+        case 'bending':
+          bendingCrackTubeType = true
+          crackTubeType = TAPi18n.__('assay_tube_type_bending')
+          break
+        case 'other':
+          crackTubeType = TAPi18n.__('assay_tube_type_other')
+          break
+      }
+    }
+
+    lines.push(TAPi18n.__('crack_tube_type')    + ': ' + crackTubeType)
+    if(!bendingCrackTubeType) {
+      lines.push(TAPi18n.__('crack_diameter') + ': ' + (crack.diameter || '') + ' mm')
+    } else {
+      lines.push(TAPi18n.__('crack_width') + ': ' + (crack.diameter || '') + ' mm')
+      lines.push(TAPi18n.__('crack_height') + ': ' + (crack.height || '') + ' mm')
+      lines.push(TAPi18n.__('crack_light') + ': ' + (crack.light || '') + ' mm')
+    }
+    lines.push((bendingCrackTubeType ? TAPi18n.__('crack_stress_bending') : TAPi18n.__('crack_stress')) + ': ' +
+        (crack.stress && (crack.stress.toFixed(1) + ' MPa') || '-'))
 
     if (crack.stress && sibling && sibling.stress)
-      lines.push(TAPi18n.__('crack_stress_average') + ': ' + (((crack.stress + sibling.stress) / 2).toFixed(1) + ' MPa') || '-')
+      lines.push((bendingCrackTubeType ? TAPi18n.__('crack_stress_bending_average') : TAPi18n.__('crack_stress_average')) + ': ' +
+          (((crack.stress + sibling.stress) / 2).toFixed(1) + ' MPa') || '-')
 
     _.each(observationsLines, function (line) {
       lines.push(line)

@@ -11,6 +11,43 @@ Template._crack.helpers({
     return this.otherAssay ?
       TAPi18n.__('assay_other_assay_' + this.otherAssay) :
       TAPi18n.__('no')
+  },
+
+  crackTubeType: function () {
+    var label = TAPi18n.__('no')
+    if(this.tubeType) {
+      switch (this.tubeType) {
+        case '15x30':
+          label = TAPi18n.__('assay_tube_type_15x30')
+          break
+        case '10x20':
+          label = TAPi18n.__('assay_tube_type_10x20')
+          break
+        case 'bending':
+          label = TAPi18n.__('assay_tube_type_bending')
+          break
+        case 'other':
+          label = TAPi18n.__('assay_tube_type_other')
+          break
+      }
+    }
+    return label
+  },
+
+  diameterLabel: function () {
+    return this.tubeType && this.tubeType === 'bending' ?
+            TAPi18n.__('crack_width') :
+            TAPi18n.__('crack_diameter')
+  },
+
+  stressLabel: function () {
+    return this.tubeType && this.tubeType === 'bending' ?
+            TAPi18n.__('crack_stress_bending') :
+            TAPi18n.__('crack_stress')
+  },
+
+  isBendingTubeType: function () {
+    return this.tubeType && this.tubeType === 'bending'
   }
 })
 

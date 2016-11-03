@@ -1,0 +1,12 @@
+<template name="statsIndicatorsDashboardVolume">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_indicators_6_volume'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with volume}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

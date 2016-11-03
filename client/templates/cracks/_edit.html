@@ -17,7 +17,16 @@
           <div class="row">
             <div class="col-md-6">
               {{> afQuickField name='pressId'}}
-              {{> afQuickField name='responsibleId'}}
+              <div class="row">
+                 <div class="{{responsibleClass}}">
+                     {{> afQuickField name='responsibleId'}}
+                 </div>
+                 {{#if isBendingTubeType}}
+                 <div class="col-md-6">
+                     {{> afQuickField name='light'}}
+                 </div>
+                 {{/if}}
+              </div>
               <div class="row">
                 <div class="col-md-6">
                   {{> afQuickField name='moldingIn'}}
@@ -30,7 +39,7 @@
             <div class="col-md-6">
               <div class="row">
                 <div class="col-md-6">
-                  {{> afQuickField name='tubeType' value=tubeType}}
+                  {{> afQuickField name='tubeType' value=tubeType }}
                 </div>
                 <div class="col-md-6">
                   {{> afQuickField name='otherAssay'}}
@@ -38,7 +47,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{> afQuickField name='diameter'}}
+                  {{> afQuickField name='diameter' label=diameterLabel }}
                 </div>
                 <div class="col-md-6">
                   {{> afQuickField name='height'}}
@@ -49,7 +58,7 @@
                   {{> afQuickField name='load'}}
                 </div>
                 <div class="col-md-6">
-                  {{> afQuickField name='stress'}}
+                  {{> afQuickField name='stress' label=stressLabel }}
                 </div>
               </div>
             </div>

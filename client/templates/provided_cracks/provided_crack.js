@@ -20,7 +20,24 @@ Template.providedCrack.helpers({
   },
 
   tubeType: function () {
-    return this.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : this.tubeType
+    var label = this.tubeType
+    if(this.tubeType) {
+      switch (this.tubeType) {
+        case '15x30':
+          label = TAPi18n.__('assay_tube_type_15x30')
+          break
+        case '10x20':
+          label = TAPi18n.__('assay_tube_type_10x20')
+          break
+        case 'bending':
+          label = TAPi18n.__('assay_tube_type_bending')
+          break
+        case 'other':
+          label = TAPi18n.__('assay_tube_type_other')
+          break
+      }
+    }
+    return label
   },
 
   age: function () {

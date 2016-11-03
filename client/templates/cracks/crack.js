@@ -7,6 +7,12 @@ Template.crack.helpers({
     return this.cracks[0] && _.isNumber(this.cracks[0].error) && this.cracks[1]
   },
 
+  labelStressAverage: function () {
+    return this.cracks[0] && this.cracks[0].tubeType && this.cracks[0].tubeType === 'bending' ?
+        TAPi18n.__('crack_stress_bending_average') :
+        TAPi18n.__('crack_stress_average')
+  },
+
   stressPanelClass: function () {
     return stressErrorExceeded.apply(this) ? 'panel-danger' : 'panel-default'
   },

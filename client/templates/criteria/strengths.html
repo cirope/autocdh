@@ -19,6 +19,7 @@
         <thead>
           <tr>
             <th>{{_ 'strength_name'}}</th>
+            <th>{{_ 'strength_resistant'}}</th>
             <th>{{_ 'strength_individual_criteria'}}</th>
             <th>{{_ 'strength_average_criteria'}}</th>
             <th class="visible-lg">{{_ 'strength_cusum_target'}}</th>
@@ -29,6 +30,7 @@
         {{#each strengths}}
           <tr class="visible-on-hover-parent">
             <td><a href="{{pathFor 'strengthCriteria'}}">{{name}}</a></td>
+            <td><a href="{{pathFor 'strengthCriteria'}}">{{resistant}}</a></td>
             <td><a href="{{pathFor 'strengthCriteria'}}">{{individualCriteria}}</a></td>
             <td><a href="{{pathFor 'strengthCriteria'}}">{{averageCriteria}}</a></td>
             <td class="visible-lg"><a href="{{pathFor 'strengthCriteria'}}">{{cusumTarget}}</a></td>

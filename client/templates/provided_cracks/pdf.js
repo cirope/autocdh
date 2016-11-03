@@ -17,7 +17,24 @@ var putStaticData = function (providedCrack, doc, yPosition) {
   var defectLines       = PDF.splitInLines(TAPi18n.__('provided_crack_defects') + ': ' + (providedCrack.defects || ''))
   var observationsLines = PDF.splitInLines(TAPi18n.__('provided_crack_observations') + ': ' + (providedCrack.observations || ''))
 
-  var tubeType          = providedCrack.tubeType === 'other' ? TAPi18n.__('provided_crack_tube_type_other') : providedCrack.tubeType
+  var tubeType = TAPi18n.__('no')
+  if(providedCrack.tubeType) {
+    switch (providedCrack.tubeType) {
+      case '15x30':
+        tubeType = TAPi18n.__('assay_tube_type_15x30')
+        break
+      case '10x20':
+        tubeType = TAPi18n.__('assay_tube_type_10x20')
+        break
+      case 'bending':
+        tubeType = TAPi18n.__('assay_tube_type_bending')
+        break
+      case 'other':
+        tubeType = TAPi18n.__('assay_tube_type_other')
+        break
+    }
+  }
+
   var headerType        = TAPi18n.__('provided_crack_header_type_' + providedCrack.headerType)
 
   doc

@@ -1,0 +1,12 @@
+<template name="statsIndicatorsDashboardDeviation">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_indicators_2_deviation'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with deviation}}
+        <td class="{{class}}" data-details-for="{{../value}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>
