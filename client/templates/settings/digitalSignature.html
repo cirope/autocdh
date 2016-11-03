@@ -1,170 +1,176 @@
 <template name="digitalSignature">
-  <div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          {{_ 'setting_pdf'}}
-        </h3>
-      </div>
-      <div class="panel-body">
-        <p>
-          {{_ 'setting_pdf_digital_signature'}} /
-          {{#if digitalSignature.enabled}}
-              <strong>{{_ 'setting_pdf_enabled'}}</strong>
-          {{else}}
-              <strong>{{_ 'setting_pdf_disabled'}}</strong>
-          {{/if}}
-        </p>
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4 class="panel-title">
-                      {{_ 'setting_pdf_pdfs'}}
-                  </h4>
-              </div>
-              <div class="panel-body">
-                <p>
-                  {{_ 'setting_pdf_sample'}} /
-                  {{#if digitalSignature.pdfSample}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_provided_cracks'}} /
-                  {{#if digitalSignature.pdfProvidedCracks}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_deviation'}} /
-                  {{#if digitalSignature.pdfStatsDeviation}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_mixtures'}} /
-                  {{#if digitalSignature.pdfMixtures}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_customer_cracks'}} /
-                  {{#if digitalSignature.pdfCustomerCracks}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_granulometries'}} /
-                  {{#if digitalSignature.pdfGranulometries}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_hardened_concrete_evolution'}} /
-                  {{#if digitalSignature.pdfHardenedConcreteEvolution}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_maintenance'}} /
-                  {{#if digitalSignature.pdfMaintenance}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-                <p>
-                  {{_ 'setting_pdf_maintenance_check_list'}} /
-                  {{#if digitalSignature.pdfMaintenanceCheckList}}
-                      <strong>{{_ 'setting_pdf_enabled'}}</strong>
-                  {{else}}
-                      <strong>{{_ 'setting_pdf_disabled'}}</strong>
-                  {{/if}}
-                </p>
-              </div>
-          </div>
-          <div class="panel panel-default">
-              <div class="panel-heading">
-                  <h4 class="panel-title">
-                      {{_ 'setting_pdf'}}
-                  </h4>
-              </div>
-              <div class="panel-body">
-                <p>
-                    {{#if digitalSignature.signatureImageId}}
-                        {{#with signatureImage}}
-                            <img class="img-rounded img-responsive" src="{{url store='images'}}">
-                        {{/with}}
-                    {{/if}}
-                </p>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              {{_ 'setting_pdf_titles'}}
-                          </h4>
-                      </div>
-                      <div class="panel-body">
-                        <p>
-                          <strong>{{digitalSignature.title1}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.title2}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.title3}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.title4}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.title5}}</strong>
-                        </p>
-                      </div>
-                  </div>
-                  <div class="panel panel-default">
-                      <div class="panel-heading">
-                          <h4 class="panel-title">
-                              {{_ 'setting_pdf_subtitles'}}
-                          </h4>
-                      </div>
-                      <div class="panel-body">
-                        <p>
-                          <strong>{{digitalSignature.subtitle1}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.subtitle2}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.subtitle3}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.subtitle4}}</strong>
-                        </p>
-                        <p>
-                          <strong>{{digitalSignature.subtitle5}}</strong>
-                        </p>
-                      </div>
-                  </div>
-              </div>
-          </div>
+    <div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'setting_pdf'}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {{_ 'setting_pdf_digital_signature'}} /
+                        {{#if digitalSignature.enabled}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
 
-        <a href="{{pathFor 'digitalSignatureEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'setting_pdf_update_button'}}">
-          {{_ 'edit'}}
-        </a>
-      </div>
+                    <a href="{{pathFor 'digitalSignatureEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'setting_pdf_update_button'}}">
+                        {{_ 'edit'}}
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'setting_pdf_pdfs'}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {{_ 'setting_pdf_sample'}} /
+                        {{#if digitalSignature.pdfSample}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_provided_cracks'}} /
+                        {{#if digitalSignature.pdfProvidedCracks}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_deviation'}} /
+                        {{#if digitalSignature.pdfStatsDeviation}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_mixtures'}} /
+                        {{#if digitalSignature.pdfMixtures}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_customer_cracks'}} /
+                        {{#if digitalSignature.pdfCustomerCracks}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_granulometries'}} /
+                        {{#if digitalSignature.pdfGranulometries}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_hardened_concrete_evolution'}} /
+                        {{#if digitalSignature.pdfHardenedConcreteEvolution}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_maintenance'}} /
+                        {{#if digitalSignature.pdfMaintenance}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_maintenance_check_list'}} /
+                        {{#if digitalSignature.pdfMaintenanceCheckList}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
-  </div>
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'setting_pdf_digital_signature'}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {{#if digitalSignature.signatureImageId}}
+                            {{#with signatureImage}}
+                                <img class="col-md-4 img-rounded img-responsive" src="{{url store='images'}}">
+                            {{/with}}
+                        {{else}}
+                            <b>-</b>
+                        {{/if}}
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'setting_pdf_titles'}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p><strong>{{digitalSignature.title1}}</strong></p>
+                    <p><strong>{{digitalSignature.title2}}</strong></p>
+                    <p><strong>{{digitalSignature.title3}}</strong></p>
+                    <p><strong>{{digitalSignature.title4}}</strong></p>
+                    <p><strong>{{digitalSignature.title5}}</strong></p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'setting_pdf_subtitles'}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p>{{digitalSignature.subtitle1}}</p>
+                    <p>{{digitalSignature.subtitle2}}</p>
+                    <p>{{digitalSignature.subtitle3}}</p>
+                    <p>{{digitalSignature.subtitle5}}</p>
+                    <p>{{digitalSignature.subtitle4}}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </template>
