@@ -1,0 +1,32 @@
+<template name="statsIndicatorsDashboardResistanceRatioDetails">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <div class="pull-right">
+        <button type="button" class="close" data-close>&times;</button> 
+      </div>
+      <h4 class="panel-title">{{_ 'stats_indicators_4_resistance_ratio'}} / {{month}}</h4>
+    </div>
+
+    <div class="panel-body">
+      <table class="table table-hover table-condensed">
+        <thead>
+          <tr>
+            <th>{{_ 'strength'}}</th>
+            <th>{{_ 'stats_indicators_mean'}}</th>
+            <th>{{_ 'stats_indicators_ratio'}}</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each ratios}}
+            <tr>
+              <td>{{strength}}</td>
+              <td>{{mean}}</td>
+              <td>{{ratio}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

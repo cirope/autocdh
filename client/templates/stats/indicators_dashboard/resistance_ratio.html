@@ -1,0 +1,12 @@
+<template name="statsIndicatorsDashboardResistanceRatio">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_indicators_4_resistance_ratio'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with resistanceRatio}}
+        <td class="{{class}}" data-details-for="{{../value}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

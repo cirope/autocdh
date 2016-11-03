@@ -1,4 +1,4 @@
-Template.graphics.helpers({
+Template.stats.helpers({
   customersPath: function () {
     if (Customers.find().count() === 1)
       return Router.path('customerCracks', Customers.findOne())

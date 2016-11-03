@@ -1,0 +1,12 @@
+<template name="statsIndicatorsDashboardEfficiency">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_indicators_5_efficiency'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with efficiency}}
+        <td class="{{class}}" data-details-for="{{../value}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

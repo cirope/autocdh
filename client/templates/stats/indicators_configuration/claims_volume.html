@@ -1,0 +1,46 @@
+<template name="statsIndicatorsConfigurationClaimsVolume">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        {{_ 'stats_indicators_claims_volume'}}
+      </h4>
+    </div>
+
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <thead>
+            <tr>
+              <th style="width: 10em;"></th>
+              {{#each months}}
+                <th>{{label}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><strong>{{_ 'stats_indicators_claims_volume_label'}}</strong></td>
+
+              {{#each months}}
+                <td>
+                  <div class="form-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="{{claimsVolumeName}}"
+                            value="{{claimsVolumeValue}}"
+                            data-claims-volume-month="{{value}}">
+                  </div>
+                </td>
+              {{/each}}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <em>{{_ 'stats_indicators_claims_volume_caption'}}</em>
+      </p>
+    </div>
+  </div>
+</template>
