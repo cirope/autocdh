@@ -46,15 +46,15 @@
           <a href="{{pathFor 'instruments'}}">{{_ 'instruments'}}</a>
         </li>
       {{/if}}
-      {{#if settings }}
-          {{#if settings.digitalSignature }}
-              {{#if settings.digitalSignature.menuEnabled }}
+      {{#with settings }}
+          {{#if digitalSignature }}
+              {{#if digitalSignature.menuEnabled }}
               <li class="{{activeRouteClass 'digitalSignature' 'digitalSignatureEdit'}}">
-                  <a href="{{pathFor 'digitalSignature'}}">{{_ 'setting_pdf_digital_signature'}}</a>
+                  <a href="{{pathFor 'digitalSignature' data=this }}">{{_ 'setting_pdf_digital_signature'}}</a>
               </li>
               {{/if}}
           {{/if}}
-      {{/if}}
+      {{/with}}
     </ul>
   </li>
 </template>
