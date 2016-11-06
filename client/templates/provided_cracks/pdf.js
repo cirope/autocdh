@@ -116,7 +116,7 @@ Template.providedCrack.events({
           fontSize: 7
         })
 
-      yPosition = doc.lastCellPos.y + 10
+      yPosition = doc.lastCellPos.y + 14
 
       // adding digital signature
       yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfProvidedCracks', yPosition, function () {
