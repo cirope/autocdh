@@ -553,6 +553,8 @@
   "setting_pdf_maintenance": "Mantenimiento - informes",
   "setting_pdf_maintenance_check_list": "Mantenimiento - listas de chequeo",
   "setting_pdf_image": "Imagen",
+  "setting_pdf_image_width": "Ancho imagen",
+  "setting_pdf_image_height": "Alto imagen",
   "setting_pdf_titles": "Aclaración - Títulos",
   "setting_pdf_title": "Aclaración - Título",
   "setting_pdf_subtitles": "Aclaración - Subtítulos",
