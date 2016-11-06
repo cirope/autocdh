@@ -317,8 +317,10 @@ Template.sample.events({
         .setFontSize(10)
         .text(assayLines, 25, yPosition += 7)
 
+      yPosition = yPosition + assayLines.length * 4.5 + 1
+
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition + assayLines.length * 4.5 + 1, function () {
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition, function () {
         doc.putTotalPages('___total_pages___')
         doc.save(_sample.name+'.pdf')
       })
