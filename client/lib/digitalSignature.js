@@ -1,23 +1,38 @@
 
 DigitalSignature = {
     addSignatureToPdf: function (pdf, type, yPosition, callback) {
-        console.log("-------------------------------------- INI ["+type+"] "+yPosition)
         var executeCallback = true;
         if(pdf && type && yPosition){
             var settings = Settings.findOne()
             if(settings && settings.digitalSignature && settings.digitalSignature.enabled && settings.digitalSignature[type]) {
-                if (yPosition > 270 || (yPosition > 180 && pdf.options.orientation == 'l')) {
-                    console.log("--------------------------------------["+type+"] new page!!!")
+
+                // page size
+                var ph = pdf.options.orientation == 'l' ? 210 : 295
+                var page = pdf.options.orientation == 'l' ? 295 : 210
+
+                // image size
+                var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20;
+                var iw = settings.digitalSignature.signatureImageWidth ? settings.digitalSignature.signatureImageWidth : 20;
+
+                // signature size
+                var dsh = ih + 6
+                    + (settings.digitalSignature.title1 ? 4 : 0)
+                    + (settings.digitalSignature.title2 ? 4 : 0)
+                    + (settings.digitalSignature.title3 ? 4 : 0)
+                    + (settings.digitalSignature.title4 ? 4 : 0)
+                    + (settings.digitalSignature.title5 ? 4 : 0)
+                    + (settings.digitalSignature.subtitle1 ? 4 : 0)
+                    + (settings.digitalSignature.subtitle2 ? 4 : 0)
+                    + (settings.digitalSignature.subtitle3 ? 4 : 0)
+                    + (settings.digitalSignature.subtitle4 ? 4 : 0)
+                    + (settings.digitalSignature.subtitle5 ? 4 : 0);
+
+                if (yPosition+dsh > ph) {
                     yPosition = 20
                     pdf.addPage()
                 }
 
-                console.log("--------------------------------------["+type+"] y="+yPosition)
-
-                var page = pdf.options.orientation == 'l' ? 295 : 210
-
                 var dsPosition = yPosition;
-                var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20;
                 yPosition += (ih+6);
 
                 var show = function(prop, position, fSize){
@@ -54,8 +69,6 @@ DigitalSignature = {
 
                         var reader = new FileReader
                         reader.onloadend = function () {
-                            var iw = settings.digitalSignature.signatureImageWidth ? settings.digitalSignature.signatureImageWidth : 20;
-
                             pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), (page-iw)/2, dsPosition, iw, ih)
                             if (typeof callback === 'function') callback()
                         }
@@ -65,7 +78,6 @@ DigitalSignature = {
                 }
             }
         }
-        console.log("-------------------------------------- END ["+type+"] "+yPosition)
 
         if (executeCallback && typeof callback === 'function') callback()
         return yPosition
