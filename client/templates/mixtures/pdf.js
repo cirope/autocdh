@@ -130,10 +130,10 @@ Template.mixture.events({
         yPosition = doc.lastCellPos.y + 10
 
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMixtures', yPosition)
-
-        doc.putTotalPages('___total_pages___')
-        doc.save(template.data.name + '.pdf')
+        yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMixtures', yPosition, function () {
+          doc.putTotalPages('___total_pages___')
+          doc.save(template.data.name+'.pdf')
+        })
       })
     })
   }
