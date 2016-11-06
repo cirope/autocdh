@@ -6,8 +6,6 @@ DigitalSignature = {
         if(pdf && type && yPosition){
             var settings = Settings.findOne()
             if(settings && settings.digitalSignature && settings.digitalSignature.enabled && settings.digitalSignature[type]) {
-                console.log("--------------------------------------["+type+"] enabled")
-
                 if (yPosition > 270 || (yPosition > 180 && pdf.options.orientation == 'l')) {
                     console.log("--------------------------------------["+type+"] new page!!!")
                     yPosition = 20
@@ -51,15 +49,12 @@ DigitalSignature = {
                 if(settings.digitalSignature.signatureImageId){
                     var image = Images.findOne(settings.digitalSignature.signatureImageId);
 
-                    console.log("--------------------------------------[image] "+JSON.stringify(image._getInfo()))
-
                     executeCallback = false;
                     HTTP.get(image.url()+"&store=images", { responseType: 'blob' }, function(error, result){
 
                         var reader = new FileReader
                         reader.onloadend = function () {
                             var iw = settings.digitalSignature.signatureImageWidth ? settings.digitalSignature.signatureImageWidth : 20;
-                            console.log("--------------------------------------[image] dsPosition "+dsPosition)
 
                             pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), (page-iw)/2, dsPosition, iw, ih)
                             if (typeof callback === 'function') callback()
