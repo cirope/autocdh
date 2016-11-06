@@ -264,7 +264,7 @@ var commonEvents = {
       })
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition, function () {
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition+5, function () {
         doc.putTotalPages('___total_pages___')
         doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') +'.pdf')
       })
@@ -317,7 +317,7 @@ Template.sample.events({
         .setFontSize(10)
         .text(assayLines, 25, yPosition += 7)
 
-      yPosition = yPosition + assayLines.length * 4.5 + 1
+      yPosition = yPosition + assayLines.length * 4.5 + 5
 
       // adding digital signature
       yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition, function () {

@@ -73,7 +73,7 @@ Template.statsDeviation.events({
           fontSize: 7
         })
 
-      yPosition = doc.lastCellPos.y + 10
+      yPosition = doc.lastCellPos.y + 20
 
       // adding digital signature
       yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfStatsDeviation', yPosition, function () {

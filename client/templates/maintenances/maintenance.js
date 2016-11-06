@@ -92,7 +92,7 @@ Template.maintenance.events({
           fontSize: 7
         })
 
-      yPosition = doc.lastCellPos.y + 50
+      yPosition = doc.lastCellPos.y + 20
 
       // adding digital signature
       yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMaintenanceCheckList', yPosition, function () {
