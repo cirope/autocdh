@@ -19,7 +19,8 @@ DigitalSignature = {
                 var page = pdf.options.orientation == 'l' ? 295 : 210
 
                 var dsPosition = yPosition;
-                yPosition += 40;
+                var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20;
+                yPosition += (ih+6);
 
                 var show = function(prop, position, fSize){
                     if(prop) {
@@ -57,9 +58,10 @@ DigitalSignature = {
 
                         var reader = new FileReader
                         reader.onloadend = function () {
+                            var iw = settings.digitalSignature.signatureImageWidth ? settings.digitalSignature.signatureImageWidth : 20;
                             console.log("--------------------------------------[image] dsPosition "+dsPosition)
 
-                            pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), (page-40)/2, dsPosition, 40, 40)
+                            pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), (page-iw)/2, dsPosition, iw, ih)
                             if (typeof callback === 'function') callback()
                         }
                         reader.readAsDataURL(result.content);
