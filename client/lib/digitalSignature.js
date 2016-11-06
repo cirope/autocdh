@@ -59,7 +59,7 @@ DigitalSignature = {
                         reader.onloadend = function () {
                             console.log("--------------------------------------[image] dsPosition "+dsPosition)
 
-                            pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), 85, dsPosition, 40, 40)
+                            pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), (page-40)/2, dsPosition, 40, 40)
                             if (typeof callback === 'function') callback()
                         }
                         reader.readAsDataURL(result.content);

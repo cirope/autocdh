@@ -264,10 +264,10 @@ var commonEvents = {
       })
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition)
-
-      doc.putTotalPages('___total_pages___')
-      doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') + '.pdf')
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition, function () {
+        doc.putTotalPages('___total_pages___')
+        doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') +'.pdf')
+      })
     })
   }
 }
@@ -318,10 +318,10 @@ Template.sample.events({
         .text(assayLines, 25, yPosition += 7)
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition + assayLines.length * 4.5 + 1)
-
-      doc.putTotalPages('___total_pages___')
-      doc.save(_sample.name + '.pdf')
+      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfSample', yPosition + assayLines.length * 4.5 + 1, function () {
+        doc.putTotalPages('___total_pages___')
+        doc.save(_sample.name+'.pdf')
+      })
     })
   }
 })
