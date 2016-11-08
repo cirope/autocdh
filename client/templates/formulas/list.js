@@ -25,7 +25,9 @@ Template.formulasList.helpers({
     var settings = Settings.findOne()
     var options  = [
       { value: 'canal', label: TAPi18n.__('download_canal') },
-      { value: 'pump',  label: TAPi18n.__('download_pump') }
+      { value: 'pump',  label: TAPi18n.__('download_pump') },
+      { value: 'canal_2', label: TAPi18n.__('download_canal_2') },
+      { value: 'pump_2',  label: TAPi18n.__('download_pump_2') }
     ]
 
     if (settings && settings.customOptions && settings.customOptions.showPavement)
