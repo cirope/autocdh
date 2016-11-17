@@ -30,11 +30,20 @@ Template.formulasList.helpers({
       { value: 'pump_2',  label: TAPi18n.__('download_pump_2') }
     ]
 
-    if (settings && settings.customOptions && settings.customOptions.showPavement)
-      options.push({ value: 'pavement', label: TAPi18n.__('download_pavement') })
+    if(settings && settings.customOptions) {
+      if(settings.customOptions.showCanals3And4) {
+        options.push({value: 'canal_3', label: TAPi18n.__('download_canal_3')})
+        options.push({value: 'canal_4', label: TAPi18n.__('download_canal_4')})
+      }
 
-    if (settings && settings.customOptions && settings.customOptions.showDump)
-      options.push({ value: 'dump', label: TAPi18n.__('download_dump') })
+      if(settings.customOptions.showPavement) {
+        options.push({value: 'pavement', label: TAPi18n.__('download_pavement')})
+      }
+
+      if(settings.customOptions.showDump) {
+        options.push({value: 'dump', label: TAPi18n.__('download_dump')})
+      }
+    }
 
     return options
   }
