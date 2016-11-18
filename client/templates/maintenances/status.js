@@ -55,7 +55,7 @@ Template.maintenanceStatus.events({
       yPosition = doc.lastCellPos.y + 20
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfMaintenance', yPosition, function () {
+      yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfMaintenance', yPosition, function () {
         doc.putTotalPages('___total_pages___')
         doc.save(TAPi18n.__('maintenance_status') + '.pdf')
       })

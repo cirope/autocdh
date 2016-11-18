@@ -185,7 +185,7 @@ Template.granulometry.events({
         yPosition = doc.lastCellPos.y + 10
 
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfGranulometries', yPosition, function () {
+        yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfGranulometries', yPosition, function () {
           doc.putTotalPages('___total_pages___')
           doc.save(granulometry.name+'.pdf')
         })

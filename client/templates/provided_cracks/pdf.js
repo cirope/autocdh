@@ -119,7 +119,7 @@ Template.providedCrack.events({
       yPosition = doc.lastCellPos.y + 14
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureToPdf(doc, 'pdfProvidedCracks', yPosition, function () {
+      yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfProvidedCracks', yPosition, function () {
         doc.putTotalPages('___total_pages___')
         doc.save(fileName+'.pdf')
       })
