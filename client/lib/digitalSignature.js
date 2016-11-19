@@ -149,11 +149,8 @@ DigitalSignature = {
                     textList[txt]['h'] = pw - 10 - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2; // horizontal position of text
                 }
 
-                // show  text in each page
-                console.log("PAGES: "+pdf.internal.getNumberOfPages())
+                // show text in each page
                 for (var np = 1; np <= pdf.internal.getNumberOfPages(); np++) {
-                    console.log("PAGE: "+np)
-
                     pdf.setPage(np)
                     for(txt in textList){
                         pdf.setFontSize(textList[txt]['f']);
@@ -171,8 +168,13 @@ DigitalSignature = {
                             var reader = new FileReader
                             reader.onloadend = function () {
                                 var ip = pw - 10 - iw - (maxWidth - iw) / 2; // image position
-                                pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip, dsPosition, iw, ih)
-                                pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip - iw, dsPosition, iw, ih)
+
+                                // show image in each page
+                                for (var np = 1; np <= pdf.internal.getNumberOfPages(); np++) {
+                                    pdf.setPage(np)
+                                    pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip, dsPosition, iw, ih)
+                                }
+                                
                                 if (typeof callback === 'function') callback()
                             }
                             reader.readAsDataURL(result.content);
