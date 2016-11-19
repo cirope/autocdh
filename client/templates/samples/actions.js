@@ -317,7 +317,7 @@ Template.sample.events({
         .setFontSize(10)
         .text(assayLines, 25, yPosition += 7)
 
-      yPosition = yPosition + assayLines.length * 4.5 + 5
+      // yPosition = yPosition + assayLines.length * 4.5 + 5
 
       // adding digital signature
       yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfSample', function () {

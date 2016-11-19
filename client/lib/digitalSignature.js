@@ -138,40 +138,46 @@ DigitalSignature = {
                 yPosition = processText(textList, settings.digitalSignature.subtitle4, yPosition, 9)
                 yPosition = processText(textList, settings.digitalSignature.subtitle5, yPosition, 9)
 
-                console.log('texts: '+JSON.stringify(textList))
-
                 var maxWidth = iw
-                console.log('iw: '+maxWidth)
                 for(var txt in textList){
-                    console.log('txt: '+JSON.stringify(textList[txt]))
                     if(maxWidth < textList[txt]['w']){
                         maxWidth = textList[txt]['w']
                     }
                 }
 
-                console.log('maxWidth: '+maxWidth)
                 for(txt in textList){
-                    pdf.setFontSize(textList[txt]['f']);
-                    var xx = pw - 10 - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2;
-                    console.log('txt2 ['+textList[txt]['t']+'] > '+xx)
-                    pdf.text(textList[txt]['t'], xx, textList[txt]['p'], null, null, "center");
+                    textList[txt]['h'] = pw - 10 - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2; // horizontal position of text
+                }
+
+                // show  text in each page
+                console.log("PAGES: "+pdf.internal.getNumberOfPages())
+                for (var np = 1; np <= pdf.internal.getNumberOfPages(); np++) {
+                    console.log("PAGE: "+np)
+
+                    pdf.setPage(np)
+                    for(txt in textList){
+                        pdf.setFontSize(textList[txt]['f']);
+                        pdf.text(textList[txt]['t'], textList[txt]['h'], textList[txt]['p'], null, null, "center");
+                    }
                 }
 
                 if(settings.digitalSignature.signatureImageId){
                     var image = Images.findOne(settings.digitalSignature.signatureImageId);
+                    if(image && image.url()) {
+                        executeCallback = false // callback will be called after to load images
 
-                    var ip = pw - 10 - iw - (maxWidth - iw) / 2; // image position
-                    executeCallback = false;
-                    HTTP.get(image.url()+"&store=images", { responseType: 'blob' }, function(error, result){
+                        HTTP.get(image.url() + "&store=images", {responseType: 'blob'}, function (error, result) {
 
-                        var reader = new FileReader
-                        reader.onloadend = function () {
-                            pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip, dsPosition, iw, ih)
-                            if (typeof callback === 'function') callback()
-                        }
-                        reader.readAsDataURL(result.content);
-                    });
-
+                            var reader = new FileReader
+                            reader.onloadend = function () {
+                                var ip = pw - 10 - iw - (maxWidth - iw) / 2; // image position
+                                pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip, dsPosition, iw, ih)
+                                pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip - iw, dsPosition, iw, ih)
+                                if (typeof callback === 'function') callback()
+                            }
+                            reader.readAsDataURL(result.content);
+                        });
+                    }
                 }
             }
         }
