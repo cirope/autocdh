@@ -168,13 +168,14 @@ DigitalSignature = {
                             var reader = new FileReader
                             reader.onloadend = function () {
                                 var ip = pw - 10 - iw - (maxWidth - iw) / 2; // image position
+                                var iType = _.last(image.type().split('/')).toUpperCase() // image type
 
                                 // show image in each page
                                 for (var np = 1; np <= pdf.internal.getNumberOfPages(); np++) {
                                     pdf.setPage(np)
-                                    pdf.addImage(reader.result, _.last(image.type().split('/')).toUpperCase(), ip, dsPosition, iw, ih)
+                                    pdf.addImage(reader.result, iType, ip, dsPosition, iw, ih)
                                 }
-                                
+
                                 if (typeof callback === 'function') callback()
                             }
                             reader.readAsDataURL(result.content);
