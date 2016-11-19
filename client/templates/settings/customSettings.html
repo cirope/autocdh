@@ -1,0 +1,82 @@
+<template name="customOptions">
+    <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'setting_custom_options'}}
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <p>
+                        {{_ 'setting_custom_options_receipt_number_label'}} / <strong>{{customOptions.receiptNumberLabel}}</strong>
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_copy_receipt_number_from_sample'}} /
+                        {{#if customOptions.copyReceiptNumberFromSample}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_show_structure'}} /
+                        {{#if customOptions.showStructure}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_show_air_graphic'}} /
+                        {{#if customOptions.showAirGraphic}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_show_dump'}} /
+                        {{#if customOptions.showDump}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_show_pavement'}} /
+                        {{#if customOptions.showPavement}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_show_canals_3_and_4'}} /
+                        {{#if customOptions.showCanals3And4}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_custom_options_digital_signature'}} /
+                        {{#if customOptions.digitalSignatureMenuEnabled}}
+                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+
+                    <a href="{{pathFor 'customOptionsEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'setting_custom_options_update_button'}}">
+                        {{_ 'edit'}}
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</template>

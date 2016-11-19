@@ -47,8 +47,8 @@
         </li>
       {{/if}}
       {{#with settings }}
-          {{#if digitalSignature }}
-              {{#if digitalSignature.menuEnabled }}
+          {{#if settings.customOptions }}
+              {{#if settings.customOptions.digitalSignatureMenuEnabled }}
               <li class="{{activeRouteClass 'digitalSignature' 'digitalSignatureEdit'}}">
                   <a href="{{pathFor 'digitalSignature' data=this }}">{{_ 'setting_pdf_digital_signature'}}</a>
               </li>
