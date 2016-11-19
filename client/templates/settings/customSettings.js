@@ -1,2 +1,0 @@
-Template.customSettings.helpers({
-})
