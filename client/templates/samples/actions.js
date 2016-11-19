@@ -264,7 +264,7 @@ var commonEvents = {
       })
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfSample', yPosition+5, function () {
+      yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfSample', function () {
         doc.putTotalPages('___total_pages___')
         doc.save(_sample.name + ' - ' + TAPi18n.__('cracks') +'.pdf')
       })
@@ -320,7 +320,7 @@ Template.sample.events({
       yPosition = yPosition + assayLines.length * 4.5 + 5
 
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfSample', yPosition, function () {
+      yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfSample', function () {
         doc.putTotalPages('___total_pages___')
         doc.save(_sample.name+'.pdf')
       })
