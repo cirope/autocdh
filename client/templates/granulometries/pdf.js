@@ -182,10 +182,8 @@ Template.granulometry.events({
       if (idealCurves) doc.text(idealCurves, 20, yPosition +=5)
 
       putGraphImage(doc, yPosition, function () {
-        yPosition = doc.lastCellPos.y + 10
-
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfGranulometries', yPosition, function () {
+        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
           doc.putTotalPages('___total_pages___')
           doc.save(granulometry.name+'.pdf')
         })

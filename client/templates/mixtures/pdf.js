@@ -127,10 +127,8 @@ Template.mixture.events({
       yPosition = putBriefData(doc, yPosition)
 
       putGraphImage(doc, yPosition, function () {
-        yPosition = doc.lastCellPos.y + 10
-
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfMixtures', yPosition, function () {
+        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfMixtures', function () {
           doc.putTotalPages('___total_pages___')
           doc.save(template.data.name+'.pdf')
         })
