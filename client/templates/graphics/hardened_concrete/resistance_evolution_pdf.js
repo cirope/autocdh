@@ -121,10 +121,8 @@ Template.graphicHardenedConcreteResistanceEvolution.events({
       yPosition = putFilterData(template.data.filter, doc, yPosition += 5)
 
       putGraphImage(doc, yPosition += 5, function () {
-        yPosition = doc.lastCellPos.y + 10
-
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfHardenedConcreteEvolution', yPosition, function () {
+        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfHardenedConcreteEvolution', function () {
           doc.putTotalPages('___total_pages___')
           doc.save(name+'.pdf')
         })
