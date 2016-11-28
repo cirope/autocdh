@@ -570,6 +570,7 @@
   "setting_pdf_image": "Image",
   "setting_pdf_image_width": "Image width",
   "setting_pdf_image_height": "Image height",
+  "setting_pdf_image_margin": "Image margin",
   "setting_pdf_clarification": "Clarification",
   "setting_pdf_space_between_titles": "Line height",
   "setting_pdf_titles": "Clarification - Titles",

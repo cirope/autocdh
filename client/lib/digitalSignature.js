@@ -111,12 +111,16 @@ DigitalSignature = {
                 var ph = pdf.options.orientation == 'l' ? 210 : 295
                 var pw = pdf.options.orientation == 'l' ? 295 : 210
 
+                // margins
+                var pm = pdf.options.orientation == 'l' ? 15 : 10
+                var im = settings.digitalSignature.signatureImageMargin ? settings.digitalSignature.signatureImageMargin : 6
+
                 // image size
-                var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20;
-                var iw = settings.digitalSignature.signatureImageWidth ? settings.digitalSignature.signatureImageWidth : 20;
+                var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20
+                var iw = settings.digitalSignature.signatureImageWidth ? settings.digitalSignature.signatureImageWidth : 20
 
                 // signature size
-                var dsh = ih + 10
+                var dsh = ih + pm
                     + (settings.digitalSignature.title1 ? lineHeight : 0)
                     + (settings.digitalSignature.title2 ? lineHeight : 0)
                     + (settings.digitalSignature.title3 ? lineHeight : 0)
@@ -128,8 +132,8 @@ DigitalSignature = {
                     + (settings.digitalSignature.subtitle4 ? lineHeight : 0)
                     + (settings.digitalSignature.subtitle5 ? lineHeight : 0);
 
-                var dsPosition = ph-dsh-6; // initial position of image
-                var yPosition = dsPosition+ih+6; // initial position of text
+                var dsPosition = ph-dsh-im; // initial position of image
+                var yPosition = dsPosition+ih+im; // initial position of text
 
                 var textList = []
                 yPosition = processText(textList, settings.digitalSignature.title1, yPosition, fontTitle)
@@ -151,7 +155,7 @@ DigitalSignature = {
                 }
 
                 for(txt in textList){
-                    textList[txt]['h'] = pw - 10 - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2; // horizontal position of text
+                    textList[txt]['h'] = pw - pm - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2; // horizontal position of text
                 }
 
                 // show text in each page
@@ -172,7 +176,7 @@ DigitalSignature = {
 
                             var reader = new FileReader
                             reader.onloadend = function () {
-                                var ip = pw - 10 - iw - (maxWidth - iw) / 2; // image position
+                                var ip = pw - pm - iw - (maxWidth - iw) / 2; // image position
                                 var iType = _.last(image.type().split('/')).toUpperCase() // image type
 
                                 // show image in each page
