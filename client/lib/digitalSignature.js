@@ -88,6 +88,11 @@ DigitalSignature = {
             var settings = Settings.findOne()
             if(settings && settings.digitalSignature && settings.digitalSignature.enabled && settings.digitalSignature[type]) {
 
+                // clarification settings
+                var fontTitle = settings.digitalSignature.fontTitle ? settings.digitalSignature.fontTitle : 11
+                var fontSubtitle = settings.digitalSignature.fontSubtitle ? settings.digitalSignature.fontSubtitle : 9
+                var lineHeight = settings.digitalSignature.spaceBetweenTitles ? settings.digitalSignature.spaceBetweenTitles : 4
+
                 var processText = function(tList, prop, position, fSize){
                     if(prop) {
                         var response = {}
@@ -97,7 +102,7 @@ DigitalSignature = {
                         response['p'] = position // vertical position
                         tList.push(response)
 
-                        position += 4
+                        position += lineHeight
                     }
                     return position;
                 };
@@ -112,31 +117,31 @@ DigitalSignature = {
 
                 // signature size
                 var dsh = ih + 10
-                    + (settings.digitalSignature.title1 ? 4 : 0)
-                    + (settings.digitalSignature.title2 ? 4 : 0)
-                    + (settings.digitalSignature.title3 ? 4 : 0)
-                    + (settings.digitalSignature.title4 ? 4 : 0)
-                    + (settings.digitalSignature.title5 ? 4 : 0)
-                    + (settings.digitalSignature.subtitle1 ? 4 : 0)
-                    + (settings.digitalSignature.subtitle2 ? 4 : 0)
-                    + (settings.digitalSignature.subtitle3 ? 4 : 0)
-                    + (settings.digitalSignature.subtitle4 ? 4 : 0)
-                    + (settings.digitalSignature.subtitle5 ? 4 : 0);
+                    + (settings.digitalSignature.title1 ? lineHeight : 0)
+                    + (settings.digitalSignature.title2 ? lineHeight : 0)
+                    + (settings.digitalSignature.title3 ? lineHeight : 0)
+                    + (settings.digitalSignature.title4 ? lineHeight : 0)
+                    + (settings.digitalSignature.title5 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle1 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle2 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle3 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle4 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle5 ? lineHeight : 0);
 
                 var dsPosition = ph-dsh-6; // initial position of image
                 var yPosition = dsPosition+ih+6; // initial position of text
 
                 var textList = []
-                yPosition = processText(textList, settings.digitalSignature.title1, yPosition, 11)
-                yPosition = processText(textList, settings.digitalSignature.title2, yPosition, 11)
-                yPosition = processText(textList, settings.digitalSignature.title3, yPosition, 11)
-                yPosition = processText(textList, settings.digitalSignature.title4, yPosition, 11)
-                yPosition = processText(textList, settings.digitalSignature.title5, yPosition, 11)
-                yPosition = processText(textList, settings.digitalSignature.subtitle1, yPosition, 9)
-                yPosition = processText(textList, settings.digitalSignature.subtitle2, yPosition, 9)
-                yPosition = processText(textList, settings.digitalSignature.subtitle3, yPosition, 9)
-                yPosition = processText(textList, settings.digitalSignature.subtitle4, yPosition, 9)
-                yPosition = processText(textList, settings.digitalSignature.subtitle5, yPosition, 9)
+                yPosition = processText(textList, settings.digitalSignature.title1, yPosition, fontTitle)
+                yPosition = processText(textList, settings.digitalSignature.title2, yPosition, fontTitle)
+                yPosition = processText(textList, settings.digitalSignature.title3, yPosition, fontTitle)
+                yPosition = processText(textList, settings.digitalSignature.title4, yPosition, fontTitle)
+                yPosition = processText(textList, settings.digitalSignature.title5, yPosition, fontTitle)
+                yPosition = processText(textList, settings.digitalSignature.subtitle1, yPosition, fontSubtitle)
+                yPosition = processText(textList, settings.digitalSignature.subtitle2, yPosition, fontSubtitle)
+                yPosition = processText(textList, settings.digitalSignature.subtitle3, yPosition, fontSubtitle)
+                yPosition = processText(textList, settings.digitalSignature.subtitle4, yPosition, fontSubtitle)
+                yPosition = processText(textList, settings.digitalSignature.subtitle5, yPosition, fontSubtitle)
 
                 var maxWidth = iw
                 for(var txt in textList){
