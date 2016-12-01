@@ -83,10 +83,17 @@ DigitalSignature = {
         return yPosition
     },
     addSignatureToEachPage: function (pdf, type, callback) {
+        this._addSignatureToEachPage('right', pdf, type, callback)
+    },
+    addCenteredSignatureToEachPage: function (pdf, type, callback) {
+        this._addSignatureToEachPage('centered', pdf, type, callback)
+    },
+    _addSignatureToEachPage: function (signatureType, pdf, type, callback) {
         var executeCallback = true;
         if(pdf && type){
             var settings = Settings.findOne()
             if(settings && settings.digitalSignature && settings.digitalSignature.enabled && settings.digitalSignature[type]) {
+                signatureType = signatureType ? signatureType : 'centered'
 
                 // clarification settings
                 var fontTitle = settings.digitalSignature.fontTitle ? settings.digitalSignature.fontTitle : 11
@@ -112,8 +119,8 @@ DigitalSignature = {
                 var pw = pdf.options.orientation == 'l' ? 295 : 210
 
                 // margins
-                var pm = pdf.options.orientation == 'l' ? 15 : 10
-                var im = settings.digitalSignature.signatureImageMargin ? settings.digitalSignature.signatureImageMargin : 6
+                var pm = signatureType == 'centered' ? 2 : (pdf.options.orientation == 'l' ? 15 : 10) // margins from page border
+                var im = settings.digitalSignature.signatureImageMargin ? settings.digitalSignature.signatureImageMargin : 6 // margin between image and clarification titles
 
                 // image size
                 var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20
@@ -147,6 +154,7 @@ DigitalSignature = {
                 yPosition = processText(textList, settings.digitalSignature.subtitle4, yPosition, fontSubtitle)
                 yPosition = processText(textList, settings.digitalSignature.subtitle5, yPosition, fontSubtitle)
 
+                // max width to draw (image or texts)
                 var maxWidth = iw
                 for(var txt in textList){
                     if(maxWidth < textList[txt]['w']){
@@ -154,8 +162,13 @@ DigitalSignature = {
                     }
                 }
 
+                // horizontal position of text
                 for(txt in textList){
-                    textList[txt]['h'] = pw - pm - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2; // horizontal position of text
+                    if(signatureType == 'centered') {
+                        textList[txt]['h'] = (pw - textList[txt]['w']) / 2; // centered
+                    } else {
+                        textList[txt]['h'] = pw - pm - textList[txt]['w'] - (maxWidth - textList[txt]['w']) / 2; // right of page
+                    }
                 }
 
                 // show text in each page
@@ -176,7 +189,12 @@ DigitalSignature = {
 
                             var reader = new FileReader
                             reader.onloadend = function () {
-                                var ip = pw - pm - iw - (maxWidth - iw) / 2; // image position
+                                var ip; // image position
+                                if(signatureType == 'centered') {
+                                    ip = (pw - iw) / 2; // centered
+                                } else {
+                                    ip = pw - pm - iw - (maxWidth - iw) / 2; // right of page
+                                }
                                 var iType = _.last(image.type().split('/')).toUpperCase() // image type
 
                                 // show image in each page
