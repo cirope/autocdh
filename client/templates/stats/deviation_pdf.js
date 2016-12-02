@@ -69,7 +69,7 @@ Template.statsDeviation.events({
         .table(20, yPosition += 5, tableData.data, tableData.headers, {
           printHeaders: true,
           autoSize: false,
-          margins: { right: 0, left: 0, top: 35, bottom: 0 },
+          margins: { right: 0, left: 0, top: 35, bottom: DigitalSignature.getSignatureHeight(doc, 'pdfStatsDeviation') },
           fontSize: 7
         })
 

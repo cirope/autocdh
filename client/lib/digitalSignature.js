@@ -133,5 +133,38 @@ DigitalSignature = {
         if (executeCallback && typeof callback === 'function'){
             callback()
         }
+    },
+    getSignatureHeight: function (pdf, type) {
+        if(pdf && type){
+            var settings = Settings.findOne()
+            if(settings && settings.digitalSignature && settings.digitalSignature.enabled && settings.digitalSignature[type]) {
+
+                // clarification settings
+                var lineHeight = settings.digitalSignature.spaceBetweenTitles ? settings.digitalSignature.spaceBetweenTitles : 4
+
+                // margins
+                var pm = 2 // margins from page border
+                var im = settings.digitalSignature.signatureImageMargin ? settings.digitalSignature.signatureImageMargin : 6 // margin between image and clarification titles
+
+                // image size
+                var ih = settings.digitalSignature.signatureImageHeight ? settings.digitalSignature.signatureImageHeight : 20
+
+                // signature size
+                var dsh = ih + pm
+                    + (settings.digitalSignature.title1 ? lineHeight : 0)
+                    + (settings.digitalSignature.title2 ? lineHeight : 0)
+                    + (settings.digitalSignature.title3 ? lineHeight : 0)
+                    + (settings.digitalSignature.title4 ? lineHeight : 0)
+                    + (settings.digitalSignature.title5 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle1 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle2 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle3 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle4 ? lineHeight : 0)
+                    + (settings.digitalSignature.subtitle5 ? lineHeight : 0);
+
+                return dsh+im-7; // initial position of image
+            }
+        }
+        return 0
     }
 }
