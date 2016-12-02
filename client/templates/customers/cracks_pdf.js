@@ -63,10 +63,8 @@ Template.customerCracks.events({
           fontSize: 9
         })
 
-      yPosition = doc.lastCellPos.y + 20
-
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfCustomerCracks', yPosition, function () {
+      yPosition = DigitalSignature.addCenteredSignatureToEachPage(doc, 'pdfCustomerCracks', function () {
         doc.putTotalPages('___total_pages___')
         doc.save(title+'.pdf')
       })

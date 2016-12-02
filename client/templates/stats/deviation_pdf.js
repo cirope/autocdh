@@ -73,10 +73,8 @@ Template.statsDeviation.events({
           fontSize: 7
         })
 
-      yPosition = doc.lastCellPos.y + 20
-
       // adding digital signature
-      yPosition = DigitalSignature.addSignatureAtEnd(doc, 'pdfStatsDeviation', yPosition, function () {
+      yPosition = DigitalSignature.addCenteredSignatureToEachPage(doc, 'pdfStatsDeviation', function () {
         doc.putTotalPages('___total_pages___')
         doc.save(title+'.pdf')
       })
