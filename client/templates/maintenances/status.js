@@ -33,7 +33,7 @@ Template.maintenanceStatus.helpers({
 
 Template.maintenanceStatus.events({
   'click [data-download-pdf]': function () {
-    var yPosition = 20
+    var yPosition = 25
     var tableData = table()
 
     PDF.new({}, function (doc) {
@@ -48,7 +48,7 @@ Template.maintenanceStatus.events({
         .table(20, yPosition += 10, tableData.data, tableData.headers, {
           printHeaders: true,
           autoSize: false,
-          margins: { right: 0, left: 0, top: 30, bottom: 0 },
+          margins: { right: 0, left: 0, top: 30, bottom: DigitalSignature.getSignatureHeight(doc, 'pdfMaintenance') },
           fontSize: 7
         })
 

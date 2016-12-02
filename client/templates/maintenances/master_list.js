@@ -52,7 +52,7 @@ Template.maintenanceMasterList.events({
         .table(20, yPosition += 10, tableData.data, tableData.headers, {
           printHeaders: true,
           autoSize: false,
-          margins: { right: 0, left: 0, top: 30, bottom: 0 },
+          margins: { right: 0, left: 0, top: 30, bottom: DigitalSignature.getSignatureHeight(doc, 'pdfMaintenance') },
           fontSize: 7
         })
 
