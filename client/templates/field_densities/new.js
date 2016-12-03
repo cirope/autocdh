@@ -14,7 +14,7 @@ var calculateFields = function () {
   var md = m1-m2
   $('[name="massUsed"]').val(md)
 
-  var vh = 0
+  var pph = 0
   var mc = +$('[name="massBelow"]').val()
   if(mc){
     var m = md - mc
@@ -22,16 +22,14 @@ var calculateFields = function () {
 
     var pa = +$('[name="bulkDensity"]').val()
     if(pa > 0) {
-      vh = m / pa
-      vh = vh.toFixed(1)
-      $('[name="volumeTestHole"]').val(vh)
+      var vh = m / pa
 
       if(vh) {
         var mh = +$('[name="moistMassMaterial"]').val()
         if (mh) {
-          var ph = mh / vh
-          ph = ph.toFixed(2)
+          pph = mh / vh
 
+          var ph = pph.toFixed(2)
           $('[name="wetDensity"]').val(ph)
         } else {
           $('[name="wetDensity"]').val('')
@@ -39,6 +37,9 @@ var calculateFields = function () {
       } else {
         $('[name="wetDensity"]').val('')
       }
+
+      vh = vh.toFixed(1)
+      $('[name="volumeTestHole"]').val(vh)
     } else {
       $('[name="volumeTestHole"]').val('')
       $('[name="wetDensity"]').val('')
@@ -68,6 +69,39 @@ var calculateFields = function () {
   }
 
   var ma = m3 - m4
+  var ms = m4 - mr
+
+  if(ma && ms) {
+    var hd = ma / ms * 100
+
+    if(pph) {
+      var ps = pph * (1-hd/100)
+
+      var mdd = +$('[name="maxDryDensity"]').val()
+      if(mdd){
+        var pc = ps / mdd * 100
+
+        pc = pc.toFixed(1)
+        $('[name="percentage"]').val(pc)
+      } else {
+        $('[name="percentage"]').val('')
+      }
+
+      ps = ps.toFixed(2)
+      $('[name="dryDensity"]').val(ps)
+    } else {
+      $('[name="dryDensity"]').val('')
+      $('[name="percentage"]').val('')
+    }
+
+    hd = hd.toFixed(1)
+    $('[name="humidity"]').val(hd)
+  } else {
+    $('[name="humidity"]').val('')
+    $('[name="dryDensity"]').val('')
+    $('[name="percentage"]').val('')
+  }
+
   if(ma) {
     ma = ma.toFixed(2)
     $('[name="waterMass"]').val(ma)
@@ -75,41 +109,11 @@ var calculateFields = function () {
     $('[name="waterMass"]').val('')
   }
 
-  var ms = m4 - mr
   if(ms) {
     ms = ms.toFixed(2)
     $('[name="massWet"]').val(ms)
   } else {
     $('[name="massWet"]').val('')
-  }
-
-  if(ma && ms) {
-    var hd = ma / ms * 100
-    hd = hd.toFixed(1)
-
-    $('[name="humidity"]').val(hd)
-  } else {
-    $('[name="humidity"]').val('')
-  }
-
-  if(vh && ms) {
-    var ps = ms / vh
-    ps = ps.toFixed(2)
-
-    $('[name="dryDensity"]').val(ps)
-
-    var mdd = +$('[name="maxDryDensity"]').val()
-    if(mdd){
-      var pc = ps / mdd * 100
-      pc = pc.toFixed(1)
-
-      $('[name="percentage"]').val(pc)
-    } else {
-      $('[name="percentage"]').val('')
-    }
-  } else {
-    $('[name="dryDensity"]').val('')
-    $('[name="percentage"]').val('')
   }
 }
 
