@@ -313,6 +313,8 @@
   "field_density_new": "Nueva densidad de campo",
   "field_density_title": "Densidad de Campo - Método del Cono de Arena",
   "field_density_subtitle": "Según Norma IRAM 10536",
+  "field_density_sample_title": "Toma de muestras",
+  "field_density_assay_title": "Ensayo de laboratorio",
   "field_density_sample_responsible": "Responsable toma muestra",
   "field_density_sample_name": "Identificación muestra",
   "field_density_zone": "Zona de extracción",
