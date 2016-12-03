@@ -14,6 +14,7 @@ var calculateFields = function () {
   var md = m1-m2
   $('[name="massUsed"]').val(md)
 
+  var vh = 0
   var mc = +$('[name="massBelow"]').val()
   if(mc){
     var m = md - mc
@@ -21,7 +22,7 @@ var calculateFields = function () {
 
     var pa = +$('[name="bulkDensity"]').val()
     if(pa > 0) {
-      var vh = m / pa
+      vh = m / pa
       vh = vh.toFixed(1)
       $('[name="volumeTestHole"]').val(vh)
 
@@ -32,8 +33,15 @@ var calculateFields = function () {
           ph = ph.toFixed(2)
 
           $('[name="wetDensity"]').val(ph)
+        } else {
+          $('[name="wetDensity"]').val('')
         }
+      } else {
+        $('[name="wetDensity"]').val('')
       }
+    } else {
+      $('[name="volumeTestHole"]').val('')
+      $('[name="wetDensity"]').val('')
     }
   } else {
     $('[name="massSandHole"]').val('')
@@ -84,7 +92,25 @@ var calculateFields = function () {
     $('[name="humidity"]').val('')
   }
 
+  if(vh && ms) {
+    var ps = ms / vh
+    ps = ps.toFixed(2)
 
+    $('[name="dryDensity"]').val(ps)
+
+    var mdd = +$('[name="maxDryDensity"]').val()
+    if(mdd){
+      var pc = ps / mdd * 100
+      pc = pc.toFixed(1)
+
+      $('[name="percentage"]').val(pc)
+    } else {
+      $('[name="percentage"]').val('')
+    }
+  } else {
+    $('[name="dryDensity"]').val('')
+    $('[name="percentage"]').val('')
+  }
 }
 
 
@@ -92,7 +118,7 @@ Template.fieldDensityNew.events({
   'change [name="moistMassMaterial"], change [name="massTotal"], change [name="massOver"]': function (event) {
     calculateFields()
   },
-  'change [name="massBelow"], change [name="bulkDensity"]': function (event) {
+  'change [name="massBelow"], change [name="bulkDensity"], change [name="maxDryDensity"]': function (event) {
     calculateFields()
   },
   'change [name="massContainer"], change [name="massContainerWet"], change [name="massContainerDry"]': function (event) {
