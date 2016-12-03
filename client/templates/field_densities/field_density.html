@@ -1,12 +1,197 @@
 <template name="fieldDensity">
-  <div class="panel panel-default hide-on-pdf-export">
-    <div class="panel-heading">
-      <h3 class="panel-title">
-        {{_ 'field_density'}}: ......
-        <a class="pull-right" href="{{pathFor 'fieldDensities'}}">{{_ 'go_back'}}</a>
-      </h3>
+    <div class="row" style="text-align:center">
+        <h4>{{_ 'field_density_title'}}</h4>
+        <h5>{{_ 'field_density_subtitle'}}</h5>
     </div>
-    <div class="panel-body">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    {{_ 'field_density'}}
+                    <a class="pull-right" href="{{pathFor 'fieldDensities'}}">{{_ 'go_back'}}</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_sample_responsible'}} / <strong>{{sampleResponsibleId}}</strong></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_field_date'}} / <strong>{{fieldDate}}</strong></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_sample_name'}} / <strong>{{sampleName}}</strong></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_work'}} / <strong>{{work}}</strong></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_zone'}} / <strong>{{zone}}</strong></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_coordinate'}} / <strong>{{coordinate}}</strong></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>{{_ 'field_density_sand_cone_code'}} / <strong>{{sandConeCode}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default" style="margin-top: 18px;">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_moist_mass_material'}} / <strong>{{moistMassMaterial}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_total'}} / <strong>{{massTotal}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_over'}} / <strong>{{massOver}}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{_ 'field_density_sample_observations'}} / <strong>{{sampleObservations}}</strong></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="panel panel-default" style="margin-top: 20px">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    {{_ 'field_density_assay_title'}}
+                </h3>
+            </div>
+            <div class="panel-body">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6" style="margin-top: 16px">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_assay_responsible'}} / <strong>{{assayResponsibleId}}</strong></p>
+                                </div>
+                                <div class="col-md-6">
+                                    <p>{{_ 'field_density_lab_date'}} / <strong>{{labDate}}</strong></p>
+                                </div>
+                            </div>
+                            <div class="panel panel-default" style="margin-top: 9px">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_used'}} / <strong>{{massUsed}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_below'}} / <strong>{{massBelow}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_sand_hole'}} / <strong>{{massSandHole}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_bulk_density'}} / <strong>{{bulkDensity}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_volume_test_hole'}} / <strong>{{volumeTestHole}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_wet_density'}} / <strong>{{wetDensity}}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 15px">
+                                <div class="col-md-12">
+                                    <p>{{_ 'field_density_drying_container_code'}} / <strong>{{dryingContainerCode}}</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_container'}} / <strong>{{massContainer}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_container_wet'}} / <strong>{{massContainerWet}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_container_dry'}} / <strong>{{massContainerDry}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_water_mass'}} / <strong>{{waterMass}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_mass_wet'}} / <strong>{{massWet}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_humidity'}} / <strong>{{humidity}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_dry_density'}} / <strong>{{dryDensity}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_max_dry_density'}} / <strong>{{maxDryDensity}}</strong></p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p>{{_ 'field_density_percentage'}} / <strong>{{percentage}}</strong></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{_ 'field_density_assay_observations'}} / <strong>{{assayObservations}}</strong></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
