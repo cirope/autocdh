@@ -1,0 +1,40 @@
+<template name="fieldDensities">
+  {{#if showList}}
+    {{> fieldDensitiesList}}
+  {{else}}
+    {{> fieldDensitiesEmpty}}
+  {{/if}}
+</template>
+
+<template name="fieldDensitiesList">
+    <div role="tabpanel">
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation">
+                <a href="{{pathFor 'granulometries'}}">
+                    {{_ 'granulometries_label'}}
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="{{pathFor 'mixtures'}}">
+                    {{_ 'mixtures'}}
+                </a>
+            </li>
+            <li role="presentation">
+                <a href="{{pathFor 'granulometryHumidities'}}">
+                    {{_ 'granulometry_humidity'}}
+                </a>
+            </li>
+            <li role="presentation" class="active">
+                <a href="{{pathFor 'fieldDensities'}}">
+                    {{_ 'field_density'}}
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active">
+                <h1>{{_ 'field_density'}}</h1>
+            </div>
+        </div>
+    </div>
+</template>
