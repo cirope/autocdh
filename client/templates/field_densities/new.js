@@ -6,7 +6,6 @@ AutoForm.addHooks('newFieldDensityForm', {
   }
 })
 
-
 var calculateFields = function () {
   var m1 = +$('[name="massTotal"]').val()
   var m2 = +$('[name="massOver"]').val()
