@@ -117,6 +117,20 @@ var calculateFields = function () {
 }
 
 
+Template.fieldDensityNew.helpers({
+  lastBulkDensity: function(){
+    var last = FieldDensities.findOne({}, {sort: {createdAt:-1}})
+
+    return last && last.bulkDensity
+  },
+  lastMaxDryDensity: function(){
+    var last = FieldDensities.findOne({}, {sort: {createdAt:-1}})
+
+    return last && last.maxDryDensity
+  }
+
+})
+
 Template.fieldDensityNew.events({
   'change [name="moistMassMaterial"], change [name="massTotal"], change [name="massOver"]': function (event) {
     calculateFields()
