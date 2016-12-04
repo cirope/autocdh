@@ -1,12 +1,4 @@
 <template name="fieldDensities">
-  {{#if showList}}
-    {{> fieldDensitiesList}}
-  {{else}}
-    {{> fieldDensitiesEmpty}}
-  {{/if}}
-</template>
-
-<template name="fieldDensitiesList">
     <div role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation">
@@ -32,9 +24,19 @@
         </ul>
 
         <div class="tab-content">
-            <div role="tabpanel" class="tab-pane active">
-                <h1>{{_ 'field_density'}}</h1>
+            <div class="row text-center">
+                <h4>{{_ 'field_density_title'}}</h4>
+                <h5>{{_ 'field_density_subtitle'}}</h5>
             </div>
+            {{#if showList}}
+                {{> fieldDensitiesList}}
+            {{else}}
+                {{> fieldDensitiesEmpty}}
+            {{/if}}
         </div>
     </div>
+</template>
+
+<template name="fieldDensitiesList">
+    ....
 </template>
