@@ -19,8 +19,10 @@ label {
   line-height: 1.75;
 }
 
-.pointer-cursor {
-  cursor: pointer;
+.danger {
+  a {
+    color: darken(#93c54b, 20%);
+  }
 }
 
 .form-group {
@@ -85,6 +87,10 @@ label {
 .panel .panel-heading h3 a {
   font-size: 11px;
   font-weight: normal;
+}
+
+.pointer-cursor {
+  cursor: pointer;
 }
 
 .row.slim,
