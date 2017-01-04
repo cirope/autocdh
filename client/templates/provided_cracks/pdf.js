@@ -2,7 +2,7 @@ var name = function (providedCrack) {
   var materialId   = providedCrack.materialId
   var materialList = Materials.first()
   var materials    = materialList && materialList[providedCrack.type + 's']
-  var material     = _.find(materials, function (m) { return m._id === materialId })
+  var material     = _.find(materials, function (m) { return m && m._id === materialId })
 
   return providedCrack.name + (material ? ' (' + material.name + ')' : '')
 }

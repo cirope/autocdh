@@ -3,7 +3,7 @@ Template.formula.helpers({
     var materials  = Materials.first() || { concretes: [] }
     var concreteId = this.id
     var concrete   = _.find(materials.concretes, function (concrete) {
-      return concrete._id === concreteId
+      return concrete && concrete._id === concreteId
     })
 
     return concrete && concrete.name
@@ -13,7 +13,7 @@ Template.formula.helpers({
     var materials = Materials.first() || { sands: [] }
     var sandId    = this.id
     var sand      = _.find(materials.sands, function (sand) {
-      return sand._id === sandId
+      return sand && sand._id === sandId
     })
 
     return sand && [sand.name, '(' + sand.absorption + '%)'].join(' ')
@@ -23,7 +23,7 @@ Template.formula.helpers({
     var materials = Materials.first() || { gravels: [] }
     var gravelId  = this.id
     var gravel    = _.find(materials.gravels, function (gravel) {
-      return gravel._id === gravelId
+      return gravel && gravel._id === gravelId
     })
 
     return gravel && [gravel.name, '(' + gravel.absorption + '%)'].join(' ')

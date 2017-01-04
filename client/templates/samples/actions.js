@@ -55,7 +55,7 @@ var concrete = function (concrete) {
 
   concrete.concretes.forEach(function (c) {
     var _concrete   = _.find(materials.concretes, function (mConcrete) {
-      return mConcrete._id === c.id
+      return mConcrete && mConcrete._id === c.id
     })
 
     result.push("\t- " + _concrete.name + ': ' + c.amount + ' kg/m³')
@@ -63,7 +63,7 @@ var concrete = function (concrete) {
 
   concrete.sands.forEach(function (s) {
     var _sand   = _.find(materials.sands, function (mSand) {
-      return mSand._id === s.id
+      return mSand && mSand._id === s.id
     })
 
     result.push("\t- " + _sand.name + ': ' + s.amount + ' kg/m³ (' + s.absorption + '%)')
@@ -71,7 +71,7 @@ var concrete = function (concrete) {
 
   concrete.gravels.forEach(function (g) {
     var _gravel   = _.find(materials.gravels, function (mGravel) {
-      return mGravel._id === g.id
+      return mGravel && mGravel._id === g.id
     })
 
     result.push("\t- " + _gravel.name + ': ' + g.amount + ' kg/m³ (' + g.absorption + '%)')
@@ -114,7 +114,7 @@ var humidity = function (humidity) {
 
   humidity.hSands.forEach(function (s) {
     var _sand    = _.find(materials.sands, function (mSand) {
-      return mSand._id === s.id
+      return mSand && mSand._id === s.id
     })
 
     result.push("\t- " + _sand.name + ': ' + s.amount + ' kg/m³ (' + s.absorption + '%)')
@@ -122,7 +122,7 @@ var humidity = function (humidity) {
 
   humidity.hGravels.forEach(function (g) {
     var _gravel    = _.find(materials.gravels, function (mGravel) {
-      return mGravel._id === g.id
+      return mGravel && mGravel._id === g.id
     })
 
     result.push("\t- " + _gravel.name + ': ' + g.amount + ' kg/m³ (' + g.absorption + '%)')

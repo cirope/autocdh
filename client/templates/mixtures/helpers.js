@@ -2,8 +2,8 @@ var helpers = {
   aggregates: function () {
     var material = Materials.first() || {}
     var map      = function (m) { return { label: m.name, value: m._id } }
-    var sands    = material && _.map(material.sands, map)
-    var gravels  = material && _.map(material.gravels, map)
+    var sands    = material && _.map(_.compact(material.sands), map)
+    var gravels  = material && _.map(_.compact(material.gravels), map)
 
     return [
       {
