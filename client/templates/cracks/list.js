@@ -18,6 +18,12 @@ Template.cracksList.helpers({
     var days = moment().endOf('day').diff(this.moldingIn, 'days')
 
     return moment.localeData().relativeTime(days, false, days === 1 ? 'd' : 'dd')
+  },
+
+  customer: function () {
+    var receipt = Receipts.findOne({ sampleId: this.sampleId })
+
+    return receipt && Customers.findOne(receipt.customerId).name
   }
 })
 
@@ -28,6 +34,7 @@ Template.cracksList.events({
 
     var search = {
       designation: template.$('#designation').val(),
+      customer:    template.$('#customer').val(),
       moldingTime: template.$('#molding-time').val(),
       moldingIn:   moldingIn && moldingIn.join('|'),
       crackIn:     crackIn   && crackIn.join('|')
