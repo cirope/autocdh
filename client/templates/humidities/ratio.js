@@ -17,10 +17,10 @@ var updateRatio = function () {
   var aggregatesHumidity  = 0
   var aggregateTypes      = [{
     name:      'hSands',
-    materials: materials.sands
+    materials: _.compact(materials.sands)
   }, {
     name:      'hGravels',
-    materials: materials.gravels
+    materials: _.compact(materials.gravels)
   }]
 
   aggregateTypes.forEach(function (aggregateType) {

@@ -4,6 +4,11 @@ Template.cracksCracked.helpers({
     var strength = concrete && Strengths.findOne(concrete.strengthId)
 
     return strength && strength.name
+  },
+  customer: function () {
+    var receipt = Receipts.findOne({ sampleId: this.sampleId })
+
+    return receipt && Customers.findOne(receipt.customerId).name
   }
 })
 
@@ -14,6 +19,7 @@ Template.cracksCracked.events({
 
     var search = {
       designation: template.$('#designation').val(),
+      customer:    template.$('#customer').val(),
       moldingIn:   moldingIn && moldingIn.join('|'),
       crackedIn:   crackedIn && crackedIn.join('|'),
       strength:    template.$('#strength').val(),

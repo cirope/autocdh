@@ -44,7 +44,7 @@ var putConcrete = function (row, concrete) {
 
   var concretes = concrete.concretes.map(function (c) {
     var _concrete   = _.find(materials.concretes, function (mConcrete) {
-      return mConcrete._id === c.id
+      return mConcrete && mConcrete._id === c.id
     })
 
     return _concrete.name + ': ' + c.amount + ' kg/m³'
@@ -52,7 +52,7 @@ var putConcrete = function (row, concrete) {
 
   var sands = concrete.sands.map(function (s) {
     var _sand   = _.find(materials.sands, function (mSand) {
-      return mSand._id === s.id
+      return mSand && mSand._id === s.id
     })
 
     return _sand.name + ': ' + s.amount + ' kg/m³ (' + s.absorption + '%)'
@@ -60,7 +60,7 @@ var putConcrete = function (row, concrete) {
 
   var gravels = concrete.gravels.map(function (g) {
     var _gravel   = _.find(materials.gravels, function (mGravel) {
-      return mGravel._id === g.id
+      return mGravel && mGravel._id === g.id
     })
 
     return _gravel.name + ': ' + g.amount + ' kg/m³ (' + g.absorption + '%)'
@@ -87,7 +87,7 @@ var putHumidity = function (row, humidity) {
 
   var sands = humidity.hSands.map(function (s) {
     var _sand    = _.find(materials.sands, function (mSand) {
-      return mSand._id === s.id
+      return mSand && mSand._id === s.id
     })
 
     return _sand.name + ': ' + s.amount + ' kg/m³ (' + s.absorption + '%)'
@@ -95,7 +95,7 @@ var putHumidity = function (row, humidity) {
 
   var gravels = humidity.hGravels.map(function (g) {
     var _gravel    = _.find(materials.gravels, function (mGravel) {
-      return mGravel._id === g.id
+      return mGravel && mGravel._id === g.id
     })
 
     return _gravel.name + ': ' + g.amount + ' kg/m³ (' + g.absorption + '%)'
