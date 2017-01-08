@@ -40,8 +40,8 @@
 
         <div class="tab-content">
             <div class="row text-center">
-                <h4>{{_ 'field_density_title'}}</h4>
-                <h5>{{_ 'field_density_subtitle'}}</h5>
+                <h4>{{_ 'limit_title'}}</h4>
+                <h5>{{_ 'limit_subtitle'}}</h5>
             </div>
             {{#if showList}}
                 {{> limitsList}}
@@ -54,20 +54,18 @@
 
 <template name="limitsList">
     <p>
-        <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'fieldDensityNew'}}">{{_ 'field_density_create_title'}}</a>
+        <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'limitNew'}}">{{_ 'limit_create_title'}}</a>
     </p>
     <table class="table table-hover">
         <thead>
         <tr>
-            <th>{{_ 'field_density_sample_name'}}</th>
-            <th>{{_ 'field_density_work'}}</th>
-            <th>{{_ 'field_density_field_date'}}</th>
-            <th>{{_ 'field_density_lab_date'}}</th>
+            <th>{{_ 'limit_name'}}</th>
+            <th>{{_ 'limit_date'}}</th>
             <th class="text-right">
                 <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
                     <span class="glyphicon glyphicon-search"></span>
                 </a>
-                <a class="hidden" href="{{pathFor 'fieldDensities'}}" title="{{_ 'cancel'}}" data-search-clean>
+                <a class="hidden" href="{{pathFor 'limits'}}" title="{{_ 'cancel'}}" data-search-clean>
                     <span class="glyphicon glyphicon-remove"></span>
                 </a>
             </th>
@@ -78,13 +76,7 @@
                 <input class="form-control" type="text" name="sampleName" id="sampleName">
             </td>
             <td class="form-group form-group-sm">
-                <input class="form-control" type="text" name="work" id="work">
-            </td>
-            <td class="form-group form-group-sm">
                 <input class="form-control" type="text" name="fieldDate" id="fieldDate">
-            </td>
-            <td class="form-group form-group-sm">
-                <input class="form-control" type="text" name="labDate" id="labDate">
             </td>
             <td>
                 <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
@@ -94,14 +86,12 @@
         </tr>
         </thead>
         <tbody>
-        {{#each fieldDensities}}
+        {{#each limits}}
             <tr class="visible-on-hover-parent">
-                <td><a href="{{pathFor 'fieldDensity'}}">{{sampleName}}</a></td>
-                <td><a href="{{pathFor 'fieldDensity'}}">{{work}}</a></td>
-                <td><a href="{{pathFor 'fieldDensity'}}">{{l fieldDate 'L'}}</a></td>
-                <td><a href="{{pathFor 'fieldDensity'}}">{{l labDate 'L'}}</a></td>
+                <td><a href="{{pathFor 'limit'}}">{{sampleName}}</a></td>
+                <td><a href="{{pathFor 'limit'}}">{{l fieldDate 'L'}}</a></td>
                 <td class="text-right">
-                    <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'fieldDensityEdit'}}" title="{{_ 'edit'}}">
+                    <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'limitEdit'}}" title="{{_ 'edit'}}">
                         {{_ 'edit'}}
                     </a>
                 </td>
@@ -130,5 +120,5 @@
         {{#unless ready}}{{> spinner}}{{/unless}}
     {{/if}}
 
-    <a class="btn btn-primary" href="{{pathFor 'fieldDensityNew'}}">{{_ 'field_density_create_title'}}</a>
+    <a class="btn btn-primary" href="{{pathFor 'limitNew'}}">{{_ 'limit_create_title'}}</a>
 </template>
