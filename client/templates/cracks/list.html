@@ -38,6 +38,7 @@
           <thead>
             <tr>
               <th>{{_ 'crack_designation'}}</th>
+              <th>{{_ 'customer'}}</th>
               <th class="hidden-xs hidden-sm hidden-md">{{_ 'crack_time_after_molding'}}</th>
               <th class="hidden-xs">{{_ 'crack_molding_in'}}</th>
               <th>{{_ 'crack_crack_in'}}</th>
@@ -54,6 +55,9 @@
             <tr class="collapse" id="search-filter">
               <td class="form-group form-group-sm">
                 <input class="form-control" type="text" name="designation" id="designation">
+              </td>
+              <td class="form-group form-group-sm">
+                <input class="form-control" type="text" name="customer" id="customer">
               </td>
               <td class="hidden-xs hidden-sm hidden-md form-group form-group-sm">
                 <input class="form-control" type="text" name="molding-time" id="molding-time">
@@ -75,6 +79,7 @@
             {{#each cracks}}
               <tr class="{{crackClass}} visible-on-hover-parent">
                 <td><a href="{{pathFor 'crack'}}">{{designation}}</a></td>
+                <td>{{customer}}</td>
                 <td class="hidden-xs hidden-sm hidden-md">{{timeAfterMolding}}</td>
                 <td class="hidden-xs">{{l moldingIn 'L'}}</td>
                 <td>{{l crackIn 'L'}}</td>

@@ -2,7 +2,7 @@ var name = function (granulometry) {
   var materialId   = granulometry.materialId
   var materialList = Materials.first()
   var materials    = materialList && materialList[granulometry.type + 's']
-  var material     = _.find(materials, function (m) { return m._id === materialId })
+  var material     = _.find(materials, function (m) { return m && m._id === materialId })
 
   return granulometry.name + (material ? ' (' + material.name + ')' : '')
 }
