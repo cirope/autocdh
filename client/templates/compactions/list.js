@@ -1,25 +1,17 @@
-Template.fieldDensities.helpers({
+Template.compactions.helpers({
   showList: function () {
-    return this.fieldDensities.count() || this.hasQuery
+    return this.compactions.count() || this.hasQuery
   }
 })
 
-Template.fieldDensitiesList.helpers({
+Template.compactionsList.helpers({
 })
 
-Template.fieldDensitiesList.events({
+Template.compactionsList.events({
   'click [data-action="search"]': function (event, template) {
-    var fieldDateRange = DateRangeHelper.getRange(template.$('#fieldDate'))
-    var labDateRange = DateRangeHelper.getRange(template.$('#labDate'))
+    var search = {}
 
-    var search = {
-      sampleName: template.$('#sampleName').val(),
-      work:       template.$('#work').val(),
-      fieldDate:  fieldDateRange && fieldDateRange.join('|'),
-      labDate:    labDateRange && labDateRange.join('|')
-    }
-
-    Router.go('fieldDensities', {}, { query: search })
+    Router.go('compactions', {}, { query: search })
   },
 
   'click [data-search-clean]': function (event, template) {
@@ -28,14 +20,6 @@ Template.fieldDensitiesList.events({
 
   'shown.bs.collapse': function (event, template) {
     template.$('input:first').focus()
-
-    template.$('#fieldDate').
-    daterangepicker(DateRangeHelper.filterOptions()).
-    daterangepickerFilterEvents()
-
-    template.$('#labDate').
-    daterangepicker(DateRangeHelper.filterOptions()).
-    daterangepickerFilterEvents()
 
     template.$('[data-search-clean]').removeClass('hidden')
     template.$('[data-search]').addClass('hidden')
