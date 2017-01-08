@@ -29,15 +29,15 @@
                 <h5>{{_ 'field_density_subtitle'}}</h5>
             </div>
             {{#if showList}}
-                {{> fieldDensitiesList}}
+                {{> compactionsList}}
             {{else}}
-                {{> fieldDensitiesEmpty}}
+                {{> compactionsEmpty}}
             {{/if}}
         </div>
     </div>
 </template>
 
-<template name="fieldDensitiesList">
+<template name="compactionsList">
     <p>
         <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'fieldDensityNew'}}">{{_ 'field_density_create_title'}}</a>
     </p>
