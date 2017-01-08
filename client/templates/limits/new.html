@@ -1,10 +1,10 @@
-<template name="fieldDensityNew">
+<template name="limitNew">
     <div class="row text-center">
         <h4>{{_ 'field_density_title'}}</h4>
         <h5>{{_ 'field_density_subtitle'}}</h5>
     </div>
     <div class="row">
-        {{#autoForm collection='FieldDensities' id='newFieldDensityForm' type='method' validation='blur' meteormethod='createFieldDensity' doc=fieldDensity}}
+        {{#autoForm collection='Limits' id='newLimitForm' type='method' validation='blur' meteormethod='createLimit' doc=fieldDensity}}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
