@@ -1,201 +1,40 @@
 <template name="compactionNew">
     <div class="row text-center">
-        <h4>{{_ 'field_density_title'}}</h4>
-        <h5>{{_ 'field_density_subtitle'}}</h5>
+        <h4>{{_ 'compaction_title'}}</h4>
+        <h5>{{_ 'compaction_subtitle'}}</h5>
     </div>
     <div class="row">
         {{#autoForm collection='Compactions' id='newCompactionForm' type='method' validation='blur' meteormethod='createCompaction' doc=fieldDensity}}
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h3 class="panel-title">
-                        {{_ 'field_density_new'}}
-                        <a class="pull-right" href="{{pathFor 'fieldDensities'}}">{{_ 'go_back'}}</a>
+                        {{_ 'compaction_new'}}
+                        <a class="pull-right" href="{{pathFor 'compactions'}}">{{_ 'go_back'}}</a>
                     </h3>
                 </div>
                 <div class="panel-body">
                     <fieldset>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='sampleResponsibleId'}}
-                                    </div>
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='fieldDate'}}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='sampleName'}}
-                                    </div>
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='work'}}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='zone'}}
-                                    </div>
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='coordinate'}}
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        {{> afQuickField name='sandConeCode'}}
-                                    </div>
-                                </div>
+                                {{> afQuickField name='sampleResponsibleId'}}
                             </div>
                             <div class="col-md-6">
-                                <div class="panel panel-default" style="margin-top: 18px;">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='moistMassMaterial'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massTotal'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massOver'}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {{> afQuickField name='fieldDate'}}
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-12">
-                                {{> afQuickField name='sampleObservations'}}
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-            <div class="panel panel-default" style="margin-top: 20px">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        {{_ 'field_density_assay_title'}}
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <fieldset>
-                        <div class="row">
-                            <div class="col-md-6" style="margin-top: 16px">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='assayResponsibleId'}}
-                                    </div>
-                                    <div class="col-md-6">
-                                        {{> afQuickField name='labDate'}}
-                                    </div>
-                                </div>
-                                <div class="panel panel-default" style="margin-top: 9px">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massUsed'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massBelow'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massSandHole'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='bulkDensity' defaultValue=lastBulkDensity }}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='volumeTestHole'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='wetDensity'}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row" style="margin-top: 15px">
-                                    <div class="col-md-12">
-                                        {{> afQuickField name='dryingContainerCode'}}
-                                    </div>
-                                </div>
+                            <div class="col-md-6">
+                                {{> afQuickField name='sampleName'}}
                             </div>
                             <div class="col-md-6">
-                                <div class="panel panel-default">
-                                    <div class="panel-body">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massContainer'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massContainerWet'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massContainerDry'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='waterMass'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='massWet'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='humidity'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='dryDensity'}}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='maxDryDensity' defaultValue=lastMaxDryDensity }}
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                {{> afQuickField name='percentage'}}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                {{> afQuickField name='assayObservations'}}
+                                {{> afQuickField name='origin'}}
                             </div>
                         </div>
                     </fieldset>
                 </div>
             </div>
             <div class="pull-right">
-                <button type="submit" class="btn btn-primary">{{_ 'field_density_create'}}</button>
+                <button type="submit" class="btn btn-primary">{{_ 'compaction_create'}}</button>
             </div>
         {{/autoForm}}
     </div>
