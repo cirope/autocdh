@@ -1,8 +1,8 @@
-<template name="statsIndicatorsConfigurationDispatchedVolume">
+<template name="statsProductionIndicatorsConfigurationTrucksNotAvailable">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        {{_ 'stats_indicators_dispatched_volume'}}
+        {{_ 'stats_production_indicators_trucks_not_available'}}
       </h4>
     </div>
 
@@ -20,22 +20,22 @@
 
           <tbody>
             <tr>
-              <td><strong>{{_ 'stats_indicators_dispatched_volume_total'}}</strong></td>
+              <td><strong>{{_ 'stats_production_indicators_trucks_not_available_label'}}</strong></td>
 
               {{#each months}}
                 <td class="visible-on-hover-parent text-right">
                   <div class="form-group">
                     <input class="form-control input-sm"
                             type="text"
-                            name="{{dispatchedVolumeName}}"
-                            value="{{dispatchedVolumeValue}}"
-                            data-dispatched-volume-month="{{value}}">
+                            name="{{trucksNotAvailableName}}"
+                            value="{{trucksNotAvailableValue}}"
+                            data-trucks-not-available-month="{{value}}">
                   </div>
 
                   {{#if showCopy}}
                     <button class="btn btn-xs btn-default visible-on-hover"
-                            data-copy-from="{{dispatchedVolumePrevName}}"
-                            data-copy-to="{{dispatchedVolumeName}}"
+                            data-copy-from="{{trucksNotAvailablePrevName}}"
+                            data-copy-to="{{trucksNotAvailableName}}"
                             title="{{_ 'stats_indicators_repeat_previous_month_values'}}">
                       <span class="glyphicon glyphicon-duplicate"></span>
                     </button>
@@ -46,10 +46,6 @@
           </tbody>
         </table>
       </div>
-
-      <p>
-        <em>{{_ 'stats_indicators_dispatched_volume_caption'}}</em>
-      </p>
     </div>
   </div>
 </template>

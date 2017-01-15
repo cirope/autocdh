@@ -1,8 +1,8 @@
-<template name="statsIndicatorsConfigurationDispatchedVolume">
+<template name="statsProductionIndicatorsConfigurationTripsOnTime">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        {{_ 'stats_indicators_dispatched_volume'}}
+        {{_ 'stats_production_indicators_trips_on_time'}}
       </h4>
     </div>
 
@@ -20,22 +20,22 @@
 
           <tbody>
             <tr>
-              <td><strong>{{_ 'stats_indicators_dispatched_volume_total'}}</strong></td>
+              <td><strong>{{_ 'stats_production_indicators_trips_on_time_label'}}</strong></td>
 
               {{#each months}}
                 <td class="visible-on-hover-parent text-right">
                   <div class="form-group">
                     <input class="form-control input-sm"
                             type="text"
-                            name="{{dispatchedVolumeName}}"
-                            value="{{dispatchedVolumeValue}}"
-                            data-dispatched-volume-month="{{value}}">
+                            name="{{tripsOnTimeName}}"
+                            value="{{tripsOnTimeValue}}"
+                            data-trips-on-time-month="{{value}}">
                   </div>
 
                   {{#if showCopy}}
                     <button class="btn btn-xs btn-default visible-on-hover"
-                            data-copy-from="{{dispatchedVolumePrevName}}"
-                            data-copy-to="{{dispatchedVolumeName}}"
+                            data-copy-from="{{tripsOnTimePrevName}}"
+                            data-copy-to="{{tripsOnTimeName}}"
                             title="{{_ 'stats_indicators_repeat_previous_month_values'}}">
                       <span class="glyphicon glyphicon-duplicate"></span>
                     </button>
@@ -48,7 +48,7 @@
       </div>
 
       <p>
-        <em>{{_ 'stats_indicators_dispatched_volume_caption'}}</em>
+        <em>{{_ 'stats_production_indicators_trips_on_time_caption'}}</em>
       </p>
     </div>
   </div>

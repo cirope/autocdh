@@ -14,8 +14,8 @@ Template.statsIndicatorsConfigurationDispatchedVolume.helpers({
   },
 
   dispatchedVolumeValue: function () {
-    var dispatchedVolume = qaSettings && qaSettings.dispatchedVolume
-    var dispatchedVolume  = _.findWhere(dispatchedVolume, { month: this.value })
+    var dispatchedVolumes = qaSettings && qaSettings.dispatchedVolume
+    var dispatchedVolume  = _.findWhere(dispatchedVolumes, { month: this.value })
 
     return dispatchedVolume && dispatchedVolume.value
   },
