@@ -377,7 +377,7 @@
   "compaction_separation": "Separación por tamiz indicado",
   "compaction_through": "Pasante",
   "compaction_retained": "Retenido",
-  "compaction_retained_per": "% ret",
+  "compaction_retained_percentage": "% ret",
   "compaction_field_density_title": "Densidades del suelo en estado húmedo",
   "compaction_mold_code": "Código Inventario Molde Proctor",
   "compaction_volume": "Volumen del Molde Proctor",
