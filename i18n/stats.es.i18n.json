@@ -98,7 +98,7 @@
   "stats_for_samples": "Cantidad de muestras",
   "stats_resistance_by_customer": "Informes de resistencias",
   "stats_samples_count": "Cantidad de muestras",
-  "stats_indicators_configuration": "Configuración de indicadores",
+  "stats_indicators_configuration": "Configuración de indicadores de calidad",
   "stats_indicators_repeat_previous_month_values": "Repetir valores mes anterior",
   "stats_indicators_dispatched_percentages": "% de hormigones despachados",
   "stats_indicators_dispatched_percentages_caption": "La participación de diferentes hormigones es solo orientativa y debe ingresarse de forma aproximada. Pequeñas variaciones casi no influyen en los indicadores ponderados",
