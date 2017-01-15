@@ -386,7 +386,6 @@
   "compaction_mold_mass": "Masa suelo Húmedo + Molde",
   "compaction_field_density": "Densidad Húmeda - g h",
   "compaction_humidity_title": "Contenido de humedad",
-  "compaction_humidity_content": "Contenido de Humedad",
   "compaction_container_code": "Código Inventario de Recipientes",
   "compaction_empty_container_mass": "Masa del recipiente vacío",
   "compaction_wet_container_mass": "Masa suelo Húmedo + Recipiente",
