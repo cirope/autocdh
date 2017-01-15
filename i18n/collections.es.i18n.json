@@ -374,7 +374,7 @@
   "compaction_sieve_4": "#4",
   "compaction_real_density": "Densidad real ret.#4",
   "compaction_total_weight": "Peso total muestra",
-  "compaction_separation": "Separación por tamiz indicado",
+  "compaction_separation_title": "Separación por tamiz indicado",
   "compaction_through": "Pasante",
   "compaction_retained": "Retenido",
   "compaction_retained_percentage": "% ret",
