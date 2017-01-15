@@ -1,4 +1,4 @@
-<template name="fieldGralunometries">
+<template name="fieldGranulometries">
     <div role="tabpanel">
         <ul class="nav nav-tabs" role="tablist">
             <li role="presentation">
@@ -44,15 +44,15 @@
                 <h5>{{_ 'field_granulometry_subtitle'}}</h5>
             </div>
             {{#if showList}}
-                {{> fieldGralunometriesList}}
+                {{> fieldGranulometriesList}}
             {{else}}
-                {{> fieldGralunometriesEmpty}}
+                {{> fieldGranulometriesEmpty}}
             {{/if}}
         </div>
     </div>
 </template>
 
-<template name="fieldGralunometriesList">
+<template name="fieldGranulometriesList">
     <p>
         <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'fieldGranulometryNew'}}">{{_ 'field_granulometry_create_title'}}</a>
     </p>

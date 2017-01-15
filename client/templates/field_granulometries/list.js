@@ -1,17 +1,17 @@
-Template.fieldGralunometries.helpers({
+Template.fieldGranulometries.helpers({
   showList: function () {
-    return this.fieldGralunometries.count() || this.hasQuery
+    return this.fieldGranulometries.count() || this.hasQuery
   }
 })
 
-Template.fieldGralunometriesList.helpers({
+Template.fieldGranulometriesList.helpers({
 })
 
-Template.fieldGralunometriesList.events({
+Template.fieldGranulometriesList.events({
   'click [data-action="search"]': function (event, template) {
     var search = {}
 
-    Router.go('fieldGralunometries', {}, { query: search })
+    Router.go('fieldGranulometries', {}, { query: search })
   },
 
   'click [data-search-clean]': function (event, template) {
