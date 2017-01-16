@@ -1,10 +1,10 @@
 var qaSettings = null
 
-Template.statsIndicatorsConfigurationClaimsVolume.onCreated(function () {
+Template.statsIndicatorsConfigurationIndicators.onCreated(function () {
   qaSettings = this.data && this.data.settings && this.data.settings.qa
 })
 
-Template.statsIndicatorsConfigurationClaimsVolume.onDestroyed(function () {
+Template.statsIndicatorsConfigurationIndicators.onDestroyed(function () {
   qaSettings = null
 })
 
