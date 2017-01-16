@@ -1,0 +1,701 @@
+<template name="statsProductionIndicatorsConfigurationIndicators">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        {{_ 'stats_production_indicators_indicators'}}
+      </h4>
+    </div>
+
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover table-no-margin table-indicator-config">
+          <caption>
+            <h4>{{_ 'stats_production_indicators_production'}}</h4>
+          </caption>
+
+          <tbody>
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_m3_by_mixer'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-m3-by-mixer-min"
+                           value="{{indicatorValue 'm3ByMixerMin'}}"
+                           data-indicator="m3ByMixerMin"
+                           data-join="m3ByMixer"
+                           data-target="indicator-m3-by-mixer">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                          type="text"
+                          name="indicator-m3-by-mixer"
+                          value="{{indicatorJoinedValue 'm3ByMixer'}}"
+                          disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-m3-by-mixer-max"
+                           value="{{indicatorValue 'm3ByMixerMax'}}"
+                           data-indicator="m3ByMixerMax"
+                           data-join="m3ByMixer"
+                           data-target="indicator-m3-by-mixer">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_m3_by_hour'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-m3-by-hour-min"
+                           value="{{indicatorValue 'm3ByHourMin'}}"
+                           data-indicator="m3ByHourMin"
+                           data-join="m3ByHour"
+                           data-target="indicator-m3-by-hour">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                          type="text"
+                          name="indicator-m3-by-hour"
+                          value="{{indicatorJoinedValue 'm3ByHour'}}"
+                          disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-m3-by-hour-max"
+                           value="{{indicatorValue 'm3ByHourMax'}}"
+                           data-indicator="m3ByHourMax"
+                           data-join="m3ByHour"
+                           data-target="indicator-m3-by-hour">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_trips_by_mixer'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-trips-by-mixer-min"
+                           value="{{indicatorValue 'tripsByMixerMin'}}"
+                           data-indicator="tripsByMixerMin"
+                           data-join="tripsByMixer"
+                           data-target="indicator-trips-by-mixer">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                          type="text"
+                          name="indicator-trips-by-mixer"
+                          value="{{indicatorJoinedValue 'tripsByMixer'}}"
+                          disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-trips-by-mixer-max"
+                           value="{{indicatorValue 'tripsByMixerMax'}}"
+                           data-indicator="tripsByMixerMax"
+                           data-join="tripsByMixer"
+                           data-target="indicator-trips-by-mixer">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_average_trip'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-average-trip-min"
+                           value="{{indicatorValue 'averageTripMin'}}"
+                           data-indicator="averageTripMin"
+                           data-join="averageTrip"
+                           data-target="indicator-average-trip">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                          type="text"
+                          name="indicator-average-trip"
+                          value="{{indicatorJoinedValue 'averageTrip'}}"
+                          disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-average-trip-max"
+                           value="{{indicatorValue 'averageTripMax'}}"
+                           data-indicator="averageTripMax"
+                           data-join="averageTrip"
+                           data-target="indicator-average-trip">
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_lost_m3'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-lost-m3-min"
+                           value="{{indicatorValue 'lostM3Min'}}"
+                           data-indicator="lostM3Min"
+                           data-join="lostM3"
+                           data-target="indicator-lost-m3">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                          type="text"
+                          name="indicator-lost-m3"
+                          value="{{indicatorJoinedValue 'lostM3'}}"
+                          disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-lost-m3-max"
+                           value="{{indicatorValue 'lostM3Max'}}"
+                           data-indicator="lostM3Max"
+                           data-join="lostM3"
+                           data-target="indicator-lost-m3">
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover table-no-margin table-indicator-config">
+          <caption>
+            <h4>{{_ 'stats_production_indicators_services'}}</h4>
+          </caption>
+
+          <tbody>
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_punctuality'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-punctuality-min"
+                           value="{{indicatorValue 'punctualityMin'}}"
+                           data-indicator="punctualityMin"
+                           data-join="punctuality"
+                           data-target="indicator-punctuality">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-punctuality"
+                            value="{{indicatorJoinedValue 'punctuality'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-punctuality-max"
+                           value="{{indicatorValue 'punctualityMax'}}"
+                           data-indicator="punctualityMax"
+                           data-join="punctuality"
+                           data-target="indicator-punctuality">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_unfulfilled_orders'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-unfulfilled-orders-max"
+                           value="{{indicatorValue 'unfulfilledOrdersMax'}}"
+                           data-indicator="unfulfilledOrdersMax"
+                           data-join="unfulfilledOrders"
+                           data-target="indicator-unfulfilled-orders">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-unfulfilled-orders"
+                            value="{{indicatorJoinedValue 'unfulfilledOrders'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-unfulfilled-orders-min"
+                           value="{{indicatorValue 'unfulfilledOrdersMin'}}"
+                           data-indicator="unfulfilledOrdersMin"
+                           data-join="unfulfilledOrders"
+                           data-target="indicator-unfulfilled-orders">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_rejected_trucks'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-rejected-trucks-max"
+                           value="{{indicatorValue 'rejectedTrucksMax'}}"
+                           data-indicator="rejectedTrucksMax"
+                           data-join="rejectedTrucks"
+                           data-target="indicator-rejected-trucks">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-rejected-trucks"
+                            value="{{indicatorJoinedValue 'rejectedTrucks'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-rejected-trucks-min"
+                           value="{{indicatorValue 'rejectedTrucksMin'}}"
+                           data-indicator="rejectedTrucksMin"
+                           data-join="rejectedTrucks"
+                           data-target="indicator-rejected-trucks">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_complaints'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-complaints-max"
+                           value="{{indicatorValue 'complaintsMax'}}"
+                           data-indicator="complaintsMax"
+                           data-join="complaints"
+                           data-target="indicator-complaints">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-complaints"
+                            value="{{indicatorJoinedValue 'complaints'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-complaints-min"
+                           value="{{indicatorValue 'complaintsMin'}}"
+                           data-indicator="complaintsMin"
+                           data-join="complaints"
+                           data-target="indicator-complaints">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_trip_average'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-trip-average-max"
+                           value="{{indicatorValue 'tripAverageMax'}}"
+                           data-indicator="tripAverageMax"
+                           data-join="tripAverage"
+                           data-target="indicator-trip-average">
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <input class="form-control input-sm"
+                          type="text"
+                          name="indicator-trip-average"
+                          value="{{indicatorJoinedValue 'tripAverage'}}"
+                          disabled>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-trip-average-min"
+                           value="{{indicatorValue 'tripAverageMin'}}"
+                           data-indicator="tripAverageMin"
+                           data-join="tripAverage"
+                           data-target="indicator-trip-average">
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover table-no-margin table-indicator-config">
+          <caption>
+            <h4>{{_ 'stats_production_indicators_maintenance_title'}}</h4>
+          </caption>
+
+          <tbody>
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_problematic_pumps'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-problematic-pumps-max"
+                           value="{{indicatorValue 'problematicPumpsMax'}}"
+                           data-indicator="problematicPumpsMax"
+                           data-join="problematicPumps"
+                           data-target="indicator-problematic-pumps">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-problematic-pumps"
+                            value="{{indicatorJoinedValue 'problematicPumps'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-problematic-pumps-min"
+                           value="{{indicatorValue 'problematicPumpsMin'}}"
+                           data-indicator="problematicPumpsMin"
+                           data-join="problematicPumps"
+                           data-target="indicator-problematic-pumps">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_truck_breakages'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-truck-breakages-max"
+                           value="{{indicatorValue 'truckBreakagesMax'}}"
+                           data-indicator="truckBreakagesMax"
+                           data-join="truckBreakages"
+                           data-target="indicator-truck-breakages">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-truck-breakages"
+                            value="{{indicatorJoinedValue 'truckBreakages'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-truck-breakages-min"
+                           value="{{indicatorValue 'truckBreakagesMin'}}"
+                           data-indicator="truckBreakagesMin"
+                           data-join="truckBreakages"
+                           data-target="indicator-truck-breakages">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_truck_availability'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-truck-availability-min"
+                           value="{{indicatorValue 'truckAvailabilityMin'}}"
+                           data-indicator="truckAvailabilityMin"
+                           data-join="truckAvailability"
+                           data-target="indicator-truck-availability">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-truck-availability"
+                            value="{{indicatorJoinedValue 'truckAvailability'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-truck-availability-max"
+                           value="{{indicatorValue 'truckAvailabilityMax'}}"
+                           data-indicator="truckAvailabilityMax"
+                           data-join="truckAvailability"
+                           data-target="indicator-truck-availability">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_productivity_factor'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-productivity-factor-min"
+                           value="{{indicatorValue 'productivityFactorMin'}}"
+                           data-indicator="productivityFactorMin"
+                           data-join="productivityFactor"
+                           data-target="indicator-productivity-factor">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-productivity-factor-max"
+                           value="{{indicatorValue 'productivityFactorMax'}}"
+                           data-indicator="productivityFactorMax"
+                           data-join="productivityFactor"
+                           data-target="indicator-productivity-factor">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-productivity-factor"
+                            value="{{indicatorJoinedValue 'productivityFactor'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_maintenance'}}</strong></td>
+              <td class="danger">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&lt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-maintenance-min"
+                           value="{{indicatorValue 'maintenanceMin'}}"
+                           data-indicator="maintenanceMin"
+                           data-join="maintenance"
+                           data-target="indicator-maintenance">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="warning">
+                <div class="form-group">
+                  <div class="input-group">
+                    <div class="input-group-addon">&gt;</div>
+                    <input class="form-control input-sm"
+                           type="text"
+                           name="indicator-maintenance-max"
+                           value="{{indicatorValue 'maintenanceMax'}}"
+                           data-indicator="maintenanceMax"
+                           data-join="maintenance"
+                           data-target="indicator-maintenance">
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+              <td class="success">
+                <div class="form-group">
+                  <div class="input-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="indicator-maintenance"
+                            value="{{indicatorJoinedValue 'maintenance'}}"
+                            disabled>
+                    <div class="input-group-addon">%</div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>
