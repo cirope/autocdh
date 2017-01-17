@@ -1,0 +1,86 @@
+<template name="statsProductionIndicatorsDashboard">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        {{_ 'stats_production_indicators_dashboard'}}
+      </h4>
+    </div>
+
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <caption>
+            <h4>{{_ 'stats_production_indicators_production'}}</h4>
+          </caption>
+
+          <thead>
+            <tr>
+              <th style="width: 24em;"></th>
+              {{#each months}}
+                <th>{{label}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            {{> statsProductionIndicatorsDashboardM3ByMixer}}
+            {{> statsProductionIndicatorsDashboardM3ByHour}}
+            {{> statsProductionIndicatorsDashboardTripsByMixer}}
+            {{> statsProductionIndicatorsDashboardAverageTrip}}
+            {{> statsProductionIndicatorsDashboardLostM3}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <caption>
+            <h4>{{_ 'stats_production_indicators_services'}}</h4>
+          </caption>
+
+          <thead>
+            <tr>
+              <th style="width: 24em;"></th>
+              {{#each months}}
+                <th>{{label}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            {{> statsProductionIndicatorsDashboardPunctuality}}
+            {{> statsProductionIndicatorsDashboardUnfulfilledOrders}}
+            {{> statsProductionIndicatorsDashboardRejectedTrucks}}
+            {{> statsProductionIndicatorsDashboardComplaints}}
+            {{> statsProductionIndicatorsDashboardTripAverage}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
+          <caption>
+            <h4>{{_ 'stats_production_indicators_maintenance_title'}}</h4>
+          </caption>
+
+          <thead>
+            <tr>
+              <th style="width: 24em;"></th>
+              {{#each months}}
+                <th>{{label}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            {{> statsProductionIndicatorsDashboardProblematicPumps}}
+            {{> statsProductionIndicatorsDashboardTruckBreakages}}
+            {{> statsProductionIndicatorsDashboardTruckAvailability}}
+            {{> statsProductionIndicatorsDashboardProductivityFactor}}
+            {{> statsProductionIndicatorsDashboardMaintenance}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardTripsByMixer">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_trips_by_mixer'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with tripsByMixer}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

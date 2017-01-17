@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardProblematicPumps">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_problematic_pumps'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with problematicPumps}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

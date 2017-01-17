@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardRejectedTrucks">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_rejected_trucks'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with rejectedTrucks}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>
