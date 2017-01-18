@@ -1,46 +1,46 @@
 var productionSetting = null
 
-Template.statsProductionIndicatorsConfigurationTripsOnTime.onCreated(function () {
+Template.statsProductionIndicatorsConfigurationTripsOutOfTime.onCreated(function () {
   productionSetting = this.data && this.data.settings && this.data.settings.production
 })
 
-Template.statsProductionIndicatorsConfigurationTripsOnTime.onDestroyed(function () {
+Template.statsProductionIndicatorsConfigurationTripsOutOfTime.onDestroyed(function () {
   productionSetting = null
 })
 
-Template.statsProductionIndicatorsConfigurationTripsOnTime.helpers({
-  tripsOnTimeName: function () {
-    return 'trips-on-time-' + this.value
+Template.statsProductionIndicatorsConfigurationTripsOutOfTime.helpers({
+  tripsOutOfTimeName: function () {
+    return 'trips-out-of-time-' + this.value
   },
 
-  tripsOnTimeValue: function () {
-    var tripsOnTime  = productionSetting && productionSetting.tripsOnTime
-    var _tripsOnTime = _.findWhere(tripsOnTime, { month: this.value })
+  tripsOutOfTimeValue: function () {
+    var tripsOutOfTime  = productionSetting && productionSetting.tripsOutOfTime
+    var _tripsOutOfTime = _.findWhere(tripsOutOfTime, { month: this.value })
 
-    return _tripsOnTime && _tripsOnTime.value
+    return _tripsOutOfTime && _tripsOutOfTime.value
   },
 
-  tripsOnTimePrevName: function () {
+  tripsOutOfTimePrevName: function () {
     var prevMonth = moment(this.value, 'YYYYMM').subtract(1, 'month').format('YYYYMM')
 
-    return 'trips-on-time-' + prevMonth
+    return 'trips-out-of-time-' + prevMonth
   }
 })
 
-Template.statsProductionIndicatorsConfigurationTripsOnTime.events({
-  'change [data-trips-on-time-month]': function (event, template) {
+Template.statsProductionIndicatorsConfigurationTripsOutOfTime.events({
+  'change [data-trips-out-of-time-month]': function (event, template) {
     var $input   = $(event.currentTarget)
-    var month    = $input.data('tripsOnTimeMonth')
+    var month    = $input.data('tripsOutOfTimeMonth')
     var id       = template.data.settings && template.data.settings._id
     var selector = {
-      'production.tripsOnTime': {
+      'production.tripsOutOfTime': {
         $elemMatch: { month: month }
       }
     }
     var operation = {
       modifier: {
         $set: {
-          'production.tripsOnTime.$': {
+          'production.tripsOutOfTime.$': {
             month: month,
             value: +$input.val()
           }
@@ -49,7 +49,7 @@ Template.statsProductionIndicatorsConfigurationTripsOnTime.events({
 
       aggregation: {
         $addToSet: {
-          'production.tripsOnTime': {
+          'production.tripsOutOfTime': {
             month: month,
             value: +$input.val()
           }

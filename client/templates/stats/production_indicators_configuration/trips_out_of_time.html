@@ -1,8 +1,8 @@
-<template name="statsProductionIndicatorsConfigurationTripsOnTime">
+<template name="statsProductionIndicatorsConfigurationTripsOutOfTime">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        {{_ 'stats_production_indicators_trips_on_time'}}
+        {{_ 'stats_production_indicators_trips_out_of_time'}}
       </h4>
     </div>
 
@@ -20,22 +20,22 @@
 
           <tbody>
             <tr>
-              <td><strong>{{_ 'stats_production_indicators_trips_on_time_label'}}</strong></td>
+              <td><strong>{{_ 'stats_production_indicators_trips_out_of_time_label'}}</strong></td>
 
               {{#each months}}
                 <td class="visible-on-hover-parent text-right">
                   <div class="form-group">
                     <input class="form-control input-sm"
                             type="text"
-                            name="{{tripsOnTimeName}}"
-                            value="{{tripsOnTimeValue}}"
-                            data-trips-on-time-month="{{value}}">
+                            name="{{tripsOutOfTimeName}}"
+                            value="{{tripsOutOfTimeValue}}"
+                            data-trips-out-of-time-month="{{value}}">
                   </div>
 
                   {{#if showCopy}}
                     <button class="btn btn-xs btn-default visible-on-hover"
-                            data-copy-from="{{tripsOnTimePrevName}}"
-                            data-copy-to="{{tripsOnTimeName}}"
+                            data-copy-from="{{tripsOutOfTimePrevName}}"
+                            data-copy-to="{{tripsOutOfTimeName}}"
                             title="{{_ 'stats_indicators_repeat_previous_month_values'}}">
                       <span class="glyphicon glyphicon-duplicate"></span>
                     </button>
@@ -48,7 +48,7 @@
       </div>
 
       <p>
-        <em>{{_ 'stats_production_indicators_trips_on_time_caption'}}</em>
+        <em>{{_ 'stats_production_indicators_trips_out_of_time_caption'}}</em>
       </p>
     </div>
   </div>
