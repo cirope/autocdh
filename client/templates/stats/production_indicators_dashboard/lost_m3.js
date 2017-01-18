@@ -64,8 +64,8 @@ Template.statsProductionIndicatorsDashboardLostM3.helpers({
       var rounded   = Math.round(lostM3 * 10) / 10
       var cssClass  = 'warning'
 
-      if (rounded < lostM3Settings.min) cssClass = 'danger'
-      if (rounded > lostM3Settings.max) cssClass = 'success'
+      if (rounded < lostM3Settings.min) cssClass = 'success'
+      if (rounded > lostM3Settings.max) cssClass = 'danger'
 
       return {
         value: _.isNumber(lostM3) ? lostM3.toFixed(1) : lostM3,
