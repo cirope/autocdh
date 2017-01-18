@@ -11,8 +11,8 @@ var maintenanceFor = function (month) {
   var maintenanceHours   = _.findWhere(maintenanceHoursSettings, { month: +month })
 
   if (affectedTrucks && affectedTrucks.value && businessDays && businessDays.value &&
-    averageWorkedHours && averageWorkedHours.value && maintenanceHours && maintenanceHours.value) {
-    var truckHours   = affectedTrucks.value * businessDays.value * averageWorkedHours.value
+    averageWorkedHours && averageWorkedHours.value && maintenanceHours && _.isNumber(maintenanceHours.value)) {
+    var truckHours = affectedTrucks.value * businessDays.value * averageWorkedHours.value
 
     return (maintenanceHours.value / truckHours) * 100
   } else {

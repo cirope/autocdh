@@ -6,7 +6,7 @@ var truckBreakagesFor = function (month) {
   var trips       = _.findWhere(tripsSettings, { month: +month })
   var truckBreaks = _.findWhere(truckBreaksSettings, { month: +month })
 
-  if (trips && trips.value && truckBreaks && truckBreaks.value)
+  if (trips && trips.value && truckBreaks && _.isNumber(truckBreaks.value))
     return (truckBreaks.value / trips.value) * 100
   else
     return TAPi18n.__('no_data_abbr')

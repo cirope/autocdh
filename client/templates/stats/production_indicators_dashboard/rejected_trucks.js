@@ -6,7 +6,7 @@ var rejectedTrucksFor = function (month) {
   var trips         = _.findWhere(tripsSettings, { month: +month })
   var tripsRejected = _.findWhere(tripsRejectedSettings, { month: +month })
 
-  if (trips && trips.value && tripsRejected && tripsRejected.value)
+  if (trips && trips.value && tripsRejected && _.isNumber(tripsRejected.value))
     return (tripsRejected.value / trips.value) * 100
   else
     return TAPi18n.__('no_data_abbr')

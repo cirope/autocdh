@@ -6,7 +6,7 @@ var problematicPumpsFor = function (month) {
   var pumps      = _.findWhere(pumpsSettings, { month: +month })
   var pumpBreaks = _.findWhere(pumpBreaksSettings, { month: +month })
 
-  if (pumps && pumps.value && pumpBreaks && pumpBreaks.value)
+  if (pumps && pumps.value && pumpBreaks && _.isNumber(pumpBreaks.value))
     return (pumpBreaks.value / pumps.value) * 100
   else
     return TAPi18n.__('no_data_abbr')

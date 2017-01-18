@@ -8,7 +8,7 @@ var unfulfilledOrdersFor = function (month) {
   var failedDeliveries = _.findWhere(failedDeliveriesSettings, { month: +month })
   var businessDays     = _.findWhere(businessDaysSettings, { month: +month })
 
-  if (dispatched && dispatched.value && failedDeliveries && failedDeliveries.value && businessDays && businessDays.value)
+  if (dispatched && dispatched.value && failedDeliveries && _.isNumber(failedDeliveries.value) && businessDays && businessDays.value)
     return ((failedDeliveries.value * businessDays.value) / dispatched.value) * 100
   else
     return TAPi18n.__('no_data_abbr')

@@ -6,7 +6,7 @@ var complaintsFor = function (month) {
   var trips            = _.findWhere(tripsSettings, { month: +month })
   var reportedProblems = _.findWhere(reportedProblemsSettings, { month: +month })
 
-  if (trips && trips.value && reportedProblems && reportedProblems.value)
+  if (trips && trips.value && reportedProblems && _.isNumber(reportedProblems.value))
     return (reportedProblems.value / trips.value) * 100
   else
     return TAPi18n.__('no_data_abbr')

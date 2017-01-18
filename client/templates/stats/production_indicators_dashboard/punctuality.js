@@ -4,9 +4,9 @@ var businessDaysSettings   = null
 var punctualitySettings    = null
 
 var punctualityFor = function (month) {
-  var trips           = _.findWhere(tripsSettings, { month: +month })
-  var tripsOutOfTime  = _.findWhere(tripsOutOfTimeSettings, { month: +month })
-  var businessDays    = _.findWhere(businessDaysSettings, { month: +month })
+  var trips          = _.findWhere(tripsSettings, { month: +month })
+  var tripsOutOfTime = _.findWhere(tripsOutOfTimeSettings, { month: +month })
+  var businessDays   = _.findWhere(businessDaysSettings, { month: +month })
 
   if (trips && trips.value && tripsOutOfTime && _.isNumber(tripsOutOfTime.value) && businessDays && businessDays.value)
     return (1 - (tripsOutOfTime.value / trips.value) * businessDays.value) * 100
