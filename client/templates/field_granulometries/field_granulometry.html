@@ -7,7 +7,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    {{_ 'field_granulometry_sample_title'}}
+                    {{_ 'field_granulometry_title'}}
                     <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
                 </h3>
             </div>
@@ -17,23 +17,31 @@
                         <div class="col-md-6">
                             <p>{{_ 'limit_sample_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
                         </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>{{_ 'field_granulometry_field_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
-                            </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_field_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sample_name'}} / <strong>{{sampleName}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_origin'}} / <strong>{{origin}}</strong></p>
                         </div>
                     </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    {{_ 'field_granulometry_sample_title'}}
+                    <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <fieldset>
                     <div class="row">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>{{_ 'field_granulometry_sample_name'}} / <strong>{{sampleName}}</strong></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <p>{{_ 'field_granulometry_origin'}} / <strong>{{origin}}</strong></p>
-                            </div>
-                        </div>
                     </div>
                 </fieldset>
             </div>
