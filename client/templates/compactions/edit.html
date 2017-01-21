@@ -98,6 +98,116 @@
                 </div>
             </div>
             <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{_ 'compaction_field_density_title'}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <fieldset>
+                                <div class="table-responsive">
+                                    <table class="table table-condensed table-hover table-no-margin">
+                                        <thead>
+                                        <tr>
+                                            <th>{{_ 'compaction_steps'}}</th>
+                                            <th>-</th>
+                                            <th>{{_ 'compaction_point_1'}}</th>
+                                            <th>{{_ 'compaction_point_2'}}</th>
+                                            <th>{{_ 'compaction_point_3'}}</th>
+                                            <th>{{_ 'compaction_point_4'}}</th>
+                                            <th>{{_ 'compaction_point_5'}}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <th>{{_ 'compaction_mold_code'}}</th>
+                                            <th>-</th>
+                                            <td>{{> afFieldInput name='mold_code_p1'}}</td>
+                                            <td>{{> afFieldInput name='mold_code_p2'}}</td>
+                                            <td>{{> afFieldInput name='mold_code_p3'}}</td>
+                                            <td>{{> afFieldInput name='mold_code_p4'}}</td>
+                                            <td>{{> afFieldInput name='mold_code_p5'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>{{_ 'compaction_volume'}}</th>
+                                            <th>cm3</th>
+                                            <td>{{> afFieldInput name='volume_p1'}}</td>
+                                            <td>{{> afFieldInput name='volume_p2'}}</td>
+                                            <td>{{> afFieldInput name='volume_p3'}}</td>
+                                            <td>{{> afFieldInput name='volume_p4'}}</td>
+                                            <td>{{> afFieldInput name='volume_p5'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>{{_ 'compaction_water'}}</th>
+                                            <th>ml</th>
+                                            <td>{{> afFieldInput name='water_p1'}}</td>
+                                            <td>{{> afFieldInput name='water_p2'}}</td>
+                                            <td>{{> afFieldInput name='water_p3'}}</td>
+                                            <td>{{> afFieldInput name='water_p4'}}</td>
+                                            <td>{{> afFieldInput name='water_p5'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>{{_ 'compaction_empty_mold_mass'}}</th>
+                                            <th>g</th>
+                                            <td>{{> afFieldInput name='empty_mold_mass_p1'}}</td>
+                                            <td>{{> afFieldInput name='empty_mold_mass_p2'}}</td>
+                                            <td>{{> afFieldInput name='empty_mold_mass_p3'}}</td>
+                                            <td>{{> afFieldInput name='empty_mold_mass_p4'}}</td>
+                                            <td>{{> afFieldInput name='empty_mold_mass_p5'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>{{_ 'compaction_mold_mass'}}</th>
+                                            <th>g</th>
+                                            <td>{{> afFieldInput name='mold_mass_p1'}}</td>
+                                            <td>{{> afFieldInput name='mold_mass_p2'}}</td>
+                                            <td>{{> afFieldInput name='mold_mass_p3'}}</td>
+                                            <td>{{> afFieldInput name='mold_mass_p4'}}</td>
+                                            <td>{{> afFieldInput name='mold_mass_p5'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th>{{_ 'compaction_field_density'}}</th>
+                                            <th>g/cm3</th>
+                                            <td>{{> afFieldInput name='field_density_p1'}}</td>
+                                            <td>{{> afFieldInput name='field_density_p2'}}</td>
+                                            <td>{{> afFieldInput name='field_density_p3'}}</td>
+                                            <td>{{> afFieldInput name='field_density_p4'}}</td>
+                                            <td>{{> afFieldInput name='field_density_p5'}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{_ 'compaction_dry_field_density_title'}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <fieldset>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">{{_ 'compaction_max_density_title'}}</h3>
+                        </div>
+                        <div class="panel-body">
+                            <fieldset>
+                            </fieldset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">
@@ -109,327 +219,184 @@
                         <fieldset>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='mold_code_p1'}}
+                                    {{> afFieldInput name='container_code_p1'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='volume_p1'}}
+                                    {{> afFieldInput name='empty_container_mass_p1'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='water_p1'}}
+                                    {{> afFieldInput name='wet_container_mass_p1'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='empty_mold_mass_p1'}}
+                                    {{> afFieldInput name='dry_container_mass_p1'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='mold_mass_p1'}}
+                                    {{> afFieldInput name='container_humidity_p1'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='field_density_p1'}}
+                                    {{> afFieldInput name='dry_density_p1'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='container_code_p1'}}
+                                    {{> afFieldInput name='density_p1'}}
                                 </div>
                             </div>
+
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='empty_container_mass_p1'}}
+                                    {{> afFieldInput name='container_code_p2'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='wet_container_mass_p1'}}
+                                    {{> afFieldInput name='empty_container_mass_p2'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='dry_container_mass_p1'}}
+                                    {{> afFieldInput name='wet_container_mass_p2'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='container_humidity_p1'}}
+                                    {{> afFieldInput name='dry_container_mass_p2'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='dry_density_p1'}}
+                                    {{> afFieldInput name='container_humidity_p2'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='density_p1'}}
+                                    {{> afFieldInput name='dry_density_p2'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='mold_code_p2'}}
+                                    {{> afFieldInput name='density_p2'}}
                                 </div>
                             </div>
+
+
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='volume_p2'}}
+                                    {{> afFieldInput name='container_code_p3'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='water_p2'}}
+                                    {{> afFieldInput name='empty_container_mass_p3'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='empty_mold_mass_p2'}}
+                                    {{> afFieldInput name='wet_container_mass_p3'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='mold_mass_p2'}}
+                                    {{> afFieldInput name='dry_container_mass_p3'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='field_density_p2'}}
+                                    {{> afFieldInput name='container_humidity_p3'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='container_code_p2'}}
+                                    {{> afFieldInput name='dry_density_p3'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='empty_container_mass_p2'}}
+                                    {{> afFieldInput name='density_p3'}}
                                 </div>
                             </div>
+
+
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='wet_container_mass_p2'}}
+                                    {{> afFieldInput name='container_code_p4'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='dry_container_mass_p2'}}
+                                    {{> afFieldInput name='empty_container_mass_p4'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='container_humidity_p2'}}
+                                    {{> afFieldInput name='wet_container_mass_p4'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='dry_density_p2'}}
+                                    {{> afFieldInput name='dry_container_mass_p4'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='density_p2'}}
+                                    {{> afFieldInput name='container_humidity_p4'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='mold_code_p3'}}
+                                    {{> afFieldInput name='dry_density_p4'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='volume_p3'}}
+                                    {{> afFieldInput name='density_p4'}}
                                 </div>
                             </div>
+
+
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='water_p3'}}
+                                    {{> afFieldInput name='container_code_p5'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='empty_mold_mass_p3'}}
+                                    {{> afFieldInput name='empty_container_mass_p5'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='mold_mass_p3'}}
+                                    {{> afFieldInput name='wet_container_mass_p5'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='field_density_p3'}}
+                                    {{> afFieldInput name='dry_container_mass_p5'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='container_code_p3'}}
+                                    {{> afFieldInput name='container_humidity_p5'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='empty_container_mass_p3'}}
+                                    {{> afFieldInput name='dry_density_p5'}}
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    {{> afQuickField name='wet_container_mass_p3'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='dry_container_mass_p3'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='container_humidity_p3'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='dry_density_p3'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='density_p3'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='mold_code_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='volume_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='water_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='empty_mold_mass_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='mold_mass_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='field_density_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='container_code_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='empty_container_mass_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='wet_container_mass_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='dry_container_mass_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='container_humidity_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='dry_density_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='density_p4'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='mold_code_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='volume_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='water_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='empty_mold_mass_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='mold_mass_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='field_density_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='container_code_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='empty_container_mass_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='wet_container_mass_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='dry_container_mass_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='container_humidity_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='dry_density_p5'}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-12">
-                                    {{> afQuickField name='density_p5'}}
+                                    {{> afFieldInput name='density_p5'}}
                                 </div>
                             </div>
                             <div class="row">
