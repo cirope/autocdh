@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardProductivityFactor">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_productivity_factor'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with productivityFactor}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardM3ByHour">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_m3_by_hour'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with m3ByHour}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

@@ -117,6 +117,18 @@ label {
   text-decoration: line-through;
 }
 
+.table-indicator-config {
+  min-width: 700px;
+
+  td:first-child {
+    width: 40%;
+  }
+}
+
+.table-no-margin {
+  margin: 0;
+}
+
 .visible-on-hover {
   visibility: hidden;
 }

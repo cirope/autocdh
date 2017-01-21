@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardAverageTrip">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_average_trip'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with averageTrip}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

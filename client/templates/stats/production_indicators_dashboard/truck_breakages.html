@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardTruckBreakages">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_truck_breakages'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with truckBreakages}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

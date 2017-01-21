@@ -4,8 +4,8 @@
   </div>
 
   <div class="row">
-    <div class="col-lg-3">
-      <h3>{{_ 'graphic_fresh_concrete'}}</h3>
+    <div class="col-lg-4">
+      <h3 class="text-center">{{_ 'graphic_fresh_concrete'}}</h3>
 
       <a href="{{pathFor 'graphicFreshConcreteConsistency'}}" class="btn btn-default btn-block">
         {{_ 'graphic_fresh_concrete_consistency'}}
@@ -33,8 +33,8 @@
       </a>
     </div>
 
-    <div class="col-lg-3">
-      <h3>{{_ 'graphic_hardened_concrete'}}</h3>
+    <div class="col-lg-4">
+      <h3 class="text-center">{{_ 'graphic_hardened_concrete'}}</h3>
 
       <a href="{{pathFor 'graphicHardenedConcreteResistance'}}" class="btn btn-default btn-block">
         {{_ 'graphic_hardened_concrete_resistance'}}
@@ -56,8 +56,8 @@
       </a>
     </div>
 
-    <div class="col-lg-3">
-      <h3>{{_ 'graphic_aggregates'}}</h3>
+    <div class="col-lg-4">
+      <h3 class="text-center">{{_ 'graphic_aggregates'}}</h3>
 
       <a href="{{pathFor 'graphicAggregateFineness'}}" class="btn btn-default btn-block">
         {{_ 'graphic_aggregate_fineness'}}
@@ -69,9 +69,11 @@
         {{_ 'graphic_aggregate_humidity'}}
       </a>
     </div>
+  </div>
 
-    <div class="col-lg-3">
-      <h3>{{_ 'stats_management_indicators'}}</h3>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3">
+      <h3 class="text-center">{{_ 'stats_management_indicators'}}</h3>
 
       <a href="{{pathFor 'graphicConcreteEfficiency'}}" class="btn btn-default btn-block">
         {{_ 'graphic_deviation_efficiency_title'}}
@@ -82,8 +84,14 @@
       <a href="{{pathFor 'statsIndicatorsConfiguration'}}" class="btn btn-default btn-block">
         {{_ 'stats_indicators_configuration'}}
       </a>
+      <a href="{{pathFor 'statsProductionIndicatorsConfiguration'}}" class="btn btn-default btn-block">
+        {{_ 'stats_production_indicators_configuration'}}
+      </a>
       <a href="{{pathFor 'statsIndicatorsDashboard'}}" class="btn btn-default btn-block">
         {{_ 'stats_indicators_dashboard'}}
+      </a>
+      <a href="{{pathFor 'statsProductionIndicatorsDashboard'}}" class="btn btn-default btn-block">
+        {{_ 'stats_production_indicators_dashboard'}}
       </a>
     </div>
   </div>
