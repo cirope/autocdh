@@ -7,7 +7,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    {{_ 'compaction_sample_title'}}
+                    {{_ 'compaction_title'}}
                     <a class="pull-right" href="{{pathFor 'compactions'}}">{{_ 'go_back'}}</a>
                 </h3>
             </div>
@@ -15,13 +15,13 @@
                 <fieldset>
                     <div class="row">
                         <div class="col-md-6">
-                            <p>{{_ 'compaction_sample_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
+                            <p>{{_ 'compaction_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
                         </div>
                         <div class="col-md-12">
-                            <p>{{_ 'compaction_field_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+                            <p>{{_ 'compaction_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
                         </div>
                         <div class="col-md-12">
-                            <p>{{_ 'compaction_sample_name'}} / <strong>{{sampleName}}</strong></p>
+                            <p>{{_ 'compaction_name'}} / <strong>{{sampleName}}</strong></p>
                         </div>
                         <div class="col-md-12">
                             <p>{{_ 'compaction_origin'}} / <strong>{{origin}}</strong></p>
@@ -35,13 +35,244 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    {{_ 'compaction_sample_title'}}
+                    {{_ 'compaction_title'}}
                     <a class="pull-right" href="{{pathFor 'compactions'}}">{{_ 'go_back'}}</a>
                 </h3>
             </div>
             <div class="panel-body">
                 <fieldset>
                     <div class="row">
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_type'}} / <strong>{{type}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_layers'}} / <strong>{{layers}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_hits'}} / <strong>{{hits}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_sieve'}} / <strong>{{sieve}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_real_density'}} / <strong>{{real_density}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_total_weight'}} / <strong>{{total_weight}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_through'}} / <strong>{{through}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_retained'}} / <strong>{{retained}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_retained_percentage'}} / <strong>{{retained_percentage}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_code'}} / <strong>{{mold_code_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_volume'}} / <strong>{{volume_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_water'}} / <strong>{{water_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_mold_mass'}} / <strong>{{empty_mold_mass_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_mass'}} / <strong>{{mold_mass_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_field_density'}} / <strong>{{field_density_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_code'}} / <strong>{{container_code_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_container_mass'}} / <strong>{{empty_container_mass_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_wet_container_mass'}} / <strong>{{wet_container_mass_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_container_mass'}} / <strong>{{dry_container_mass_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_humidity'}} / <strong>{{container_humidity_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_density'}} / <strong>{{dry_density_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_density'}} / <strong>{{density_p1}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_code'}} / <strong>{{mold_code_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_volume'}} / <strong>{{volume_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_water'}} / <strong>{{water_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_mold_mass'}} / <strong>{{empty_mold_mass_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_mass'}} / <strong>{{mold_mass_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_field_density'}} / <strong>{{field_density_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_code'}} / <strong>{{container_code_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_container_mass'}} / <strong>{{empty_container_mass_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_wet_container_mass'}} / <strong>{{wet_container_mass_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_container_mass'}} / <strong>{{dry_container_mass_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_humidity'}} / <strong>{{container_humidity_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_density'}} / <strong>{{dry_density_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_density'}} / <strong>{{density_p2}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_code'}} / <strong>{{mold_code_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_volume'}} / <strong>{{volume_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_water'}} / <strong>{{water_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_mold_mass'}} / <strong>{{empty_mold_mass_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_mass'}} / <strong>{{mold_mass_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_field_density'}} / <strong>{{field_density_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_code'}} / <strong>{{container_code_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_container_mass'}} / <strong>{{empty_container_mass_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_wet_container_mass'}} / <strong>{{wet_container_mass_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_container_mass'}} / <strong>{{dry_container_mass_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_humidity'}} / <strong>{{container_humidity_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_density'}} / <strong>{{dry_density_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_density'}} / <strong>{{density_p3}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_code'}} / <strong>{{mold_code_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_volume'}} / <strong>{{volume_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_water'}} / <strong>{{water_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_mold_mass'}} / <strong>{{empty_mold_mass_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_mass'}} / <strong>{{mold_mass_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_field_density'}} / <strong>{{field_density_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_code'}} / <strong>{{container_code_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_container_mass'}} / <strong>{{empty_container_mass_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_wet_container_mass'}} / <strong>{{wet_container_mass_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_container_mass'}} / <strong>{{dry_container_mass_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_humidity'}} / <strong>{{container_humidity_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_density'}} / <strong>{{dry_density_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_density'}} / <strong>{{density_p4}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_code'}} / <strong>{{mold_code_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_volume'}} / <strong>{{volume_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_water'}} / <strong>{{water_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_mold_mass'}} / <strong>{{empty_mold_mass_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_mold_mass'}} / <strong>{{mold_mass_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_field_density'}} / <strong>{{field_density_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_code'}} / <strong>{{container_code_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_empty_container_mass'}} / <strong>{{empty_container_mass_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_wet_container_mass'}} / <strong>{{wet_container_mass_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_container_mass'}} / <strong>{{dry_container_mass_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_container_humidity'}} / <strong>{{container_humidity_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_dry_density'}} / <strong>{{dry_density_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_density'}} / <strong>{{density_p5}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_max_density'}} / <strong>{{max_density}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_max_humidity'}} / <strong>{{max_humidity}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'compaction_observations'}} / <strong>{{observations}}</strong></p>
+                        </div>
                     </div>
                 </fieldset>
             </div>
