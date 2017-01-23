@@ -1,5 +1,5 @@
-var averageDownloadSettings  = null
-var downloadAverageSettings       = null
+var averageDownloadSettings = null
+var downloadAverageSettings = null
 
 var downloadAverageFor = function (month) {
   var averageDownload = _.findWhere(averageDownloadSettings, { month: +month })
@@ -34,4 +34,3 @@ Template.statsProductionIndicatorsDashboardDownloadAverage.helpers({
     }
   }
 })
-
