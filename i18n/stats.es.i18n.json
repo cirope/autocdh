@@ -191,6 +191,7 @@
   "stats_production_indicators_average_trip": "Viaje promedio (m³/viaje)",
   "stats_production_indicators_download_average": "Tiempo medio obra (min)",
   "stats_production_indicators_lost_m3": "\"m³ perdidos\" por camiones parados (m³/mes)",
+  "stats_production_indicators_dispatched_volume": "Volumen mensual (m³)",
   "stats_production_indicators_punctuality": "Puntualidad de llegada a obra (%)",
   "stats_production_indicators_unfulfilled_orders": "Pedidos no cumplidos (%)",
   "stats_production_indicators_rejected_trucks": "Camiones rechazados en obra (%)",

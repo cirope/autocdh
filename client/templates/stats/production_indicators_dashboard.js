@@ -19,6 +19,8 @@ Template.statsProductionIndicatorsDashboardTripsByMixer.helpers(helpers)
 Template.statsProductionIndicatorsDashboardAverageTrip.helpers(helpers)
 Template.statsProductionIndicatorsDashboardLostM3.helpers(helpers)
 
+Template.statsProductionIndicatorsDashboardDispatchedVolume.helpers(helpers)
+
 Template.statsProductionIndicatorsDashboardPunctuality.helpers(helpers)
 Template.statsProductionIndicatorsDashboardUnfulfilledOrders.helpers(helpers)
 Template.statsProductionIndicatorsDashboardRejectedTrucks.helpers(helpers)
