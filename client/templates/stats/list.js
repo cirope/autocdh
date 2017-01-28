@@ -10,5 +10,11 @@ Template.stats.helpers({
     var settings = Settings.findOne()
 
     return settings && settings.customOptions && settings.customOptions.showAirGraphic
+  },
+
+  showProductionIndicators: function () {
+    var settings = Settings.findOne()
+
+    return settings && settings.customOptions && settings.customOptions.showProductionIndicators
   }
 })

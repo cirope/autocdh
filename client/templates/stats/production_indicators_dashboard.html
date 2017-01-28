@@ -34,6 +34,23 @@
 
       <div class="table-responsive">
         <table class="table table-condensed table-hover">
+          <thead>
+            <tr>
+              <th style="width: 24em;"></th>
+              {{#each months}}
+                <th style="color: transparent;">{{label}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            {{> statsProductionIndicatorsDashboardDispatchedVolume}}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover">
           <caption>
             <h4>{{_ 'stats_production_indicators_services'}}</h4>
           </caption>
@@ -53,6 +70,7 @@
             {{> statsProductionIndicatorsDashboardRejectedTrucks}}
             {{> statsProductionIndicatorsDashboardComplaints}}
             {{> statsProductionIndicatorsDashboardTripAverage}}
+            {{> statsProductionIndicatorsDashboardDownloadAverage}}
           </tbody>
         </table>
       </div>

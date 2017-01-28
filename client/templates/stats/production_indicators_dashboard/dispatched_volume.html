@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardDispatchedVolume">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_dispatched_volume'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with dispatchedVolume}}
+        <td>{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

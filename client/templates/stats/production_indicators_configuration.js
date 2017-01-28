@@ -33,6 +33,7 @@ Template.statsProductionIndicatorsConfigurationReportedProblems.helpers(helpers)
 Template.statsProductionIndicatorsConfigurationFailedDeliveries.helpers(helpers)
 Template.statsProductionIndicatorsConfigurationTripsOutOfTime.helpers(helpers)
 Template.statsProductionIndicatorsConfigurationAverageCycleTrip.helpers(helpers)
+Template.statsProductionIndicatorsConfigurationAverageDownload.helpers(helpers)
 
 Template.statsProductionIndicatorsConfiguration.events({
   'click [data-copy-from]': function (event, template) {
