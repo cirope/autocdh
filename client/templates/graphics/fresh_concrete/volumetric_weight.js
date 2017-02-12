@@ -12,6 +12,12 @@ var updateChart = function (data) {
         axisY: {
           onlyInteger: true
         },
+        chartPadding: {
+          top: 15,
+          right: 15,
+          bottom: 20,
+          left: 10
+        },
         plugins: [
           Chartist.plugins.tooltip(),
           Chartist.plugins.ctAxisTitle({

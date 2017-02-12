@@ -5,6 +5,12 @@ var updateChart = function (data) {
         low:        0,
         showLine:   true,
         lineSmooth: false,
+        chartPadding: {
+          top: 15,
+          right: 15,
+          bottom: 20,
+          left: 10
+        },
         plugins: [
           Chartist.plugins.tooltip(),
           Chartist.plugins.ctAxisTitle({
