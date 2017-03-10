@@ -40,8 +40,8 @@
                 {{/if}}
               </a>
             </li>
-            <li class="{{activeRouteClass 'documents' 'document' 'documentNew' 'documentEdit'}}">
-              <a href="{{pathFor 'documents' type='protocols'}}">{{{_ 'menu_documents'}}}</a>
+            <li class="{{activeRouteClass 'documents' 'document' 'documentNew' 'documentEdit' 'managementDocuments' 'managementDocument' 'managementDocumentNew' 'managementDocumentEdit'}}">
+              <a href="{{pathFor 'managementDocuments' }}">{{{_ 'menu_documents'}}}</a>
             </li>
             {{#if isInRole 'admin'}}
               <li class="{{activeRouteClass 'stats' 'graphics'}}">

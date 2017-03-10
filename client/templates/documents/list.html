@@ -2,6 +2,9 @@
   <div class="row">
     <div class="col-lg-4">
       <ul class="nav nav-pills nav-stacked">
+          <li>
+              <a href="{{pathFor 'managementDocuments'}}">{{_ 'management_documents'}}</a>
+          </li>
         {{#each types}}
           <li class={{active ..}}>
             <a href="{{pathFor 'documents' type=value}}">{{label}}</a>
@@ -24,7 +27,7 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        {{_ 'documents'}}
+        {{_ 'document_type_protocols'}}
         <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
