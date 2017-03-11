@@ -12,12 +12,13 @@ Template.managementDocuments.helpers({
 })
 
 Template.managementDocumentsList.events({
-  /*
   'click [data-action="search"]': function (event, template) {
     var dateRange = DateRangeHelper.getRange(template.$('#date'))
 
     var search = {
+      code:     template.$('#code').val(),
       name:     template.$('#name').val(),
+      revision: template.$('#revision').val(),
       type:     template.$('#type').val(),
       category: template.$('#category').val(),
       date:     dateRange && dateRange.join('|')
@@ -46,5 +47,4 @@ Template.managementDocumentsList.events({
     template.$('[data-search]').removeClass('hidden')
     template.$('input').val('')
   }
-  */
 })

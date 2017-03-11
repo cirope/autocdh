@@ -37,46 +37,54 @@
       <table class="table table-hover">
         <thead>
           <tr>
+              <th class="hidden-xs hidden-sm">{{_ 'management_document_code_list'}}</th>
               <th>{{_ 'management_document_name'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'management_document_revision'}}</th>
+              <th class="hidden-xs">{{_ 'management_document_date'}}</th>
               <th class="hidden-xs hidden-sm">{{_ 'management_document_type'}}</th>
               <th class="hidden-xs hidden-sm">{{_ 'management_document_category'}}</th>
-              <th class="hidden-xs">{{_ 'management_document_date'}}</th>
-              <!--th class="text-right">
+              <th class="text-right">
                   <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
                       <span class="glyphicon glyphicon-search"></span>
                   </a>
                   <a class="hidden" href="{{pathFor 'managementDocuments'}}" title="{{_ 'cancel'}}" data-search-clean>
                       <span class="glyphicon glyphicon-remove"></span>
                   </a>
-              </th-->
+              </th>
             <th></th>
           </tr>
-          <!--tr class="collapse" id="search-filter">
+          <tr class="collapse" id="search-filter">
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
+                  <input class="form-control" type="text" name="code" id="code">
+              </td>
               <td class="form-group form-group-sm">
                   <input class="form-control" type="text" name="name" id="name">
               </td>
-              <td class="form-group form-group-sm">
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
+                  <input class="form-control" type="text" name="revision" id="revision">
+              </td>
+              <td class="hidden-xs form-group form-group-sm">
+                  <input class="form-control" type="text" name="date" id="date">
+              </td>
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
                   <input class="form-control" type="text" name="type" id="type">
               </td>
               <td class="hidden-xs hidden-sm form-group form-group-sm">
                   <input class="form-control" type="text" name="category" id="category">
               </td>
-              <td class="form-group form-group-sm">
-                  <input class="form-control" type="text" name="date" id="date">
-              </td>
               <td>
                   <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
-                      { {_ 'search'}}
+                      {{_ 'search'}}
                   </button>
               </td>
-          </tr-->
+          </tr>
         </thead>
         <tbody>
           {{#each documents}}
               <tr class="{{#unless active}}strike{{/unless}} visible-on-hover-parent">
+                  <td class="hidden-xs hidden-sm">{{code}}</td>
                   <td><a href="{{pathFor 'managementDocument'}}">{{name}}</a></td>
-                  <td class="hidden-xs hidden-sm">{{typeValue}}</td>
-                  <td class="hidden-xs hidden-sm">{{categoryValue}}</td>
+                  <td class="hidden-xs hidden-sm">{{revisionValue}}</td>
                   <td class="hidden-xs">
                       <a href="{{pathFor 'managementDocument'}}">
                           {{#if active}}
@@ -86,6 +94,8 @@
                           {{/if}}
                       </a>
                   </td>
+                  <td class="hidden-xs hidden-sm">{{typeValue}}</td>
+                  <td class="hidden-xs hidden-sm">{{categoryValue}}</td>
                   <td class="text-right">
                       {{#if file}}
                           <a class="btn btn-xs btn-default visible-on-hover" href="{{file.url}}" title="{{_ 'download_file'}}" target="_blank">
@@ -97,9 +107,12 @@
           {{/each}}
         </tbody>
       </table>
-      {{#if canModify}}
         <a class="btn btn-primary" href="{{pathFor 'managementDocumentNew'}}">{{_ 'management_document_new'}}</a>
-      {{/if}}
+
+        <button type="button" class="btn btn-default pull-right" data-download-pdf>
+            <span class="glyphicon glyphicon-file"></span>
+            {{_ 'download_pdf'}}
+        </button>
     </div>
   </div>
 </template>
