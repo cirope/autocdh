@@ -84,19 +84,15 @@
       <a href="{{pathFor 'statsIndicatorsConfiguration'}}" class="btn btn-default btn-block">
         {{_ 'stats_indicators_configuration'}}
       </a>
-      {{#if showProductionIndicators}}
-        <a href="{{pathFor 'statsProductionIndicatorsConfiguration'}}" class="btn btn-default btn-block">
-          {{_ 'stats_production_indicators_configuration'}}
-        </a>
-      {{/if}}
+      <a href="{{pathFor 'statsProductionIndicatorsConfiguration'}}" class="btn btn-default btn-block">
+        {{_ 'stats_production_indicators_configuration'}}
+      </a>
       <a href="{{pathFor 'statsIndicatorsDashboard'}}" class="btn btn-default btn-block">
         {{_ 'stats_indicators_dashboard'}}
       </a>
-      {{#if showProductionIndicators}}
-        <a href="{{pathFor 'statsProductionIndicatorsDashboard'}}" class="btn btn-default btn-block">
-          {{_ 'stats_production_indicators_dashboard'}}
-        </a>
-      {{/if}}
+      <a href="{{pathFor 'statsProductionIndicatorsDashboard'}}" class="btn btn-default btn-block">
+        {{_ 'stats_production_indicators_dashboard'}}
+      </a>
     </div>
   </div>
 </template>
