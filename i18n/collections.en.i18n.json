@@ -253,6 +253,8 @@
   "management_document_empty_banner": "There is no document here, you need to create a sample first...",
   "management_document_new": "New document",
   "management_document_deactivate": "Deactivate",
+  "management_documents_filter_all": "All",
+  "management_documents_filter_text": "Filters: ",
   "download": "Download",
   "download_canal": "Canal",
   "download_canal_2": "Canal (2)",

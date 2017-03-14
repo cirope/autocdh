@@ -14,40 +14,51 @@ var castQuery = function (query) {
   if (query.code) selector.code = new RegExp('.*' + query.code + '.*', 'gi')
   if (query.name) selector.name = new RegExp('.*' + query.name + '.*', 'gi')
   if (query.date) selector.date = dateRange(query.date)
-
-  var regexp, options, values;
-  if (query.revision) {
-    regexp    = new RegExp('.*' + query.revision + '.*', 'gi')
-
-    options = ['in_rev', 'rev_1', 'rev_2', 'rev_3', 'rev_4', 'rev_5']
-    values = _.filter(options, function (o) {
-      return regexp.test(TAPi18n.__('management_document_revision_'+o))
-    })
-    selector.revision = { $in: values }
-  }
-  if (query.type) {
-    regexp    = new RegExp('.*' + query.type + '.*', 'gi')
-
-    options = ['procedure', 'instructive', 'register', 'other']
-    values = _.filter(options, function (o) {
-      return regexp.test(TAPi18n.__('management_document_type_'+o))
-    })
-    selector.type = { $in: values }
-  }
-  if (query.category) {
-    regexp    = new RegExp('.*' + query.category + '.*', 'gi')
-
-    options = ['quality', 'production', 'procedure', 'purchase', 'sale', 'administrative', 'maintenance', 'human_resources', 'other']
-    values = _.filter(options, function (o) {
-      return regexp.test(TAPi18n.__('management_document_category_'+o))
-    })
-    selector.category = { $in: values }
-  }
+  if (query.revision) selector.revision = query.revision
+  if (query.type) selector.type = query.type
+  if (query.category) selector.category = query.category
 
   return selector
 }
 
-var table = function (template) {
+var filterText = function (query) {
+  var text = ''
+
+  var first = true;
+  if (query.code){
+    if(!first) text+=', '
+    text+=TAPi18n.__('management_document_code_list')+': *'+query.code+'*'
+    first=false
+  }
+  if (query.name){
+    if(!first) text+=', '
+    text+=TAPi18n.__('management_document_name')+': *'+query.name+'*'
+    first=false
+  }
+  if (query.revision){
+    if(!first) text+=', '
+    text+=TAPi18n.__('management_document_revision')+': '+TAPi18n.__('management_document_revision_'+query.revision)+''
+    first=false
+  }
+  if (query.dateFilter){
+    if(!first) text+=', '
+    text+=TAPi18n.__('management_document_date')+': '+query.dateFilter+''
+    first=false
+  }
+  if (query.type){
+    if(!first) text+=', '
+    text+=TAPi18n.__('management_document_type')+': '+TAPi18n.__('management_document_type_'+query.type)+''
+    first=false
+  }
+  if (query.category){
+    if(!first) text+=', '
+    text+=TAPi18n.__('management_document_category')+': '+TAPi18n.__('management_document_category_'+query.category)+''
+    first=false
+  }
+  return text
+}
+
+var table = function (query) {
   var data    = null
   var headers = [
     { name: 'code',       prompt: TAPi18n.__('management_document_code_list'), width: 28 },
@@ -58,16 +69,6 @@ var table = function (template) {
     { name: 'category',   prompt: TAPi18n.__('management_document_category'),  width: 37 },
     { name: 'file',       prompt: TAPi18n.__('management_document_file'),      width: 48 }
   ]
-
-  var dateRange = DateRangeHelper.getRange(template.$('#date'))
-  var query = {
-    code:     template.$('#code').val(),
-    name:     template.$('#name').val(),
-    revision: template.$('#revision').val(),
-    type:     template.$('#type').val(),
-    category: template.$('#category').val(),
-    date:     dateRange && dateRange.join('|')
-  }
 
   data = ManagementDocuments.find(castQuery(query), { sort: { date: -1 } }).map(function (mDoc) {
     mDoc = mDoc || {}
@@ -90,6 +91,21 @@ var table = function (template) {
   return { data: data, headers: headers }
 }
 
+var searchTitle = function (template) {
+
+  var dateRange = DateRangeHelper.getRange(template.$('#date'))
+  var query = {
+    code:     template.$('#code').val(),
+    name:     template.$('#name').val(),
+    revision: template.$('#revision').val(),
+    type:     template.$('#type').val(),
+    category: template.$('#category').val(),
+    date:     dateRange && dateRange.join('|')
+  }
+
+  return { data: data, headers: headers }
+}
+
 Template.managementDocuments.helpers({
   types: function () {
     var types = ['protocols', 'instructive', 'manuals', 'controls', 'fissures', 'techniques', 'sustainability', 'others']
@@ -103,10 +119,44 @@ Template.managementDocuments.helpers({
   }
 })
 
+Template.managementDocumentsList.helpers({
+  revisionOptions: function () {
+    var options = ['in_rev','rev_1','rev_2','rev_3','rev_4','rev_5']
+
+    return _.map(options, function (value) {
+      return {
+        value: value,
+        label: TAPi18n.__('management_document_revision_' + value)
+      }
+    })
+  },
+
+  typeOptions: function () {
+    var options = ['procedure', 'instructive', 'register', 'other']
+
+    return _.map(options, function (value) {
+      return {
+        value: value,
+        label: TAPi18n.__('management_document_type_' + value)
+      }
+    })
+  },
+
+  categoryOptions: function () {
+    var options = ['quality', 'production', 'procedure', 'purchase', 'sale', 'administrative', 'maintenance', 'human_resources', 'other']
+
+    return _.map(options, function (value) {
+      return {
+        value: value,
+        label: TAPi18n.__('management_document_category_' + value)
+      }
+    })
+  }
+})
+
 Template.managementDocumentsList.events({
   'click [data-action="search"]': function (event, template) {
     var dateRange = DateRangeHelper.getRange(template.$('#date'))
-
     var search = {
       code:     template.$('#code').val(),
       name:     template.$('#name').val(),
@@ -141,8 +191,21 @@ Template.managementDocumentsList.events({
   },
 
   'click [data-download-pdf]': function (event, template) {
+    var dateRange = DateRangeHelper.getRange(template.$('#date'))
+    var dateRangeFilter = DateRangeHelper.getRange(template.$('#date'), 'DD/MM/YYYY')
+    var search = {
+      code:     template.$('#code').val(),
+      name:     template.$('#name').val(),
+      revision: template.$('#revision').val(),
+      type:     template.$('#type').val(),
+      category: template.$('#category').val(),
+      date:     dateRange && dateRange.join('|'),
+      dateFilter:     dateRangeFilter && dateRangeFilter.join(' - ')
+    }
+
     var yPosition = 25
-    var tableData = table(template)
+    var tableData = table(search)
+    var textFilter = filterText(search)
 
     PDF.new({}, function (doc) {
       doc
@@ -150,6 +213,12 @@ Template.managementDocumentsList.events({
         .setFontSize(14)
         .text(TAPi18n.__('management_documents'), 20, yPosition)
         .setFontSize(9)
+
+      if(textFilter){
+          doc
+            .setFontSize(7)
+            .text(textFilter, 20, yPosition+=3)
+      }
 
       doc
         .setFontSize(7)

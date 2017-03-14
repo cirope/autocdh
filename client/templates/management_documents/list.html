@@ -61,16 +61,31 @@
                   <input class="form-control" type="text" name="name" id="name">
               </td>
               <td class="hidden-xs hidden-sm form-group form-group-sm">
-                  <input class="form-control" type="text" name="revision" id="revision">
+                  <select class="form-control" name="revision" id="revision">
+                      <option value="">{{_ 'management_documents_filter_all'}}</option>
+                      {{#each revisionOptions}}
+                          <option value="{{value}}">{{label}}</option>
+                      {{/each}}
+                  </select>
               </td>
               <td class="hidden-xs form-group form-group-sm">
                   <input class="form-control" type="text" name="date" id="date">
               </td>
               <td class="hidden-xs hidden-sm form-group form-group-sm">
-                  <input class="form-control" type="text" name="type" id="type">
+                  <select class="form-control" name="type" id="type">
+                      <option value="">{{_ 'management_documents_filter_all'}}</option>
+                      {{#each typeOptions}}
+                          <option value="{{value}}">{{label}}</option>
+                      {{/each}}
+                  </select>
               </td>
               <td class="hidden-xs hidden-sm form-group form-group-sm">
-                  <input class="form-control" type="text" name="category" id="category">
+                  <select class="form-control" name="category" id="category">
+                      <option value="">{{_ 'management_documents_filter_all'}}</option>
+                      {{#each categoryOptions}}
+                          <option value="{{value}}">{{label}}</option>
+                      {{/each}}
+                  </select>
               </td>
               <td>
                   <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">

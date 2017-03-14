@@ -253,6 +253,8 @@
   "management_document_empty_banner": "No hay ningún documento cargado.",
   "management_document_new": "Nuevo documento",
   "management_document_deactivate": "Dar de baja",
+  "management_documents_filter_all": "Todos",
+  "management_documents_filter_text": "Filtros: ",
   "download": "Tipo de descarga",
   "download_canal": "Canaleta",
   "download_canal_2": "Canaleta (2)",
