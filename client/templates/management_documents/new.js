@@ -1,5 +1,8 @@
+
+var _management_documents_submitting = new ReactiveVar(false)
+
 Template.managementDocumentNew.onDestroyed(function () {
-  Session.set('documents.submitting')
+  _management_documents_submitting.set(false)
 })
 
 Template.managementDocumentNew.helpers({
@@ -8,14 +11,14 @@ Template.managementDocumentNew.helpers({
   },
 
   isSubmitting: function () {
-    return Session.get('documents.submitting')
+    return _management_documents_submitting.get()
   }
 })
 
 AutoForm.addHooks('newManagementDocumentForm', {
   before: {
     method: function (doc) {
-      Session.set('documents.submitting', true)
+      _management_documents_submitting.set(true)
 
       return _.extend(doc, { _id: Random.id() })
     }
@@ -23,11 +26,22 @@ AutoForm.addHooks('newManagementDocumentForm', {
 
   after: {
     method: function (error, result) {
-      Session.set('documents.submitting')
-
-      if (! error) Router.go('managementDocument', result)
+      if (! error){
+        Router.go('managementDocument', result)
+      } else {
+        _management_documents_submitting.set(false)
+      }
     }
+  },
+
+  beginSubmit:  function(){
+    _management_documents_submitting.set(true)
+  },
+
+  endSubmit:  function(){
+    _management_documents_submitting.set(false)
   }
+
 })
 
 AutoForm.addHooks('newManagementDocumentForm', {

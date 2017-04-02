@@ -1,5 +1,8 @@
+
+var _documents_submitting = new ReactiveVar(false)
+
 Template.documentNew.onDestroyed(function () {
-  Session.set('documents.submitting')
+  _documents_submitting.set(false)
 })
 
 Template.documentNew.helpers({
@@ -8,14 +11,14 @@ Template.documentNew.helpers({
   },
 
   isSubmitting: function () {
-    return Session.get('documents.submitting')
+    return _documents_submitting.get()
   }
 })
 
 AutoForm.addHooks('newDocumentForm', {
   before: {
     method: function (doc) {
-      Session.set('documents.submitting', true)
+      _documents_submitting.set(true)
 
       return _.extend(doc, { _id: Random.id() })
     }
@@ -23,11 +26,22 @@ AutoForm.addHooks('newDocumentForm', {
 
   after: {
     method: function (error, result) {
-      Session.set('documents.submitting')
-
-      if (! error) Router.go('document', result)
+      if (! error){
+        Router.go('document', result)
+      } else {
+        _documents_submitting.set(false)
+      }
     }
+  },
+
+  beginSubmit:  function(){
+    _documents_submitting.set(true)
+  },
+
+  endSubmit:  function(){
+    _documents_submitting.set(false)
   }
+
 })
 
 AutoForm.addHooks('newDocumentForm', {
