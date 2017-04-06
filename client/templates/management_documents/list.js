@@ -203,7 +203,7 @@ Template.managementDocumentsList.events({
       dateFilter:     dateRangeFilter && dateRangeFilter.join(' - ')
     }
 
-    var yPosition = 25
+    var yPosition = 26
     var tableData = table(search)
     var textFilter = filterText(search)
 
@@ -225,7 +225,7 @@ Template.managementDocumentsList.events({
         .table(20, yPosition += 5, tableData.data, tableData.headers, {
           printHeaders: true,
           autoSize: false,
-          margins: { right: 0, left: 0, top: 0, bottom: DigitalSignature.getSignatureHeight(doc, 'pdfManagementDocuments') },
+          margins: { right: 0, left: 0, top: 32, bottom: DigitalSignature.getSignatureHeight(doc, 'pdfManagementDocuments') },
           fontSize: 7
         })
 
