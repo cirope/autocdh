@@ -84,8 +84,16 @@
                         {{/if}}
                     </p>
                     <p>
-                        {{_ 'setting_pdf_hardened_concrete_evolution'}} /
-                        {{#if digitalSignature.pdfHardenedConcreteEvolution}}
+                        {{_ 'setting_pdf_fresh_concrete'}} /
+                        {{#if digitalSignature.pdfFreshConcrete}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
+                        {{_ 'setting_pdf_hardened_concrete'}} /
+                        {{#if digitalSignature.pdfHardenedConcrete}}
                             <strong>{{_ 'setting_pdf_enabled'}}</strong>
                         {{else}}
                             <strong>{{_ 'setting_pdf_disabled'}}</strong>

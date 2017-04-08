@@ -122,7 +122,7 @@ Template.graphicHardenedConcreteResistanceEvolution.events({
 
       putGraphImage(doc, yPosition += 5, function () {
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfHardenedConcreteEvolution', function () {
+        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfHardenedConcrete', function () {
           doc.putTotalPages('___total_pages___')
           doc.save(name+'.pdf')
         })
