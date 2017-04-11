@@ -59,18 +59,17 @@ var filterText = function (query) {
 }
 
 var table = function (query) {
-  var data    = null
   var headers = [
     { name: 'code',       prompt: TAPi18n.__('management_document_code_list'), width: 28 },
     { name: 'name',       prompt: TAPi18n.__('management_document_name'),      width: 62 },
     { name: 'revision',   prompt: TAPi18n.__('management_document_revision'),  width: 19 },
     { name: 'date',       prompt: TAPi18n.__('management_document_date'),      width: 22 },
-    { name: 'type',       prompt: TAPi18n.__('management_document_type'),      width: 24 },
-    { name: 'category',   prompt: TAPi18n.__('management_document_category'),  width: 37 },
-    { name: 'file',       prompt: TAPi18n.__('management_document_file'),      width: 48 }
+    { name: 'type',       prompt: TAPi18n.__('management_document_type'),      width: 25 },
+    { name: 'category',   prompt: TAPi18n.__('management_document_category'),  width: 25 },
+    { name: 'file',       prompt: TAPi18n.__('management_document_file'),      width: 60 }
   ]
 
-  data = ManagementDocuments.find(castQuery(query), { sort: { date: -1 } }).map(function (mDoc) {
+  var data = ManagementDocuments.find(castQuery(query), { sort: { code: 1 } }).map(function (mDoc) {
     mDoc = mDoc || {}
     mDoc.code       = mDoc.code || ''
     mDoc.name       = mDoc.name || ''
@@ -143,7 +142,7 @@ Template.managementDocumentsList.helpers({
   },
 
   categoryOptions: function () {
-    var options = ['quality', 'production', 'procedure', 'purchase', 'sale', 'administrative', 'maintenance', 'human_resources', 'other']
+    var options = ['quality', 'production', 'procedure', 'purchase', 'sale', 'administrative', 'maintenance', 'human_resources', 'technical', 'other']
 
     return _.map(options, function (value) {
       return {
