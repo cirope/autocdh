@@ -56,15 +56,17 @@ var setField = function (name, value) {
   $('[name="'+name+'"]').val(value)
 };
 
-var calculateFieldDensity = function (pos) {
-  var r = 0;
+var calculateColumns = function () {
+  for(var pos = 1; pos <= 5; pos++) {
+    var r = 0;
 
-  var v = getField('volume_p'+pos);
-  if(0 < v && getField('mold_mass_p'+pos) && getField('empty_mold_mass_p'+pos)){
-    r = (getField('mold_mass_p'+pos) - getField('empty_mold_mass_p'+pos)) / v;
-    r = r.toFixed(0)
+    var v = getField('volume_p' + pos);
+    if (0 < v && getField('mold_mass_p' + pos) && getField('empty_mold_mass_p' + pos)) {
+      r = (getField('mold_mass_p' + pos) - getField('empty_mold_mass_p' + pos)) / v;
+      r = r.toFixed(2)
+    }
+    setField('field_density_p' + pos, r)
   }
-  setField('field_density_p'+pos, r)
 };
 
 var calculateFields = function () {
@@ -91,12 +93,8 @@ var calculateFields = function () {
   copyValues('water_p', 1, 5)
   copyValues('empty_mold_mass_p', 1, 5)
 
-  // calculate masses
-  calculateFieldDensity(1);
-  calculateFieldDensity(2);
-  calculateFieldDensity(3);
-  calculateFieldDensity(4);
-  calculateFieldDensity(5);
+  // perform calculates
+  calculateColumns();
 
 };
 
