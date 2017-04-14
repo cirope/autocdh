@@ -10,6 +10,12 @@ var updateChart = function (data) {
             return index % module === 0 ? value : null
           }
         },
+        chartPadding: {
+          top: 15,
+          right: 15,
+          bottom: 20,
+          left: 10
+        },
         plugins: [
           Chartist.plugins.tooltip(),
           Chartist.plugins.ctAxisTitle({

@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardDownloadAverage">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_download_average'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with downloadAverage}}
+        <td>{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

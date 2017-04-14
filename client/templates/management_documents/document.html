@@ -1,0 +1,82 @@
+<template name="managementDocument">
+  <div class="col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'management_document'}}
+          <a class="pull-right" href="{{pathFor 'managementDocuments'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'management_document_code'}} /
+          <strong>{{code}}</strong>
+        </p>
+        <p>
+          {{_ 'management_document_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+        <p>
+          {{_ 'management_document_revision'}} /
+          <strong>{{revision}}</strong>
+        </p>
+        <p>
+          {{_ 'management_document_date'}} /
+          <strong>{{l date 'L'}}</strong>
+        </p>
+        <p>
+          {{_ 'management_document_type'}} /
+          <strong>{{type}}</strong>
+        </p>
+        <p>
+          {{_ 'management_document_category'}} /
+          <strong>{{category}}</strong>
+        </p>
+
+        <div class="pull-right">
+          {{#if file}}
+            <a class="btn btn-sm btn-default" href="{{file.url}}" target="_blank">
+              <span class="glyphicon glyphicon-download"></span>
+              {{_ 'download_file'}}
+            </a>
+          {{/if}}
+
+        </div>
+
+
+      {{#if active}}
+          {{#if deactivating}}
+              <br>
+              <br>
+              {{#autoForm collection='ManagementDocuments' id='deactivateManagementDocumentForm' type='method-update' meteormethod='updateManagementDocument' doc=..}}
+                  <fieldset>
+                      {{> afQuickField name='reason' autofocus=true}}
+                      {{> afQuickField name='active' value=false}}
+                  </fieldset>
+
+                  <a href="#" class="pull-right" data-cancel="deactivating">
+                      {{_ 'cancel'}}
+                  </a>
+                  <button type="submit" class="btn btn-danger">
+                      {{_ 'management_document_deactivate'}}
+                  </button>
+              {{/autoForm}}
+          {{else}}
+              <a href="{{pathFor 'managementDocumentEdit'}}" class="btn btn-sm btn-default" title="{{_ 'management_document_update_title'}}">
+                  {{_ 'edit'}}
+              </a>
+
+              <button class="btn btn-sm btn-danger" type="button" data-deactivate>
+                  {{_ 'management_document_deactivate'}}
+              </button>
+          {{/if}}
+      {{else}}
+          <p>
+              {{_ 'management_document_reason'}} /
+              <strong>{{reason}}</strong>
+          </p>
+      {{/if}}
+      </div>
+    </div>
+  </div>
+</template>

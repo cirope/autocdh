@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardLostM3">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_lost_m3'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with lostM3}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

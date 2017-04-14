@@ -1,0 +1,55 @@
+<template name="statsProductionIndicatorsConfigurationMaintenanceHours">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        {{_ 'stats_production_indicators_maintenance_hours'}}
+      </h4>
+    </div>
+
+    <div class="panel-body">
+      <div class="table-responsive">
+        <table class="table table-condensed table-hover table-no-margin">
+          <thead>
+            <tr>
+              <th style="width: 10em;"></th>
+              {{#each months}}
+                <th>{{label}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td><strong>{{_ 'stats_production_indicators_maintenance_hours_label'}}</strong></td>
+
+              {{#each months}}
+                <td class="visible-on-hover-parent text-right">
+                  <div class="form-group">
+                    <input class="form-control input-sm"
+                            type="text"
+                            name="{{maintenanceHoursName}}"
+                            value="{{maintenanceHoursValue}}"
+                            data-maintenance-hours-month="{{value}}">
+                  </div>
+
+                  {{#if showCopy}}
+                    <button class="btn btn-xs btn-default visible-on-hover"
+                            data-copy-from="{{maintenanceHoursPrevName}}"
+                            data-copy-to="{{maintenanceHoursName}}"
+                            title="{{_ 'stats_indicators_repeat_previous_month_values'}}">
+                      <span class="glyphicon glyphicon-duplicate"></span>
+                    </button>
+                  {{/if}}
+                </td>
+              {{/each}}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        <em>{{_ 'stats_production_indicators_maintenance_hours_caption'}}</em>
+      </p>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardUnfulfilledOrders">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_unfulfilled_orders'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with unfulfilledOrders}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

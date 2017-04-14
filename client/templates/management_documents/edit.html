@@ -1,0 +1,58 @@
+<template name="managementDocumentEdit">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{_ 'management_document_update_title'}}
+            <a class="pull-right" href="{{pathFor 'managementDocument'}}">{{_ 'go_back'}}</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {{#autoForm collection='ManagementDocuments' id='editManagementDocumentForm' type='method-update' meteormethod='updateManagementDocument' doc=..}}
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{> afQuickField name='code' autofocus=true}}
+                    </div>
+                    <div class="col-md-6">
+                        {{> afQuickField name='name' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{> afQuickField name='revision' value=revision}}
+                    </div>
+                    <div class="col-md-6">
+                        {{> afQuickField name='date' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{> afQuickField name='type' value=type}}
+                    </div>
+                    <div class="col-md-6">
+                        {{> afQuickField name='category' value=category}}
+                    </div>
+                </div>
+
+              <p>
+                <div class="pull-right">
+                  {{> managementDocumentFile}}
+                </div>
+
+                {{_ 'management_document_file'}} /
+                {{#if fileId}}
+                  <a href="{{file.url}}" target="_blank">
+                    {{_ 'download_file'}}
+                  </a>
+                {{/if}}
+              </p>
+            </fieldset>
+            <button type="submit" class="btn btn-primary">{{_ 'management_document_update'}}</button>
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

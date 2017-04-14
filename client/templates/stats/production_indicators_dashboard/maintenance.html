@@ -1,0 +1,12 @@
+<template name="statsProductionIndicatorsDashboardMaintenance">
+  <tr>
+    <td>
+      <strong>{{_ 'stats_production_indicators_maintenance'}}</strong>
+    </td>
+    {{#each months}}
+      {{#with maintenance}}
+        <td class="{{class}}">{{value}}</td>
+      {{/with}}
+    {{/each}}
+  </tr>
+</template>

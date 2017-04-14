@@ -1,0 +1,133 @@
+<template name="managementDocuments">
+  <div class="row">
+    <div class="col-lg-4">
+      <ul class="nav nav-pills nav-stacked">
+          <li class="active">
+              <a href="{{pathFor 'managementDocuments'}}">{{_ 'management_documents'}}</a>
+          </li>
+        {{#each types}}
+          <li>
+            <a href="{{pathFor 'documents' type=value}}">{{label}}</a>
+          </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <div class="col-lg-8">
+      {{#if documents.count}}
+        {{> managementDocumentsList}}
+      {{else}}
+        {{> managementDocumentsEmpty}}
+      {{/if}}
+    </div>
+  </div>
+</template>
+
+<template name="managementDocumentsList">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        {{_ 'management_documents'}}
+        <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'managementDocumentNew' type=type}}">{{_ 'management_document_new'}}</a>
+
+      <table class="table table-hover">
+        <thead>
+          <tr>
+              <th class="hidden-xs hidden-sm">{{_ 'management_document_code_list'}}</th>
+              <th>{{_ 'management_document_name'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'management_document_revision'}}</th>
+              <th class="hidden-xs">{{_ 'management_document_date'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'management_document_type'}}</th>
+              <th class="hidden-xs hidden-sm">{{_ 'management_document_category'}}</th>
+              <th class="text-right">
+                  <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                      <span class="glyphicon glyphicon-search"></span>
+                  </a>
+                  <a class="hidden" href="{{pathFor 'managementDocuments'}}" title="{{_ 'cancel'}}" data-search-clean>
+                      <span class="glyphicon glyphicon-remove"></span>
+                  </a>
+              </th>
+            <th></th>
+          </tr>
+          <tr class="collapse" id="search-filter">
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
+                  <input class="form-control" type="text" name="code" id="code">
+              </td>
+              <td class="form-group form-group-sm">
+                  <input class="form-control" type="text" name="name" id="name">
+              </td>
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
+                  <select class="form-control" name="revision" id="revision">
+                      <option value="">{{_ 'management_documents_filter_all'}}</option>
+                      {{#each revisionOptions}}
+                          <option value="{{value}}">{{label}}</option>
+                      {{/each}}
+                  </select>
+              </td>
+              <td class="hidden-xs form-group form-group-sm">
+                  <input class="form-control" type="text" name="date" id="date">
+              </td>
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
+                  <select class="form-control" name="type" id="type">
+                      <option value="">{{_ 'management_documents_filter_all'}}</option>
+                      {{#each typeOptions}}
+                          <option value="{{value}}">{{label}}</option>
+                      {{/each}}
+                  </select>
+              </td>
+              <td class="hidden-xs hidden-sm form-group form-group-sm">
+                  <select class="form-control" name="category" id="category">
+                      <option value="">{{_ 'management_documents_filter_all'}}</option>
+                      {{#each categoryOptions}}
+                          <option value="{{value}}">{{label}}</option>
+                      {{/each}}
+                  </select>
+              </td>
+              <td>
+                  <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                      {{_ 'search'}}
+                  </button>
+              </td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each documents}}
+              <tr class="{{#unless active}}strike{{/unless}} visible-on-hover-parent">
+                  <td class="hidden-xs hidden-sm">{{code}}</td>
+                  <td><a href="{{pathFor 'managementDocument'}}">{{name}}</a></td>
+                  <td class="hidden-xs hidden-sm">{{revisionValue}}</td>
+                  <td class="hidden-xs">
+                      <a href="{{pathFor 'managementDocument'}}">
+                          {{#if active}}
+                              {{l date 'L'}}
+                          {{else}}
+                              {{_ 'management_document_not_active'}}
+                          {{/if}}
+                      </a>
+                  </td>
+                  <td class="hidden-xs hidden-sm">{{typeValue}}</td>
+                  <td class="hidden-xs hidden-sm">{{categoryValue}}</td>
+                  <td class="text-right">
+                      {{#if file}}
+                          <a class="btn btn-xs btn-default visible-on-hover" href="{{file.url}}" title="{{_ 'download_file'}}" target="_blank">
+                              <span class="glyphicon glyphicon-download"></span>
+                          </a>
+                      {{/if}}
+                  </td>
+              </tr>
+          {{/each}}
+        </tbody>
+      </table>
+        <a class="btn btn-primary" href="{{pathFor 'managementDocumentNew'}}">{{_ 'management_document_new'}}</a>
+
+        <button type="button" class="btn btn-default pull-right" data-download-pdf>
+            <span class="glyphicon glyphicon-file"></span>
+            {{_ 'download_pdf'}}
+        </button>
+    </div>
+  </div>
+</template>

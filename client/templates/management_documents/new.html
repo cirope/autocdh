@@ -1,0 +1,55 @@
+<template name="managementDocumentNew">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{_ 'management_document_create_title'}}
+            <a class="pull-right" href="{{pathFor 'managementDocuments'}}">{{_ 'go_back'}}</a>
+          </h3>
+        </div>
+        <div class="panel-body">
+          {{#autoForm collection='ManagementDocuments' id='newManagementDocumentForm' type='method' meteormethod='createManagementDocument'}}
+            <fieldset>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{> afQuickField name='code' autofocus=true}}
+                    </div>
+                    <div class="col-md-6">
+                        {{> afQuickField name='name' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{> afQuickField name='revision' value=revision}}
+                    </div>
+                    <div class="col-md-6">
+                        {{> afQuickField name='date' }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        {{> afQuickField name='type' value=type}}
+                    </div>
+                    <div class="col-md-6">
+                        {{> afQuickField name='category' value=category}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        {{> afQuickField name='fileId' placeholder=filePlaceholder}}
+                    </div>
+                </div>
+            </fieldset>
+
+            {{#if isSubmitting}}
+              <button type="button" class="btn btn-primary" disabled>{{_ 'saving'}}</button>
+            {{else}}
+              <button type="submit" class="btn btn-primary">{{_ 'management_document_create'}}</button>
+            {{/if}}
+          {{/autoForm}}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

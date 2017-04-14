@@ -1,0 +1,2 @@
+Template.managementDocumentEdit.onCreated(function () {
+})
