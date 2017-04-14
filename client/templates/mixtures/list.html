@@ -1,78 +1,57 @@
 <template name="mixtures">
-  {{#if mixtures.count}}
-    {{> mixturesList}}
-  {{else}}
-    {{> mixturesEmpty}}
-  {{/if}}
+    <div role="tabpanel">
+        {{> granulometriesMenu tab='mixtures' }}
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active">
+              {{#if mixtures.count}}
+                {{> mixturesList}}
+              {{else}}
+                {{> mixturesEmpty}}
+              {{/if}}
+            </div>
+        </div>
+    </div>
 </template>
 
 <template name="mixturesList">
-  <div role="tabpanel">
-    <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation">
-        <a href="{{pathFor 'granulometries'}}">
-          {{_ 'granulometries_label'}}
-        </a>
-      </li>
-      <li role="presentation" class="active">
-        <a href="{{pathFor 'mixtures'}}">
-          {{_ 'mixtures'}}
-        </a>
-      </li>
-      <li role="presentation">
-        <a href="{{pathFor 'granulometryHumidities'}}">
-          {{_ 'granulometry_humidity'}}
-        </a>
-      </li>
-      <li role="presentation">
-        <a href="{{pathFor 'fieldDensities'}}">
-          {{_ 'field_density'}}
-        </a>
-      </li>
-    </ul>
+    <p>
+      <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'mixtureNew'}}">{{_ 'mixture_new'}}</a>
+    </p>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>{{_ 'mixture_name'}}</th>
+          <th class="hidden-xs">{{_ 'mixture'}}</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each mixtures}}
+          <tr class="visible-on-hover-parent">
+            <td><a href="{{pathFor 'mixture'}}">{{name}}</a></td>
+            <td class="hidden-xs"><a href="{{pathFor 'mixture'}}">{{mixture}}</a></td>
+            <td class="text-right">
+              <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'mixtureEdit'}}" title="{{_ 'edit'}}">
+                {{_ 'edit'}}
+              </a>
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
 
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active">
-        <p>
-          <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'mixtureNew'}}">{{_ 'mixture_new'}}</a>
-        </p>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th>{{_ 'mixture_name'}}</th>
-              <th class="hidden-xs">{{_ 'mixture'}}</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {{#each mixtures}}
-              <tr class="visible-on-hover-parent">
-                <td><a href="{{pathFor 'mixture'}}">{{name}}</a></td>
-                <td class="hidden-xs"><a href="{{pathFor 'mixture'}}">{{mixture}}</a></td>
-                <td class="text-right">
-                  <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'mixtureEdit'}}" title="{{_ 'edit'}}">
-                    {{_ 'edit'}}
-                  </a>
-                </td>
-              </tr>
-            {{/each}}
-          </tbody>
-        </table>
-
-        {{#if nextPath}}
-          <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-              <a class="btn btn-default btn-xs btn-block" href="{{nextPath}}">{{_ 'more'}}</a>
-            </div>
-          </div>
-
-          <br>
-        {{else}}
-          {{#unless ready}}{{> spinner}}{{/unless}}
-        {{/if}}
-
-        <a class="btn btn-primary" href="{{pathFor 'mixtureNew'}}">{{_ 'mixture_new'}}</a>
+    {{#if nextPath}}
+      <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <a class="btn btn-default btn-xs btn-block" href="{{nextPath}}">{{_ 'more'}}</a>
+        </div>
       </div>
-    </div>
-  </div>
+
+      <br>
+    {{else}}
+      {{#unless ready}}{{> spinner}}{{/unless}}
+    {{/if}}
+
+    <a class="btn btn-primary" href="{{pathFor 'mixtureNew'}}">{{_ 'mixture_new'}}</a>
 </template>

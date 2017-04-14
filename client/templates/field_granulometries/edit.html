@@ -1,0 +1,555 @@
+<template name="fieldGranulometryEdit">
+    <div class="row text-center">
+        <h4>{{_ 'field_granulometry_title'}}</h4>
+        <h5>{{_ 'field_granulometry_subtitle'}}</h5>
+    </div>
+    <div class="row">
+        {{#autoForm collection='FieldGranulometries' id='editFieldGranulometryForm' type='method-update' validation='blur' meteormethod='updateFieldGranulometry' doc=..}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'field_granulometry_update_title'}}
+                        <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{> afQuickField name='sampleResponsibleId'}}
+                            </div>
+                            <div class="col-md-6">
+                                {{> afQuickField name='fieldDate'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{> afQuickField name='sampleName'}}
+                            </div>
+                            <div class="col-md-6">
+                                {{> afQuickField name='origin'}}
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'field_granulometry_update_title'}}
+                        <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sampling'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='humidity_code'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='humidity_empty_mass'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='humidity_wet'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='humidity_dry'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='humidity_percentage'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='thin_code'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='thin_empty_mass'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='thin_before'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='thin_after'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='thin_percentage'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='weight'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_76'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_76'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_76'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_76'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_76'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_76'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_63'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_63'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_63'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_63'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_63'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_63'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_51'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_51'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_51'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_51'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_51'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_51'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_38'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_38'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_38'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_38'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_38'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_38'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_25'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_25'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_25'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_25'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_25'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_25'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_19'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_19'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_19'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_19'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_19'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_19'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_95'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_95'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_95'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_95'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_95'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_95'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_48'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_48'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_48'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_48'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_48'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_48'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_20'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_20'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_20'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_20'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_20'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_20'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_04'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_04'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_04'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_04'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_04'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_04'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_02'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_02'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_02'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_02'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_02'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_02'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_01'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_01'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_01'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_01'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_01'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_01'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_00'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_00'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_00'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_00'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_00'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_00'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='sieve_weight_b'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_sieve_b'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_partial_b'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='retained_total_b'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_b'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='passed_percentage_b'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='total'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                {{> afQuickField name='observations'}}
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'field_granulometry_update_title'}}
+                        <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">{{_ 'field_granulometry_update'}}</button>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>

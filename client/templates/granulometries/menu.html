@@ -1,0 +1,19 @@
+<template name="granulometriesMenu">
+    <ul class="nav nav-tabs" role="tablist">
+        {{> granulometriesMenuItem link='granulometries' label='granulometries_label' tab=tab }}
+        {{> granulometriesMenuItem link='mixtures' label='mixtures' tab=tab }}
+        {{> granulometriesMenuItem link='granulometryHumidities' label='granulometry_humidity' tab=tab }}
+        {{> granulometriesMenuItem link='fieldDensities' label='field_density' tab=tab }}
+        {{> granulometriesMenuItem link='compactions' label='compaction' tab=tab }}
+        {{> granulometriesMenuItem link='limits' label='limit' tab=tab }}
+        {{> granulometriesMenuItem link='fieldGranulometries' label='field_granulometry' tab=tab }}
+    </ul>
+</template>
+
+<template name="granulometriesMenuItem">
+    <li role="presentation" {{attributes}} >
+        <a href="{{pathFor link}}">
+            {{_ label}}
+        </a>
+    </li>
+</template>

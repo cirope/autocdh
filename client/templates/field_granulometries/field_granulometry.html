@@ -1,0 +1,354 @@
+<template name="fieldGranulometry">
+    <div class="row text-center">
+        <h4>{{_ 'field_granulometry_title'}}</h4>
+        <h5>{{_ 'field_granulometry_subtitle'}}</h5>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    {{_ 'field_granulometry_title'}}
+                    <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>{{_ 'field_granulometry_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_name'}} / <strong>{{sampleName}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_origin'}} / <strong>{{origin}}</strong></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">
+                    {{_ 'field_granulometry_title'}}
+                    <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                </h3>
+            </div>
+            <div class="panel-body">
+                <fieldset>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sampling'}} / <strong>{{sampling}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_humidity_code'}} / <strong>{{humidity_code}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_humidity_empty_mass'}} / <strong>{{humidity_empty_mass}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_humidity_wet'}} / <strong>{{humidity_wet}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_humidity_dry'}} / <strong>{{humidity_dry}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_humidity_percentage'}} / <strong>{{humidity_percentage}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_thin_code'}} / <strong>{{thin_code}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_thin_empty_mass'}} / <strong>{{thin_empty_mass}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_thin_before'}} / <strong>{{thin_before}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_thin_after'}} / <strong>{{thin_after}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_thin_percentage'}} / <strong>{{thin_percentage}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_weight'}} / <strong>{{weight}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_76}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_76}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_76}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_76}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_76}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_76}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_63}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_63}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_63}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_63}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_63}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_63}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_51}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_51}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_51}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_51}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_51}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_51}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_38}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_38}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_38}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_38}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_38}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_38}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_25}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_25}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_25}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_25}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_25}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_25}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_19}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_19}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_19}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_19}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_19}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_19}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_95}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_95}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_95}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_95}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_95}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_95}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_48}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_48}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_48}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_48}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_48}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_48}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_20}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_20}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_20}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_20}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_20}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_20}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_04}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_04}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_04}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_04}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_04}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_04}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_02}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_02}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_02}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_02}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_02}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_02}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_01}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_01}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_01}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_01}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_01}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_01}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_00}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_00}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_00}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_00}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_00}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_00}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_sieve_weight'}} / <strong>{{sieve_weight_b}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_sieve'}} / <strong>{{retained_sieve_b}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_partial'}} / <strong>{{retained_partial_b}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_retained_total'}} / <strong>{{retained_total_b}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed'}} / <strong>{{passed_b}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_passed_percentage'}} / <strong>{{passed_percentage_b}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_total'}} / <strong>{{total}}</strong></p>
+                        </div>
+                        <div class="col-md-12">
+                            <p>{{_ 'field_granulometry_observations'}} / <strong>{{observations}}</strong></p>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="pull-right">
+            <a href="{{pathFor 'fieldGranulometryEdit'}}" class="btn btn-sm btn-default" title="{{_ 'field_granulometry_update_title'}}">
+                {{_ 'edit'}}
+            </a>
+        </div>
+        <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+        </button>
+    </div>
+</template>

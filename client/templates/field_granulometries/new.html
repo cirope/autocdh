@@ -1,0 +1,41 @@
+<template name="fieldGranulometryNew">
+    <div class="row text-center">
+        <h4>{{_ 'field_granulometry_title'}}</h4>
+        <h5>{{_ 'field_granulometry_subtitle'}}</h5>
+    </div>
+    <div class="row">
+        {{#autoForm collection='FieldGranulometries' id='newFieldGranulometryForm' type='method' validation='blur' meteormethod='createFieldGranulometry' doc=fieldGranulometry}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        {{_ 'field_granulometry_new'}}
+                        <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <fieldset>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{> afQuickField name='sampleResponsibleId'}}
+                            </div>
+                            <div class="col-md-6">
+                                {{> afQuickField name='fieldDate'}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                {{> afQuickField name='sampleName'}}
+                            </div>
+                            <div class="col-md-6">
+                                {{> afQuickField name='origin'}}
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary">{{_ 'field_granulometry_create'}}</button>
+            </div>
+        {{/autoForm}}
+    </div>
+</template>

@@ -39,8 +39,8 @@ var setTubeType = function (tubeType, revalidate) {
   Schemas.Crack.schema().diameter.max = diameter + 10
   Schemas.Crack.schema().height.min   = height - 10
   Schemas.Crack.schema().height.max   = height + 10
-  Schemas.Crack.schema().light.min   = light-450 > 0 ? light-450 : 0
-  Schemas.Crack.schema().light.max   = light + 450
+  Schemas.Crack.schema().light.min    = light-450 > 0 ? light-450 : 0
+  Schemas.Crack.schema().light.max    = light + 450
 
   $('[name="diameter"]').val(diameter).trigger('keyup')
   $('[name="height"]').val(height).trigger('keyup')
