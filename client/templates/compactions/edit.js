@@ -1,4 +1,3 @@
-var _realDensity = new ReactiveVar(false)
 
 var checkType = function (type) {
   var layers = -1;
@@ -24,10 +23,6 @@ var checkType = function (type) {
   } else {
     $('[name="hits"]').prop('readonly', false)
   }
-};
-
-var checkSieve = function (sieve) {
-  _realDensity.set(sieve == '4');
 };
 
 var copyValues = function (name, from, to) {
@@ -57,21 +52,40 @@ var setField = function (name, value) {
 };
 
 var calculateColumns = function () {
+  var rp = getField('retained_percentage') || 0;
+  rp = rp/100
+  var rd = getField('real_density') || 0;
+
   for(var pos = 1; pos <= 5; pos++) {
     var r = 0;
-
     var v = getField('volume_p' + pos);
     if (0 < v && getField('mold_mass_p' + pos) && getField('empty_mold_mass_p' + pos)) {
       r = (getField('mold_mass_p' + pos) - getField('empty_mold_mass_p' + pos)) / v;
-      r = r.toFixed(2)
     }
-    setField('field_density_p' + pos, r)
+    setField('field_density_p' + pos, r ? r.toFixed(2) : '')
+
+    var hp = 0;
+    var e = getField('empty_container_mass_p' + pos) || 0;
+    var d = getField('dry_container_mass_p' + pos) || 0;
+    if (0 < d-e) {
+      var w = getField('wet_container_mass_p' + pos) || 0;
+      hp = (w-d)/(d-e)*100;
+    }
+    setField('container_humidity_p' + pos, hp ? hp.toFixed(1) : '')
+
+    var dd = r * (1-hp/100)
+    setField('dry_density_p' + pos, dd.toFixed(2))
+
+    var de = 0;
+    if(rp) {
+      de = dd * (1-rp) + rp * rd
+    }
+    setField('density_p' + pos, de ? de.toFixed(2) : '')
   }
 };
 
 var calculateFields = function () {
   checkType(getField('type'));
-  checkSieve(getField('sieve'));
 
   var t2 = +getField('retained')
   if(t2){
@@ -99,19 +113,13 @@ var calculateFields = function () {
 };
 
 Template.compactionEdit.helpers({
-  showRealDensity: function () {
-    return _realDensity.get()
-  }
 })
 
 Template.compactionEdit.events({
   'change [name="type"]': function (event) {
     checkType($(event.currentTarget).val())
   },
-  'change [name="sieve"]': function (event) {
-    checkSieve($(event.currentTarget).val())
-  },
-  'change [name="through"], change [name="retained"]': function (event) {
+  'change [name="real_density"], change [name="through"], change [name="retained"]': function (event) {
     calculateFields()
   },
   'change [name="mold_code_p1"], change [name="mold_code_p2"], change [name="mold_code_p3"], change [name="mold_code_p4"], change [name="mold_code_p5"]': function (event) {
