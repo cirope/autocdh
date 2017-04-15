@@ -10,7 +10,7 @@ Template.compaction.helpers({
     },
 
     sieveName: function () {
-        return TAPi18n.__('compaction_sieve_' + this.sierve)
+        return TAPi18n.__('compaction_sieve_' + this.sieve)
     },
 })
 
