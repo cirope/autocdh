@@ -111,6 +111,11 @@ var calculateFields = function () {
   calculateColumns();
 };
 
+Template.compactionEdit.onRendered(function () {
+  checkType(getField('type'));
+});
+
+
 Template.compactionEdit.helpers({
 })
 

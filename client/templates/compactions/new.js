@@ -118,6 +118,10 @@ var calculateFields = function () {
   calculateColumns();
 };
 
+Template.compactionNew.onRendered(function () {
+  checkType(getField('type'));
+});
+
 Template.compactionNew.helpers({
 })
 
