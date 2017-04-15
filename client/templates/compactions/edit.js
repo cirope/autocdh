@@ -109,7 +109,6 @@ var calculateFields = function () {
 
   // perform calculates
   calculateColumns();
-
 };
 
 Template.compactionEdit.helpers({
@@ -148,20 +147,5 @@ Template.compactionEdit.events({
   },
   'change [name="dry_container_mass_p1"], change [name="dry_container_mass_p2"], change [name="dry_container_mass_p3"], change [name="dry_container_mass_p4"], change [name="dry_container_mass_p5"]': function (event) {
     calculateFields()
-  }/*,
-  'change [name=""], ': function (event) {
-    calculateFields()
-  },
-  'change [name=""], ': function (event) {
-    calculateFields()
-  },
-  'change [name=""], ': function (event) {
-    calculateFields()
-  },
-  'change [name=""], ': function (event) {
-    calculateFields()
-  },
-  'change [name=""], ': function (event) {
-    calculateFields()
-  }*/
+  }
 })
