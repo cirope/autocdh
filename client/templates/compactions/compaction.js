@@ -4,6 +4,14 @@ Template.compaction.helpers({
     sampleResponsible: function () {
         return this.sampleResponsibleId && Responsible.findOne(this.sampleResponsibleId).name
     },
+
+    typeName: function () {
+        return TAPi18n.__('compaction_type_' + this.type)
+    },
+
+    sieveName: function () {
+        return TAPi18n.__('compaction_sieve_' + this.sierve)
+    },
 })
 
 Template.compaction.events({

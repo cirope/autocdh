@@ -3,6 +3,110 @@
         <h4>{{_ 'compaction_title'}}</h4>
         <h5>{{_ 'compaction_subtitle'}}</h5>
     </div>
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default" style="margin-top: 5px">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							{{_ 'compaction_new'}}
+							<a class="pull-right" href="{{pathFor 'compactions'}}">{{_ 'go_back'}}</a>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<fieldset>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_name'}} / <strong>{{sampleName}}</strong></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_origin'}} / <strong>{{origin}}</strong></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_type'}} / <strong>{{typeName}}</strong></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_layers'}} / <strong>{{layers}}</strong></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+									<p>{{_ 'compaction_hits'}} / <strong>{{hits}}</strong></p>
+								</div>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										<p>{{_ 'compaction_sieve'}} / <strong>{{sieveName}}</strong></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<p>{{_ 'compaction_real_density'}} / <strong>{{real_density}}</strong></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<p>{{_ 'compaction_total_weight'}} / <strong>{{total_weight}}</strong></p>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{{_ 'compaction_separation_title'}}</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										<p>{{_ 'compaction_through'}} / <strong>{{through}}</strong></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<p>{{_ 'compaction_retained'}} / <strong>{{retained}}</strong></p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										<p>{{_ 'compaction_retained_percentage'}} / <strong>{{retained_percentage}}</strong></p>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
     <div class="row">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -14,60 +118,7 @@
             <div class="panel-body">
                 <fieldset>
                     <div class="row">
-                        <div class="col-md-6">
-                            <p>{{_ 'compaction_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
-                        </div>
                         <div class="col-md-12">
-                            <p>{{_ 'compaction_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_name'}} / <strong>{{sampleName}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_origin'}} / <strong>{{origin}}</strong></p>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    {{_ 'compaction_title'}}
-                    <a class="pull-right" href="{{pathFor 'compactions'}}">{{_ 'go_back'}}</a>
-                </h3>
-            </div>
-            <div class="panel-body">
-                <fieldset>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_type'}} / <strong>{{type}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_layers'}} / <strong>{{layers}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_hits'}} / <strong>{{hits}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_sieve'}} / <strong>{{sieve}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_real_density'}} / <strong>{{real_density}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_total_weight'}} / <strong>{{total_weight}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_through'}} / <strong>{{through}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_retained'}} / <strong>{{retained}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'compaction_retained_percentage'}} / <strong>{{retained_percentage}}</strong></p>
                         </div>
                         <div class="col-md-12">
                             <p>{{_ 'compaction_mold_code'}} / <strong>{{mold_code_p1}}</strong></p>
