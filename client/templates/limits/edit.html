@@ -35,7 +35,6 @@
 					</div>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">
@@ -106,105 +105,102 @@
 					</div>
 				</div>
 			</div>
-
-
-
-
-
-
-
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						{{_ 'limit_update_title'}}
-						<a class="pull-right" href="{{pathFor 'limits'}}">{{_ 'go_back'}}</a>
-					</h3>
-				</div>
-				<div class="panel-body">
-					<fieldset>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_code_d1'}}
-							</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{{_ 'limit_plastic_title'}}</h3>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_empty_mass_d1'}}
-							</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="table-responsive">
+									<table class="table table-condensed table-hover table-no-margin">
+										<thead>
+										<tr>
+											<th class="col-md-3">{{_ 'limit_steps'}}</th>
+											<th class="col-md-1">&nbsp;</th>
+											<th style="text-align: center">{{_ 'limit_determination_1'}}</th>
+											<th style="text-align: center">{{_ 'limit_determination_2'}}</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<th>{{_ 'limit_plastic_code'}}</th>
+											<th style="text-align: center">N°</th>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_code_d1'}} has-error{{/if}}">{{> afFieldInput name='plastic_code_d1'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_code_d2'}} has-error{{/if}}">{{> afFieldInput name='plastic_code_d2'}}</div></td>
+										</tr>
+										<tr>
+											<th>{{_ 'limit_plastic_empty_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_empty_mass_d1'}} has-error{{/if}}">{{> afFieldInput name='plastic_empty_mass_d1'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_empty_mass_d2'}} has-error{{/if}}">{{> afFieldInput name='plastic_empty_mass_d2'}}</div></td>
+										</tr>
+										<tr>
+											<th>{{_ 'limit_plastic_wet_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_wet_mass_d1'}} has-error{{/if}}">{{> afFieldInput name='plastic_wet_mass_d1'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_wet_mass_d2'}} has-error{{/if}}">{{> afFieldInput name='plastic_wet_mass_d2'}}</div></td>
+										</tr>
+										<tr>
+											<th>{{_ 'limit_plastic_dry_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_dry_mass_d1'}} has-error{{/if}}">{{> afFieldInput name='plastic_dry_mass_d1'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_dry_mass_d2'}} has-error{{/if}}">{{> afFieldInput name='plastic_dry_mass_d2'}}</div></td>
+										</tr>
+										<tr>
+											<th>{{_ 'limit_plastic_humidity'}}</th>
+											<th style="text-align: center">%</th>
+											<td>{{> afFieldInput name='plastic_humidity_d1'}}</td>
+											<td>{{> afFieldInput name='plastic_humidity_d2'}}</td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+							</fieldset>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_wet_mass_d1'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_dry_mass_d1'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_humidity_d1'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_code_d2'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_empty_mass_d2'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_wet_mass_d2'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_dry_mass_d2'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_humidity_d2'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='liquid'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='plastic_index'}}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> afQuickField name='observations'}}
-							</div>
-						</div>
-					</fieldset>
+					</div>
 				</div>
 			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3 class="panel-title">
-						{{_ 'limit_update_title'}}
-						<a class="pull-right" href="{{pathFor 'limits'}}">{{_ 'go_back'}}</a>
-					</h3>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								{{_ 'limit_indexes_title'}}
+							</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-4">
+										{{> afQuickField name='liquid'}}
+									</div>
+									<div class="col-md-4">
+										{{> afQuickField name='plastic'}}
+									</div>
+									<div class="col-md-4">
+										{{> afQuickField name='plastic_index'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
 				</div>
-				<div class="panel-body">
-					<fieldset>
-					</fieldset>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										{{> afQuickField name='observations'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class="pull-right">
