@@ -111,6 +111,48 @@ var calculateFields = function () {
 	var total = p76 + p63 + p51 + p38 + p25 + p19 + p95 + p48 + p20 + p04 + p02 + p01 + p00 + pbb
 	setField('total', total ? total.toFixed(0) : '');
 
+	var ps76 = total - p76
+	setField('passed_76', ps76 ? ps76.toFixed(0) : '');
+
+	var ps63 = total - p63
+	setField('passed_63', ps63 ? ps63.toFixed(0) : '');
+
+	var ps51 = total - p51
+	setField('passed_51', ps51 ? ps51.toFixed(0) : '');
+
+	var ps38 = total - p38
+	setField('passed_38', ps38 ? ps38.toFixed(0) : '');
+
+	var ps25 = total - p25
+	setField('passed_25', ps25 ? ps25.toFixed(0) : '');
+
+	var ps19 = total - p19
+	setField('passed_19', ps19 ? ps19.toFixed(0) : '');
+
+	var ps95 = total - p95
+	setField('passed_95', ps95 ? ps95.toFixed(0) : '');
+
+	var ps48 = total - p48
+	setField('passed_48', ps48 ? ps48.toFixed(0) : '');
+
+	var ps20 = total - p20
+	setField('passed_20', ps20 ? ps20.toFixed(0) : '');
+
+	var ps04 = total - p04
+	setField('passed_04', ps04 ? ps04.toFixed(0) : '');
+
+	var ps02 = total - p02
+	setField('passed_02', ps02 ? ps02.toFixed(0) : '');
+
+	var ps01 = total - p01
+	setField('passed_01', ps01 ? ps01.toFixed(0) : '');
+
+	var ps00 = total - p00
+	setField('passed_00', ps00 ? ps00.toFixed(0) : '');
+
+	var psbb = total - pbb
+	setField('passed_b', psbb ? psbb.toFixed(0) : '');
+
 };
 
 Template.fieldGranulometryEdit.onRendered(function () {
