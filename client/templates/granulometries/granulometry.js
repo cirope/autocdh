@@ -37,8 +37,6 @@ var limitCurves = {
 }
 
 /*
-
-
  Tamiz 2" (51 mm): 100% (Curvas A y B)
  Tamiz 1 1/2" (38 mm): 90% (Curva A) - 100% (Curva B)
  Tamiz 1" (25 mm): 20% (Curva A) - 55% (Curva B)

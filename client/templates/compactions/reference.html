@@ -1,0 +1,23 @@
+<template name="compactionReference">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{_ 'graphic_references'}}</h3>
+    </div>
+    <div class="panel-body">
+      <div class="ct-chart ct-slim">
+        <svg width="100%" height="120px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <g class="ct-labels">
+            <foreignObject x="100" y="10" width="200" height="25">
+              <span class="ct-label ct-vertical text-left" xmlns="http://www.w3.org/1999/xhtml">
+                {{_ 'compaction'}}
+              </span>
+            </foreignObject>
+          </g>
+          <g class="ct-series ct-series-a only-line">
+            <line class="ct-line" x1="10" y1="20" x2="75" y2="20" />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</template>
