@@ -1,156 +1,190 @@
 <template name="limit">
-    <div class="row text-center">
-        <h4>{{_ 'limit_title'}}</h4>
-        <h5>{{_ 'limit_subtitle'}}</h5>
-    </div>
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    {{_ 'limit_title'}}
-                    <a class="pull-right" href="{{pathFor 'limits'}}">{{_ 'go_back'}}</a>
-                </h3>
-            </div>
-            <div class="panel-body">
-                <fieldset>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>{{_ 'limit_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_name'}} / <strong>{{sampleName}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_origin'}} / <strong>{{origin}}</strong></p>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">
-                    {{_ 'limit_title'}}
-                    <a class="pull-right" href="{{pathFor 'limits'}}">{{_ 'go_back'}}</a>
-                </h3>
-            </div>
-            <div class="panel-body">
-                <fieldset>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_hits'}} / <strong>{{liquid_hits_p1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_code'}} / <strong>{{liquid_code_p1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_empty_mass'}} / <strong>{{liquid_empty_mass_p1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_wet_mass'}} / <strong>{{liquid_wet_mass_p1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_dry_mass'}} / <strong>{{liquid_dry_mass_p1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_humidity'}} / <strong>{{liquid_humidity_p1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_hits'}} / <strong>{{liquid_hits_p2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_code'}} / <strong>{{liquid_code_p2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_empty_mass'}} / <strong>{{liquid_empty_mass_p2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_wet_mass'}} / <strong>{{liquid_wet_mass_p2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_dry_mass'}} / <strong>{{liquid_dry_mass_p2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_humidity'}} / <strong>{{liquid_humidity_p2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_hits'}} / <strong>{{liquid_hits_p3}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_code'}} / <strong>{{liquid_code_p3}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_empty_mass'}} / <strong>{{liquid_empty_mass_p3}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_wet_mass'}} / <strong>{{liquid_wet_mass_p3}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_dry_mass'}} / <strong>{{liquid_dry_mass_p3}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid_humidity'}} / <strong>{{liquid_humidity_p3}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_code'}} / <strong>{{plastic_code_d1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_empty_mass'}} / <strong>{{plastic_empty_mass_d1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_wet_mass'}} / <strong>{{plastic_wet_mass_d1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_dry_mass'}} / <strong>{{plastic_dry_mass_d1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_humidity'}} / <strong>{{plastic_humidity_d1}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_code'}} / <strong>{{plastic_code_d2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_empty_mass'}} / <strong>{{plastic_empty_mass_d2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_wet_mass'}} / <strong>{{plastic_wet_mass_d2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_dry_mass'}} / <strong>{{plastic_dry_mass_d2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_humidity'}} / <strong>{{plastic_humidity_d2}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_liquid'}} / <strong>{{liquid}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic'}} / <strong>{{plastic}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_plastic_index'}} / <strong>{{plastic_index}}</strong></p>
-                        </div>
-                        <div class="col-md-12">
-                            <p>{{_ 'limit_observations'}} / <strong>{{observations}}</strong></p>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="pull-right">
-            <a href="{{pathFor 'limitEdit'}}" class="btn btn-sm btn-default" title="{{_ 'limit_update_title'}}">
-                {{_ 'edit'}}
-            </a>
-        </div>
-        <button class="btn btn-sm btn-danger" type="button" data-delete>
-            {{_ 'delete'}}
-        </button>
-    </div>
+	<div class="row text-center">
+		<h4>{{_ 'limit_title'}}</h4>
+		<h5>{{_ 'limit_subtitle'}}</h5>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'limit_title'}}
+						<a class="pull-right" href="{{pathFor 'limits'}}">{{_ 'go_back'}}</a>
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="row">
+							<div class="col-md-6">
+								<p>{{_ 'limit_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
+							</div>
+							<div class="col-md-6">
+								<p>{{_ 'limit_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<p>{{_ 'limit_name'}} / <strong>{{sampleName}}</strong></p>
+							</div>
+							<div class="col-md-6">
+								<p>{{_ 'limit_origin'}} / <strong>{{origin}}</strong></p>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{_ 'limit_liquid_title'}}</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<thead>
+								<tr>
+									<th class="col-md-3">{{_ 'limit_steps'}}</th>
+									<th class="col-md-1">&nbsp;</th>
+									<th>{{_ 'limit_point_1'}}</th>
+									<th>{{_ 'limit_point_2'}}</th>
+									<th>{{_ 'limit_point_3'}}</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<th>{{_ 'limit_liquid_hits'}}</th>
+									<th style="text-align: center">N°</th>
+									<td>{{liquid_hits_p1}}</td>
+									<td>{{liquid_hits_p2}}</td>
+									<td>{{liquid_hits_p3}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_liquid_code'}}</th>
+									<th style="text-align: center">&nbsp;</th>
+									<td>{{liquid_code_p1}}</td>
+									<td>{{liquid_code_p2}}</td>
+									<td>{{liquid_code_p3}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_liquid_empty_mass'}}</th>
+									<th style="text-align: center">g</th>
+									<td>{{liquid_empty_mass_p1}}</td>
+									<td>{{liquid_empty_mass_p2}}</td>
+									<td>{{liquid_empty_mass_p3}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_liquid_wet_mass'}}</th>
+									<th style="text-align: center">g</th>
+									<td>{{liquid_wet_mass_p1}}</td>
+									<td>{{liquid_wet_mass_p2}}</td>
+									<td>{{liquid_wet_mass_p3}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_liquid_dry_mass'}}</th>
+									<th style="text-align: center">g</th>
+									<td>{{liquid_dry_mass_p1}}</td>
+									<td>{{liquid_dry_mass_p2}}</td>
+									<td>{{liquid_dry_mass_p3}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_liquid_humidity'}}</th>
+									<th style="text-align: center">%</th>
+									<td><strong>{{liquid_humidity_p1}}</strong></td>
+									<td><strong>{{liquid_humidity_p2}}</strong></td>
+									<td><strong>{{liquid_humidity_p3}}</strong></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">{{_ 'limit_plastic_title'}}</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<thead>
+								<tr>
+									<th class="col-md-3">{{_ 'limit_steps'}}</th>
+									<th class="col-md-1">&nbsp;</th>
+									<th>{{_ 'limit_determination_1'}}</th>
+									<th>{{_ 'limit_determination_2'}}</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<th>{{_ 'limit_plastic_code'}}</th>
+									<th style="text-align: center">N°</th>
+									<td>{{plastic_code_d1}}</td>
+									<td>{{plastic_code_d2}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_plastic_empty_mass'}}</th>
+									<th style="text-align: center">g</th>
+									<td>{{plastic_empty_mass_d1}}</td>
+									<td>{{plastic_empty_mass_d2}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_plastic_wet_mass'}}</th>
+									<th style="text-align: center">g</th>
+									<td>{{plastic_wet_mass_d1}}</td>
+									<td>{{plastic_wet_mass_d2}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_plastic_dry_mass'}}</th>
+									<th style="text-align: center">g</th>
+									<td>{{plastic_dry_mass_d1}}</td>
+									<td>{{plastic_dry_mass_d2}}</td>
+								</tr>
+								<tr>
+									<th>{{_ 'limit_plastic_humidity'}}</th>
+									<th style="text-align: center">%</th>
+									<td><strong>{{plastic_humidity_d1}}</strong></td>
+									<td><strong>{{plastic_humidity_d2}}</strong></td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<fieldset>
+						<div class="row">
+							<div class="col-md-12">
+								<p>{{_ 'limit_observations'}} / <strong>{{observations}}</strong></p>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="pull-right">
+			<a href="{{pathFor 'limitEdit'}}" class="btn btn-sm btn-default" title="{{_ 'limit_update_title'}}">
+				{{_ 'edit'}}
+			</a>
+		</div>
+		<button class="btn btn-sm btn-danger" type="button" data-delete>
+			{{_ 'delete'}}
+		</button>
+	</div>
 </template>

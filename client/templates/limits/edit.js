@@ -1,7 +1,4 @@
 
-
-
-
 var getField = function (name) {
 	return $('[name="' + name + '"]').val()
 };
