@@ -108,6 +108,9 @@ var calculateFields = function () {
 	var tbb = pbb + t00;
 	setField('retained_total_b', tbb ? tbb.toFixed(0) : '');
 
+	var total = t76 + t63 + t51 + t38 + t25 + t19 + t95 + t48 + t20 + t04 + t02 + t01 + t00 + tb
+	setField('total', total ? total.toFixed(0) : '');
+
 };
 
 Template.fieldGranulometryEdit.onRendered(function () {
