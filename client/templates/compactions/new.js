@@ -54,28 +54,31 @@ var getField = function (name) {
   return $('[name="' + name + '"]').val()
 };
 
+var getFloat = function (name) {
+  return parseFloat(getField(name) || 0)
+};
+
 var setField = function (name, value) {
   $('[name="'+name+'"]').val(value)
 };
 
 var calculateColumns = function () {
-  var rp = getField('retained_percentage') || 0;
-  rp = rp/100
-  var rd = getField('real_density') || 0;
+  var rp = getFloat('retained_percentage')/100;
+  var rd = getFloat('real_density');
 
   for(var pos = 1; pos <= 5; pos++) {
     var r = 0;
-    var v = getField('volume_p' + pos);
+    var v = getFloat('volume_p' + pos);
     if (0 < v && getField('mold_mass_p' + pos) && getField('empty_mold_mass_p' + pos)) {
-      r = (getField('mold_mass_p' + pos) - getField('empty_mold_mass_p' + pos)) / v;
+      r = (getFloat('mold_mass_p' + pos) - getFloat('empty_mold_mass_p' + pos)) / v;
     }
     setField('field_density_p' + pos, r ? r.toFixed(2) : '')
 
     var hp = 0;
-    var e = getField('empty_container_mass_p' + pos) || 0;
-    var d = getField('dry_container_mass_p' + pos) || 0;
+    var e = getFloat('empty_container_mass_p' + pos);
+    var d = getFloat('dry_container_mass_p' + pos);
     if (0 < d-e) {
-      var w = getField('wet_container_mass_p' + pos) || 0;
+      var w = getFloat('wet_container_mass_p' + pos);
       hp = (w-d)/(d-e)*100;
     }
     setField('container_humidity_p' + pos, hp ? hp.toFixed(1) : '')
@@ -94,18 +97,18 @@ var calculateColumns = function () {
 var calculateFields = function () {
   checkType(getField('type'));
 
-  var t2 = +getField('retained')
+  var t2 = getFloat('retained')
   if(t2){
-    var t1 = +getField('through')
+    var t1 = getFloat('through')
     if(!t1){
       t1 = 0;
     }
 
-    var r = t2*100/(t2+t1);
-    r = r.toFixed(0)
-    setField('retained_percentage', r)
+    var rp = t2*100/(t2+t1);
+    rp = r.toFixed(0)
+    setField('retained_percentage', rp)
   } else {
-    getField('retained_percentage', 0)
+    setField('retained_percentage', 0)
   }
 
   // copy values to next point
