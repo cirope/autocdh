@@ -108,7 +108,7 @@ var calculateFields = function () {
 	var tbb = pbb + t00;
 	setField('retained_total_b', tbb ? tbb.toFixed(0) : '');
 
-	var total = t76 + t63 + t51 + t38 + t25 + t19 + t95 + t48 + t20 + t04 + t02 + t01 + t00 + tb
+	var total = p76 + p63 + p51 + p38 + p25 + p19 + p95 + p48 + p20 + p04 + p02 + p01 + p00 + pbb
 	setField('total', total ? total.toFixed(0) : '');
 
 };
