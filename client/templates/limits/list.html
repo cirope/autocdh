@@ -24,6 +24,7 @@
         <thead>
         <tr>
             <th>{{_ 'limit_name'}}</th>
+						<th>{{_ 'limit_origin'}}</th>
             <th>{{_ 'limit_date'}}</th>
             <th class="text-right">
                 <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
@@ -39,6 +40,9 @@
             <td class="form-group form-group-sm">
                 <input class="form-control" type="text" name="sampleName" id="sampleName">
             </td>
+						<td class="form-group form-group-sm">
+								<input class="form-control" type="text" name="origin" id="origin">
+						</td>
             <td class="form-group form-group-sm">
                 <input class="form-control" type="text" name="fieldDate" id="fieldDate">
             </td>
@@ -53,6 +57,7 @@
         {{#each limits}}
             <tr class="visible-on-hover-parent">
                 <td><a href="{{pathFor 'limit'}}">{{sampleName}}</a></td>
+								<td><a href="{{pathFor 'limit'}}">{{origin}}</a></td>
                 <td><a href="{{pathFor 'limit'}}">{{l fieldDate 'L'}}</a></td>
                 <td class="text-right">
                     <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'limitEdit'}}" title="{{_ 'edit'}}">

@@ -9,7 +9,13 @@ Template.fieldGranulometriesList.helpers({
 
 Template.fieldGranulometriesList.events({
   'click [data-action="search"]': function (event, template) {
-    var search = {}
+    var fieldDateRange = DateRangeHelper.getRange(template.$('#fieldDate'))
+
+    var search = {
+      sampleName: template.$('#sampleName').val(),
+      origin:     template.$('#origin').val(),
+      fieldDate:  fieldDateRange && fieldDateRange.join('|')
+    }
 
     Router.go('fieldGranulometries', {}, { query: search })
   },
@@ -20,6 +26,10 @@ Template.fieldGranulometriesList.events({
 
   'shown.bs.collapse': function (event, template) {
     template.$('input:first').focus()
+
+    template.$('#fieldDate').
+    daterangepicker(DateRangeHelper.filterOptions()).
+    daterangepickerFilterEvents()
 
     template.$('[data-search-clean]').removeClass('hidden')
     template.$('[data-search]').addClass('hidden')
