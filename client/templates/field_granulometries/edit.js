@@ -111,47 +111,75 @@ var calculateFields = function () {
 	var total = p76 + p63 + p51 + p38 + p25 + p19 + p95 + p48 + p20 + p04 + p02 + p01 + p00 + pbb
 	setField('total', total ? total.toFixed(0) : '');
 
-	var ps76 = total - p76
+	var ps76 = total - t76
 	setField('passed_76', ps76 ? ps76.toFixed(0) : '');
+	var po76 = ps76/total*100
+	setField('passed_percentage_76', po76 ? po76.toFixed(0) : '');
 
-	var ps63 = total - p63
+	var ps63 = total - t63
 	setField('passed_63', ps63 ? ps63.toFixed(0) : '');
+	var po63 = ps63/total*100
+	setField('passed_percentage_63', po63 ? po63.toFixed(0) : '');
 
-	var ps51 = total - p51
+	var ps51 = total - t51
 	setField('passed_51', ps51 ? ps51.toFixed(0) : '');
+	var po51 = ps51/total*100
+	setField('passed_percentage_51', po51 ? po51.toFixed(0) : '');
 
-	var ps38 = total - p38
+	var ps38 = total - t38
 	setField('passed_38', ps38 ? ps38.toFixed(0) : '');
+	var po38 = ps38/total*100
+	setField('passed_percentage_38', po38 ? po38.toFixed(0) : '');
 
-	var ps25 = total - p25
+	var ps25 = total - t25
 	setField('passed_25', ps25 ? ps25.toFixed(0) : '');
+	var po25 = ps25/total*100
+	setField('passed_percentage_25', po25 ? po25.toFixed(0) : '');
 
-	var ps19 = total - p19
+	var ps19 = total - t19
 	setField('passed_19', ps19 ? ps19.toFixed(0) : '');
+	var po19 = ps19/total*100
+	setField('passed_percentage_19', po19 ? po19.toFixed(0) : '');
 
-	var ps95 = total - p95
+	var ps95 = total - t95
 	setField('passed_95', ps95 ? ps95.toFixed(0) : '');
+	var po95 = ps95/total*100
+	setField('passed_percentage_95', po95 ? po95.toFixed(0) : '');
 
-	var ps48 = total - p48
+	var ps48 = total - t48
 	setField('passed_48', ps48 ? ps48.toFixed(0) : '');
+	var po48 = ps48/total*100
+	setField('passed_percentage_48', po48 ? po48.toFixed(0) : '');
 
-	var ps20 = total - p20
+	var ps20 = total - t20
 	setField('passed_20', ps20 ? ps20.toFixed(0) : '');
+	var po20 = ps20/total*100
+	setField('passed_percentage_20', po20 ? po20.toFixed(0) : '');
 
-	var ps04 = total - p04
+	var ps04 = total - t04
 	setField('passed_04', ps04 ? ps04.toFixed(0) : '');
+	var po04 = ps04/total*100
+	setField('passed_percentage_04', po04 ? po04.toFixed(0) : '');
 
-	var ps02 = total - p02
+	var ps02 = total - t02
 	setField('passed_02', ps02 ? ps02.toFixed(0) : '');
+	var po02 = ps02/total*100
+	setField('passed_percentage_02', po02 ? po02.toFixed(0) : '');
 
-	var ps01 = total - p01
+	var ps01 = total - t01
 	setField('passed_01', ps01 ? ps01.toFixed(0) : '');
+	var po01 = ps01/total*100
+	setField('passed_percentage_01', po01 ? po01.toFixed(0) : '');
 
-	var ps00 = total - p00
+	var ps00 = total - t00
 	setField('passed_00', ps00 ? ps00.toFixed(0) : '');
+	var po00 = ps00/total*100
+	setField('passed_percentage_00', po00 ? po00.toFixed(0) : '');
 
-	var psbb = total - pbb
+	var psbb = total - tbb
 	setField('passed_b', psbb ? psbb.toFixed(0) : '');
+	var pobb = psbb/total*100
+	setField('passed_percentage_b', pobb ? pobb.toFixed(0) : '');
 
 };
 
