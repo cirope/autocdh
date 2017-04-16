@@ -1,532 +1,349 @@
 <template name="fieldGranulometryNew">
-    <div class="row text-center">
-        <h4>{{_ 'field_granulometry_title'}}</h4>
-        <h5>{{_ 'field_granulometry_subtitle'}}</h5>
-    </div>
-    <div class="row">
-        {{#autoForm collection='FieldGranulometries' id='newFieldGranulometryForm' type='method' validation='blur' meteormethod='createFieldGranulometry' doc=fieldGranulometry}}
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h3 class="panel-title">
-                        {{_ 'field_granulometry_new'}}
-                        <a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
-                    </h3>
-                </div>
-                <div class="panel-body">
-                    <fieldset>
-                        <div class="row">
-                            <div class="col-md-6">
-                                {{> afQuickField name='sampleResponsibleId'}}
-                            </div>
-                            <div class="col-md-6">
-                                {{> afQuickField name='fieldDate'}}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                {{> afQuickField name='sampleName'}}
-                            </div>
-                            <div class="col-md-6">
-                                {{> afQuickField name='origin'}}
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
+	<div class="row text-center">
+		<h4>{{_ 'field_granulometry_title'}}</h4>
+		<h5>{{_ 'field_granulometry_subtitle'}}</h5>
+	</div>
+	<div class="row">
+		{{#autoForm collection='FieldGranulometries' id='newFieldGranulometryForm' type='method' validation='blur' meteormethod='createFieldGranulometry' doc=fieldGranulometry}}
+			<div class="row">
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								{{_ 'field_granulometry_update_title'}}
+								{{_ 'field_granulometry_new'}}
 								<a class="pull-right" href="{{pathFor 'fieldGranulometries'}}">{{_ 'go_back'}}</a>
 							</h3>
 						</div>
 						<div class="panel-body">
 							<fieldset>
 								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sampling'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='humidity_code'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='humidity_empty_mass'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='humidity_wet'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='humidity_dry'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='humidity_percentage'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='thin_code'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='thin_empty_mass'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='thin_before'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='thin_after'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='thin_percentage'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='weight'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_76'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_76'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_76'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_76'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_76'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_76'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_63'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_63'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_63'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_63'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_63'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_63'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_51'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_51'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_51'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_51'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_51'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_51'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_38'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_38'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_38'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_38'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_38'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_38'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_25'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_25'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_25'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_25'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_25'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_25'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_19'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_19'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_19'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_19'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_19'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_19'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_95'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_95'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_95'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_95'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_95'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_95'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_48'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_48'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_48'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_48'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_48'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_48'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_20'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_20'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_20'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_20'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_20'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_20'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_04'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_04'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_04'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_04'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_04'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_04'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_02'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_02'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_02'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_02'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_02'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_02'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_01'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_01'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_01'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_01'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_01'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_01'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_00'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_00'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_00'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_00'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_00'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_00'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='sieve_weight_b'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_sieve_b'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_partial_b'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='retained_total_b'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_b'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='passed_percentage_b'}}
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='total'}}
-									</div>
-								</div>
+									<div class="col-md-3">
+										{{> afQuickField name='sampleResponsibleId'}}
+									</div>
+									<div class="col-md-3">
+										{{> afQuickField name='fieldDate'}}
+									</div>
+									<div class="col-md-3">
+										{{> afQuickField name='sampleName'}}
+									</div>
+									<div class="col-md-3">
+										{{> afQuickField name='origin'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+
+							<div class="row">
+								<div class="col-md-4">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												{{_ 'field_granulometry_sampling_title'}}
+											</h3>
+										</div>
+										<div class="panel-body">
+											<fieldset>
+												<div class="row">
+													<div class="col-md-12">
+														{{> afQuickField name='sampling'}}
+													</div>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												{{_ 'field_granulometry_humidity_title'}}
+											</h3>
+										</div>
+										<div class="panel-body">
+											<fieldset>
+												<div class="table-responsive">
+													<table class="table table-condensed table-hover table-no-margin">
+														<tbody>
+														<tr>
+															<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_code'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='humidity_code' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_empty_mass'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='humidity_empty_mass' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-3" rowspan="2">{{_ 'field_granulometry_humidity_mass'}}</th>
+															<th class="col-md-4">{{_ 'field_granulometry_humidity_wet'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='humidity_wet' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-4">{{_ 'field_granulometry_humidity_dry'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='humidity_dry' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_percentage'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='humidity_percentage' label=false}}</td>
+														</tr>
+														</tbody>
+													</table>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												{{_ 'field_granulometry_thin_title'}}
+											</h3>
+										</div>
+										<div class="panel-body">
+											<fieldset>
+												<div class="table-responsive">
+													<table class="table table-condensed table-hover table-no-margin">
+														<tbody>
+														<tr>
+															<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_code'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='thin_code' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_empty_mass'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='thin_empty_mass' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-3" rowspan="2">{{_ 'field_granulometry_thin_mass'}}</th>
+															<th class="col-md-4">{{_ 'field_granulometry_thin_before'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='thin_before' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-4">{{_ 'field_granulometry_thin_after'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='thin_after' label=false}}</td>
+														</tr>
+														<tr>
+															<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_percentage'}}</th>
+															<td class="col-md-5">{{> afFormGroup name='thin_percentage' label=false}}</td>
+														</tr>
+														</tbody>
+													</table>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-md-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												{{_ 'field_granulometry_analysis_title'}}
+											</h3>
+										</div>
+										<div class="panel-body">
+											<fieldset>
+												<div class="row">
+													<div class="col-md-4">
+														{{> afQuickField name='weight'}}
+													</div>
+												</div>
+												<div class="row">
+													<div class="table-responsive">
+														<table class="table table-condensed table-hover table-no-margin">
+															<tbody>
+															<tr>
+																<th style="text-align: center" colspan="3">{{_ 'field_granulometry_sieve'}}</th>
+																<th style="text-align: center" colspan="3">{{_ 'field_granulometry_retained'}}</th>
+																<th class="col-md-1" style="text-align: center" rowspan="2">{{_ 'field_granulometry_passed'}}</th>
+																<th class="col-md-1" style="text-align: center" rowspan="2">{{_ 'field_granulometry_passed_percentage'}}</th>
+															</tr>
+															<tr>
+																<th class="col-md-1" style="text-align: center">{{_ 'field_granulometry_sieve_mm'}}</th>
+																<th class="col-md-1" style="text-align: center">{{_ 'field_granulometry_sieve_inches'}}</th>
+																<th class="col-md-2" style="text-align: center">{{_ 'field_granulometry_sieve_weight'}}</th>
+																<th class="col-md-2" style="text-align: center">{{_ 'field_granulometry_retained_sieve'}}</th>
+																<th class="col-md-2" style="text-align: center">{{_ 'field_granulometry_retained_partial'}}</th>
+																<th class="col-md-2" style="text-align: center">{{_ 'field_granulometry_retained_total'}}</th>
+															</tr>
+															<tr>
+																<th style="text-align: center">76</th>
+																<th style="text-align: center">3</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_76'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_76'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_76'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_76'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_76'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_76'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_76'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_76'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">63</th>
+																<th style="text-align: center">2 1/2</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_63'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_63'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_63'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_63'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_63'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_63'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_63'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_63'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">51</th>
+																<th style="text-align: center">2</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_51'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_51'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_51'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_51'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_51'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_51'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_51'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_51'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">38</th>
+																<th style="text-align: center">1 1/2</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_38'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_38'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_38'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_38'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_38'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_38'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_38'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_38'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">25</th>
+																<th style="text-align: center">1</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_25'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_25'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_25'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_25'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_25'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_25'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_25'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_25'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">19</th>
+																<th style="text-align: center">3/4</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_19'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_19'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_19'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_19'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_19'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_19'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_19'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_19'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">9.5</th>
+																<th style="text-align: center">3/8</th>
+																<td style="text-align: center">-</td>
+																<td style="text-align: center">-</td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_95'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_95'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_95'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_95'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_95'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_95'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_95'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_95'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">4.8</th>
+																<th style="text-align: center">#4</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_48'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_48'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_48'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_48'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_48'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_48'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">2.0</th>
+																<th style="text-align: center">#10</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_20'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_20'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_20'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_20'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_20'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_20'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">0.420</th>
+																<th style="text-align: center">#40</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_04'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_04'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_04'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_04'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_04'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_04'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">0.250</th>
+																<th style="text-align: center">#60</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_02'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_02'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_02'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_02'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_02'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_02'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_02'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_02'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_02'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_02'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_02'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_02'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">0.149</th>
+																<th style="text-align: center">#100</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_01'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_01'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_01'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_01'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_01'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_01'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">0.075</th>
+																<th style="text-align: center">#200</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_00'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_00'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_00'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_00'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_00'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_00'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_00'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_00'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_00'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_00'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_00'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_00'}}</div></td>
+															</tr>
+															<tr>
+																<th style="text-align: center">{{_ 'field_granulometry_background'}}</th>
+																<th style="text-align: center">{{_ 'field_granulometry_pass_200'}}</th>
+																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_b'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_b'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_b'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_b'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_b'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_b'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_b'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_b'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_b'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_b'}}</div></td>
+																<td><div class="form-group{{#if afFieldIsInvalid name='passed_percentage_b'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_percentage_b'}}</div></td>
+															</tr>
+															<tr>
+																<td>&nbsp;</td>
+																<td>&nbsp;</td>
+																<td>&nbsp;</td>
+																<th style="text-align: right">{{_ 'field_granulometry_total'}}</th>
+																<td>{{> afFormGroup name='total' label=false}}</td>
+																<td>&nbsp;</td>
+																<td>&nbsp;</td>
+																<td>&nbsp;</td>
+															</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<fieldset>
 								<div class="row">
 									<div class="col-md-12">
 										{{> afQuickField name='observations'}}
@@ -535,9 +352,11 @@
 							</fieldset>
 						</div>
 					</div>
-            <div class="pull-right">
-                <button type="submit" class="btn btn-primary">{{_ 'field_granulometry_create'}}</button>
-            </div>
-        {{/autoForm}}
-    </div>
+				</div>
+			</div>
+			<div class="pull-right">
+				<button type="submit" class="btn btn-primary">{{_ 'field_granulometry_create'}}</button>
+			</div>
+		{{/autoForm}}
+	</div>
 </template>
