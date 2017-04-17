@@ -332,28 +332,31 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="pull-right">
-			<a href="{{pathFor 'compactionEdit'}}" class="btn btn-sm btn-default" title="{{_ 'compaction_update_title'}}">
-				{{_ 'edit'}}
-			</a>
+		<div class="col-md-12">
+			<div class="pull-right">
+				<a href="{{pathFor 'compactionEdit'}}" class="btn btn-sm btn-default" title="{{_ 'compaction_update_title'}}">
+					{{_ 'edit'}}
+				</a>
+			</div>
+			<button class="btn btn-sm btn-danger" type="button" data-delete>
+				{{_ 'delete'}}
+			</button>
 		</div>
-		<button class="btn btn-sm btn-danger" type="button" data-delete>
-			{{_ 'delete'}}
-		</button>
 	</div>
-
-	<div class="row">
-		<div class="show-on-pdf-export" data-graph-container>
-			<div class="row">
-				<div class="col-md-8">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<div class="ct-chart ct-golden-section ct-compaction"></div>
+	<div class="row" style="margin-top: 10px;">
+		<div class="col-md-12">
+			<div class="show-on-pdf-export" data-graph-container>
+				<div class="row">
+					<div class="col-md-9">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="ct-chart ct-golden-section ct-compaction"></div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-md-4">
-					{{> compactionReference}}
+					<div class="col-md-3">
+						{{> compactionReference}}
+					</div>
 				</div>
 			</div>
 		</div>
