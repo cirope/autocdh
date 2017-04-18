@@ -1,100 +1,112 @@
-var tests = [
-    { sieve: '76 mm | 3″' },
-    { sieve: '63 mm | 2 ½″' },
-    { sieve: '51 mm | 2″' },
-    { sieve: '38 mm | 1 ½″' },
-    { sieve: '25 mm | 1' },
-    { sieve: '19 mm | 3/4″' },
-    { sieve: '13 mm | 1/2″' },
-    { sieve: '9.5 mm | 3/8″' },
-    { sieve: '4.8 mm | # 4' },
-    { sieve: '2.4 mm | # 8' },
-    { sieve: '1.2 mm | # 16' },
-    { sieve: '0.59 mm | # 30' },
-    { sieve: '0.297 mm | # 50' },
-    { sieve: '0.149 mm | # 100' },
-    { sieve: 'Fondo | Pasa # 100' }
-]
 
-var graphLabels = function () {
-    var seedLabels = _.pluck(tests, 'sieve').slice(0, -1).reverse()
-
-    _.each([1, 3, 5, 7, 9, 11], function (i) {
-        seedLabels.splice(i, 0, '')
-    })
-
-    seedLabels.splice(18, 1)
-
-    return seedLabels
-}
-
-var graphData = function () {
-    var seedData = this.chartData.get().slice(0, -1).reverse()
-    var series   = []
-
-    series.push({
-        data:      seedData,
-        className: 'ct-series ct-series-a only-line',
-    })
-
-    return series
-}
-
-var updateChart = function () {
-    var data = {
-        labels: graphLabels.apply(this),
-        series: graphData.apply(this)
-    }
-
+var updateChart = function (data) {
     setTimeout(function () {
-        new Chartist.Line('.ct-chart.ct-compaction', data, {
-            lineSmooth: false,
-            showPoint:  false,
-            fullWidth:  true,
-            low:        0,
-            axisX: {
-                labelInterpolationFnc: function (value) {
-                    return _.first(value.split(' | '))
-                }
-            },
-            axisY: {
-                labelInterpolationFnc: function (value) {
-                    return Math.round(value)
-                }
-            },
-            plugins: [
-                Chartist.plugins.ctAxisTitle({
-                    axisX: {
-                        axisTitle: TAPi18n.__('compaction_graphic_humidity'),
-                        axisClass: 'ct-axis-title',
-                        offset: {
-                            x: 0,
-                            y: 35
-                        },
-                        textAnchor: 'middle'
-                    },
-                    axisY: {
-                        axisTitle: TAPi18n.__('compaction_graphic_density'),
-                        axisClass: 'ct-axis-title',
-                        offset: {
-                            x: 0,
-                            y: 10
-                        },
-                        textAnchor: 'middle',
-                        flipTitle: true
+        if ($('[data-chart]').length) {
+            /*
+            var options = {
+                showLine: true,
+             chartPadding: {
+             top: 15,
+             right: 15,
+             bottom: 20,
+             left: 10
+             },
+                axisX: {
+                    labelInterpolationFnc: function (value, index) {
+                        var module = Math.round(data.labels.length / 24)
+
+                        return index % module === 0 ? value : null
                     }
-                })
-            ]
-        })
+                },
+            }
+            */
+            var values = [
+                {x: data.container_humidity_p1, y: data.dry_density_p1 },
+                {x: data.container_humidity_p2, y: data.dry_density_p2 },
+                {x: data.container_humidity_p3, y: data.dry_density_p3 },
+                {x: data.container_humidity_p4, y: data.dry_density_p4 },
+                {x: data.container_humidity_p5, y: data.dry_density_p5 }
+            ];
+
+            var gData = {
+                series: [
+                    {
+                        data: values
+                    }
+                ]
+            };
+
+            var low = 100000;
+            var high = -100000;
+            for(var iy in values){
+                if(values[iy].y < low){
+                    low = values[iy].y;
+                }
+                if(values[iy].y > high){
+                    high = values[iy].y;
+                }
+            }
+            low -= .3;
+            high += .3;
+
+            var options = {
+                low: low,
+                high: high,
+                lineSmooth: true,
+                showPoint:  true,
+                fullWidth:  true,
+                showLine: true,
+                axisX: {
+                    type: Chartist.FixedScaleAxis,
+                    divisor: 10,
+                    labelInterpolationFnc: function(value) {
+                        return value.toFixed(1);
+                    }
+                },
+                chartPadding: {
+                    top: 30,
+                    right: 30,
+                    bottom: 30,
+                    left: 30
+                },
+                plugins: [
+                    Chartist.plugins.tooltip(),
+                    Chartist.plugins.ctAxisTitle({
+                        axisX: {
+                            axisTitle: TAPi18n.__('compaction_graphic_density'),
+                            axisClass: 'ct-axis-title',
+                            offset: {
+                                x: 0,
+                                y: 35
+                            }
+                        },
+                        axisY: {
+                            axisTitle: TAPi18n.__('compaction_graphic_humidity'),
+                            axisClass: 'ct-axis-title',
+                            offset: {
+                                x: 5,
+                                y: 5
+                            },
+                            textAnchor: 'middle',
+                            flipTitle: true
+                        }
+                    })
+                ],
+                classNames: {
+                    label: 'ct-label'
+                }
+            };
+
+            new Chartist.Line('[data-chart]', gData, options)
+        }
     })
 };
 
 Template.compaction.onCreated(function () {
-    this.chartData = new ReactiveVar([])
 })
 
 Template.compaction.onRendered(function () {
-    updateChart.apply(this)
+    updateChart(this.data)
 })
 
 Template.compaction.helpers({
