@@ -240,6 +240,7 @@
   "management_document_category_maintenance": "Maintenance",
   "management_document_category_human_resources": "Human Resources",
   "management_document_category_technical": "Technical",
+  "management_document_category_operative": "Operating",
   "management_document_category_other": "Other",
   "management_document_not_active": "Not active",
   "management_document_reason": "Reason",

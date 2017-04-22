@@ -142,7 +142,7 @@ Template.managementDocumentsList.helpers({
   },
 
   categoryOptions: function () {
-    var options = ['quality', 'production', 'procedure', 'purchase', 'sale', 'administrative', 'maintenance', 'human_resources', 'technical', 'other']
+    var options = ['quality', 'production', 'procedure', 'purchase', 'sale', 'administrative', 'maintenance', 'human_resources', 'technical', 'operative', 'other']
 
     return _.map(options, function (value) {
       return {
