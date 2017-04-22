@@ -105,7 +105,7 @@ var calculateFields = function () {
     }
 
     var rp = t2*100/(t2+t1);
-    rp = r.toFixed(0)
+    rp = rp.toFixed(0)
     setField('retained_percentage', rp)
   } else {
     setField('retained_percentage', 0)
