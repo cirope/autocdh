@@ -80,7 +80,7 @@ var calculateColumns = function () {
     setField('dry_density_p' + pos, dd.toFixed(2))
 
     var de = 0;
-    if(rp) {
+    if(rp && dd) {
       de = dd * (1-rp) + rp * rd
     }
     setField('density_p' + pos, de ? de.toFixed(2) : '')

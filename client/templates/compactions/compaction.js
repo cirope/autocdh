@@ -2,34 +2,56 @@
 var updateChart = function (data) {
     setTimeout(function () {
         if ($('[data-chart]').length) {
-            var values = [
-                {x: data.container_humidity_p1, y: data.dry_density_p1 },
-                {x: data.container_humidity_p2, y: data.dry_density_p2 },
-                {x: data.container_humidity_p3, y: data.dry_density_p3 },
-                {x: data.container_humidity_p4, y: data.dry_density_p4 },
-                {x: data.container_humidity_p5, y: data.dry_density_p5 }
-            ];
+            var values = [];
+            if(data.container_humidity_p1 && data.dry_density_p1) values.push({x: data.container_humidity_p1, y: data.dry_density_p1 });
+            if(data.container_humidity_p2 && data.dry_density_p2) values.push({x: data.container_humidity_p2, y: data.dry_density_p2 });
+            if(data.container_humidity_p3 && data.dry_density_p3) values.push({x: data.container_humidity_p3, y: data.dry_density_p3 });
+            if(data.container_humidity_p4 && data.dry_density_p4) values.push({x: data.container_humidity_p4, y: data.dry_density_p4 });
+            if(data.container_humidity_p5 && data.dry_density_p5) values.push({x: data.container_humidity_p5, y: data.dry_density_p5 });
 
             var gData = { series: [{data: values}]};
 
             var low = 100000;
+            var min = 100000;
             var high = -100000;
+            var max = -100000;
             for(var iy in values){
                 if(values[iy].y < low){
                     low = values[iy].y;
                 }
+                if(values[iy].x < min){
+                    min = values[iy].x;
+                }
                 if(values[iy].y > high){
                     high = values[iy].y;
                 }
+                if(values[iy].x > max){
+                    max = values[iy].x;
+                }
             }
-            var diff = Math.abs(high - low);
-            low -= (diff * 0.33);
-            high += (diff * 0.33);
-            diff = Math.abs(data.container_humidity_p5 - data.container_humidity_p1);
-            var min = data.container_humidity_p1 - (diff * 0.33);
-            min = min < 0 ? (min < data.container_humidity_p1 ? data.container_humidity_p1 : 0) : min;
-            var max = data.container_humidity_p5 + (diff * 0.33);
-            max = max > 100 ? (max > data.container_humidity_p5 ? data.container_humidity_p5 : 100) : max;
+            // y limits
+            if(high < low){
+                low = 0;
+                high = 10;
+            } else {
+                var dy = Math.abs(high - low);
+                low -= (dy * 0.33);
+                high += (dy * 0.33);
+            }
+
+            // x limits
+            if(max < min){
+                min = 0;
+                max = 100;
+            } else {
+                var dx = Math.abs(max - min);
+                var oMin = min;
+                min -= dx * 0.33;
+                min = min < 0 ? (min < oMin ? oMin : 0) : min;
+                var oMax = max;
+                max += dx * 0.33;
+                max = max > 100 ? (max > oMax ? oMax : 100) : max;
+            }
 
             var options = {
                 low: low,
