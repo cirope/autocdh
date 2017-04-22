@@ -29,6 +29,11 @@
   transform: rotate(-25deg);
 }
 
+.ct-compaction .ct-label.ct-horizontal {
+  transform-origin: 0em 5em;
+  transform: rotate(0deg);
+}
+
 .ct-label.ct-horizontal {
   white-space: nowrap;
   transform-origin: 2em 7em;

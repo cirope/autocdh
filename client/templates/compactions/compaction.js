@@ -10,13 +10,7 @@ var updateChart = function (data) {
                 {x: data.container_humidity_p5, y: data.dry_density_p5 }
             ];
 
-            var gData = {
-                series: [
-                    {
-                        data: values
-                    }
-                ]
-            };
+            var gData = { series: [{data: values}]};
 
             var low = 100000;
             var high = -100000;
@@ -28,59 +22,70 @@ var updateChart = function (data) {
                     high = values[iy].y;
                 }
             }
-            var diff = high - low;
+            var diff = Math.abs(high - low);
             low -= (diff * 0.33);
             high += (diff * 0.33);
+            diff = Math.abs(data.container_humidity_p5 - data.container_humidity_p1);
+            var min = data.container_humidity_p1 - (diff * 0.33);
+            min = min < 0 ? (min < data.container_humidity_p1 ? data.container_humidity_p1 : 0) : min;
+            var max = data.container_humidity_p5 + (diff * 0.33);
+            max = max > 100 ? (max > data.container_humidity_p5 ? data.container_humidity_p5 : 100) : max;
 
             var options = {
                 low: low,
                 high: high,
-                lineSmooth: true,
                 showPoint:  true,
                 fullWidth:  false,
                 showLine: true,
+                lineSmooth: Chartist.Interpolation.monotoneCubic({
+                    fillHoles: true
+                }),
                 axisX: {
                     type: Chartist.FixedScaleAxis,
-                    divisor: 20,
+                    divisor: 10,
+                    low: min,
+                    high: max,
+                    labelOffset: {
+                        x: -10,
+                        y: 0
+                    },
                     labelInterpolationFnc: function(value) {
                         return value.toFixed(1);
                     }
                 },
-                chartPadding: {
-                    top: 10,
-                    right: 10,
-                    bottom: 50,
-                    left: 50
+                axisY: {
+                    labelOffset: {
+                        x: 1,
+                        y: 8
+                    }
                 },
                 plugins: [
                     Chartist.plugins.tooltip(),
                     Chartist.plugins.ctAxisTitle({
                         axisX: {
-                            axisTitle: TAPi18n.__('compaction_graphic_density'),
-                            axisClass: 'ct-axis-title',
-                            offset: {
-                                x: 100,
-                                y: 0
-                            }
-                        },
-                        axisY: {
                             axisTitle: TAPi18n.__('compaction_graphic_humidity'),
                             axisClass: 'ct-axis-title',
                             offset: {
                                 x: 0,
-                                y: 0
+                                y: 35
+                            },
+                            textAnchor: 'middle'
+                        },
+                        axisY: {
+                            axisTitle: TAPi18n.__('compaction_graphic_density'),
+                            axisClass: 'ct-axis-title',
+                            offset: {
+                                x: 0,
+                                y: 10
                             },
                             textAnchor: 'middle',
                             flipTitle: true
                         }
                     })
-                ],
-                classNames: {
-                    label: 'ct-label'
-                }
+                ]
             };
 
-            new Chartist.Line('[data-chart]', gData, options)
+            new Chartist.Line('.ct-chart.ct-compaction', gData, options)
         }
     })
 };
