@@ -2,24 +2,6 @@
 var updateChart = function (data) {
     setTimeout(function () {
         if ($('[data-chart]').length) {
-            /*
-            var options = {
-                showLine: true,
-             chartPadding: {
-             top: 15,
-             right: 15,
-             bottom: 20,
-             left: 10
-             },
-                axisX: {
-                    labelInterpolationFnc: function (value, index) {
-                        var module = Math.round(data.labels.length / 24)
-
-                        return index % module === 0 ? value : null
-                    }
-                },
-            }
-            */
             var values = [
                 {x: data.container_humidity_p1, y: data.dry_density_p1 },
                 {x: data.container_humidity_p2, y: data.dry_density_p2 },
@@ -46,28 +28,29 @@ var updateChart = function (data) {
                     high = values[iy].y;
                 }
             }
-            low -= .3;
-            high += .3;
+            var diff = high - low;
+            low -= (diff * 0.33);
+            high += (diff * 0.33);
 
             var options = {
                 low: low,
                 high: high,
                 lineSmooth: true,
                 showPoint:  true,
-                fullWidth:  true,
+                fullWidth:  false,
                 showLine: true,
                 axisX: {
                     type: Chartist.FixedScaleAxis,
-                    divisor: 10,
+                    divisor: 20,
                     labelInterpolationFnc: function(value) {
                         return value.toFixed(1);
                     }
                 },
                 chartPadding: {
-                    top: 30,
-                    right: 30,
-                    bottom: 30,
-                    left: 30
+                    top: 10,
+                    right: 10,
+                    bottom: 50,
+                    left: 50
                 },
                 plugins: [
                     Chartist.plugins.tooltip(),
@@ -76,16 +59,16 @@ var updateChart = function (data) {
                             axisTitle: TAPi18n.__('compaction_graphic_density'),
                             axisClass: 'ct-axis-title',
                             offset: {
-                                x: 0,
-                                y: 35
+                                x: 100,
+                                y: 0
                             }
                         },
                         axisY: {
                             axisTitle: TAPi18n.__('compaction_graphic_humidity'),
                             axisClass: 'ct-axis-title',
                             offset: {
-                                x: 5,
-                                y: 5
+                                x: 0,
+                                y: 0
                             },
                             textAnchor: 'middle',
                             flipTitle: true
