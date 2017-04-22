@@ -240,6 +240,7 @@
   "management_document_category_maintenance": "Mantenimiento",
   "management_document_category_human_resources": "Recursos Humanos",
   "management_document_category_technical": "Técnico",
+  "management_document_category_operative": "Operativo",
   "management_document_category_other": "Otra",
   "management_document_not_active": "Dado de baja",
   "management_document_reason": "Causas de baja del documento",
