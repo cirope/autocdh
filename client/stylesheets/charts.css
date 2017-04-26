@@ -34,6 +34,11 @@
   transform: rotate(0deg);
 }
 
+.ct-field-granulometry .ct-label.ct-horizontal {
+  transform-origin: 1em 6em;
+  transform: rotate(-23deg);
+}
+
 .ct-label.ct-horizontal {
   white-space: nowrap;
   transform-origin: 2em 7em;

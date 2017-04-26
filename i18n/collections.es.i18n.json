@@ -544,6 +544,7 @@
   "field_granulometry_pass_200": "Pasa # 200",
   "field_granulometry_total": "Total",
   "field_granulometry_observations": "Observaciones",
+  "field_granulometry_graphic_reference": "Granulometría",
   "field_granulometry_graphic_opening": "Abertura (mm)",
   "field_granulometry_graphic_percentage": "Porcentaje que pasa (%)",
   "field_granulometry_graphic_sieve": "Designación tamiz",
