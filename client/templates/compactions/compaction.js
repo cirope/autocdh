@@ -32,20 +32,6 @@ var updateChart = function (data) {
             xm = xm.toFixed(1);
             ym = ym.toFixed(2);
 
-            var gData = { series: [{
-                data: values,
-                className: 'ct-series ct-series-a only-points',
-            }, {
-                data: values2,
-                className: 'ct-series ct-series-a only-line',
-            }, {
-                data: [{x: xm, y: 2}, {x: xm, y: ym}, {x: 7, y: ym}],
-                className: 'ct-series ct-series-b only-line dotted-b',
-            }, {
-                data: [{x: xm, y: ym}],
-                className: 'ct-series ct-series-b only-points',
-            }]};
-
             var low = 100000;
             var min = 100000;
             var high = -100000;
@@ -88,13 +74,29 @@ var updateChart = function (data) {
                 max = max > 100 ? (max > oMax ? oMax : 100) : max;
             }
 
+            var gData = { series: [
+                {
+                    data: [{x: 0, y: ym}, {x: xm, y: ym}, {x: xm, y: 0}],
+                    className: 'ct-series ct-series-b transparent-points dotted-a'
+                }, {
+                    data: values2,
+                    className: 'ct-series ct-series-a only-line'
+                }, {
+                    data: values,
+                    className: 'ct-series ct-series-a only-points'
+                }, {
+                    data: [{x: xm, y: ym}],
+                    className: 'ct-series ct-series-b only-points'
+                }
+            ]};
+
             var options = {
                 low: low,
                 high: high,
                 showPoint:  true,
                 fullWidth:  false,
                 showLine: true,
-                lineSmooth: Chartist.Interpolation.monotoneCubic({ fillHoles: true }),
+                lineSmooth: false,
                 axisX: {
                     type: Chartist.FixedScaleAxis,
                     divisor: 10,
