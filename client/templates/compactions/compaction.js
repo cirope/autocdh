@@ -9,7 +9,42 @@ var updateChart = function (data) {
             if(data.container_humidity_p4 && data.dry_density_p4) values.push({x: data.container_humidity_p4, y: data.dry_density_p4 });
             if(data.container_humidity_p5 && data.dry_density_p5) values.push({x: data.container_humidity_p5, y: data.dry_density_p5 });
 
-            var gData = { series: [{data: values}]};
+            var xx = _.pluck(values, 'x')
+            var yy = _.pluck(values, 'y')
+            var spline = new MonotonicCubicSpline(xx, yy)
+
+            var xm = xx[0];
+            var ym = yy[0];
+
+            var values2 = [];
+            if(xx.length > 2) {
+                for (var xi = xm; xi <= xx[xx.length - 1]; xi += .1) {
+                    var yi = spline.interpolate(xi);
+                    if(ym < yi){
+                        xm = xi;
+                        ym = yi;
+                    }
+
+                    values2.push({x: xi, y: yi});
+                }
+            }
+
+            xm = xm.toFixed(1);
+            ym = ym.toFixed(2);
+
+            var gData = { series: [{
+                data: values,
+                className: 'ct-series ct-series-a only-points',
+            }, {
+                data: values2,
+                className: 'ct-series ct-series-a only-line',
+            }, {
+                data: [{x: xm, y: 2}, {x: xm, y: ym}, {x: 7, y: ym}],
+                className: 'ct-series ct-series-b only-line dotted-b',
+            }, {
+                data: [{x: xm, y: ym}],
+                className: 'ct-series ct-series-b only-points',
+            }]};
 
             var low = 100000;
             var min = 100000;
@@ -59,9 +94,7 @@ var updateChart = function (data) {
                 showPoint:  true,
                 fullWidth:  false,
                 showLine: true,
-                lineSmooth: Chartist.Interpolation.monotoneCubic({
-                    fillHoles: true
-                }),
+                lineSmooth: Chartist.Interpolation.monotoneCubic({ fillHoles: true }),
                 axisX: {
                     type: Chartist.FixedScaleAxis,
                     divisor: 10,

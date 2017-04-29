@@ -444,6 +444,7 @@
   "compaction_density": "Densidad Seca Corregida",
   "compaction_max_density_title": "Densidad seca máxima y humedad óptima de compactación",
   "compaction_max_density": "Densidad seca máxima - ϒd max",
+  "compaction_max_graph": "Densidad seca máxima y Humedad óptima",
   "compaction_max_humidity": "Humedad óptima - H opt",
   "compaction_observations": "Observaciones",
   "compaction_steps": "Pasos del ensayo",
