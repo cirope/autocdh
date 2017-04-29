@@ -1,4 +1,7 @@
 
+var _max_density = new ReactiveVar('')
+var _max_humidity = new ReactiveVar('')
+
 var updateChart = function (data) {
     setTimeout(function () {
         if ($('[data-chart]').length) {
@@ -30,7 +33,10 @@ var updateChart = function (data) {
             }
 
             xm = xm.toFixed(1);
+            _max_humidity.set(xm);
+
             ym = ym.toFixed(2);
+            _max_density.set(ym);
 
             var low = 100000;
             var min = 100000;
@@ -167,6 +173,14 @@ Template.compaction.helpers({
     sieveName: function () {
         return TAPi18n.__('compaction_sieve_' + this.sieve)
     },
+
+    maxDensity: function () {
+        return _max_density.get()
+    },
+
+    maxHumidity: function () {
+        return _max_humidity.get()
+    }
 })
 
 Template.compaction.events({
