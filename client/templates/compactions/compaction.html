@@ -195,7 +195,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">{{_ 'compaction_dry_field_density_title'}}</h3>
+					<h3 class="panel-title">{{_ 'compaction_humidity_title'}}</h3>
 				</div>
 				<div class="panel-body">
 					<fieldset>
@@ -272,7 +272,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title">{{_ 'compaction_max_density_title'}}</h3>
+					<h3 class="panel-title">{{_ 'compaction_dry_field_density_title'}}</h3>
 				</div>
 				<div class="panel-body">
 					<fieldset>
@@ -355,7 +355,30 @@
 						</div>
 					</div>
 					<div class="col-md-4">
-						{{> compactionReference}}
+						<div class="row">
+							<div class="col-md-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3 class="panel-title">{{_ 'compaction_max_density_title'}}</h3>
+									</div>
+									<div class="panel-body">
+										<fieldset>
+											<div class="row">
+												<div class="col-md-12">
+													<p>{{_ 'compaction_max_density'}} / <strong>- g/cm³</strong></p>
+													<p>{{_ 'compaction_max_humidity'}} / <strong>- %</strong></p>
+												</div>
+											</div>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								{{> compactionReference}}
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

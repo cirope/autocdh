@@ -75,10 +75,11 @@ var updateChart = function (data) {
             }
 
             var gData = { series: [
+                //{
+                //    data: [{x: 0, y: ym}, {x: xm, y: ym}, {x: xm, y: 0}],
+                //   className: 'ct-series ct-series-b transparent-points dotted-a'
+                //},
                 {
-                    data: [{x: 0, y: ym}, {x: xm, y: ym}, {x: xm, y: 0}],
-                    className: 'ct-series ct-series-b transparent-points dotted-a'
-                }, {
                     data: values2,
                     className: 'ct-series ct-series-a only-line'
                 }, {
