@@ -18,6 +18,43 @@ PdfHelper = {
 
 		return yPosition
 	},
+	addTwoColumnData: function (doc, yPosition, values1, values2) {
+		var y1 = yPosition
+		var y2 = yPosition
+
+		y1 = PdfHelper.addColumnData(doc, y1,  20, values1)
+		y2 = PdfHelper.addColumnData(doc, y2, 100, values2)
+
+		return Math.max(y1, y2)
+	},
+	addColumnData: function (doc, yPosition, column, values) {
+		values = values || []
+		for(var i = 0; i < values.length; i++) {
+			PdfHelper.addElementData(doc, yPosition += 5, column, values[i])
+		}
+		return yPosition
+	},
+	addElementData: function (doc, yPosition, column, element) {
+		var addedTxt = false;
+		if(element) {
+			if(!!element.empty){
+				addedTxt = true
+			} else {
+				if (!!element.bold) {
+					doc.setFontStyle('bold')
+				}
+				var txt = (!!element.sub ? '\t' : '')+TAPi18n.__(element.name) + (!!element.title ? '' : ': ' + (element.value || ''))
+				if (txt) {
+					doc.text(txt, column, yPosition)
+					addedTxt = true
+				}
+				if (!!element.bold) {
+					doc.setFontStyle('normal')
+				}
+			}
+		}
+		return addedTxt
+	},
 	table: function (tableName) {
 		var table   = $('[data-table="' + tableName + '"]')
 		var headers = []
