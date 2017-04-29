@@ -1,5 +1,7 @@
 
 PdfHelper = {
+	COL_1: 20,
+	COL_2: 100,
 	addFilterData: function (filter, doc, yPosition, start, end, fields) {
 		doc
 			.setFontSize(12)
@@ -22,15 +24,23 @@ PdfHelper = {
 		var y1 = yPosition
 		var y2 = yPosition
 
-		y1 = PdfHelper.addColumnData(doc, y1,  20, values1)
-		y2 = PdfHelper.addColumnData(doc, y2, 100, values2)
+		y1 = PdfHelper.addColumnData(doc, y1, PdfHelper.COL_1, values1)
+		y2 = PdfHelper.addColumnData(doc, y2, PdfHelper.COL_2, values2)
 
 		return Math.max(y1, y2)
 	},
 	addColumnData: function (doc, yPosition, column, values) {
 		values = values || []
+		var element;
 		for(var i = 0; i < values.length; i++) {
-			PdfHelper.addElementData(doc, yPosition += 5, column, values[i])
+			element = values[i];
+			if(element) {
+				if(!!element.empty && !!element.empty) {
+					yPosition += 2
+				} else {
+					PdfHelper.addElementData(doc, yPosition += 5, column, element)
+				}
+			}
 		}
 		return yPosition
 	},

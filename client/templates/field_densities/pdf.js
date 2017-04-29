@@ -14,13 +14,11 @@ Template.fieldDensity.events({
         .setFontSize(9)
         .setFontStyle('normal')
 
-      var col1, col2;
-
-      var sResp = Responsible.findOne(data.sampleResponsibleId)
-      var aResp = Responsible.findOne(data.assayResponsibleId)
+      var values;
 
       yPosition += 5
-      col1 = [
+      var sResp = Responsible.findOne(data.sampleResponsibleId)
+      values = [
         {
           name: 'field_density_sample_title',
           title: true,
@@ -51,24 +49,16 @@ Template.fieldDensity.events({
           value: data.coordinate
         },
         {
+          empty: true,
+          mini: true
+        },
+        {
           name: 'field_density_sand_cone_code',
           value: data.sandConeCode
         },
         {
-          name: 'field_density_sample_observations',
-          value: data.sampleObservations
-        }
-      ]
-
-      col2 = [
-        {
-          empty: true // title col 1
-        },
-        {
-          empty: true
-        },
-        {
-          empty: true
+          empty: true,
+          mini: true
         },
         {
           name: 'field_density_moist_mass_material',
@@ -81,13 +71,22 @@ Template.fieldDensity.events({
         {
           name: 'field_density_mass_over',
           value: (data.massOver ? data.massOver : '-')+' g'
+        },
+        {
+          empty: true,
+          mini: true
+        },
+        {
+          name: 'field_density_sample_observations',
+          value: data.sampleObservations
         }
       ]
 
-      yPosition = PdfHelper.addTwoColumnData(doc, yPosition, col1, col2)
+      yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)
 
-      yPosition += 5
-      col1 = [
+      yPosition += 10
+      var aResp = Responsible.findOne(data.assayResponsibleId)
+      values = [
         {
           name: 'field_density_assay_title',
           title: true,
@@ -102,7 +101,8 @@ Template.fieldDensity.events({
           value: data.labDate ? moment(data.labDate).format('L') : '-'
         },
         {
-          empty: true
+          empty: true,
+          mini: true
         },
         {
           name: 'field_density_mass_used',
@@ -129,21 +129,16 @@ Template.fieldDensity.events({
           value: (data.wetDensity ? data.wetDensity : '-')+' g/cm³'
         },
         {
-          empty: true
+          empty: true,
+          mini: true
         },
         {
           name: 'field_density_drying_container_code',
           value: data.dryingContainerCode
         },
         {
-          name: 'field_density_assay_observations',
-          value: data.assayObservations
-        }
-      ]
-
-      col2 = [
-        {
-          empty: true // title col 1
+          empty: true,
+          mini: true
         },
         {
           name: 'field_density_mass_container',
@@ -181,11 +176,17 @@ Template.fieldDensity.events({
           name: 'field_density_percentage',
           value: (data.percentage ? data.percentage : '-')+' %'
         },
+        {
+          empty: true,
+          mini: true
+        },
+        {
+          name: 'field_density_assay_observations',
+          value: data.assayObservations
+        }
       ]
 
-      yPosition = PdfHelper.addTwoColumnData(doc, yPosition, col1, col2)
-
-
+      yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)
 
       // adding digital signature
       DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
