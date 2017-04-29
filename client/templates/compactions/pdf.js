@@ -140,11 +140,15 @@ Template.compaction.events({
       ]
       yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)
 
-      // adding digital signature
-      DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
-        doc.putTotalPages('___total_pages___')
-        doc.save(data.origin+'-'+data.sampleName+'.pdf')
+      // add image
+      PdfHelper.addGraphImage(doc, yPosition, 'data-graph-container', function () {
+        // adding digital signature
+        DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
+          doc.putTotalPages('___total_pages___')
+          doc.save(data.origin+'-'+data.sampleName+'.pdf')
+        })
       })
+
     })
   }
 })

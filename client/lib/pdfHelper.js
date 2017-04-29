@@ -112,13 +112,15 @@ PdfHelper = {
 
 		return { data: data, headers: headers }
 	},
-	addGraphImage: function (doc, yPosition, callback) {
+	addGraphImage: function (doc, yPosition, container, callback) {
 		$('body').addClass('pdf-export')
+
+		container = container || 'data-graph-container'
 
 		var canvas = document.createElement('canvas')
 		var html = _.first($('html')).innerHTML
-		var width = $('[data-container]').outerWidth() * 1.2
-		var height = $('[data-container]').outerHeight() * 1.2
+		var width = $('['+container+']').outerWidth() * 1.2
+		var height = $('['+container+']').outerHeight() * 1.2
 		var ctx = canvas.getContext('2d')
 
 		canvas.width = width

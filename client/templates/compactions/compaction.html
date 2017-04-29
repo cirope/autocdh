@@ -1,9 +1,9 @@
 <template name="compaction">
-	<div class="row text-center">
+	<div class="row text-center hide-on-pdf-export">
 		<h4>{{_ 'compaction_title'}}</h4>
 		<h5>{{_ 'compaction_subtitle'}}</h5>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-6">
 			<div class="panel panel-default" style="margin-top: 5px">
 				<div class="panel-heading">
@@ -105,7 +105,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -191,7 +191,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -268,7 +268,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -316,7 +316,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -331,7 +331,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="pull-right">
 				<button class="btn btn-sm btn-default" type="button" data-download-pdf>
@@ -347,41 +347,39 @@
 			</button>
 		</div>
 	</div>
-	<div class="row" style="margin-top: 10px;">
+	<div class="row show-on-pdf-export" style="margin-top: 10px;" data-graph-container>
 		<div class="col-md-12">
-			<div class="show-on-pdf-export" data-graph-container>
-				<div class="row">
-					<div class="col-md-8">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div class="ct-chart ct-golden-section ct-compaction" data-chart></div>
-							</div>
+			<div class="row">
+				<div class="col-md-8">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<div class="ct-chart ct-golden-section ct-compaction" data-chart></div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="row">
-							<div class="col-md-12">
-								<div class="panel panel-default">
-									<div class="panel-heading">
-										<h3 class="panel-title">{{_ 'compaction_max_density_title'}}</h3>
-									</div>
-									<div class="panel-body">
-										<fieldset>
-											<div class="row">
-												<div class="col-md-12">
-													<p>{{_ 'compaction_max_density'}} / <strong>{{r maxDensity 2}} g/cm³</strong></p>
-													<p>{{_ 'compaction_max_humidity'}} / <strong>{{r maxHumidity 0}} %</strong></p>
-												</div>
+				</div>
+				<div class="col-md-4">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">{{_ 'compaction_max_density_title'}}</h3>
+								</div>
+								<div class="panel-body">
+									<fieldset>
+										<div class="row">
+											<div class="col-md-12">
+												<p>{{_ 'compaction_max_density'}} / <strong>{{r maxDensity 2}} g/cm³</strong></p>
+												<p>{{_ 'compaction_max_humidity'}} / <strong>{{r maxHumidity 0}} %</strong></p>
 											</div>
-										</fieldset>
-									</div>
+										</div>
+									</fieldset>
 								</div>
 							</div>
 						</div>
-						<div class="row">
-							<div class="col-md-12">
-								{{> compactionReference}}
-							</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							{{> compactionReference}}
 						</div>
 					</div>
 				</div>
