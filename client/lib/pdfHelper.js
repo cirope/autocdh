@@ -65,11 +65,11 @@ PdfHelper = {
 		}
 		return addedTxt
 	},
-	table: function (tableName) {
+	miniTable: function (tableName, columnWidths) {
 		var table   = $('[data-table="' + tableName + '"]')
 		var headers = []
 		var data    = []
-		var widths  = [120, 125]
+		var widths  = !!columnWidths ? columnWidths : [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
 
 		table.find('thead th').each(function (i, element) {
 			var header = $(element).text()
@@ -80,8 +80,28 @@ PdfHelper = {
 		table.find('tbody tr').each(function (i, element) {
 			var obj = {}
 
-			$(element).find('td').each(function (j, cell) {
+			var jj = 0;
+			$(element).find('th').each(function (j, cell) {
 				obj[headers[j].name] = $(cell).text().replace('″', '"')
+				jj = j+1
+			})
+			$(element).find('td').each(function (j, cell) {
+				obj[headers[jj+j].name] = $(cell).text().replace('″', '"')
+			})
+
+			data.push(obj)
+		})
+
+		table.find('tfoot tr').each(function (i, element) {
+			var obj = {}
+
+			var jj = 0;
+			$(element).find('th').each(function (j, cell) {
+				obj[headers[j].name] = $(cell).text().replace('″', '"')
+				jj = j+1
+			})
+			$(element).find('td').each(function (j, cell) {
+				obj[headers[jj+j].name] = $(cell).text().replace('″', '"')
 			})
 
 			data.push(obj)
