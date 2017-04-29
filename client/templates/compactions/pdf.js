@@ -16,7 +16,7 @@ Template.compaction.events({
 
       var values, values2, table;
 
-      yPosition += 5
+      yPosition += 7
       var sResp = Responsible.findOne(data.sampleResponsibleId)
       values = [
         {
@@ -84,7 +84,7 @@ Template.compaction.events({
           name: 'compaction_retained_percentage',
           value: (data.retained_percentage ? data.retained_percentage : '-')+' %',
           sub: true
-        },
+        }
       ]
 
       yPosition = PdfHelper.addTwoColumnData(doc, yPosition, values, values2)
@@ -94,13 +94,13 @@ Template.compaction.events({
       table.data[5][TAPi18n.__('compaction_steps')] = TAPi18n.__('compaction_field_density_ns')
       doc
         .setFontSize(6)
-        .table(PdfHelper.COL_1, yPosition += 2, table.data, table.headers, {
+        .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
           printHeaders: true,
           autoSize: false,
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
           fontSize: 6
         })
-      yPosition += table.data.length * 7.5 + 6
+      yPosition += 51
 
       table = PdfHelper.miniTable("humidity", [70, 20, 25, 25, 25, 25, 25])
       table.headers[0].prompt = TAPi18n.__('compaction_humidity_title')
@@ -112,7 +112,7 @@ Template.compaction.events({
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
           fontSize: 6
         })
-      yPosition += table.data.length * 7.5 + 6
+      yPosition += 44
 
       table = PdfHelper.miniTable("dry_field_density", [70, 20, 25, 25, 25, 25, 25])
       table.headers[0].prompt = TAPi18n.__('compaction_dry_field_density_title')
@@ -124,12 +124,18 @@ Template.compaction.events({
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
           fontSize: 6
         })
-      yPosition += table.data.length * 7.5 + 6
+      yPosition += 25
+
+      doc
+        .setFont('helvetica')
+        .setFontSize(9)
+        .setFontStyle('normal')
 
       values = [
         {
           name: 'compaction_observations',
-          value: data.observations
+          value: data.observations,
+          multiline: true
         }
       ]
       yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)

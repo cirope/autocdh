@@ -16,7 +16,7 @@ Template.fieldDensity.events({
 
       var values;
 
-      yPosition += 5
+      yPosition += 10
       var sResp = Responsible.findOne(data.sampleResponsibleId)
       values = [
         {
@@ -78,13 +78,18 @@ Template.fieldDensity.events({
         },
         {
           name: 'field_density_sample_observations',
-          value: data.sampleObservations
+          value: data.sampleObservations,
+          multiline: true
+        },
+        {
+          empty: true,
+          mini: true
         }
       ]
 
       yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)
 
-      yPosition += 10
+      yPosition += 5
       var aResp = Responsible.findOne(data.assayResponsibleId)
       values = [
         {
@@ -182,7 +187,8 @@ Template.fieldDensity.events({
         },
         {
           name: 'field_density_assay_observations',
-          value: data.assayObservations
+          value: data.assayObservations,
+          multiline: true
         }
       ]
 

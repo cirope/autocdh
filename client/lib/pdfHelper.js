@@ -34,36 +34,39 @@ PdfHelper = {
 		var element;
 		for(var i = 0; i < values.length; i++) {
 			element = values[i];
-			if(element) {
-				if(!!element.empty && !!element.empty) {
-					yPosition += 2
-				} else {
-					PdfHelper.addElementData(doc, yPosition += 5, column, element)
-				}
-			}
+			yPosition = PdfHelper.addElementData(doc, yPosition, column, element)
 		}
 		return yPosition
 	},
 	addElementData: function (doc, yPosition, column, element) {
-		var addedTxt = false;
 		if(element) {
 			if(!!element.empty){
-				addedTxt = true
+				if(!!element.empty && !!element.empty) {
+					yPosition += 2
+				} else {
+					yPosition += 5
+				}
 			} else {
 				if (!!element.bold) {
 					doc.setFontStyle('bold')
 				}
 				var txt = (!!element.sub ? '\t' : '')+TAPi18n.__(element.name) + (!!element.title ? '' : ': ' + (element.value || ''))
 				if (txt) {
+					if(!!element.multiline){
+						txt = PDF.splitInLines(txt)
+					}
 					doc.text(txt, column, yPosition)
-					addedTxt = true
+					yPosition += 5
+					if(!!element.multiline){
+						yPosition += 3 * (txt.length-1)
+					}
 				}
 				if (!!element.bold) {
 					doc.setFontStyle('normal')
 				}
 			}
 		}
-		return addedTxt
+		return yPosition
 	},
 	miniTable: function (tableName, columnWidths) {
 		var table   = $('[data-table="' + tableName + '"]')
@@ -145,3 +148,11 @@ PdfHelper = {
 		});
 	}
 }
+
+/*
+
+ doc
+ .setDrawColor('0', '255', '0')
+ .line(column < PdfHelper.COL_2 ? 0 : 150, yPosition, column, yPosition)
+
+ */
