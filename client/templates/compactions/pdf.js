@@ -93,38 +93,38 @@ Template.compaction.events({
       table.headers[0].prompt = TAPi18n.__('compaction_field_density_title')
       table.data[5][TAPi18n.__('compaction_steps')] = TAPi18n.__('compaction_field_density_ns')
       doc
-        .setFontSize(6)
+        .setFontSize(7)
         .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
           printHeaders: true,
           autoSize: false,
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
-          fontSize: 6
+          fontSize: 7
         })
-      yPosition += 51
+      yPosition += 57
 
       table = PdfHelper.miniTable("humidity", [70, 20, 25, 25, 25, 25, 25])
       table.headers[0].prompt = TAPi18n.__('compaction_humidity_title')
       doc
-        .setFontSize(6)
+        .setFontSize(7)
         .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
           printHeaders: true,
           autoSize: false,
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
-          fontSize: 6
+          fontSize: 7
         })
-      yPosition += 44
+      yPosition += 49
 
       table = PdfHelper.miniTable("dry_field_density", [70, 20, 25, 25, 25, 25, 25])
       table.headers[0].prompt = TAPi18n.__('compaction_dry_field_density_title')
       doc
-        .setFontSize(6)
+        .setFontSize(7)
         .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
           printHeaders: true,
           autoSize: false,
           margins: { right: 0, left: 0, top: 0, bottom: 0 },
-          fontSize: 6
+          fontSize: 7
         })
-      yPosition += 25
+      yPosition += 28
 
       doc
         .setFont('helvetica')
