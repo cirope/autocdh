@@ -1,11 +1,3 @@
-var name = function (granulometry) {
-  var materialId   = granulometry.materialId
-  var materialList = Materials.first()
-  var materials    = materialList && materialList[granulometry.type + 's']
-  var material     = _.find(materials, function (m) { return m && m._id === materialId })
-
-  return granulometry.name + (material ? ' (' + material.name + ')' : '')
-}
 
 var putStaticData = function (granulometry, doc, yPosition) {
   var responsible = TAPi18n.__('responsible')       + ': ' + Responsible.findOne(granulometry.responsibleId).name
@@ -112,56 +104,26 @@ var putBriefData = function (granulometry, doc, yPosition) {
   return yPosition
 }
 
-var putGraphImage = function (doc, yPosition, callback) {
-  $('body').addClass('pdf-export')
-
-  var canvas = document.createElement('canvas')
-  var html   = _.first($('html')).innerHTML
-  var width  = $('[data-graph-container]').outerWidth()  * 1.2
-  var height = $('[data-graph-container]').outerHeight() * 1.2
-  var ctx    = canvas.getContext('2d')
-
-  canvas.width  = width
-  canvas.height = height
-
-  ctx.fillStyle = '#ffffff'
-  ctx.fillRect(0, 0, canvas.width, canvas.height)
-
-  $('body').removeClass('pdf-export')
-
-  rasterizeHTML.drawHTML(html, canvas).then(function (result) {
-    var data   = canvas.toDataURL('image/png')
-    var factor = 6
-
-    doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
-
-    yPosition += 5 + height / factor
-    doc.lastCellPos.y = yPosition
-
-    if (typeof callback === 'function') callback()
-  }, function () {
-    console.log('error')
-  });
-}
 
 Template.fieldDensity.events({
   'click [data-download-pdf]': function (event, template) {
-    var granulometry = template.data
+    var data = template.data
     var yPosition    = 20
     var tableData    = table()
-    var idealCurves  = granulometry.idealCurves ?
-      TAPi18n.__('granulometry_ideal_curves') + ': ' + granulometry.idealCurves + ' mm' : ''
 
     PDF.new({}, function (doc) {
       doc
         .setFont('helvetica')
         .setFontSize(14)
-        .text(TAPi18n.__('granulometry'), 20, yPosition)
+        .text(TAPi18n.__('field_density_title'), 20, yPosition)
+        .setFontSize(10)
+        .text(TAPi18n.__('field_density_subtitle'), 20, yPosition += 5)
         .setFontSize(9)
-        .setFontStyle('bold')
-        .text(name(granulometry), 20, yPosition += 5)
+        //.setFontStyle('bold')
+        //.text(name(granulometry), 20, yPosition += 5)
         .setFontStyle('normal')
 
+      /*
       yPosition = putStaticData(granulometry, doc, yPosition)
 
       doc
@@ -178,15 +140,12 @@ Template.fieldDensity.events({
       doc.setFontSize(9)
 
       yPosition = putBriefData(granulometry, doc, yPosition)
+      */
 
-      if (idealCurves) doc.text(idealCurves, 20, yPosition +=5)
-
-      putGraphImage(doc, yPosition, function () {
-        // adding digital signature
-        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
-          doc.putTotalPages('___total_pages___')
-          doc.save(granulometry.name+'.pdf')
-        })
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
+        doc.putTotalPages('___total_pages___')
+        doc.save(data.work+'-'+data.sampleName+'.pdf')
       })
     })
   }
