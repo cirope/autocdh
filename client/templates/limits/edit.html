@@ -175,11 +175,25 @@
 										<tr>
 											<th>{{_ 'limit_plastic_humidity'}}</th>
 											<th style="text-align: center">%</th>
-											<td>{{> afFieldInput name='plastic_humidity_d1'}}</td>
-											<td>{{> afFieldInput name='plastic_humidity_d2'}}</td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_humidity_d1'}} has-error{{/if}}">{{> afFieldInput name='plastic_humidity_d1'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='plastic_humidity_d2'}} has-error{{/if}}">{{> afFieldInput name='plastic_humidity_d2'}}</div></td>
 										</tr>
 										</tbody>
 									</table>
+								</div>
+								<div class="table-responsive has-error">
+									{{#if afFieldIsInvalid name='plastic_code_d1' autoform=.}}<span class="help-block">{{_ 'limit_determination_1'}}: {{afFieldMessage name='plastic_code_d1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_empty_mass_d1' autoform=.}}<span class="help-block">{{_ 'limit_determination_1'}}: {{afFieldMessage name='plastic_empty_mass_d1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_wet_mass_d1' autoform=.}}<span class="help-block">{{_ 'limit_determination_1'}}: {{afFieldMessage name='plastic_wet_mass_d1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_dry_mass_d1' autoform=.}}<span class="help-block">{{_ 'limit_determination_1'}}: {{afFieldMessage name='plastic_dry_mass_d1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_humidity_d1' autoform=.}}<span class="help-block">{{_ 'limit_determination_1'}}: {{afFieldMessage name='plastic_humidity_d1' autoform=.}}</span>{{/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{{#if afFieldIsInvalid name='plastic_code_d2' autoform=.}}<span class="help-block">{{_ 'limit_determination_2'}}: {{afFieldMessage name='plastic_code_d2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_empty_mass_d2' autoform=.}}<span class="help-block">{{_ 'limit_determination_2'}}: {{afFieldMessage name='plastic_empty_mass_d2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_wet_mass_d2' autoform=.}}<span class="help-block">{{_ 'limit_determination_2'}}: {{afFieldMessage name='plastic_wet_mass_d2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_dry_mass_d2' autoform=.}}<span class="help-block">{{_ 'limit_determination_2'}}: {{afFieldMessage name='plastic_dry_mass_d2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='plastic_humidity_d2' autoform=.}}<span class="help-block">{{_ 'limit_determination_2'}}: {{afFieldMessage name='plastic_humidity_d2' autoform=.}}</span>{{/if}}
 								</div>
 							</fieldset>
 						</div>
