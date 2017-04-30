@@ -1,9 +1,9 @@
 <template name="fieldGranulometry">
-	<div class="row text-center">
+	<div class="row text-center hide-on-pdf-export">
 		<h4>{{_ 'field_granulometry_title'}}</h4>
 		<h5>{{_ 'field_granulometry_subtitle'}}</h5>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -19,7 +19,7 @@
 								<p>{{_ 'field_granulometry_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
 							</div>
 							<div class="col-md-6">
-								<p>{{_ 'field_granulometry_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+								<p>{{_ 'c'}} / <strong>{{l fieldDate 'L'}}</strong></p>
 							</div>
 						</div>
 						<div class="row">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -160,7 +160,7 @@
 										</div>
 										<div class="row">
 											<div class="table-responsive">
-												<table class="table table-condensed table-hover table-no-margin">
+												<table class="table table-condensed table-hover table-no-margin" data-table="analysis">
 													<tbody>
 													<tr>
 														<th style="text-align: center" colspan="3">{{_ 'field_granulometry_sieve'}}</th>
@@ -339,7 +339,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -354,7 +354,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export" style="margin-bottom: 10px;">
 		<div class="pull-right">
 			<button class="btn btn-sm btn-default" type="button" data-download-pdf>
 				{{_ 'download_pdf'}}
@@ -368,9 +368,9 @@
 			{{_ 'delete'}}
 		</button>
 	</div>
-	<div class="row" style="margin-top: 10px;">
-		<div class="col-md-12">
-			<div class="show-on-pdf-export" data-graph-container>
+	<div class="show-on-pdf-export" data-graph-container>
+		<div class="row">
+			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-8">
 						<div class="panel panel-default">

@@ -89,9 +89,13 @@ Template.compaction.events({
 
       yPosition = PdfHelper.addTwoColumnData(doc, yPosition, values, values2)
 
-      table = PdfHelper.miniTable("field_density", [70, 20, 25, 25, 25, 25, 25])
+      table = PdfHelper.miniTable("field_density", {
+        widths: [70, 20, 25, 25, 25, 25, 25]
+      })
       table.headers[0].prompt = TAPi18n.__('compaction_field_density_title')
       table.data[5][TAPi18n.__('compaction_steps')] = TAPi18n.__('compaction_field_density_ns')
+
+      yPosition -= 2
       doc
         .setFontSize(7)
         .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
@@ -102,7 +106,9 @@ Template.compaction.events({
         })
       yPosition += 57
 
-      table = PdfHelper.miniTable("humidity", [70, 20, 25, 25, 25, 25, 25])
+      table = PdfHelper.miniTable("humidity",  {
+        widths: [70, 20, 25, 25, 25, 25, 25]
+      })
       table.headers[0].prompt = TAPi18n.__('compaction_humidity_title')
       doc
         .setFontSize(7)
@@ -114,7 +120,9 @@ Template.compaction.events({
         })
       yPosition += 49
 
-      table = PdfHelper.miniTable("dry_field_density", [70, 20, 25, 25, 25, 25, 25])
+      table = PdfHelper.miniTable("dry_field_density",  {
+        widths: [70, 20, 25, 25, 25, 25, 25]
+      })
       table.headers[0].prompt = TAPi18n.__('compaction_dry_field_density_title')
       doc
         .setFontSize(7)
@@ -139,6 +147,8 @@ Template.compaction.events({
         }
       ]
       yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)
+
+      yPosition -= 5
 
       // add image
       PdfHelper.addGraphImage(doc, yPosition, 'data-graph-container', function () {

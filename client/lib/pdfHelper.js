@@ -41,7 +41,7 @@ PdfHelper = {
 	addElementData: function (doc, yPosition, column, element) {
 		if(element) {
 			if(!!element.empty){
-				if(!!element.empty && !!element.empty) {
+				if(!!element.empty && !!element.mini) {
 					yPosition += 2
 				} else {
 					yPosition += 5
@@ -68,47 +68,62 @@ PdfHelper = {
 		}
 		return yPosition
 	},
-	miniTable: function (tableName, columnWidths) {
+	miniTable: function (tableName, options) {
 		var table   = $('[data-table="' + tableName + '"]')
-		var headers = []
-		var data    = []
-		var widths  = !!columnWidths ? columnWidths : [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+		options = options || {}
+		var ignoreHeader = !!options.ignoreHeader
+		var ignoreBody = !!options.ignoreBody
+		var ignoreFoot = !!options.ignoreFoot
+		var headers = !!options.headers ? options.headers : []
+		var data    = !!options.data ? options.data : []
+		var widths  = !!options.widths ? options.widths : [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+		var skipBody  = !!options.skipBody ? options.skipBody : 0
 
-		table.find('thead th').each(function (i, element) {
-			var header = $(element).text()
+		if(!ignoreHeader) {
+			table.find('thead th').each(function (i, element) {
+				var header = $(element).text()
 
-			headers.push({ name: header, prompt: header, width: widths[i] })
-		})
-
-		table.find('tbody tr').each(function (i, element) {
-			var obj = {}
-
-			var jj = 0;
-			$(element).find('th').each(function (j, cell) {
-				obj[headers[j].name] = $(cell).text().replace('″', '"')
-				jj = j+1
+				headers.push({name: header, prompt: header, width: widths[i]})
 			})
-			$(element).find('td').each(function (j, cell) {
-				obj[headers[jj+j].name] = $(cell).text().replace('″', '"')
+		}
+
+		if(!ignoreBody) {
+			table.find('tbody tr').each(function (i, element) {
+				if(skipBody > 0){
+					skipBody--
+				} else {
+					var obj = {}
+
+					var jj = 0;
+					$(element).find('th').each(function (j, cell) {
+						obj[headers[j].name] = $(cell).text().replace('″', '"')
+						jj = j + 1
+					})
+					$(element).find('td').each(function (j, cell) {
+						obj[headers[jj + j].name] = $(cell).text().replace('″', '"')
+					})
+
+					data.push(obj)
+				}
 			})
+		}
 
-			data.push(obj)
-		})
+		if(!ignoreFoot) {
+			table.find('tfoot tr').each(function (i, element) {
+				var obj = {}
 
-		table.find('tfoot tr').each(function (i, element) {
-			var obj = {}
+				var jj = 0;
+				$(element).find('th').each(function (j, cell) {
+					obj[headers[j].name] = $(cell).text().replace('″', '"')
+					jj = j + 1
+				})
+				$(element).find('td').each(function (j, cell) {
+					obj[headers[jj + j].name] = $(cell).text().replace('″', '"')
+				})
 
-			var jj = 0;
-			$(element).find('th').each(function (j, cell) {
-				obj[headers[j].name] = $(cell).text().replace('″', '"')
-				jj = j+1
+				data.push(obj)
 			})
-			$(element).find('td').each(function (j, cell) {
-				obj[headers[jj+j].name] = $(cell).text().replace('″', '"')
-			})
-
-			data.push(obj)
-		})
+		}
 
 		return { data: data, headers: headers }
 	},
