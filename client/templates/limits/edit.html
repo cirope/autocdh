@@ -93,12 +93,36 @@
 										<tr>
 											<th>{{_ 'limit_liquid_humidity'}}</th>
 											<th style="text-align: center">%</th>
-											<td>{{> afFieldInput name='liquid_humidity_p1'}}</td>
-											<td>{{> afFieldInput name='liquid_humidity_p2'}}</td>
-											<td>{{> afFieldInput name='liquid_humidity_p3'}}</td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='liquid_humidity_p1'}} has-error{{/if}}">{{> afFieldInput name='liquid_humidity_p1'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='liquid_humidity_p2'}} has-error{{/if}}">{{> afFieldInput name='liquid_humidity_p2'}}</div></td>
+											<td><div class="form-group{{#if afFieldIsInvalid name='liquid_humidity_p3'}} has-error{{/if}}">{{> afFieldInput name='liquid_humidity_p3'}}</div></td>
 										</tr>
 										</tbody>
 									</table>
+								</div>
+								<div class="table-responsive has-error">
+									{{#if afFieldIsInvalid name='liquid_hits_p1' autoform=.}}<span class="help-block">{{_ 'limit_point_1'}}: {{afFieldMessage name='liquid_hits_p1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_code_p1' autoform=.}}<span class="help-block">{{_ 'limit_point_1'}}: {{afFieldMessage name='liquid_code_p1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_empty_mass_p1' autoform=.}}<span class="help-block">{{_ 'limit_point_1'}}: {{afFieldMessage name='liquid_empty_mass_p1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_wet_mass_p1' autoform=.}}<span class="help-block">{{_ 'limit_point_1'}}: {{afFieldMessage name='liquid_wet_mass_p1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_dry_mass_p1' autoform=.}}<span class="help-block">{{_ 'limit_point_1'}}: {{afFieldMessage name='liquid_dry_mass_p1' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_humidity_p1' autoform=.}}<span class="help-block">{{_ 'limit_point_1'}}: {{afFieldMessage name='liquid_humidity_p1' autoform=.}}</span>{{/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{{#if afFieldIsInvalid name='liquid_hits_p2' autoform=.}}<span class="help-block">{{_ 'limit_point_2'}}: {{afFieldMessage name='liquid_hits_p2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_code_p2' autoform=.}}<span class="help-block">{{_ 'limit_point_2'}}: {{afFieldMessage name='liquid_code_p2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_empty_mass_p2' autoform=.}}<span class="help-block">{{_ 'limit_point_2'}}: {{afFieldMessage name='liquid_empty_mass_p2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_wet_mass_p2' autoform=.}}<span class="help-block">{{_ 'limit_point_2'}}: {{afFieldMessage name='liquid_wet_mass_p2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_dry_mass_p2' autoform=.}}<span class="help-block">{{_ 'limit_point_2'}}: {{afFieldMessage name='liquid_dry_mass_p2' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_humidity_p2' autoform=.}}<span class="help-block">{{_ 'limit_point_2'}}: {{afFieldMessage name='liquid_humidity_p2' autoform=.}}</span>{{/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{{#if afFieldIsInvalid name='liquid_hits_p3' autoform=.}}<span class="help-block">{{_ 'limit_point_3'}}: {{afFieldMessage name='liquid_hits_p3' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_code_p3' autoform=.}}<span class="help-block">{{_ 'limit_point_3'}}: {{afFieldMessage name='liquid_code_p3' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_empty_mass_p3' autoform=.}}<span class="help-block">{{_ 'limit_point_3'}}: {{afFieldMessage name='liquid_empty_mass_p3' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_wet_mass_p3' autoform=.}}<span class="help-block">{{_ 'limit_point_3'}}: {{afFieldMessage name='liquid_wet_mass_p3' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_dry_mass_p3' autoform=.}}<span class="help-block">{{_ 'limit_point_3'}}: {{afFieldMessage name='liquid_dry_mass_p3' autoform=.}}</span>{{/if}}
+									{{#if afFieldIsInvalid name='liquid_humidity_p3' autoform=.}}<span class="help-block">{{_ 'limit_point_3'}}: {{afFieldMessage name='liquid_humidity_p3' autoform=.}}</span>{{/if}}
 								</div>
 							</fieldset>
 						</div>
