@@ -160,8 +160,8 @@ PdfHelper = {
 			} catch(err){
 				console.log(err)
 			}
-		}, function () {
-			console.log('error')
+		}, function (err) {
+			console.log('error: '+err)
 		});
 	}
 }
