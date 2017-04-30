@@ -13,7 +13,7 @@
         </button>
       </div>
       <div class="navbar-collapse collapse">
-        {{#if currentUser}}
+        {{#if showNav}}
           <ul class="nav navbar-nav">
             <li class="{{activeRouteClass 'samples' 'sample' 'sampleNew' 'sampleEdit'}}">
               <a href="{{pathFor 'samples'}}">{{{_ 'menu_samples'}}}</a>
