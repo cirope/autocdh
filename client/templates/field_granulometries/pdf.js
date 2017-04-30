@@ -185,7 +185,7 @@ Template.fieldGranulometry.events({
       yPosition -= 10
 
       // add image
-      PdfHelper.addGraphImage(doc, yPosition, 'data-graph-container', function () {
+      PdfHelper.addGraphImage(doc, yPosition, 'data-graph-container', 7, function () {
         // adding digital signature
         DigitalSignature.addSignatureToEachPage(doc, 'pdfGranulometries', function () {
           doc.putTotalPages('___total_pages___')

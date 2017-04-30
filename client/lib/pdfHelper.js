@@ -127,7 +127,7 @@ PdfHelper = {
 
 		return { data: data, headers: headers }
 	},
-	addGraphImage: function (doc, yPosition, container, callback) {
+	addGraphImage: function (doc, yPosition, container, factor, callback) {
 		$('body').addClass('pdf-export')
 
 		container = container || 'data-graph-container'
@@ -146,10 +146,11 @@ PdfHelper = {
 
 		$('body').removeClass('pdf-export')
 
+		factor = factor || 6
+
 		rasterizeHTML.drawHTML(html, canvas).then(function (result) {
 			try{
 				var data = canvas.toDataURL('image/png')
-				var factor = 6.75
 
 				doc.addImage(data, 'PNG', 15, yPosition += 5, width / factor, height / factor)
 
