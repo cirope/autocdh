@@ -7,8 +7,6 @@ tap:i18n
 aldeed:collection2
 aldeed:autoform
 iron:router
-ground:db
-meteorhacks:subs-manager
 reactive-var
 sacha:spin
 accounts-password

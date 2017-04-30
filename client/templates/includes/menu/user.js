@@ -11,8 +11,11 @@ Template.menuUser.events({
   'click [data-logout]': function (event, template) {
     event.preventDefault()
 
+    Session.set('loading', true)
+
     Meteor.logout(function () {
       Router.go('root')
+      Session.set('loading')
     })
   }
 })
