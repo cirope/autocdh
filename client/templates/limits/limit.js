@@ -1,4 +1,7 @@
 
+var _limit_liquid = new ReactiveVar('')
+var _limit_plastic = new ReactiveVar('')
+var _limit_plastic_index = new ReactiveVar('')
 
 var baseLog = function(val, base) {
 	return Math.log(val) / Math.log(base);
@@ -25,15 +28,8 @@ var updateChart = function (data) {
 
 			var xx = _.pluck(values, 'x')
 			var yy = _.pluck(values, 'y')
+
 			var spline = new MonotonicCubicSpline(xx, yy)
-
-			var values2 = [];
-			if(xx.length > 2) {
-				for (var xi = xx[0]; xi <= xx[xx.length - 1]; xi += 1) {
-					values2.push({x: xi, y: spline.interpolate(xi)});
-				}
-			}
-
 			var y25 = spline.interpolate(25);
 
 			var gData = {
@@ -110,6 +106,14 @@ var updateChart = function (data) {
 			};
 
 			new Chartist.Line('.ct-chart.ct-limits', gData, options)
+
+			_limit_liquid.set(y25.toFixed(0))
+
+			var lp = (data.plastic_humidity_d2 + data.plastic_humidity_d1) / (data.plastic_humidity_d2 ? 2 : 1)
+			_limit_plastic.set(lp.toFixed(0))
+
+			var lpi = y25 - lp
+			_limit_plastic_index.set(lpi.toFixed(0))
 		}
 	})
 };
@@ -122,9 +126,21 @@ Template.limit.onRendered(function () {
 })
 
 Template.limit.helpers({
-    sampleResponsible: function () {
-        return this.sampleResponsibleId && Responsible.findOne(this.sampleResponsibleId).name
-    }
+	sampleResponsible: function () {
+		return this.sampleResponsibleId && Responsible.findOne(this.sampleResponsibleId).name
+	},
+
+	limitLiquid: function () {
+		return _limit_liquid.get()
+	},
+
+	limitPlastic: function () {
+		return _limit_plastic.get()
+	},
+
+	limitPlasticIndex: function () {
+		return _limit_plastic_index.get()
+	}
 })
 
 Template.limit.events({

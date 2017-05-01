@@ -486,6 +486,7 @@
   "limit_plastic_dry_mass": "Masa muestra Seca + Recipiente",
   "limit_plastic_humidity": "Contenido de Humedad",
   "limit_indexes_title": "Determinación de índices",
+  "limit_liquid_reference": "Límite líquido (25 golpes)",
   "limit_liquid": "Límite líquido (LL)",
   "limit_plastic": "Límite plástico (LP) ",
   "limit_plastic_index": "Índice de plasticidad (IP)",
