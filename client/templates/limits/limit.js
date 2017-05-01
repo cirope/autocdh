@@ -107,10 +107,12 @@ var updateChart = function (data) {
 
 			new Chartist.Line('.ct-chart.ct-limits', gData, options)
 
-			_limit_liquid.set(y25.toFixed(0))
+			y25 = y25.toFixed(0)
+			_limit_liquid.set(y25)
 
 			var lp = (data.plastic_humidity_d2 + data.plastic_humidity_d1) / (data.plastic_humidity_d2 ? 2 : 1)
-			_limit_plastic.set(lp.toFixed(0))
+			lp = lp.toFixed(0)
+			_limit_plastic.set(lp)
 
 			var lpi = y25 - lp
 			_limit_plastic_index.set(lpi.toFixed(0))
