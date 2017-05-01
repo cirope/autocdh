@@ -3031,8 +3031,19 @@ var Chartist = {
       this.bounds.min = Math.pow(base, minDecade);
       this.bounds.max = Math.pow(base, maxDecade);
       this.bounds.values = [];
-      for(var decade = minDecade; decade <= maxDecade; ++decade) {
-        this.bounds.values.push(Math.pow(base, decade));
+      var ticks = options.ticks || []
+      if(ticks.length == 0) {
+        for (var decade = minDecade; decade <= maxDecade; ++decade) {
+          this.bounds.values.push(Math.pow(base, decade));
+        }
+      } else {
+        this.bounds.values.push(this.bounds.min);
+        for(var i = 0; i < ticks.length; i++){
+          if(ticks[i] > this.bounds.min && ticks[i] < this.bounds.max){
+            this.bounds.values.push(ticks[i]);
+          }
+        }
+        this.bounds.values.push(this.bounds.max);
       }
     }
 
