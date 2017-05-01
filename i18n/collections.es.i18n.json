@@ -496,6 +496,7 @@
   "limit_point_3": "Punto 3",
   "limit_determination_1": "Determinación 1",
   "limit_determination_2": "Determinación 2",
+  "limit_graphic_reference": "Contenido de Humedad",
   "limit_graphic_humidity": "Contenido de Humedad (%)",
   "limit_graphic_hits": "N° de golpes para juntar los labios en el cascador (escala logarítmica)",
   "field_granulometries": "Granulometrías de suelos",

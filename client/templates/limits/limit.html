@@ -3,7 +3,7 @@
 		<h4>{{_ 'limit_title'}}</h4>
 		<h5>{{_ 'limit_subtitle'}}</h5>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -35,7 +35,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -105,7 +105,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -162,7 +162,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -177,7 +177,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row">
+	<div class="row hide-on-pdf-export" style="margin-bottom: 10px;">
 		<div class="pull-right">
 			<button class="btn btn-sm btn-default" type="button" data-download-pdf>
 				{{_ 'download_pdf'}}
@@ -190,5 +190,23 @@
 		<button class="btn btn-sm btn-danger" type="button" data-delete>
 			{{_ 'delete'}}
 		</button>
+	</div>
+	<div class="show-on-pdf-export" data-graph-container>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="row">
+					<div class="col-md-8">
+						<div class="panel panel-default">
+							<div class="panel-body">
+								<div class="ct-chart ct-golden-section ct-limits" data-chart></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						{{> limitReference}}
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
