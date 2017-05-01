@@ -3037,6 +3037,7 @@ var Chartist = {
           this.bounds.values.push(Math.pow(base, decade));
         }
       } else {
+        // hotfix to draw ticks
         this.bounds.values.push(this.bounds.min);
         for(var i = 0; i < ticks.length; i++){
           if(ticks[i] > this.bounds.min && ticks[i] < this.bounds.max){

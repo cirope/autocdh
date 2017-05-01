@@ -23,11 +23,32 @@ var updateChart = function (data) {
 			if(data.liquid_hits_p2 && data.liquid_humidity_p2) values.push({x: data.liquid_hits_p2, y: data.liquid_humidity_p2 });
 			if(data.liquid_hits_p3 && data.liquid_humidity_p3) values.push({x: data.liquid_hits_p3, y: data.liquid_humidity_p3 });
 
+			var xx = _.pluck(values, 'x')
+			var yy = _.pluck(values, 'y')
+			var spline = new MonotonicCubicSpline(xx, yy)
+
+			var values2 = [];
+			if(xx.length > 2) {
+				for (var xi = xx[0]; xi <= xx[xx.length - 1]; xi += 1) {
+					values2.push({x: xi, y: spline.interpolate(xi)});
+				}
+			}
+
+			var y25 = spline.interpolate(25);
+
 			var gData = {
 				series: [
 					{
+						data: [{x: xx[0], y: spline.interpolate(xx[0])+.4}, {x: 25, y: y25},{x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])+.4}],
+						className: 'ct-series ct-series-a transparent-points dotted-a'
+					},
+					{
 						data: values,
 						className: 'ct-series ct-series-a only-points'
+					},
+					{
+						data: [{x: 25, y: y25}],
+						className: 'ct-series ct-series-b only-points'
 					}
 				]};
 
@@ -88,29 +109,7 @@ var updateChart = function (data) {
 				]
 			};
 
-			var chart = new Chartist.Line('.ct-chart.ct-limits', gData, options)
-
-			/*
-			var values2 = []
-
-			gData = {
-				series: [
-					{
-						data: values2,
-						className: 'ct-series ct-series-a transparent-points dotted-a'
-					},
-					{
-						data: values,
-						className: 'ct-series ct-series-a only-points'
-					},
-					{
-						data: [{x: 25, y: 5}],
-						className: 'ct-series ct-series-b only-points'
-					}
-				]};
-
-			chart.update(gData)
-			*/
+			new Chartist.Line('.ct-chart.ct-limits', gData, options)
 		}
 	})
 };
