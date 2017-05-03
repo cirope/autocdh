@@ -30,12 +30,17 @@ var updateChart = function (data) {
 			var yy = _.pluck(values, 'y')
 
 			var spline = new MonotonicCubicSpline(xx, yy)
-			var y25 = spline.interpolate(25);
+			var y25 = spline.interpolate(25)
+			var y25_1 = y25.toFixed(1)
+
+			var values2 = [{x: xx[0], y: spline.interpolate(xx[0])+(xx[xx.length - 1] > 25?.4:.1)}, {x: 25, y: y25_1}]
+			if(xx[xx.length - 1] > 25) values2.push({x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])+.4});
+
 
 			var gData = {
 				series: [
 					{
-						data: [{x: xx[0], y: spline.interpolate(xx[0])+.4}, {x: 25, y: y25},{x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])+.4}],
+						data: values2,
 						className: 'ct-series ct-series-a transparent-points dotted-a'
 					},
 					{
@@ -43,7 +48,7 @@ var updateChart = function (data) {
 						className: 'ct-series ct-series-a only-points'
 					},
 					{
-						data: [{x: 25, y: y25}],
+						data: [{x: 25, y: y25_1}],
 						className: 'ct-series ct-series-b only-points'
 					}
 				]};
@@ -76,7 +81,7 @@ var updateChart = function (data) {
 						y: 8
 					},
 					labelInterpolationFnc: function (value) {
-						return Math.round(value)
+						return value.toFixed(1)
 					}
 				},
 				plugins: [
@@ -110,7 +115,10 @@ var updateChart = function (data) {
 			y25 = y25.toFixed(0)
 			_limit_liquid.set(y25)
 
-			var lp = (data.plastic_humidity_d2 + data.plastic_humidity_d1) / (data.plastic_humidity_d2 ? 2 : 1)
+			var lp = (
+				(!!data.plastic_humidity_d2 ? data.plastic_humidity_d2 : 0) +
+				(!!data.plastic_humidity_d1 ? data.plastic_humidity_d1 : 0)
+				) / (!!data.plastic_humidity_d2 ? 2 : 1)
 			lp = lp.toFixed(0)
 			_limit_plastic.set(lp)
 
