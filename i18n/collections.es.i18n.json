@@ -500,6 +500,7 @@
   "limit_graphic_reference": "Contenido de Humedad",
   "limit_graphic_humidity": "Contenido de Humedad (%)",
   "limit_graphic_hits": "N° de golpes para juntar los labios en el cascador (escala logarítmica)",
+  "limit_error_minor_than": "Debe ser mayor que los anteriores",
   "field_granulometries": "Granulometrías de suelos",
   "field_granulometries_label": "Granulometrías de suelos",
   "field_granulometry": "Granulometría de suelos",
