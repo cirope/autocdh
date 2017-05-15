@@ -46,15 +46,9 @@
           <a href="{{pathFor 'instruments'}}">{{_ 'instruments'}}</a>
         </li>
       {{/if}}
-      {{#with settings }}
-          {{#if settings.customOptions }}
-              {{#if settings.customOptions.digitalSignatureMenuEnabled }}
-              <li class="{{activeRouteClass 'digitalSignature' 'digitalSignatureEdit'}}">
-                  <a href="{{pathFor 'digitalSignature' data=this }}">{{_ 'setting_pdf_digital_signature'}}</a>
-              </li>
-              {{/if}}
-          {{/if}}
-      {{/with}}
+			<li class="{{activeRouteClass 'digitalSignature' 'digitalSignatureEdit'}}">
+				<a href="{{pathFor 'digitalSignature' data=this }}">{{_ 'setting_pdf_digital_signature'}}</a>
+			</li>
     </ul>
   </li>
 </template>
