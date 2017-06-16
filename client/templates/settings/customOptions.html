@@ -61,14 +61,6 @@
                             <strong>{{_ 'setting_custom_options_disabled'}}</strong>
                         {{/if}}
                     </p>
-                    <p>
-                        {{_ 'setting_custom_options_digital_signature'}} /
-                        {{#if customOptions.digitalSignatureMenuEnabled}}
-                            <strong>{{_ 'setting_custom_options_enabled'}}</strong>
-                        {{else}}
-                            <strong>{{_ 'setting_custom_options_disabled'}}</strong>
-                        {{/if}}
-                    </p>
 
                     <a href="{{pathFor 'customOptionsEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'setting_custom_options_update_button'}}">
                         {{_ 'edit'}}

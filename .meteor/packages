@@ -7,8 +7,6 @@ tap:i18n
 aldeed:collection2
 aldeed:autoform
 iron:router
-ground:db
-meteorhacks:subs-manager
 reactive-var
 sacha:spin
 accounts-password
@@ -19,7 +17,6 @@ francocatena:autoform-bs-datetimepicker
 momentjs:moment
 rzymek:moment-locale-es
 fourseven:scss
-meteorhacks:kadira
 alanning:roles
 cfs:standard-packages
 cfs:gridfs

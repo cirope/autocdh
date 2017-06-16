@@ -47,13 +47,9 @@
         </li>
       {{/if}}
       {{#with settings }}
-          {{#if settings.customOptions }}
-              {{#if settings.customOptions.digitalSignatureMenuEnabled }}
-              <li class="{{activeRouteClass 'digitalSignature' 'digitalSignatureEdit'}}">
-                  <a href="{{pathFor 'digitalSignature' data=this }}">{{_ 'setting_pdf_digital_signature'}}</a>
-              </li>
-              {{/if}}
-          {{/if}}
+				<li class="{{activeRouteClass 'digitalSignature' 'digitalSignatureEdit'}}">
+					<a href="{{pathFor 'digitalSignature' data=this }}">{{_ 'setting_pdf_digital_signature'}}</a>
+				</li>
       {{/with}}
     </ul>
   </li>
