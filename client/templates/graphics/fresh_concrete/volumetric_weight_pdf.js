@@ -20,7 +20,7 @@ Template.graphicFreshConcreteVolumetricWeight.events({
 
       yPosition = putFilterData(template.data.filter, doc, yPosition += 5)
 
-      PdfHelper.addGraphImage(doc, yPosition += 5, function () {
+      PdfHelper.addGraphImage(doc, yPosition += 5, 'data-container', 6.75, function () {
         // adding digital signature
         yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfFreshConcrete', function () {
           doc.putTotalPages('___total_pages___')
