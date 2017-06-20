@@ -1,7 +1,7 @@
 <template name="graphicAggregateFineness">
-  <div class="row">
+  <div class="row" data-container>
     <div class="col-md-4">
-      <div class="panel panel-default">
+      <div class="panel panel-default hide-on-pdf-export">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterAggregateFineness' type='method' meteormethod='filterFineness' resetOnSuccess=false doc=filter}}
             <fieldset>
@@ -47,6 +47,13 @@
           {{/if}}
         </div>
       </div>
+
+			<div class="hide-on-pdf-export pull-right">
+				<button class="btn btn-sm btn-default" type="button" download-pdf>
+					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+			</div>
     </div>
   </div>
 
