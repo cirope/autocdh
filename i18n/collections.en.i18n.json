@@ -613,6 +613,7 @@
   "setting_pdf_granulometries": "Granulometries",
   "setting_pdf_fresh_concrete": "Stats: Fresh concrete",
   "setting_pdf_hardened_concrete": "Stats: Hardened concrete",
+  "setting_pdf_stats_aggregates": "Stats: Aggregates",
   "setting_pdf_maintenance": "Maintenance - reports",
   "setting_pdf_maintenance_check_list": "Maintenance - check lists",
   "setting_pdf_management_documents": "Management documents",
