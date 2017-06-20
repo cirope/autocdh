@@ -12,9 +12,22 @@ PdfHelper = {
         doc.text(Schemas.Filter.label('end')   + ': ' + moment(filter.end).format('L'),   25, yPosition += 5)
 
         _.each(fields, function (name) {
-            var label = Schemas.Filter.label(name)
-            var text  = $('select[name="' + name + '"] option:selected').text()
-
+            var label = '';
+            var text = '';
+            if(typeof name === 'object'){
+                if(!!name.label) {
+                    label = Schemas.Filter.label(name.label)
+                }
+                if(!!name.text) {
+                    var obj = $('input[id="' + name.text + '"]')
+                    if(!!obj && !!obj[0]) {
+                        text = obj[0].value
+                    }
+                }
+            } else {
+                label = Schemas.Filter.label(name)
+                text = $('select[name="' + name + '"] option:selected').text()
+            }
             doc.text(label + ': ' + text, 25, yPosition += 5)
         })
 

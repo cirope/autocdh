@@ -33,6 +33,8 @@
   "search_with_no_results": "La búsqueda no produjo resultados",
   "confirm_delete": "¿Está seguro?",
   "download_pdf": "Descargar PDF",
+  "download_graph_pdf": "Descargar gráfico PDF",
+  "download_values_pdf": "Descargar datos y valores PDF",
   "download_file": "Descargar",
   "download_csv": "Descargar backup",
   "downloads": "Descargas",
