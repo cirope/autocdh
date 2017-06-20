@@ -23,6 +23,11 @@ PdfHelper = {
                     if(!!obj && !!obj[0]) {
                         text = obj[0].value
                     }
+                } else if(!!name.checkbox) {
+                    var obj = $('input[name="' + name.label + '"]')
+                    if(!!obj && !!obj[0]) {
+                        text = !!obj[0].checked ? TAPi18n.__('yes') :  TAPi18n.__('no')
+                    }
                 }
             } else {
                 label = Schemas.Filter.label(name)

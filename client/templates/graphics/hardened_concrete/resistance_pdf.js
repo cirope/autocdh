@@ -2,7 +2,7 @@
 
 var putFilterData = function (filter, doc, yPosition) {
   return PdfHelper.addFilterData(filter, doc, yPosition, true, true, ['concretes', 'plantId', 'strengthId', 'download', 'aggregateId', 'settlementId',
-    {label: 'customerId', text: 'customer-search'}, {label: 'workId', text: 'work-search'}, 'discardHighErraticValues'
+    {label: 'customerId', text: 'customer-search'}, {label: 'workId', text: 'work-search'}, {label: 'discardHighErraticValues', checkbox: true}
   ])
 }
 
