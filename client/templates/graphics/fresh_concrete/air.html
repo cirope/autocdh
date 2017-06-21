@@ -58,15 +58,15 @@
           <strong>{{r deviation 1}}%</strong>
         </p>
       {{/if}}
+
+			<div class="hide-on-pdf-export pull-right">
+				<button class="btn btn-sm btn-default" type="button" data-download-pdf>
+					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+			</div>
     </div>
   </div>
 
   <span class="hidden">{{sampleCount}}</span>
-
-	<div class="hide-on-pdf-export pull-right">
-		<button class="btn btn-sm btn-default" type="button" data-download-pdf>
-			{{_ 'download_pdf'}}
-			<span class="glyphicon glyphicon-file"></span>
-		</button>
-	</div>
 </template>
