@@ -45,13 +45,24 @@ Template.graphicHardenedConcrete3DaysResistance.events({
       doc.setFontSize(9)
 
       yPosition = putFilterData(template.data.filter, doc, yPosition += 5)
+      yPosition += 10
 
-      PdfHelper.table(doc, yPosition += 5, 'data-container', 6.75, function () {
-        // adding digital signature
-        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfHardenedConcrete', function () {
-          doc.putTotalPages('___total_pages___')
-          doc.save(name+'.pdf')
+      var table = PdfHelper.miniTable('hardened-concrete-cracks', {
+        widths: [25, 40, 40, 41]
+      })
+      doc
+        .setFontSize(6)
+        .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
+          printHeaders: true,
+          autoSize: false,
+          margins: { right: 0, left: 0, top: 10, bottom: 0 },
+          fontSize: 7
         })
+
+      // adding digital signature
+      yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfHardenedConcrete', function () {
+        doc.putTotalPages('___total_pages___')
+        doc.save(name+'.pdf')
       })
     })
   }
