@@ -48,7 +48,7 @@ Template.graphicHardenedConcrete3DaysResistance.events({
       yPosition += 10
 
       var table = PdfHelper.miniTable('hardened-concrete-cracks', {
-        widths: [25, 40, 40, 41]
+        widths: [25, 40, 40, 40]
       })
       doc
         .setFontSize(6)

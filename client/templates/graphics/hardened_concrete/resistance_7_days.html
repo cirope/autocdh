@@ -76,9 +76,11 @@
   </div>
 
   {{#if cracks.length}}
+		<div class="hide-on-pdf-export">
     <hr>
 
     {{> hardenedConcreteCracks}}
+		</div>
   {{/if}}
 
   <div class="hidden">{{sampleCount}}</div>
