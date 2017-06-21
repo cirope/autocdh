@@ -18,6 +18,7 @@ PdfHelper = {
                 if(!!name.label) {
                     label = Schemas.Filter.label(name.label)
                 }
+                text = '-'
                 if(!!name.text) {
                     var obj = $('input[id="' + name.text + '"]')
                     if(!!obj && !!obj[0]) {
@@ -28,6 +29,9 @@ PdfHelper = {
                     if(!!obj && !!obj[0]) {
                         text = !!obj[0].checked ? TAPi18n.__('yes') :  TAPi18n.__('no')
                     }
+                }
+                if(!text || /^\s*$/.test(text)){
+                    text = '-'
                 }
             } else {
                 label = Schemas.Filter.label(name)
