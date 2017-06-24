@@ -108,6 +108,14 @@
                         {{/if}}
                     </p>
                     <p>
+                        {{_ 'setting_pdf_stats_indicators'}} /
+                        {{#if digitalSignature.pdfStatsIndicators}}
+                            <strong>{{_ 'setting_pdf_enabled'}}</strong>
+                        {{else}}
+                            <strong>{{_ 'setting_pdf_disabled'}}</strong>
+                        {{/if}}
+                    </p>
+                    <p>
                         {{_ 'setting_pdf_maintenance'}} /
                         {{#if digitalSignature.pdfMaintenance}}
                             <strong>{{_ 'setting_pdf_enabled'}}</strong>

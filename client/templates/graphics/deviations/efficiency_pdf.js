@@ -22,7 +22,7 @@ Template.graphicConcreteEfficiency.events({
 
       PdfHelper.addGraphImage(doc, yPosition += 5, 'data-container', 6.75, function () {
         // adding digital signature
-        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfStatsAggregates', function () {
+        yPosition = DigitalSignature.addSignatureToEachPage(doc, 'pdfStatsIndicators', function () {
           doc.putTotalPages('___total_pages___')
           doc.save(name+'.pdf')
         })
