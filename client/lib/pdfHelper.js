@@ -8,8 +8,12 @@ PdfHelper = {
           .text(TAPi18n.__('graphic_filter'), 20, yPosition += 7)
           .setFontSize(9)
 
-        doc.text(Schemas.Filter.label('start') + ': ' + moment(filter.start).format('L'), 25, yPosition += 5)
-        doc.text(Schemas.Filter.label('end')   + ': ' + moment(filter.end).format('L'),   25, yPosition += 5)
+        if(!!start) {
+            doc.text(Schemas.Filter.label('start') + ': ' + moment(filter.start).format('L'), 25, yPosition += 5)
+        }
+        if(!!end) {
+            doc.text(Schemas.Filter.label('end') + ': ' + moment(filter.end).format('L'), 25, yPosition += 5)
+        }
 
         _.each(fields, function (name) {
             var label = '';

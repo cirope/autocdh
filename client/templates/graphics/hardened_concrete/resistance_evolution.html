@@ -1,7 +1,7 @@
 <template name="graphicHardenedConcreteResistanceEvolution">
   <div class="row" data-container>
-    <div class="col-md-4">
-      <div class="panel panel-default hide-on-pdf-export">
+    <div class="col-md-4 hide-on-pdf-export">
+      <div class="panel panel-default">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterHardenedConcreteResistanceEvolution' type='method' meteormethod='filterResistanceEvolution' resetOnSuccess=false doc=filter}}
             <fieldset>
@@ -78,6 +78,11 @@
           {{/if}}
         </div>
       </div>
+
+			<div class="col-md-6 hidden but-show-on-pdf-export">
+				<br>
+				{{> graphicHardenedConcreteResistanceEvolutionReference}}
+			</div>
 
       {{#if values.length}}
         <div class="panel panel-default hide-on-pdf-export">
