@@ -1,7 +1,7 @@
 <template name="graphicHardenedConcrete3DaysResistance">
   <div class="row" data-container>
-    <div class="col-md-4">
-      <div class="panel panel-default hide-on-pdf-export">
+    <div class="col-md-4 hide-on-pdf-export">
+      <div class="panel panel-default">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterHardenedConcrete3DaysResistance' type='method' meteormethod='filter3DaysResistance' resetOnSuccess=false doc=filter}}
             <fieldset>
@@ -72,6 +72,11 @@
           <strong>{{r mean 1}}%</strong>
         </p>
       {{/if}}
+
+			<div class="col-md-6 hidden but-show-on-pdf-export">
+				<br>
+				{{> graphicHardenedConcrete3DaysResistanceReference}}
+			</div>
     </div>
   </div>
 
