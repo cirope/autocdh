@@ -6,11 +6,11 @@ var putFilterData = function (filter, doc, yPosition) {
 
 Template.graphicFreshConcreteConsistency.events({
   'click [data-download-pdf]': function (event, template) {
-    var yPosition            = 35
+    var yPosition            = 25
     var name                 = TAPi18n.__('graphic_fresh_concrete_consistency')
 
     PDF.new({}, function (doc) {
-      PdfHelper.addGraphImage(doc, 64, 'data-container', 4.5, function () {
+      PdfHelper.addGraphImage(doc, 58, 'data-container', 4.75, function () {
         doc
           .setFont('helvetica')
           .setFontSize(14)
@@ -26,7 +26,7 @@ Template.graphicFreshConcreteConsistency.events({
           doc.putTotalPages('___total_pages___')
           doc.save(name+'.pdf')
         })
-      }, -4)
+      }, 4)
     })
   }
 })
