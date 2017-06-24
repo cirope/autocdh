@@ -213,12 +213,12 @@ PdfHelper = {
             console.log('error: '+err)
         });
     },
-    generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc) {
-        var yPosition            = 25
+    generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc, yIni, yFilterIni, yGraphIni) {
+        var yPosition            = yIni || 25
         var name                 = TAPi18n.__(title)
 
         PDF.new({}, function (doc) {
-            PdfHelper.addGraphImage(doc, 58, container, 4.75, function () {
+            PdfHelper.addGraphImage(doc, yGraphIni || 58, container, 4.75, function () {
                 doc
                   .setFont('helvetica')
                   .setFontSize(14)
@@ -226,7 +226,7 @@ PdfHelper = {
                   .setFontSize(9)
 
                 if(typeof dataFilterFc === 'function') {
-                    yPosition = dataFilterFc(template.data.filter, doc, yPosition += 5)
+                    yPosition = dataFilterFc(template.data.filter, doc, yPosition += yFilterIni || 5)
                 }
 
                 // adding digital signature
