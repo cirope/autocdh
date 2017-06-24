@@ -212,6 +212,30 @@ PdfHelper = {
         }, function (err) {
             console.log('error: '+err)
         });
+    },
+    generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc) {
+        var yPosition            = 25
+        var name                 = TAPi18n.__(title)
+
+        PDF.new({}, function (doc) {
+            PdfHelper.addGraphImage(doc, 58, container, 4.75, function () {
+                doc
+                  .setFont('helvetica')
+                  .setFontSize(14)
+                  .text(name, 20, yPosition)
+                  .setFontSize(9)
+
+                if(typeof dataFilterFc === 'function') {
+                    yPosition = dataFilterFc(template.data.filter, doc, yPosition += 5)
+                }
+
+                // adding digital signature
+                yPosition = DigitalSignature.addSignatureToEachPage(doc, digitalSignatureType, function () {
+                    doc.putTotalPages('___total_pages___')
+                    doc.save(name+'.pdf')
+                })
+            }, 4)
+        })
     }
 }
 
