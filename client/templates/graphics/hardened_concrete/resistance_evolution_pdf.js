@@ -24,7 +24,9 @@ var table = function (tableName) {
 }
 
 var putFilterData = function (filter, doc, yPosition) {
-  return PdfHelper.addFilterData(filter, doc, yPosition, true, true, ['concretes', 'plantId', 'strengthId', 'additiveId', 'molding', 'cured', 'additions'])
+  return PdfHelper.addFilterData(filter, doc, yPosition, true, true, ['concretes', 'plantId', 'strengthId', 'additiveId', 'molding', 'cured', 'additions',
+    {label: 'customerId', text: 'customer-search'}, {label: 'workId', text: 'work-search'}
+  ])
 }
 
 Template.graphicHardenedConcreteResistanceEvolution.events({
@@ -65,7 +67,7 @@ Template.graphicHardenedConcreteResistanceEvolution.events({
 
       yPosition += tableEvolutionData.data.length * 8.6 + 1.5
 
-      PdfHelper.addGraphImage(doc, yPosition + 40, 'data-container', 5.5, function () {
+      PdfHelper.addGraphImage(doc, yPosition + 50, 'data-container', 5.5, function () {
         yPosition = putFilterData(template.data.filter, doc, yPosition += 5)
 
         // adding digital signature
