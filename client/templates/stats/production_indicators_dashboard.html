@@ -1,5 +1,5 @@
 <template name="statsProductionIndicatorsDashboard">
-  <div class="panel panel-default">
+  <div class="panel panel-default" data-container>
     <div class="panel-heading">
       <h4 class="panel-title">
         {{_ 'stats_production_indicators_dashboard'}}
@@ -101,4 +101,11 @@
       </div>
     </div>
   </div>
+
+	<div class="hide-on-pdf-export pull-right">
+		<button class="btn btn-sm btn-default" type="button" download-pdf>
+			{{_ 'download_pdf'}}
+			<span class="glyphicon glyphicon-file"></span>
+		</button>
+	</div>
 </template>

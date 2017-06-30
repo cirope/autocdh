@@ -1,7 +1,7 @@
 <template name="graphicFreshConcreteAir">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="panel panel-default">
+	<div class="row" data-container>
+		<div class="col-md-4 hide-on-pdf-export">
+			<div class="panel panel-default">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterFreshConcreteAir' type='method' meteormethod='filterAir' resetOnSuccess=false doc=filter}}
             <fieldset>
@@ -58,9 +58,20 @@
           <strong>{{r deviation 1}}%</strong>
         </p>
       {{/if}}
+
+			<div class="hide-on-pdf-export pull-right">
+				<button class="btn btn-sm btn-default" type="button" data-download-pdf>
+					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+			</div>
+
+			<div class="col-md-6 hidden but-show-on-pdf-export">
+				<br>
+				{{> graphicFreshConcreteAirReference}}
+			</div>
     </div>
   </div>
-
 
   <span class="hidden">{{sampleCount}}</span>
 </template>

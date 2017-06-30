@@ -1,6 +1,6 @@
 <template name="graphicHardenedConcreteResistance">
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row" data-container>
+    <div class="col-md-4 hide-on-pdf-export">
       <div class="panel panel-default">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterHardenedConcreteResistance' type='method' meteormethod='filterResistance' resetOnSuccess=false doc=filter}}
@@ -61,13 +61,30 @@
           <strong>{{r mean 1}} MPa</strong>
         </p>
       {{/if}}
+
+			<div class="col-md-6 hidden but-show-on-pdf-export">
+				{{> graphicHardenedConcreteResistanceReference}}
+			</div>
     </div>
+
+		<div class="hide-on-pdf-export pull-right">
+			<button class="btn btn-sm btn-default" type="button" graph-download-pdf>
+				{{_ 'download_graph_pdf'}}
+				<span class="glyphicon glyphicon-file"></span>
+			</button>
+			<button class="btn btn-sm btn-default" type="button" values-download-pdf>
+				{{_ 'download_values_pdf'}}
+				<span class="glyphicon glyphicon-file"></span>
+			</button>
+		</div>
   </div>
 
   {{#if cracks.length}}
+		<div class="hide-on-pdf-export">
     <hr>
 
     {{> hardenedConcreteCracks}}
+		</div>
   {{/if}}
 
   <div class="hidden">{{sampleCount}}</div>

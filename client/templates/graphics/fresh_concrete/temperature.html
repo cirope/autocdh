@@ -1,6 +1,6 @@
 <template name="graphicFreshConcreteTemperature">
-  <div class="row">
-    <div class="col-md-4">
+  <div class="row" data-container>
+    <div class="col-md-4 hide-on-pdf-export">
       <div class="panel panel-default">
         <div class="panel-body">
           {{#autoForm schema=filterSchema id='filterFreshConcreteTemperature' type='method' meteormethod='filterTemperature' resetOnSuccess=false doc=filter}}
@@ -47,6 +47,18 @@
           {{/if}}
         </div>
       </div>
+
+			<div class="hide-on-pdf-export pull-right">
+				<button class="btn btn-sm btn-default" type="button" data-download-pdf>
+					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+			</div>
+
+			<div class="col-md-6 hidden but-show-on-pdf-export">
+				<br>
+				{{> graphicFreshConcreteTemperatureReference}}
+			</div>
     </div>
   </div>
 

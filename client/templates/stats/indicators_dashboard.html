@@ -1,5 +1,5 @@
 <template name="statsIndicatorsDashboard">
-  <div class="panel panel-default">
+  <div class="panel panel-default" data-container>
     <div class="panel-heading">
       <h4 class="panel-title">
         {{_ 'stats_indicators_dashboard'}}
@@ -36,4 +36,11 @@
   {{#if detailsTemplate}}
     {{> Template.dynamic template=detailsTemplate data=detailsTemplateData}}
   {{/if}}
+
+	<div class="hide-on-pdf-export pull-right">
+		<button class="btn btn-sm btn-default" type="button" download-pdf>
+			{{_ 'download_pdf'}}
+			<span class="glyphicon glyphicon-file"></span>
+		</button>
+	</div>
 </template>
