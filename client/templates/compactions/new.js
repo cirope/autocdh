@@ -83,7 +83,7 @@ var calculateColumns = function () {
     }
     setField('container_humidity_p' + pos, hp ? hp.toFixed(1) : '')
 
-    var dd = r * (1-hp/100)
+    var dd = r * (100/(hp+100))
     setField('dry_density_p' + pos, dd.toFixed(2))
 
     var de = 0;
