@@ -20,7 +20,7 @@ var setField = function (name, value) {
 
 var calculateFields = function () {
   // liquid limit
-  for(var pos = 1; pos <= 3; pos++) {
+  for(var pos = 1; pos <= 5; pos++) {
     var r = 0;
     var e = getFloat('liquid_empty_mass_p' + pos);
     var w = getFloat('liquid_wet_mass_p' + pos);
@@ -32,7 +32,7 @@ var calculateFields = function () {
   }
 
   // plastic limit
-  for(var det = 1; det <= 2; det++) {
+  for(var det = 1; det <= 3; det++) {
     var pr = 0;
     var pe = getFloat('plastic_empty_mass_d' + det);
     var pw = getFloat('plastic_wet_mass_d' + det);
@@ -52,22 +52,22 @@ Template.limitNew.helpers({
 
 Template.limitNew.events({
 
-  'change [name="liquid_empty_mass_p1"], change [name="liquid_empty_mass_p2"], change [name="liquid_empty_mass_p3"]': function (event) {
+  'change [name="liquid_empty_mass_p1"], change [name="liquid_empty_mass_p2"], change [name="liquid_empty_mass_p3"], change [name="liquid_empty_mass_p4"], change [name="liquid_empty_mass_p5"]': function (event) {
     calculateFields()
   },
-  'change [name="liquid_wet_mass_p1"], change [name="liquid_wet_mass_p2"], change [name="liquid_wet_mass_p3"]': function (event) {
+  'change [name="liquid_wet_mass_p1"], change [name="liquid_wet_mass_p2"], change [name="liquid_wet_mass_p3"], change [name="liquid_wet_mass_p4"], change [name="liquid_wet_mass_p5"]': function (event) {
     calculateFields()
   },
-  'change [name="liquid_dry_mass_p1"], change [name="liquid_dry_mass_p2"], change [name="liquid_dry_mass_p3"]': function (event) {
+  'change [name="liquid_dry_mass_p1"], change [name="liquid_dry_mass_p2"], change [name="liquid_dry_mass_p3"], change [name="liquid_dry_mass_p4"], change [name="liquid_dry_mass_p5"]': function (event) {
     calculateFields()
   },
-  'change [name="plastic_empty_mass_d1"], change [name="plastic_empty_mass_d2"]': function (event) {
+  'change [name="plastic_empty_mass_d1"], change [name="plastic_empty_mass_d2"], change [name="plastic_empty_mass_d3"]': function (event) {
     calculateFields()
   },
-  'change [name="plastic_wet_mass_d1"], change [name="plastic_wet_mass_d2"]': function (event) {
+  'change [name="plastic_wet_mass_d1"], change [name="plastic_wet_mass_d2"], change [name="plastic_wet_mass_d3"]': function (event) {
     calculateFields()
   },
-  'change [name="plastic_dry_mass_d1"], change [name="plastic_dry_mass_d2"]': function (event) {
+  'change [name="plastic_dry_mass_d1"], change [name="plastic_dry_mass_d2"], change [name="plastic_dry_mass_d3"]': function (event) {
     calculateFields()
-  },
+  }
 })
