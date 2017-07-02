@@ -35,25 +35,6 @@ var updateChart = function (data) {
 			var y25 = spline.interpolate(25)
 			var y25_1 = y25.toFixed(1)
 
-			/*
-			var values2 = []
-			var pushed25 = false;
-			for(var i = 0; i<values.length; i++){
-				var xv = xx[i]
-				if(xv > 25 && !pushed25){
-					values2.push({x: 25, y: y25_1})
-					pushed25 = true
-				}
-				values2.push({x: xv, y: spline.interpolate(xv)})
-			}
-			if(!pushed25){
-				values2.push({x: 25, y: y25_1})
-			}
-			*/
-			/*
-			var values2 = [{x: xx[0], y: spline.interpolate(xx[0])+(xx[xx.length - 1] > 25?.4:.1)}, {x: 25, y: y25_1}]
-			if(xx[xx.length - 1] > 25) values2.push({x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])+.4});
-			*/
 			var values2 = [{x: xx[0], y: spline.interpolate(xx[0])}, {x: 25, y: y25_1}]
 			if(xx[xx.length - 1] > 25) values2.push({x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])});
 
