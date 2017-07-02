@@ -40,9 +40,12 @@ Template.limit.events({
       yPosition = PdfHelper.addColumnData(doc, yPosition, PdfHelper.COL_1, values)
 
       table = PdfHelper.miniTable("liquid", {
-        widths: [80, 20, 30, 30, 30]
+        widths: [70, 16, 30, 30, 30, 30, 30]
       })
       table.headers[0].prompt = TAPi18n.__('limit_liquid_title')
+      table.headers[1].prompt = ' '
+      table.headers[5].prompt = TAPi18n.__('limit_point_4')+' '+TAPi18n.__('limit_point_optional_2')
+      table.headers[6].prompt = TAPi18n.__('limit_point_5')+' '+TAPi18n.__('limit_point_optional_2')
 
       yPosition -= 2
       doc
@@ -56,9 +59,10 @@ Template.limit.events({
       yPosition += 57
 
       table = PdfHelper.miniTable("plastic",  {
-        widths: [80, 20, 30, 30]
+        widths: [70, 16, 30, 30, 30]
       })
       table.headers[0].prompt = TAPi18n.__('limit_plastic_title')
+      table.headers[1].prompt = ' '
       doc
         .setFontSize(7)
         .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
