@@ -35,8 +35,8 @@ var updateChart = function (data) {
 			var y25 = spline.interpolate(25)
 			var y25_1 = y25.toFixed(1)
 
-			var values2 = [{x: xx[0], y: spline.interpolate(xx[0])}, {x: 25, y: y25_1}]
-			if(xx[xx.length - 1] > 25) values2.push({x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])});
+			var values2 = [{x: xx[0], y: spline.interpolate(xx[0])+.1}, {x: 25, y: y25_1}]
+			if(xx[xx.length - 1] > 25) values2.push({x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])+.1});
 
 			var gData = {
 				series: [
