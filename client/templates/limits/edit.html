@@ -47,6 +47,9 @@
 									<table class="table table-condensed table-hover table-no-margin">
 										<thead>
 										<tr>
+											<th colspan="5" style="text-align: center">{{_ 'limit_liquid_subtitle'}}</th>
+										</tr>
+										<tr>
 											<th class="col-md-3">{{_ 'limit_steps'}}</th>
 											<th class="col-md-1">&nbsp;</th>
 											<th style="text-align: center">{{_ 'limit_point_1'}}</th>
@@ -98,6 +101,11 @@
 											<td><div class="form-group{{#if afFieldIsInvalid name='liquid_humidity_p3'}} has-error{{/if}}">{{> afFieldInput name='liquid_humidity_p3'}}</div></td>
 										</tr>
 										</tbody>
+										<tfoot>
+										<tr>
+											<td colspan="5"><br />{{_ 'limit_liquid_help'}}</td>
+										</tr>
+										</tfoot>
 									</table>
 								</div>
 								<div class="table-responsive has-error">
@@ -140,6 +148,9 @@
 								<div class="table-responsive">
 									<table class="table table-condensed table-hover table-no-margin">
 										<thead>
+										<tr>
+											<th colspan="4" style="text-align: center">{{_ 'limit_plastic_subtitle_1'}}<br />{{_ 'limit_plastic_subtitle_2'}}</th>
+										</tr>
 										<tr>
 											<th class="col-md-3">{{_ 'limit_steps'}}</th>
 											<th class="col-md-1">&nbsp;</th>
