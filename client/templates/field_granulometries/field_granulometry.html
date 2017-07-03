@@ -148,7 +148,7 @@
 							<div class="panel panel-default">
 								<div class="panel-heading">
 									<h3 class="panel-title">
-										{{_ 'field_granulometry_analysis_title'}}
+										{{_ 'field_granulometry_separation_title'}}
 									</h3>
 								</div>
 								<div class="panel-body">
@@ -157,7 +157,36 @@
 											<div class="col-md-4">
 												<p>{{_ 'field_granulometry_weight'}} / <strong>{{weight}} g</strong></p>
 											</div>
+											<div class="col-md-4">
+												<p>{{_ 'field_granulometry_separation_sieve'}} / <strong>{{separation_sieve}} g</strong></p>
+											</div>
+											<div class="col-md-4">
+												<p>{{_ 'field_granulometry_separation_thin'}} / <strong>{{separation_thin}} g</strong></p>
+											</div>
 										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<p>{{_ 'field_granulometry_observations'}} / <strong>{{observations}}</strong></p>
+											</div>
+										</div>
+									</fieldset>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<hr />
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										{{_ 'field_granulometry_analysis_title'}}
+									</h3>
+								</div>
+								<div class="panel-body">
+									<fieldset>
 										<div class="row">
 											<div class="table-responsive">
 												<table class="table table-condensed table-hover table-no-margin" data-table="analysis">
@@ -335,21 +364,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row hide-on-pdf-export">
-		<div class="col-md-12">
-			<div class="panel panel-default">
-				<div class="panel-body">
-					<fieldset>
-						<div class="row">
-							<div class="col-md-12">
-								<p>{{_ 'field_granulometry_observations'}} / <strong>{{observations}}</strong></p>
-							</div>
-						</div>
-					</fieldset>
 				</div>
 			</div>
 		</div>
