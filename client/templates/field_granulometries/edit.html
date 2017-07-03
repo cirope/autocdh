@@ -198,47 +198,47 @@
 												<tr>
 													<th class="col-md-3" style="text-align: center">76</th>
 													<th class="col-md-4" style="text-align: center">3</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_76'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_76'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_76' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">63</th>
 													<th class="col-md-4" style="text-align: center">2 1/2</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_63'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_63'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_63' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">51</th>
 													<th class="col-md-4" style="text-align: center">2</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_51'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_51'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_51' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">38</th>
 													<th class="col-md-4" style="text-align: center">1 1/2</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_38'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_38'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_38' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">25</th>
 													<th class="col-md-4" style="text-align: center">1</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_25'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_25'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_25' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">19</th>
 													<th class="col-md-4" style="text-align: center">3/4</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_19'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_19'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_19' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">12.5</th>
 													<th class="col-md-4" style="text-align: center">1/2</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_12'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_12'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_12' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">9.5</th>
 													<th class="col-md-4" style="text-align: center">3/8</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_95'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_95'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_95' label=false}}</td>
 												</tr>
 												<tr>
 													<th class="col-md-3" style="text-align: center">4.8</th>
 													<th class="col-md-4" style="text-align: center">#4</th>
-													<td class="col-md-5"><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_48'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_48'}}</div></td>
+													<td class="col-md-5">{{> afFormGroup name='retained_sieve_48' label=false}}</td>
 												</tr>
 												</tbody>
 											</table>
@@ -248,7 +248,60 @@
 							</div>
 						</div>
 						<div class="col-md-6">
-							-
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h3 class="panel-title">
+										{{_ 'field_granulometry_thin_fraction_title'}}
+									</h3>
+								</div>
+								<div class="panel-body">
+									<fieldset>
+										<div class="table-responsive">
+											<table class="table table-condensed table-hover table-no-margin">
+												<tbody>
+												<tr>
+													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_reduce'}}</th>
+													<td class="col-md-5">{{> afFormGroup name='thin_reduce' label=false}}</td>
+												</tr>
+												<tr>
+													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_weight'}}</th>
+													<td class="col-md-5">{{> afFormGroup name='thin_weight' label=false}}</td>
+												</tr>
+												</tbody>
+											</table>
+											<table class="table table-condensed table-hover table-no-margin">
+												<tbody>
+												<tr>
+													<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_sieves'}}</th>
+													<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_thin_sieve_weight'}}</th>
+													<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_thin_sieve_retained'}}</th>
+												</tr>
+												<tr>
+													<th class="col-md-4" style="text-align: center"># 10</th>
+													<td class="col-md-4">{{> afFormGroup name='retained_sieve_20' label=false}}</td>
+													<td class="col-md-4">{{> afFormGroup name='sieve_weight_20' label=false}}</td>
+												</tr>
+												<tr>
+													<th class="col-md-4" style="text-align: center"># 40</th>
+													<td class="col-md-4">{{> afFormGroup name='retained_sieve_04' label=false}}</td>
+													<td class="col-md-4">{{> afFormGroup name='sieve_weight_04' label=false}}</td>
+												</tr>
+												<tr>
+													<th class="col-md-4" style="text-align: center"># 100</th>
+													<td class="col-md-4">{{> afFormGroup name='retained_sieve_01' label=false}}</td>
+													<td class="col-md-4">{{> afFormGroup name='sieve_weight_01' label=false}}</td>
+												</tr>
+												<tr>
+													<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_pass_100'}}</th>
+													<td class="col-md-4">{{> afFormGroup name='retained_sieve_p' label=false}}</td>
+													<td class="col-md-4">{{> afFormGroup name='sieve_weight_p' label=false}}</td>
+												</tr>
+												</tbody>
+											</table>
+										</div>
+									</fieldset>
+								</div>
+							</div>
 						</div>
 					</div>
 
@@ -374,8 +427,8 @@
 															<tr>
 																<th style="text-align: center">2.0</th>
 																<th style="text-align: center">#10</th>
-																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_20'}}</div></td>
-																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_20'}}</div></td>
+																<td>-</td>
+																<td>-</td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_20'}}</div></td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_20'}}</div></td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='passed_20'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_20'}}</div></td>
@@ -384,8 +437,8 @@
 															<tr>
 																<th style="text-align: center">0.420</th>
 																<th style="text-align: center">#40</th>
-																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_04'}}</div></td>
-																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_04'}}</div></td>
+																<td>-</td>
+																<td>-</td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_04'}}</div></td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_04'}}</div></td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='passed_04'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_04'}}</div></td>
@@ -404,8 +457,8 @@
 															<tr>
 																<th style="text-align: center">0.149</th>
 																<th style="text-align: center">#100</th>
-																<td><div class="form-group{{#if afFieldIsInvalid name='sieve_weight_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='sieve_weight_01'}}</div></td>
-																<td><div class="form-group{{#if afFieldIsInvalid name='retained_sieve_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_sieve_01'}}</div></td>
+																<td>-</td>
+																<td>-</td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='retained_partial_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_partial_01'}}</div></td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='retained_total_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='retained_total_01'}}</div></td>
 																<td><div class="form-group{{#if afFieldIsInvalid name='passed_01'}} has-error{{/if}}" style="margin-bottom: 2px;">{{> afFieldInput name='passed_01'}}</div></td>

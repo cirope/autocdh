@@ -547,17 +547,21 @@
   "field_granulometry_separation_sieve": "Material retenido en tamiz #4",
   "field_granulometry_separation_thin": "Material pasante por tamiz #4",
   "field_granulometry_observations": "Observaciones",
-
   "field_granulometry_heavy_title": "Fracción Gruesa - Retenida por Tamiz #4",
   "field_granulometry_heavy_weight": "Masa Inicial",
-  "field_granulometry_heavy_retained_partial": "Retenido Parcial (g)",
-
+  "field_granulometry_heavy_retained_partial": "Retenido Parcial",
   "field_granulometry_sieve": "Tamiz",
   "field_granulometry_sieves": "Tamices",
   "field_granulometry_sieve_mm": "mm",
   "field_granulometry_sieve_inches": "\"",
-
   "field_granulometry_retained_sieve": "Tamiz + AF",
+
+  "field_granulometry_thin_fraction_title": "Fracción Fina - Pasante por Tamiz #4",
+  "field_granulometry_thin_reduce": "Se reduce?",
+  "field_granulometry_thin_weight": "Masa Inicial",
+  "field_granulometry_thin_sieve_weight": "Peso tamiz",
+  "field_granulometry_thin_sieve_retained": "Retenido + Tamiz",
+  "field_granulometry_pass_100": "Pasa # 100",
 
 
 
