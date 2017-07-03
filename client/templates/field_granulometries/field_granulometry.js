@@ -111,6 +111,12 @@ Template.fieldGranulometry.onRendered(function () {
 Template.fieldGranulometry.helpers({
     sampleResponsible: function () {
         return this.sampleResponsibleId && Responsible.findOne(this.sampleResponsibleId).name
+    },
+    thinReduce: function () {
+        return this.thin_reduce ? TAPi18n.__('yes') : TAPi18n.__('no')
+    },
+    thinPass200: function () {
+        return this.thin_pass_200 ? TAPi18n.__('yes') : TAPi18n.__('no')
     }
 })
 

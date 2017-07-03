@@ -19,7 +19,7 @@
 								<p>{{_ 'field_granulometry_responsible'}} / <strong>{{sampleResponsible}}</strong></p>
 							</div>
 							<div class="col-md-6">
-								<p>{{_ 'c'}} / <strong>{{l fieldDate 'L'}}</strong></p>
+								<p>{{_ 'field_granulometry_date'}} / <strong>{{l fieldDate 'L'}}</strong></p>
 							</div>
 						</div>
 						<div class="row">
@@ -36,338 +36,482 @@
 		</div>
 	</div>
 	<div class="row hide-on-pdf-export">
+		<div class="col-md-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_sampling_title'}}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="row">
+							<div class="col-md-12">
+								<p>{{_ 'field_granulometry_sampling'}} / <strong>{{sampling}} g</strong></p>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row hide-on-pdf-export">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_humidity_title'}}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_code'}}</th>
+									<td class="col-md-5" style="text-align: right">{{humidity_code}}</td>
+								</tr>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_empty_mass'}}</th>
+									<td class="col-md-5" style="text-align: right">{{humidity_empty_mass}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" rowspan="2">{{_ 'field_granulometry_humidity_mass'}}</th>
+									<th class="col-md-4">{{_ 'field_granulometry_humidity_wet'}}</th>
+									<td class="col-md-5" style="text-align: right">{{humidity_wet}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-4">{{_ 'field_granulometry_humidity_dry'}}</th>
+									<td class="col-md-5" style="text-align: right">{{humidity_dry}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_percentage'}}</th>
+									<td class="col-md-5" style="text-align: right">{{humidity_percentage}} %</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_thin_title'}}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_code'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thin_code}}</td>
+								</tr>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_empty_mass'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thin_empty_mass}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" rowspan="2">{{_ 'field_granulometry_thin_mass'}}</th>
+									<th class="col-md-4">{{_ 'field_granulometry_thin_before'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thin_before}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-4">{{_ 'field_granulometry_thin_after'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thin_after}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_percentage'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thin_percentage}} %</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row hide-on-pdf-export">
 		<div class="col-md-12">
 			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_separation_title'}}
+					</h3>
+				</div>
 				<div class="panel-body">
-
-					<div class="row">
-						<div class="col-md-4">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										{{_ 'field_granulometry_sampling_title'}}
-									</h3>
-								</div>
-								<div class="panel-body">
-									<fieldset>
-										<div class="row">
-											<div class="col-md-12">
-												<p>{{_ 'field_granulometry_sampling'}} / <strong>{{sampling}} g</strong></p>
-											</div>
-										</div>
-									</fieldset>
-								</div>
+					<fieldset>
+						<div class="row">
+							<div class="col-md-4">
+								<p>{{_ 'field_granulometry_weight'}} / <strong>{{weight}} g</strong></p>
+							</div>
+							<div class="col-md-4">
+								<p>{{_ 'field_granulometry_separation_sieve'}} / <strong>{{separation_sieve}} g</strong></p>
+							</div>
+							<div class="col-md-4">
+								<p>{{_ 'field_granulometry_separation_thin'}} / <strong>{{separation_thin}} g</strong></p>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										{{_ 'field_granulometry_humidity_title'}}
-									</h3>
-								</div>
-								<div class="panel-body">
-									<fieldset>
-										<div class="table-responsive">
-											<table class="table table-condensed table-hover table-no-margin">
-												<tbody>
-												<tr>
-													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_code'}}</th>
-													<td class="col-md-5" style="text-align: right">{{humidity_code}}</td>
-												</tr>
-												<tr>
-													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_empty_mass'}}</th>
-													<td class="col-md-5" style="text-align: right">{{humidity_empty_mass}} g</td>
-												</tr>
-												<tr>
-													<th class="col-md-3" rowspan="2">{{_ 'field_granulometry_humidity_mass'}}</th>
-													<th class="col-md-4">{{_ 'field_granulometry_humidity_wet'}}</th>
-													<td class="col-md-5" style="text-align: right">{{humidity_wet}} g</td>
-												</tr>
-												<tr>
-													<th class="col-md-4">{{_ 'field_granulometry_humidity_dry'}}</th>
-													<td class="col-md-5" style="text-align: right">{{humidity_dry}} g</td>
-												</tr>
-												<tr>
-													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_humidity_percentage'}}</th>
-													<td class="col-md-5" style="text-align: right">{{humidity_percentage}} %</td>
-												</tr>
-												</tbody>
-											</table>
-										</div>
-									</fieldset>
-								</div>
+						<div class="row">
+							<div class="col-md-12">
+								<p>{{_ 'field_granulometry_observations'}} / <strong>{{observations}}</strong></p>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										{{_ 'field_granulometry_thin_title'}}
-									</h3>
-								</div>
-								<div class="panel-body">
-									<fieldset>
-										<div class="table-responsive">
-											<table class="table table-condensed table-hover table-no-margin">
-												<tbody>
-												<tr>
-													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_code'}}</th>
-													<td class="col-md-5" style="text-align: right">{{thin_code}}</td>
-												</tr>
-												<tr>
-													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_empty_mass'}}</th>
-													<td class="col-md-5" style="text-align: right">{{thin_empty_mass}} g</td>
-												</tr>
-												<tr>
-													<th class="col-md-3" rowspan="2">{{_ 'field_granulometry_thin_mass'}}</th>
-													<th class="col-md-4">{{_ 'field_granulometry_thin_before'}}</th>
-													<td class="col-md-5" style="text-align: right">{{thin_before}} g</td>
-												</tr>
-												<tr>
-													<th class="col-md-4">{{_ 'field_granulometry_thin_after'}}</th>
-													<td class="col-md-5" style="text-align: right">{{thin_after}} g</td>
-												</tr>
-												<tr>
-													<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_percentage'}}</th>
-													<td class="col-md-5" style="text-align: right">{{thin_percentage}} %</td>
-												</tr>
-												</tbody>
-											</table>
-										</div>
-									</fieldset>
-								</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row hide-on-pdf-export">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_heavy_title'}}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_heavy_weight'}}</th>
+									<td class="col-md-5" style="text-align: right">{{heavy_weight}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-7" style="text-align: center" colspan="2">{{_ 'field_granulometry_sieves'}}</th>
+									<th class="col-md-5" style="text-align: center" rowspan="2">{{_ 'field_granulometry_heavy_retained_partial'}}</th>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">{{_ 'field_granulometry_sieve_mm'}}</th>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_sieve_inches'}}</th>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">76</th>
+									<th class="col-md-4" style="text-align: center">3</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_76}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">63</th>
+									<th class="col-md-4" style="text-align: center">2 1/2</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_63}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">51</th>
+									<th class="col-md-4" style="text-align: center">2</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_51}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">38</th>
+									<th class="col-md-4" style="text-align: center">1 1/2</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_38}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">25</th>
+									<th class="col-md-4" style="text-align: center">1</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_25}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">19</th>
+									<th class="col-md-4" style="text-align: center">3/4</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_19}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">12.5</th>
+									<th class="col-md-4" style="text-align: center">1/2</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_12}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">9.5</th>
+									<th class="col-md-4" style="text-align: center">3/8</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_95}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-3" style="text-align: center">4.8</th>
+									<th class="col-md-4" style="text-align: center">#4</th>
+									<td class="col-md-5" style="text-align: right">{{retained_sieve_48}} g</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_thin_fraction_title'}}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_reduce'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thinReduce}}</td>
+								</tr>
+								<tr>
+									<th class="col-md-7" colspan="2">{{_ 'field_granulometry_thin_weight'}}</th>
+									<td class="col-md-5" style="text-align: right">{{thin_weight}} g</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_sieves'}}</th>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_thin_sieve_weight'}}</th>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_thin_sieve_retained'}}</th>
+								</tr>
+								<tr>
+									<th class="col-md-4" style="text-align: center"># 10</th>
+									<td class="col-md-4" style="text-align: right">{{sieve_weight_20}} g</td>
+									<td class="col-md-4" style="text-align: right">{{retained_sieve_20}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-4" style="text-align: center"># 40</th>
+									<td class="col-md-4" style="text-align: right">{{sieve_weight_04}} g</td>
+									<td class="col-md-4" style="text-align: right">{{retained_sieve_04}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-4" style="text-align: center"># 100</th>
+									<td class="col-md-4" style="text-align: right">{{sieve_weight_01}} g</td>
+									<td class="col-md-4" style="text-align: right">{{retained_sieve_01}} g</td>
+								</tr>
+								<tr>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_pass_100'}}</th>
+									<td class="col-md-4" style="text-align: right">{{sieve_weight_p}} g</td>
+									<td class="col-md-4" style="text-align: right">{{retained_sieve_p}} g</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<fieldset>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_thin_ver_ret'}}</th>
+									<td class="col-md-4" style="text-align: right">{{thin_ver_ret}} %</td>
+									<td class="col-md-4" style="text-align: center">{{thin_ver_ret_label}}</td>
+								</tr>
+								<tr>
+									<th class="col-md-4" style="text-align: center">{{_ 'field_granulometry_thin_ver_pass'}}</th>
+									<td class="col-md-4" style="text-align: right">{{thin_ver_pass}} %</td>
+									<td class="col-md-4" style="text-align: center">{{thin_ver_pass_label}}</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover table-no-margin">
+								<tbody>
+								<tr>
+									<th class="col-md-12" colspan="3" style="text-align: center">{{_ 'field_granulometry_thin_pass_title'}}</th>
+								</tr>
+								<tr>
+									<th class="col-md-8" colspan="2">{{_ 'field_granulometry_thin_pass_200'}}</th>
+									<td class="col-md-4" style="text-align: right">{{thinPass200}}</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</fieldset>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title">
+						{{_ 'field_granulometry_analysis_title'}}
+					</h3>
+				</div>
+				<div class="panel-body">
+					<fieldset>
+						<div class="row">
+							<div class="table-responsive">
+								<table class="table table-condensed table-hover table-no-margin">
+									<tbody>
+									<tr>
+										<th style="text-align: center" colspan="3">{{_ 'field_granulometry_sieve'}}</th>
+										<th style="text-align: center" colspan="3">{{_ 'field_granulometry_retained'}}</th>
+										<th style="text-align: center" rowspan="2">{{_ 'field_granulometry_passed'}}</th>
+										<th style="text-align: center" rowspan="2">{{_ 'field_granulometry_passed_percentage'}}</th>
+									</tr>
+									<tr>
+										<th style="text-align: center">{{_ 'field_granulometry_sieve_mm'}}</th>
+										<th style="text-align: center">{{_ 'field_granulometry_sieve_inches'}}</th>
+										<th style="text-align: center">{{_ 'field_granulometry_sieve_weight'}}</th>
+										<th style="text-align: center">{{_ 'field_granulometry_retained_sieve'}}</th>
+										<th style="text-align: center">{{_ 'field_granulometry_retained_partial'}}</th>
+										<th style="text-align: center">{{_ 'field_granulometry_retained_total'}}</th>
+									</tr>
+									<tr>
+										<th style="text-align: center">76</th>
+										<th style="text-align: center">3</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{a_3}}</td>
+										<td style="text-align: right">{{a_4}}</td>
+										<td style="text-align: right">{{a_5}}</td>
+										<td style="text-align: right">{{a_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">63</th>
+										<th style="text-align: center">2 1/2</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{b_3}}</td>
+										<td style="text-align: right">{{b_4}}</td>
+										<td style="text-align: right">{{b_5}}</td>
+										<td style="text-align: right">{{b_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">51</th>
+										<th style="text-align: center">2</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{c_3}}</td>
+										<td style="text-align: right">{{c_4}}</td>
+										<td style="text-align: right">{{c_5}}</td>
+										<td style="text-align: right">{{c_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">38</th>
+										<th style="text-align: center">1 1/2</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{d_3}}</td>
+										<td style="text-align: right">{{d_4}}</td>
+										<td style="text-align: right">{{d_5}}</td>
+										<td style="text-align: right">{{d_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">25</th>
+										<th style="text-align: center">1</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{e_3}}</td>
+										<td style="text-align: right">{{e_4}}</td>
+										<td style="text-align: right">{{e_5}}</td>
+										<td style="text-align: right">{{e_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">19</th>
+										<th style="text-align: center">3/4</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{f_3}}</td>
+										<td style="text-align: right">{{f_4}}</td>
+										<td style="text-align: right">{{f_5}}</td>
+										<td style="text-align: right">{{f_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">12.5</th>
+										<th style="text-align: center">1/2</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{g_3}}</td>
+										<td style="text-align: right">{{g_4}}</td>
+										<td style="text-align: right">{{g_5}}</td>
+										<td style="text-align: right">{{g_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">9.5</th>
+										<th style="text-align: center">3/8</th>
+										<td style="text-align: center">-</td>
+										<td style="text-align: center">-</td>
+										<td style="text-align: right">{{h_3}}</td>
+										<td style="text-align: right">{{h_4}}</td>
+										<td style="text-align: right">{{h_5}}</td>
+										<td style="text-align: right">{{h_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">4.8</th>
+										<th style="text-align: center">#4</th>
+										<td style="text-align: right">{{i_1}}</td>
+										<td style="text-align: right">{{i_2}}</td>
+										<td style="text-align: right">{{i_3}}</td>
+										<td style="text-align: right">{{i_4}}</td>
+										<td style="text-align: right">{{i_5}}</td>
+										<td style="text-align: right">{{i_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">2.0</th>
+										<th style="text-align: center">#10</th>
+										<td style="text-align: right">{{j_1}}</td>
+										<td style="text-align: right">{{j_2}}</td>
+										<td style="text-align: right">{{j_3}}</td>
+										<td style="text-align: right">{{j_4}}</td>
+										<td style="text-align: right">{{j_5}}</td>
+										<td style="text-align: right">{{j_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">0.420</th>
+										<th style="text-align: center">#40</th>
+										<td style="text-align: right">{{k_1}}</td>
+										<td style="text-align: right">{{k_2}}</td>
+										<td style="text-align: right">{{k_3}}</td>
+										<td style="text-align: right">{{k_4}}</td>
+										<td style="text-align: right">{{k_5}}</td>
+										<td style="text-align: right">{{k_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">0.149</th>
+										<th style="text-align: center">#100</th>
+										<td style="text-align: right">{{l_1}}</td>
+										<td style="text-align: right">{{l_2}}</td>
+										<td style="text-align: right">{{l_3}}</td>
+										<td style="text-align: right">{{l_4}}</td>
+										<td style="text-align: right">{{l_5}}</td>
+										<td style="text-align: right">{{l_6}}</td>
+									</tr>
+									<tr>
+										<th style="text-align: center">0.075</th>
+										<th style="text-align: center">#200</th>
+										<td style="text-align: right">{{m_1}}</td>
+										<td style="text-align: right">{{m_2}}</td>
+										<td style="text-align: right">{{m_3}}</td>
+										<td style="text-align: right">{{m_4}}</td>
+										<td style="text-align: right">{{m_5}}</td>
+										<td style="text-align: right">{{m_6}}</td>
+									</tr>
+									<tr>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<th style="text-align: right">{{_ 'field_granulometry_total'}}</th>
+										<td style="text-align: right">{{total}}</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+									</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										{{_ 'field_granulometry_separation_title'}}
-									</h3>
-								</div>
-								<div class="panel-body">
-									<fieldset>
-										<div class="row">
-											<div class="col-md-4">
-												<p>{{_ 'field_granulometry_weight'}} / <strong>{{weight}} g</strong></p>
-											</div>
-											<div class="col-md-4">
-												<p>{{_ 'field_granulometry_separation_sieve'}} / <strong>{{separation_sieve}} g</strong></p>
-											</div>
-											<div class="col-md-4">
-												<p>{{_ 'field_granulometry_separation_thin'}} / <strong>{{separation_thin}} g</strong></p>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12">
-												<p>{{_ 'field_granulometry_observations'}} / <strong>{{observations}}</strong></p>
-											</div>
-										</div>
-									</fieldset>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-
-					<hr />
-
-
-
-					<div class="row">
-						<div class="col-md-12">
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h3 class="panel-title">
-										{{_ 'field_granulometry_analysis_title'}}
-									</h3>
-								</div>
-								<div class="panel-body">
-									<fieldset>
-										<div class="row">
-											<div class="table-responsive">
-												<table class="table table-condensed table-hover table-no-margin" data-table="analysis">
-													<tbody>
-													<tr>
-														<th style="text-align: center" colspan="3">{{_ 'field_granulometry_sieve'}}</th>
-														<th style="text-align: center" colspan="3">{{_ 'field_granulometry_retained'}}</th>
-														<th style="text-align: right" rowspan="2">{{_ 'field_granulometry_passed'}}</th>
-														<th style="text-align: right" rowspan="2">{{_ 'field_granulometry_passed_percentage'}}</th>
-													</tr>
-													<tr>
-														<th style="text-align: center">{{_ 'field_granulometry_sieve_mm'}}</th>
-														<th style="text-align: center">{{_ 'field_granulometry_sieve_inches'}}</th>
-														<th style="text-align: right">{{_ 'field_granulometry_sieve_weight'}}</th>
-														<th style="text-align: right">{{_ 'field_granulometry_retained_sieve'}}</th>
-														<th style="text-align: right">{{_ 'field_granulometry_retained_partial'}}</th>
-														<th style="text-align: right">{{_ 'field_granulometry_retained_total'}}</th>
-													</tr>
-													<tr>
-														<th style="text-align: center">76</th>
-														<th style="text-align: center">3</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_76}}</td>
-														<td style="text-align: right">{{retained_total_76}}</td>
-														<td style="text-align: right">{{passed_76}}</td>
-														<td style="text-align: right">{{passed_percentage_76}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">63</th>
-														<th style="text-align: center">2 1/2</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_63}}</td>
-														<td style="text-align: right">{{retained_total_63}}</td>
-														<td style="text-align: right">{{passed_63}}</td>
-														<td style="text-align: right">{{passed_percentage_63}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">51</th>
-														<th style="text-align: center">2</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_51}}</td>
-														<td style="text-align: right">{{retained_total_51}}</td>
-														<td style="text-align: right">{{passed_51}}</td>
-														<td style="text-align: right">{{passed_percentage_51}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">38</th>
-														<th style="text-align: center">1 1/2</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_38}}</td>
-														<td style="text-align: right">{{retained_total_38}}</td>
-														<td style="text-align: right">{{passed_38}}</td>
-														<td style="text-align: right">{{passed_percentage_38}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">25</th>
-														<th style="text-align: center">1</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_25}}</td>
-														<td style="text-align: right">{{retained_total_25}}</td>
-														<td style="text-align: right">{{passed_25}}</td>
-														<td style="text-align: right">{{passed_percentage_25}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">19</th>
-														<th style="text-align: center">3/4</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_19}}</td>
-														<td style="text-align: right">{{retained_total_19}}</td>
-														<td style="text-align: right">{{passed_19}}</td>
-														<td style="text-align: right">{{passed_percentage_19}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">9.5</th>
-														<th style="text-align: center">3/8</th>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">-</td>
-														<td style="text-align: right">{{retained_partial_95}}</td>
-														<td style="text-align: right">{{retained_total_95}}</td>
-														<td style="text-align: right">{{passed_95}}</td>
-														<td style="text-align: right">{{passed_percentage_95}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">4.8</th>
-														<th style="text-align: center">#4</th>
-														<td style="text-align: right">{{sieve_weight_48}}</td>
-														<td style="text-align: right">{{retained_sieve_48}}</td>
-														<td style="text-align: right">{{retained_partial_48}}</td>
-														<td style="text-align: right">{{retained_total_48}}</td>
-														<td style="text-align: right">{{passed_48}}</td>
-														<td style="text-align: right">{{passed_percentage_48}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">2.0</th>
-														<th style="text-align: center">#10</th>
-														<td style="text-align: right">{{sieve_weight_20}}</td>
-														<td style="text-align: right">{{retained_sieve_20}}</td>
-														<td style="text-align: right">{{retained_partial_20}}</td>
-														<td style="text-align: right">{{retained_total_20}}</td>
-														<td style="text-align: right">{{passed_20}}</td>
-														<td style="text-align: right">{{passed_percentage_20}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">0.420</th>
-														<th style="text-align: center">#40</th>
-														<td style="text-align: right">{{sieve_weight_04}}</td>
-														<td style="text-align: right">{{retained_sieve_04}}</td>
-														<td style="text-align: right">{{retained_partial_04}}</td>
-														<td style="text-align: right">{{retained_total_04}}</td>
-														<td style="text-align: right">{{passed_04}}</td>
-														<td style="text-align: right">{{passed_percentage_04}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">0.250</th>
-														<th style="text-align: center">#60</th>
-														<td style="text-align: right">{{sieve_weight_02}}</td>
-														<td style="text-align: right">{{retained_sieve_02}}</td>
-														<td style="text-align: right">{{retained_partial_02}}</td>
-														<td style="text-align: right">{{retained_total_02}}</td>
-														<td style="text-align: right">{{passed_02}}</td>
-														<td style="text-align: right">{{passed_percentage_02}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">0.149</th>
-														<th style="text-align: center">#100</th>
-														<td style="text-align: right">{{sieve_weight_01}}</td>
-														<td style="text-align: right">{{retained_sieve_01}}</td>
-														<td style="text-align: right">{{retained_partial_01}}</td>
-														<td style="text-align: right">{{retained_total_01}}</td>
-														<td style="text-align: right">{{passed_01}}</td>
-														<td style="text-align: right">{{passed_percentage_01}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">0.075</th>
-														<th style="text-align: center">#200</th>
-														<td style="text-align: right">{{sieve_weight_00}}</td>
-														<td style="text-align: right">{{retained_sieve_00}}</td>
-														<td style="text-align: right">{{retained_partial_00}}</td>
-														<td style="text-align: right">{{retained_total_00}}</td>
-														<td style="text-align: right">{{passed_00}}</td>
-														<td style="text-align: right">{{passed_percentage_00}}</td>
-													</tr>
-													<tr>
-														<th style="text-align: center">{{_ 'field_granulometry_background'}}</th>
-														<th style="text-align: center">{{_ 'field_granulometry_pass_200'}}</th>
-														<td style="text-align: right">{{sieve_weight_b}}</td>
-														<td style="text-align: right">{{retained_sieve_b}}</td>
-														<td style="text-align: right">{{retained_partial_b}}</td>
-														<td style="text-align: right">{{retained_total_b}}</td>
-														<td style="text-align: right">{{passed_b}}</td>
-														<td style="text-align: right">{{passed_percentage_b}}</td>
-													</tr>
-													<tr>
-														<td>&nbsp;</td>
-														<td>&nbsp;</td>
-														<td>&nbsp;</td>
-														<th style="text-align: right">{{_ 'field_granulometry_total'}}</th>
-														<td style="text-align: right"><strong>{{total}}</strong></td>
-														<td>&nbsp;</td>
-														<td>&nbsp;</td>
-														<td>&nbsp;</td>
-													</tr>
-													</tbody>
-												</table>
-											</div>
-										</div>
-									</fieldset>
-								</div>
-							</div>
-						</div>
-					</div>
+					</fieldset>
 				</div>
 			</div>
 		</div>
