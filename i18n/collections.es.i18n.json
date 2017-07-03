@@ -555,7 +555,6 @@
   "field_granulometry_sieve_mm": "mm",
   "field_granulometry_sieve_inches": "\"",
   "field_granulometry_retained_sieve": "Tamiz + AF",
-
   "field_granulometry_thin_fraction_title": "Fracción Fina - Pasante por Tamiz #4",
   "field_granulometry_thin_reduce": "Se reduce?",
   "field_granulometry_thin_weight": "Masa Inicial",

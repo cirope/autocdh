@@ -88,6 +88,7 @@ var calculateFields = function () {
 	var tvr = getAndSetFloat('thin_ver_ret');
 	var tvp = getAndSetFloat('thin_ver_pass');
 
+	var tp200 = getField('thin_pass_200')
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -285,6 +286,9 @@ Template.fieldGranulometryEdit.events({
 		calculateFields()
 	},
 	*/
+	'change [name="thin_pass_200"]': function (event) {
+		calculateFields()
+	},
 
 
 	// ---------------------------------------------
