@@ -3,21 +3,20 @@ var updateChart = function (data) {
     setTimeout(function () {
         if ($('[data-chart]').length) {
             var values = [
-              data.passed_percentage_76 ? data.passed_percentage_76 : 0,
-              data.passed_percentage_63 ? data.passed_percentage_63 : 0,
-              data.passed_percentage_51 ? data.passed_percentage_51 : 0,
-              data.passed_percentage_38 ? data.passed_percentage_38 : 0,
-              data.passed_percentage_25 ? data.passed_percentage_25 : 0,
-              data.passed_percentage_19 ? data.passed_percentage_19 : 0,
-              data.passed_percentage_95 ? data.passed_percentage_95 : 0,
-              data.passed_percentage_48 ? data.passed_percentage_48 : 0,
-              data.passed_percentage_20 ? data.passed_percentage_20 : 0,
-              data.passed_percentage_04 ? data.passed_percentage_04 : 0,
-              data.passed_percentage_02 ? data.passed_percentage_02 : 0,
-              data.passed_percentage_01 ? data.passed_percentage_01 : 0,
-              data.passed_percentage_00 ? data.passed_percentage_00 : 0,
-              data.passed_percentage_b ? data.passed_percentage_b : 0
-            ].reverse();
+              data.a_6 ? data.a_6 : 0,
+              data.b_6 ? data.b_6 : 0,
+              data.c_6 ? data.c_6 : 0,
+              data.d_6 ? data.d_6 : 0,
+              data.e_6 ? data.e_6 : 0,
+              data.f_6 ? data.f_6 : 0,
+              data.g_6 ? data.g_6 : 0,
+              data.h_6 ? data.h_6 : 0,
+              data.i_6 ? data.i_6 : 0,
+              data.j_6 ? data.j_6 : 0,
+              data.k_6 ? data.k_6 : 0,
+              data.l_6 ? data.l_6 : 0,
+              data.m_6 ? data.m_6 : 0
+            ] //.reverse();
 
             var seedLabels = [
                 '76 mm',
@@ -27,14 +26,13 @@ var updateChart = function (data) {
                 '25 mm',
                 '19 mm',
                 '9.5 mm',
+                '12.5 mm',
                 '4.8 mm',
                 '2.0 mm',
                 '0.420 mm',
-                '0.250 mm',
                 '0.149 mm',
-                '0.075 mm',
-                TAPi18n.__('field_granulometry_background')
-            ].reverse()
+                '0.075 mm'
+            ] //.reverse()
 
             var gData = {
                 labels: seedLabels,
