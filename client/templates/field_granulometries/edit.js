@@ -80,10 +80,13 @@ var calculateFields = function () {
 	var sw01 = getAndSetFloat('sieve_weight_01');
 	var swp = getAndSetFloat('sieve_weight_p');
 
-	var rs20 = getAndSetFloat('retained_sieve_20');
-	var rs04 = getAndSetFloat('retained_sieve_04');
-	var rs01 = getAndSetFloat('retained_sieve_01');
-	var rsp = getAndSetFloat('retained_sieve_p');
+	var rs20 = getAndSetFloat('retained_sieve_20', 2);
+	var rs04 = getAndSetFloat('retained_sieve_04', 2);
+	var rs01 = getAndSetFloat('retained_sieve_01', 2);
+	var rsp = getAndSetFloat('retained_sieve_p', 2);
+
+	var tvr = getAndSetFloat('thin_ver_ret');
+	var tvp = getAndSetFloat('thin_ver_pass');
 
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -277,6 +280,11 @@ Template.fieldGranulometryEdit.events({
 	'change [name="retained_sieve_20"], change [name="retained_sieve_04"], change [name="retained_sieve_01"], change [name="retained_sieve_p"]': function (event) {
 		calculateFields()
 	},
+	/*
+	'change [name="thin_ver_ret"], change [name="thin_ver_pass"]': function (event) {
+		calculateFields()
+	},
+	*/
 
 
 	// ---------------------------------------------

@@ -563,6 +563,12 @@
   "field_granulometry_thin_sieve_retained": "Retenido + Tamiz",
   "field_granulometry_pass_100": "Pasa # 100",
 
+  "field_granulometry_thin_ver_ret": "Verificación ret #4",
+  "field_granulometry_thin_ver_pass": "Verificación pasa #4",
+  "field_granulometry_thin_satisfy": "Cumple",
+  "field_granulometry_thin_no_satisfy": "No Cumple",
+  "field_granulometry_thin_pass_title": "Necesidad de determinar íncides de plasticidad",
+  "field_granulometry_thin_pass_200": "Presenta Plasticidad el material pasa #200?",
 
 
 
