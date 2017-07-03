@@ -75,15 +75,15 @@ var calculateFields = function () {
 	var tr = getField('thin_reduce')
 	var tw = getAndSetFloat('thin_weight')
 
-	var rs20 = getAndSetFloat('retained_sieve_20');
-	var rs04 = getAndSetFloat('retained_sieve_04');
-	var rs01 = getAndSetFloat('retained_sieve_01');
-	var rsp = getAndSetFloat('retained_sieve_p');
-
 	var sw20 = getAndSetFloat('sieve_weight_20');
 	var sw04 = getAndSetFloat('sieve_weight_04');
 	var sw01 = getAndSetFloat('sieve_weight_01');
 	var swp = getAndSetFloat('sieve_weight_p');
+
+	var rs20 = getAndSetFloat('retained_sieve_20');
+	var rs04 = getAndSetFloat('retained_sieve_04');
+	var rs01 = getAndSetFloat('retained_sieve_01');
+	var rsp = getAndSetFloat('retained_sieve_p');
 
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -271,10 +271,10 @@ Template.fieldGranulometryEdit.events({
 	'change [name="thin_reduce"], change [name="thin_weight"] ': function (event) {
 		calculateFields()
 	},
-	'change [name="retained_sieve_20"], change [name="retained_sieve_04"], change [name="retained_sieve_01"], change [name="retained_sieve_p"]': function (event) {
+	'change [name="sieve_weight_20"], change [name="sieve_weight_04"], change [name="sieve_weight_01"], change [name="sieve_weight_p"]': function (event) {
 		calculateFields()
 	},
-	'change [name="sieve_weight_20"], change [name="sieve_weight_04"], change [name="sieve_weight_01"], change [name="sieve_weight_p"]': function (event) {
+	'change [name="retained_sieve_20"], change [name="retained_sieve_04"], change [name="retained_sieve_01"], change [name="retained_sieve_p"]': function (event) {
 		calculateFields()
 	},
 
