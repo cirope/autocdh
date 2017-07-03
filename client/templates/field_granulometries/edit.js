@@ -8,28 +8,61 @@ var getFloat = function (name) {
 	return parseFloat(getField(name) || 0)
 };
 
+var setFloat = function (name, value, decimals) {
+	setField(name, value || typeof value == 'number' ? value.toFixed(!!decimals ? decimals : 1) : 0)
+};
+
+var getAndSetFloat = function (name, decimals) {
+	var value = getFloat(name)
+	setFloat(name, value, decimals)
+	return value
+};
+
 var setField = function (name, value) {
 	$('[name="'+name+'"]').val(value)
 };
 
 var calculateFields = function () {
+
+	var he = getAndSetFloat('humidity_empty_mass')
+	var hw = getAndSetFloat('humidity_wet')
+	var hd = getAndSetFloat('humidity_dry')
+
 	var hp = 0;
-	var he = getFloat('humidity_empty_mass');
-	var hw = getFloat('humidity_wet');
-	var hd = getFloat('humidity_dry');
 	if(hw > hd && hd > he){
 		hp = (hw-hd)/(hd-he)*100
 	}
-	setField('humidity_percentage', hp ? hp.toFixed(1) : '')
+	setFloat('humidity_percentage', hp)
+
+	var te = getAndSetFloat('thin_empty_mass')
+	var tb = getAndSetFloat('thin_before')
+	var ta = getAndSetFloat('thin_after')
 
 	var tp = 0;
-	var te = getFloat('thin_empty_mass');
-	var tb = getFloat('thin_before');
-	var ta = getFloat('thin_after');
 	if(tb > ta && tb > te){
 		tp = (tb-ta)/(tb-te)*100
 	}
-	setField('thin_percentage', tp ? tp.toFixed(1) : '');
+	setFloat('thin_percentage', tp)
+
+	var sw = getAndSetFloat('weight')
+	if(!sw && !!ta){
+		sw = ta
+		setFloat('weight', sw)
+	}
+	var ss = getAndSetFloat('separation_sieve')
+	var st = getAndSetFloat('separation_thin')
+	if(!st && !!sw && !!ss){
+		st = sw-ss
+		setFloat('separation_thin', st)
+	}
+
+
+
+	// -------------------------------------------------------------------------
+
+
+
+
 
 	var p76 = getFloat('retained_partial_76');
 	var t76 = p76;
@@ -197,6 +230,16 @@ Template.fieldGranulometryEdit.events({
 	'change [name="thin_empty_mass"], change [name="thin_before"], change [name="thin_after"]': function (event) {
 		calculateFields()
 	},
+
+	'change [name="weight"], change [name="separation_sieve"], change [name="separation_thin"]': function (event) {
+		calculateFields()
+	},
+
+
+
+	// ---------------------------------------------
+
+
 	'change [name="retained_partial_76"]': function (event) {
 		calculateFields()
 	},

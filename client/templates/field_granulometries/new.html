@@ -148,7 +148,7 @@
 									<div class="panel panel-default">
 										<div class="panel-heading">
 											<h3 class="panel-title">
-												{{_ 'field_granulometry_analysis_title'}}
+												{{_ 'field_granulometry_separation_title'}}
 											</h3>
 										</div>
 										<div class="panel-body">
@@ -157,7 +157,36 @@
 													<div class="col-md-4">
 														{{> afQuickField name='weight'}}
 													</div>
+													<div class="col-md-4">
+														{{> afQuickField name='separation_sieve'}}
+													</div>
+													<div class="col-md-4">
+														{{> afQuickField name='separation_thin'}}
+													</div>
 												</div>
+												<div class="row">
+													<div class="col-md-12">
+														{{> afQuickField name='observations'}}
+													</div>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<hr />
+
+							<div class="row">
+								<div class="col-md-12">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 class="panel-title">
+												{{_ 'field_granulometry_analysis_title'}}
+											</h3>
+										</div>
+										<div class="panel-body">
+											<fieldset>
 												<div class="row">
 													<div class="table-responsive">
 														<table class="table table-condensed table-hover table-no-margin">
@@ -437,21 +466,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<fieldset>
-								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='observations'}}
-									</div>
-								</div>
-							</fieldset>
-						</div>
-					</div>
-				</div>
-			</div>
+
 			<div class="pull-right">
 				<button type="submit" class="btn btn-primary">{{_ 'field_granulometry_create'}}</button>
 			</div>
