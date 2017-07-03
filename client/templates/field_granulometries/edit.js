@@ -1,4 +1,6 @@
 
+var _thin_ver_ret = new ReactiveVar('')
+var _thin_ver_pass = new ReactiveVar('')
 
 var getField = function (name) {
 	return $('[name="' + name + '"]').val()
@@ -89,6 +91,11 @@ var calculateFields = function () {
 	var tvp = getAndSetFloat('thin_ver_pass');
 
 	var tp200 = getField('thin_pass_200')
+
+	_thin_ver_ret.set(TAPi18n.__('field_granulometry_thin_satisfy'));
+	_thin_ver_pass.set(TAPi18n.__('field_granulometry_thin_no_satisfy'));
+
+
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -248,9 +255,17 @@ var calculateFields = function () {
 };
 
 Template.fieldGranulometryEdit.onRendered(function () {
+	calculateFields()
 });
 
 Template.fieldGranulometryEdit.helpers({
+	thinVerRet: function () {
+		return _thin_ver_ret.get()
+	},
+
+	thinVerPass: function () {
+		return _thin_ver_pass.get()
+	}
 })
 
 Template.fieldGranulometryEdit.events({
