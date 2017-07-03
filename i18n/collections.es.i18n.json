@@ -561,7 +561,6 @@
   "field_granulometry_thin_sieve_weight": "Peso tamiz",
   "field_granulometry_thin_sieve_retained": "Retenido + Tamiz",
   "field_granulometry_pass_100": "Pasa # 100",
-
   "field_granulometry_thin_ver_ret": "Verificación ret #4",
   "field_granulometry_thin_ver_pass": "Verificación pasa #4",
   "field_granulometry_thin_satisfy": "Cumple",

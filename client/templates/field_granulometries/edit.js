@@ -1,7 +1,4 @@
 
-var _thin_ver_ret = new ReactiveVar('')
-var _thin_ver_pass = new ReactiveVar('')
-
 var getField = function (name) {
 	return $('[name="' + name + '"]').val()
 };
@@ -74,6 +71,15 @@ var calculateFields = function () {
 	var rs95 = getAndSetFloat('retained_sieve_95');
 	var rs48 = getAndSetFloat('retained_sieve_48');
 
+	var hrs = !!hw ? (1 - Math.abs((rs76 + rs63 + rs51 + rs38 + rs25 + rs19 + rs12 + rs95 + rs48) / hw))*100 : ''
+	if(!!hrs){
+		setFloat('thin_ver_ret', hrs)
+		setField('thin_ver_ret_label', hrs < .5 ? TAPi18n.__('field_granulometry_thin_satisfy') : TAPi18n.__('field_granulometry_thin_no_satisfy'))
+	} else {
+		setField('thin_ver_ret', '')
+		setField('thin_ver_ret_label', '-')
+	}
+
 	var tr = getField('thin_reduce')
 	var tw = getAndSetFloat('thin_weight')
 
@@ -87,14 +93,21 @@ var calculateFields = function () {
 	var rs01 = getAndSetFloat('retained_sieve_01', 2);
 	var rsp = getAndSetFloat('retained_sieve_p', 2);
 
-	var tvr = getAndSetFloat('thin_ver_ret');
-	var tvp = getAndSetFloat('thin_ver_pass');
+	var tvp = !!tw ? (1 - Math.abs((rs20 + rs04 + rs01 + rsp) / tw))*100 : ''
+	if(!!tvp){
+		setFloat('thin_ver_pass', tvp)
+		setField('thin_ver_pass_label', tvp < .5 ? TAPi18n.__('field_granulometry_thin_satisfy') : TAPi18n.__('field_granulometry_thin_no_satisfy'))
+	} else {
+		setField('thin_ver_pass', '')
+		setField('thin_ver_pass_label', '-')
+	}
 
 	var tp200 = getField('thin_pass_200')
 
+	/*
 	_thin_ver_ret.set(TAPi18n.__('field_granulometry_thin_satisfy'));
 	_thin_ver_pass.set(TAPi18n.__('field_granulometry_thin_no_satisfy'));
-
+*/
 
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -259,13 +272,6 @@ Template.fieldGranulometryEdit.onRendered(function () {
 });
 
 Template.fieldGranulometryEdit.helpers({
-	thinVerRet: function () {
-		return _thin_ver_ret.get()
-	},
-
-	thinVerPass: function () {
-		return _thin_ver_pass.get()
-	}
 })
 
 Template.fieldGranulometryEdit.events({
