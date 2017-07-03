@@ -104,11 +104,6 @@ var calculateFields = function () {
 
 	var tp200 = getField('thin_pass_200')
 
-	/*
-	_thin_ver_ret.set(TAPi18n.__('field_granulometry_thin_satisfy'));
-	_thin_ver_pass.set(TAPi18n.__('field_granulometry_thin_no_satisfy'));
-*/
-
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
@@ -309,55 +304,5 @@ Template.fieldGranulometryEdit.events({
 	*/
 	'change [name="thin_pass_200"]': function (event) {
 		calculateFields()
-	},
-
-
-	// ---------------------------------------------
-
-
-
-	/*
-	'change [name="retained_partial_76"]': function (event) {
-		calculateFields()
-	},
-	'change [name="retained_partial_63"]': function (event) {
-		calculateFields()
-	},
-	'change [name="retained_partial_51"]': function (event) {
-		calculateFields()
-	},
-	'change [name="retained_partial_38"]': function (event) {
-		calculateFields()
-	},
-	'change [name="retained_partial_25"]': function (event) {
-		calculateFields()
-	},
-	'change [name="retained_partial_19"]': function (event) {
-		calculateFields()
-	},
-	'change [name="retained_partial_95"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_48"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_20"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_04"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_02"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_01"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_00"]': function (event) {
-		calculateFields()
-	},
-	'change [name="sieve_weight_b"]': function (event) {
-		calculateFields()
-	},
-	*/
+	}
 })

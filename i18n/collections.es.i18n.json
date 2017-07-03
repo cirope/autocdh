@@ -567,11 +567,7 @@
   "field_granulometry_thin_no_satisfy": "No Cumple",
   "field_granulometry_thin_pass_title": "Necesidad de determinar íncides de plasticidad",
   "field_granulometry_thin_pass_200": "Presenta Plasticidad el material pasa #200?",
-
-
-
-
-
+  "field_granulometry_factor": "Factor de escala",
   "field_granulometry_analysis_title": "Análisis granulométrico de suelos",
   "field_granulometry_sieve_weight": "Peso (g)",
   "field_granulometry_retained": "Retenido (g)",
