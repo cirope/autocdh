@@ -16,7 +16,7 @@ var updateChart = function (data) {
               data.k_6 ? data.k_6 : 0,
               data.l_6 ? data.l_6 : 0,
               data.m_6 ? data.m_6 : 0
-            ] //.reverse();
+            ]
 
             var seedLabels = [
                 '76 mm',
@@ -32,7 +32,7 @@ var updateChart = function (data) {
                 '0.420 mm',
                 '0.149 mm',
                 '0.075 mm'
-            ] //.reverse()
+            ]
 
             var gData = {
                 labels: seedLabels,
