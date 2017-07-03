@@ -113,11 +113,16 @@ var calculateFields = function () {
 	//setFloat('f_1', 0)
 	//setFloat('g_1', 0)
 	//setFloat('h_1', 0)
-	setFloat('i_1', 0)
-	setFloat('j_1', sw20)
-	setFloat('k_1', sw04)
-	setFloat('l_1', sw01)
-	setFloat('m_1', swp)
+	var i1 = 0
+	setFloat('i_1', i1)
+	var j1 = sw20
+	setFloat('j_1', j1)
+	var k1 = sw04
+	setFloat('k_1', k1)
+	var l1 = sw01
+	setFloat('l_1', l1)
+	var m1 = swp
+	setFloat('m_1', m1)
 
 	//setFloat('a_2', 0)
 	//setFloat('b_2', 0)
@@ -127,70 +132,127 @@ var calculateFields = function () {
 	//setFloat('f_2', 0)
 	//setFloat('g_2', 0)
 	//setFloat('h_2', 0)
-	setFloat('i_2', rs48)
-	setFloat('j_2', fct*rs20)
-	setFloat('k_2', fct*rs04)
-	setFloat('l_2', fct*rs01)
-	setFloat('m_2', fct*rsp)
+	var i2 = rs48
+	setFloat('i_2', i2)
+	var j2 = fct*rs20
+	setFloat('j_2', j2)
+	var k2 = fct*rs04
+	setFloat('k_2', k2)
+	var l2 = fct*rs01
+	setFloat('l_2', l2)
+	var m2 = fct*rsp
+	setFloat('m_2', m2)
 
-	setFloat('a_3', rs76)
-	setFloat('b_3', rs63)
-	setFloat('c_3', rs51)
-	setFloat('d_3', rs38)
-	setFloat('e_3', rs25)
-	setFloat('f_3', rs19)
-	setFloat('g_3', rs12)
-	setFloat('h_3', rs95)
-	setFloat('i_3', rs48)
-	setFloat('j_3', getFloat('j_2')-sw20)
-	setFloat('k_3', getFloat('k_2')-sw04)
-	setFloat('l_3', getFloat('l_2')-sw01)
-	setFloat('m_3', getFloat('m_2')-swp)
+	var a3 = rs76
+	setFloat('a_3', a3)
+	var b3 = rs63
+	setFloat('b_3', b3)
+	var c3 = rs51
+	setFloat('c_3', c3)
+	var d3 = rs38
+	setFloat('d_3', d3)
+	var e3 = rs25
+	setFloat('e_3', e3)
+	var f3 = rs19
+	setFloat('f_3', f3)
+	var g3 = rs12
+	setFloat('g_3', g3)
+	var h3 = rs95
+	setFloat('h_3', h3)
+	var i3 = rs48
+	setFloat('i_3', i3)
+	var j3 = j2-sw20
+	setFloat('j_3', j3)
+	var k3 = k2-sw04
+	setFloat('k_3', k3)
+	var l3 = l2-sw01
+	setFloat('l_3', l3)
+	var m3 = m2-swp
+	setFloat('m_3', m3)
 
-	setFloat('a_4', getFloat('a_3'))
-	setFloat('b_4', getFloat('b_3')+getFloat('a_4'))
-	setFloat('c_4', getFloat('c_3')+getFloat('b_4'))
-	setFloat('d_4', getFloat('d_3')+getFloat('c_4'))
-	setFloat('e_4', getFloat('e_3')+getFloat('d_4'))
-	setFloat('f_4', getFloat('f_3')+getFloat('e_4'))
-	setFloat('g_4', getFloat('g_3')+getFloat('f_4'))
-	setFloat('h_4', getFloat('h_3')+getFloat('g_4'))
-	setFloat('i_4', getFloat('i_3')+getFloat('h_4'))
-	setFloat('j_4', getFloat('j_3')+getFloat('i_4'))
-	setFloat('k_4', getFloat('k_3')+getFloat('j_4'))
-	setFloat('l_4', getFloat('l_3')+getFloat('k_4'))
-	setFloat('m_4', getFloat('m_3')+getFloat('l_4'))
+	var a4 = a3
+	setFloat('a_4', a4)
+	var b4 = b3+a4
+	setFloat('b_4', b4)
+	var c4 = c3+b4
+	setFloat('c_4', c4)
+	var d4 = d3+c4
+	setFloat('d_4', d4)
+	var e4 = e3+d4
+	setFloat('e_4', e4)
+	var f4 = f3+e4
+	setFloat('f_4', f4)
+	var g4 = g3+f4
+	setFloat('g_4', g4)
+	var h4 = h3+g4
+	setFloat('h_4', h4)
+	var i4 = i3+h4
+	setFloat('i_4', i4)
+	var j4 = j3+i4
+	setFloat('j_4', j4)
+	var k4 = k3+j4
+	setFloat('k_4', k4)
+	var l4 = l3+k4
+	setFloat('l_4', l4)
+	var m4 = m3+l4
+	setFloat('m_4', m4)
 
-	setFloat('a_5', tb)
-	setFloat('b_5', tb-getFloat('b_4'))
-	setFloat('c_5', tb-getFloat('c_4'))
-	setFloat('d_5', tb-getFloat('d_4'))
-	setFloat('e_5', tb-getFloat('e_4'))
-	setFloat('f_5', tb-getFloat('f_4'))
-	setFloat('g_5', tb-getFloat('g_4'))
-	setFloat('h_5', tb-getFloat('h_4'))
-	setFloat('i_5', tb-getFloat('i_4'))
-	setFloat('j_5', tb-getFloat('j_4'))
-	setFloat('k_5', tb-getFloat('k_4'))
-	setFloat('l_5', tb-getFloat('l_4'))
-	setFloat('m_5', tb-getFloat('m_4'))
+	var a5 = tb
+	setFloat('a_5', a5)
+	var b5 = tb-b4
+	setFloat('b_5', b5)
+	var c5 = tb-c4
+	setFloat('c_5', c5)
+	var d5 = tb-d4
+	setFloat('d_5', d5)
+	var e5 = tb-e4
+	setFloat('e_5', e5)
+	var f5 = tb-f4
+	setFloat('f_5', f5)
+	var g5 = tb-g4
+	setFloat('g_5', g5)
+	var h5 = tb-h4
+	setFloat('h_5', h5)
+	var i5 = tb-i4
+	setFloat('i_5', i5)
+	var j5 = tb-j4
+	setFloat('j_5', j5)
+	var k5 = tb-k4
+	setFloat('k_5', k5)
+	var l5 = tb-l4
+	setFloat('l_5', l5)
+	var m5 = tb-m4
+	setFloat('m_5', m5)
 
-	setFloat('a_6', !!tb ? getFloat('a_5')/tb*100 : '', 0)
-	setFloat('b_6', !!tb ? getFloat('b_5')/tb*100 : '', 0)
-	setFloat('c_6', !!tb ? getFloat('c_5')/tb*100 : '', 0)
-	setFloat('d_6', !!tb ? getFloat('d_5')/tb*100 : '', 0)
-	setFloat('e_6', !!tb ? getFloat('e_5')/tb*100 : '', 0)
-	setFloat('f_6', !!tb ? getFloat('f_5')/tb*100 : '', 0)
-	setFloat('g_6', !!tb ? getFloat('g_5')/tb*100 : '', 0)
-	setFloat('h_6', !!tb ? getFloat('h_5')/tb*100 : '', 0)
-	setFloat('i_6', !!tb ? getFloat('i_5')/tb*100 : '', 0)
-	setFloat('j_6', !!tb ? getFloat('j_5')/tb*100 : '', 0)
-	setFloat('k_6', !!tb ? getFloat('k_5')/tb*100 : '', 0)
-	setFloat('l_6', !!tb ? getFloat('l_5')/tb*100 : '', 0)
-	setFloat('m_6', !!tb ? getFloat('m_5')/tb*100 : '', 0)
+	var a6 = !!tb ? a5/tb*100 : ''
+	setFloat('a_6', a6, 0)
+	var b6 = !!tb ? b5/tb*100 : ''
+	setFloat('b_6', b6, 0)
+	var c6 = !!tb ? c5/tb*100 : ''
+	setFloat('c_6', c6, 0)
+	var d6 = !!tb ? d5/tb*100 : ''
+	setFloat('d_6', d6, 0)
+	var e6 = !!tb ? e5/tb*100 : ''
+	setFloat('e_6', e6, 0)
+	var f6 = !!tb ? f5/tb*100 : ''
+	setFloat('f_6', f6, 0)
+	var g6 = !!tb ? g5/tb*100 : ''
+	setFloat('g_6', g6, 0)
+	var h6 = !!tb ? h5/tb*100 : ''
+	setFloat('h_6', h6, 0)
+	var i6 = !!tb ? i5/tb*100 : ''
+	setFloat('i_6', i6, 0)
+	var j6 = !!tb ? j5/tb*100 : ''
+	setFloat('j_6', j6, 0)
+	var k6 = !!tb ? k5/tb*100 : ''
+	setFloat('k_6', k6, 0)
+	var l6 = !!tb ? l5/tb*100 : ''
+	setFloat('l_6', l6, 0)
+	var m6 = !!tb ? m5/tb*100 : ''
+	setFloat('m_6', m6, 0)
 
-	setFloat('total', getFloat('a_3')+getFloat('b_3')+getFloat('c_3')+getFloat('e_3')+getFloat('d_3')+getFloat('f_3')+getFloat('g_3')+
-		getFloat('h_3')+getFloat('i_3')+getFloat('j_3')+getFloat('k_3')+getFloat('l_3')+getFloat('m_3')+getFloat('m_5'))
+	var total = a3+b3+c3+d3+e3+f3+g3+h3+i3+j3+k3+l3+m3+m5
+	setFloat('total', total)
 
 /*
 
