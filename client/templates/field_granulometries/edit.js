@@ -104,6 +104,98 @@ var calculateFields = function () {
 
 	var tp200 = getField('thin_pass_200')
 
+	var fct = !!tw && !!st ? st / tw : 0
+	setFloat('factor', fct, 2)
+
+
+	//setFloat('a_1', 0)
+	//setFloat('b_1', 0)
+	//setFloat('c_1', 0)
+	//setFloat('d_1', 0)
+	//setFloat('e_1', 0)
+	//setFloat('f_1', 0)
+	//setFloat('g_1', 0)
+	//setFloat('h_1', 0)
+	setFloat('i_1', 0)
+	setFloat('j_1', 0)
+	setFloat('k_1', 0)
+	setFloat('l_1', 0)
+	setFloat('m_1', 0)
+
+	//setFloat('a_2', 0)
+	//setFloat('b_2', 0)
+	//setFloat('c_2', 0)
+	//setFloat('d_2', 0)
+	//setFloat('e_2', 0)
+	//setFloat('f_2', 0)
+	//setFloat('g_2', 0)
+	//setFloat('h_2', 0)
+	setFloat('i_2', 0)
+	setFloat('j_2', 0)
+	setFloat('k_2', 0)
+	setFloat('l_2', 0)
+	setFloat('m_2', 0)
+
+
+	setFloat('a_3', 0)
+	setFloat('b_3', 0)
+	setFloat('c_3', 0)
+	setFloat('d_3', 0)
+	setFloat('e_3', 0)
+	setFloat('f_3', 0)
+	setFloat('g_3', 0)
+	setFloat('h_3', 0)
+	setFloat('i_3', 0)
+	setFloat('j_3', 0)
+	setFloat('k_3', 0)
+	setFloat('l_3', 0)
+	setFloat('m_3', 0)
+
+
+	setFloat('a_4', 0)
+	setFloat('b_4', 0)
+	setFloat('c_4', 0)
+	setFloat('d_4', 0)
+	setFloat('e_4', 0)
+	setFloat('f_4', 0)
+	setFloat('g_4', 0)
+	setFloat('h_4', 0)
+	setFloat('i_4', 0)
+	setFloat('j_4', 0)
+	setFloat('k_4', 0)
+	setFloat('l_4', 0)
+	setFloat('m_4', 0)
+
+
+	setFloat('a_5', 0)
+	setFloat('b_5', 0)
+	setFloat('c_5', 0)
+	setFloat('d_5', 0)
+	setFloat('e_5', 0)
+	setFloat('f_5', 0)
+	setFloat('g_5', 0)
+	setFloat('h_5', 0)
+	setFloat('i_5', 0)
+	setFloat('j_5', 0)
+	setFloat('k_5', 0)
+	setFloat('l_5', 0)
+	setFloat('m_5', 0)
+
+
+	setFloat('a_6', 0)
+	setFloat('b_6', 0)
+	setFloat('c_6', 0)
+	setFloat('d_6', 0)
+	setFloat('e_6', 0)
+	setFloat('f_6', 0)
+	setFloat('g_6', 0)
+	setFloat('h_6', 0)
+	setFloat('i_6', 0)
+	setFloat('j_6', 0)
+	setFloat('k_6', 0)
+	setFloat('l_6', 0)
+	setFloat('m_6', 0)
+
 
 	// XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
