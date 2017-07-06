@@ -520,7 +520,7 @@
   "field_granulometry_empty_title": "Mmm",
   "field_granulometry_empty_banner": "No has cargado ninguna granulometría de suelos, podés comenzar ahora...",
   "field_granulometry_new": "Nueva granulometría de suelos",
-  "field_granulometry_title": "Análisis Granulométrico de Suelos (> 75 mm)",
+  "field_granulometry_title": "Análisis Granulométrico de Suelos (> 0,075 mm)",
   "field_granulometry_subtitle": "Según Norma IRAM 10512:77 y otras de análisis granulométrico",
   "field_granulometry_responsible": "Responsable ensayo",
   "field_granulometry_date": "Fecha de muestra",
