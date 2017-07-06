@@ -403,14 +403,14 @@ var calculateFields = function () {
    */
 };
 
-Template.fieldGranulometryEdit.onRendered(function () {
+Template.fieldGranulometryNew.onRendered(function () {
   calculateFields()
 });
 
-Template.fieldGranulometryEdit.helpers({
+Template.fieldGranulometryNew.helpers({
 })
 
-Template.fieldGranulometryEdit.events({
+Template.fieldGranulometryNew.events({
 
   'change [name="humidity_empty_mass"], change [name="humidity_wet"], change [name="humidity_dry"]': function (event) {
     calculateFields()
