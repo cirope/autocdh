@@ -29,7 +29,7 @@
   transform: rotate(-25deg);
 }
 
-.ct-compaction .ct-label.ct-horizontal {
+.ct-compaction-assay .ct-label.ct-horizontal {
   transform-origin: 0em 5em;
   transform: rotate(0deg);
 }
