@@ -125,10 +125,10 @@ Template.fieldGranulometry.helpers({
         return this.sampleResponsibleId && Responsible.findOne(this.sampleResponsibleId).name
     },
     thinReduce: function () {
-        return this.thin_reduce ? TAPi18n.__('yes') : TAPi18n.__('no')
+        return this.thin_reduce && this.thin_reduce === 'yes' ? TAPi18n.__('yes') : TAPi18n.__('no')
     },
     thinPass200: function () {
-        return this.thin_pass_200 ? TAPi18n.__('yes') : TAPi18n.__('no')
+        return this.thin_pass_200 && this.thin_pass_200 === 'yes' ? TAPi18n.__('yes') : TAPi18n.__('no')
     }
 })
 

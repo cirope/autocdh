@@ -7,7 +7,7 @@ Template.fieldGranulometry.events({
 
       // add image
       PdfHelper.addGraphImage(doc, 200, 'data-graph-container', 7, function () {
-        var yPosition    = 13
+        var yPosition    = 10
 
         doc
           .setFont('helvetica')
@@ -24,17 +24,25 @@ Template.fieldGranulometry.events({
         var sResp = Responsible.findOne(data.sampleResponsibleId)
         values = [
           {
-            name: 'field_granulometry_title',
-            title: true,
-            bold: true
-          },
-          {
             name: 'field_granulometry_responsible',
             value: sResp && sResp.name ? sResp.name : '-'
           },
           {
             name: 'field_granulometry_name',
             value: data.sampleName
+          },
+          {
+            empty: true,
+            mini: true
+          },
+          {
+            name: 'field_granulometry_sampling_title',
+            title: true,
+            bold: true
+          },
+          {
+            name: 'field_granulometry_sampling',
+            value: (data.sampling ? data.sampling : '-')+' g'
           },
           {
             name: 'field_granulometry_humidity_title',
@@ -76,12 +84,17 @@ Template.fieldGranulometry.events({
             name: 'field_granulometry_weight',
             value: (data.weight ? data.weight : '-')+' g'
           },
+          {
+            name: 'field_granulometry_separation_sieve',
+            value: (data.separation_sieve ? data.separation_sieve : '-')+' g'
+          },
+          {
+            name: 'field_granulometry_separation_thin',
+            value: (data.separation_thin ? data.separation_thin : '-')+' g'
+          }
         ]
 
         values2 = [
-          {
-            empty: true
-          },
           {
             name: 'field_granulometry_date',
             value: data.fieldDate ? moment(data.fieldDate).format('L') : '-'
@@ -91,13 +104,8 @@ Template.fieldGranulometry.events({
             value: data.origin
           },
           {
-            name: 'field_granulometry_sampling_title',
-            title: true,
-            bold: true
-          },
-          {
-            name: 'field_granulometry_sampling',
-            value: (data.sampling ? data.sampling : '-')+' g'
+            empty: true,
+            mini: true
           },
           {
             name: 'field_granulometry_thin_title',
@@ -129,6 +137,26 @@ Template.fieldGranulometry.events({
           {
             name: 'field_granulometry_thin_percentage',
             value: (data.thin_percentage ? data.thin_percentage : '-')+' %'
+          },
+          {
+            empty: true
+          },
+          {
+            name: 'field_granulometry_thin_ver_ret',
+            value: (data.thin_ver_ret ? data.thin_ver_ret : '-')+'% '+(data.thin_ver_ret_label ? ' - '+data.thin_ver_ret_label : '')
+          },
+          {
+            name: 'field_granulometry_thin_ver_pass',
+            value: (data.thin_ver_pass ? data.thin_ver_pass : '-')+'% '+(data.thin_ver_pass_label ? ' - '+data.thin_ver_pass_label : '')
+          },
+          {
+            name: 'field_granulometry_thin_pass_title',
+            title: true,
+            bold: true
+          },
+          {
+            name: 'field_granulometry_thin_pass_200',
+            value: (data.thin_pass_200 && data.thin_pass_200 === 'yes' ? TAPi18n.__('yes') : TAPi18n.__('no'))
           }
         ]
 
@@ -160,7 +188,7 @@ Template.fieldGranulometry.events({
             margins: { right: 0, left: 0, top: 0, bottom: 0 },
             fontSize: 6
           })
-        yPosition += 110
+        yPosition += 100
 
         doc
           .setFont('helvetica')
