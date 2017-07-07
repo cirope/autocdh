@@ -178,7 +178,7 @@ PdfHelper = {
 
         return { data: data, headers: headers }
     },
-    addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY) {
+    addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY, waits) {
         $('body').addClass('pdf-export')
 
         container = container || 'data-graph-container'
@@ -201,16 +201,23 @@ PdfHelper = {
         imgX = imgX || 15
         imgY = imgY || 5
 
+
         rasterizeHTML.drawHTML(html, canvas).then(function (result) {
             try{
-                var data = canvas.toDataURL('image/png')
 
-                doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor)
+                var wt = 1500;
+                if(!!waits){
+                    wt += waits;
+                }
+                setTimeout(function () {
+                    var data = canvas.toDataURL('image/png')
+                    doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor)
 
-                yPosition += 5 + height / factor
-                if(doc.lastCellPos) doc.lastCellPos.y = yPosition
+                    yPosition += 5 + height / factor
+                    if(doc.lastCellPos) doc.lastCellPos.y = yPosition
 
-                if (typeof callback === 'function') callback()
+                    if (typeof callback === 'function') callback()
+                }, wt)
             } catch(err){
                 console.log(err)
             }
