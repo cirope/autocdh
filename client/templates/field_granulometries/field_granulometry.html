@@ -1,9 +1,10 @@
 <template name="fieldGranulometry">
 	<div class="row text-center hide-on-pdf-export">
+	<div class="row text-center">
 		<h4>{{_ 'field_granulometry_title'}}</h4>
 		<h5>{{_ 'field_granulometry_subtitle'}}</h5>
 	</div>
-	<div class="row hide-on-pdf-export">
+	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -35,7 +36,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row hide-on-pdf-export">
+	<div class="row">
 		<div class="col-md-4">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -55,7 +56,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row hide-on-pdf-export">
+	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -137,7 +138,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row hide-on-pdf-export">
+	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -168,7 +169,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row hide-on-pdf-export">
+	<div class="row">
 		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -339,7 +340,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row hide-on-pdf-export">
+	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -516,37 +517,29 @@
 			</div>
 		</div>
 	</div>
-	<div class="row hide-on-pdf-export" style="margin-bottom: 10px;">
-		<div class="pull-right">
-			<button class="btn btn-sm btn-default" type="button" data-download-pdf>
-				{{_ 'download_pdf'}}
-				<span class="glyphicon glyphicon-file"></span>
-			</button>
-			<a href="{{pathFor 'fieldGranulometryEdit'}}" class="btn btn-sm btn-default" title="{{_ 'field_granulometry_update_title'}}">
-				{{_ 'edit'}}
-			</a>
-		</div>
-		<button class="btn btn-sm btn-danger" type="button" data-delete>
-			{{_ 'delete'}}
-		</button>
 	</div>
-
-	<div class="show-on-pdf-export" data-graph-container>
-		<div class="row">
-			<div class="col-md-12">
-				<div class="row">
-					<div class="col-md-9">
-						<div class="panel panel-default">
-							<div class="panel-body">
-								<div class="ct-chart ct-golden-section ct-field-granulometry" data-chart></div>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3">
-						{{> fieldGranulometryReference}}
-					</div>
-				</div>
+	<div class="row hide-on-pdf-export" style="margin-bottom: 10px;">
+		<div class="col-md-12">
+			<div class="pull-right">
+				<button class="btn btn-sm btn-default" type="button" data-download-pdf>
+					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+				<a href="{{pathFor 'fieldGranulometryEdit'}}" class="btn btn-sm btn-default" title="{{_ 'field_granulometry_update_title'}}">
+					{{_ 'edit'}}
+				</a>
 			</div>
+			<button class="btn btn-sm btn-danger" type="button" data-delete>
+				{{_ 'delete'}}
+			</button>
+		</div>
+	</div>
+	<div class="row" data-graph-container>
+		<div class="col-md-9">
+			<div class="ct-chart ct-golden-section ct-field-granulometry" data-chart></div>
+		</div>
+		<div class="col-md-3 hide-on-pdf-export">
+			{{> fieldGranulometryReference}}
 		</div>
 	</div>
 </template>

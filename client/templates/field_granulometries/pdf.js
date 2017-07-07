@@ -6,7 +6,7 @@ Template.fieldGranulometry.events({
     PDF.new({}, function (doc) {
 
       // add image
-      PdfHelper.addGraphImage(doc, 200, 'data-graph-container', 7, function () {
+      PdfHelper.addGraphImage(doc, 186, 'data-graph-container', 6, function () {
         var yPosition    = 10
 
         doc
@@ -30,10 +30,6 @@ Template.fieldGranulometry.events({
           {
             name: 'field_granulometry_name',
             value: data.sampleName
-          },
-          {
-            empty: true,
-            mini: true
           },
           {
             name: 'field_granulometry_sampling_title',
@@ -102,10 +98,6 @@ Template.fieldGranulometry.events({
           {
             name: 'field_granulometry_origin',
             value: data.origin
-          },
-          {
-            empty: true,
-            mini: true
           },
           {
             name: 'field_granulometry_thin_title',
@@ -179,7 +171,7 @@ Template.fieldGranulometry.events({
         // remove last data row
         table.data.pop()
 
-        yPosition -= 2
+        yPosition -= 3
         doc
           .setFontSize(6)
           .table(PdfHelper.COL_1, yPosition, table.data, table.headers, {
@@ -188,7 +180,7 @@ Template.fieldGranulometry.events({
             margins: { right: 0, left: 0, top: 0, bottom: 0 },
             fontSize: 6
           })
-        yPosition += 100
+        yPosition += 101
 
         doc
           .setFont('helvetica')
@@ -215,7 +207,7 @@ Template.fieldGranulometry.events({
           doc.putTotalPages('___total_pages___')
           doc.save(data.origin+'-'+data.sampleName+'.pdf')
         })
-      })
+      }, -1, 2)
 
     })
   }
