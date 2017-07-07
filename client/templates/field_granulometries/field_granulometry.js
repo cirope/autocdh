@@ -11,27 +11,39 @@ var updateChart = function (data) {
               data.f_6 ? data.f_6 : 0,
               data.g_6 ? data.g_6 : 0,
               data.h_6 ? data.h_6 : 0,
+              null,
               data.i_6 ? data.i_6 : 0,
+              null,
               data.j_6 ? data.j_6 : 0,
+              null,
+              null,
               data.k_6 ? data.k_6 : 0,
+              null,
               data.l_6 ? data.l_6 : 0,
+              null,
               data.m_6 ? data.m_6 : 0
             ]
 
             var seedLabels = [
-                '76 mm',
-                '63 mm',
-                '51 mm',
-                '38 mm',
-                '25 mm',
-                '19 mm',
-                '9.5 mm',
-                '12.5 mm',
-                '4.8 mm',
-                '2.0 mm',
-                '0.420 mm',
-                '0.149 mm',
-                '0.075 mm'
+                '76 mm', // a
+                '63 mm', // b
+                '51 mm', // c
+                '38 mm', // d
+                '25 mm', // e
+                '19 mm', // f
+                '12.5 mm', // g
+                '9.5 mm', // h
+                ' ',
+                '4.8 mm', // i
+                ' ',
+                '2.0 mm', // j
+                ' ',
+                ' ',
+                '0.420 mm', // k
+                ' ',
+                '0.149 mm', // l
+                ' ',
+                '0.075 mm' // m
             ]
 
             var gData = {
@@ -45,7 +57,9 @@ var updateChart = function (data) {
                 showPoint:  true,
                 fullWidth:  true,
                 showLine: true,
-                lineSmooth: false,
+                lineSmooth: Chartist.Interpolation.none({
+                    fillHoles: true
+                }),
                 chartPadding: {
                     top: 10,
                     right: 10,
