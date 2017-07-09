@@ -31,13 +31,10 @@ var logTrendLine = function (options) {
 					if(data.seriesIndex === 0){
 						// save point
 						s1.push({x: data.x, y: data.y})
-						console.log('Punto serie:'+data.seriesIndex+', x:'+data.x+', y:'+data.y+', value:'+JSON.stringify(data.value))
 					} else if(data.seriesIndex === 1){
 						// draw trend line
 						var pr = {x: data.x, y: data.y}
-						console.log('Punto posta:'+data.seriesIndex+', x:'+data.x+', y:'+data.y+', value:'+JSON.stringify(data.value))
 
-						// http://classroom.synonym.com/calculate-trendline-2709.html
 						var i;
 						var n = s1.length
 						if(n > 1){
@@ -78,8 +75,8 @@ var logTrendLine = function (options) {
 								y1: [ymi],
 								x2: [xmx],
 								y2: [ymx],
-								style: 'stroke:rgb(50,93,136);stroke-width:1'
-							}, 'ct-line');
+								style: 'stroke:#325D87;stroke-width:1px;'
+							}, 'ct-circle');
 							data.element.parent().append(line);
 						}
 
