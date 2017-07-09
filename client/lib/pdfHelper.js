@@ -178,7 +178,7 @@ PdfHelper = {
 
         return { data: data, headers: headers }
     },
-    addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY, waits) {
+    addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY, waitsJs) {
         $('body').addClass('pdf-export')
 
         container = container || 'data-graph-container'
@@ -201,29 +201,28 @@ PdfHelper = {
         imgX = imgX || 15
         imgY = imgY || 5
 
+        var options = {}
+        if(!!waitsJs){
+            options.executeJs = true
+            options.executeJsTimeout = 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
+        }
 
-        rasterizeHTML.drawHTML(html, canvas).then(function (result) {
-            try{
+        rasterizeHTML.drawHTML(html, canvas, options)
+          .then(function (result) {
+              try{
+                  var data = canvas.toDataURL('image/png')
+                  doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor)
 
-                var wt = 1500;
-                if(!!waits){
-                    wt += waits;
-                }
-                setTimeout(function () {
-                    var data = canvas.toDataURL('image/png')
-                    doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor)
+                  yPosition += 5 + height / factor
+                  if(doc.lastCellPos) doc.lastCellPos.y = yPosition
 
-                    yPosition += 5 + height / factor
-                    if(doc.lastCellPos) doc.lastCellPos.y = yPosition
-
-                    if (typeof callback === 'function') callback()
-                }, wt)
-            } catch(err){
-                console.log(err)
-            }
-        }, function (err) {
-            console.log('error: '+err)
-        });
+                  if (typeof callback === 'function') callback()
+              } catch(err){
+                  console.log(err)
+              }
+          }, function (err) {
+              console.log('error: '+err)
+          });
     },
     generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc, yIni, yFilterIni, yGraphIni) {
         var yPosition            = yIni || 25
