@@ -6,7 +6,7 @@ Template.compactionAssay.events({
     PDF.new({}, function (doc) {
 
       // add image
-      PdfHelper.addGraphImage(doc, 186, 'data-graph-container', 6, function () {
+      PdfHelper.addGraphImage(doc, 186, 'data-graph-container', 6.25, function () {
         var yPosition    = 10
 
         doc
@@ -158,7 +158,7 @@ Template.compactionAssay.events({
           doc.putTotalPages('___total_pages___')
           doc.save(data.origin+'-'+data.sampleName+'.pdf')
         })
-      }, -4, 2, 21111)
+      }, 1, 2, 2000)
 
     })
   }
