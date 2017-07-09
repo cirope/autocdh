@@ -18,6 +18,80 @@ var projectValue = function(value) {
 	return this.axisLength * (value - min) / this.bounds.range;
 }
 
+var logTrendLine = function (options) {
+	return function(chart) {
+		var defaultOptions = {};
+
+		options = Chartist.extend({}, defaultOptions, options);
+
+		if(chart instanceof Chartist.Line) {
+			var s1 = []
+			chart.on('draw', function(data) {
+				if(data.type === 'point') {
+					if(data.seriesIndex === 0){
+						// save point
+						s1.push({x: data.x, y: data.y})
+						console.log('Punto serie:'+data.seriesIndex+', x:'+data.x+', y:'+data.y+', value:'+JSON.stringify(data.value))
+					} else if(data.seriesIndex === 1){
+						// draw trend line
+						var pr = {x: data.x, y: data.y}
+						console.log('Punto posta:'+data.seriesIndex+', x:'+data.x+', y:'+data.y+', value:'+JSON.stringify(data.value))
+
+						// http://classroom.synonym.com/calculate-trendline-2709.html
+						var i;
+						var n = s1.length
+						if(n > 1){
+							// TODO do special cases when 1 and 2 points only
+							var a = 0, c = 0, d = 0
+							var b1 = 0, b2 = 0
+							var xmi = pr.x, xmx = pr.x
+
+							for(i = 0; i < n; i++){
+								a += (s1[i].x * s1[i].y)
+								b1 += s1[i].x
+								b2 += s1[i].y
+								c += (s1[i].x * s1[i].x)
+								d += s1[i].x
+								if(s1[i].x > xmx){
+									xmx = s1[i].x
+								}
+								if(s1[i].x < xmi){
+									xmi = s1[i].x
+								}
+							}
+
+							a *= n
+							var b = b1 * b2
+							c *= n
+							d = d * d
+
+							var m = (a - b) / (d - c)
+							var y0 = pr.y + m * pr.x
+
+							xmi -= 10
+							var ymi = y0 - m * xmi
+							xmx += 10
+							var ymx = y0 - m * xmx
+
+							var line = new Chartist.Svg('line', {
+								x1: [xmi],
+								y1: [ymi],
+								x2: [xmx],
+								y2: [ymx],
+								style: 'stroke:rgb(50,93,136);stroke-width:1'
+							}, 'ct-line');
+							data.element.parent().append(line);
+						}
+
+					}
+				}
+			});
+		}
+	}
+}
+Chartist.plugins = Chartist.plugins || {}
+Chartist.plugins.logTrendLine = logTrendLine
+
 var updateChart = function (data) {
 	setTimeout(function () {
 		if ($('[data-chart]').length) {
@@ -34,26 +108,20 @@ var updateChart = function (data) {
 			var spline = new MonotonicCubicSpline(xx, yy)
 			var y25 = spline.interpolate(25)
 			y25 = y25.toFixed(0)
-			var y25_1 = y25
-
-			var values2 = [{x: xx[0], y: spline.interpolate(xx[0])+.1}, {x: 25, y: y25_1}]
-			if(xx[xx.length - 1] > 25) values2.push({x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])+.1});
-
-			//var values2 = [{x: xx[0], y: spline.interpolate(xx[0])}, {x: xx[xx.length - 1], y: spline.interpolate(xx[xx.length - 1])}];
 
 			var gData = {
 				series: [
-					{
-						data: values2,
-						className: 'ct-series ct-series-a transparent-points dotted-a'
-					},
 					{
 						data: values,
 						className: 'ct-series ct-series-a only-points'
 					},
 					{
-						data: [{x: 25, y: y25_1}],
+						data: [{x: 25, y: y25}],
 						className: 'ct-series ct-series-b only-points'
+					},
+					{
+						data: [],
+						className: 'ct-series ct-series-a transparent-points dotted-a'
 					}
 				]};
 
@@ -110,7 +178,8 @@ var updateChart = function (data) {
 							textAnchor: 'middle',
 							flipTitle: true
 						}
-					})
+					}),
+					Chartist.plugins.logTrendLine({})
 				]
 			};
 
