@@ -217,8 +217,8 @@ PdfHelper = {
 
         if(!!waitsJs){
             var options = {
-                executeJs: true,
-                executeJsTimeout: 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
+                executeJs: true
+                //, executeJsTimeout: 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
             }
 
             rasterizeHTML.drawHTML(html, canvas, options).then(addImageToPdf, function (err) { console.log('error: '+err) });
