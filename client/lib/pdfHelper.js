@@ -179,48 +179,48 @@ PdfHelper = {
         return { data: data, headers: headers }
     },
     addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY, waitsJs) {
-        $('body').addClass('pdf-export');
+        $('body').addClass('pdf-export')
 
-        container = container || 'data-graph-container';
+        container = container || 'data-graph-container'
 
-        var canvas = document.createElement('canvas');
-        var html = _.first($('html')).innerHTML;
-        var width = $('['+container+']').outerWidth() * 1.2;
-        var height = $('['+container+']').outerHeight() * 1.2;
-        var ctx = canvas.getContext('2d');
+        var canvas = document.createElement('canvas')
+        var html = _.first($('html')).innerHTML
+        var width = $('['+container+']').outerWidth() * 1.2
+        var height = $('['+container+']').outerHeight() * 1.2
+        var ctx = canvas.getContext('2d')
 
-        canvas.width = width;
-        canvas.height = height;
+        canvas.width = width
+        canvas.height = height
 
-        ctx.fillStyle = '#ffffff';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#ffffff'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-        $('body').removeClass('pdf-export');
+        $('body').removeClass('pdf-export')
 
-        factor = factor || 6;
-        imgX = imgX || 15;
-        imgY = imgY || 5;
+        factor = factor || 6
+        imgX = imgX || 15
+        imgY = imgY || 5
 
-        var options = {};
+        var options = {}
         if(!!waitsJs){
-            options.executeJs = true;
-            options.executeJsTimeout = 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0);
+            options.executeJs = true
+            options.executeJsTimeout = 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
         }
 
         rasterizeHTML.drawHTML(html, canvas, options).then(function (result) {
             try{
-                var data = canvas.toDataURL('image/png');
-                doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor);
+                var data = canvas.toDataURL('image/png')
+                doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor)
 
-                yPosition += 5 + height / factor;
-                if(doc.lastCellPos) doc.lastCellPos.y = yPosition;
+                yPosition += 5 + height / factor
+                if(doc.lastCellPos) doc.lastCellPos.y = yPosition
 
-                if (typeof callback === 'function') callback();
+                if (typeof callback === 'function') callback()
             } catch(err){
-                console.log(err);
+                console.log(err)
             }
         }, function (err) {
-            console.log('error: '+err);
+            console.log('error: '+err)
         });
     },
     generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc, yIni, yFilterIni, yGraphIni) {
