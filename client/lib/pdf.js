@@ -31,7 +31,7 @@ PDF = {
         callback(reader.result)
       }
 
-      reader.readAsDataURL(result.content)
+      reader.readAsDataURL(result ? result.content : null)
     })
   },
 
