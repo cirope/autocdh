@@ -207,22 +207,21 @@ PdfHelper = {
             options.executeJsTimeout = 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0);
         }
 
-        rasterizeHTML.drawHTML(html, canvas, options)
-          .then(function (result) {
-              try{
-                  var data = canvas.toDataURL('image/png');
-                  doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor);
+        rasterizeHTML.drawHTML(html, canvas, options).then(function (result) {
+            try{
+                var data = canvas.toDataURL('image/png');
+                doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor);
 
-                  yPosition += 5 + height / factor;
-                  if(doc.lastCellPos) doc.lastCellPos.y = yPosition;
+                yPosition += 5 + height / factor;
+                if(doc.lastCellPos) doc.lastCellPos.y = yPosition;
 
-                  if (typeof callback === 'function') callback();
-              } catch(err){
-                  console.log(err);
-              }
-          }, function (err) {
-              console.log('error: '+err);
-          });
+                if (typeof callback === 'function') callback();
+            } catch(err){
+                console.log(err);
+            }
+        }, function (err) {
+            console.log('error: '+err);
+        });
     },
     generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc, yIni, yFilterIni, yGraphIni) {
         var yPosition            = yIni || 25
@@ -249,11 +248,3 @@ PdfHelper = {
         })
     }
 }
-
-/*
-
- doc
- .setDrawColor('0', '255', '0')
- .line(column < PdfHelper.COL_2 ? 0 : 150, yPosition, column, yPosition)
-
- */
