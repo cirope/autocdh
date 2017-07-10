@@ -201,13 +201,7 @@ PdfHelper = {
         imgX = imgX || 15
         imgY = imgY || 5
 
-        var options = {}
-        if(!!waitsJs){
-            options.executeJs = true
-            options.executeJsTimeout = 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
-        }
-
-        rasterizeHTML.drawHTML(html, canvas, options).then(function (result) {
+        var addImageToPdf = function (result) {
             try{
                 var data = canvas.toDataURL('image/png')
                 doc.addImage(data, 'PNG', imgX, yPosition += imgY, width / factor, height / factor)
@@ -219,9 +213,18 @@ PdfHelper = {
             } catch(err){
                 console.log(err)
             }
-        }, function (err) {
-            console.log('error: '+err)
-        });
+        };
+
+        if(!!waitsJs){
+            var options = {
+                executeJs: true,
+                executeJsTimeout: 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
+            }
+
+            rasterizeHTML.drawHTML(html, canvas, options).then(addImageToPdf, function (err) { console.log('error: '+err) });
+        } else {
+            rasterizeHTML.drawHTML(html, canvas).then(addImageToPdf, function (err) { console.log('error: '+err) });
+        }
     },
     generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc, yIni, yFilterIni, yGraphIni) {
         var yPosition            = yIni || 25
