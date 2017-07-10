@@ -158,7 +158,7 @@ Template.compactionAssay.events({
           doc.putTotalPages('___total_pages___')
           doc.save(data.origin+'-'+data.sampleName+'.pdf')
         })
-      }, 1, 2, 2000)
+      }, 1, 2, 1500)
 
     })
   }
