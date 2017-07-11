@@ -90,8 +90,8 @@ var calculateFields = function () {
 
   var tw = getAndSetFloat('thin_weight')
   var tr = getField('thin_reduce')
-  if((!tr || tr !== 'yes') && !tw && !!ss){
-    tw = ss
+  if((!tr || tr !== 'yes') && !tw && !!st){
+    tw = st
     setFloat('thin_weight', tw)
   }
 
@@ -299,9 +299,9 @@ Template.fieldGranulometryNew.events({
     if(!tr || tr !== 'yes'){
       var tw = getAndSetFloat('thin_weight')
       if(!tw) {
-        var ss = getAndSetFloat('separation_sieve')
-        if(!!ss) {
-          setFloat('thin_weight', ss)
+        var st = getAndSetFloat('separation_thin')
+        if(!!st) {
+          setFloat('thin_weight', st)
         }
       }
     } else {
