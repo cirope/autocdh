@@ -30,17 +30,16 @@ var logTrendLine = function (options) {
 			options = Chartist.extend({}, defaultOptions, options);
 
 			if (chart instanceof Chartist.Line) {
+				var clines = chart
 				var s1 = []
 				chart.on('draw', function (data) {
 					if (_values_25.get().length === 0 && data.type === 'point') {
 						if(data.seriesIndex === 0) {
 							// save point
 							s1.push({x: data.x, y: data.y, xr: data.value.x, yr: data.value.y})
-							console.log('PUNTO:  x:' + data.x + ', y:' + data.y + ' => ' + JSON.stringify(data.value))
 						} else if(data.seriesIndex === 3) {
 							// save point
 							var x25rel = data.x
-							console.log('REF:  x:' + data.x + ', y:' + data.y + ' => ' + JSON.stringify(data.value))
 
 							// draw trend line
 							var i;
@@ -94,16 +93,6 @@ var logTrendLine = function (options) {
 								console.log('X real:  ' + xmir + ' - ' + xmxr)
 								console.log('Y real:  ' + ymir + ' - ' + ymxr)
 
-								var line = new Chartist.Svg('line', {
-									x1: [xmi],
-									y1: [ymi],
-									x2: [xmx],
-									y2: [ymx],
-									style: 'stroke:#325D87;stroke-width:1px;'
-								}, 'ct-circle');
-								data.element.parent().append(line);
-
-
 								var ya = ((ymxr-ymir)/(ymxa-ymia)*(ymi-ymia))+ymir
 								console.log('Y a:  ' + ya)
 								_values_line.get().push({x: xmir, y: ya.toFixed(1)})
@@ -129,6 +118,7 @@ var logTrendLine = function (options) {
 								var lpi = 1 * ll - _limit_plastic.get()
 								_limit_plastic_index.set(lpi.toFixed(0))
 
+								updateChart();
 							}
 						}
 					}
@@ -162,11 +152,11 @@ var updateChart = function (data) {
 					},
 					{
 						data: _values_line.get(),
-						className: 'ct-series ct-series-a transparent-points dotted-a'
+						className: 'ct-series ct-series-b transparent-points dotted-a'
 					},
 					{
 						data: values.length > 0 && _values_25.get().length == 0 ? [{x: 25, y: values[0].y }] : [],
-						className: 'ct-series ct-series-c only-points'
+						className: 'ct-series transparent-points'
 					}
 				]};
 
