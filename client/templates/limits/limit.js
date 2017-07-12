@@ -118,7 +118,7 @@ var logTrendLine = function (options) {
 								var lpi = 1 * ll - _limit_plastic.get()
 								_limit_plastic_index.set(lpi.toFixed(0))
 
-								updateChart();
+								if(!!options.chart_data) updateChart(options.chart_data)
 							}
 						}
 					}
@@ -215,7 +215,8 @@ var updateChart = function (data) {
 						}
 					}),
 					Chartist.plugins.logTrendLine({
-						number_values: values.length
+						number_values: values.length,
+						chart_data: data
 					})
 				]
 			};
@@ -237,6 +238,12 @@ Template.limit.onCreated(function () {
 })
 
 Template.limit.onRendered(function () {
+	if(!!_limit_liquid) _limit_liquid.set('')
+	if(!!_limit_plastic) _limit_plastic.set('')
+	if(!!_limit_plastic_index) _limit_plastic_index.set('')
+	if(!!_values_25) _values_25.set([])
+	if(!!_values_line) _values_line.set([])
+
 	updateChart(this.data)
 })
 

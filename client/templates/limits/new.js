@@ -45,6 +45,11 @@ var calculateFields = function () {
 };
 
 Template.limitNew.onRendered(function () {
+  if(!!_limit_liquid) _limit_liquid.set('')
+  if(!!_limit_plastic) _limit_plastic.set('')
+  if(!!_limit_plastic_index) _limit_plastic_index.set('')
+  if(!!_values_25) _values_25.set([])
+  if(!!_values_line) _values_line.set([])
 });
 
 Template.limitNew.helpers({
