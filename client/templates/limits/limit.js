@@ -2,6 +2,8 @@
 var _limit_liquid = new ReactiveVar('')
 var _limit_plastic = new ReactiveVar('')
 var _limit_plastic_index = new ReactiveVar('')
+var _values_25 = new ReactiveVar([])
+var _values_line = new ReactiveVar([])
 
 var baseLog = function(val, base) {
 	return Math.log(val) / Math.log(base);
@@ -20,69 +22,118 @@ var projectValue = function(value) {
 
 var logTrendLine = function (options) {
 	return function(chart) {
-		var defaultOptions = {};
+		if (_values_25.get().length == 0) {
+			var defaultOptions = {
+				number_values: 0
+			};
 
-		options = Chartist.extend({}, defaultOptions, options);
+			options = Chartist.extend({}, defaultOptions, options);
 
-		if(chart instanceof Chartist.Line) {
-			var s1 = []
-			chart.on('draw', function(data) {
-				if(data.type === 'point') {
-					if(data.seriesIndex === 0){
-						// save point
-						s1.push({x: data.x, y: data.y})
-					} else if(data.seriesIndex === 1){
-						// draw trend line
-						var pr = {x: data.x, y: data.y}
+			if (chart instanceof Chartist.Line) {
+				var s1 = []
+				chart.on('draw', function (data) {
+					if (_values_25.get().length === 0 && data.type === 'point') {
+						if(data.seriesIndex === 0) {
+							// save point
+							s1.push({x: data.x, y: data.y, xr: data.value.x, yr: data.value.y})
+							console.log('PUNTO:  x:' + data.x + ', y:' + data.y + ' => ' + JSON.stringify(data.value))
+						} else if(data.seriesIndex === 3) {
+							// save point
+							var x25rel = data.x
+							console.log('REF:  x:' + data.x + ', y:' + data.y + ' => ' + JSON.stringify(data.value))
 
-						var i;
-						var n = s1.length
-						if(n > 1){
-							// TODO do special cases when 1 and 2 points only
-							var a = 0, c = 0, d = 0
-							var b1 = 0, b2 = 0
-							var xmi = pr.x, xmx = pr.x
+							// draw trend line
+							var i;
+							var n = s1.length
+							if (n > 1) {
+								var a = 0, c = 0, d = 0
+								var b1 = 0, b2 = 0
+								var xmi = 10000, xmx = -10000
 
-							for(i = 0; i < n; i++){
-								a += (s1[i].x * s1[i].y)
-								b1 += s1[i].x
-								b2 += s1[i].y
-								c += (s1[i].x * s1[i].x)
-								d += s1[i].x
-								if(s1[i].x > xmx){
-									xmx = s1[i].x
+								var ymia, ymxa
+								var xmir, xmxr
+								var ymir, ymxr
+								for (i = 0; i < n; i++) {
+									a += (s1[i].x * s1[i].y)
+									b1 += s1[i].x
+									b2 += s1[i].y
+									c += (s1[i].x * s1[i].x)
+									d += s1[i].x
+									if (s1[i].x > xmx) {
+										xmx = s1[i].x
+										ymxa = s1[i].y
+										xmxr = s1[i].xr
+										ymxr = s1[i].yr
+									}
+									if (s1[i].x < xmi) {
+										xmi = s1[i].x
+										ymia = s1[i].y
+										xmir = s1[i].xr
+										ymir = s1[i].yr
+									}
 								}
-								if(s1[i].x < xmi){
-									xmi = s1[i].x
+
+								a *= n
+								var b = b1 * b2
+								c *= n
+								d = d * d
+
+								var m = (a - b) / (d - c)
+
+								var ys = 0
+								for (var yi = 0; yi < s1.length; yi++) {
+									ys += s1[yi].y + m * s1[yi].x
 								}
+								var y0 = ys / s1.length
+
+								var ymi = y0 - m * xmi
+								var ymx = y0 - m * xmx
+								console.log('X linea:  ' + xmi + ' - ' + xmx)
+								console.log('Y linea:  ' + ymi + ' - ' + ymx)
+								console.log('Y points:  ' + ymia + ' - ' + ymxa)
+								console.log('X real:  ' + xmir + ' - ' + xmxr)
+								console.log('Y real:  ' + ymir + ' - ' + ymxr)
+
+								var line = new Chartist.Svg('line', {
+									x1: [xmi],
+									y1: [ymi],
+									x2: [xmx],
+									y2: [ymx],
+									style: 'stroke:#325D87;stroke-width:1px;'
+								}, 'ct-circle');
+								data.element.parent().append(line);
+
+
+								var ya = ((ymxr-ymir)/(ymxa-ymia)*(ymi-ymia))+ymir
+								console.log('Y a:  ' + ya)
+								_values_line.get().push({x: xmir, y: ya.toFixed(1)})
+
+								var yb = ((ymxr-ymir)/(ymxa-ymia)*(ymx-ymia))+ymir
+								console.log('Y b:  ' + yb)
+								_values_line.get().push({x: xmxr, y: yb.toFixed(1)})
+
+								var y25rel = y0 - m * x25rel
+								console.log('RELATIVE:  x:' + x25rel + ', y:' + y25rel)
+
+								var y25 = ((ymxr-ymir)/(ymxa-ymia)*(y25rel-ymia))+ymir
+								var y25a = y25.toFixed(1)
+
+								console.log('REAL:  x: 25, y:' + y25a)
+
+								//var ymx = y0 - m * xmx
+								_values_25.get().push({x: 25, y: y25a})
+
+								var ll = y25.toFixed(0)
+								_limit_liquid.set(ll)
+
+								var lpi = 1 * ll - _limit_plastic.get()
+								_limit_plastic_index.set(lpi.toFixed(0))
+
 							}
-
-							a *= n
-							var b = b1 * b2
-							c *= n
-							d = d * d
-
-							var m = (a - b) / (d - c)
-							var y0 = pr.y + m * pr.x
-
-							xmi -= 10
-							var ymi = y0 - m * xmi
-							xmx += 10
-							var ymx = y0 - m * xmx
-
-							var line = new Chartist.Svg('line', {
-								x1: [xmi],
-								y1: [ymi],
-								x2: [xmx],
-								y2: [ymx],
-								style: 'stroke:#325D87;stroke-width:1px;'
-							}, 'ct-circle');
-							data.element.parent().append(line);
 						}
-
 					}
-				}
-			});
+				});
+			}
 		}
 	}
 }
@@ -99,13 +150,6 @@ var updateChart = function (data) {
 			if(data.liquid_hits_p4 && data.liquid_humidity_p4) values.push({x: data.liquid_hits_p4, y: data.liquid_humidity_p4 });
 			if(data.liquid_hits_p5 && data.liquid_humidity_p5) values.push({x: data.liquid_hits_p5, y: data.liquid_humidity_p5 });
 
-			var xx = _.pluck(values, 'x')
-			var yy = _.pluck(values, 'y')
-
-			var spline = new MonotonicCubicSpline(xx, yy)
-			var y25 = spline.interpolate(25)
-			y25 = y25.toFixed(0)
-
 			var gData = {
 				series: [
 					{
@@ -113,12 +157,16 @@ var updateChart = function (data) {
 						className: 'ct-series ct-series-a only-points'
 					},
 					{
-						data: [{x: 25, y: y25}],
+						data: _values_25.get(),
 						className: 'ct-series ct-series-b only-points'
 					},
 					{
-						data: [],
+						data: _values_line.get(),
 						className: 'ct-series ct-series-a transparent-points dotted-a'
+					},
+					{
+						data: values.length > 0 && _values_25.get().length == 0 ? [{x: 25, y: values[0].y }] : [],
+						className: 'ct-series ct-series-c only-points'
 					}
 				]};
 
@@ -176,23 +224,21 @@ var updateChart = function (data) {
 							flipTitle: true
 						}
 					}),
-					Chartist.plugins.logTrendLine({})
+					Chartist.plugins.logTrendLine({
+						number_values: values.length
+					})
 				]
 			};
 
 			new Chartist.Line('.ct-chart.ct-limits', gData, options)
 
-			_limit_liquid.set(y25)
-
 			var lp = (
-				(!!data.plastic_humidity_d2 ? data.plastic_humidity_d2 : 0) +
-				(!!data.plastic_humidity_d1 ? data.plastic_humidity_d1 : 0)
+					(!!data.plastic_humidity_d2 ? data.plastic_humidity_d2 : 0) +
+					(!!data.plastic_humidity_d1 ? data.plastic_humidity_d1 : 0)
 				) / (!!data.plastic_humidity_d2 ? 2 : 1)
 			lp = lp.toFixed(0)
 			_limit_plastic.set(lp)
 
-			var lpi = y25 - lp
-			_limit_plastic_index.set(lpi.toFixed(0))
 		}
 	})
 };
