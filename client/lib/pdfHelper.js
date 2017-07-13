@@ -178,7 +178,7 @@ PdfHelper = {
 
         return { data: data, headers: headers }
     },
-    addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY, waitsJs) {
+    addGraphImage: function (doc, yPosition, container, factor, callback, imgX, imgY) {
         $('body').addClass('pdf-export')
 
         container = container || 'data-graph-container'
@@ -195,7 +195,6 @@ PdfHelper = {
         ctx.fillStyle = '#ffffff'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
 
-        $('body').removeClass('pdf-export')
 
         factor = factor || 6
         imgX = imgX || 15
@@ -215,16 +214,7 @@ PdfHelper = {
             }
         };
 
-        if(!!waitsJs){
-            var options = {
-                executeJs: true
-                //, executeJsTimeout: 200 + (!!waitsJs && waitsJs > 0 ? waitsJs : 0)
-            }
-
-            rasterizeHTML.drawHTML(html, canvas, options).then(addImageToPdf, function (err) { console.log('error: '+err) });
-        } else {
-            rasterizeHTML.drawHTML(html, canvas).then(addImageToPdf, function (err) { console.log('error: '+err) });
-        }
+        rasterizeHTML.drawHTML(html, canvas).then(addImageToPdf, function (err) { console.log('error: '+err) });
     },
     generateGraphPage: function (template, container, title, digitalSignatureType, dataFilterFc, yIni, yFilterIni, yGraphIni) {
         var yPosition            = yIni || 25

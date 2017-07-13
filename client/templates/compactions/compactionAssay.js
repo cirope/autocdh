@@ -3,6 +3,10 @@ var _max_density = new ReactiveVar('')
 var _max_humidity = new ReactiveVar('')
 
 var updateChart = function (data) {
+
+}
+
+var updateChartOLD = function (data) {
 	setTimeout(function () {
 		if ($('[data-chart]').length) {
 			var values = [];
@@ -21,7 +25,7 @@ var updateChart = function (data) {
 
 			var values2 = [];
 			if(xx.length > 2) {
-				for (var xi = xm; xi <= xx[xx.length - 1]; xi += .1) {
+				for (var xi = xm; xi <= xx[xx.length - 1]; xi += .2) {
 					var yi = spline.interpolate(xi);
 					if(ym < yi){
 						xm = xi;
@@ -32,10 +36,10 @@ var updateChart = function (data) {
 				}
 			}
 
-			xm = xm.toFixed(1);
+			xm = !!xm ? xm.toFixed(1) : '-';
 			_max_humidity.set(xm);
 
-			ym = ym.toFixed(2);
+			ym = !!ym ? ym.toFixed(2) : '-';
 			_max_density.set(ym);
 
 			var low = 100000;
@@ -81,10 +85,6 @@ var updateChart = function (data) {
 			}
 
 			var gData = { series: [
-				//{
-				//    data: [{x: 0, y: ym}, {x: xm, y: ym}, {x: xm, y: 0}],
-				//   className: 'ct-series ct-series-b transparent-points dotted-a'
-				//},
 				{
 					data: values2,
 					className: 'ct-series ct-series-a only-line'
@@ -159,20 +159,28 @@ Template.compactionAssay.onCreated(function () {
 })
 
 Template.compactionAssay.onRendered(function () {
-	updateChart(this.data)
+	updateChartOLD(this.data.compaction)
+	//updateChart(_.pick(this.data, 'labels', 'series'))
 })
 
 Template.compactionAssay.helpers({
+	compactionUpdate: function () {
+		updateChartOLD(this.compaction)
+		//updateChart(_.pick(this, 'labels', 'series'))
+
+		return this.compaction.sampleResponsibleId && Responsible.findOne(this.compaction.sampleResponsibleId).name
+	},
+
 	sampleResponsible: function () {
-		return this.sampleResponsibleId && Responsible.findOne(this.sampleResponsibleId).name
+		return this.compaction.sampleResponsibleId && Responsible.findOne(this.compaction.sampleResponsibleId).name
 	},
 
 	typeName: function () {
-		return TAPi18n.__('compaction_type_' + this.type)
+		return TAPi18n.__('compaction_type_' + this.compaction.type)
 	},
 
 	sieveName: function () {
-		return TAPi18n.__('compaction_sieve_' + this.sieve)
+		return TAPi18n.__('compaction_sieve_' + this.compaction.sieve)
 	},
 
 	maxDensity: function () {
@@ -187,7 +195,7 @@ Template.compactionAssay.helpers({
 Template.compactionAssay.events({
 	'click [data-delete]': function (event, template) {
 		if (confirm(TAPi18n.__('confirm_delete'))){
-			Meteor.call('removeCompaction', template.data._id, function (error) {
+			Meteor.call('removeCompaction', template.data.compaction._id, function (error) {
 				if (!error) Router.go('compactions')
 			})
 		}
