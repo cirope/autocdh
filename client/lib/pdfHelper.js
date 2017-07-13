@@ -195,6 +195,7 @@ PdfHelper = {
         ctx.fillStyle = '#ffffff'
         ctx.fillRect(0, 0, canvas.width, canvas.height)
 
+        $('body').removeClass('pdf-export')
 
         factor = factor || 6
         imgX = imgX || 15

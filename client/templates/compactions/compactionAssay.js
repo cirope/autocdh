@@ -3,117 +3,22 @@ var _max_density = new ReactiveVar('')
 var _max_humidity = new ReactiveVar('')
 
 var updateChart = function (data) {
-
-}
-
-var updateChartOLD = function (data) {
 	setTimeout(function () {
 		if ($('[data-chart]').length) {
-			var values = [];
-			if(data.container_humidity_p1 && data.dry_density_p1) values.push({x: data.container_humidity_p1, y: data.dry_density_p1 });
-			if(data.container_humidity_p2 && data.dry_density_p2) values.push({x: data.container_humidity_p2, y: data.dry_density_p2 });
-			if(data.container_humidity_p3 && data.dry_density_p3) values.push({x: data.container_humidity_p3, y: data.dry_density_p3 });
-			if(data.container_humidity_p4 && data.dry_density_p4) values.push({x: data.container_humidity_p4, y: data.dry_density_p4 });
-			if(data.container_humidity_p5 && data.dry_density_p5) values.push({x: data.container_humidity_p5, y: data.dry_density_p5 });
-
-			var xx = _.pluck(values, 'x')
-			var yy = _.pluck(values, 'y')
-			var spline = new MonotonicCubicSpline(xx, yy)
-
-			var xm = xx[0];
-			var ym = yy[0];
-
-			var values2 = [];
-			if(xx.length > 2) {
-				for (var xi = xm; xi <= xx[xx.length - 1]; xi += .2) {
-					var yi = spline.interpolate(xi);
-					if(ym < yi){
-						xm = xi;
-						ym = yi;
-					}
-
-					values2.push({x: xi, y: yi});
-				}
-			}
-
-			xm = !!xm ? xm.toFixed(1) : '-';
-			_max_humidity.set(xm);
-
-			ym = !!ym ? ym.toFixed(2) : '-';
-			_max_density.set(ym);
-
-			var low = 100000;
-			var min = 100000;
-			var high = -100000;
-			var max = -100000;
-			for(var iy in values){
-				if(values[iy].y < low){
-					low = values[iy].y;
-				}
-				if(values[iy].x < min){
-					min = values[iy].x;
-				}
-				if(values[iy].y > high){
-					high = values[iy].y;
-				}
-				if(values[iy].x > max){
-					max = values[iy].x;
-				}
-			}
-			// y limits
-			if(high < low){
-				low = 0;
-				high = 10;
-			} else {
-				var dy = Math.abs(high - low);
-				low -= (dy * 0.33);
-				high += (dy * 0.33);
-			}
-
-			// x limits
-			if(max < min){
-				min = 0;
-				max = 100;
-			} else {
-				var dx = Math.abs(max - min);
-				var oMin = min;
-				min -= dx * 0.33;
-				min = min < 0 ? (min < oMin ? oMin : 0) : min;
-				var oMax = max;
-				max += dx * 0.33;
-				max = max > 100 ? (max > oMax ? oMax : 100) : max;
-			}
-
-			var gData = { series: [
-				{
-					data: values2,
-					className: 'ct-series ct-series-a only-line'
-				}, {
-					data: values,
-					className: 'ct-series ct-series-a only-points'
-				}, {
-					data: [{x: xm, y: ym}],
-					className: 'ct-series ct-series-b only-points'
-				}
-			]};
 
 			var options = {
-				low: low,
-				high: high,
-				showPoint:  true,
-				fullWidth:  false,
+				showPoint: true,
+				fullWidth: false,
 				showLine: true,
 				lineSmooth: false,
 				axisX: {
 					type: Chartist.FixedScaleAxis,
 					divisor: 10,
-					low: min,
-					high: max,
 					labelOffset: {
 						x: -10,
 						y: 0
 					},
-					labelInterpolationFnc: function(value) {
+					labelInterpolationFnc: function (value) {
 						return value.toFixed(1);
 					}
 				},
@@ -149,24 +54,28 @@ var updateChartOLD = function (data) {
 				]
 			};
 
-			new Chartist.Line('.ct-chart.ct-compaction-assay', gData, options)
+			if(!!data.low) options.low = data.low;
+			if(!!data.high) options.high = data.high;
+			if(!!data.min) options.axisX.min = data.min;
+			if(!!data.max) options.axisX.max = data.max;
+			if(!!data.maxHumidity) _max_humidity.set(data.maxHumidity);
+			if(!!data.maxDensity) _max_density.set(data.maxDensity);
+
+			new Chartist.Line('.ct-chart.ct-compaction-assay', data, options)
 		}
 	})
 };
-
 
 Template.compactionAssay.onCreated(function () {
 })
 
 Template.compactionAssay.onRendered(function () {
-	updateChartOLD(this.data.compaction)
-	//updateChart(_.pick(this.data, 'labels', 'series'))
+	updateChart(_.pick(this.data, 'labels', 'series', 'high', 'low', 'min', 'max', 'maxDensity', 'maxHumidity'))
 })
 
 Template.compactionAssay.helpers({
 	compactionUpdate: function () {
-		updateChartOLD(this.compaction)
-		//updateChart(_.pick(this, 'labels', 'series'))
+		updateChart(_.pick(this, 'labels', 'series', 'high', 'low', 'min', 'max', 'maxDensity', 'maxHumidity'))
 
 		return this.compaction.sampleResponsibleId && Responsible.findOne(this.compaction.sampleResponsibleId).name
 	},

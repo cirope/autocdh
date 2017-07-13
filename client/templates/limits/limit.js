@@ -30,7 +30,6 @@ var logTrendLine = function (options) {
 			options = Chartist.extend({}, defaultOptions, options);
 
 			if (chart instanceof Chartist.Line) {
-				var clines = chart
 				var s1 = []
 				chart.on('draw', function (data) {
 					if (_values_25.get().length === 0 && data.type === 'point') {
@@ -87,29 +86,18 @@ var logTrendLine = function (options) {
 
 								var ymi = y0 - m * xmi
 								var ymx = y0 - m * xmx
-								console.log('X linea:  ' + xmi + ' - ' + xmx)
-								console.log('Y linea:  ' + ymi + ' - ' + ymx)
-								console.log('Y points:  ' + ymia + ' - ' + ymxa)
-								console.log('X real:  ' + xmir + ' - ' + xmxr)
-								console.log('Y real:  ' + ymir + ' - ' + ymxr)
 
 								var ya = ((ymxr-ymir)/(ymxa-ymia)*(ymi-ymia))+ymir
-								console.log('Y a:  ' + ya)
 								_values_line.get().push({x: xmir, y: ya.toFixed(1)})
 
 								var yb = ((ymxr-ymir)/(ymxa-ymia)*(ymx-ymia))+ymir
-								console.log('Y b:  ' + yb)
 								_values_line.get().push({x: xmxr, y: yb.toFixed(1)})
 
 								var y25rel = y0 - m * x25rel
-								console.log('RELATIVE:  x:' + x25rel + ', y:' + y25rel)
 
 								var y25 = ((ymxr-ymir)/(ymxa-ymia)*(y25rel-ymia))+ymir
 								var y25a = y25.toFixed(1)
 
-								console.log('REAL:  x: 25, y:' + y25a)
-
-								//var ymx = y0 - m * xmx
 								_values_25.get().push({x: 25, y: y25a})
 
 								var ll = y25.toFixed(0)

@@ -159,7 +159,7 @@ Template.compactionAssay.events({
   'click [data-download-pdf]': function (event, template) {
     PDF.new({}, function (doc) {
       // add image
-      PdfHelper.addGraphImage(doc, 186, 'data-graph-container', 6.25, fillPdf(doc, template.data) , -4, 2)
+      PdfHelper.addGraphImage(doc, 186, 'data-graph-container', 6.25, fillPdf(doc, template.data.compaction) , -4, 2)
     })
   }
 })
