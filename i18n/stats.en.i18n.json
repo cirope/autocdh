@@ -97,6 +97,7 @@
   "stats_discard_high_erratic_values": "Discard high erratic values",
   "stats_for_samples": "Samples",
   "stats_resistance_by_customer": "Resistance by customer",
+  "stats_resistance_by_category": "Resistance by category",
   "stats_samples_count": "Samples count",
   "stats_indicators_configuration": "Indicators configuration",
   "stats_indicators_repeat_previous_month_values": "Repeat previous month values",

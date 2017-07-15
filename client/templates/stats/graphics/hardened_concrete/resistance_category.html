@@ -1,0 +1,119 @@
+<template name="graphicHardenedConcreteResistanceByCategory">
+  <div class="row" data-container>
+    <div class="col-md-4 hide-on-pdf-export">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{#autoForm schema=filterSchema id='filterHardenedConcreteResistanceByCategory' type='method' meteormethod='filterResistanceByCategory' resetOnSuccess=false doc=filter}}
+            <fieldset>
+              <div class="row">
+                <div class="col-md-6">
+                  {{> afQuickField name='start'}}
+                </div>
+                <div class="col-md-6">
+                  {{> afQuickField name='end'}}
+                </div>
+              </div>
+
+              {{> afQuickField name='concretes'}}
+              {{> afQuickField name='plantId'}}
+              {{> afQuickField name='strengthId'}}
+              {{> afQuickField name='additiveId'}}
+              {{> afQuickField name='molding'}}
+              {{> afQuickField name='cured'}}
+              {{> afQuickField name='additions'}}
+
+              <hr>
+
+              <button type="submit" class="btn btn-default btn-block">
+                {{_ 'graphic_filter_apply'}}
+              </button>
+            </fieldset>
+          {{/autoForm}}
+        </div>
+      </div>
+
+      {{> graphicHardenedConcreteResistanceEvolutionReference}}
+    </div>
+
+    <div class="col-md-8">
+      {{#if cracks.length}}
+        <div class="panel panel-default hide-on-pdf-export">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+              {{_ 'graphic_hardened_concrete_resistance_evolution_title'}} / {{strength.name}}
+            </h3>
+          </div>
+
+          <div class="panel-body">
+            {{#if cracks.length}}
+              <table class="table table-condensed table-striped" data-table="evolution">
+                <thead class="hidden">
+                  <tr>
+                    <th>{{_ 'graphic_hardened_concrete_resistance_evolution_day_label'}}</th>
+                    <th>%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each percentageRatios}}
+                    <tr>
+                      <td>{{label}}</td>
+                      <td>{{value}}</td>
+                    </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            {{/if}}
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="panel panel-default">
+        <div class="panel-body">
+          {{#if cracks.length}}
+            <div class="ct-chart ct-golden-section ct-resistance-evolution" data-chart></div>
+          {{else}}
+            <h4 class="text-warning text-center">
+              {{_ 'graphic_no_data'}}
+            </h4>
+          {{/if}}
+        </div>
+      </div>
+
+			<div class="col-md-6 hidden but-show-on-pdf-export">
+				{{> graphicHardenedConcreteResistanceEvolutionReference}}
+			</div>
+
+      {{#if values.length}}
+        <div class="panel panel-default hide-on-pdf-export">
+          <div class="panel-body">
+            <table class="table table-condensed small" data-table="percentages">
+              <thead>
+                <tr>
+                  <th>{{_ 'graphic_hardened_concrete_resistance_evolution_day_label'}}</th>
+                  <th>%</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each values}}
+                  <tr>
+                    <td>{{index}}</td>
+                    <td>{{value}}%</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="hidden">{{sampleCount}}</div>
+
+  <div class="hide-on-pdf-export pull-right">
+    <button class="btn btn-sm btn-default" type="button" data-download-pdf>
+      {{_ 'download_pdf'}}
+      <span class="glyphicon glyphicon-file"></span>
+    </button>
+  </div>
+</template>
