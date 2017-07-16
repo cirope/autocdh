@@ -1,4 +1,10 @@
 
+var putFilterData = function (filter, doc, yPosition) {
+  return PdfHelper.addFilterData(filter, doc, yPosition, true, true, ['concretes', 'plantId', 'strengthId', 'additiveId', 'molding', 'cured', 'additions',
+    {label: 'customerId', text: 'customer-search'}, {label: 'workId', text: 'work-search'}
+  ])
+}
+
 Template.graphicHardenedConcreteResistanceByCategory.onRendered(function () {
 
 })
@@ -21,7 +27,8 @@ Template.graphicHardenedConcreteResistanceByCategory.events({
         .setFontSize(14)
         .text(title, 20, yPosition)
 
-      yPosition += 5
+      yPosition = putFilterData(template.data.filter, doc, yPosition += 5)
+      yPosition += 10
 
       var table = PdfHelper.miniTable('hardened-concrete-cracks', {
         widths: [20, 20, 70, 70, 35, 35, 50, 20, 35],
