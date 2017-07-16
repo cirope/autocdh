@@ -84,6 +84,9 @@
 				<button class="btn btn-xs btn-default pull-right" type="button" data-download-pdf>
 					{{_ 'download_pdf'}}
 				</button>
+				<button class="btn btn-xs btn-default pull-right" type="button" data-download-complete-pdf style="margin-right: 4px">
+					{{_ 'download_complete_pdf'}}
+				</button>
 
 				{{#if cracks.length}}
 					{{> hardenedConcreteCracksComplete}}
@@ -95,6 +98,10 @@
 
 				<button class="btn btn-default btn-sm pull-right" type="button" data-download-pdf>
 					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+				<button class="btn btn-default btn-sm pull-right" type="button" data-download-complete-pdf style="margin-right: 4px">
+					{{_ 'download_complete_pdf'}}
 					<span class="glyphicon glyphicon-file"></span>
 				</button>
 			</div>
