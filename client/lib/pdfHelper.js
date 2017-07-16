@@ -127,7 +127,7 @@ PdfHelper = {
         var ignoreFoot = !!options.ignoreFoot
         var headers = !!options.headers ? options.headers : []
         var data    = !!options.data ? options.data : []
-        var widths  = !!options.widths ? options.widths : [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
+        var widths  = !!options.widths ? options.widths : [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
         var skipBody  = !!options.skipBody ? options.skipBody : 0
 
         if(!ignoreHeader) {
