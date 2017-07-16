@@ -24,14 +24,11 @@ Template.graphicHardenedConcreteResistanceByCategory.events({
       yPosition += 5
 
       var table = PdfHelper.miniTable('hardened-concrete-cracks', {
-        widths: [20, 20, 70, 70, 35, 35, 50, 20, 35]
+        widths: [20, 20, 70, 70, 35, 35, 50, 20, 35],
+        sessionHiddenClass: 'text-muted'
       })
 
-      //table.headers[0].prompt = TAPi18n.__('limit_liquid_title')
       table.headers.pop()
-      //for (var i = 0; i < table.data.length; i += 1) {
-      //  table.data[i].pop()
-      //}
 
       doc
         .setFontSize(6)

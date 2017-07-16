@@ -129,6 +129,7 @@ PdfHelper = {
         var data    = !!options.data ? options.data : []
         var widths  = !!options.widths ? options.widths : [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
         var skipBody  = !!options.skipBody ? options.skipBody : 0
+        var sessionHiddenClass  = !!options.sessionHiddenClass ? options.sessionHiddenClass : null
 
         if(!ignoreHeader) {
             table.find('thead th').each(function (i, element) {
@@ -138,20 +139,28 @@ PdfHelper = {
             })
         }
 
+        var trSelector = 'tr' + (!!sessionHiddenClass ? ':not(.'+sessionHiddenClass+')' : '');
+        var thSelector = 'th';
+        var tdSelector = 'td';
+
         if(!ignoreBody) {
-            table.find('tbody tr').each(function (i, element) {
+            table.find('tbody '+trSelector).each(function (i, element) {
                 if(skipBody > 0){
                     skipBody--
                 } else {
                     var obj = {}
 
                     var jj = 0;
-                    $(element).find('th').each(function (j, cell) {
-                        obj[headers[j].name] = $(cell).text().replace('″', '"')
-                        jj = j + 1
+                    $(element).find(thSelector).each(function (j, cell) {
+                        if(!!headers[j]) {
+                            obj[headers[j].name] = $(cell).text().replace('″', '"')
+                            jj = j + 1
+                        }
                     })
-                    $(element).find('td').each(function (j, cell) {
-                        obj[headers[jj + j].name] = $(cell).text().replace('″', '"')
+                    $(element).find(tdSelector).each(function (j, cell) {
+                        if(!!headers[jj + j]) {
+                            obj[headers[jj + j].name] = $(cell).text().replace('″', '"')
+                        }
                     })
 
                     data.push(obj)
@@ -160,16 +169,20 @@ PdfHelper = {
         }
 
         if(!ignoreFoot) {
-            table.find('tfoot tr').each(function (i, element) {
+            table.find('tfoot '+trSelector).each(function (i, element) {
                 var obj = {}
 
                 var jj = 0;
-                $(element).find('th').each(function (j, cell) {
-                    obj[headers[j].name] = $(cell).text().replace('″', '"')
-                    jj = j + 1
+                $(element).find(thSelector).each(function (j, cell) {
+                    if(!!headers[j]) {
+                        obj[headers[j].name] = $(cell).text().replace('″', '"')
+                        jj = j + 1
+                    }
                 })
-                $(element).find('td').each(function (j, cell) {
-                    obj[headers[jj + j].name] = $(cell).text().replace('″', '"')
+                $(element).find(tdSelector).each(function (j, cell) {
+                    if(!!headers[jj + j]) {
+                        obj[headers[jj + j].name] = $(cell).text().replace('″', '"')
+                    }
                 })
 
                 data.push(obj)
