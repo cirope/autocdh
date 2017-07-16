@@ -18,6 +18,12 @@ Template.hardenedConcreteCracksComplete.helpers({
     return strength && strength.name
   },
 
+  customer: function () {
+    var receipt = Receipts.findOne({ sampleId: this.sampleId })
+
+    return receipt && Customers.findOne(receipt.customerId).name
+  },
+
   age: function () {
     var moldingIn = moment(this.moldingIn).endOf('day')
     var crackedIn = moment(this.crackedIn).endOf('day')

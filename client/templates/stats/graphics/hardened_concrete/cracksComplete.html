@@ -2,13 +2,15 @@
   <table class="table table-condensed table-hover" data-table="hardened-concrete-cracks">
     <thead>
       <tr>
+				<th data-header>{{_ 'sample'}}</th>
 				<th data-header>{{_ 'receipt'}}</th>
+				<th class="hidden-xs hidden-sm" data-header>{{_ 'customer'}}</th>
 				<th data-header>{{_ 'work'}}</th>
 				<th class="hidden-xs" data-header>{{_ 'crack_molding_in'}}</th>
 				<th class="hidden-xs hidden-sm" data-header>{{_ 'crack_cracked_in'}}</th>
 				<th class="hidden-xs hidden-sm" data-header>{{_ 'strength'}}</th>
 				<th class="hidden-xs hidden-sm" data-header>{{_ 'crack_age'}}</th>
-				<th class="hidden-xs hidden-sm" data-header>{{_ 'crack_stress'}}</th>
+				<th class="hidden-xs" data-header>{{_ 'crack_stress'}}</th>
 				<th class="text-right">
 					<a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
 						<span class="glyphicon glyphicon-search"></span>
@@ -23,15 +25,17 @@
     <tbody>
       {{#each cracks}}
 				<tr class="visible-on-hover-parent {{trClass}}" data-row>
+					<td data-value>{{sample}}</td>
 					{{#with receipt}}
-						<td data-value>{{number}} - {{sample}}</td>
+						<td data-value>{{number}}</td>
+						<td data-value>{{customer}}</td>
 						<td data-value>{{work}}</td>
 					{{/with}}
 					<td class="hidden-xs" data-value>{{l moldingIn 'L'}}</td>
 					<td class="hidden-xs hidden-sm" data-value>{{l crackedIn 'L'}}</td>
 					<td class="hidden-xs hidden-sm" data-value>{{strength}}</td>
 					<td class="hidden-xs hidden-sm" data-value>{{age}}</td>
-					<td class="hidden-xs hidden-sm" data-value>{{r stress 1}} MPa</td>
+					<td class="hidden-xs" data-value>{{r stress 1}} MPa</td>
 					<td>
 						{{#if isHidden}}
 							<a href="#" class="visible-on-hover" title="{{_ 'customer_cracks_show'}}" data-show-on-pdf>

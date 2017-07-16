@@ -21,6 +21,8 @@
               {{> afQuickField name='molding'}}
               {{> afQuickField name='cured'}}
               {{> afQuickField name='additions'}}
+							{{> customerSearch}}
+							{{> workSearch}}
 
               <hr>
 
@@ -34,7 +36,6 @@
     </div>
 
     <div class="col-md-8">
-
 			{{#if cracks.length}}
 				{{> hardenedConcreteCracksComplete}}
 			{{else}}
@@ -42,9 +43,6 @@
 					{{_ 'graphic_no_data'}}
 				</h4>
 			{{/if}}
-			<h4 class="text-warning text-center">
-				Samples: {{sampleCount}}
-			</h4>
     </div>
   </div>
 
