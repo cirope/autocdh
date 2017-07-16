@@ -3,7 +3,8 @@ PdfHelper = {
     COL_1: 20,
     COL_2: 100,
 
-    addFilterData: function (filter, doc, yPosition, start, end, fields) {
+    addFilterData: function (filter, doc, yPosition, start, end, fields, avoidEmpties) {
+        avoidEmpties = !!avoidEmpties || false;
         doc
           .setFontSize(12)
           .text(TAPi18n.__('graphic_filter'), 20, yPosition += 7)
@@ -17,6 +18,7 @@ PdfHelper = {
         }
 
         _.each(fields, function (name) {
+            var add = true;
             var label = '';
             var text = '';
             if(typeof name === 'object'){
@@ -42,7 +44,12 @@ PdfHelper = {
                 label = Schemas.Filter.label(name)
                 text = $('select[name="' + name + '"] option:selected').text()
             }
-            doc.text(label + ': ' + text, 25, yPosition += 5)
+            if(avoidEmpties && (!text || !text.trim() || text === '-')){
+                add = false;
+            }
+            if(add) {
+                doc.text(label + ': ' + text, 25, yPosition += 5)
+            }
         })
 
         return yPosition
