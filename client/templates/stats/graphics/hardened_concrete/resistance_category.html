@@ -1,94 +1,105 @@
 <template name="graphicHardenedConcreteResistanceByCategory">
   <div class="row" data-container>
-    <div class="col-md-12 hide-on-pdf-export">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          {{#autoForm schema=filterSchema id='filterHardenedConcreteResistanceByCategory' type='method' meteormethod='filterResistanceByCategory' resetOnSuccess=false doc=filter}}
-            <fieldset>
-              <div class="row">
-                <div class="col-md-6">
-									<div class="row">
-										<div class="col-md-6">
-											{{> afQuickField name='start'}}
-										</div>
-										<div class="col-md-6">
-											{{> afQuickField name='end'}}
-										</div>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				{{#autoForm schema=filterSchema id='filterHardenedConcreteResistanceByCategory' type='method' meteormethod='filterResistanceByCategory' resetOnSuccess=false doc=filter}}
+					<fieldset>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-6">
+										{{> afQuickField name='start'}}
 									</div>
-									<div class="row">
-										<div class="col-md-12">
-											{{> afQuickField name='concretes'}}
-										</div>
-									</div>
-                </div>
-								<div class="col-md-6">
-									<div class="row">
-										<div class="col-md-6">
-											{{> afQuickField name='plantId'}}
-										</div>
-										<div class="col-md-6">
-											{{> afQuickField name='strengthId'}}
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											{{> afQuickField name='additiveId'}}
-										</div>
-										<div class="col-md-6">
-											{{> afQuickField name='molding'}}
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											{{> afQuickField name='cured'}}
-										</div>
-										<div class="col-md-6">
-											{{> afQuickField name='additions'}}
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											{{> customerSearch}}
-										</div>
-										<div class="col-md-6">
-											{{> workSearch}}
-										</div>
+									<div class="col-md-6">
+										{{> afQuickField name='end'}}
 									</div>
 								</div>
-              </div>
-
-              <hr>
-              <button type="submit" class="btn btn-default btn-block">
-                {{_ 'graphic_filter_apply'}}
-              </button>
-            </fieldset>
-          {{/autoForm}}
-        </div>
-      </div>
+								<div class="row">
+									<div class="col-md-12">
+										{{> afQuickField name='concretes'}}
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<div class="col-md-6">
+										{{> afQuickField name='plantId'}}
+									</div>
+									<div class="col-md-6">
+										{{> afQuickField name='strengthId'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										{{> afQuickField name='additiveId'}}
+									</div>
+									<div class="col-md-6">
+										{{> afQuickField name='molding'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										{{> afQuickField name='cured'}}
+									</div>
+									<div class="col-md-6">
+										{{> afQuickField name='additions'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										{{> customerSearch}}
+									</div>
+									<div class="col-md-6">
+										{{> workSearch}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+									</div>
+									<div class="col-md-6">
+										<button class="btn btn-default btn-sm pull-right" type="submit">
+											{{_ 'graphic_filter_apply'}}
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				{{/autoForm}}
+			</div>
     </div>
 	</div>
 
 	<div class="row" data-container>
-		<div class="col-md-12 hide-on-pdf-export">
-			<button class="btn btn-default btn-sm pull-right" type="button" data-download-pdf>
-				{{_ 'download_pdf'}}
-				<span class="glyphicon glyphicon-file"></span>
-			</button>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					{{_ 'stats_resistance_by_category'}}
+					<a class="pull-right" href="{{pathFor 'stats'}}">
+						{{_ 'go_back'}}
+					</a>
+				</h3>
+			</div>
+			<div class="panel-body">
+				<button class="btn btn-xs btn-default pull-right" type="button" data-download-pdf>
+					{{_ 'download_pdf'}}
+				</button>
+
+				{{#if cracks.length}}
+					{{> hardenedConcreteCracksComplete}}
+				{{else}}
+					<h4 class="text-warning text-center">
+						{{_ 'graphic_no_data'}}
+					</h4>
+				{{/if}}
+
+				<button class="btn btn-default btn-sm pull-right" type="button" data-download-pdf>
+					{{_ 'download_pdf'}}
+					<span class="glyphicon glyphicon-file"></span>
+				</button>
+			</div>
 		</div>
 	</div>
-
-	<div class="row" data-container>
-    <div class="col-md-12">
-			{{#if cracks.length}}
-				{{> hardenedConcreteCracksComplete}}
-			{{else}}
-				<h4 class="text-warning text-center">
-					{{_ 'graphic_no_data'}}
-				</h4>
-			{{/if}}
-    </div>
-  </div>
-
 
   <div class="hidden">{{sampleCount}}</div>
 

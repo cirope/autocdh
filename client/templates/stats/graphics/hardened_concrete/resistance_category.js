@@ -11,12 +11,10 @@ Template.graphicHardenedConcreteResistanceByCategory.helpers({
 
 Template.graphicHardenedConcreteResistanceByCategory.events({
   'click [data-download-pdf]': function (event, template) {
-    var yPosition = 20
 
     PDF.new({ orientation: 'l' }, function (doc) {
-      var title = TAPi18n.__('customer_cracks_title', {
-        customer: template.data.customer.name
-      })
+      var title = TAPi18n.__('stats_resistance_by_category')
+      var yPosition = 30
 
       doc
         .setFont('helvetica')
@@ -24,7 +22,7 @@ Template.graphicHardenedConcreteResistanceByCategory.events({
         .text(title, 20, yPosition)
 
       var table = PdfHelper.miniTable('hardened-concrete-cracks', {
-        widths: [25, 40, 40, 40, 20, 20, 20, 20, 20]
+        widths: [30, 30, 70, 70, 40, 40, 40, 30, 40]
       })
 
       doc
