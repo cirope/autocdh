@@ -95,6 +95,7 @@
   "stats_deviation": "Standard deviation",
   "stats_ten_percent_criteria": "10% criteria",
   "stats_discard_high_erratic_values": "Discard high erratic values",
+  "stats_discard_less_28_days": "Show only results with 28 days or more",
   "stats_for_samples": "Samples",
   "stats_resistance_by_customer": "Resistance by customer",
   "stats_resistance_by_category": "Resistance by category",

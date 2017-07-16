@@ -1,7 +1,7 @@
 
 var putFilterData = function (filter, doc, yPosition) {
   return PdfHelper.addFilterData(filter, doc, yPosition, true, true, ['concretes', 'plantId', 'strengthId', 'additiveId', 'molding', 'cured', 'additions',
-    {label: 'customerId', text: 'customer-search'}, {label: 'workId', text: 'work-search'}
+    {label: 'customerId', text: 'customer-search'}, {label: 'workId', text: 'work-search'}, {label: 'discardLess28Days', checkbox: true}
   ], true)
 }
 
