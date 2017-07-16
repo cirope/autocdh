@@ -1,0 +1,51 @@
+<template name="hardenedConcreteCracksComplete">
+  <table class="table table-condensed table-hover" data-table="hardened-concrete-cracks">
+    <thead>
+      <tr>
+				<th data-header>{{_ 'receipt'}}</th>
+				<th data-header>{{_ 'work'}}</th>
+				<th class="hidden-xs" data-header>{{_ 'crack_molding_in'}}</th>
+				<th class="hidden-xs hidden-sm" data-header>{{_ 'crack_cracked_in'}}</th>
+				<th class="hidden-xs hidden-sm" data-header>{{_ 'strength'}}</th>
+				<th class="hidden-xs hidden-sm" data-header>{{_ 'crack_age'}}</th>
+				<th class="hidden-xs hidden-sm" data-header>{{_ 'crack_stress'}}</th>
+				<th class="text-right">
+					<a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+						<span class="glyphicon glyphicon-search"></span>
+					</a>
+					<a class="hidden" href="{{pathFor 'customerCracks' _id=customer._id}}" title="{{_ 'cancel'}}" data-search-clean>
+						<span class="glyphicon glyphicon-remove"></span>
+					</a>
+				</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{#each cracks}}
+				<tr class="visible-on-hover-parent {{trClass}}" data-row>
+					{{#with receipt}}
+						<td data-value>{{number}} - {{sample}}</td>
+						<td data-value>{{work}}</td>
+					{{/with}}
+					<td class="hidden-xs" data-value>{{l moldingIn 'L'}}</td>
+					<td class="hidden-xs hidden-sm" data-value>{{l crackedIn 'L'}}</td>
+					<td class="hidden-xs hidden-sm" data-value>{{strength}}</td>
+					<td class="hidden-xs hidden-sm" data-value>{{age}}</td>
+					<td class="hidden-xs hidden-sm" data-value>{{r stress 1}} MPa</td>
+					<td>
+						{{#if isHidden}}
+							<a href="#" class="visible-on-hover" title="{{_ 'customer_cracks_show'}}" data-show-on-pdf>
+								<span class="glyphicon glyphicon-eye-open"></span>
+							</a>
+						{{else}}
+							<a href="#" class="visible-on-hover" title="{{_ 'customer_cracks_hide'}}" data-hide-on-pdf>
+								<span class="glyphicon glyphicon-eye-close"></span>
+							</a>
+						{{/if}}
+					</td>
+
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</template>

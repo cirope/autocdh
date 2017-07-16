@@ -34,6 +34,14 @@
     </div>
 
     <div class="col-md-8">
+
+			{{#if cracks.length}}
+				{{> hardenedConcreteCracksComplete}}
+			{{else}}
+				<h4 class="text-warning text-center">
+					{{_ 'graphic_no_data'}}
+				</h4>
+			{{/if}}
 			<h4 class="text-warning text-center">
 				Samples: {{sampleCount}}
 			</h4>
