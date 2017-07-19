@@ -1,0 +1,15 @@
+<template name="nonconformitiesMenu">
+    <ul class="nav nav-tabs" role="tablist">
+        {{> nonconformitiesMenuItem link='nonconformities' label='nonconformities_tab1' tab=tab }}
+        {{> nonconformitiesMenuItem link='nonconformitiesClosed' label='nonconformities_tab2' tab=tab }}
+        {{> nonconformitiesMenuItem link='complaints' label='complaints_label' tab=tab }}
+    </ul>
+</template>
+
+<template name="nonconformitiesMenuItem">
+    <li role="presentation" {{attributes}} >
+        <a href="{{pathFor link}}">
+            {{_ label}}
+        </a>
+    </li>
+</template>
