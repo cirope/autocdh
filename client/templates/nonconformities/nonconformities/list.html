@@ -4,8 +4,7 @@
 
         <div class="tab-content">
             <div class="row text-center">
-                <h4>{{_ 'limit_title'}}</h4>
-                <h5>{{_ 'limit_subtitle'}}</h5>
+                <h4>{{_ 'nonconformity_title'}}</h4>
             </div>
             {{#if showList}}
                 {{> nonconformitiesList}}
@@ -46,7 +45,7 @@
         </tr>
         </thead>
         <tbody>
-        {{#each limits}}
+        {{#each objects}}
             <tr class="visible-on-hover-parent">
                 <td><a href="{{pathFor 'nonconformity'}}">{{l date 'L'}}</a></td>
                 <td class="text-right">
