@@ -1,0 +1,32 @@
+{
+  // non conformities
+  "nonconformities": "Non-conformities and opportunities for improvement",
+  "nonconformities_label": "Non-conformities and opportunities for improvement",
+  "nonconformities_tab1": "Non-conformities and opportunities for improvement in progress",
+  "nonconformities_tab2": "Closed non-conformities and opportunities for improvement",
+  "nonconformity": "Non-conformity and opportunity for improvement",
+  "nonconformity_create_title": "Add new",
+  "nonconformity_create": "Save",
+  "nonconformity_update_title": "Edit",
+  "nonconformity_update": "Update",
+  "nonconformity_empty_title": "Mmm",
+  "nonconformity_empty_banner": "There is no non-conformity or opportunity for improvement here, lets create some...",
+  "nonconformity_new": "New non-conformity or opportunity for improvement",
+  "nonconformity_title": "Non-Conformities and Opportunities for Improvement",
+  "nonconformity_responsible": "Responsible",
+  "nonconformity_date": "Date",
+
+  // complaints
+  "complaints": "Customer complaints",
+  "complaints_label": "Customer complaints",
+  "complaint": "Customer complaint",
+  "complaint_create_title": "Add new",
+  "complaint_create": "Save",
+  "complaint_update_title": "Edit",
+  "complaint_update": "Update",
+  "complaint_empty_title": "Mmm",
+  "complaint_empty_banner": "There is no customer complaint here, lets create some...",
+  "complaint_new": "new customer complaint",
+  "complaint_title": "Customer Complaints",
+  "complaint_date": "Complaint date"
+}
