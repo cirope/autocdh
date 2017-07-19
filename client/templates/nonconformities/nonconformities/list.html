@@ -1,0 +1,83 @@
+<template name="nonconformities">
+    <div role="tabpanel">
+        {{> granulometriesMenu tab='nonconformities' }}
+
+        <div class="tab-content">
+            <div class="row text-center">
+                <h4>{{_ 'limit_title'}}</h4>
+                <h5>{{_ 'limit_subtitle'}}</h5>
+            </div>
+            {{#if showList}}
+                {{> nonconformitiesList}}
+            {{else}}
+                {{> nonconformitiesEmpty}}
+            {{/if}}
+        </div>
+    </div>
+</template>
+
+<template name="nonconformitiesList">
+    <p>
+        <a class="btn btn-xs btn-default pull-right" href="{{pathFor 'nonconformityNew'}}">{{_ 'nonconformity_new'}}</a>
+    </p>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>{{_ 'nonconformity_date'}}</th>
+            <th class="text-right">
+                <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+                <a class="hidden" href="{{pathFor 'nonconformities'}}" title="{{_ 'cancel'}}" data-search-clean>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+            </th>
+        </tr>
+
+        <tr class="collapse" id="search-filter">
+            <td class="form-group form-group-sm">
+                <input class="form-control" type="text" name="fieldDate" id="fieldDate">
+            </td>
+            <td>
+                <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
+                    {{_ 'search'}}
+                </button>
+            </td>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each limits}}
+            <tr class="visible-on-hover-parent">
+                <td><a href="{{pathFor 'nonconformity'}}">{{l date 'L'}}</a></td>
+                <td class="text-right">
+                    <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'nonconformityEdit'}}" title="{{_ 'edit'}}">
+                        {{_ 'edit'}}
+                    </a>
+                </td>
+            </tr>
+        {{else}}
+            <tr>
+                <td colspan="7">
+                    <div class="alert alert-info">
+                        {{_ 'search_with_no_results'}}
+                    </div>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+
+    {{#if nextPath}}
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <a class="btn btn-default btn-xs btn-block" href="{{nextPath}}">{{_ 'more'}}</a>
+            </div>
+        </div>
+
+        <br>
+    {{else}}
+        {{#unless ready}}{{> spinner}}{{/unless}}
+    {{/if}}
+
+    <a class="btn btn-primary" href="{{pathFor 'nonconformityNew'}}">{{_ 'nonconformity_new'}}</a>
+</template>
