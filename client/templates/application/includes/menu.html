@@ -15,10 +15,10 @@
       <div class="navbar-collapse collapse">
         {{#if currentUser}}
           <ul class="nav navbar-nav">
-            <li class="{{activeRouteClass 'samples' 'sample' 'sampleNew' 'sampleEdit'}}">
+            <li class="{{activeRouteClass 'samples' 'sampleNew' 'sample' 'sampleEdit' 'receiptNew' 'receipt' 'receiptEdit' 'humidityNew' 'humidity' 'humidityEdit' 'concreteNew' 'concrete' 'concreteEdit' 'assayNew' 'assay' 'assayEdit' }}">
               <a href="{{pathFor 'samples'}}">{{{_ 'menu_samples'}}}</a>
             </li>
-            <li class="{{activeRouteClass 'cracks' 'crack' 'crackEdit' 'cracksCracked'}}">
+            <li class="{{activeRouteClass 'cracks' 'cracksCracked' 'crack' 'crackEdit' 'providedCracks' 'providedCrackNew' 'providedCrack' 'providedCrackEdit' }}">
               <a href="{{pathFor 'cracks'}}">
                 {{{_ 'menu_cracks'}}}
                 {{#if overdueCracks}}
@@ -26,10 +26,10 @@
                 {{/if}}
               </a>
             </li>
-            <li class="{{activeRouteClass 'granulometries' 'granulometry' 'granulometryNew' 'granulometryEdit'}}">
+            <li class="{{activeRouteClass 'compactions' 'compactionNew' 'compactionAssay' 'compactionEdit' 'fieldDensities' 'fieldDensityNew' 'fieldDensity' 'fieldDensityEdit' 'fieldGranulometries' 'fieldGranulometryNew' 'fieldGranulometry' 'fieldGranulometryEdit' 'granulometries' 'granulometryNew' 'granulometry' 'granulometryEdit' 'granulometryHumidities' 'granulometryHumidityNew' 'granulometryHumidity' 'granulometryHumidityEdit' 'limits' 'limitNew' 'limit' 'limitEdit' 'mixtures' 'mixtureNew' 'mixture' 'mixtureEdit' }}">
               <a href="{{pathFor 'granulometries'}}">{{{_ 'menu_granulometries'}}}</a>
             </li>
-            <li class="{{activeRouteClass 'maintenances' 'maintenance' 'maintenanceNew' 'maintenanceEdit' 'maintenanceReports' 'maintenanceStatus' 'maintenanceMasterList'}}">
+            <li class="{{activeRouteClass 'maintenances' 'maintenanceNew' 'maintenanceReports' 'maintenanceStatus' 'maintenanceMasterList' 'maintenancePreventive' 'maintenance' 'maintenanceEdit' }}">
               <a href="{{pathFor 'maintenances'}}">
                 {{{_ 'menu_maintenances'}}}
                 {{#if nextToOverdueMaintenances}}
@@ -43,11 +43,11 @@
 						<li class="{{activeRouteClass 'nonconformities' 'nonconformitiesClosed' 'nonconformityNew' 'nonconformity' 'nonconformityEdit' 'complaints' 'complaintNew' 'complaint' 'complaintEdit' }}">
 							<a href="{{pathFor 'nonconformities' }}">{{{_ 'menu_nonconformities'}}}</a>
 						</li>
-            <li class="{{activeRouteClass 'documents' 'document' 'documentNew' 'documentEdit' 'managementDocuments' 'managementDocument' 'managementDocumentNew' 'managementDocumentEdit'}}">
+            <li class="{{activeRouteClass 'managementDocuments' 'managementDocumentNew' 'managementDocument' 'managementDocumentEdit' 'documents' 'documentNew' 'document' 'documentEdit' }}">
               <a href="{{pathFor 'managementDocuments' }}">{{{_ 'menu_documents'}}}</a>
             </li>
             {{#if isInRole 'admin'}}
-              <li class="{{activeRouteClass 'stats' 'graphics'}}">
+              <li class="{{activeRouteClass 'stats' 'statsDeviation' 'statsForSamples' 'statsIndicatorsConfiguration' 'statsIndicatorsDashboard' 'statsProductionIndicatorsConfiguration' 'statsProductionIndicatorsDashboard' 'graphicFreshConcreteConsistency' 'graphicFreshConcreteTemperature' 'graphicFreshConcreteTemperatureComparison' 'graphicFreshConcreteVolumetricWeight' 'graphicFreshConcreteSettlement' 'graphicFreshConcreteAir' 'graphicHardenedConcreteResistance' 'graphicHardenedConcreteCusum' 'graphicHardenedConcrete7DaysResistance' 'graphicHardenedConcrete3DaysResistance' 'graphicHardenedConcreteResistanceByCategory' 'graphicHardenedConcreteResistanceEvolution' 'graphicConcreteEfficiency' 'graphicAggregateFineness' 'graphicAggregateThin' 'graphicAggregateHumidity' 'deviationNew' 'deviation' 'deviationEdit' }}">
                 <a href="{{pathFor 'stats'}}">{{{_ 'menu_stats'}}}</a>
               </li>
 
