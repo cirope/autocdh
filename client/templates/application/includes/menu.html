@@ -40,11 +40,11 @@
                 {{/if}}
               </a>
             </li>
-						<li class="{{activeRouteClass 'granulometries' 'granulometry' 'granulometryNew' 'granulometryEdit'}}">
-							<a href="{{pathFor 'granulometries'}}">{{{_ 'menu_granulometries'}}}</a>
+						<li class="{{activeRouteClass 'nonconformities' 'nonconformitiesClosed' 'nonconformityNew' 'nonconformity' 'nonconformityEdit' 'complaints' 'complaintNew' 'complaint' 'complaintEdit' }}">
+							<a href="{{pathFor 'nonconformities' }}">{{{_ 'menu_nonconformities'}}}</a>
 						</li>
-            <li class="{{activeRouteClass 'nonconformities' 'nonconformitiesClosed' 'nonconformityNew' 'nonconformity' 'nonconformityEdit' 'complaints' 'complaintNew' 'complaint' 'complaintEdit' }}">
-              <a href="{{pathFor 'nonconformities' }}">{{{_ 'menu_nonconformities'}}}</a>
+            <li class="{{activeRouteClass 'documents' 'document' 'documentNew' 'documentEdit' 'managementDocuments' 'managementDocument' 'managementDocumentNew' 'managementDocumentEdit'}}">
+              <a href="{{pathFor 'managementDocuments' }}">{{{_ 'menu_documents'}}}</a>
             </li>
             {{#if isInRole 'admin'}}
               <li class="{{activeRouteClass 'stats' 'graphics'}}">
