@@ -57,5 +57,18 @@
   "complaint_empty_banner": "No has cargado ningún reclamos de clientes, podés comenzar ahora...",
   "complaint_new": "Nuevo reclamo de clientes",
   "complaint_title": "Reclamos de Clientes",
-  "complaint_date": "Fecha de reclamo"
+  "complaint_date": "Fecha de reclamo",
+
+  // areas
+  "areas": "Áreas",
+  "area": "Área",
+  "area_name": "Nombre",
+  "area_name_placeholder": "Ingrese un área...",
+  "area_create_title": "Agregar un nueva área",
+  "area_create": "Crear área",
+  "area_update_title": "Editar una área",
+  "area_update": "Actualizar área",
+  "area_empty_title": "Mmm",
+  "area_empty_banner": "No has cargado ninguna área, podés comenzar ahora...",
+  "area_new": "Nueva área"
 }

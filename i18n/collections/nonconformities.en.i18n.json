@@ -28,5 +28,18 @@
   "complaint_empty_banner": "There is no customer complaint here, lets create some...",
   "complaint_new": "new customer complaint",
   "complaint_title": "Customer Complaints",
-  "complaint_date": "Complaint date"
+  "complaint_date": "Complaint date",
+
+  // areas
+  "areas": "Areas",
+  "area": "Area",
+  "area_name": "Name",
+  "area_name_placeholder": "Enter a name...",
+  "area_create_title": "Add a new area",
+  "area_create": "Create area",
+  "area_update_title": "Edit an area",
+  "area_update": "Update area",
+  "area_empty_title": "Mmm",
+  "area_empty_banner": "There is no area here, lets create some...",
+  "area_new": "New area"
 }

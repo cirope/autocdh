@@ -1,0 +1,28 @@
+<template name="area">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          {{_ 'area'}}
+          <a class="pull-right" href="{{pathFor 'nonconformities'}}">{{_ 'go_back'}}</a>
+        </h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          {{_ 'area_name'}} /
+          <strong>{{name}}</strong>
+        </p>
+
+        <a href="{{pathFor 'areaEdit'}}" class="btn btn-sm btn-default pull-right" title="{{_ 'area_update_title'}}">
+          {{_ 'edit'}}
+        </a>
+
+        {{#if hasNoUse}}
+          <button class="btn btn-sm btn-danger" type="button" data-delete>
+            {{_ 'delete'}}
+          </button>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</template>
