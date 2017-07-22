@@ -1,0 +1,441 @@
+<template name="nonconformityNew">
+	<div class="row text-center">
+		<h4>{{_ 'nonconformity_title'}}</h4>
+	</div>
+	<div class="row">
+		{{#autoForm collection='Nonconformities' id='newNonconformityForm' type='method' validation='blur' meteormethod='createNonconformity' doc=compaction}}
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								{{_ 'nonconformity_new'}}
+								<a class="pull-right" href="{{pathFor 'nonconformities'}}">{{_ 'go_back'}}</a>
+							</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								{ {_ 'compaction_new'}}
+								<a class="pull-right" href="{ {pathFor 'compactions'}}">{ {_ 'go_back'}}</a>
+							</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-6">
+										{ {> afQuickField name='sampleResponsibleId'}}
+									</div>
+									<div class="col-md-6">
+										{ {> afQuickField name='fieldDate'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										{ {> afQuickField name='sampleName'}}
+									</div>
+									<div class="col-md-6">
+										{ {> afQuickField name='origin'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-6">
+										{ {> afQuickField name='type'}}
+									</div>
+									<div class="col-md-3">
+										{ {> afQuickField name='layers'}}
+									</div>
+									<div class="col-md-3">
+										{ {> afQuickField name='hits'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-default" style="margin-top: 35px">
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='sieve'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='real_density'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='total_weight'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{ {_ 'compaction_separation_title'}}</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='through'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='retained'}}
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='retained_percentage'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{ {_ 'compaction_field_density_title'}}</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="table-responsive">
+									<table class="table table-condensed table-hover table-no-margin">
+										<thead>
+										<tr>
+											<th class="col-md-3">{ {_ 'compaction_steps'}}</th>
+											<th class="col-md-1">&nbsp;</th>
+											<th style="text-align: center">{ {_ 'compaction_point_1'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_2'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_3'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_4'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_5'}}</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<th>{ {_ 'compaction_mold_code'}}</th>
+											<th>&nbsp;</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_code_p1'}} has-error{ {/if}}">{ {> afFieldInput name='mold_code_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_code_p2'}} has-error{ {/if}}">{ {> afFieldInput name='mold_code_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_code_p3'}} has-error{ {/if}}">{ {> afFieldInput name='mold_code_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_code_p4'}} has-error{ {/if}}">{ {> afFieldInput name='mold_code_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_code_p5'}} has-error{ {/if}}">{ {> afFieldInput name='mold_code_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_volume'}}</th>
+											<th style="text-align: center">cm³</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='volume_p1'}} has-error{ {/if}}">{ {> afFieldInput name='volume_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='volume_p2'}} has-error{ {/if}}">{ {> afFieldInput name='volume_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='volume_p3'}} has-error{ {/if}}">{ {> afFieldInput name='volume_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='volume_p4'}} has-error{ {/if}}">{ {> afFieldInput name='volume_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='volume_p5'}} has-error{ {/if}}">{ {> afFieldInput name='volume_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_water'}}</th>
+											<th style="text-align: center">ml</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='water_p1'}} has-error{ {/if}}">{ {> afFieldInput name='water_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='water_p2'}} has-error{ {/if}}">{ {> afFieldInput name='water_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='water_p3'}} has-error{ {/if}}">{ {> afFieldInput name='water_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='water_p4'}} has-error{ {/if}}">{ {> afFieldInput name='water_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='water_p5'}} has-error{ {/if}}">{ {> afFieldInput name='water_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_empty_mold_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_mold_mass_p1'}} has-error{ {/if}}">{ {> afFieldInput name='empty_mold_mass_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_mold_mass_p2'}} has-error{ {/if}}">{ {> afFieldInput name='empty_mold_mass_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_mold_mass_p3'}} has-error{ {/if}}">{ {> afFieldInput name='empty_mold_mass_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_mold_mass_p4'}} has-error{ {/if}}">{ {> afFieldInput name='empty_mold_mass_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_mold_mass_p5'}} has-error{ {/if}}">{ {> afFieldInput name='empty_mold_mass_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_mold_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_mass_p1'}} has-error{ {/if}}">{ {> afFieldInput name='mold_mass_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_mass_p2'}} has-error{ {/if}}">{ {> afFieldInput name='mold_mass_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_mass_p3'}} has-error{ {/if}}">{ {> afFieldInput name='mold_mass_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_mass_p4'}} has-error{ {/if}}">{ {> afFieldInput name='mold_mass_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='mold_mass_p5'}} has-error{ {/if}}">{ {> afFieldInput name='mold_mass_p5'}}</div></td>
+										</tr>
+										</tbody>
+										<tfoot>
+										<tr>
+											<th>{ {_ 'compaction_field_density'}}</th>
+											<th style="text-align: center">g/cm³</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='field_density_p1'}} has-error{ {/if}}">{ {> afFieldInput name='field_density_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='field_density_p2'}} has-error{ {/if}}">{ {> afFieldInput name='field_density_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='field_density_p3'}} has-error{ {/if}}">{ {> afFieldInput name='field_density_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='field_density_p4'}} has-error{ {/if}}">{ {> afFieldInput name='field_density_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='field_density_p5'}} has-error{ {/if}}">{ {> afFieldInput name='field_density_p5'}}</div></td>
+										</tr>
+										</tfoot>
+									</table>
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='mold_code_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='mold_code_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='volume_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='volume_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='water_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='water_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_mold_mass_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='empty_mold_mass_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='mold_mass_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='mold_mass_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='field_density_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='field_density_p1' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='mold_code_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='mold_code_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='volume_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='volume_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='water_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='water_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_mold_mass_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='empty_mold_mass_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='mold_mass_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='mold_mass_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='field_density_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='field_density_p2' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='mold_code_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='mold_code_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='volume_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='volume_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='water_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='water_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_mold_mass_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='empty_mold_mass_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='mold_mass_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='mold_mass_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='field_density_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='field_density_p3' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='mold_code_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='mold_code_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='volume_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='volume_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='water_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='water_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_mold_mass_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='empty_mold_mass_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='mold_mass_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='mold_mass_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='field_density_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='field_density_p4' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='mold_code_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='mold_code_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='volume_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='volume_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='water_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='water_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_mold_mass_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='empty_mold_mass_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='mold_mass_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='mold_mass_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='field_density_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='field_density_p5' autoform=.}}</span>{ {/if}}
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{ {_ 'compaction_humidity_title'}}</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="table-responsive">
+									<table class="table table-condensed table-hover table-no-margin">
+										<thead>
+										<tr>
+											<th class="col-md-3">{ {_ 'compaction_steps'}}</th>
+											<th class="col-md-1">&nbsp;</th>
+											<th style="text-align: center">{ {_ 'compaction_point_1'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_2'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_3'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_4'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_5'}}</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<th>{ {_ 'compaction_container_code'}}</th>
+											<th>&nbsp;</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_code_p1'}} has-error{ {/if}}">{ {> afFieldInput name='container_code_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_code_p2'}} has-error{ {/if}}">{ {> afFieldInput name='container_code_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_code_p3'}} has-error{ {/if}}">{ {> afFieldInput name='container_code_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_code_p4'}} has-error{ {/if}}">{ {> afFieldInput name='container_code_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_code_p5'}} has-error{ {/if}}">{ {> afFieldInput name='container_code_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_empty_container_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_container_mass_p1'}} has-error{ {/if}}">{ {> afFieldInput name='empty_container_mass_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_container_mass_p2'}} has-error{ {/if}}">{ {> afFieldInput name='empty_container_mass_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_container_mass_p3'}} has-error{ {/if}}">{ {> afFieldInput name='empty_container_mass_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_container_mass_p4'}} has-error{ {/if}}">{ {> afFieldInput name='empty_container_mass_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='empty_container_mass_p5'}} has-error{ {/if}}">{ {> afFieldInput name='empty_container_mass_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_wet_container_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='wet_container_mass_p1'}} has-error{ {/if}}">{ {> afFieldInput name='wet_container_mass_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='wet_container_mass_p2'}} has-error{ {/if}}">{ {> afFieldInput name='wet_container_mass_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='wet_container_mass_p3'}} has-error{ {/if}}">{ {> afFieldInput name='wet_container_mass_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='wet_container_mass_p4'}} has-error{ {/if}}">{ {> afFieldInput name='wet_container_mass_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='wet_container_mass_p5'}} has-error{ {/if}}">{ {> afFieldInput name='wet_container_mass_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_dry_container_mass'}}</th>
+											<th style="text-align: center">g</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_container_mass_p1'}} has-error{ {/if}}">{ {> afFieldInput name='dry_container_mass_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_container_mass_p2'}} has-error{ {/if}}">{ {> afFieldInput name='dry_container_mass_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_container_mass_p3'}} has-error{ {/if}}">{ {> afFieldInput name='dry_container_mass_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_container_mass_p4'}} has-error{ {/if}}">{ {> afFieldInput name='dry_container_mass_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_container_mass_p5'}} has-error{ {/if}}">{ {> afFieldInput name='dry_container_mass_p5'}}</div></td>
+										</tr>
+										</tbody>
+										<tfoot>
+										<tr>
+											<th>{ {_ 'compaction_container_humidity'}}</th>
+											<th style="text-align: center">%</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_humidity_p1'}} has-error{ {/if}}">{ {> afFieldInput name='container_humidity_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_humidity_p2'}} has-error{ {/if}}">{ {> afFieldInput name='container_humidity_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_humidity_p3'}} has-error{ {/if}}">{ {> afFieldInput name='container_humidity_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_humidity_p4'}} has-error{ {/if}}">{ {> afFieldInput name='container_humidity_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='container_humidity_p5'}} has-error{ {/if}}">{ {> afFieldInput name='container_humidity_p5'}}</div></td>
+										</tr>
+										</tfoot>
+									</table>
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='container_code_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='container_code_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_container_mass_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='empty_container_mass_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='wet_container_mass_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='wet_container_mass_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='dry_container_mass_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='dry_container_mass_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='container_humidity_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='container_humidity_p1' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='container_code_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='container_code_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_container_mass_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='empty_container_mass_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='wet_container_mass_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='wet_container_mass_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='dry_container_mass_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='dry_container_mass_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='container_humidity_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='container_humidity_p2' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='container_code_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='container_code_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_container_mass_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='empty_container_mass_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='wet_container_mass_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='wet_container_mass_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='dry_container_mass_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='dry_container_mass_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='container_humidity_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='container_humidity_p3' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='container_code_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='container_code_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_container_mass_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='empty_container_mass_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='wet_container_mass_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='wet_container_mass_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='dry_container_mass_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='dry_container_mass_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='container_humidity_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='container_humidity_p4' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='container_code_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='container_code_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='empty_container_mass_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='empty_container_mass_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='wet_container_mass_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='wet_container_mass_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='dry_container_mass_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='dry_container_mass_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='container_humidity_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='container_humidity_p5' autoform=.}}</span>{ {/if}}
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">{ {_ 'compaction_dry_field_density_title'}}</h3>
+						</div>
+						<div class="panel-body">
+							<fieldset>
+								<div class="table-responsive">
+									<table class="table table-condensed table-hover table-no-margin">
+										<thead>
+										<tr>
+											<th class="col-md-3">{ {_ 'compaction_steps'}}</th>
+											<th class="col-md-1">&nbsp;</th>
+											<th style="text-align: center">{ {_ 'compaction_point_1'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_2'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_3'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_4'}}</th>
+											<th style="text-align: center">{ {_ 'compaction_point_5'}}</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<th>{ {_ 'compaction_dry_density'}}</th>
+											<th style="text-align: center">g/cm³</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_density_p1'}} has-error{ {/if}}">{ {> afFieldInput name='dry_density_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_density_p2'}} has-error{ {/if}}">{ {> afFieldInput name='dry_density_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_density_p3'}} has-error{ {/if}}">{ {> afFieldInput name='dry_density_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_density_p4'}} has-error{ {/if}}">{ {> afFieldInput name='dry_density_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='dry_density_p5'}} has-error{ {/if}}">{ {> afFieldInput name='dry_density_p5'}}</div></td>
+										</tr>
+										<tr>
+											<th>{ {_ 'compaction_density'}}</th>
+											<th style="text-align: center">g/cm³</th>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='density_p1'}} has-error{ {/if}}">{ {> afFieldInput name='density_p1'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='density_p2'}} has-error{ {/if}}">{ {> afFieldInput name='density_p2'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='density_p3'}} has-error{ {/if}}">{ {> afFieldInput name='density_p3'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='density_p4'}} has-error{ {/if}}">{ {> afFieldInput name='density_p4'}}</div></td>
+											<td><div class="form-group{ {#if afFieldIsInvalid name='density_p5'}} has-error{ {/if}}">{ {> afFieldInput name='density_p5'}}</div></td>
+										</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='dry_density_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='dry_density_p1' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='density_p1' autoform=.}}<span class="help-block">{ {_ 'compaction_point_1'}}: { {afFieldMessage name='density_p1' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='dry_density_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='dry_density_p2' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='density_p2' autoform=.}}<span class="help-block">{ {_ 'compaction_point_2'}}: { {afFieldMessage name='density_p2' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='dry_density_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='dry_density_p3' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='density_p3' autoform=.}}<span class="help-block">{ {_ 'compaction_point_3'}}: { {afFieldMessage name='density_p3' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='dry_density_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='dry_density_p4' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='density_p4' autoform=.}}<span class="help-block">{ {_ 'compaction_point_4'}}: { {afFieldMessage name='density_p4' autoform=.}}</span>{ {/if}}
+								</div>
+								<div class="table-responsive has-error">
+									{ {#if afFieldIsInvalid name='dry_density_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='dry_density_p5' autoform=.}}</span>{ {/if}}
+									{ {#if afFieldIsInvalid name='density_p5' autoform=.}}<span class="help-block">{ {_ 'compaction_point_5'}}: { {afFieldMessage name='density_p5' autoform=.}}</span>{ {/if}}
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div-- class="row">
+				<div class="col-md-12">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							<fieldset>
+								<div class="row">
+									<div class="col-md-12">
+										{ {> afQuickField name='observations'}}
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+			</div-->
+			<div class="pull-right">
+				<button type="submit" class="btn btn-primary">{{_ 'compaction_create'}}</button>
+			</div>
+		{{/autoForm}}
+	</div>
+</template>
