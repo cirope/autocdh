@@ -55,12 +55,26 @@ var defaultSettlements = [
   { name: '15 cm' }
 ]
 
+var defaultAreas = [
+  { name: 'Calidad de producto' },
+  { name: 'Producción' },
+  { name: 'Servicio y logística' },
+  { name: 'Mantenimiento' },
+  { name: 'Gestión de Calidad' },
+  { name: 'Recursos Humanos' },
+  { name: 'Compras' },
+  { name: 'Ventas' },
+  { name: 'Obra en particular' },
+  { name: 'Cliente en particular' }
+]
+
 Accounts.onLogin(function (info) {
   var user        = info.user
   var defaults    = { organizationId: user.profile.organizationId }
   var additives   = Additives.find(defaults)
   var instruments = Instruments.find(defaults)
   var settlements = Settlements.find(defaults)
+  var areas       = Areas.find(defaults)
 
   if (! Settings.findOne(defaults)) Settings.insert(defaults)
 
@@ -79,6 +93,12 @@ Accounts.onLogin(function (info) {
   if (settlements.count() === 0) {
     _.each(defaultSettlements, function (settlement) {
       Settlements.insert(_.extend(settlement, defaults, { id: Random.id() }))
+    })
+  }
+
+  if (areas.count() === 0) {
+    _.each(defaultAreas, function (area) {
+      Areas.insert(_.extend(area, defaults, { id: Random.id() }))
     })
   }
 })
