@@ -91,6 +91,8 @@ Accounts.onLogin(function (info) {
   var instruments = Instruments.find(defaults)
   var settlements = Settlements.find(defaults)
   var areas       = Areas.find(defaults)
+  var origins     = Origins.find(defaults)
+  var ncTypes     = NcTypes.find(defaults)
 
   if (! Settings.findOne(defaults)) Settings.insert(defaults)
 
@@ -115,6 +117,18 @@ Accounts.onLogin(function (info) {
   if (areas.count() === 0) {
     _.each(defaultAreas, function (area) {
       Areas.insert(_.extend(area, defaults, { id: Random.id() }))
+    })
+  }
+
+  if (origins.count() === 0) {
+    _.each(defaultOrigins, function (origin) {
+      Origins.insert(_.extend(origin, defaults, { id: Random.id() }))
+    })
+  }
+
+  if (ncTypes.count() === 0) {
+    _.each(defaultNcTypes, function (ncType) {
+      NcTypes.insert(_.extend(ncType, defaults, { id: Random.id() }))
     })
   }
 })
