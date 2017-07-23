@@ -19,10 +19,12 @@
   "nonconformity_code": "Código interno",
   "nonconformity_areas": "Áreas donde se detecta",
   "nonconformity_area_id": "Área",
-
-  "nonconformity_origin": "Origen",
-  "nonconformity_type": "Tipo",
+  "nonconformity_origins": "Orígenes",
+  "nonconformity_origin_id": "Origen",
+  "nonconformity_types": "Tipos",
+  "nonconformity_type_id": "Tipo",
   "nonconformity_involved_areas": "Áreas involucradas",
+
   "nonconformity_character": "Carácter",
   "nonconformity_description": "Descripción",
   "nonconformity_action": "Acción inmediata o de contención tomada",
