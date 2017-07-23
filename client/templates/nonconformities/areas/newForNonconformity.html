@@ -4,11 +4,11 @@
       <div class="panel-heading">
         <h3 class="panel-title">
           {{_ 'area_create_title'}}
-          <a class="pull-right" href="{{pathFor 'nonconformitiesNew'}}" data-cancel>{{_ 'go_back'}}</a>
+          <a class="pull-right" href="{{pathFor 'nonconformityNew'}}" data-cancel>{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
-        {{#autoForm collection='Areas' id='newAreaForNonconformityForm' type='method' meteormethod='createArea'}}
+        {{#autoForm collection='Areas' id='newAreaForNonconformityForm' type='method' meteormethod='createAreaFromNonconformity'}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
           </fieldset>
