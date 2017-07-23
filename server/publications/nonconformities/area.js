@@ -1,3 +1,3 @@
 Meteor.publish('areas', function () {
-  return publish.call(this, Humidities)
+  return publish.call(this, Areas)
 })
