@@ -26,6 +26,10 @@
   "nonconformity_involved_areas": "Áreas involucradas",
 
   "nonconformity_character": "Carácter",
+  "nonconformity_character_oportunity": "Oportunidad de Mejora",
+  "nonconformity_character_real": "No Conformidad Real",
+  "nonconformity_character_potencial": "No Conformidad Potencial",
+
   "nonconformity_description": "Descripción",
   "nonconformity_action": "Acción inmediata o de contención tomada",
   "nonconformity_action_desc": "Descripción",
