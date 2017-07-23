@@ -71,5 +71,31 @@
   "area_update": "Actualizar área",
   "area_empty_title": "Mmm",
   "area_empty_banner": "No has cargado ninguna área, podés comenzar ahora...",
-  "area_new": "Nueva área"
+  "area_new": "Nueva área",
+
+  // origins
+  "origins": "Orígenes",
+  "origin": "Origen",
+  "origin_name": "Nombre",
+  "origin_name_placeholder": "Ingrese un origen...",
+  "origin_create_title": "Agregar un nuevo origen",
+  "origin_create": "Crear origen",
+  "origin_update_title": "Editar un origen",
+  "origin_update": "Actualizar origen",
+  "origin_empty_title": "Mmm",
+  "origin_empty_banner": "No has cargado ningun origen, podés comenzar ahora...",
+  "origin_new": "Nuevo origen",
+
+  // nc types
+  "nctypes": "Tipos de no conformidad",
+  "nctype": "Tipo",
+  "nctype_name": "Nombre",
+  "nctype_name_placeholder": "Ingrese un tipo...",
+  "nctype_create_title": "Agregar un nuevo tipo",
+  "nctype_create": "Crear tipo",
+  "nctype_update_title": "Editar un tipo",
+  "nctype_update": "Actualizar tipo",
+  "nctype_empty_title": "Mmm",
+  "nctype_empty_banner": "No has cargado ningun tipo, podés comenzar ahora...",
+  "nctype_new": "Nuevo tipo"
 }

@@ -68,6 +68,22 @@ var defaultAreas = [
   { name: 'Cliente en particular' }
 ]
 
+var defaultOrigins = [
+  { name: 'Auditoría externa' },
+  { name: 'Auditoría interna' },
+  { name: 'Iniciativa interna' },
+  { name: 'Autocontrol - oficio propio' },
+  { name: 'Reclamo del cliente' }
+]
+
+var defaultNcTypes = [
+  { name: 'Producto No Conforme' },
+  { name: 'Servicio No Conforme' },
+  { name: 'Sistema de Gestión de Calidad' },
+  { name: 'Control de Documentos' },
+  { name: 'Proceso No Conforme' }
+]
+
 Accounts.onLogin(function (info) {
   var user        = info.user
   var defaults    = { organizationId: user.profile.organizationId }

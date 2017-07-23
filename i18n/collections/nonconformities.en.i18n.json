@@ -41,5 +41,31 @@
   "area_update": "Update area",
   "area_empty_title": "Mmm",
   "area_empty_banner": "There is no area here, lets create some...",
-  "area_new": "New area"
+  "area_new": "New area",
+
+  // origins
+  "origins": "Origins",
+  "origin": "Origin",
+  "origin_name": "Name",
+  "origin_name_placeholder": "Enter a name...",
+  "origin_create_title": "Add a new origin",
+  "origin_create": "Create origin",
+  "origin_update_title": "Edit origin",
+  "origin_update": "Update origin",
+  "origin_empty_title": "Mmm",
+  "origin_empty_banner": "There is no origin here, lets create some...",
+  "origin_new": "New origin",
+
+  // nc types
+  "nctypes": "Non-conformity types",
+  "nctype": "Type",
+  "nctype_name": "Name",
+  "nctype_name_placeholder": "Enter a name...",
+  "nctype_create_title": "Add a new type",
+  "nctype_create": "Create type",
+  "nctype_update_title": "Edit type",
+  "nctype_update": "Update type",
+  "nctype_empty_title": "Mmm",
+  "nctype_empty_banner": "There is no type here, lets create some...",
+  "nctype_new": "New type"
 }
