@@ -19,14 +19,16 @@ Template.nonconformityNew.helpers({
 
 Template.nonconformityNew.events({
 
-  'change [name="areaId"]': function (event) {
+  'change [name$=".identification"]': function (event) {
     var area = $(event.currentTarget)
 
     if (area.val() === 'new') {
       area.val('')
       saveNonconformityForm()
       AutoForm.resetForm('newNonconformityForm')
-      Router.go('areaNewForNonconformity')
+
+      var index     = +area.prop('name').split('.')[1]
+      Router.go('areaNewForNonconformity', {}, {areaIndex: index})
     }
   }
 
