@@ -33,8 +33,8 @@
   "nonconformity_action_desc": "Descripción",
   "nonconformity_action_date": "Fecha",
   "nonconformity_action_resp": "Responsable",
-
   "nonconformity_causes": "Análisis resumido de causa/s",
+
   "nonconformity_solution": "Acción(es) correctiva(s)  / preventiva(s) / evolutiva(s)",
   "nonconformity_solution_number": "Nº Acción",
   "nonconformity_solution_desc": "Descripción de la acción a tomar",
