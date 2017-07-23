@@ -1,3 +1,3 @@
 Meteor.publish('origins', function () {
-  return publish.call(this, Areas)
+  return publish.call(this, Origins)
 })

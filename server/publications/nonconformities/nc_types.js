@@ -1,3 +1,3 @@
 Meteor.publish('ncTypes', function () {
-  return publish.call(this, Areas)
+  return publish.call(this, NcTypes)
 })
