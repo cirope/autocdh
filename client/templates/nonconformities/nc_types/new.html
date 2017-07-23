@@ -1,18 +1,18 @@
-<template name="areaNew">
+<template name="nctypeNew">
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'area_create_title'}}
-          <a class="pull-right" href="{{pathFor 'areas'}}" data-cancel>{{_ 'go_back'}}</a>
+          {{_ 'nctype_create_title'}}
+          <a class="pull-right" href="{{pathFor 'nctypes'}}" data-cancel>{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
-        {{#autoForm collection='Areas' id='newAreaForm' type='method' meteormethod='createArea'}}
+        {{#autoForm collection='NcTypes' id='newNcTypeForm' type='method' meteormethod='createNcType'}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true placeholder=namePlaceholder}}
           </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'area_create'}}</button>
+          <button type="submit" class="btn btn-primary">{{_ 'nctype_create'}}</button>
         {{/autoForm}}
       </div>
     </div>

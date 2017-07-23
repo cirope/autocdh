@@ -1,10 +1,10 @@
-Template.areaNew.helpers({
+Template.originNew.helpers({
   namePlaceholder: function () {
-    return TAPi18n.__('area_name_placeholder')
+    return TAPi18n.__('origin_name_placeholder')
   }
 })
 
-AutoForm.addHooks('newAreaForm', {
+AutoForm.addHooks('newOriginForm', {
   before: {
     method: function (doc) {
       return _.extend(doc, { _id: Random.id() })

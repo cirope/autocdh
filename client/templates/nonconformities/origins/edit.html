@@ -1,18 +1,18 @@
-<template name="areaEdit">
+<template name="originEdit">
   <div class="col-md-6 col-md-offset-3">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h3 class="panel-title">
-          {{_ 'area_update_title'}}
-          <a class="pull-right" href="{{pathFor 'area'}}">{{_ 'go_back'}}</a>
+          {{_ 'origin_update_title'}}
+          <a class="pull-right" href="{{pathFor 'origin'}}">{{_ 'go_back'}}</a>
         </h3>
       </div>
       <div class="panel-body">
-        {{#autoForm collection='Areas' id='editAreaForm' type='method-update' meteormethod='updateArea' doc=..}}
+        {{#autoForm collection='Origins' id='editOriginForm' type='method-update' meteormethod='updateOrigin' doc=..}}
           <fieldset>
             {{> afQuickField name='name' autofocus=true}}
           </fieldset>
-          <button type="submit" class="btn btn-primary">{{_ 'area_update'}}</button>
+          <button type="submit" class="btn btn-primary">{{_ 'origin_update'}}</button>
         {{/autoForm}}
       </div>
     </div>

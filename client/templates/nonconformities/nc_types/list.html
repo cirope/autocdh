@@ -1,16 +1,16 @@
-<template name="areas">
-  {{#if areas.count}}
-    {{> areasList}}
+<template name="nctypes">
+  {{#if types.count}}
+    {{> ncTypesList}}
   {{else}}
-    {{> areasEmpty}}
+    {{> ncTypesEmpty}}
   {{/if}}
 </template>
 
-<template name="areasList">
+<template name="ncTypesList">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">
-        {{_ 'areas'}}
+        {{_ 'nctypes'}}
         <a class="pull-right" href="{{pathFor 'root'}}">{{_ 'go_back'}}</a>
       </h3>
     </div>
@@ -18,16 +18,16 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <th>{{_ 'area_name'}}</th>
+            <th>{{_ 'nctype_name'}}</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-        {{#each areas}}
+        {{#each types}}
           <tr class="visible-on-hover-parent">
-            <td><a href="{{pathFor 'area'}}">{{name}}</a></td>
+            <td><a href="{{pathFor 'nctype'}}">{{name}}</a></td>
             <td class="text-right">
-              <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'areaEdit'}}" title="{{_ 'edit'}}">
+              <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'nctypeEdit'}}" title="{{_ 'edit'}}">
                 {{_ 'edit'}}
               </a>
             </td>
