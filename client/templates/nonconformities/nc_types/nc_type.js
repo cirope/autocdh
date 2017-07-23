@@ -1,5 +1,5 @@
-Template.ncType.helpers({
+Template.nctype.helpers({
 })
 
-Template.ncType.events({
+Template.nctype.events({
 })
