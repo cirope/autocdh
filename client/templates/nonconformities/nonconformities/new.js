@@ -19,7 +19,7 @@ Template.nonconformityNew.helpers({
 
 Template.nonconformityNew.events({
 
-  'change [name$=".identification"]': function (event) {
+  'change [name$=".areaId"]': function (event) {
     var area = $(event.currentTarget)
 
     if (area.val() === 'new') {
@@ -29,6 +29,32 @@ Template.nonconformityNew.events({
 
       var index     = +area.prop('name').split('.')[1]
       Router.go('areaNewForNonconformity', {}, {areaIndex: index})
+    }
+  },
+
+  'change [name$=".originId"]': function (event) {
+    var origin = $(event.currentTarget)
+
+    if (origin.val() === 'new') {
+      origin.val('')
+      saveNonconformityForm()
+      AutoForm.resetForm('newNonconformityForm')
+
+      var index     = +origin.prop('name').split('.')[1]
+      Router.go('originNewForNonconformity', {}, {areaIndex: index})
+    }
+  },
+
+  'change [name$=".typeId"]': function (event) {
+    var nctype = $(event.currentTarget)
+
+    if (nctype.val() === 'new') {
+      nctype.val('')
+      saveNonconformityForm()
+      AutoForm.resetForm('newNonconformityForm')
+
+      var index     = +nctype.prop('name').split('.')[1]
+      Router.go('nctypeNewForNonconformity', {}, {areaIndex: index})
     }
   }
 
