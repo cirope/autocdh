@@ -24,17 +24,16 @@
   "nonconformity_types": "Tipos",
   "nonconformity_type_id": "Tipo",
   "nonconformity_involved_areas": "Áreas involucradas",
-
   "nonconformity_character": "Carácter",
   "nonconformity_character_oportunity": "Oportunidad de Mejora",
   "nonconformity_character_real": "No Conformidad Real",
   "nonconformity_character_potencial": "No Conformidad Potencial",
-
   "nonconformity_description": "Descripción",
   "nonconformity_action": "Acción inmediata o de contención tomada",
   "nonconformity_action_desc": "Descripción",
   "nonconformity_action_date": "Fecha",
   "nonconformity_action_resp": "Responsable",
+
   "nonconformity_causes": "Análisis resumido de causa/s",
   "nonconformity_solution": "Acción(es) correctiva(s)  / preventiva(s) / evolutiva(s)",
   "nonconformity_solution_number": "Nº Acción",
