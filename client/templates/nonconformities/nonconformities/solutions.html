@@ -1,0 +1,43 @@
+<template name="afArrayField_solutions1">
+  {{#if afFieldIsInvalid name=this.atts.name}}
+    <div class="has-error">
+      <span class="help-block">{{{afFieldMessage name=this.atts.name}}}</span>
+    </div>
+  {{/if}}
+
+	<div class="table-responsive">
+		<table class="table table-condensed" data-table="tubes">
+			<thead>
+			<tr>
+				<th>{{_ 'nonconformity_solutions_number'}}</th>
+				<th>{{_ 'nonconformity_solutions_type'}}</th>
+				<th>{{_ 'nonconformity_solutions_desc'}}</th>
+				<th>{{_ 'nonconformity_solutions_date'}}</th>
+				<th>{{_ 'nonconformity_solutions_resp'}}</th>
+			</tr>
+			</thead>
+			<tbody>
+
+			{{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+				<tr>
+					<td>{{> afQuickField name=this.current.number}}</td>
+					<td>{{> afQuickField name=this.current.type}}</td>
+					<td>{{> afQuickField name=this.current.description}}</td>
+					<td>{{> afQuickField name=this.current.date}}</td>
+					<td>{{> afQuickField name=this.current.responsibles}}</td>
+				</tr>
+			{{/afEachArrayItem}}
+
+			</tbody>
+		</table>
+	</div>
+
+</template>
+
+<template name="afObjectField_solutions1">
+  {{#each afFieldNames name=this.name}}
+    <div class="col-md-{{cols}}">
+      {{> afQuickField quickFieldAtts}}
+    </div>
+  {{/each}}
+</template>
