@@ -118,12 +118,22 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">
-						<div class="panel-heading">
-							{{_ 'nonconformity_solutions'}}
-						</div>
 						<div class="panel-body">
 							<fieldset>
-								{{> afArrayField name='solutions' template='solutions1'}}
+								<div class="row">
+									<div class="col-md-12">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												{{_ 'nonconformity_solutions'}}
+											</div>
+											<div class="panel-body">
+												<fieldset>
+													{{> afArrayField name='solutions' template='solutions1'}}
+												</fieldset>
+											</div>
+										</div>
+									</div>
+								</div>
 							</fieldset>
 						</div>
 					</div>

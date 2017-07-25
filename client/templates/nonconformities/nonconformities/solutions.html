@@ -6,25 +6,30 @@
   {{/if}}
 
 	<div class="table-responsive">
-		<table class="table table-condensed" data-table="tubes">
+		<table class="table table-condensed table-hover table-no-margin">
 			<thead>
 			<tr>
-				<th>{{_ 'nonconformity_solutions_number'}}</th>
-				<th>{{_ 'nonconformity_solutions_type'}}</th>
-				<th>{{_ 'nonconformity_solutions_desc'}}</th>
-				<th>{{_ 'nonconformity_solutions_date'}}</th>
-				<th>{{_ 'nonconformity_solutions_resp'}}</th>
+				<th class="col-md-1">{{_ 'nonconformity_solutions_number'}}</th>
+				<th class="col-md-2">{{_ 'nonconformity_solutions_type'}}</th>
+				<th class="col-md-2">{{_ 'nonconformity_solutions_date'}}</th>
+				<th class="col-md-4">{{_ 'nonconformity_solutions_desc'}}</th>
+				<th class="col-md-2">{{_ 'nonconformity_solutions_resp'}}</th>
+				<th class="col-md-1">&nbsp;</th>
 			</tr>
 			</thead>
 			<tbody>
 
+
 			{{#afEachArrayItem name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
 				<tr>
-					<td>{{> afQuickField name=this.current.number}}</td>
-					<td>{{> afQuickField name=this.current.type}}</td>
-					<td>{{> afQuickField name=this.current.description}}</td>
-					<td>{{> afQuickField name=this.current.date}}</td>
-					<td>{{> afQuickField name=this.current.responsibles}}</td>
+					<th class="col-md-1">{{_ 'nonconformity_solutions_number_val'}} {{this.current.number.value}}</th>
+					<td class="col-md-2">{{> afQuickField name=this.current.type template='basic'}}</td>
+					<td class="col-md-2">{{> afQuickField name=this.current.date template='basic'}}</td>
+					<td class="col-md-4">{{> afQuickField name=this.current.description template='basic'}}</td>
+					<td class="col-md-2">{{> afQuickField name=this.current.responsibles template='basic'}}</td>
+					<td class="col-md-1">
+						<button type="button" class="btn btn-primary autoform-remove-item"><span class="glyphicon glyphicon-minus"></span></button>
+					</td>
 				</tr>
 			{{/afEachArrayItem}}
 
@@ -32,12 +37,11 @@
 		</table>
 	</div>
 
-</template>
-
-<template name="afObjectField_solutions1">
-  {{#each afFieldNames name=this.name}}
-    <div class="col-md-{{cols}}">
-      {{> afQuickField quickFieldAtts}}
-    </div>
-  {{/each}}
+	{{#if afArrayFieldHasLessThanMaximum name=this.atts.name minCount=this.atts.minCount maxCount=this.atts.maxCount}}
+		<div class="clearfix">
+			<div class="pull-right">
+				<button type="button" class="btn btn-primary autoform-add-item" data-autoform-field="{{this.atts.name}}" data-autoform-minCount="{{this.atts.minCount}}" data-autoform-maxCount="{{this.atts.maxCount}}">{{_ 'nonconformity_add_solutions'}}</button>
+			</div>
+		</div>
+	{{/if}}
 </template>

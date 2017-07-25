@@ -48,6 +48,7 @@
   "nonconformity_solutions_resp_sign": "Nombre y Firma de involucrados",
   "nonconformity_solutions_resp_id": "Responsable",
   "nonconformity_no_solutions": "No hay acciones cargadas aún.",
+  "nonconformity_add_solutions": "Agregar acción",
 
   "nonconformity_": "ACCIÓN",
   "nonconformity_": "SEGUIMIENTO DE IMPLEMENTACIÓN DE CADA ACCIÓN",
