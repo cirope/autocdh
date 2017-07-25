@@ -118,13 +118,36 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel panel-default">
+						<div class="panel-heading">
+							{{_ 'nonconformity_solutions'}}
+						</div>
 						<div class="panel-body">
 							<fieldset>
-									{{> afQuickField name='solution'}}
 
-
-
-
+								<div class="table-responsive">
+									<table class="table table-condensed" data-table="tubes">
+										<thead>
+										<tr>
+											<th>{{_ 'nonconformity_solutions_number'}}</th>
+											<th>{{_ 'nonconformity_solutions_type'}}</th>
+											<th>{{_ 'nonconformity_solutions_desc'}}</th>
+											<th>{{_ 'nonconformity_solutions_date'}}</th>
+											<th>{{_ 'nonconformity_solutions_resp'}}</th>
+										</tr>
+										</thead>
+										<tbody>
+										{{#each solutions}}
+											<tr>
+												<td>{{> afQuickField name='number'}}</td>
+												<td>{{> afQuickField name='type'}}</td>
+												<td>{{> afQuickField name='description'}}</td>
+												<td>{{> afQuickField name='date'}}</td>
+												<td>{{> afQuickField name='responsibles'}}</td>
+											</tr>
+										{{/each}}
+										</tbody>
+									</table>
+								</div>
 
 							</fieldset>
 						</div>
