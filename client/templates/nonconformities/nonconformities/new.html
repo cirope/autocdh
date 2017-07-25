@@ -144,6 +144,14 @@
 												<td>{{> afQuickField name='date'}}</td>
 												<td>{{> afQuickField name='responsibles'}}</td>
 											</tr>
+										{{else}}
+											<tr>
+												<td colspan="5">
+													<div class="alert alert-info">
+														{{_ 'nonconformity_no_solutions'}}
+													</div>
+												</td>
+											</tr>
 										{{/each}}
 										</tbody>
 									</table>
