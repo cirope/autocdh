@@ -14,6 +14,11 @@
   "nonconformity_new": "Nueva conformidad u oportunidades de mejora",
   "nonconformity_title": "Registro de No Conformidad, Oportunidad de Mejora y Acciones",
 
+  "nonconformity_status": "Estado",
+  "nonconformity_status_initial": "No iniciada",
+  "nonconformity_status_started": "En proceso",
+  "nonconformity_status_finished": "Finalizada",
+
   "nonconformity_date": "Fecha de inicio",
   "nonconformity_responsible": "Responsable",
   "nonconformity_code": "Código interno",
@@ -34,7 +39,6 @@
   "nonconformity_action_date": "Fecha",
   "nonconformity_action_resp": "Responsable",
   "nonconformity_causes": "Análisis resumido de causa/s",
-
   "nonconformity_solutions": "Acción(es) correctiva(s)  / preventiva(s) / evolutiva(s)",
   "nonconformity_solutions_number": "Nº acción",
   "nonconformity_solutions_number_val": "Acción",

@@ -6,7 +6,6 @@ var saveNonconformityForm    = function () {
 
 
 Template.nonconformityNew.onRendered(function () {
-  //checkType(getField('type'));
 });
 
 Template.nonconformityNew.helpers({
