@@ -5,6 +5,9 @@ Template.nonconformities.helpers({
 })
 
 Template.nonconformitiesList.helpers({
+  statusName: function (status) {
+    return !!status && TAPi18n.__('nonconformity_status_'+status)
+  },
 })
 
 Template.nonconformitiesList.events({

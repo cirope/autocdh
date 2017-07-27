@@ -3,35 +3,31 @@
 		<h4>{{_ 'nonconformity_title'}}</h4>
 	</div>
 	<div class="row">
-		{{#autoForm collection='Nonconformities' id='editNonconformityForm' type='method' validation='blur' meteormethod='updateNonconformity' doc=compaction}}
+		{{#autoForm collection='Nonconformities' id='editNonconformityForm' type='method' validation='blur' meteormethod='updateNonconformity' doc=..}}
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-12">
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								{{_ 'nonconformity_update'}}
+								{{_ 'nonconformity_new'}}
 								<a class="pull-right" href="{{pathFor 'nonconformities'}}">{{_ 'go_back'}}</a>
 							</h3>
 						</div>
 						<div class="panel-body">
 							<fieldset>
 								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-3">
 										{{> afQuickField name='date'}}
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-3">
 										{{> afQuickField name='responsibleId'}}
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-6">
 										{{> afQuickField name='code'}}
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-6">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												{{_ 'nonconformity_areas'}}
@@ -40,10 +36,6 @@
 												{{> afQuickField name='areas'}}
 											</div>
 										</div>
-									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												{{_ 'nonconformity_origins'}}
@@ -53,9 +45,7 @@
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-6">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												{{_ 'nonconformity_types'}}
@@ -64,18 +54,6 @@
 												{{> afQuickField name='types'}}
 											</div>
 										</div>
-									</div>
-								</div>
-							</fieldset>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<fieldset>
-								<div class="row">
-									<div class="col-md-12">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												{{_ 'nonconformity_involved_areas'}}
@@ -87,51 +65,49 @@
 									</div>
 								</div>
 								<div class="row">
-									<div class="col-md-12">
-										{{> afQuickField name='character'}}
+									<div class="col-md-6">
+										<div class="row">
+											<div class="col-md-12">
+												{{> afQuickField name='character'}}
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												{{> afQuickField name='description'}}
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												{{> afQuickField name='causes'}}
+											</div>
+										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
+									<div class="col-md-6">
 										<div class="panel panel-default">
 											<div class="panel-heading">
 												{{_ 'nonconformity_action'}}
 											</div>
 											<div class="panel-body">
-												{{> afQuickField name='actionDescription'}}
-												{{> afQuickField name='actionDate'}}
-												{{> afQuickField name='actionResponsibleId'}}
+												<div class="row">
+													<div class="col-md-6">
+														{{> afQuickField name='actionDate'}}
+													</div>
+													<div class="col-md-6">
+														{{> afQuickField name='actionResponsibleId'}}
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														{{> afQuickField name='actionDescription'}}
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-								<div class="row">
+								<div class="row hidden">
 									<div class="col-md-12">
-										{{> afQuickField name='causes'}}
-									</div>
-								</div>
-							</fieldset>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="panel panel-default">
-						<div class="panel-body">
-							<fieldset>
-								<div class="row">
-									<div class="col-md-12">
-										<div class="panel panel-default">
-											<div class="panel-heading">
-												{{_ 'nonconformity_solutions'}}
-											</div>
-											<div class="panel-body">
-												<fieldset>
-													{{> afArrayField name='solutions' template='solutions1'}}
-												</fieldset>
-											</div>
-										</div>
+										{{> afQuickField name='status'}}
 									</div>
 								</div>
 							</fieldset>

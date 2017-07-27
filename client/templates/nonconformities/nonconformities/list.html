@@ -23,6 +23,8 @@
         <thead>
         <tr>
             <th>{{_ 'nonconformity_date'}}</th>
+            <th>{{_ 'nonconformity_code'}}</th>
+            <th>{{_ 'nonconformity_status'}}</th>
             <th class="text-right">
                 <a href="#search-filter" title="{{_ 'search'}}" data-toggle="collapse" data-search>
                     <span class="glyphicon glyphicon-search"></span>
@@ -37,6 +39,12 @@
             <td class="form-group form-group-sm">
                 <input class="form-control" type="text" name="fieldDate" id="fieldDate">
             </td>
+            <td class="form-group form-group-sm">
+                <input class="form-control" type="text" name="code" id="code">
+            </td>
+            <td class="form-group form-group-sm">
+                <input class="form-control" type="text" name="status" id="status">
+            </td>
             <td>
                 <button type="button" class="btn btn-default btn-sm btn-block" data-action="search">
                     {{_ 'search'}}
@@ -47,7 +55,9 @@
         <tbody>
         {{#each objects}}
             <tr class="visible-on-hover-parent">
-                <td><a href="{{pathFor 'nonconformity'}}">{{l date 'L'}}</a></td>
+								<td><a href="{{pathFor 'nonconformity'}}">{{l date 'L'}}</a></td>
+								<td><a href="{{pathFor 'nonconformity'}}">{{code}}</a></td>
+								<td><a href="{{pathFor 'nonconformity'}}">{{statusName status}}</a></td>
                 <td class="text-right">
                     <a class="btn btn-sm btn-default visible-on-hover" href="{{pathFor 'nonconformityEdit'}}" title="{{_ 'edit'}}">
                         {{_ 'edit'}}
