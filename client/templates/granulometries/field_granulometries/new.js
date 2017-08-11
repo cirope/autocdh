@@ -82,7 +82,7 @@ var calculateFields = function () {
   var hrs = !!hw ? (1 - Math.abs((rs76 + rs63 + rs51 + rs38 + rs25 + rs19 + rs12 + rs95 + rs48) / hw))*100 : ''
   if(!!hrs){
     setFloat('thin_ver_ret', hrs)
-    setField('thin_ver_ret_label', hrs < .5 ? TAPi18n.__('field_granulometry_thin_satisfy') : TAPi18n.__('field_granulometry_thin_no_satisfy'))
+    setField('thin_ver_ret_label', hrs >= -.7 && hrs < .5 ? TAPi18n.__('field_granulometry_thin_satisfy') : TAPi18n.__('field_granulometry_thin_no_satisfy'))
   } else {
     setField('thin_ver_ret', '')
     setField('thin_ver_ret_label', '-')
@@ -100,15 +100,15 @@ var calculateFields = function () {
   var sw01 = getAndSetFloat('sieve_weight_01');
   var swp = getAndSetFloat('sieve_weight_p');
 
-  var rs20 = getAndSetFloat('retained_sieve_20', 2);
-  var rs04 = getAndSetFloat('retained_sieve_04', 2);
-  var rs01 = getAndSetFloat('retained_sieve_01', 2);
-  var rsp = getAndSetFloat('retained_sieve_p', 2);
+  var rs20 = getAndSetFloat('retained_sieve_20', 1);
+  var rs04 = getAndSetFloat('retained_sieve_04', 1);
+  var rs01 = getAndSetFloat('retained_sieve_01', 1);
+  var rsp = getAndSetFloat('retained_sieve_p', 1);
 
-  var tvp = !!tw ? (1 - Math.abs((rs20 + rs04 + rs01 + rsp) / tw))*100 : ''
+  var tvp = !!tw ? (1 - Math.abs((rs20 - sw20 + rs04 - sw04 + rs01 - sw01 + rsp - swp) / tw))*100 : ''
   if(!!tvp){
     setFloat('thin_ver_pass', tvp)
-    setField('thin_ver_pass_label', tvp < .5 ? TAPi18n.__('field_granulometry_thin_satisfy') : TAPi18n.__('field_granulometry_thin_no_satisfy'))
+    setField('thin_ver_pass_label', tvp >= -.7 && tvp < .5 ? TAPi18n.__('field_granulometry_thin_satisfy') : TAPi18n.__('field_granulometry_thin_no_satisfy'))
   } else {
     setField('thin_ver_pass', '')
     setField('thin_ver_pass_label', '-')
