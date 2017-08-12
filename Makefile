@@ -23,7 +23,7 @@ TMP_DIR=../tmp_build
 .PHONY : deploy sandbox-deploy
 
 deploy:
-	meteor build $(TMP_DIR)
+	meteor build --architecture os.linux.x86_64 $(TMP_DIR)
 	scp $(TMP_DIR)/$(APP_BUNDLE) $(PRODUCTION_ACCOUNT):
 	rm -rf $(TMP_DIR)
 	ssh $(PRODUCTION_ACCOUNT) \
