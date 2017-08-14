@@ -1,9 +1,5 @@
-
-Template.nonconformityEdit.onRendered(function () {
-});
-
 Template.nonconformityEdit.helpers({
-})
-
-Template.nonconformityEdit.events({
+	isNotStarted: function () {
+		return !!this.status && (this.status !== 'started' || this.status !== 'finished')
+	}
 })
