@@ -1,5 +1,5 @@
 <template name="nonconformityEditInit">
-	{{#autoForm collection='Nonconformities' id='editNonconformityForm' type='method' validation='blur' meteormethod='updateInitialNonconformity' doc=compaction}}
+	{{#autoForm collection='Nonconformities' id='editInitNonconformityForm' type='method-update' validation='blur' meteormethod='updateInitialNonconformity' doc=..}}
 		<div class="row">
 			<div class="col-md-6">
 				<div class="panel panel-default">
@@ -117,7 +117,7 @@
 			</div>
 		</div>
 		<div class="pull-right">
-			<button type="submit" class="btn btn-primary">{{_ 'nonconformity_create'}}</button>
+			<button type="submit" class="btn btn-primary">{{_ 'nonconformity_update'}}</button>
 		</div>
 	{{/autoForm}}
 </template>
