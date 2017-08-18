@@ -39,7 +39,7 @@ deploy:
 	ssh $(PRODUCTION_ROOT_ACCOUNT) "systemctl restart $(SERVICE_NAME)"
 
 sandbox-deploy:
-	meteor build $(TMP_DIR)
+	meteor build --architecture os.linux.x86_64 $(TMP_DIR)
 	scp -P 2222 $(TMP_DIR)/$(APP_BUNDLE) $(SANDBOX_ACCOUNT):
 	rm -rf $(TMP_DIR)
 	ssh -p 2222 $(SANDBOX_ACCOUNT) \
